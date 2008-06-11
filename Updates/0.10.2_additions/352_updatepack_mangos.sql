@@ -4,12 +4,12 @@
 DELETE FROM `creature` WHERE `id`= '17537';
 UPDATE `creature_template` SET `pickpocketloot`=23386 WHERE `entry`=23386;
 UPDATE `quest_template` SET `ReqSpellCast1`=0 WHERE `entry`=10854;
-INSERT INTO `page_text` (`entry` ,`text` ,`next_page`) VALUES (3076, '<No recognizable words remain on this badly burnt page.>', 0);
+INSERT IGNORE INTO `page_text` (`entry` ,`text` ,`next_page`) VALUES (3076, '<No recognizable words remain on this badly burnt page.>', 0);
 
 -- last min forum
 -- Smuggled Mana Cell
 DELETE FROM `gameobject_loot_template` WHERE `entry` = '22992';
-INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `lootcondition`, `condition_value1`, `condition_value2`) VALUES ('22992', '34246', '-100', '0', '1', '1', '0', '0', '0');
+INSERT IGNORE INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `lootcondition`, `condition_value1`, `condition_value2`) VALUES ('22992', '34246', '-100', '0', '1', '1', '0', '0', '0');
 UPDATE `gameobject_template` SET `flags` = `flags`|'4' WHERE `entry` = '187039';
 
 -- Remove old learning spells for Lockpicking
@@ -7001,17 +7001,17 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes0`, `bytes1`, `bytes2`, `em
 DELETE FROM `gameobject` WHERE `id`=187080;
 INSERT IGNORE INTO `gameobject` (`guid`, `id`,`map`,`spawnMask`,`position_x`,`position_y`,`position_z`,`orientation`,`rotation0`,`rotation1`,`rotation2`,`rotation3`,`spawntimesecs`,`animprogress`,`state`) VALUES
 (26222, 187080, 530, 1, 12630.3, -6973.65, 15.8386, 4.40555, 0, 0, 0.806859, -0.590744, 180, 0, 1),
-(27825, 187080, 530, 1, 12690.1, -7007.15, 21.3425, 3.49842, 0, 0, 0.984126, -0.177469, 180, 0, 1),
-(27826, 187080, 530, 1, 12696.5, -6929.97, 14.5332, 0.387862, 0, 0, 0.192718, 0.981254, 180, 0, 1),
-(27863, 187080, 530, 1, 12723.2, -6973.3, 18.3323, 4.26419, 0, 0, 0.846566, -0.532284, 180, 0, 1),
-(27864, 187080, 530, 1, 12751.4, -6882.72, 13.5636, 3.62094, 0, 0, 0.971416, -0.237385, 180, 0, 1),
-(27865, 187080, 530, 1, 12765, -7090.63, 6.44272, 3.73053, 0, 0, 0.956957, -0.29023, 180, 0, 1),
-(27866, 187080, 530, 1, 12775.8, -7005.19, 13.0259, 1.59974, 0, 0, 0.717265, 0.696801, 180, 0, 1),
-(27867, 187080, 530, 1, 12785, -6853.72, 14.1508, 4.7605, 0, 0, 0.689893, -0.723912, 180, 0, 1),
-(27868, 187080, 530, 1, 12789.2, -6919.12, 13.6691, 3.54314, 0, 0, 0.979913, -0.199427, 180, 0, 1),
-(27869, 187080, 530, 1, 12819.3, -6883.41, 12.7846, 3.19049, 0, 0, 0.999701, -0.0244483, 180, 0, 1),
-(27870, 187080, 530, 1, 12821, -6967.57, 10.4511, 0.335245, 0, 0, 0.166839, 0.985984, 180, 0, 1),
-(27871, 187080, 530, 1, 12912.5, -6939.06, 3.77427, 4.26303, 0, 0, 0.846874, -0.531793, 180, 0, 1);
+(28284, 187080, 530, 1, 12690.1, -7007.15, 21.3425, 3.49842, 0, 0, 0.984126, -0.177469, 180, 0, 1),
+(47220, 187080, 530, 1, 12696.5, -6929.97, 14.5332, 0.387862, 0, 0, 0.192718, 0.981254, 180, 0, 1),
+(47221, 187080, 530, 1, 12723.2, -6973.3, 18.3323, 4.26419, 0, 0, 0.846566, -0.532284, 180, 0, 1),
+(47222, 187080, 530, 1, 12751.4, -6882.72, 13.5636, 3.62094, 0, 0, 0.971416, -0.237385, 180, 0, 1),
+(47223, 187080, 530, 1, 12765, -7090.63, 6.44272, 3.73053, 0, 0, 0.956957, -0.29023, 180, 0, 1),
+(47224, 187080, 530, 1, 12775.8, -7005.19, 13.0259, 1.59974, 0, 0, 0.717265, 0.696801, 180, 0, 1),
+(47225, 187080, 530, 1, 12785, -6853.72, 14.1508, 4.7605, 0, 0, 0.689893, -0.723912, 180, 0, 1),
+(47226, 187080, 530, 1, 12789.2, -6919.12, 13.6691, 3.54314, 0, 0, 0.979913, -0.199427, 180, 0, 1),
+(47227, 187080, 530, 1, 12819.3, -6883.41, 12.7846, 3.19049, 0, 0, 0.999701, -0.0244483, 180, 0, 1),
+(47228, 187080, 530, 1, 12821, -6967.57, 10.4511, 0.335245, 0, 0, 0.166839, 0.985984, 180, 0, 1),
+(47229, 187080, 530, 1, 12912.5, -6939.06, 3.77427, 4.26303, 0, 0, 0.846874, -0.531793, 180, 0, 1);
 -- Shattered Sun Marksman anim for 4rd phase spawns
 DELETE FROM `creature_addon` WHERE `guid` in (94431, 94430, 94429, 94428, 94427, 94426, 94425,  94424, 94423, 94422, 94421, 94420, 94419, 94418, 94417, 94416, 94415, 94414, 94413, 94412, 94411, 94410, 94409, 94408, 94407, 54092, 54049, 54038, 54034, 54028, 54023, 54004, 53981);
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes0`, `bytes1`, `bytes2`, `emote`, `moveflags`, `auras`) VALUES
@@ -7056,7 +7056,7 @@ UPDATE `creature_template` SET `equipment_id`= '2119' WHERE `entry` IN ('26091',
 -- correct script_teleport (teleport from shattrath to quel'danas, from maggister terrace to quel'danas)
 insert ignore into `spell_teleport` (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) values 
 (44870, 530, 12804, -6908, 41.1, 2.21),(46841, 530, 12888, -6876, 9, 0.3);
-/*
+
 -- orb of translocation wdb data(the ones in wdb files are not existing in dbc files[wtf??wonderfull bl1zz4ard logic,lol],so I take spell id from dbc)+spell_teleport
 -- buug edit: already correct.
 UPDATE `gameobject_template` SET `data10` = 45368 WHERE `entry` = 187428;
@@ -7064,7 +7064,7 @@ UPDATE `gameobject_template` SET `data10` = 45371 WHERE `entry` = 187431;
 replace into `spell_teleport` (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) values 
 (45368, 530, 12781.2977, -6878.514, 22.785, 2.066),   
 (45371, 530, 12792.072 , -6892.482, 30.898, 5.328); 
-*/     
+     
 -- creature_template data from psdb(wowhead,wdb), coz it's not in udb 351 right now, better then nothing
 -- (http://www.wowhead.com/?npc=25036)
 REPLACE INTO `creature_template` (`entry`, `modelid_A`, `modelid_A2`, `modelid_H`, `modelid_H2`, `name`, `subname`, `IconName`, `minlevel`, `maxlevel`, `minhealth`, `maxhealth`, `minmana`, `maxmana`, `armor`, `faction_A`, `faction_H`, `npcflag`, `speed`, `scale`, `rank`, `mindmg`, `maxdmg`, `dmgschool`, `attackpower`, `baseattacktime`, `rangeattacktime`, `flags`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `class`, `race`, `minrangedmg`, `maxrangedmg`, `rangedattackpower`, `type`, `civilian`, `flag1`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `RacialLeader`, `RegenHealth`, `equipment_id`, `mechanic_immune_mask`, `ScriptName`) VALUES
