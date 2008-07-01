@@ -466,8 +466,7 @@ UPDATE `creature_template` SET `modelid_A` = 18139, `modelid_H` = 18139 WHERE `e
 UPDATE `item_template` SET `spellid_1`=34900, `spellcharges_1`=1 WHERE `entry`=28969;
 
 -- This adds an event script to temp summon Image of Wind Trader Marid so that you can turn the quest in
-REPLACE INTO `event_scripts` (id, command, datalong, datalong2, x, y, z, o) VALUES (12930, 10, 20518, 300000, 4006.81, 1517.19, -115.9, -1.6057);
-
+REPLACE INTO `event_scripts` (id, command, datalong, datalong2, x, y, z, o, datatext) VALUES (12930, 10, 20518, 300000, 4006.81, 1517.19, -115.9, -1.6057, '');
 UPDATE `gameobject` SET `id` = '181988', `position_z` = '94.418076' WHERE `guid` = '42119';
 
 REPLACE INTO `creature_onkill_reputation`
