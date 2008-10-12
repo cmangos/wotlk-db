@@ -35,13 +35,13 @@ CREATE TABLE `account` (
   `locked` tinyint(3) unsigned NOT NULL default '0',
   `last_login` timestamp NOT NULL default '0000-00-00 00:00:00',
   `online` tinyint(4) NOT NULL default '0',
-  `tbc` tinyint(3) unsigned NOT NULL default '0',
+  `expansion` tinyint(3) unsigned NOT NULL default '0',
   `mutetime` bigint(40) unsigned NOT NULL default '0',
   `locale` tinyint(3) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `idx_username` (`username`),
   KEY `idx_gmlevel` (`gmlevel`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Account System';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC COMMENT='Account System';
 
 --
 -- Dumping data for table `account`
@@ -50,10 +50,10 @@ CREATE TABLE `account` (
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` VALUES
-(1,'administrator','a34b29541b87b7e4823683ce6c7bf6ae68beaaac',3,'','0','0','','2006-04-25 10:18:56','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
-(2,'gamemaster','7841e21831d7c6bc0b57fbe7151eb82bd65ea1f9',2,'','0','0','','2006-04-25 10:18:56','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
-(3,'moderator','a7f5fbff0b4eec2d6b6e78e38e8312e64d700008',1,'','0','0','','2006-04-25 10:19:35','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
-(4,'player','3ce8a96d17c5ae88a30681024e86279f1a38c041',0,'','0','0','','2006-04-25 10:19:35','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0);
+(1,'ADMINISTRATOR','a34b29541b87b7e4823683ce6c7bf6ae68beaaac',3,'','0','0','','2006-04-25 10:18:56','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
+(2,'GAMEMASTER','7841e21831d7c6bc0b57fbe7151eb82bd65ea1f9',2,'','0','0','','2006-04-25 10:18:56','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
+(3,'MODERATOR','a7f5fbff0b4eec2d6b6e78e38e8312e64d700008',1,'','0','0','','2006-04-25 10:19:35','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0),
+(4,'PLAYER','3ce8a96d17c5ae88a30681024e86279f1a38c041',0,'','0','0','','2006-04-25 10:19:35','127.0.0.1',0,0,'0000-00-00 00:00:00',0,0,0,0);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,30 +102,6 @@ CREATE TABLE `ip_banned` (
 LOCK TABLES `ip_banned` WRITE;
 /*!40000 ALTER TABLE `ip_banned` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ip_banned` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `localization`
---
-
-DROP TABLE IF EXISTS `localization`;
-CREATE TABLE `localization` (
-  `locale` tinyint(3) unsigned NOT NULL default '0',
-  `string` char(2) NOT NULL default '',
-  PRIMARY KEY  (`locale`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `localization`
---
-
-LOCK TABLES `localization` WRITE;
-/*!40000 ALTER TABLE `localization` DISABLE KEYS */;
-INSERT INTO `localization` VALUES
-(0,'en'),
-(2,'fr'),
-(3,'de');
-/*!40000 ALTER TABLE `localization` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
