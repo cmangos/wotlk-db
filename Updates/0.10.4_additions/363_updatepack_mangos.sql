@@ -11188,7 +11188,7 @@ UPDATE `areatrigger_teleport` SET `name` = 'Sunwell Plateau (Exit)' WHERE `id` =
 -- fixes from trin db, source is same! . some small modifications
 UPDATE `creature_template` SET `lootid`='0' WHERE `entry`='21128';
 DELETE FROM `creature_loot_template` WHERE `entry`='21128'; 
-UPDATE `Creature_template` SET
+UPDATE `creature_template` SET
 `minhealth` = '104790',
 `maxhealth` = '104790'
 where `entry` = '21863';
