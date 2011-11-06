@@ -13177,6 +13177,6 @@ DELETE FROM game_event_creature WHERE guid NOT IN (SELECT guid FROM creature);
 DELETE FROM creature_questrelation WHERE id NOT IN (SELECT entry FROM creature_template);
 DELETE FROM creature_onkill_reputation WHERE creature_id NOT IN (SELECT entry FROM creature_template);
 UPDATE creature_template SET npcflag=npcflag|2 WHERE entry IN (SELECT id FROM creature_questrelation UNION SELECT id FROM creature_involvedrelation);
-UPDATE db_version set version = 'UDB 0.12.1 (402) for MaNGOS 11792 with SD2 SQL for rev. 2279';
+UPDATE db_version set version = 'UDB 0.12.2 (402) for MaNGOS 11792 with SD2 SQL for rev. 2279';
 UPDATE db_version set cache_id = 402;
 -- END
