@@ -1,4 +1,4 @@
-﻿-- 11851
+-- 11851
 ALTER TABLE db_version CHANGE COLUMN required_11831_02_mangos_command required_11851_01_mangos_string bit;
 
 DELETE FROM mangos_string WHERE entry=816;
