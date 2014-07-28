@@ -1,0 +1,132 @@
+======================================================================
+Update pack 406, for CMaNGOS 12444 for 3.3.5a, SQL for ScriptDev2 2857
+======================================================================
+Biggest changes:
+
+* BG-Gameobjects (Thx Cyberium)
+* Achievements
+* A lot of scrips/movements/gossips
+* Cleanup of instances/raids
+* Respawn of some Shadowmoon Valley areas
+* Fixes from forum as usual.
+
+
+=============================================================================
+Update pack 405, for Mangos/cmangos 12111 for 3.3.5a, SQL for ScriptDev2 2712
+=============================================================================
+Biggest changes:
+
+* Basic OPVP-Fill(Thx to stfx & Xfurry)
+* conditions-fill
+* ~400 new equipment
+* a lot of scrips/movements/gossips in most cases quest related
+* Fixes from forum as usual.
+* includes ACID 3.1.0 "Another Wild Adventure" (Thx X-Savior)
+* import script for the lazy once ;) (Thx to Schmoozerd)
+
+
+=====================================================================
+Update pack 404, for Mangos 11928 for 3.3.5a, SQL for ScriptDev2 2478
+=====================================================================
+Biggest changes:
+
+* winterveil
+* alot of scrips/movements/gossips in most cases quest related
+* 285 new equipments
+* Deadmines Fixes and Improvements(Thx @ X-Savior)
+* more creature_linking_template-entry's
+* Achivement-fixes/additions
+* fixes commited by forum-user
+* includes ACID 3.0.9c
+
+** Updated older update pack to fix the revision
+
+
+======================================================================
+Update pack 403, for Mangos 11840 for 3.3.5a, SQL for ScriptDev2 2326.
+======================================================================
+Biggest changes:
+
+* Dynamic parts of the world
+* Hellfire Ramparts fixes/updates (thx @ X-Savior)
+* Starting of filling up the creature-linking-system
+* TOC - Loot
+* gameobject_addon - fill (thx for providing rawdataz @ maximus)
+* Questfixes
+* Achivement-fixes/additions.
+* Gossips-integration.
+* Loot for Trial of the Crusader.
+* Fixes from forum as usual.
+* includes ACID 3.0.9
+
+** Updated older updatepack to fix the revision
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
