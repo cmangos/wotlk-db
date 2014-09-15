@@ -1,4 +1,76 @@
 ======================================================================
+Update pack 407, for CMaNGOS 12735 for 3.3.5a, SQL for ScriptDev2 3041
+======================================================================
+Main changes:
+* Shadowmoon Valley - almost finished (spawns/movements/etc) @ Grz3s
+* Druids flight form chain -- quest chain completed (all scripts/movements/events etc) @Grz3s
+* Lots of spawns/gossips/waypoints/scripts/events added. 
+* Fixes from forum.
+* Achievements
+* New "Buddy" system - implemented @ Grz3s
+* Creature_movement(template) prepared for unnused colums drop - completed @ Grz3s
+* First part of "New STATS system" - implemented @ Grz3s 
+* Missing vehicle data @ Xfurry (based on YTDB)
+* Instances: 100% redone and completed by @ X-Savior
+-- Tempest Keep: The Arcatraz 
+-- Tempest Keep: The Botanica
+-- Tempest Keep: The Mechanar
+-- Hellfire Citadel: Hellfire Ramparts
+* Raid and dungeon updates by @ Xfurry
+-- Ulduar
+-- Sunwell Plateau
+-- Ruby Sanctum
+-- Zul'Farrak
+-- Karazhan (Chess event)
+-- Culling of Stratholme (Intro event)
+* Quests List: 
+-- Demonic Crystal Prisons(q.10528) -H -A
+-- The Attack!(q.434) -A
+-- Challenge to the Black Flight(q.11165)
+-- Vyletongue Corruption (q.7029) -H (q.7041) -A
+-- Counting Out Time (q.4973)
+-- Laying Waste to the Unwanted(q.10078) -A
+-- Burn It Up... For the Horde!(q.10087) -H
+-- Mission: Gateways Murketh and Shaadraz(q.10129) -H 
+-- Mission: The Murketh and Shaadraz Gateways(q.10146) -A
+-- Zuluhed the Whacked(q.10866) -H -A
+-- Ally of the Netherwing(q.10870) -A -H
+-- The Soul Cannon of Reth'hedron (q.11089) -H -A
+-- The Great Murkblood Revolt (q.11081) -H -A
+-- Peace at Last (q.11152)
+-- Raptor Horns(q.865)
+-- All Clear!(q.10436)
+-- Netherwing rep. quest chain - 90% completed (all racess . quests needs core support)
+-- druids flight form chain -- quest chain completed: 
+							-- quest 10961 'The Ward of Wakening' - Druid
+							-- quest 10964 'Waking the Sleeper' - Druid
+							-- quest 10987 'To Catch A Sparrowhawk' - Druid
+							-- quest 10988 'The Raven Stones' - Druid
+							-- quest 10988 'The Eagle's Essence' - Druid
+							-- quest 10991 'The Falcon's Essence' - Druid
+							-- quest 10992 'The Hawk's Essence' - Druid
+							-- quest 10994 'Chasing the Moonstone' - Druid
+-- Minshina's Skull(q.808)
+-- Report to Orgnil(q.823)
+-- Dark Storms(q.806) - update (now completed)
+-- An Apexis Relic(q.11058, q.11080)
+-- Summon Ahune (q.11691)
+-- Call the Headless Horseman (q.11405)
+-- Gerenzo's Orders (q.1090)
+-- One Shot. One Kill. (q.5713)
+-- Death From Below (q.667)
+-- All Is Well That Ends Well (q.13631, q.13819)
+-- Slim Pickings (q.12075)
+-- A Carver and a Croaker (q.11476)
+-- Vyletongue Corruption (q.7041)
+-- The Thane of Voldrune (q.12255, q.12259)
+-- Take Down Tethyr! (q.11198)
+-- Rise, Obsidion! (q.3566)
+-- The Exorcism of Colonel Jules (q.10935)
+-- The Cipher of Damnation - Ar'tor's Charge (q.10540) -H -A
+
+
+======================================================================
 Update pack 406, for CMaNGOS 12444 for 3.3.5a, SQL for ScriptDev2 2857
 ======================================================================
 Biggest changes:

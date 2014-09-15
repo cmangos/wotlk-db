@@ -14,8 +14,8 @@ SET ScriptDev2DB="scriptdev2"
 REM ##################################################################################################
 REM DO NOT EDIT ANYTHING BELOW THIS LINE - ALL CONFIGURATION REQUIRED LOCATED IN INSTALL_SCRIPT_Config
 REM ##################################################################################################
-SET CurrentVersion="407"
-SET StableVersion="406"
+SET CurrentVersion="408"
+SET StableVersion="407"
 CLS
 ECHO =====================================================================
 ECHO UDB INSTALLATION HELPER SCRIPT - SIMPLIFIED MANAGEMENT FOR USERS
@@ -155,6 +155,8 @@ copy /a Current_Release\Updates\405_corepatch_mangos_*.sql /b Temp_Created_Files
 copy /a Current_Release\Updates\405_updatepack_mangos.sql /b Temp_Created_Files\006_UDB_Updates.sql
 copy /a Current_Release\Updates\406_corepatch_mangos_*.sql /b Temp_Created_Files\007_UDB_Updates.sql
 copy /a Current_Release\Updates\406_updatepack_mangos.sql /b Temp_Created_Files\008_UDB_Updates.sql
+copy /a Current_Release\Updates\407_corepatch_mangos_*.sql /b Temp_Created_Files\009_UDB_Updates.sql
+copy /a Current_Release\Updates\407_updatepack_mangos.sql /b Temp_Created_Files\010_UDB_Updates.sql
 copy /a Updates\*.sql /b Temp_Created_Files\100_UDB_NewData.sql
 copy /a %SD2%\sql\mangos_scriptname_clear.sql /b Temp_Created_Files\101_SD2_Clear.sql
 copy /a %SD2%\sql\mangos_scriptname_full.sql /b Temp_Created_Files\102_SD2_Full.sql
@@ -202,6 +204,8 @@ copy /a Current_Release\Updates\405_corepatch_mangos_*.sql /b Temp_Created_Files
 copy /a Current_Release\Updates\405_updatepack_mangos.sql /b Temp_Created_Files\006_UDB_Updates.sql
 copy /a Current_Release\Updates\406_corepatch_mangos_*.sql /b Temp_Created_Files\007_UDB_Updates.sql
 copy /a Current_Release\Updates\406_updatepack_mangos.sql /b Temp_Created_Files\008_UDB_Updates.sql
+copy /a Current_Release\Updates\407_corepatch_mangos_*.sql /b Temp_Created_Files\009_UDB_Updates.sql
+copy /a Current_Release\Updates\407_updatepack_mangos.sql /b Temp_Created_Files\010_UDB_Updates.sql
 copy /a %SD2%\sql\mangos_scriptname_clear.sql /b Temp_Created_Files\101_SD2_Clear.sql
 copy /a %SD2%\sql\mangos_scriptname_full.sql /b Temp_Created_Files\102_SD2_Full.sql
 copy /a %ACID%\acid_tbc.sql /b Temp_Created_Files\103_ACID_TBC.sql
@@ -311,6 +315,8 @@ copy /a Current_Release\Updates\405_corepatch_mangos_*.sql /b Temp_Created_Files
 copy /a Current_Release\Updates\405_updatepack_mangos.sql /b Temp_Created_Files\006_UDB_Updates.sql
 copy /a Current_Release\Updates\406_corepatch_mangos_*.sql /b Temp_Created_Files\007_UDB_Updates.sql
 copy /a Current_Release\Updates\406_updatepack_mangos.sql /b Temp_Created_Files\008_UDB_Updates.sql
+copy /a Current_Release\Updates\407_corepatch_mangos_*.sql /b Temp_Created_Files\009_UDB_Updates.sql
+copy /a Current_Release\Updates\407_updatepack_mangos.sql /b Temp_Created_Files\010_UDB_Updates.sql
 copy /a Updates\*.sql /b Temp_Created_Files\100_UDB_NewData.sql
 copy /a %SD2%\sql\mangos_scriptname_clear.sql /b Temp_Created_Files\101_SD2_Clear.sql
 copy /a %SD2%\sql\mangos_scriptname_full.sql /b Temp_Created_Files\102_SD2_Full.sql
@@ -384,9 +390,5 @@ ECHO -------------------------------------------------------
 ECHO.
 PAUSE
 ECHO.
-
-
-
-
 
 

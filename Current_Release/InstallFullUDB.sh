@@ -136,6 +136,13 @@ $MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/406_corepatch_mangos
 $MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/406_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
+## 407
+echo "Process Updatepack 407"
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/407_corepatch_mangos_12445_to_12670.sql
+[[ $? != 0 ]] && exit 1
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/407_updatepack_mangos.sql
+[[ $? != 0 ]] && exit 1
+
 LAST_CORE_REV="12444"
 LAST_SD2_REV="2857"
 # process future release folders
