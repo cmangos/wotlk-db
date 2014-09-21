@@ -34,12 +34,10 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (1723002,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,'RUN OFF'),
 (1723002,0,31,16793,20,0,0,0,0,0,0,0,0,0,0,0,''), -- check if creature is alive
 (1723002,1,0,0,0,16793,20,7,2000000011,2000000012,0,0,0,0,0,0,'force buddy to: say random text'),
+(1723003,0,31,17282,20,0,0,0,0,0,0,0,0,0,0,0,''), -- check if creature is alive
 (1723003,1,0,0,0,17282,62075,7 | 0x10,2000000013,0,0,0,0,0,0,0,'force buddy to: say random text');
 DELETE FROM db_script_string WHERE entry BETWEEN 2000000011 AND 2000000014;
 INSERT INTO db_script_string (entry, content_default, content_loc1, content_loc2, content_loc3, content_loc4, content_loc5, content_loc6, content_loc7, content_loc8, sound, type, language, emote, comment) VALUES
 (2000000011,'Did you find something fun to chase around, Twinkle?  I bet you did!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000000012,'It\'s just you and me, Twinkle.  Daddy\'s not going to be coming home.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000000013,'I wonder how far this would launch that white cat...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
-
-
-;
