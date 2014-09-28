@@ -44,3 +44,7 @@ INSERT INTO spell_target_position (id,target_map,target_position_x,target_positi
 (25877, 531, -7975.772, 974.820, -41.584, 4.417),
 (25871, 531, -7997.188, 979.192, -41.653, 4.896),
 (25884, 531, -8015.242, 976.553, -41.647, 4.947);
+-- linking
+DELETE FROM creature_linking_template WHERE entry IN (15922);
+INSERT INTO creature_linking_template (entry, map, master_entry, flag, search_range) VALUES
+(15922, 531, 15299, 4112, 0);
