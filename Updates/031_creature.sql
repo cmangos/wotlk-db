@@ -20,6 +20,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2241001,2241002);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2241001,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
+(2241002,0,31,17855,30,0,0,0x10,0,0,0,0,0,0,0,0,''), -- check if creature is alive 
 (2241002,1,1,3,0,17855,63549,7 | 0x10,0,0,0,0,0,0,0,0,'');
 DELETE FROM creature_linking WHERE guid = 78754;
 INSERT INTO creature_linking (guid, master_guid, flag) VALUES
