@@ -2,7 +2,7 @@
 UPDATE creature SET position_z = 130.776 WHERE id = 63550;
 -- Expedition Outrider #1 - Wyrmskull Bridge
 UPDATE creature SET MovementType = 2, spawndist = 0 WHERE guid = 78755;
-UPDATE creature_template SET SpeedWalk = 1, SpeedRun = 1.385714 WHERE guid = 78755;
+UPDATE creature_template SET SpeedWalk = 1, SpeedRun = 1.385714 WHERE Entry = 22410;
 DELETE FROM creature_movement WHERE id = 78755;
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, textid1, textid2, textid3, textid4, textid5, emote, spell, wpguid, orientation, model1, model2) VALUES
 (78755,1,2992.1,5882.41,131.079,1000,2241001,0,0,0,0,0,0,0,0,1.09818,0,0),
@@ -20,12 +20,12 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2241001,2241002);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2241001,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
-(2241002,0,31,17855,30,0,0,0x10,0,0,0,0,0,0,0,0,''), -- check if creature is alive 
-(2241002,1,1,3,0,17855,63549,7 | 0x10,0,0,0,0,0,0,0,0,'');
+(2241002,0,31,17855,30,0,0,0,0,0,0,0,0,0,0,0,''), -- check if creature is alive 
+(2241002,1,1,3,0,17855,30,7,0,0,0,0,0,0,0,0,'');
 DELETE FROM creature_linking WHERE guid = 78754;
 INSERT INTO creature_linking (guid, master_guid, flag) VALUES
 (78754, 78755, 515);
 -- Expedition Outrider #2 - Wyrmskull Bridge (req. for link)
 UPDATE creature SET position_x = 2990.759, position_y = 5880.856, position_z = 131.29181, orientation = 1.16584 WHERE guid = 78754;
 -- part of [030]
-UPDATE creature SET spawntimesecs = 60 WHERE guid = 86873 - quest req.
+UPDATE creature SET spawntimesecs = 60 WHERE guid = 86873 -- quest req.
