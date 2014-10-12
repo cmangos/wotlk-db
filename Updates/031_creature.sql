@@ -28,4 +28,4 @@ INSERT INTO creature_linking (guid, master_guid, flag) VALUES
 -- Expedition Outrider #2 - Wyrmskull Bridge (req. for link)
 UPDATE creature SET position_x = 2990.759, position_y = 5880.856, position_z = 131.29181, orientation = 1.16584 WHERE guid = 78754;
 -- part of [030]
-UPDATE creature SET spawntimesecs = 60 WHERE guid = 86873 -- quest req.
+UPDATE creature SET spawntimesecs = 60 WHERE guid = 86873; -- quest req.
