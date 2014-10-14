@@ -149,6 +149,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 UPDATE creature SET deathState = 0 WHERE id  = 28394;
 UPDATE creature SET spawntimesecs = 20 WHERE id IN (28390,28391,28392,28393,28394);
 UPDATE creature_template SET UnitFlags = 0x2000000 + 0x8000 WHERE entry = 28394;
+UPDATE creature_template SET UnitFlags = 33587200 WHERE entry = 28391;
 DELETE FROM creature_addon WHERE guid = 129459;
 DELETE FROM creature_template_addon WHERE entry = 28394;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
