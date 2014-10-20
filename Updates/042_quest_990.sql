@@ -4,7 +4,7 @@ DELETE FROM dbscripts_on_quest_end WHERE id IN (994,995);
 INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (994,0,31,3694,15,0,0,0x08,0,0,0,0,0,0,0,0,''), -- check if creature is alive (prevent double spawn)
 (994,1,10,3694,650000,0,0,0,0,0,0,0,6339.14,341.764,24.3387,0.498114,'spawn Sentinel Selarin'),
-(995,0,31,3694,15,0,0,0x08,0,0,0,0,0,0,0,0,''), -- check if creature is alive (prevent double spawn) (3694,1,6353.39,354.557,22.3779,0,0,0,0,0,0,0,0,0,0,0.768994,0,0),
+(995,0,31,3694,15,0,0,0x08,0,0,0,0,0,0,0,0,''), -- check if creature is alive (prevent double spawn)
 (995,1,10,3694,650000,0,0,0,0,0,0,0,6339.14,341.764,24.3387,0.498114,'spawn Sentinel Selarin');
 UPDATE quest_template SET CompleteScript = 994 WHERE entry = 994;
 UPDATE quest_template SET CompleteScript = 995 WHERE entry = 995;
