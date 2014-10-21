@@ -25,7 +25,7 @@ INSERT INTO creature_movement_template VALUES
 (3694,9,6428.93,396.971,11.1736,0,0,0,0,0,0,0,0,0,0,5.0974,0,0),
 (3694,10,6432,388.708,13.7662,0,0,0,0,0,0,0,0,0,0,5.02044,0,0),
 (3694,11,6436.71,375.264,13.9403,0,0,0,0,0,0,0,0,0,0,4.74006,0,0),
-(3694,12,6434.92,367.203,13.9403,600000,0,0,0,0,0,0,0,0,0,4.6089,0,0), -- missing chat with 'Terenthis'
+(3694,12,6434.92,367.203,13.9403,600000,369402,0,0,0,0,0,0,0,0,4.6089,0,0), -- may not be complete.. 
 (3694,13,6436.9,374.833,13.9403,0,0,0,0,0,0,0,0,0,0,1.85765,0,0),
 (3694,14,6431.63,389.723,13.5875,0,0,0,0,0,0,0,0,0,0,1.96918,0,0),
 (3694,15,6428.84,397.45,11.0941,0,0,0,0,0,0,0,0,0,0,2.58414,0,0),
@@ -36,13 +36,17 @@ INSERT INTO creature_movement_template VALUES
 (3694,20,6377.21,357.731,20.6589,0,0,0,0,0,0,0,0,0,0,3.04995,0,0),
 (3694,21,6358.35,357.353,22.2106,0,0,0,0,0,0,0,0,0,0,3.50941,0,0),
 (3694,22,6348.45,352.662,22.6056,0,0,0,0,0,0,0,0,0,0,4.03249,0,0),
-(3694,23,6322.42,326.649,25.3338,2000,369402,0,0,0,0,0,0,0,0,3.91389,0,0);
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (369401,369402); 
+(3694,23,6322.42,326.649,25.3338,2000,369403,0,0,0,0,0,0,0,0,3.91389,0,0);
+DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 369401 AND 369403; 
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (369401,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin active'),
 (369401,1,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
-(369402,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin unactive'),
-(369402,2,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'desp');
+(369402,3,0,0,0,0,0,0,2000000260,0,0,0,0,0,0,0,''),
+(369403,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin unactive'),
+(369403,2,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'desp');
+DELETE FROM db_script_string WHERE entry = 2000000260;
+INSERT INTO db_script_string (entry, content_default, content_loc1, content_loc2, content_loc3, content_loc4, content_loc5, content_loc6, content_loc7, content_loc8, sound, type, language, emote, comment) VALUES
+(2000000260,'Terenthis, Raene sent me to find you. The Sentinels are in need of help in Ashenvale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL);
 -- quest must be available for both options 
 UPDATE quest_template SET PrevQuestid = 0 WHERE entry = 990;
 UPDATE quest_template SET NextQuestid = 990 WHERE entry IN (994,995);
