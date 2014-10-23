@@ -39,7 +39,7 @@ And if something goes wrong?
 The best way to submit an issue is to use the [Issue Tracker:][1].
 
 
-[1]: https://github.com/Grz3s/Database/issues/ "Issue Tracker"
+[1]: https://github.com/unified-db/Database/issues/ "Issue Tracker"
 [10]: https://github.com/cmangos/mangos-wotlk "CMaNGOS-WOTLK"
 [11]: http://cmangos.net/ "CMaNGOS Project"
 [14]: https://github.com/cmangos/issues/wiki/Installation-Instructions "CMaNGOS installation instructions"
