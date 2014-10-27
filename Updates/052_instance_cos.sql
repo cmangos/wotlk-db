@@ -188,7 +188,13 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 -- Last WP - set to pause and execute further events from SD2
 DELETE FROM dbscripts_on_creature_movement WHERE id=2649931;
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,buddy_entry,search_radius,data_flags,dataint,comments) VALUES
-(2649931,0,32,1,0,0,0,0,0,'Arthas - pause WP Movement');
+(2649931,0,32,1,0,0,0,0,0,'Arthas - pause WP Movement'),
+(2649931,0,32,0,0,27747,132436,16,0,'High Elf Mage-Priest - resume WP movement'), -- left
+(2649931,0,32,0,0,27747,132435,16,0,'High Elf Mage-Priest - resume WP movement'), -- right
+(2649931,0,32,0,0,27745,132418,16,0,'Lordaeron Footman - resume WP movement'), -- left middle
+(2649931,0,32,0,0,27745,132417,16,0,'Lordaeron Footman - resume WP movement'), -- right middle
+(2649931,0,32,0,0,27745,132419,16,0,'Lordaeron Footman - resume WP movement'), -- left front
+(2649931,0,32,0,0,27745,132416,16,0,'Lordaeron Footman - resume WP movement'); -- right front
 
 
 -- ############
@@ -250,33 +256,39 @@ DELETE FROM creature_movement WHERE id=132436;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132436, 1, 2037.91, 1293.03, 143.399, 1000, 2774701, 4.729),
 (132436, 2, 2064.724, 1292.197, 141.9911, 0, 0, 0), 
-(132436, 3, 2074.805, 1292.172, 141.6728, 1000, 2774701, 6.27);
+(132436, 3, 2074.805, 1292.172, 141.6728, 1000, 2774701, 6.27),
+(132436, 4, 2091.476, 1294.284, 139.8228, 1000, 2774701, 6.27);
 DELETE FROM creature_movement WHERE id=132435;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132435, 1, 2037.59, 1281.81, 143.566, 1000, 2774701, 1.483),
 (132435, 2, 2060.791, 1282.987, 142.1430, 0, 0, 0), 
-(132435, 3, 2074.624, 1282.958, 141.6344, 1000, 2774701, 6.27);
+(132435, 3, 2074.624, 1282.958, 141.6344, 1000, 2774701, 6.27),
+(132435, 4, 2091.26, 1281.715, 139.9222, 1000, 2774701, 6.27);
 -- footmen movement
 DELETE FROM creature_movement WHERE id=132418;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132418, 1,2042.13, 1293.14, 143.236, 1000, 2774701, 4.642),
 (132418, 2, 2064.724, 1292.197, 141.9911, 0, 0, 0), 
-(132418, 3, 2077.737, 1290.441, 141.5698, 1000, 2774701, 6.27);
+(132418, 3, 2077.737, 1290.441, 141.5698, 1000, 2774701, 6.27),
+(132418, 4, 2096.125, 1290.533, 138.8193, 1000, 2774701, 6.27);
 DELETE FROM creature_movement WHERE id=132417;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132417, 1,2041.97, 1281.66, 143.454, 1000, 2774701, 1.623),
 (132417, 2, 2060.791, 1282.987, 142.1430, 0, 0, 0), 
-(132417, 3, 2077.590, 1284.609, 141.5710, 1000, 2774701, 6.27);
+(132417, 3, 2077.590, 1284.609, 141.5710, 1000, 2774701, 6.27),
+(132417, 4, 2096.411, 1284.227, 138.799, 1000, 2774701, 6.27);
 DELETE FROM creature_movement WHERE id=132419;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132419, 1, 2046.86, 1293.33, 143.032, 1000, 2774701, 4.782),
 (132419, 2, 2064.724, 1292.197, 141.9911, 0, 0, 0), 
-(132419, 3, 2078.055, 1293.624, 141.5544, 1000, 2774701, 6.27);
+(132419, 3, 2078.055, 1293.624, 141.5544, 1000, 2774701, 6.27),
+(132419, 4, 2096.939, 1297.57, 138.9689, 1000, 2774701, 6.27);
 DELETE FROM creature_movement WHERE id=132416;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
 (132416, 1, 2046.71, 1281.91, 143.221, 1000, 2774701, 1.518),
 (132416, 2, 2060.791, 1282.987, 142.1430, 0, 0, 0), 
-(132416, 3, 2078.365, 1281.254, 141.5182, 1000, 2774701, 6.27);
+(132416, 3, 2078.365, 1281.254, 141.5182, 1000, 2774701, 6.27),
+(132416, 4, 2096.328, 1278.988, 139.4345, 1000, 2774701, 6.27);
 -- citizen movement
 DELETE FROM creature_movement WHERE id=132326;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,waittime,script_id,orientation) VALUES
@@ -291,3 +303,6 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 DELETE FROM creature_template_addon WHERE entry=28612;
 INSERT INTO creature_template_addon (entry,mount) VALUES
 (28612, 14584);
+DELETE FROM dbscripts_on_spell WHERE id=53435;
+INSERT INTO dbscripts_on_spell (id,delay,command,datalong,datalong2,data_flags,comments) VALUES
+(53435,0,15,53436,0,6,'Cast Teleport to CoT Stratholme Phase 4'); 
