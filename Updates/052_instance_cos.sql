@@ -45,7 +45,7 @@ INSERT INTO db_script_string (entry,content_default,sound,type,language,emote,co
 (@DB_STRING_ENTRY+32,'Yes, this is the beginning. I\'ve been waiting for you, young prince. I am Mal\'Ganis.',14410,1,0,0,'Malganis - city 4'),
 (@DB_STRING_ENTRY+33,'As you can see, your people are now mine. I will now turn this city household by household, until the flame of life has been snuffed out... forever.',14411,1,0,378,'Malganis - city 5'),
 (@DB_STRING_ENTRY+34,'I won\'t allow it, Mal\'Ganis! Better that these people die by my hand than serve as your slaves in death!',14296,1,0,397,'Arthas - city 6'),
-(@DB_STRING_ENTRY+35,'Mal\'Ganis will send out some of his Scourge minions to interfere with us. Those of you with the strongest steel and magic shall go forth and destroy them. I will lead the rest of my forces in purging Stratholme of the infected.',14885,0,0,1,'Arthas - city 7');
+(@DB_STRING_ENTRY+35,'Mal\'Ganis will send out some of his Scourge minions to interfere with us. Those of you with the strongest steel and magic shall go forth and destroy them. I will lead the rest of my forces in purging Stratholme of the infected.',14885,1,0,1,'Arthas - city 7');
 
 
 -- ############
