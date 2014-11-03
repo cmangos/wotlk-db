@@ -25,7 +25,7 @@ INSERT INTO creature_movement_template VALUES
 (3694,9,6428.93,396.971,11.1736,0,0,0,0,0,0,0,0,0,0,5.0974,0,0),
 (3694,10,6432,388.708,13.7662,0,0,0,0,0,0,0,0,0,0,5.02044,0,0),
 (3694,11,6436.71,375.264,13.9403,0,0,0,0,0,0,0,0,0,0,4.74006,0,0),
-(3694,12,6434.92,367.203,13.9403,600000,369402,0,0,0,0,0,0,0,0,4.6089,0,0), -- may not be complete.. 
+(3694,12,6434.92,367.203,13.9403,600000,369402,0,0,0,0,0,0,0,0,4.6089,0,0), 
 (3694,13,6436.9,374.833,13.9403,0,0,0,0,0,0,0,0,0,0,1.85765,0,0),
 (3694,14,6431.63,389.723,13.5875,0,0,0,0,0,0,0,0,0,0,1.96918,0,0),
 (3694,15,6428.84,397.45,11.0941,0,0,0,0,0,0,0,0,0,0,2.58414,0,0),
@@ -42,11 +42,18 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (369401,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin active'),
 (369401,1,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
 (369402,3,0,0,0,0,0,0,2000000260,0,0,0,0,0,0,0,''),
+(369402,7,31,3693,30,0,0,0,0,0,0,0,0,0,0,0,''),
+(369402,8,0,0,0,3693,30,7,2000000395,0,0,0,0,0,0,0,''),
+(369402,13,0,0,0,0,0,0,2000000396,0,0,0,0,0,0,0,''),
+(369402,18,0,0,0,0,0,0,2000000397,0,0,0,0,0,0,0,''),
 (369403,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin unactive'),
 (369403,2,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'desp');
-DELETE FROM db_script_string WHERE entry = 2000000260;
+DELETE FROM db_script_string WHERE entry IN (2000000260,2000000395,2000000396,2000000397);
 INSERT INTO db_script_string (entry, content_default, content_loc1, content_loc2, content_loc3, content_loc4, content_loc5, content_loc6, content_loc7, content_loc8, sound, type, language, emote, comment) VALUES
-(2000000260,'Terenthis, Raene sent me to find you. The Sentinels are in need of help in Ashenvale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL);
+(2000000260,'Terenthis, Raene sent me to find you. The Sentinels are in need of help in Ashenvale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000395,'Hello, Selarin. I\'m afraid I cannot help you at the moment, but perhaps some of the adventurers here in Auberdine can...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000396,'Thank you, Terenthis. I shall remain here for as long as I can.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000397,'Hopefully I can send a worthy few to help Ashenvale and the Sentinels.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL);
 -- quest must be available for both options 
 UPDATE quest_template SET PrevQuestid = 0 WHERE entry = 990;
 UPDATE quest_template SET NextQuestid = 990 WHERE entry IN (994,995);
