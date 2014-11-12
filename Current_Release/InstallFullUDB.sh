@@ -204,7 +204,7 @@ then
   echo "Applying additional ScriptDev2 updates from path $CORE_PATH/src/bindings/ScriptDev2"
   echo
 
-  for NEXT_SD2_MILESTONE in ${NEXT_SD_MILESTONES}
+  for NEXT_SD2_MILESTONE in ${NEXT_SD2_MILESTONES}
   do
     # A new milestone was released, apply additional updates
     if [ -e ${CORE_PATH}/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/ ]
