@@ -110,37 +110,37 @@ $MYSQL_COMMAND < ${ADDITIONAL_PATH}Full_DB/UDB_0.12.2_mangos_11792_SD2_2279.sql
 
 ## 403
 echo "Process Updatepack 403"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/403_corepatch_mangos_11793_to_11840.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/403_corepatch_mangos_11793_to_11840.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/403_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/403_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 404
 echo "Process Updatepack 404"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/404_corepatch_mangos_11841_to_11928.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/404_corepatch_mangos_11841_to_11928.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/404_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/404_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 405
 echo "Process Updatepack 405"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/405_corepatch_mangos_11929_to_12111.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/405_corepatch_mangos_11929_to_12111.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/405_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/405_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 406
 echo "Process Updatepack 406"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/406_corepatch_mangos_12112_to_12444.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/406_corepatch_mangos_12112_to_12444.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/406_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/406_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 407
 echo "Process Updatepack 407"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/407_corepatch_mangos_12445_to_12670.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/407_corepatch_mangos_12445_to_12670.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/0.12.2_additions/407_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/407_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 LAST_CORE_REV="12444"
