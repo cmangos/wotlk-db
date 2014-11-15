@@ -9,7 +9,7 @@ INSERT INTO dbscripts_on_go_template_use (id, command, datalong, datalong2, comm
 -- missing 'Lithic Talonguard' - added (reused empty guid)
 DELETE FROM creature WHERE guid = 32072;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES 
-(32072,22388,530,1,1,0,1583,-3673.55,5844.84,-0.737886,4.87915,25,5,0,5600,0,0,1);
+(32072,22388,530,1,1,0,0,-3673.55,5844.84,-0.737886,4.87915,25,5,0,5600,0,0,1);
 -- missing 'Cursed Eggs' and [PH]Arakkoa Egg - added  (reused empty guids)
 DELETE FROM gameobject WHERE guid IN (35829,39912,39913,39914,39915,39916,39917,39918,39919,39920,65109,65144,65155,65161,65185,65190,65203,65208,65211,65213,65223,65225,65226,65227,65233,65234,65243);
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES 
