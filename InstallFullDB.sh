@@ -7,8 +7,8 @@
 ####################################################################################################
 
 #internal use
-SCRIPT_FILE="InstallFullUDB.sh"
-CONFIG_FILE="InstallFullUDB.config"
+SCRIPT_FILE="InstallFullDB.sh"
+CONFIG_FILE="InstallFullDB.config"
 # testing only
 ADDITIONAL_PATH=""
 
@@ -70,7 +70,7 @@ function display_help {
 echo
 echo "Welcome to the UDB helper $SCRIPT_FILE"
 echo
-echo "Run this tool from a bash compatibel terminal (on windows like Git Bash)"
+echo "Run this tool from a bash compatible terminal (on windows like Git Bash)"
 echo
 echo "To configure edit the file $CONFIG_FILE"
 echo
@@ -105,46 +105,46 @@ echo .
 
 ## Full
 echo "Process UDB 0.12.2"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Full_DB/UDB_0.12.2_mangos_11792_SD2_2279.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Full_DB/UDB_0.12.2_mangos_11792_SD2_2279.sql
 [[ $? != 0 ]] && exit 1
 
 ## 403
 echo "Process Updatepack 403"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/403_corepatch_mangos_11793_to_11840.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/403_corepatch_mangos_11793_to_11840.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/403_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/403_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 404
 echo "Process Updatepack 404"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/404_corepatch_mangos_11841_to_11928.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/404_corepatch_mangos_11841_to_11928.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/404_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/404_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 405
 echo "Process Updatepack 405"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/405_corepatch_mangos_11929_to_12111.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/405_corepatch_mangos_11929_to_12111.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/405_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/405_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 406
 echo "Process Updatepack 406"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/406_corepatch_mangos_12112_to_12444.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/406_corepatch_mangos_12112_to_12444.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/406_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/406_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
 ## 407
 echo "Process Updatepack 407"
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/407_corepatch_mangos_12445_to_12670.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/407_corepatch_mangos_12445_to_12670.sql
 [[ $? != 0 ]] && exit 1
-$MYSQL_COMMAND < ${ADDITIONAL_PATH}Updates/407_updatepack_mangos.sql
+$MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
-LAST_CORE_REV="12444"
-LAST_SD2_REV="2857"
+LAST_CORE_REV="12670"
+LAST_SD2_REV="3031"
 # process future release folders
 NEXT_MILESTONES="0.18 0.19 0.20"
 NEXT_SD2_MILESTONES="0.7 0.8"
