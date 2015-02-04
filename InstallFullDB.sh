@@ -143,19 +143,52 @@ $MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/407_corepatch_mangos_
 $MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
+
+## Change these settings with new updatepacks
 LAST_CORE_REV="12670"
 LAST_SD2_REV="3031"
-# process future release folders
+## Change these lists when new core or SD2 milestones were released
 NEXT_MILESTONES="0.18 0.19 0.20"
 NEXT_SD2_MILESTONES="0.7 0.8"
 
+
+# Process files in Updates folder
+echo
+echo "Applying additional updates from Updates folder"
+echo
+for f in Updates/*.sql
+do
+  CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
+  echo "Applying Update $CUR_REV"
+  $MYSQL_COMMAND < "$f"
+  [[ $? != 0 ]] && exit 1
+
+  # Was this a core or SD2-update?
+  case "$f" in
+    *_import_corepatch_*.sql)
+      LAST_CORE_REV=`basename "$f" | sed 's/.*_\([0-9]*\)\.sql$/\1/' `
+      echo "Applied core update(s up to) $LAST_CORE_REV"
+    ;;
+    *_import_sd2_*.sql)
+      LAST_SD2_REV=`basename "$f" | sed 's/.*_r\([0-9]*\)\.sql$/\1/' `
+      echo "Applied SD2 update(s up to) $LAST_SD2_REV"
+    ;;
+  esac
+done
+
+#
+# Process core updates if desired
+#
 if [ "$CORE_PATH" != "" ]
 then
-  if [ ! -e $CORE_PATH ]
+  if [ ! -e "$CORE_PATH" ]
   then
     echo "Path to core provided, but directory not found! $CORE_PATH"
     exit 1
   fi
+
+  # Convert path to unix style
+  CORE_PATH=`(cd "$CORE_PATH"; pwd)`
 #
 #               Core updates
 #
@@ -163,21 +196,21 @@ then
   echo
   echo "Applying additional core updates from path $CORE_PATH"
   echo
-
+# process future release folders
   for NEXT_MILESTONE in ${NEXT_MILESTONES};
   do
     # A new milestone was released, apply additional updates
-    if [ -e ${CORE_PATH}/sql/updates/${NEXT_MILESTONE}/ ]
+    if [ -e "${CORE_PATH}"/sql/updates/${NEXT_MILESTONE}/ ]
     then
       echo "Apply core updates from milestone $NEXT_MILESTONE"
-      for f in ${CORE_PATH}/sql/updates/${NEXT_MILESTONE}/*_*_mangos_*.sql
+      for f in "${CORE_PATH}"/sql/updates/${NEXT_MILESTONE}/*_*_mangos_*.sql
       do
-        CUR_REV=`basename $f | sed 's/^\([0-9]*\)_.*/\1/' `
+        CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
         if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
         then
           # found a newer core update file
-          echo "Append core update `basename $f` to database $DATABASE"
-          $MYSQL_COMMAND < $f
+          echo "Append core update `basename "$f"` to database $DATABASE"
+          $MYSQL_COMMAND < "$f"
           [[ $? != 0 ]] && exit 1
         fi
       done
@@ -185,39 +218,40 @@ then
   done
 
   # Apply remaining files from main folder
-  for f in $CORE_PATH/sql/updates/*_*_mangos_*.sql
+  for f in "${CORE_PATH}"/sql/updates/*_*_mangos_*.sql
   do
-    CUR_REV=`basename $f | sed 's/^\([0-9]*\)_.*/\1/' `
+    CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
     if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
     then
       # found a newer core update file
-      echo "Append core update `basename $f` to database $DATABASE"
-      $MYSQL_COMMAND < $f
+      echo "Append core update `basename "$f"` to database $DATABASE"
+      $MYSQL_COMMAND < "$f"
       [[ $? != 0 ]] && exit 1
     fi
   done
   echo "All core updates applied"
+
 #
 #               ScriptDev2 updates
 #
   echo
   echo "Applying additional ScriptDev2 updates from path $CORE_PATH/src/bindings/ScriptDev2"
   echo
-
+# process future release folders
   for NEXT_SD2_MILESTONE in ${NEXT_SD2_MILESTONES}
   do
     # A new milestone was released, apply additional updates
-    if [ -e ${CORE_PATH}/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/ ]
+    if [ -e "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/ ]
     then
       echo "Apply SD2 updates from milestone $NEXT_SD2_MILESTONE"
-      for f in ${CORE_PATH}/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/r*_mangos.sql
+      for f in "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/r*_mangos.sql
       do
-        CUR_REV=`basename $f | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
+        CUR_REV=`basename "$f" | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
         if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
         then
           # found a newer core update file
-          echo "Append SD2 update`basename $f` to database $DATABASE"
-          $MYSQL_COMMAND < $f
+          echo "Append SD2 update`basename "$f"` to database $DATABASE"
+          $MYSQL_COMMAND < "$f"
           [[ $? != 0 ]] && exit 1
         fi
       done
@@ -225,14 +259,14 @@ then
   done
 
   # Apply remaining files from main folder
-  for f in $CORE_PATH/src/bindings/ScriptDev2/sql/updates/r*_mangos.sql
+  for f in "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/r*_mangos.sql
   do
-    CUR_REV=`basename $f | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
+    CUR_REV=`basename "$f" | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
     if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
     then
       # found a newer core update file
-      echo "Append SD2 update`basename $f` to database $DATABASE"
-      $MYSQL_COMMAND < $f
+      echo "Append SD2 update`basename "$f"` to database $DATABASE"
+      $MYSQL_COMMAND < "$f"
       [[ $? != 0 ]] && exit 1
     fi
   done
@@ -245,15 +279,18 @@ fi
 
 if [ "$ACID_PATH" != "" ]
 then
-  if [ ! -e $ACID_PATH ]
+  if [ ! -e "$ACID_PATH" ]
   then
     echo "Path to acid provided, but directory not found! $ACID_PATH"
     exit 1
   fi
 
+  # Convert path to unix style
+  ACID_PATH=`(cd "$ACID_PATH"; pwd)`
+
   # Apply acid_wotlk.sql
   echo "Applying $ACID_PATH/acid_wotlk.sql ..."
-  $MYSQL_COMMAND < ${ACID_PATH}/acid_wotlk.sql
+  $MYSQL_COMMAND < "${ACID_PATH}"/acid_wotlk.sql
   [[ $? != 0 ]] && exit 1
   echo "Recent state of ACID applied"
 fi
