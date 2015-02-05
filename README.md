@@ -27,10 +27,16 @@ with creatures, items, objects, quests, etc.
 
 It must be applied after creating the `mangos` database from your CMaNGOS core distribution [CMaNGOS-WOTLK][10] from [CMaNGOS Project][11].
 
-For Easy Installation Edit The Following Windows Batch File `./Windows_Install_Script.bat` if you are a Windows User and configure
-the Installation Options Setting Your MYSQL Database Names, Passwords and Source Folders.
+If you used the default values when installing your mangos core, simply run into a bash compatible shell (like Bash Git for Windows) the following command  ./InstallFullDB.sh .
 
-It will provide you a Menu With Various Installation Options and Configurations That Have Greatly Simplified The Process.
+It will create a single file  InstallFullDB.config .
+
+If you have modified the default values for connecting to the database, in order to use this database repository, you will have to open  InstallFullDB.config , and edit in the desired database, username and password according to how you have configured your MySQL server. Default values for mangos core are  username:mangos ,  password:mangos ,  database:mangos . For security reasons, it is strongly adviced to use different username and password.
+
+Once you have the desired database user and rights configured in MySQL, you may run again the  ./InstallFullDB.sh  command to load the individual data tables into your database, populate them and apply all updates since the last milestone.
+
+Alternatively:
+You can use Windows Batch File `./Windows_Install_Script.bat` if you are a Windows User and configure the Installation Options Setting Your MYSQL Database Names, Passwords and Source Folders. It will provide you a Menu With Various Installation Options and Configurations That Have Greatly Simplified The Process.
 
 For a full installation guide, please refer to [CMaNGOS installation instructions][14].
 
