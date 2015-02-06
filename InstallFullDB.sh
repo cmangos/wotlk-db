@@ -145,7 +145,7 @@ $MYSQL_COMMAND < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos
 
 
 ## Change these settings with new updatepacks
-LAST_CORE_REV="12670"
+LAST_CORE_REV="12823"
 LAST_SD2_REV="3031"
 ## Change these lists when new core or SD2 milestones were released
 NEXT_MILESTONES="0.18 0.19 0.20"
