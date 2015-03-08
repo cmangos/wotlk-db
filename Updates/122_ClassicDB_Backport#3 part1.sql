@@ -58,7 +58,8 @@ INSERT INTO creature (guid, id, map, modelid, equipment_id, position_x, position
 -- Classic [0900]
 -- Dire Maul: North was finally populated by Gordok Reavers.
 DELETE FROM creature WHERE guid = 134876; -- Gordok Captain being replaced by Reaver. Should be pooled properly, but addition to the system are needed.
-DELETE FROM creature WHERE id = 11450 AND guid IN (52150,128636,128637,128638,128639,128640,128641,128642,128643,128644,128645,128646,128647,128648,128649);
+DELETE FROM creature WHERE id = 11450;
+DELETE FROM creature WHERE guid IN (52150,128636,128637,128638,128639,128640,128641,128642,128643,128644,128645,128646,128647,128648,128649);
 INSERT INTO creature (guid, id, map, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 (52150, 11450, 429, 0, 0, 387.4085, 462.7724, -7.148942, 2.6878070, 7200, 0, 0, (SELECT MaxLevelHealth FROM creature_template WHERE Entry = 11450), (SELECT MaxLevelMana FROM creature_template WHERE Entry = 11450), 0, 0),
 (128636, 11450, 429, 0, 0, 419.0150, 538.2688, -18.26003, 0.4886922, 7200, 0, 0, (SELECT MaxLevelHealth FROM creature_template WHERE Entry = 11450), (SELECT MaxLevelMana FROM creature_template WHERE Entry = 11450), 0, 0),
@@ -131,11 +132,12 @@ UPDATE creature_template SET MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 
 
 -- Classic [0896]
 -- Badlands - Quest: Disharmony of Fire should not be available if you didn't complete 'Disharmony of Flame'.
-UPDATE quest_template SET PrevQuestId = 3906 WHERE entry =3907;
+UPDATE quest_template SET PrevQuestId = 3906 WHERE entry = 3907;
 
 -- Classic [0894]
 -- BRD - Thunderbrew Lager Kegs are now spawned correctly.
-DELETE FROM gameobject WHERE id= 164911 AND guid IN (66158,66161,66163);
+DELETE FROM gameobject WHERE id = 164911;
+DELETE FROM gameobject WHERE guid IN (66158,66161,66163);
 INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
 (66158, 164911, 230, 914.3752, -146.9912, -49.75655, 0, 0, 0, -0.9636297, 0.2672410, 604800, 100, 1),
 (66161, 164911, 230, 915.7144, -149.2887, -49.75705, 0, 0, 0, -0.9681473, 0.2503814, 604800, 100, 1),
@@ -143,11 +145,12 @@ INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orien
 
 -- Classic [0893]
 -- Fixed quest text of quest 348 (Stranglethorn Fever) because it was obviously manually added and wrong
-UPDATE `quest_template` SET `Objectives` = 'Sick...so...very s-s-sick....$b$b...have contracted Stranglethorn Fever...deadly v-v-virus...$b$b...only cure...is...is...to eat the heart of M-m-m-m-mokk the Savage...elusive white beast...$b$b...Witch doctor Unbagwa...only one who can s-s-summon....$b$b...seek Unbagwa in hidden cave on southern cape...$b$b...hurry...dying...dying....' WHERE `entry` = 348;
+UPDATE quest_template SET Objectives = 'Sick...so...very s-s-sick....$b$b...have contracted Stranglethorn Fever...deadly v-v-virus...$b$b...only cure...is...is...to eat the heart of M-m-m-m-mokk the Savage...elusive white beast...$b$b...Witch doctor Unbagwa...only one who can s-s-summon....$b$b...seek Unbagwa in hidden cave on southern cape...$b$b...hurry...dying...dying....' WHERE entry = 348;
 
 -- Classic [0890]
 -- Felvine Shards are not available until you kill Alzzin and were slighty off position.
-DELETE FROM gameobject WHERE id = 179559 AND guid IN (66151,66153,66154,66155,66157);
+DELETE FROM gameobject WHERE id = 179559;
+DELETE FROM gameobject WHERE guid IN (66151,66153,66154,66155,66157);
 INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
 (66151, 179559, 429, 275.8198, -424.0976, -119.9618, 0, 0, 0, -0.8241262, 0.56640610, -604800, 0, 1),
 (66153, 179559, 429, 274.3399, -424.0255, -119.9618, 0, 0, 0, 0.30901620, 0.95105680, -604800, 0, 1),
@@ -302,8 +305,9 @@ UPDATE gameobject_template SET faction = 1375 WHERE entry IN (97700, 104600);
 -- Fixed gossip menu of creature 13278 (Duke Hydraxis) in Azshara
 -- Now players will be able to get the required items to summon Majordomo
 -- Executus in Molten Core
-DELETE FROM gossip_menu WHERE entry = 5065 AND text_id IN (6109, 6158, 8541, 8542);
+DELETE FROM gossip_menu WHERE entry = 5065;
 INSERT INTO gossip_menu VALUES
+(5065, 6108, 0, 0),
 (5065, 6109, 0, 981),
 (5065, 6158, 0, 982),
 (5065, 8541, 0, 990),
@@ -616,7 +620,7 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 -- Classic [0848]
 -- STV - Item: Encrusted Tail Fin * should only drop from Murlcos located in the Vile Reef.
 -- ( Patch 1.2.0 (18-Dec-2004): Murkgill Murlocs in Stranglethorn no longer drop Encrusted Tail Fin.)
-DELETE FROM creature_loot_template WHERE item=5796 AND entry IN (4457, 4458, 4459, 4460, 4461);
+DELETE FROM creature_loot_template WHERE item = 5796 AND entry IN (4457, 4458, 4459, 4460, 4461);
 
 -- Classic [0846]
 -- Hearthsinger Forresten - Stratholme
