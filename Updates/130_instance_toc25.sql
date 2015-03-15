@@ -9,16 +9,6 @@ DELETE FROM npc_spellclick_spells WHERE npc_entry IN (34567,34568);
 INSERT INTO npc_spellclick_spells (npc_entry, spell_id, quest_start, quest_start_active, quest_end, cast_flags, condition_id) VALUES
 (34567,65684,0,0,0,1,0),
 (34568,65686,0,0,0,1,0);
--- linking
-DELETE FROM creature_linking_template WHERE entry IN (34496,34704,34720,34628,34630,34567,34568);
-INSERT INTO creature_linking_template (entry,map,master_entry,flag,search_range) VALUES
-(34496,649,34497,4099,0),
-(34704,649,34497,4096,0),
-(34720,649,34497,4096,0),
-(34628,649,34497,4096,0),
-(34630,649,34497,4096,0),
-(34567,649,34497,4096,0),
-(34568,649,34497,4096,0);
 -- spell target
 DELETE FROM spell_script_target WHERE entry IN (66133);
 insert into spell_script_target (entry,type,targetEntry,inverseEffectMask) values
