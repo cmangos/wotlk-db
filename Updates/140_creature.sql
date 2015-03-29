@@ -38,7 +38,7 @@ DELETE FROM db_script_string WHERE entry BETWEEN 2000000467 AND 2000000471;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
 (2000000467,'%s wakes up, startled.',0,2,0,0,NULL),
 (2000000468,'Was... Was it all a dream? Azuremyst, Bloodmyst, Zangarmarsh, Shadowmoon... even Zul\'Aman... Jane! Jane where are you!',0,0,10,6,NULL),
-(2000000469,'I\'m right here, daddy. You\'ve been asleep all day long. You must be tired!',0,0,10,1,NULL),
+(2000000469,'I\'m right here, daddy. You\'ve been asleep all day long. You sure must be tired!',0,0,10,1,NULL),
 (2000000470,'Ah, wonderful. It was all just a dream...',0,0,10,1,NULL),
-(2000000471,'%s resumes plaing on the beach.',0,2,0,0,NULL);
+(2000000471,'%s resumes playing on the beach.',0,2,0,0,NULL);
 
