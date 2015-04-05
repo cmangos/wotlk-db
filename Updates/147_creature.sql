@@ -1,7 +1,7 @@
 -- Kayneth Stillwind
 -- temp. equip or visual spell missing...
 UPDATE creature SET Spawndist = 0, MovementType = 2 WHERE guid = 32331;
-DELETE FROM creature_movement WHERE id = 3848;
+DELETE FROM creature_movement WHERE id = 32331;
 UPDATE creature_template SET MovementType = 2 WHERE entry = 3848;
 DELETE FROM creature_movement_template WHERE entry = 3848;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation, model1, model2) VALUES

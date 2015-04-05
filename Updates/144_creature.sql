@@ -34,7 +34,7 @@ UPDATE creature_template SET equipmentTemplateid = 481 WHERE entry = 15940;
 
 -- Solanin <Bag Vandor>
 UPDATE creature SET position_x = 9308.556641, position_y = -6554.437500, position_z = 34.680603, orientation = 2.170510, Spawndist = 0, MovementType = 2 WHERE guid = 68009;
-DELETE FROM creature_movement WHERE id = 130895;
+DELETE FROM creature_movement WHERE id = 68009;
 UPDATE creature_template SET MovementType = 2 WHERE entry = 18947;
 DELETE FROM creature_movement_template WHERE entry = 18947;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation, model1, model2) VALUES
