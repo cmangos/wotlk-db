@@ -43,7 +43,7 @@ INSERT INTO creature_linking (guid, master_guid, flag) VALUES
 UPDATE creature SET position_x = -972.505737, position_y = 8193.477539, position_z = 16.208822, orientation = 4.660573 WHERE guid = 65509;
 UPDATE creature SET spawndist = 0, movementType = 2 WHERE guid = 65509;
 UPDATE creature SET spawndist = 0, movementType = 0 WHERE guid IN (65510,65511);
-DELETE FROM creature_movement WHERE id = 65506;
+DELETE FROM creature_movement WHERE id = 65509;
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation, model1, model2) VALUES
 (65509,1,-969.258,8173.74,14.519,0,0,5.02496,0,0),(65509,2,-964.978,8165.19,14.0309,0,0,5.17811,0,0),(65509,3,-955.831,8146.86,8.18516,0,0,5.18203,0,0),
 (65509,4,-948.537,8132.72,9.17469,0,0,5.18989,0,0),(65509,5,-940.834,8117.29,16.0521,0,0,5.18989,0,0),(65509,6,-927.489,8089.55,20.0447,0,0,5.0014,0,0),
