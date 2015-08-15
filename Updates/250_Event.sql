@@ -79,7 +79,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 -- Priest Ennas
 UPDATE creature_template_addon SET emote = 0 WHERE entry = 18671;
 -- texts
-DELETE FROM db_script_string WHERE entry BETWEEN 2000000571 AND 2000000598;
+DELETE FROM db_script_string WHERE entry BETWEEN 2000000571 AND 2000000599;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
 (2000000571,'My brothers and sisters. Listen to me. We must speak of the survival of our people. We have narrowly survived one calamity, but I fear the next shall destroy us.',0,0,0,1,NULL),
 (2000000572,'Can you not see what is happening? Open your eyes. It is laid bare for all to see. What is this new alliance? Why have we betrayed our allies of old, only to take up with the enemies of all that live?',0,0,0,1,NULL),
