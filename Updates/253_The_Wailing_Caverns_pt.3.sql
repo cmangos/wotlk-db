@@ -21,7 +21,7 @@ INSERT INTO pool_creature (guid, pool_entry, chance, description) VALUES
 (85959,25492,65,'WC - Druid of the Fang');
 
 -- Deviate Lasher
-UPDATE creature SET, spawndist = 5, MovementType = 1 WHERE guid IN (18679,18681,18680);
+UPDATE creature SET spawndist = 5, MovementType = 1 WHERE guid IN (18679,18681,18680);
 
 -- Deviate Shambler
 UPDATE creature SET position_x = 22.807135, position_y = -151.118713, position_z = -78.651627 WHERE guid = 85963;
