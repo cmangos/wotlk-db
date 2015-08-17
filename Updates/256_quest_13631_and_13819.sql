@@ -5,25 +5,26 @@
 -- Generic Trigger movement scripts
 DELETE FROM creature_movement WHERE id IN (88673,88680,88679,88682,88681,88675,88676,88672,88677,88678);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, script_id, waittime, orientation) VALUES
-(88673,1,5713.23,646.632,653.144,8867301,1000,0),
-(88680,1,5711.03,645.710,653.777,8867301,1000,0),
-(88679,1,5709.35,644.943,655.873,8867301,1000,0),
-(88682,1,5712.54,644.603,656.470,8867301,1000,0),
-(88681,1,5710.70,648.617,656.536,8867301,1000,0),
-(88675,1,5713.02,648.027,657.159,8867301,1000,0),
-(88676,1,5711.06,645.764,672.082,8867601,1000,0),
-(88672,1,5711.69,645.936,737.186,8867601,1000,0),
-(88677,1,5711.45,646.144,761.046,8867601,1000,0),
-(88678,1,5711.72,645.971,796.194,8867601,1000,0);
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (8867301,8867601);
+(88673,1,5713.23,646.632,653.144,2833201,1000,0),
+(88680,1,5711.03,645.710,653.777,2833201,1000,0),
+(88679,1,5709.35,644.943,655.873,2833201,1000,0),
+(88682,1,5712.54,644.603,656.470,2833201,1000,0),
+(88681,1,5710.70,648.617,656.536,2833201,1000,0),
+(88675,1,5713.02,648.027,657.159,2833201,1000,0),
+(88676,1,5711.06,645.764,672.082,2833202,1000,0),
+(88672,1,5711.69,645.936,737.186,2833202,1000,0),
+(88677,1,5711.45,646.144,761.046,2833202,1000,0),
+(88678,1,5711.72,645.971,796.194,2833202,1000,0);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (8867301,8867601); -- how i missed that :/
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (2833201,2833202);
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,buddy_entry,search_radius,data_flags,comments) VALUES
-(8867301,0,32,1,0,0,0,0,'Generic Trigger LAB (Large AOI) - pause wp'),
-(8867301,0,15,64367,0,28332,88676,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam'),
-(8867601,0,32,1,0,0,0,0,'Generic Trigger LAB (Large AOI) - pause wp'),
-(8867601,0,15,64367,0,28332,88674,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam'),
-(8867601,0,15,64510,0,28332,88674,16,'Generic Trigger LAB (Large AOI) - Cast Reply-Code Alpha'),
-(8867601,49,15,64581,0,28332,88674,16,'Generic Trigger LAB (Large AOI) - Cast Reply-Code Alpha'),
-(8867601,49,15,64580,0,28332,88674,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam Climax');
+(2833201,0,32,1,0,0,0,0,'Generic Trigger LAB (Large AOI) - pause wp'),
+(2833201,0,15,64367,0,28332,88676,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam'),
+(2833202,0,32,1,0,0,0,0,'Generic Trigger LAB (Large AOI) - pause wp'),
+(2833202,0,15,64367,0,28332,88674,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam'),
+(2833202,0,15,64510,0,28332,88674,16,'Generic Trigger LAB (Large AOI) - Cast Reply-Code Alpha'),
+(2833202,49,15,64581,0,28332,88674,16,'Generic Trigger LAB (Large AOI) - Cast Reply-Code Alpha'),
+(2833202,49,15,64580,0,28332,88674,25,'Generic Trigger LAB (Large AOI) - Cast Algalon Event Beam Climax');
 
 -- Rhonin updates
 UPDATE creature_movement_template SET script_id = 1612801 WHERE entry = 16128 AND point = 23;
