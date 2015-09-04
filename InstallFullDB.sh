@@ -301,6 +301,6 @@ then
 fi
 
 echo
-echo "You have now a clean and recent UDB database loaded into $DATABASE"
+echo "You have now a clean and recent UDB database loaded into $MANGOS_DBNAME"
 echo "Enjoy using UDB"
 echo
