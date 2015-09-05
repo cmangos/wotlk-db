@@ -97,7 +97,7 @@ MYSQL_MANGOSDB_CMD="$MYSQL -h$MANGOS_DBHOST -u$MANGOS_DBUSER -p$MANGOS_DBPASS $M
 echo
 echo "Welcome to the UDB helper $SCRIPT_FILE"
 echo
-echo "ATTENTION: Your database $DATABASE will be reset to UDB!"
+echo "ATTENTION: Your database $MANGOS_DBNAME will be reset to UDB!"
 echo "Please bring your repositories up-to-date!"
 echo "Press CTRL+C to exit"
 # show a mini progress bar
@@ -214,7 +214,7 @@ then
         if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
         then
           # found a newer core update file
-          echo "Append core update `basename "$f"` to database $DATABASE"
+          echo "Append core update `basename "$f"` to database $MANGOS_DBNAME"
           $MYSQL_MANGOSDB_CMD < "$f"
           [[ $? != 0 ]] && exit 1
         fi
@@ -229,7 +229,7 @@ then
     if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
     then
       # found a newer core update file
-      echo "Append core update `basename "$f"` to database $DATABASE"
+      echo "Append core update `basename "$f"` to database $MANGOS_DBNAME"
       $MYSQL_MANGOSDB_CMD < "$f"
       [[ $? != 0 ]] && exit 1
     fi
@@ -255,7 +255,7 @@ then
         if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
         then
           # found a newer core update file
-          echo "Append SD2 update`basename "$f"` to database $DATABASE"
+          echo "Append SD2 update`basename "$f"` to database $MANGOS_DBNAME"
           $MYSQL_MANGOSDB_CMD < "$f"
           [[ $? != 0 ]] && exit 1
         fi
@@ -270,7 +270,7 @@ then
     if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
     then
       # found a newer core update file
-      echo "Append SD2 update`basename "$f"` to database $DATABASE"
+      echo "Append SD2 update`basename "$f"` to database $MANGOS_DBNAME"
       $MYSQL_MANGOSDB_CMD < "$f"
       [[ $? != 0 ]] && exit 1
     fi
@@ -301,6 +301,6 @@ then
 fi
 
 echo
-echo "You have now a clean and recent UDB database loaded into $DATABASE"
+echo "You have now a clean and recent UDB database loaded into $MANGOS_DBNAME"
 echo "Enjoy using UDB"
 echo
