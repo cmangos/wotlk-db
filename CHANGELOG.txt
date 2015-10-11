@@ -1,3 +1,136 @@
+=================================================================
+Update pack 408, for CMaNGOS 12938 for 3.3.5a, SQL for ScriptDev2
+=================================================================
+Main changes:
+* ClassLevelStats Data For WOTLK
+* DeathKnight starting zone rebuilded
+  - all phases corrected
+  - spawns/movements/scripts
+  - all quests
+* Mails from quests/events moved to Scripts.
+* Lots updates backported from ClassicDB
+* Lots of random spawns/movements/scripts
+* Fixes from Github/issues/ - 88 issues closed. 
+* Instances:
+  Wailing Caverns:
+	-- Redone
+  Auchindoun (Shadow Labyrinth\Auchenai Crypts\Mana Tombs\Sethekk Halls):
+	-- spawns corrected
+	-- waypoints and scripts added
+	-- quests fixed
+  Halls of the Reflection:
+	-- initial work
+	-- factions and flags
+  Trial of the Crusader:
+	-- spell script targets
+	-- achiev criterias
+	-- scripts, factions, flags, addons, spawnmasks, creature linking
+  Trial of the Champion:
+    -- factions, flags, creature linking
+    -- creature movements and scripts
+    -- vehicle fixes
+  Culling of Stratholme:
+	-- implement complete script for intro event (needs to be paired with SD2)
+    -- spell script targets
+    -- implement creature linking and scripts
+  Ulduar:
+	-- creature linking and unit flags
+  Sunwell Plateau:
+    -- scripts, creature linking
+  The Mechanar:
+	-- missing doors and events
+  Karazhan:
+	-- Nightbane fixed
+  Temple of AQ:
+    -- Viscidus related updates
+  Dire Maul:
+	-- complete script for the tribute run event (needs to be paired with SD2)
+  
+* Quests fixed in this update:
+  q.112   'Collecting Kelp'
+  q.114   'The Escape'
+  q.411   'The Prodigal Lich Returns'
+  q.808   'Minshina's Skull'
+  q.961   'Onu is meditating'
+  q.990   'Trek to Ashenvale'
+  q.2240  'The Hidden Chamber'
+  q.2520  'Sathrah's Sacrifice'
+  q.2943  'Return to Troyas'
+  q.3382  'A Crew Under Fire'
+  q.3463  'Set Them Ablaze!'
+  q.4129  'The Knife Revealed'
+  q.4265  'Freed from the Hive'
+  q.4901  'Guardians of the Altar'
+  q.4941  'Eitrigg's Wisdom'
+  q.4974  'For The Horde!'
+  q.5151  'Hypercapacitor Gizmo'
+  q.5541  'Ammo for Rumbleshot'
+  q.6041  'When Smokey Sings, I Get Violent'
+  q.6121  'Lessons Anew'
+  q.6568  'Mistress of Deception'
+  q.6628  'Test of Lore'
+  q.7481  'Elven Legends' -- Horde ver.
+  q.7482  'Elven Legends' -- Alliance ver.
+  q.8447  'Waking Legends'
+  q.9387  'Source of the Corruption'
+  q.9437  'Twilight of the Dawn Runner'
+  q.9438  'Messenger to Thrall'
+  q.9483  'Life's Finer Pleasures'
+  q.9709  'Stealing Back the Mushrooms'
+  q.9805  'Blessing of Incineratus'
+  q.9927  'Ruthless Cunning'
+  q.9931  'Returning the Favor'
+  q.9932  'Body of Evidence'
+  q.10144 'Disrupt Their Reinforcements' -- Alliance ver.
+  q.10208 'Disrupt Their Reinforcements' -- Horde ver.
+  q.10258 'Honor the Fallen'
+  q.10286 'Arelion's Secret'
+  q.10351 'Natural Remedies'
+  q.10439 'Dimensius the All-Devouring'
+  q.10457 'Protecting Our Own' -- Alliance ver.
+  q.10488 'Protecting Our Own' -- Horde ver.
+  q.10538 'Boiling Blood'
+  q.10563 'To Legion Hold' -- Alliance ver.
+  q.10570 'To Catch A Thistlehead'
+  q.10596 'To Legion Hold' -- Horde ver.
+  q.10628 'Akama'
+  q.10629 'Shizz Work'
+  q.10674 'Trapping the Light Fantastic'
+  q.10859 'Gather the Orbs' 
+  q.10909 'Fel Spirits'
+  q.10929 'Fumping'
+  q.10930 'The Big Bone Worm'
+  q.11128 'Propaganda War'
+  q.11676 'Merciful Freedom'
+  q.11690 'Bring 'Em Back Alive'
+  q.11876 'Help Those That Cannot Help Themselves'
+  q.12022 'Chug and Chuck!'  -- Alliance ver.
+  q.12027 'Mr. Floppy's Perilous Adventure'
+  q.12191 'Chug and Chuck!'  -- Horde ver.
+  q.12244 'Shredder Repair' -- Alliance ver.
+  q.12270 'Shred the Alliance' -- Horde ver.
+  q.12680 'Grand Theft Palomino'
+  q.12288 'Overwhelmed!' -- Horde ver.
+  q.12296 'Life or Death' -- Alliance ver.
+  q.12657 'The Might Of The Scourge'
+  q.12687 'Into the Realm of Shadows'
+  q.12701 'Massacre At Light's Point'
+  q.12716 'The Plaguebringer's Request'
+  q.12723 'Behind Scarlet Lines'
+  q.12725 'Brothers In Death'
+  q.12727 'Bloody Breakout'
+  q.12755 'A Meeting With Fate'
+  q.12757 'Scarlet Armies Approach...'
+  q.12953 'Valkyrion Must Burn'
+  q.13188 'Where kings walk' -- Alliance ver.
+  q.13189 'Warchief's Blessing' -- Horde ver.
+  q.13631 'All Is Well That Ends Well'
+  q.13819 'Heroic: All Is Well That Ends Well'
+  q.24857 'Attack on Camp Narache'
+  q.'Learn to Ride in ... (all related quests)
+And lots quests fixed by ClassicDB TEAM.
+
+
 ======================================================================
 Update pack 407, for CMaNGOS 12735 for 3.3.5a, SQL for ScriptDev2 3041
 ======================================================================
@@ -132,73 +265,3 @@ Biggest changes:
 * includes ACID 3.0.9
 
 ** Updated older updatepack to fix the revision
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

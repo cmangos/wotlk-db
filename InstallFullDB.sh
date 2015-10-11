@@ -141,13 +141,14 @@ $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_corepatch_ma
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos.sql
 [[ $? != 0 ]] && exit 1
 
+## 408
+echo "Process Updatepack 408"
+$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/408_updatepack_mangos.sql
+[[ $? != 0 ]] && exit 1
+
 
 ## Change these settings with new updatepacks
 LAST_CORE_REV="12938"
-LAST_SD2_REV="3153"
-## Change these lists when new core or SD2 milestones were released
-NEXT_MILESTONES="0.19 0.20 0.21"
-
 
 # Process files in Updates folder
 echo
@@ -159,20 +160,7 @@ do
   echo "Applying Update $CUR_REV"
   $MYSQL_MANGOSDB_CMD < "$f"
   [[ $? != 0 ]] && exit 1
-
-  # Was this a core or SD2-update?
-  case "$f" in
-    *_import_corepatch_*.sql)
-      LAST_CORE_REV=`basename "$f" | sed 's/.*_\([0-9]*\)\.sql$/\1/' `
-      echo "Applied core update(s up to) $LAST_CORE_REV"
-    ;;
-    *_import_sd2_*.sql)
-      LAST_SD2_REV=`basename "$f" | sed 's/.*_r\([0-9]*\)\.sql$/\1/' `
-      echo "Applied SD2 update(s up to) $LAST_SD2_REV"
-    ;;
-  esac
 done
-
 
 #
 # Process core updates if desired
