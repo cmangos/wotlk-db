@@ -19,7 +19,6 @@ MANGOS_DBUSER=""
 MANGOS_DBPASS=""
 MYSQL=""
 CORE_PATH=""
-SD2_UPDATES="1"
 
 function create_config {
 # Re(create) config file
@@ -34,7 +33,6 @@ cat >  $CONFIG_FILE << EOF
 #   MANGOS_DBPASS:	Your MANGOS password
 #   CORE_PATH:    	Your path to core's directory (OPTIONAL: Use if you want to apply remaining core updates automatically)
 #   ACID_PATH:    	Your path to a git-clone of ACID (OPTIONAL: Use it if you want to install recent downloaded acid)
-#   SD2_UPDATES:  	If you want to disable adding ScriptDev2 updates (Has only meaning if CORE_PATH above is set
 #   MYSQL:        	Your mysql command (usually mysql)
 #
 ####################################################################################################
@@ -52,17 +50,12 @@ MANGOS_DBUSER="mangos"
 MANGOS_DBPASS="mangos"
 
 ## Define the path to your core's folder (This is optional)
-##   If set the core updates located under sql/updates from this mangos-directory will be added automatically
+##   If set the core updates located under sql/updates/mangos from this mangos-directory will be added automatically
 CORE_PATH=""
 
 ## Define the path to the folder into which you cloned ACID (This is optional)
 ##   If set the file acid_wotlk.sql will be applied from this folder
 ACID_PATH=""
-
-## Include ScriptDev2 updates? (If set, the SD2-Updates are expected to be located in the place defined at CORE_PATH)
-##   NOTE: They are only applied if CORE_PATH is set!
-##   Set to 0 if you want core updates BUT no SD2-updates
-SD2_UPDATES="1"
 
 ## Define your mysql programm if this differs
 MYSQL="mysql"
@@ -150,11 +143,10 @@ $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_m
 
 
 ## Change these settings with new updatepacks
-LAST_CORE_REV="12936"
+LAST_CORE_REV="12938"
 LAST_SD2_REV="3153"
 ## Change these lists when new core or SD2 milestones were released
-NEXT_MILESTONES="0.18 0.19 0.20"
-NEXT_SD2_MILESTONES="0.8 0.9"
+NEXT_MILESTONES="0.19 0.20 0.21"
 
 
 # Process files in Updates folder
@@ -181,6 +173,7 @@ do
   esac
 done
 
+
 #
 # Process core updates if desired
 #
@@ -205,10 +198,10 @@ then
   for NEXT_MILESTONE in ${NEXT_MILESTONES};
   do
     # A new milestone was released, apply additional updates
-    if [ -e "${CORE_PATH}"/sql/updates/${NEXT_MILESTONE}/ ]
+    if [ -e "${CORE_PATH}"/sql/updates/archive/${NEXT_MILESTONE}/ ]
     then
       echo "Apply core updates from milestone $NEXT_MILESTONE"
-      for f in "${CORE_PATH}"/sql/updates/${NEXT_MILESTONE}/*_*_mangos_*.sql
+      for f in "${CORE_PATH}"/sql/updates/archive/${NEXT_MILESTONE}/*_*_mangos_*.sql
       do
         CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
         if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
@@ -223,7 +216,7 @@ then
   done
 
   # Apply remaining files from main folder
-  for f in "${CORE_PATH}"/sql/updates/*_*_mangos_*.sql
+  for f in "${CORE_PATH}"/sql/updates/mangos/*_*_mangos_*.sql
   do
     CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
     if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
@@ -239,43 +232,14 @@ then
 #
 #               ScriptDev2 updates
 #
-  echo
-  echo "Applying additional ScriptDev2 updates from path $CORE_PATH/src/bindings/ScriptDev2"
-  echo
-# process future release folders
-  for NEXT_SD2_MILESTONE in ${NEXT_SD2_MILESTONES}
-  do
-    # A new milestone was released, apply additional updates
-    if [ -e "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/ ]
-    then
-      echo "Apply SD2 updates from milestone $NEXT_SD2_MILESTONE"
-      for f in "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/${NEXT_SD2_MILESTONE}/r*_mangos.sql
-      do
-        CUR_REV=`basename "$f" | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
-        if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
-        then
-          # found a newer core update file
-          echo "Append SD2 update`basename "$f"` to database $MANGOS_DBNAME"
-          $MYSQL_MANGOSDB_CMD < "$f"
-          [[ $? != 0 ]] && exit 1
-        fi
-      done
-    fi
-  done
 
-  # Apply remaining files from main folder
-  for f in "${CORE_PATH}"/src/bindings/ScriptDev2/sql/updates/r*_mangos.sql
-  do
-    CUR_REV=`basename "$f" | sed 's/^r\([0-9]*\)_mangos.sql/\1/' `
-    if [ "$CUR_REV" -gt "$LAST_SD2_REV" ]
-    then
-      # found a newer core update file
-      echo "Append SD2 update`basename "$f"` to database $MANGOS_DBNAME"
-      $MYSQL_MANGOSDB_CMD < "$f"
-      [[ $? != 0 ]] && exit 1
-    fi
-  done
-  echo "All SD2 updates applied"
+  # Apply ScriptDev2.sql
+  echo
+  echo "Applying $ScriptDev2/scriptdev2.sql ..."
+  echo
+  $MYSQL_MANGOSDB_CMD < "${CORE_PATH}"/sql/scriptdev2/scriptdev2.sql
+  [[ $? != 0 ]] && exit 1
+  echo "Recent state of ScriptDev2 applied"
 fi
 
 #
@@ -294,7 +258,9 @@ then
   ACID_PATH=`(cd "$ACID_PATH"; pwd)`
 
   # Apply acid_wotlk.sql
+  echo
   echo "Applying $ACID_PATH/acid_wotlk.sql ..."
+  echo
   $MYSQL_MANGOSDB_CMD < "${ACID_PATH}"/acid_wotlk.sql
   [[ $? != 0 ]] && exit 1
   echo "Recent state of ACID applied"
