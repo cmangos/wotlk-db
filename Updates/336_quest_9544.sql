@@ -14,17 +14,17 @@ UPDATE gameobject_template SET data2 = 300000 WHERE entry = 181714;
 DELETE FROM dbscripts_on_go_template_use WHERE id = 181714;
 INSERT INTO dbscripts_on_go_template_use (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (181714,1,31,17375,10,0,0,0,0,0,0,0,0,0,0,0,'search for 17375'),
-(181714,2,0,0,0,17375,10,3,2000000680,2000000681,2000000682,2000000683,0,0,0,0,'random say'),
+(181714,2,0,0,0,17375,10,3,2000000680,2000000681,2000000682,2000000700,0,0,0,0,'random say'),
 (181714,2,25,1,0,17375,10,7,0,0,0,0,0,0,0,0,'RUN ON'),
 (181714,3,21,1,0,17375,10,7,0,0,0,0,0,0,0,0,'Buddy - active'),
 (181714,4,20,2,0,17375,10,7,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoints');
-DELETE FROM db_script_string WHERE entry BETWEEN 2000000680 AND 2000000683;
+DELETE FROM db_script_string WHERE entry BETWEEN 2000000680 AND 2000000682;
+DELETE FROM db_script_string WHERE entry = 2000000700;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
 (2000000680,'[Furbolg] Thank you, $n!', 0, 0, 0, 0, NULL),
 (2000000681,'[Furbolg] The prophecy is true!', 0, 0, 0, 0, NULL),
 (2000000682,'[Furbolg] The Stillpine furbolgs will not soon forget your bravery!', 0, 0, 0, 0, NULL),
-(2000000683,'[Furbolg] Those remaining at Stillpine Hold will welcome you as a hero!', 0, 0, 0, 0, NULL);
-
+(2000000700,'[Furbolg] Those remaining at Stillpine Hold will welcome you as a hero!', 0, 0, 0, 0, NULL);
 -- Stillpine Captive
 UPDATE creature SET orientation = 0.365682 WHERE guid = 90994;
 UPDATE creature SET orientation = 3.155424 WHERE guid = 90995;
