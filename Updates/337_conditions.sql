@@ -33,12 +33,16 @@ INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1041, -2, 1038, 1040); 
 
 -- Priestess Kyleen Il'dinare
+DELETE FROM gossip_menu WHERE entry = 7398 AND text_id = 8866;
+INSERT INTO gossip_menu VALUES
+(7398, 8866, 0, 1042);
 -- gossip corrected
 UPDATE gossip_menu SET condition_id = 1038 WHERE entry = 7398 AND text_id = 8862;
-UPDATE gossip_menu SET condition_id = 1042 WHERE entry = 7398 AND text_id = 8893;
-DELETE FROM conditions WHERE condition_entry = 1042;
+UPDATE gossip_menu SET condition_id = 1043 WHERE entry = 7398 AND text_id = 8893;
+DELETE FROM conditions WHERE condition_entry IN (1042,1043);
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
-(1042, 8, 9515, 0);
+(1042, 8, 9515, 0),
+(1043, 8, 9537, 0);
 
 -- Quest relations
 -- Both quests available after q.9506 completed

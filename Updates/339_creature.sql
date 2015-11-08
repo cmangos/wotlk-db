@@ -22,7 +22,7 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 (17246,16,-4715.03,-12401.5,11.9805, 0, 0,5.0891, 0, 0),
 (17246,17,-4713.15,-12405.1,12.0613, 0, 0,0.594256, 0, 0),
 (17246,18,-4710.72,-12400.9,11.8921, 30000, 1724603,2.41481, 0, 0),
-(17246,19,-4708.59,-12400.3,11.8799,120000,0,0.957318,0,0);
+(17246,19,-4708.59,-12400.3,11.8799,240000,0,0.957318,0,0);
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 1724601 AND 1724604; 
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1724601,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'active'),
