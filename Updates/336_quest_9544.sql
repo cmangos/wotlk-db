@@ -3,7 +3,7 @@ DELETE FROM dbscripts_on_quest_start WHERE id = 9544;
 INSERT INTO dbscripts_on_quest_start  (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (9544,1,10,17410,15000,0,0,0,0,0,0,0,-4489.97,-11645.7,11.577,2.5501,'summon Stillpine Ancestor Vark'),
 (9544,3,0,0,0,17410,50,0,2000000679,0,0,0,0,0,0,0,'');
-UPDATE quest_template SET StartScript = 9544 WHERE entry = 9544;
+UPDATE quest_template SET ReqCreatureOrGOId1 = 17375, ReqSpellCast1 = 0, StartScript = 9544 WHERE entry = 9544; -- correct WDB data
 DELETE FROM db_script_string WHERE entry = 2000000679;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
 (2000000679,' [Furbolg] Bear witness to the savage acts of our adversaries, $n. They steal our young... our weak... Imprisoned here, they are left to the devices of the Bristlelimb. Set them free, Promised One!',0,0,0,0,NULL);
@@ -16,6 +16,7 @@ INSERT INTO dbscripts_on_go_template_use (id, delay, command, datalong, datalong
 (181714,1,31,17375,10,0,0,0,0,0,0,0,0,0,0,0,'search for 17375'),
 (181714,2,0,0,0,17375,10,3,2000000680,2000000681,2000000682,2000000700,0,0,0,0,'random say'),
 (181714,2,25,1,0,17375,10,7,0,0,0,0,0,0,0,0,'RUN ON'),
+(181714,3,8,17375,0,0,0,0,0,0,0,0,0,0,0,0,'killcredit'),
 (181714,3,21,1,0,17375,10,7,0,0,0,0,0,0,0,0,'Buddy - active'),
 (181714,4,20,2,0,17375,10,7,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoints');
 DELETE FROM db_script_string WHERE entry BETWEEN 2000000680 AND 2000000682;
