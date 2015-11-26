@@ -6,7 +6,7 @@
 -- Various updates
 -- ###############
 UPDATE creature_template SET NpcFlags=3 WHERE entry IN (37223,37221);
-UPDATE creature_template SET MovementType=2 WHERE entry IN (37226,38112,38113);
+UPDATE creature_template SET MovementType=2 WHERE entry IN (37226,38112,38113,38599,38603);
 UPDATE creature_template SET UnitFlags=33555200 WHERE entry=37906;
 UPDATE creature_template SET InhabitType=5 WHERE entry=37906;
 UPDATE creature_template_addon SET auras='72630' WHERE entry IN (38172,38173,38175,38176,38177);
