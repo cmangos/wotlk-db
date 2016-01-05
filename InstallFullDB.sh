@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ####################################################################################################
 #
@@ -7,8 +7,8 @@
 ####################################################################################################
 
 #internal use
-SCRIPT_FILE="InstallFullDB.sh"
-CONFIG_FILE="InstallFullDB.config"
+SCRIPT_FILE="./InstallFullDB.sh"
+CONFIG_FILE="./InstallFullDB.config"
 # testing only
 ADDITIONAL_PATH=""
 
@@ -20,7 +20,7 @@ MANGOS_DBPASS=""
 MYSQL=""
 CORE_PATH=""
 
-function create_config {
+create_config() {
 # Re(create) config file
 cat >  $CONFIG_FILE << EOF
 ####################################################################################################
@@ -64,7 +64,7 @@ MYSQL="mysql"
 EOF
 }
 
-function display_help {
+display_help() {
 echo
 echo "Welcome to the UDB helper $SCRIPT_FILE"
 echo
@@ -104,47 +104,47 @@ echo .
 ## Full
 echo "Process UDB 0.12.2"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Full_DB/UDB_0.12.2_mangos_11792_SD2_2279.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 403
 echo "Process Updatepack 403"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/403_corepatch_mangos_11793_to_11840.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/403_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 404
 echo "Process Updatepack 404"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/404_corepatch_mangos_11841_to_11928.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/404_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 405
 echo "Process Updatepack 405"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/405_corepatch_mangos_11929_to_12111.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/405_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 406
 echo "Process Updatepack 406"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/406_corepatch_mangos_12112_to_12444.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/406_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 407
 echo "Process Updatepack 407"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_corepatch_mangos_12445_to_12670.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 ## 408
 echo "Process Updatepack 408"
 $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/408_updatepack_mangos.sql
-[[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 
 
 ## Change these settings with new updatepacks
@@ -159,7 +159,7 @@ do
   CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
   echo "Applying Update $CUR_REV"
   $MYSQL_MANGOSDB_CMD < "$f"
-  [[ $? != 0 ]] && exit 1
+if [ $? != 0 ]; then exit 1; fi;
 done
 
 #
@@ -197,7 +197,7 @@ then
           # found a newer core update file
           echo "Append core update `basename "$f"` to database $MANGOS_DBNAME"
           $MYSQL_MANGOSDB_CMD < "$f"
-          [[ $? != 0 ]] && exit 1
+	  if [ $? != 0 ]; then exit 1; fi;
         fi
       done
     fi
@@ -212,7 +212,7 @@ then
       # found a newer core update file
       echo "Append core update `basename "$f"` to database $MANGOS_DBNAME"
       $MYSQL_MANGOSDB_CMD < "$f"
-      [[ $? != 0 ]] && exit 1
+	if [ $? != 0 ]; then exit 1; fi;
     fi
   done
   echo "All core updates applied"
@@ -226,7 +226,7 @@ then
   echo "Applying $ScriptDev2/scriptdev2.sql ..."
   echo
   $MYSQL_MANGOSDB_CMD < "${CORE_PATH}"/sql/scriptdev2/scriptdev2.sql
-  [[ $? != 0 ]] && exit 1
+  	if [ $? != 0 ]; then exit 1; fi;
   echo "Recent state of ScriptDev2 applied"
 fi
 
@@ -250,7 +250,7 @@ then
   echo "Applying $ACID_PATH/acid_wotlk.sql ..."
   echo
   $MYSQL_MANGOSDB_CMD < "${ACID_PATH}"/acid_wotlk.sql
-  [[ $? != 0 ]] && exit 1
+  	if [ $? != 0 ]; then exit 1; fi;
   echo "Recent state of ACID applied"
 fi
 
