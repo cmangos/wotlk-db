@@ -41,7 +41,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (13751,1,-623.98,-3180.06,91.75,3000,1490105,2.40855,0,0);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1490105;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(1490105,1,31,3501,10,0,0,0,0,0,0,0,0,0,0,0,'search for 14901'),
+(1490105,1,31,14901,10,0,0,0,0,0,0,0,0,0,0,0,'search for 14901'),
 (1490105,2,1,1,0,14901,13772,7 | 0x10,273,274,6,1,0,0,0,0,''),
 (1490105,6,1,1,0,0,0,0,273,274,6,1,0,0,0,0,'');
 
