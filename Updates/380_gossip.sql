@@ -132,7 +132,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Sian'dur c.3407
 DELETE FROM npc_gossip WHERE npc_guid = 6620;
-UPDATE creature_template SET GossipMenuId = 4506 WHERE entry = 3406;
+UPDATE creature_template SET GossipMenuId = 4506 WHERE entry = 3407;
 
 -- Ayanna Everstride c.3596
 DELETE FROM npc_gossip WHERE npc_guid = 46182;
@@ -198,7 +198,7 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 
 -- Daera Brightspear c.5115
 DELETE FROM npc_gossip WHERE npc_guid = 2020;
-UPDATE creature_template SET GossipMenuId = 4549 WHERE entry = 4205;
+UPDATE creature_template SET GossipMenuId = 4549 WHERE entry = 5115;
 DELETE FROM gossip_menu WHERE entry = 4549;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (4549, 4999, 0, 82), -- hunter    
@@ -214,7 +214,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Regnus Thundergranite c.5117
 DELETE FROM npc_gossip WHERE npc_guid = 82;
-UPDATE creature_template SET GossipMenuId = 4551 WHERE entry = 5116;
+UPDATE creature_template SET GossipMenuId = 4551 WHERE entry = 5117;
 DELETE FROM gossip_menu WHERE entry = 4551;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (4551, 4999, 0, 82), -- hunter    

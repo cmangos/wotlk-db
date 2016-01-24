@@ -10,7 +10,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Solm Hargrin c.916
 DELETE FROM npc_gossip WHERE npc_guid = 421;
-UPDATE creature_template SET GossipMenuId = 4659 WHERE entry = 4676;
+UPDATE creature_template SET GossipMenuId = 4659 WHERE entry = 916;
 
 -- Keryn Sylvius c.917
 DELETE FROM npc_gossip WHERE npc_guid = 79645;
@@ -23,7 +23,7 @@ UPDATE gossip_menu_option SET id = 2 WHERE menu_id = 4502 AND option_text = 'Lea
 
 -- Hogral Bakkan c.1234
 DELETE FROM npc_gossip WHERE npc_guid = 188;
-UPDATE creature_template SET GossipMenuId = 410 WHERE entry = 918;
+UPDATE creature_template SET GossipMenuId = 410 WHERE entry = 1234;
 
 -- Ian Strom c.1411
 DELETE FROM npc_gossip WHERE npc_guid = 644;

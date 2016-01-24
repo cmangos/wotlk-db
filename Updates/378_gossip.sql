@@ -115,7 +115,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 -- Frang c.3153
 -- Tarshaw Jaggedscar c.3169
 DELETE FROM npc_gossip WHERE npc_guid IN (7291,7651);
-UPDATE creature_template SET GossipMenuId = 523 WHERE entry IN (2131,3169);
+UPDATE creature_template SET GossipMenuId = 523 WHERE entry IN (3153,3169);
 DELETE FROM gossip_menu WHERE entry = 523;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (523, 4985, 0, 0), -- all 
@@ -248,7 +248,7 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 
 -- Bilban Tosslespanner c.5114
 DELETE FROM npc_gossip WHERE npc_guid = 84;
-UPDATE creature_template SET GossipMenuId = 4568 WHERE entry = 5113;
+UPDATE creature_template SET GossipMenuId = 4568 WHERE entry = 5114;
 DELETE FROM gossip_menu WHERE entry = 4568;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (4568, 4988, 0, 0), -- all 
@@ -256,7 +256,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Wu Shen c.5479
 DELETE FROM npc_gossip WHERE npc_guid = 79779;
-UPDATE creature_template SET GossipMenuId = 4482 WHERE entry = 5113;
+UPDATE creature_template SET GossipMenuId = 4482 WHERE entry = 5479;
 DELETE FROM gossip_menu WHERE entry = 4482;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (4482, 5721, 0, 0), -- all 
@@ -264,7 +264,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Ilsa Corbin c.4649
 DELETE FROM npc_gossip WHERE npc_guid = 79778;
-UPDATE creature_template SET GossipMenuId = 4649 WHERE entry = 5113;
+UPDATE creature_template SET GossipMenuId = 4649 WHERE entry = 4649;
 
 -- World Dwarf Male Warrior Trainer c.5959
 -- World Night Elf Male Warrior Trainer c.5966
@@ -298,7 +298,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 
 -- Ahonan c.16771
 DELETE FROM npc_gossip WHERE npc_guid = 85590;
-UPDATE creature_template SET GossipMenuId = 7263 WHERE entry = 16503;
+UPDATE creature_template SET GossipMenuId = 7263 WHERE entry = 16771;
 
 -- Behomat c.17120
 DELETE FROM npc_gossip WHERE npc_guid = 85589;
