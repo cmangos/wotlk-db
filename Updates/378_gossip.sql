@@ -262,9 +262,9 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (4482, 5721, 0, 0), -- all 
 (4482, 1216, 0, 74); -- warrior only
 
--- Ilsa Corbin c.4649
+-- Ilsa Corbin c.5480
 DELETE FROM npc_gossip WHERE npc_guid = 79778;
-UPDATE creature_template SET GossipMenuId = 4649 WHERE entry = 4649;
+UPDATE creature_template SET GossipMenuId = 4649 WHERE entry = 5480;
 
 -- World Dwarf Male Warrior Trainer c.5959
 -- World Night Elf Male Warrior Trainer c.5966
