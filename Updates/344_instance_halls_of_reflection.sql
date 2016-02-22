@@ -268,7 +268,7 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 -- ########
 -- jaina
 -- Condition: Uther doesn't need to be in range in order to have the gossip
-SET @CONDITION_ENTRY:=1039;
+SET @CONDITION_ENTRY:=1059;
 DELETE FROM conditions WHERE condition_entry IN (@CONDITION_ENTRY,@CONDITION_ENTRY+1);
 INSERT INTO conditions VALUES
 (@CONDITION_ENTRY,37,37225,100),
