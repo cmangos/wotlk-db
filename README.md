@@ -35,8 +35,6 @@ If you have modified the default values for connecting to the database, in order
 
 Once you have the desired database user and rights configured in MySQL, you may run again the  ./InstallFullDB.sh  command to load the individual data tables into your database, populate them and apply all updates since the last milestone.
 
-Alternatively:
-You can use Windows Batch File `./Windows_Install_Script.bat` if you are a Windows User and configure the Installation Options Setting Your MYSQL Database Names, Passwords and Source Folders. It will provide you a Menu With Various Installation Options and Configurations That Have Greatly Simplified The Process.
 
 For a full installation guide, please refer to [CMaNGOS installation instructions][14].
 
