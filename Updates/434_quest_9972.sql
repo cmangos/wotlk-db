@@ -5,6 +5,7 @@ INSERT INTO dbscripts_on_quest_start (id, delay, command, datalong, datalong2, b
 (9972,2,0,0,0,0,0,0,2000000001,0,0,0,0,0,0,0,''),
 (9972,12,0,0,0,0,0,0,2000000838,0,0,0,0,0,0,0,''),
 (9972,17,10,18401,180000,0,0,0,0,0,0,0,-704.669,7871.08,45.0387,1.59531,''),
+(9972,19,26,0,0,18401,100,0,0,0,0,0,0,0,0,0,''),
 (9972,20,29,3,1,0,0,0,0,0,0,0,0,0,0,0,'quest flag added');
 DELETE FROM db_script_string WHERE entry BETWEEN 2000000838 AND 2000000839;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES

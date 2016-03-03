@@ -5,6 +5,7 @@ INSERT INTO dbscripts_on_quest_start (id, delay, command, datalong, datalong2, b
 (9962,2,0,0,0,0,0,0,2000000001,0,0,0,0,0,0,0,''),
 (9962,12,0,0,0,0,0,0,2000000002,0,0,0,0,0,0,0,''),
 (9962,17,10,18398,180000,0,0,0,0,0,0,0,-701.265,7872.87,45.6482,2.59646,''),
+(9962,19,26,0,0,18398,100,0,0,0,0,0,0,0,0,0,''),
 (9962,20,29,3,1,0,0,0,0,0,0,0,0,0,0,0,'quest flag added');
 UPDATE db_script_string SET content_default = 'The battle is about to begin! $n versus the ferocious clefthoof, Brokentoe!', type = 1 WHERE entry = 2000000002;
 UPDATE db_script_string SET content_default = '$n has defeated Brokentoe!', type = 1 WHERE entry = 2000000003;
