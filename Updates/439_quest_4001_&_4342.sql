@@ -5,10 +5,12 @@ DELETE FROM conditions WHERE condition_entry IN (1062, 1063);
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1062, 9, 4001, 0),   -- Horde quest
 (1063, 9, 4342, 0);   -- Alliance quest
-DELETE FROM gossip_menu WHERE entry BETWEEN 1823 AND 1830;
+DELETE FROM gossip_menu WHERE entry BETWEEN 1822 AND 1830;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
-(1823, 2482, 182301, 1064),
-(1823, 2482, 182302, 1065),
+(1822, 2474, 0, 22),
+(1822, 2473, 0, 0),
+(1823, 2482, 182301, 1062),
+(1823, 2482, 182302, 1063),
 (1824, 2481, 0, 0),
 (1825, 2480, 0, 0),
 (1826, 2479, 0, 0),
@@ -32,3 +34,5 @@ DELETE FROM dbscripts_on_gossip WHERE id IN (182301, 182302);
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (182301, 0, 7, 4001, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
 (182302, 0, 7, 4342, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+-- Kharan Mighthammer
+UPDATE creature_template SET GossipMenuId = 1822 WHERE entry = 9021;
