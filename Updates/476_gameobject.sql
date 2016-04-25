@@ -1,5 +1,5 @@
 -- Objects req. for q.9759 'Ending their world' 
-DELETE FROM gameobject WHERE guid BETWEEN 100127 AND 200176;
+DELETE FROM gameobject WHERE guid BETWEEN 100127 AND 100176;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
 -- first group of barrows
 -- 182088 'Draenei Explosives'
