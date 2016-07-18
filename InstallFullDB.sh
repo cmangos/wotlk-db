@@ -148,7 +148,7 @@ if [ $? != 0 ]; then exit 1; fi;
 
 
 ## Change these settings with new updatepacks
-LAST_CORE_REV="12939"
+LAST_CORE_REV="12940"
 
 # Process files in Updates folder
 echo
