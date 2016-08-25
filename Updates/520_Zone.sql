@@ -36,7 +36,7 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id
 (84133,25479,571,1,2,0,0,2467.49,6866.01,-0.0669545,1.343904,300,0,0,7984,3080,0,0);
 
 -- Kvaldir Mist Lord
--- the have several diff. equipments
+-- they have several diff. equipments
 -- #110287
 UPDATE creature SET equipment_id = 590 WHERE guid = 110287;
 DELETE FROM creature_addon WHERE guid = 110287;
