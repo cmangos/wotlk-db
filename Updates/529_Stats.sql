@@ -18,4 +18,4 @@ UPDATE creature_template SET Expansion = 0, RangedBaseAttackTime = 2000 WHERE en
 UPDATE creature_template SET Expansion = 1, UnitClass = 1, RangedBaseAttackTime = 2000 WHERE entry = 19461;
 
 -- Deathforge Mine
-UPDATE creature_template SET Expansion = 0, UnitClass = 1, RangedBaseAttackTime = 2000 WHERE entry = 19461;
+UPDATE creature_template SET Expansion = 0, UnitClass = 1, RangedBaseAttackTime = 2000 WHERE entry = 22315;
