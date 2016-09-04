@@ -1,4 +1,4 @@
--- Bloodsport Palins - Borean Tundra
+-- Bloodspore Plains - Borean Tundra
 
 -- Duplicates
 -- only duplicate removed = 84847
