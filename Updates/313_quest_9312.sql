@@ -17,7 +17,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, bud
 (9312,46,3,0,0,0,0,0,0,0,0,0,0,0,0,1.91986,''),
 (9312,49,0,0,0,0,0,0,2000000641,0,0,0,0,0,0,0,''),
 (9312,50,20,2,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoints'),
-(9312,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,'active');
+(9312,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,'unactive');
 UPDATE quest_template SET CompleteScript = 9312 WHERE entry = 9312;
 DELETE FROM db_script_string WHERE entry BETWEEN 2000000638 AND 2000000641;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
