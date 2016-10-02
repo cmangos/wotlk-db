@@ -1,11 +1,11 @@
 -- q.9312 'The Emitter'
 DELETE FROM dbscripts_on_quest_end WHERE id = 9312;
 INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(9312,1,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(9312,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'active'),
 (9312,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,''), -- in case if she has 69 state emote
 (9312,1,3,0,0,0,0,0,0,0,0,0,-4184.55,-13733.1,74.1389,1.91986,''), -- she must go back to place where she should be
 (9312,1,13,0,0,181286,50,0x02,0,0,0,0,0,0,0,0,''),
-(9312,2,10,16550,47000,0,0,0,0,0,0,0,-4187.708,-13738.72,75.65491,1.850049,'summon Image of Technician Dyvuun'),
+(9312,2,10,16550,47000,0,0,0x08,0,0,0,0,-4187.708,-13738.72,75.65491,1.850049,'summon Image of Technician Dyvuun'),
 (9312,4,3,0,0,0,0,0,0,0,0,0,0,0,0,3.92457,''),
 (9312,4,36,0,0,16550,50,3,0,0,0,0,0,0,0,0,''),
 (9312,4,0,0,0,16550,50,7,2000000638,0,0,0,0,0,0,0,''),
@@ -17,7 +17,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, bud
 (9312,46,3,0,0,0,0,0,0,0,0,0,0,0,0,1.91986,''),
 (9312,49,0,0,0,0,0,0,2000000641,0,0,0,0,0,0,0,''),
 (9312,50,20,2,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoints'),
-(9312,50,29,3,1,0,0,0,0,0,0,0,0,0,0,0,'npc_flag added');
+(9312,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,'active');
 UPDATE quest_template SET CompleteScript = 9312 WHERE entry = 9312;
 DELETE FROM db_script_string WHERE entry BETWEEN 2000000638 AND 2000000641;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES
