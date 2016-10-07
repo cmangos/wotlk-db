@@ -2,7 +2,7 @@
 
 ####################################################################################################
 #
-#   Simple helper script to insert clean UDB
+#   Simple helper script to insert clean WoTLK-DB
 #
 ####################################################################################################
 
@@ -32,7 +32,6 @@ cat >  $CONFIG_FILE << EOF
 #   MANGOS_DBUSER:	Your MANGOS username
 #   MANGOS_DBPASS:	Your MANGOS password
 #   CORE_PATH:    	Your path to core's directory (OPTIONAL: Use if you want to apply remaining core updates automatically)
-#   ACID_PATH:    	Your path to a git-clone of ACID (OPTIONAL: Use it if you want to install recent downloaded acid)
 #   MYSQL:        	Your mysql command (usually mysql)
 #
 ####################################################################################################
@@ -40,7 +39,7 @@ cat >  $CONFIG_FILE << EOF
 ## Define the host on which the mangos database resides (typically localhost)
 MANGOS_DBHOST="localhost"
 
-## Define the database in which you want to add clean UDB
+## Define the database in which you want to add clean WoTLK-DB
 MANGOS_DBNAME="mangos"
 
 ## Define your username
@@ -53,10 +52,6 @@ MANGOS_DBPASS="mangos"
 ##   If set the core updates located under sql/updates/mangos from this mangos-directory will be added automatically
 CORE_PATH=""
 
-## Define the path to the folder into which you cloned ACID (This is optional)
-##   If set the file acid_wotlk.sql will be applied from this folder
-ACID_PATH=""
-
 ## Define your mysql programm if this differs
 MYSQL="mysql"
 
@@ -66,7 +61,7 @@ EOF
 
 display_help() {
 echo
-echo "Welcome to the UDB helper $SCRIPT_FILE"
+echo "Welcome to the WoTLK-DB helper $SCRIPT_FILE"
 echo
 echo "Run this tool from a bash compatible terminal (on windows like Git Bash)"
 echo
@@ -88,9 +83,9 @@ MYSQL_MANGOSDB_CMD="$MYSQL -h$MANGOS_DBHOST -u$MANGOS_DBUSER -p$MANGOS_DBPASS $M
 
 ## Print header
 echo
-echo "Welcome to the UDB helper $SCRIPT_FILE"
+echo "Welcome to the WoTLK-DB helper $SCRIPT_FILE"
 echo
-echo "ATTENTION: Your database $MANGOS_DBNAME will be reset to UDB!"
+echo "ATTENTION: Your database $MANGOS_DBNAME will be reset to WoTLK-DB!"
 echo "Please bring your repositories up-to-date!"
 echo "Press CTRL+C to exit"
 # show a mini progress bar
@@ -234,27 +229,15 @@ fi
 #               ACID Full file
 #
 
-if [ "$ACID_PATH" != "" ]
-then
-  if [ ! -e "$ACID_PATH" ]
-  then
-    echo "Path to acid provided, but directory not found! $ACID_PATH"
-    exit 1
-  fi
-
-  # Convert path to unix style
-  ACID_PATH=`(cd "$ACID_PATH"; pwd)`
-
   # Apply acid_wotlk.sql
   echo
-  echo "Applying $ACID_PATH/acid_wotlk.sql ..."
+  echo "Applying Acid ..."
   echo
-  $MYSQL_MANGOSDB_CMD < "${ACID_PATH}"/acid_wotlk.sql
+  $MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}ACID/acid_wotlk.sql
   	if [ $? != 0 ]; then exit 1; fi;
-  echo "Recent state of ACID applied"
-fi
+    echo "Recent state of ACID applied"
 
 echo
-echo "You have now a clean and recent UDB database loaded into $MANGOS_DBNAME"
-echo "Enjoy using UDB"
+echo "You have now a clean and recent WoTLK-DB database loaded into $MANGOS_DBNAME"
+echo "Enjoy using WoTLK-DB"
 echo
