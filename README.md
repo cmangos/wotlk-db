@@ -40,10 +40,12 @@ For a full installation guide, please refer to [CMaNGOS installation instruction
 
 And if something goes wrong?
 ----------------------------
-The best way to submit an issue is to use the [Issue Tracker:][1].
+To submit an issue for **ACID** or **Database**. Pls use: [Issue Tracker:][1].
+To submit an issue for **Core** or **ScriptDev2**. Pls use: [Issue Tracker:][2].
 
 
 [1]: https://github.com/cmangos/wotlk-db/issues/ "Issue Tracker"
+[2]: https://github.com/cmangos/issues/issues/ "Issue Tracker"
 [10]: https://github.com/cmangos/mangos-wotlk "CMaNGOS-WOTLK"
 [11]: http://cmangos.net/ "CMaNGOS Project"
 [14]: https://github.com/cmangos/issues/wiki/Installation-Instructions "CMaNGOS installation instructions"
