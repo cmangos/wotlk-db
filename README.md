@@ -41,6 +41,7 @@ For a full installation guide, please refer to [CMaNGOS installation instruction
 And if something goes wrong?
 ----------------------------
 To submit an issue for **ACID** or **Database**. Pls use: [Issue Tracker:][1].
+
 To submit an issue for **Core** or **ScriptDev2**. Pls use: [Issue Tracker:][2].
 
 
