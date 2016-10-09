@@ -372,7 +372,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (80977, 11, -9142.528, -597.2371, 57.96902, 0, 0, 100, 0, 0),
 (80977, 12, -9133.249, -593.9049, 57.54119, 0, 0, 100, 0, 0),
 (80977, 13, -9134.566, -589.2764, 57.57470, 30000, 0, 100, 0, 0);
-UPDATE creature SET position_x = -9079.772, position_y = -586.9499, position_z = 62.24374, orientation = 2.111848, spawndist = 0, MovementType = 2 WHERE guid = 80977;
+UPDATE creature SET position_x = -9079.772, position_y = -586.9499, position_z = 62.24374, orientation = 2.111848, spawndist = 0, MovementType = 2 WHERE guid = 80978;
 DELETE FROM creature_movement WHERE id = 80978;
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation, model1, model2) VALUES
 (80978, 1, -9088.729, -573.6836, 62.58135, 0, 0, 100, 0, 0),
