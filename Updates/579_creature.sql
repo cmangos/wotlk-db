@@ -1,7 +1,7 @@
 -- Skhowl (Rare)
 
---Corrected loot drop
-DELETE FROM creature_loot_template WHERE  entry = 2452;
+-- Corrected loot drop
+DELETE FROM creature_loot_template WHERE entry = 2452;
 INSERT INTO creature_loot_template (entry, item, ChanceOrQuestChance, groupid, mincountOrRef, maxcount, condition_id) VALUES
 (2452,1477,0.14,0,1,1,0),
 (2452,1708,3,0,1,1,0),
