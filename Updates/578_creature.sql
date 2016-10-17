@@ -11,4 +11,4 @@ INSERT INTO skinning_loot_template (entry,item,ChanceOrQuestChance,groupid,minco
 (2447,4234,28,1,1,2,0),
 (2447,4235,5,1,1,1,0),
 (2447,8165,5,1,1,2,0),
-(2447,8269,15,1,1,1,0);
+(2447,8169,15,1,1,1,0);
