@@ -421,7 +421,7 @@ quests have been completed at the respective vendors (source: wowwiki */
 /* Adding Katrina to the Hallow's End Event */
 DELETE FROM creature WHERE guid = 128984;
 DELETE FROM creature_addon WHERE guid = 128984;
-DELETE FROM creature_movement WHERE id = 128984;;
+DELETE FROM creature_movement WHERE id = 128984;
 DELETE FROM game_event_creature WHERE guid = 128984;
 DELETE FROM game_event_creature_data WHERE guid = 128984;
 DELETE FROM creature_battleground WHERE guid = 128984;
