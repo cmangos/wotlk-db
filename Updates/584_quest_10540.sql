@@ -42,9 +42,3 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (74706,17,-4043.24,2659.54,129.091, 0, 0,4.80494, 0, 0),
 (74706,18,-4044.65,2638.3,124.111, 0, 0,4.59681, 0, 0),
 (74706,19,-4051.03,2616.96,127.649, 0, 0,4.45937, 0, 0);
-
--- Spirit Hunter
-Delete from `creature_ai_scripts` where `creature_id`= 21332;
-Insert into `creature_ai_scripts` values 
-('2133201','21332','11','0','100','0','0','0','0','0','50','1','0','0','0','0','0','0','0','0','0','0','Spirit Hunter - Set Defensive State on Spawn');
-UPDATE creature_template SET AIName='EventAI' WHERE `entry` = '21332';
