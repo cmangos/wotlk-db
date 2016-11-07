@@ -274,7 +274,7 @@ UPDATE creature_template SET MinMeleeDmg = 51.3, MaxMeleeDmg = 68.1, MinRangedDm
 DELETE FROM creature WHERE guid = 128982;
 DELETE FROM creature WHERE guid = 128982;
 DELETE FROM creature_addon WHERE guid = 128982;
-DELETE FROM creature_movement WHERE id = 128982;;
+DELETE FROM creature_movement WHERE id = 128982;
 DELETE FROM game_event_creature WHERE guid = 128982;
 DELETE FROM game_event_creature_data WHERE guid = 128982;
 DELETE FROM creature_battleground WHERE guid = 128982;
@@ -299,7 +299,7 @@ UPDATE dbscripts_on_quest_start SET search_radius = 27290 WHERE id = 5943 AND se
 -- Un'goro Crater - Devilsaur
 DELETE FROM creature WHERE guid IN (21565, 128983);
 DELETE FROM creature_addon WHERE guid IN (21565, 128983);
-DELETE FROM creature_movement WHERE id IN (21565, 128983);;
+DELETE FROM creature_movement WHERE id IN (21565, 128983);
 DELETE FROM game_event_creature WHERE guid IN (21565, 128983);
 DELETE FROM game_event_creature_data WHERE guid IN (21565, 128983);
 DELETE FROM creature_battleground WHERE guid IN (21565, 128983);
