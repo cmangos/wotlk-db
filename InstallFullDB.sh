@@ -97,53 +97,14 @@ done
 echo .
 
 ## Full
-echo "Process UDB 0.12.2"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Full_DB/UDB_0.12.2_mangos_11792_SD2_2279.sql
+echo "Process WoTLKDB v1.0 'Echoes of Northrend'"
+$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Full_DB/WoTLKDB_1_0_12943.sql
 if [ $? != 0 ]; then exit 1; fi;
 
-## 403
-echo "Process Updatepack 403"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/403_corepatch_mangos_11793_to_11840.sql
-if [ $? != 0 ]; then exit 1; fi;
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/403_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-## 404
-echo "Process Updatepack 404"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/404_corepatch_mangos_11841_to_11928.sql
-if [ $? != 0 ]; then exit 1; fi;
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/404_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-## 405
-echo "Process Updatepack 405"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/405_corepatch_mangos_11929_to_12111.sql
-if [ $? != 0 ]; then exit 1; fi;
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/405_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-## 406
-echo "Process Updatepack 406"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/406_corepatch_mangos_12112_to_12444.sql
-if [ $? != 0 ]; then exit 1; fi;
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/406_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-## 407
-echo "Process Updatepack 407"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_corepatch_mangos_12445_to_12670.sql
-if [ $? != 0 ]; then exit 1; fi;
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/407_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-## 408
-echo "Process Updatepack 408"
-$MYSQL_MANGOSDB_CMD < ${ADDITIONAL_PATH}Current_Release/Updates/408_updatepack_mangos.sql
-if [ $? != 0 ]; then exit 1; fi;
-
-
-## Change these settings with new updatepacks
+## Change these settings with new updates
 LAST_CORE_REV="12943"
+# process future release folders
+NEXT_MILESTONES="0.19 0.20"
 
 # Process files in Updates folder
 echo
@@ -181,10 +142,10 @@ then
   for NEXT_MILESTONE in ${NEXT_MILESTONES};
   do
     # A new milestone was released, apply additional updates
-    if [ -e "${CORE_PATH}"/sql/updates/archive/${NEXT_MILESTONE}/ ]
+    if [ -e "${CORE_PATH}"/sql/archive/${NEXT_MILESTONE}/ ]
     then
       echo "Apply core updates from milestone $NEXT_MILESTONE"
-      for f in "${CORE_PATH}"/sql/updates/archive/${NEXT_MILESTONE}/*_*_mangos_*.sql
+      for f in "${CORE_PATH}"/sql/archive/${NEXT_MILESTONE}/*_*_mangos_*.sql
       do
         CUR_REV=`basename "$f" | sed 's/^\([0-9]*\)_.*/\1/' `
         if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]

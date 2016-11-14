@@ -1,3 +1,28 @@
+===============================================================
+WoTLKDB v1.0 'Echoes of Northrend' for CMaNGOS 12943 for 3.3.5a
+===============================================================
+
+Main changes:
+* All UpdatePacks added (403 - 408)
+* Azuremyst Isle - Redone
+* Bloodmyst Isle - Redone
+* Exodar         - Redone
+* Borean Tundra  - Partly Redone
+* Battleground: Isle of Conquest
+* Battleground: Stand of the Ancients
+* Battleground: Dalaran Sewers Arena
+* Battleground: Ring of Valor
+* Halls of Reflection
+* ICC scripts
+* All Class Trainers Corrected
+* First Aid, Cooking and Fishing trainers corrected
+* Drop Corrected for some Rare Creatures
+* Lots of Quests / spawns / gossips / Events / Waypoints were added
+* creature_movement(_template) prepared to column drop (completed)
+* Includes Latest ACID for WoTLK
+* Lots updates backported from ClassicDB
+
+
 =================================================================
 Update pack 408, for CMaNGOS 12938 for 3.3.5a, SQL for ScriptDev2
 =================================================================
