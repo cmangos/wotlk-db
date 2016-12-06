@@ -1,4 +1,4 @@
--- Silvermoon Dragonhawk - missing added - UDB free guids reused
+-- Silvermoon Dragonhawk - missing added - WoTLKDB free guids reused
 DELETE FROM creature WHERE guid IN (129168,129169,129170,129171);
 DELETE FROM creature_addon WHERE guid IN (129168,129169,129170,129171);
 DELETE FROM creature_movement WHERE id IN (129168,129169,129170,129171);
