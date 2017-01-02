@@ -204,9 +204,7 @@ DELETE FROM creature_linking WHERE master_guid IN (48723);
 INSERT INTO creature_linking (guid, master_guid, flag) VALUES
 (48724,48723,3);
 
--- Add Missing Searing Blade Enforcer
-
--- Fleshfiend - missing added - WoTLKDB free guids reused
+-- Add Missing Searing Blade Enforcer -  missing added - WoTLKDB free guids reused
 DELETE FROM creature WHERE guid = 72679;
 DELETE FROM creature_addon WHERE guid = 72679;
 DELETE FROM creature_movement WHERE id = 72679;

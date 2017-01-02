@@ -1,7 +1,8 @@
 -- =================================================================================
 -- Anathemus Rare NPC Movement Speed Fix - Enable Run Speed (Slower then Walk Speed) - Walk/Run Speeds Sniff Confirmed
 -- =================================================================================
-UPDATE creature_template SET SpeedWalk = 1.14286, SpeedRun = 2.17 WHERE entry = 2754;
+UPDATE creature_template SET SpeedWalk = 1.14286, SpeedRun = 2.17, MovementType = 2 WHERE entry = 2754;
+UPDATE creature SET Spawndist = 0, MovementType = 2 WHERE guid = 27567;
 DELETE FROM creature_movement WHERE id = 27567;
 DELETE FROM creature_movement_template WHERE entry = 2754;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
