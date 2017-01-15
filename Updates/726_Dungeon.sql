@@ -2751,7 +2751,7 @@ UPDATE creature SET SpawnDist = 20, MovementType = 1 WHERE id = 17660;
 UPDATE creature SET SpawnDist = 3, MovementType = 1 WHERE guid = 135865;
 
 -- Prince Malchezaar Pathing
-UPDATE creature SET position_x = -10933.5, position_y = -2017.54, position_z = 275.742, SpawnDist = 0, MovementType = 2 WHERE guid = 56325;
+UPDATE creature SET position_x = -10933.5, position_y = -2017.54, position_z = 275.742, SpawnDist = 0, MovementType = 2 WHERE guid = 135477;
 UPDATE creature_template SET MovementType = 2 WHERE entry = 15690;
 DELETE FROM creature_movement_template WHERE entry = 15690;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
