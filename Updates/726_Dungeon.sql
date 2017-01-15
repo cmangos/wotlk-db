@@ -2596,7 +2596,7 @@ DELETE FROM gossip_menu WHERE entry = 8178;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (8178,10126,0,0);
 -- Gradav
-UPDATE creature_template SET GossipMenuId = 8176 WHERE entry = 16813;
+UPDATE creature_template SET GossipMenuId = 8176 WHERE entry = 16814;
 DELETE FROM gossip_menu WHERE entry = 8176;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (8176,10124,0,0);
