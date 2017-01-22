@@ -2725,7 +2725,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (135778,2,-11345.3,-1809.13,265.165,19000,0,4.3196);
 
 -- Ythyar
-UPDATE creature SET position_x = -11153.946289, position_y = -1849.224365, position_z = 238.166595, orientation = 3.868120 WHERE guid = 84990;
+UPDATE creature SET position_x = -11153.946289, position_y = -1849.224365, position_z = 238.166595, orientation = 3.868120 WHERE guid = 135682;
 
 -- Fleshbeasts
 DELETE FROM creature_linking WHERE master_guid = 135858;
