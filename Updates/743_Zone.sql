@@ -54,8 +54,9 @@ DELETE FROM creature_movement WHERE id = 70257;
 UPDATE creature_template SET MovementType = 2 WHERE Entry = 19697;
 DELETE FROM creature_movement_template WHERE entry = 19697;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
-(19697, 1, -3343.13, 5188.37, -100.966, 85000, 1969701, 2.89725),
-(19697, 2, -3343.13, 5188.37, -100.966, 300000, 0, 2.89725);
+(19697, 1, -3343.13, 5188.37, -100.966, 30000, 0, 2.89725),
+(19697, 2, -3343.13, 5188.37, -100.966, 85000, 1969701, 2.89725),
+(19697, 3, -3343.13, 5188.37, -100.966, 270000, 0, 2.89725);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1969701; 
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1969701,0,31,19693,100,0,0,0,-80000,0,0,0,0,0,0,0,'search for buddy'),
