@@ -42,8 +42,8 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 (19698, 1, -3345.28, 5189.06, -100.966, 9000, 1969801, 5.77704);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1969801; 
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(1969801,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,'),
-(1969801,4,1,1,0,0,0,0,0,0,0,0,0,0,0,0,');
+(1969801,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(1969801,4,1,1,0,0,0,0,0,0,0,0,0,0,0,0,'');
 DELETE FROM creature_template_addon WHERE entry = 19698;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
 (19698,0,0,1,0,0,0,32648);
