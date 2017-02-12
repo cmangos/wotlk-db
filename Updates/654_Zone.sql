@@ -24,7 +24,7 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id
 (77813,20340,530,1,1,0,0,3909.46,2090.17,155.839,2.58317,300,5,0,6986,0,0,1),
 (77814,20340,530,1,1,0,0,3927.87,2118.67,159.924,4.58354,300,0,0,6761,0,0,2);
 -- Updates
-UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid = 72253;
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid = 72253;
 UPDATE creature SET position_x = 3845.784424, position_y = 2111.566895, position_z = 148.651016, spawndist = 5, MovementType = 1 WHERE guid = 72254;
 -- Waypoints
 DELETE FROM creature_movement WHERE id IN (77803,72253,77807,77810,77814);
@@ -152,8 +152,8 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 -- Protectorate Tracer
 -- Missing objects added - empty guids reused -- WoTLKDB ONLY
 DELETE FROM gameobject WHERE guid BETWEEN 94197 AND 94204;
-DELETE FROM game_event_gameobject WHERE guid BETWEEN 94172 AND 94204;
-DELETE FROM gameobject_battleground WHERE guid BETWEEN 94172 AND 94204;
+DELETE FROM game_event_gameobject WHERE guid BETWEEN 94197 AND 94204;
+DELETE FROM gameobject_battleground WHERE guid BETWEEN 94197 AND 94204;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
 ( 94197, 184447, 530, 1,1,3793.59, 2079.87, 153.262, 3.61391, 0, 0, -0.9681473,0.2503814, 300, 255, 1),
 ( 94198, 184447, 530, 1,1,3801.506,2087.913,150.4931,4.782203, 0, 0, -0.6819983,0.7313538, 300, 255, 1),
