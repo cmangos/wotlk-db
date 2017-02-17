@@ -41,7 +41,7 @@ cat >  $CONFIG_FILE << EOF
 #   DATABASE:     Your database
 #   USERNAME:     Your username
 #   PASSWORD:     Your password
-#   CORE_PATH:    Your path to core's directory (OPTIONAL: Use if you want to apply remaining core updates automatically)
+#   CORE_PATH:    Your path to core's directory
 #   MYSQL:        Your mysql command (usually mysql)
 #
 ####################################################################################################
