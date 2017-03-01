@@ -1,5 +1,5 @@
 -- [Midsummer Fire Festival] Questline "Striking Back"
-DELETE FROM conditions WHERE condition_entry IN (1148, 1163);
+DELETE FROM conditions WHERE condition_entry BETWEEN 1148 AND 1163;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1148, 15, 22, 1), 
 (1149, 15, 28, 2), 
