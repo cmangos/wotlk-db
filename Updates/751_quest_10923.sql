@@ -1,4 +1,5 @@
 -- q.10923 'Evil Draws Near'
+UPDATE quest_template SET SpecialFlags = 0 WHERE entry = 10923;
 DELETE FROM dbscripts_on_event WHERE id = 14484; 
 INSERT INTO dbscripts_on_event VALUES 
 -- summoning spell (visual) missing
