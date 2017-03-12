@@ -1,8 +1,9 @@
 -- q.10923 'Evil Draws Near'
-UPDATE quest_template SET SpecialFlags = 0 WHERE entry = 10923;
+UPDATE quest_template SET SpecialFlags = 2 WHERE entry = 10923; -- set default value
 DELETE FROM dbscripts_on_event WHERE id = 14484; 
 INSERT INTO dbscripts_on_event VALUES 
 -- summoning spell (visual) missing
+(14484,1,7,10923,0,0,0,0,0,0,0,0,0,0,0,0,'quest 10923'),
 (14484,1,10,22441,600000,0,0,0x08,1,0,0,0,-3398.8,4565.9,57.4391,4.43695,'summon - Teribus the Cursed');
 
 -- Teribus the Cursed
