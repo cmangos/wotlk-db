@@ -526,16 +526,17 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 (2397501,32,0,0,0,0,0,0,2000001132,2000001133,0,0,0,0,0,0,''),
 (2397501,33,1,64,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (2397501,43,1,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
-(2397501,44,0,0,0,0,0,0,2000001134,0,0,0,0,0,0,0,''),
+(2397501,44,0,0,0,0,0,0,2000001158,0,0,0,0,0,0,0,''),
 (2397501,46,28,1,0,0,0,0,0,0,0,0,0,0,0,0,'STATE_SIT'),
 (2397501,47,21,0,0,0,0,0,0,0,0,0,0,0,0,0,'unactive');
-DELETE FROM db_script_string WHERE entry BETWEEN 2000001130 AND 2000001134;
+DELETE FROM db_script_string WHERE entry = 2000001158;
+DELETE FROM db_script_string WHERE entry BETWEEN 2000001130 AND 2000001133;
 INSERT INTO db_script_string (entry, content_default, sound, type, language, emote, comment) VALUES 
 (2000001130,'Fire grant me vision...',0,0,0,0,NULL),
 (2000001131,'Water grant me serenity...',0,0,0,0,NULL),
 (2000001132,'%s inhales the wispy smoke tendrils emanating from the burner.',0,2,0,0,NULL),
 (2000001133,'%s falls into a trance.',0,2,0,0,NULL),
-(2000001134,'Thank you, spirits.',0,0,0,0,NULL);
+(2000001158,'Thank you, spirits.',0,0,0,0,NULL);
 
 -- Bartleby Armorfist
 DELETE FROM creature_addon WHERE guid = 113249;
