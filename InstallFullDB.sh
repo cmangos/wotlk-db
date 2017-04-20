@@ -224,7 +224,7 @@ then
 
   # Apply remaining files from main folder
   echo "> Trying to apply additional core updates from path $CORE_PATH ..."
-  for f in "$CORE_PATH/sql/updates/mangos/"*_mangos_*.sql
+  for f in "${CORE_PATH}/sql/updates/mangos/"*_mangos_*.sql
   do
     CUR_REV=$(basename "$f" | sed 's/^\([0-9]*\).*/\1/')
     if [ "$CUR_REV" -gt "$LAST_CORE_REV" ]
@@ -249,7 +249,7 @@ then
   
   # Apply dbc folder
   echo "> Trying to apply $CORE_PATH/sql/base/dbc/original_data ..."
-  for f in "$CORE_PATH/sql/base/dbc/original_data/"*.sql
+  for f in "${CORE_PATH}/sql/base/dbc/original_data/"*.sql
   do
     echo "    Appending DBC file update `basename $f` to database $DATABASE"
     $MYSQL_COMMAND < $f
@@ -264,7 +264,7 @@ then
   echo
   # Apply dbc changes (specific fixes to known wrong/missing data)
   echo "> Trying to apply $CORE_PATH/sql/base/dbc/cmangos_fixes ..."
-  for f in "$CORE_PATH/sql/base/dbc/cmangos_fixes/"*.sql
+  for f in "${CORE_PATH}/sql/base/dbc/cmangos_fixes/"*.sql
   do
     echo "    Appending CMaNGOS DBC file fixes `basename $f` to database $DATABASE"
     $MYSQL_COMMAND < $f
