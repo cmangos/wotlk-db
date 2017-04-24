@@ -353,7 +353,7 @@ UPDATE creature_template SET GossipMenuId = 7139 WHERE entry = 16153;
 DELETE FROM gossip_menu WHERE entry IN (7139,8167,8168,8169);
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (7139,8401,0,0),
-(7139,10741,0,1130),
+(7139,10741,0,1182),
 (8167,10113,0,0),
 (8168,10114,0,0),
 (8169,10115,0,0);
@@ -362,13 +362,13 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 (7139,0,0,'What is this place?',1,1,8167,0,0,0,0,NULL,0),
 (7139,1,0,'Where is Medivh?',1,1,8168,0,0,0,0,NULL,0),
 (7139,2,0,'How do you navigate the tower?',1,1,8169,0,0,0,0,NULL,0),
-(7139,3,0,'Teleport me to the Guardian\'s Library.',1,1,-1,0,713901,0,0,NULL,1130);
+(7139,3,0,'Teleport me to the Guardian\'s Library.',1,1,-1,0,713901,0,0,NULL,1182);
 DELETE FROM dbscripts_on_gossip WHERE id = 713901;
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (713901,0,15,39567,0,0,0,2,0,0,0,0,0,0,0,0,'Cast Teleport to the Shade of Aran');
-DELETE FROM conditions WHERE condition_entry = 1130;
+DELETE FROM conditions WHERE condition_entry = 1182;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
-(1130,31,658,0);
+(1182,31,658,0);
 
 -- Calliard with Correct Pathing - Need to add ACID Random Says
 UPDATE creature SET position_x = -11097.052734, position_y = -1932.945190, position_z = 49.889278, orientation = 1.461623 WHERE guid = 135307;
