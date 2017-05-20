@@ -6,5 +6,5 @@ INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VA
 
 -- Updated addon for NPC 12099 (Firesworn)
 DELETE FROM creature_template_addon WHERE entry = 12099;
-INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES
-(12099, 0, 0, 1, 16, 0, 0, 8876 15733);
+INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
+(12099, 0, 0, 1, 16, 0, 0, '8876 15733');
