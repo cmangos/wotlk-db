@@ -358,7 +358,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 
 -- #64831
 UPDATE creature SET position_x = 774.7269, position_y = 8447.724, position_z = 17.74869, orientation = 6.280256, spawndist = 0, MovementType = 2 WHERE guid = 64831;
-DELETE FROM creature_movement WHERE id = 64831
+DELETE FROM creature_movement WHERE id = 64831;
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 (64831, 1, 818.9688, 8447.583, 17.50474, 0, 0, 100),
 (64831, 2, 839.9093, 8454.622, 17.62974, 0, 0, 100),
