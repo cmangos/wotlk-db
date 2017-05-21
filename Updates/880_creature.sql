@@ -1,7 +1,7 @@
 -- Ethereal Soul-Trader
 DELETE FROM item_template WHERE entry IN(38186);
-INSERT INTO item_template (entry,name,displayid,Quality,Flags,ItemLevel,stackable,bonding,description,Material) VALUES
-(38186,'Ethereal Credit',36861,1,65536,1,250,1,'Only of value to an Ethereal Soul-Trader.',4);
+INSERT INTO item_template (entry,unk0,name,displayid,Quality,Flags,ItemLevel,stackable,bonding,description,Material) VALUES
+(38186,0,'Ethereal Credit',36861,1,65536,1,250,1,'Only of value to an Ethereal Soul-Trader.',4);
 
 DELETE FROM item_template WHERE entry IN(38160,38161,38162,38163,38285,38286);
 INSERT INTO item_template(entry,class,name,displayid,Quality,InventoryType,AllowableClass,ItemLevel,stackable,Material) VALUES

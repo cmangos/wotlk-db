@@ -111,7 +111,7 @@ INSERT INTO db_script_string (entry, content_default, sound, type, language, emo
 -- Delete old scripts and replace them
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 1830201 AND 1830207;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES 
-(1830201,0,0,0,0,0,0,0,0,2000001140,2000001141,2000001142,2000001143,0,0,0,0,'Matron Drakia - Random Text'),
+(1830201,0,0,0,0,0,0,0,0,2000001162,2000001163,2000001164,2000001165,0,0,0,0,'Matron Drakia - Random Text'),
 
 (1830202,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Matron Drakia - Pause Waypoints'),
 (1830202,3,28,8,0,0,0,0,0,0,0,0,0,0,0,0,0,'Matron Drakia - STATE_KNEEL'),
