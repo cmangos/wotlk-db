@@ -9,7 +9,7 @@ DELETE FROM creature_linking WHERE guid IN (80265,80267)
 OR master_guid IN (80265,80267);
 DELETE FROM creature WHERE guid IN (80265,80267);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(80265,20079,530,1,1,0,0,-411.834,6319.23,17.3819,1.92444,300,300,0,0,1618,0,0,2),
+(80265,20079,530,1,1,0,0,-313.558,6249.58,17.4574,4.62095,300,300,0,0,1618,0,0,2),
 (80267,20079,530,1,1,0,0,-411.834,6319.23,17.3819,1.92444,300,300,0,0,1618,0,0,2);
 
 -- #80265
