@@ -3,12 +3,12 @@
 -- Player must finish 3 quests first (all part of chains):
 -- q.11652 - The Plains of Nasam
 -- q.11705 - Foolish Endeavors
--- q.11712 - Trophies of Gammoth
+-- q.11722 - Trophies of Gammoth
 DELETE FROM conditions WHERE condition_entry BETWEEN 1215 AND 1219;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1215, 8, 11652, 0),
 (1216, 8, 11705, 0),
-(1217, 8, 11712, 0),
+(1217, 8, 11722, 0),
 (1218, -1, 1216, 1215),
 (1219, -1, 1218, 1217);
 UPDATE quest_template SET RequiredCondition = 1219 WHERE entry = 11916;
