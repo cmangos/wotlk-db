@@ -29,51 +29,49 @@ CORE_PATH=""
 DEV_UPDATES="NO"
 FORCE_WAIT="YES"
 
-function create_config {
-# Re(create) config file
-cat >  $CONFIG_FILE << EOF
-####################################################################################################
-# This is the config file for the '$SCRIPT_FILE' script
-#
-# You need to insert
-#   DB_HOST:      Host on which the database resides
-#   DB_PORT:      Port on which the database is running
-#   DATABASE:     Your database
-#   USERNAME:     Your username
-#   PASSWORD:     Your password
-#   CORE_PATH:    Your path to core's directory
-#   MYSQL:        Your mysql command (usually mysql)
-#
-####################################################################################################
-
-## Define the host on which the mangos database resides (typically localhost)
-DB_HOST="localhost"
-
-## Define the port on which the mangos database is running (typically 3306)
-DB_PORT="3306"
-
-## Define the database in which you want to add clean WoTLK-DB
-DATABASE="mangos"
-
-## Define your username
-USERNAME="mangos"
-
-## Define your password (It is suggested to restrict read access to this file!)
-PASSWORD="mangos"
-
-## Define the path to your core's folder (This is optional)
-##   If set the core updates located under sql/updates from this mangos-directory will be added automatically
-CORE_PATH=""
-
-## Define your mysql programm if this differs
-MYSQL="mysql"
-
-## Define if the 'dev' directory for processing development SQL files needs to be used
-##   Set the variable to "YES" to use the dev directory
-DEV_UPDATES="NO"
-
-# Enjoy using the tool
-EOF
+function create_config() {
+# Re(create) config file            
+echo "####################################################################################################         " >> $CONFIG_FILE
+echo "# This is the config file for the '$SCRIPT_FILE' script                                                      " >> $CONFIG_FILE
+echo "#                                                                                                            " >> $CONFIG_FILE
+echo "# You need to insert                                                                                         " >> $CONFIG_FILE
+echo "#   DB_HOST:      Host on which the database resides                                                         " >> $CONFIG_FILE
+echo "#   DB_PORT:      Port on which the database is running                                                      " >> $CONFIG_FILE
+echo "#   DATABASE:     Your database                                                                              " >> $CONFIG_FILE
+echo "#   USERNAME:     Your username                                                                              " >> $CONFIG_FILE
+echo "#   PASSWORD:     Your password                                                                              " >> $CONFIG_FILE
+echo "#   CORE_PATH:    Your path to core's directory                                                              " >> $CONFIG_FILE
+echo "#   MYSQL:        Your mysql command (usually mysql)                                                         " >> $CONFIG_FILE
+echo "#                                                                                                            " >> $CONFIG_FILE
+echo "####################################################################################################         " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define the host on which the mangos database resides (typically localhost)                                " >> $CONFIG_FILE
+echo "DB_HOST=\"localhost\"                                                                                        " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define the port on which the mangos database is running (typically 3306)                                  " >> $CONFIG_FILE
+echo "DB_PORT=\"3306\"                                                                                             " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define the database in which you want to add clean WoTLK-DB                                               " >> $CONFIG_FILE
+echo "DATABASE=\"mangos\"                                                                                          " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define your username                                                                                      " >> $CONFIG_FILE
+echo "USERNAME=\"mangos\"                                                                                          " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define your password (It is suggested to restrict read access to this file!)                              " >> $CONFIG_FILE
+echo "PASSWORD=\"mangos\"                                                                                          " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define the path to your core's folder (This is optional)                                                  " >> $CONFIG_FILE
+echo "##   If set the core updates located under sql/updates from this mangos-directory will be added automatically" >> $CONFIG_FILE
+echo "CORE_PATH=\"\"                                                                                               " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define your mysql programm if this differs                                                                " >> $CONFIG_FILE
+echo "MYSQL=\"mysql\"                                                                                              " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "## Define if the 'dev' directory for processing development SQL files needs to be used                       " >> $CONFIG_FILE
+echo "##   Set the variable to "YES" to use the dev directory                                                      " >> $CONFIG_FILE
+echo "DEV_UPDATES=\"NO\"                                                                                           " >> $CONFIG_FILE
+echo "                                                                                                             " >> $CONFIG_FILE
+echo "# Enjoy using the tool                                                                                       " >> $CONFIG_FILE
 }
 
 function display_help {
