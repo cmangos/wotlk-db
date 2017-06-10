@@ -54,7 +54,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (74766,1,2700.19,6514.47,2.13838, 5000, 2135209, 2.11185),
 (74767,1,2597.69,6505.88,1.66538, 5000, 2135210, 1.09956),
 (74769,1,2462.47,6544.21,1.93072, 5000, 2135211, 0.541052),
-(74771,1,1506.37,6367.81,0.62336, 5000, 2135212, 4.5204);
+(74771,1,2332.92,6567.22,3.77855, 5000, 2135212, 0.453786);
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 2135201 AND x;
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
 -- #1 (outpost)
@@ -135,9 +135,9 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 (2135211,2,10,21351,120000,0,0,0,0x08,0,0,0,0,2462.47,6544.21,36.93072,0.541052,'summon - Ogre Building Bunny Large'), 
 (2135211,2,10,21498,120000,0,0,0,0x08,0,0,0,0,2462.47,6544.21,1.93072,0.541052,'summon - Ogre Building Cursed Spirit Bunny'),
 -- #12
-(2135212,0,10,21446,300000,0,0,0,0x08,0,0,0,0,1506.37,6367.81,0.62336,4.5204,'summon - Bladespire Evil Spirit'), 
+(2135212,0,10,21446,300000,0,0,0,0x08,0,0,0,0,2332.92,6567.22,3.77855,0.453786,'summon - Bladespire Evil Spirit'), 
 (2135212,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle'),
 (2135212,1,31,21456,10,0,0,0,0x08,0,0,0,0,0,0,0,0,'search for 21456'), -- if bunny is summoned already.. terminate (we dont want to double spawn)
-(2135212,2,10,21456,120000,0,0,0,0x08,0,0,0,0,1506.37,6367.81,0.62336,4.5204,'summon - Ogre Building Bunny Small'), 
-(2135212,2,10,21351,120000,0,0,0,0x08,0,0,0,0,1506.37,6367.81,0.62336,4.5204,'summon - Ogre Building Bunny Large'), 
-(2135212,2,10,21498,120000,0,0,0,0x08,0,0,0,0,1506.37,6367.81,0.62336,4.5204,'summon - Ogre Building Cursed Spirit Bunny');
+(2135212,2,10,21456,120000,0,0,0,0x08,0,0,0,0,2332.92,6567.22,3.77855,0.453786,'summon - Ogre Building Bunny Small'), 
+(2135212,2,10,21351,120000,0,0,0,0x08,0,0,0,0,2332.92,6567.22,3.77855,0.453786,'summon - Ogre Building Bunny Large'), 
+(2135212,2,10,21498,120000,0,0,0,0x08,0,0,0,0,2332.92,6567.22,3.77855,0.453786,'summon - Ogre Building Cursed Spirit Bunny');
