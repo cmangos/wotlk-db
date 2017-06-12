@@ -33,7 +33,7 @@ UPDATE quest_template SET StartScript = 11711 WHERE entry = 11711;
 DELETE FROM spell_target_position WHERE id IN (45956,45963);
 INSERT INTO spell_target_position (id, target_map, target_position_x, target_position_y, target_position_z, target_orientation) VALUES
 (45956, 571, 2912.682,5345.781,61.89919,1.025856),
-(45963, 571, 2957.54,5414.25,58.6446,0.173128);
+(45963, 571, 2808.36,6060.34,75.6802,4.67341);
 DELETE FROM dbscripts_on_spell WHERE id = 45958;
 INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (45958,15,0,0,0,0,25759,100,0,2000000193,0,0,0,0,0,0,0,''),
