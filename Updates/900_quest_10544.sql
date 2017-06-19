@@ -55,7 +55,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (74767,1,2597.69,6505.88,1.66538, 5000, 2135210, 1.09956),
 (74769,1,2462.47,6544.21,1.93072, 5000, 2135211, 0.541052),
 (74771,1,2332.92,6567.22,3.77855, 5000, 2135212, 0.453786);
-DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 2135201 AND x;
+DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 2135201 AND 2135212;
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
 -- #1 (outpost)
 (2135201,0,10,21452,300000,0,0,0,0x08,0,0,0,0,1544.21,6321.05,2.36069,0.593412,'summon - Bloodmaul Evil Spirit'), 
