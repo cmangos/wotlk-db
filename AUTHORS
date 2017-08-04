@@ -1,13 +1,14 @@
 This file contains authorship information related to the Wotlk-DB database Project
 
 The code of Wotlk-DB database is shipped as it is without any form of warranty,
-and - except for third party libraries - licensed under the GPL v2.0,
+and - except for third party libraries - licensed under the GPLv3+,
 which you can read from the file "LICENSE.mdown"
 
 * The authors are assigned to by git commit authorship information,
  listed within the git commit messages, or if forgotten before mentioned in the github comments related to a commit.
 
 * The most recent history can be checked at https://github.com/cmangos/wotlk-db
+Previous state can be checked at https://github.com/unified-db
 
 * Initially the code for this project was written for Mangos Project but was Continued for CMaNGOS-WOTLK Project.
 

@@ -3,10 +3,11 @@ Wotlk-DB for CMaNGOS-WOTLK
 A Content Database for [CMaNGOS-WOTLK][10], and *World of Warcraft Client Patch
 3.3.5a* - It Is Compatible Only With Client 3.3.5a (build 12340)
 
-**Wotlk-DB** is released under the GPL v2.  The file (`LICENSE.mdown`)
-**must** be a part of any re-distributable packages made from this software.  No
-licenses should be removed from this software if you are making re-distributable
-copies.
+**Wotlk-DB** is released under the GPLv3+.
+The file (`LICENSE.mdown`) **must** be a part of any re-distributable packages made from this software.  
+No licenses should be removed from this software if you are making re-distributable copies.
+
+**GPLv3+** - GPL version 3 or any later version
 
 Compatibility
 -------------
