@@ -8,8 +8,8 @@ INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1208, 8, 10884, 0),
 (1209, 8, 10885, 0),
 (1210, 8, 10886, 0),
-(1211, -2, 1209, 1208),
-(1212, -2, 1211, 1210);
+(1211, -1, 1209, 1208),
+(1212, -1, 1211, 1210);
 UPDATE quest_template SET RequiredCondition = 1212 WHERE entry = 10900;
 
 -- q.13431 'The Cudgel of Kar'desh'
