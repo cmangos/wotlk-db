@@ -12,9 +12,8 @@ DELETE FROM creature_battleground WHERE guid IN (132642,132644);
 DELETE FROM creature_linking WHERE guid IN (132642,132644) 
 OR master_guid IN (132642,132644);
 
--- General Update for Ghostly Sage/Risen Longrunner
+-- General Update
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id IN (24613,24614,25743);
-
 
 -- Wooly Mammoth & Mammoth Calf
 -- #1st pack
