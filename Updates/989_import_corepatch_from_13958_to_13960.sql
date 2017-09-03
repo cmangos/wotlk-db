@@ -38,7 +38,7 @@ CREATE TABLE `dbscript_random_templates` (
 INSERT INTO dbscript_random_templates(id,type,target_id,chance) SELECT id,'0',string_id,'0' FROM dbscript_string_template;
 DROP TABLE IF EXISTS dbscript_string_template;
 
--- 13959
+-- 13960
 ALTER TABLE db_version CHANGE COLUMN required_13959_01_mangos_dbscript_random_template required_13960_01_mangos_dbscript_string_rename bit;
 DROP TABLE IF EXISTS `dbscript_string`;
 RENAME TABLE `db_script_string` TO `dbscript_string`;
