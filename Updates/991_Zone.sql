@@ -1192,7 +1192,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 -- Nerub'ar Scarab -- All Redone
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 25652);
 DELETE FROM creature_movement WHERE id IN (SELECT guid FROM creature WHERE id = 25652);
-DELETE FROM game_event_creature WHERE guid IN (SELECT guid FROM creature WHERE id = 25652);;
+DELETE FROM game_event_creature WHERE guid IN (SELECT guid FROM creature WHERE id = 25652);
 DELETE FROM game_event_creature_data WHERE guid IN (SELECT guid FROM creature WHERE id = 25652);
 DELETE FROM creature_battleground WHERE guid IN (SELECT guid FROM creature WHERE id = 25652);
 DELETE FROM creature_linking WHERE guid IN (SELECT guid FROM creature WHERE id = 25652)
