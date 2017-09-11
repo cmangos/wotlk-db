@@ -19,7 +19,7 @@ ALTER TABLE mail_loot_template ADD comments VARCHAR(300) DEFAULT '' AFTER condit
 -- ALTER TABLE skinning_loot_template ADD comments VARCHAR(300) DEFAULT '' AFTER condition_id;
 
 -- 13965
--- ALTER TABLE db_version CHANGE COLUMN required_13964_01_mangos_comments required_13965_01_mangos_questgiver_greeting bit;
+ALTER TABLE db_version CHANGE COLUMN required_13964_01_mangos_comments required_13965_01_mangos_questgiver_greeting bit;
 
 DROP TABLE IF EXISTS `questgiver_greeting`;
 CREATE TABLE `questgiver_greeting` (
