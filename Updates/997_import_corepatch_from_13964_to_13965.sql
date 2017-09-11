@@ -1,5 +1,5 @@
 -- 13964
--- ALTER TABLE db_version CHANGE COLUMN required_13962_01_mangos_game_event_group required_13964_01_mangos_comments bit;
+ALTER TABLE db_version CHANGE COLUMN required_13962_01_mangos_game_event_group required_13964_01_mangos_comments bit;
 
 ALTER TABLE conditions MODIFY comments VARCHAR(500) DEFAULT '';
 
