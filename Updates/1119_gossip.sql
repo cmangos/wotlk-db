@@ -11,4 +11,4 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 DELETE FROM conditions WHERE condition_entry IN(1283,1284);
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES 
 (1283, 8, 9166, 0), -- q.9166 rewarded
-(1284, -1, 1283, 10015); -- q.9166 and q.9169 rewarded
+(1284, -1, 1283, 1282); -- q.9166 and q.9169 rewarded
