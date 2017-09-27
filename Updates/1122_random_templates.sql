@@ -62,12 +62,13 @@ UPDATE dbscript_random_templates SET id = 10017, comments = '22465 - Random OOC 
 -- [ACID] Script updated
 UPDATE creature_ai_scripts SET action1_param3 = 10017 WHERE id = 2246501;
 
--- Boulderfist Crusher(17134)/Boulderfist Mystic (17135) - Nagrand
-UPDATE dbscript_random_templates SET id = 10018, comments = '17134/17135 - Random OOC Texts' WHERE id = 14;
+-- Boulderfist Crusher(17134)/Boulderfist Mystic(17135)/Boulderfist Warrior(17136)/Boulderfist Mage(17137) - Nagrand
+UPDATE dbscript_random_templates SET id = 10018, comments = '17134/17135/17136/17137 - Random OOC Texts' WHERE id = 14;
 -- [ACID] Script updated
 UPDATE creature_ai_scripts SET action1_param3 = 10018 WHERE id = 1713402;
 UPDATE creature_ai_scripts SET action1_param3 = 10018 WHERE id = 1713502;
-
+UPDATE creature_ai_scripts SET action1_param3 = 10018 WHERE id = 1713602;
+UPDATE creature_ai_scripts SET action1_param3 = 10018 WHERE id = 1713702;
 -- Corki (18369) - Nagrand
 UPDATE dbscript_random_templates SET id = 10019, comments = '18369 - Random OOC Texts' WHERE id = 15;
 -- [ACID] Script updated
