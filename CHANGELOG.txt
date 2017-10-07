@@ -1,4 +1,24 @@
 ===============================================================
+WoTLKDB v1.1 'The Warsong' for CMaNGOS 13965 for 3.3.5a
+===============================================================
+
+Main changes:
+* Borean Tundra
+* Howling Fjord 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added
+* Karazhan
+* Molten Core
+* Lower Blackrock Spire
+* Many new Daily Quests added
+* Weekly Quests Implemented
+* Event: Pirate's Day
+* Includes Latest ACID for WoTLK
+* Lots updates backported from ClassicDB
+* Lots updates backported from TBCDB
+* Expansion and UnitClass - 29 930 (all) Creatures Updated
+
+
+===============================================================
 WoTLKDB v1.0 'Echoes of Northrend' for CMaNGOS 12943 for 3.3.5a
 ===============================================================
 
