@@ -381,72 +381,72 @@ DELETE FROM game_event_quest WHERE event BETWEEN 1222 AND 1224;
 INSERT INTO game_event_quest(event,quest) VALUES
 (1222,13778), (1223,13779), (1224,13780);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1224 AND 1226;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1225 AND 1227;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1224,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - A Blade Fit For A Champion'),
-(1225,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - A Worthy Weapon'),
-(1226,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - The Edge of Winter');
+(1225,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - A Blade Fit For A Champion'),
+(1226,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - A Worthy Weapon'),
+(1227,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,35,'Tournament Bloodelfs - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13783,13784,13785);
-DELETE FROM game_event_quest WHERE event BETWEEN 1224 AND 1226;
+DELETE FROM game_event_quest WHERE event BETWEEN 1225 AND 1227;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1224,13783), (1225,13784), (1226,13785);
+(1225,13783), (1226,13784), (1227,13785);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1227 AND 1229;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1228 AND 1230;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1227,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - A Blade Fit For A Champion'),
-(1228,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - A Worthy Weapon'),
-(1229,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - The Edge of Winter');
+(1228,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - A Blade Fit For A Champion'),
+(1229,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - A Worthy Weapon'),
+(1230,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,36,'Tournament Convenant - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13666,13669,13670);
-DELETE FROM game_event_quest WHERE event BETWEEN 1227 AND 1229;
+DELETE FROM game_event_quest WHERE event BETWEEN 1228 AND 1230;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1227,13666), (1228,13669), (1229,13670);
+(1228,13666), (1229,13669), (1230,13670);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1230 AND 1232;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1231 AND 1233;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1230,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - A Blade Fit For A Champion'),
-(1231,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - A Worthy Weapon'),
-(1232,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - The Edge of Winter');
+(1231,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - A Blade Fit For A Champion'),
+(1232,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - A Worthy Weapon'),
+(1233,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,37,'Tournament Humans - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13603,13600,13616);
-DELETE FROM game_event_quest WHERE event BETWEEN 1230 AND 1232;
+DELETE FROM game_event_quest WHERE event BETWEEN 1231 AND 1233;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1230,13603), (1231,13600), (1232,13616);
+(1231,13603), (1232,13600), (1233,13616);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1233 AND 1235;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1234 AND 1236;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1233,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - A Blade Fit For A Champion'),
-(1234,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - A Worthy Weapon'),
-(1235,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - The Edge of Winter');
+(1234,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - A Blade Fit For A Champion'),
+(1235,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - A Worthy Weapon'),
+(1236,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,38,'Tournament Dwarfs - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13741,13742,13743);
-DELETE FROM game_event_quest WHERE event BETWEEN 1233 AND 1235;
+DELETE FROM game_event_quest WHERE event BETWEEN 1234 AND 1236;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1233,13741), (1234,13742), (1235,13743);
+(1234,13741), (1235,13742), (1236,13743);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1236 AND 1238;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1237 AND 1239;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1236,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - A Blade Fit For A Champion'),
-(1237,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - A Worthy Weapon'),
-(1238,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - The Edge of Winter');
+(1237,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - A Blade Fit For A Champion'),
+(1238,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - A Worthy Weapon'),
+(1239,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,39,'Tournament Gnomes - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13746,13747,13748);
-DELETE FROM game_event_quest WHERE event BETWEEN 1236 AND 1238;
+DELETE FROM game_event_quest WHERE event BETWEEN 1237 AND 1239;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1236,13746), (1237,13747), (1238,13748);
+(1237,13746), (1238,13747), (1239,13748);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1239 AND 1241;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1240 AND 1242;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1239,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - A Blade Fit For A Champion'),
-(1240,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - A Worthy Weapon'),
-(1241,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - The Edge of Winter');
+(1240,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - A Blade Fit For A Champion'),
+(1241,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - A Worthy Weapon'),
+(1242,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,40,'Tournament Nightelfs - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13757,13758,13759);
-DELETE FROM game_event_quest WHERE event BETWEEN 1239 AND 1241;
+DELETE FROM game_event_quest WHERE event BETWEEN 1240 AND 1242;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1239,13757), (1240,13758), (1241,13759);
+(1240,13757), (1241,13758), (1242,13759);
 
-DELETE FROM `game_event` WHERE `entry` BETWEEN 1242 AND 1244;
+DELETE FROM `game_event` WHERE `entry` BETWEEN 1243 AND 1245;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
-(1242,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - A Blade Fit For A Champion'),
-(1243,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - A Worthy Weapon'),
-(1244,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - The Edge of Winter');
+(1243,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - A Blade Fit For A Champion'),
+(1244,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - A Worthy Weapon'),
+(1245,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,41,'Tournament Draenei - Random Daily - The Edge of Winter');
 DELETE FROM `game_event_quest` WHERE `quest` in (13752,13753,13754);
-DELETE FROM game_event_quest WHERE event BETWEEN 1242 AND 1244;
+DELETE FROM game_event_quest WHERE event BETWEEN 1243 AND 1245;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1242,13752), (1243,13753), (1244,13754);
+(1243,13752), (1244,13753), (1245,13754);
