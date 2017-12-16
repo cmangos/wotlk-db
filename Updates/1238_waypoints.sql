@@ -42,3 +42,6 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 (583,9,-9226.26,316.182,74.112,0,0,4.32122),
 (583,10,-9231.02,306.332,74.406,0,0,3.84998),
 (583,11,-9239.83,305.172,74.2633,2000,1,3.02924);
+
+-- Markus
+UPDATE creature SET spawndist = 7, MovementType = 1 WHERE guid = 80292;
