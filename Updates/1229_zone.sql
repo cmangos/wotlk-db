@@ -323,11 +323,12 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2941901,9,0,0,0,0,29302,100,7,2000001459,0,0,0,0,0,0,0,''),
 (2941901,14,0,0,0,0,0,0,0,2000001460,0,0,0,0,0,0,0,''),
 (2941901,17,31,29302,30,0,0,0,0,0,0,0,0,0,0,0,0,'search for 29302'),
-(2941901,18,0,0,0,0,29302,100,7,2000001461,0,0,0,0,0,0,0,'');
-DELETE FROM dbscript_string WHERE entry BETWEEN 2000001457 AND 2000001461;
+(2941901,18,0,0,0,0,29302,100,7,2000005041,0,0,0,0,0,0,0,'');
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000001457 AND 2000001460;
+DELETE FROM dbscript_string WHERE entry = 2000005041;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES 
 (2000001457,'Looks like you brought the whole family!  What\'s your business here, then?',0,0,0,1,NULL),
 (2000001458,'We\'re here for civilian work, sir.',0,0,0,1,NULL),
 (2000001459,'Work?  You are aware this is a warzone, citizen?  What is your profession?',0,0,0,6,NULL),
 (2000001460,'Well... we\'re undertakers, sir.',0,0,0,2,NULL),
-(2000001461,'Right.  Go ahead.',0,0,0,1,NULL);
+(2000005041,'Right.  Go ahead.',0,0,0,1,NULL);
