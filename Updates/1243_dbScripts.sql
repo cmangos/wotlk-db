@@ -4,6 +4,7 @@
 -- Script update
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1944501;
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1944502 AND delay = 13;
+UPDATE dbscripts_on_creature_movement SET search_radius = 30 WHERE id = 1944502 AND delay = 14;
 DELETE FROM dbscripts_on_creature_movement WHERE id = 1944503;
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
 -- 1944501
@@ -28,4 +29,3 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 UPDATE dbscript_string SET emote = 15 WHERE entry = 2000005412;
 UPDATE dbscript_string SET emote = 15 WHERE entry = 2000005415;
 UPDATE dbscript_string SET emote = 16 WHERE entry = 2000005417;
-

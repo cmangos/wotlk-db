@@ -24,7 +24,7 @@ INSERT INTO creature_addon (guid,mount,bytes1,b2_0_sheath,b2_1_pvp_state,emote,m
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid = 117218;
 
 -- Annie Bonn
-UPDATE creature SET position_x = spawndist = 0, MovementType = 2 WHERE guid = 111428;
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid = 111428;
 UPDATE creature_template SET MovementType = 2 WHERE Entry = 24741;
 DELETE FROM creature_movement WHERE id = 111428;
 DELETE FROM creature_movement_template WHERE entry = 24741;
