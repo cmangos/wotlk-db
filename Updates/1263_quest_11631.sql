@@ -1,4 +1,7 @@
--- q.11631 'Vision of Air' 
+-- q.11631 'Vision of Air'
+
+-- Source item should be removed from inventory after q. completed
+UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11631;
 
 -- objects
 -- missing spawn added - WoTLK free guids reused
@@ -67,6 +70,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 DELETE FROM spell_script_target WHERE entry IN (45581,45595);
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
 (45581,1,25458,0),
+(45581,1,25425,0),
 (45595,1,25424,0);
 
 -- Ortrosh
