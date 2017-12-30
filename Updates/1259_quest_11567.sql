@@ -16,7 +16,7 @@ INSERT INTO dbscript_string (entry, content_default, sound, type, language, emot
 (2000001500,'Enjoy the ride! It\'s a one way trip!',0,0,0,3,NULL);
 
 -- Harry's Bomber - 27932
-UPDATE creature_template SET Expansion = 0, MinLevel = 70, MaxLevel = 70, MinLevelHealth = 4050, MaxLevelHealth = 4050, Armor = 6719, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 304, MinMeleeDmg = 125, MaxMeleeDmg = 165, InhabitType = 7, SpeedRun = 5, MovementType = 2, VehicleTemplateId = 30 WHERE entry = 27932; -- 90 doesnt work
+UPDATE creature_template SET Expansion = 0, MinLevel = 70, MaxLevel = 70, MinLevelHealth = 4050, MaxLevelHealth = 4050, Armor = 6719, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 304, MinMeleeDmg = 125, MaxMeleeDmg = 165, InhabitType = 7, SpeedRun = 5, MovementType = 2, VehicleTemplateId = 90 WHERE entry = 27932;
 DELETE FROM creature_template_addon WHERE entry = 27932;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
 (27932,0,0,1,0,0,0,43775);
@@ -54,7 +54,7 @@ INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalo
 (1021801,0,15,61604,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
 -- Harry's Bomber - 32682
-UPDATE creature_template SET Expansion = 0, MinLevel = 70, MaxLevel = 70, MinLevelHealth = 4050, MaxLevelHealth = 4050, Armor = 6719, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 304, MinMeleeDmg = 125, MaxMeleeDmg = 165, InhabitType = 7, SpeedRun = 5, MovementType = 2, VehicleTemplateId = 34 WHERE entry = 32682; -- 90 doesnt work
+UPDATE creature_template SET Expansion = 0, MinLevel = 70, MaxLevel = 70, MinLevelHealth = 4050, MaxLevelHealth = 4050, Armor = 6719, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 304, MinMeleeDmg = 125, MaxMeleeDmg = 165, InhabitType = 7, SpeedRun = 5, MovementType = 2, VehicleTemplateId = 90 WHERE entry = 32682;
 -- Waypoints
 DELETE FROM creature_movement_template WHERE entry = 32682;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
