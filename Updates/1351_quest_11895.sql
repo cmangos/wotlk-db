@@ -19,3 +19,8 @@ OR master_guid = 54130;
 DELETE FROM creature WHERE guid = 54130;
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
 (54130,23837,571,1,1,0,0,3403.87,4133.03,18.0545,5.67232,300,300,0,0,42,0,0,0);
+
+-- Storm Tempest
+DELETE FROM dbscripts_on_creature_death WHERE id = 26045;
+INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(26045,0,15,46424,0,0,0,0,6,0,0,0,0,0,0,0,0,0);
