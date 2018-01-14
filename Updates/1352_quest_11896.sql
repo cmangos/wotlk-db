@@ -10,4 +10,4 @@ UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11896;
 
 -- Nerub'ar Venomspitter
 -- position and movement corrected
-UPDATE creature SET position_z = 1.88569, spawndist = 10, MovementType = 1 WHERE guid = 84588;
+UPDATE creature SET position_z = -13.6715, spawndist = 10, MovementType = 1 WHERE guid = 84588;
