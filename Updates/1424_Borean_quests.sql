@@ -1,10 +1,15 @@
+-- q. item must be removed after complete
+-- q.11576 'Monitoring the Rift: Cleftcliff Anomaly'
+-- q.11582 'Monitoring the Rift: Sundered Chasm'
+-- q.11587 'Prison Break'
+-- q.11590 'Abduction'
 -- q.11593 'The Honored Dead'
--- q. item must be removed after complete
-UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11593;
-
+-- q.11648 'The Art of Persuasion'
+-- q.11671 'A Race Against Time'
 -- q.11677 'Stop the Plague'
--- q. item must be removed after complete
-UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11677;
+-- q.11680 'Taking Wing'
+-- q.12728 'Monitoring the Rift: Winterfin Cavern'
+UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry IN (11576,11582,11587,11590,11593,11648,11671,11677,11680,12728);
 
 -- q.11938 'Buying Some Time'
 -- q. item must be removed after complete
