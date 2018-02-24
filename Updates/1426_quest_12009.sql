@@ -157,7 +157,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2525101,106,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'');
 
 -- texts
-DELETE FROM dbscript_string WHERE entry BETWEEN 2000001553 AND 2000002090;
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000001553 AND 2000001572;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
 -- Valanar
 (2000001553,'My liege, the infiltration and control of the Alliance power structure by our cultists is well underway.',0,0,0,0,''), -- 14211

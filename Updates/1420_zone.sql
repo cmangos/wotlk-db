@@ -15,7 +15,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, comments) VALUES
 DELETE FROM areatrigger_teleport WHERE id IN (5339,5341);
 INSERT INTO areatrigger_teleport (id, name, required_level, required_item, required_item2, heroic_key, heroic_key2, required_quest_done, required_quest_done_heroic, target_map, target_position_x, target_position_y, target_position_z, target_orientation, condition_id) VALUES
 (5339,'Naxxanar: 2nd floor -> 1st floor',0,0,0,0,0,0,0,571,3733.68,3563.25,290.812,3.665,0),
-(5341,'Naxxanar: 1st floor -> 2nd floor',0,0,0,0,0,0,0,571,3734.14,3571.12,341.662,2.259,1414);
+(5341,'Naxxanar: 1st floor -> 2nd floor',0,0,0,0,0,0,0,571,3734.14,3571.12,341.662,2.259,1435);
 -- Updates
 UPDATE areatrigger_teleport SET name = 'Temple City of En\'kilah -> Naxxanar', condition_id = 1429 WHERE id = 5332;
 UPDATE areatrigger_teleport SET name = 'Naxxanar -> Temple City of En\'kilah', condition_id = 1429 WHERE id = 5334;
