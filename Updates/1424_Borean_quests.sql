@@ -2,6 +2,10 @@
 -- q. item must be removed after complete
 UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11593;
 
+-- q.11677 'Stop the Plague'
+-- q. item must be removed after complete
+UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11677;
+
 -- q.11938 'Buying Some Time'
 -- q. item must be removed after complete
 UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry = 11938;
