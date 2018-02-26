@@ -37,20 +37,20 @@ DELETE FROM creature_linking WHERE guid IN (65679,70022,71603,71604,71605,71606,
 OR master_guid IN (65679,70022,71603,71604,71605,71606,71607,71608,71609,71610,76265);
 DELETE FROM creature WHERE guid IN (65679,70022,71603,71604,71605,71606,71607,71608,71609,71610,76265);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(65679,25764,571,1,1,0,0,2733.64,4699.48,1.94679,3.688847,120,120,0,0,8982,0,0,0),
-(70022,25764,571,1,1,0,0,2721.01,4670.86,3.17203,3.089233,120,120,0,0,8982,0,0,0),
-(71603,25764,571,1,1,0,0,2746.15,4654.56,1.79255,3.159577,120,120,0,0,8982,0,0,0),
-(71604,25764,571,1,1,0,0,2726.38,4640.3,2.8457,2.845248,120,120,0,0,8982,0,0,0),
-(71605,25764,571,1,1,0,0,2881.01,4752.97,0.0834923,3.075039,120,120,0,0,8982,0,0,0),
-(71606,25764,571,1,1,0,0,2842.3,4635.77,0.0837343,4.781369,120,120,0,0,8982,0,0,0),
-(71607,25764,571,1,1,0,0,2820,4616.5,2.42865,4.849332,120,120,0,0,8982,0,0,0),
-(71608,25764,571,1,1,0,0,2818.52,4627.25,2.56283,5.201081,120,120,0,0,8982,0,0,0),
-(71609,25764,571,1,1,0,0,3196.65,4723.19,10.439,2.75788,120,120,0,0,8982,0,0,0),
-(71610,25764,571,1,1,0,0,3133.82,4757.12,8.12206,2.4485,120,120,0,0,8982,0,0,0),
-(76265,25764,571,1,1,0,0,3035.2,4925.8,2.60807,4.30124,120,120,0,0,8982,0,0,0);
+(65679,25764,571,1,1,0,0,2735.60,4676.849,1.798,3.992805,20,20,0,0,8982,0,0,0),
+(70022,25764,571,1,1,0,0,2739.186,4665.458,2.56,3.364486,20,20,0,0,8982,0,0,0),
+(71603,25764,571,1,1,0,0,2746.15,4654.56,1.79255,3.159577,20,20,0,0,8982,0,0,0),
+(71604,25764,571,1,1,0,0,2742.02,4645.89,2.38,3.187772,20,20,0,0,8982,0,0,0),
+(71605,25764,571,1,1,0,0,2881.01,4752.97,0.0834923,3.075039,20,20,0,0,8982,0,0,0),
+(71606,25764,571,1,1,0,0,2842.3,4635.77,0.0837343,4.781369,20,20,0,0,8982,0,0,0),
+(71607,25764,571,1,1,0,0,2820,4616.5,2.42865,4.849332,20,20,0,0,8982,0,0,0),
+(71608,25764,571,1,1,0,0,2818.52,4627.25,2.56283,5.201081,20,20,0,0,8982,0,0,0),
+(71609,25764,571,1,1,0,0,3196.65,4723.19,10.439,2.75788,20,20,0,0,8982,0,0,0),
+(71610,25764,571,1,1,0,0,3133.82,4757.12,8.12206,2.4485,20,20,0,0,8982,0,0,0),
+(76265,25764,571,1,1,0,0,3035.2,4925.8,2.60807,4.30124,20,20,0,0,8982,0,0,0);
 -- Updates
 UPDATE creature_template SET MovementType = 0 WHERE entry = 25764;
-UPDATE creature SET spawntimesecsmin = 30, spawntimesecsmax = 30 WHERE id = 25764;
+UPDATE creature SET spawntimesecsmin = 20, spawntimesecsmax = 20 WHERE id = 25764;
 -- Positions corrected
 UPDATE creature SET orientation = 3.839724 WHERE guid = 111340;
 UPDATE creature SET orientation = 3.089233 WHERE guid = 111347;
@@ -58,7 +58,7 @@ UPDATE creature SET position_x = 2844.906006, position_y = 4919.603027, position
 UPDATE creature SET position_x = 2841.757080, position_y = 4938.745117, position_z = 7.963129, orientation = 3.869868, spawndist = 0, MovementType = 0 WHERE guid = 111357;
 UPDATE creature SET position_x = 2851.052002, position_y = 4921.846191, position_z = 3.874460, orientation = 3.316126, spawndist = 0, MovementType = 0 WHERE guid = 111348;
 UPDATE creature SET position_x = 2838.842041, position_y = 4926.245117, position_z = 3.777463, orientation = 3.912104, spawndist = 0, MovementType = 0 WHERE guid = 111349;
-UPDATE creature SET position_x = 2784.121094, position_y = 4742.418945, position_z = 2.091396, orientation = 2.985641, spawndist = 0, MovementType = 0 WHERE guid = 111334;
+UPDATE creature SET position_x = 2773.430908, position_y = 4740.046875, position_z = 1.832615, orientation = 3.102334, spawndist = 0, MovementType = 0 WHERE guid = 111334;
 UPDATE creature SET position_x = 2761.946045, position_y = 4730.994141, position_z = 2.671541, orientation = 2.985641, spawndist = 0, MovementType = 0 WHERE guid = 111324;
 UPDATE creature SET position_x = 2827.272949, position_y = 4649.502930, position_z = 2.143247, orientation = 4.865813, spawndist = 0, MovementType = 0 WHERE guid = 111328;
 UPDATE creature SET position_x = 2796.656982, position_y = 4633.166992, position_z = 1.967989, orientation = 5.316815, spawndist = 0, MovementType = 0 WHERE guid = 111329;
