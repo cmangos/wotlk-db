@@ -20,6 +20,10 @@ DELETE FROM spell_script_target WHERE entry = 46793;
 INSERT INTO spell_script_target (entry, type, targetEntry) VALUES 
 (46793, 1, 24771);
 
+-- TEMP Saragosa's Landing
+-- range corrected to match spell req.
+UPDATE gameobject_template SET data1 = 40 WHERE entry = 300185;
+
 -- Event
 DELETE FROM dbscripts_on_event WHERE id = 17452;
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
