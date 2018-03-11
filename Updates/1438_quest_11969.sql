@@ -188,10 +188,9 @@ INSERT INTO creature_movement_template (entry, pathId, point, position_x, positi
 (24769,3,17,3692.661,6917.933,604.2271,0,0,100);
 
 -- spells
-DELETE FROM spell_script_target WHERE entry IN (65140,65162);
+DELETE FROM spell_script_target WHERE entry = 65140;
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES 
-(65140, 1, 34310, 0),
-(65162, 1, 26237, 0);
+(65140, 1, 34310, 0);
 DELETE FROM spell_target_position WHERE id = 65138;
 INSERT INTO spell_target_position (id, target_map, target_position_x, target_position_y, target_position_z, target_orientation) VALUES
 (65138, 571, 4042.93,7097.24,171.0833,2.232042);

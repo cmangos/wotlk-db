@@ -32,7 +32,7 @@ INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VA
 
 -- Wyrmrest Skytalon
 UPDATE creature_template SET InhabitType = 3, MinLevel = 80, MaxLevel = 80, MinLevelHealth = 100000, MaxLevelHealth = 100000, Armor = 9706, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 642, MinMeleeDmg = 422, MaxMeleeDmg = 586 WHERE entry = 32535;
-UPDATE creature_template_spells SET spell6 = 57092;
+UPDATE creature_template_spells SET spell6 = 57092 WHERE entry = 32535;
 DELETE FROM creature_template_addon WHERE entry = 32535;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 (32535,0,0,0,0,0,0,'57403');
