@@ -42,9 +42,9 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id
 (71603,25764,571,1,1,0,0,2746.15,4654.56,1.79255,3.159577,20,20,0,0,8982,0,0,0),
 (71604,25764,571,1,1,0,0,2742.02,4645.89,2.38,3.187772,20,20,0,0,8982,0,0,0),
 (71605,25764,571,1,1,0,0,2881.01,4752.97,0.0834923,3.075039,20,20,0,0,8982,0,0,0),
-(71606,25764,571,1,1,0,0,2842.3,4635.77,0.0837343,4.781369,20,20,0,0,8982,0,0,0),
-(71607,25764,571,1,1,0,0,2820,4616.5,2.42865,4.849332,20,20,0,0,8982,0,0,0),
-(71608,25764,571,1,1,0,0,2818.52,4627.25,2.56283,5.201081,20,20,0,0,8982,0,0,0),
+(71606,25764,571,1,1,0,0,2819.344,4639.586,2.561,5.12743,20,20,0,0,8982,0,0,0),
+(71607,25764,571,1,1,0,0,2805.53,4639.22,2.562,5.224023,20,20,0,0,8982,0,0,0),
+(71608,25764,571,1,1,0,0,2811.126,4634.418,2.56,5.365395,20,20,0,0,8982,0,0,0),
 (71609,25764,571,1,1,0,0,3196.65,4723.19,10.439,2.75788,20,20,0,0,8982,0,0,0),
 (71610,25764,571,1,1,0,0,3133.82,4757.12,8.12206,2.4485,20,20,0,0,8982,0,0,0),
 (76265,25764,571,1,1,0,0,3035.2,4925.8,2.60807,4.30124,20,20,0,0,8982,0,0,0);
@@ -60,6 +60,7 @@ UPDATE creature SET position_x = 2851.052002, position_y = 4921.846191, position
 UPDATE creature SET position_x = 2838.842041, position_y = 4926.245117, position_z = 3.777463, orientation = 3.912104, spawndist = 0, MovementType = 0 WHERE guid = 111349;
 UPDATE creature SET position_x = 2773.430908, position_y = 4740.046875, position_z = 1.832615, orientation = 3.102334, spawndist = 0, MovementType = 0 WHERE guid = 111334;
 UPDATE creature SET position_x = 2761.946045, position_y = 4730.994141, position_z = 2.671541, orientation = 2.985641, spawndist = 0, MovementType = 0 WHERE guid = 111324;
+UPDATE creature SET position_x = 2817.456543, position_y = 4645.362305, position_z = 2.557076, orientation = 5.084233, spawndist = 0, MovementType = 0 WHERE guid = 111326;
 UPDATE creature SET position_x = 2827.272949, position_y = 4649.502930, position_z = 2.143247, orientation = 4.865813, spawndist = 0, MovementType = 0 WHERE guid = 111328;
 UPDATE creature SET position_x = 2796.656982, position_y = 4633.166992, position_z = 1.967989, orientation = 5.316815, spawndist = 0, MovementType = 0 WHERE guid = 111329;
 UPDATE creature SET position_x = 3057.072998, position_y = 4597.136230, position_z = 4.302903, orientation = 3.657181, spawndist = 0, MovementType = 0 WHERE guid = 111338;
