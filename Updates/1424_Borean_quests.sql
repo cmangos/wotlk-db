@@ -20,6 +20,9 @@ UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry = 11938;
 -- q.11892 'The Assassination of Harold Lane'
 UPDATE quest_template SET ReqSourceCount4 = 1 WHERE entry IN (11610,11892);
 
+-- q.11630 'The Bad Earth'
+UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 1, DetailsEmote3 = 1, DetailsEmoteDelay2 = 1000, DetailsEmoteDelay3 = 1000, IncompleteEmote = 6, CompleteEmote = 1, OfferRewardEmote1 = 1, OfferRewardEmote2 = 1, OfferRewardEmoteDelay2 = 1000 WHERE entry = 11630;
+
 -- q.11675 'A Proper Death'
 UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 1, DetailsEmote3 = 1, DetailsEmoteDelay2 = 1000, DetailsEmoteDelay3 = 1000, IncompleteEmote = 6, CompleteEmote = 1, OfferRewardEmote1 = 1, OfferRewardEmote2 = 1, OfferRewardEmoteDelay2 = 1000 WHERE entry = 11675;
 
