@@ -37,3 +37,9 @@ UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 1, DetailsEmote3 = 
 
 -- q.11909 'Defeat the Gearmaster'
 UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 1, DetailsEmote3 = 1, DetailsEmoteDelay2 = 1000, DetailsEmoteDelay3 = 1000, IncompleteEmote = 6, CompleteEmote = 1, OfferRewardEmote1 = 1, OfferRewardEmote2 = 2, OfferRewardEmoteDelay2 = 1000 WHERE entry = 11909;
+
+-- q.11929 'The Fall of Taunka'le Village'
+UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 25, DetailsEmoteDelay2 = 1000, IncompleteEmote = 6, CompleteEmote = 1, OfferRewardEmote1 = 1 WHERE entry = 11929;
+
+-- q.11930 'Across Transborea'
+UPDATE quest_template SET DetailsEmote1 = 1, DetailsEmote2 = 1, DetailsEmoteDelay2 = 1000, IncompleteEmote = 6, CompleteEmote = 1, OfferRewardEmote1 = 1 WHERE entry = 11930;
