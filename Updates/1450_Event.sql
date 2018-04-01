@@ -7,13 +7,13 @@ UPDATE creature_template SET MovementType = 2 WHERE entry = 25446;
 DELETE FROM creature_movement_template WHERE entry = 25446;
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 (25446,1,2729.24,6082.68,73.7073,600000,0,3.36848), -- 10min
-(25446,2,2729.24,6082.68,73.7073,600000,2544601,3.36848), -- event
+(25446,2,2729.24,6082.68,73.7073,720000,2544601,3.36848), -- event
 (25446,3,2729.24,6082.68,73.7073,1200000,0,3.36848); -- 20min
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2544601;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2544601,0,31,24526,100,0,0,0,0x08,0,0,0,0,0,0,0,0,'search for 25446 - terminate if found'),
 (2544601,1,0,0,0,0,0,0,0,2000001605,0,0,0,0,0,0,0,''),
-(2544601,1,10,24526,900000,1,0,0,0x08,1,0,0,0,2719.64,6085.58,76.2624,3.74762,'summon Invis - event trigger'),
+(2544601,1,10,24526,900000,1,0,0,0x08,1,0,0,0,2713.98,6081.32,72.1857,3.74762,'summon Invis - event trigger'),
 (2544601,18,0,0,0,0,0,0,0,2000001606,0,0,0,0,0,0,0,'');
 DELETE FROM dbscript_string WHERE entry BETWEEN 2000001605 AND 2000001609;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
@@ -27,12 +27,13 @@ INSERT INTO dbscript_string (entry, content_default, sound, type, language, emot
 UPDATE creature_template SET MovementType = 2, InhabitType = 4 WHERE entry = 24526;
 DELETE FROM creature_movement_template WHERE entry = 24526;
 INSERT INTO creature_movement_template (entry, pathId, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
-(24526,1,1,2719.64,6085.58,76.2624,1000000,2452601,3.74762),
-(24526,2,1,2719.64,6085.58,76.2624,21000,2452602,3.74762);
+(24526,1,1,2713.98,6081.32,72.1857,1000000,2452601,3.74762),
+(24526,2,1,2713.98,6081.32,72.1857,21000,2452602,3.74762);
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2452601,2452602);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- event started
 (2452601,0,31,25446,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25446'),
+(2452601,0,31,25244,10,0,0,0,0x08,0,0,0,0,0,0,0,0,'search for 25244 - terminate if exist'),
 (2452601,0,31,25453,200,0,0,0,0x08,0,0,0,0,0,0,0,0,'search for 25453 - terminate if exist'),
 (2452601,1,10,25244,720000,1,0,0,0x08,1,0,0,0,2788.103,6140.169,86.38469,3.88874,'summon Warsong Marksman #1'),
 (2452601,1,10,25244,720000,2,0,0,0x08,1,0,0,0,2788.103,6140.169,86.38469,3.88874,'summon Warsong Marksman #2'),
@@ -173,7 +174,7 @@ INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2
 (25453,5,15,45593,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'cast - Ith\'rix\'s Carapace'),
 (25453,5,31,25446,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25446'),
 (25453,5,37,0,0,0,25446,100,3,0,0,0,0,0,0,0,0,''),
-(25453,6,10,24526,20000,2,0,0,0x08,1,0,0,0,2719.64,6085.58,76.2624,3.74762,'summon Invis - event trigger #2');
+(25453,6,10,24526,20000,2,0,0,0x08,1,0,0,0,2713.98,6081.32,72.1857,3.74762,'summon Invis - event trigger #2');
 
 -- Nerub'ar Sky Darkener
 DELETE FROM creature_template_addon WHERE entry = 25451;
