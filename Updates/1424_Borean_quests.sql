@@ -14,8 +14,10 @@
 UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry IN (11576,11582,11587,11590,11593,11648,11671,11677,11680,11919,11940,12728);
 
 -- q.11889 'Death From Above'
+-- q.11913 'Take No Chances'
 -- q.11938 'Buying Some Time'
-UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry IN (11889,11938);
+-- q.12035 'Repurposed Technology'
+UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry IN (11889,11913,11938,12035);
 
 -- q.11897 'Plug the Sinkholes'
 UPDATE quest_template SET ReqSourceCount3 = 1 WHERE entry = 11897;
