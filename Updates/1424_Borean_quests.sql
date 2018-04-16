@@ -5,14 +5,16 @@
 -- q.11590 'Abduction'
 -- q.11593 'The Honored Dead'
 -- q.11648 'The Art of Persuasion'
+-- q.11653 'Hah... You're Not So Big Now!'
 -- q.11671 'A Race Against Time'
 -- q.11677 'Stop the Plague'
 -- q.11680 'Taking Wing'
 -- q.11712 'Re-Cursive'
+-- q.11730 'Master and Servant'
 -- q.11919 'Drake Hunt'
 -- q.11940 'Drake Hunt'
 -- q.12728 'Monitoring the Rift: Winterfin Cavern'
-UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry IN (11576,11582,11587,11590,11593,11648,11671,11677,11680,11712,11919,11940,12728);
+UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry IN (11576,11582,11587,11590,11593,11648,11653,11671,11677,11680,11712,11730,11919,11940,12728);
 
 -- q.11889 'Death From Above'
 -- q.11913 'Take No Chances'
