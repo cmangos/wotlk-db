@@ -22,13 +22,15 @@ UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry IN (11576,11582,11587,
 -- q.12035 'Repurposed Technology'
 UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry IN (11889,11913,11938,12035);
 
+-- q.11728 'Lupus Pupus'
 -- q.11897 'Plug the Sinkholes'
-UPDATE quest_template SET ReqSourceCount3 = 1 WHERE entry = 11897;
+UPDATE quest_template SET ReqSourceCount3 = 1 WHERE entry IN (11728,11897);
 
 -- q.11610 'Leading the Ancestors Home'
 -- q.11794 'The Hunt is On'
+-- q.11796 'Emergency Protocol: Section 8.2, Paragraph D'
 -- q.11892 'The Assassination of Harold Lane'
-UPDATE quest_template SET ReqSourceCount4 = 1 WHERE entry IN (11610,11794,11892);
+UPDATE quest_template SET ReqSourceCount4 = 1 WHERE entry IN (11610,11794,11796,11892);
 
 
 -- Emotes
