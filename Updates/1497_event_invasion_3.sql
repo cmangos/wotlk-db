@@ -1,5 +1,5 @@
 -- ----------------------------------------
--- Elemental Invasion: Air
+-- Elemental Invasion: Earth
 -- ----------------------------------------
 
 DELETE FROM game_event WHERE entry = 202;

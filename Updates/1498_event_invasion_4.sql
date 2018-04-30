@@ -1,10 +1,10 @@
 -- ----------------------------------------
--- Elemental Invasion: Air
+-- Elemental Invasion: Water
 -- ----------------------------------------
 
 DELETE FROM game_event WHERE entry = 203;
 INSERT INTO game_event VALUES
-(203, '2006-01-03 00:00:00', '2030-12-31 23:59:00', 4320, 2160, 0, 0, 0, 'Elemental Invasion: Air'); 
+(203, '2006-01-03 00:00:00', '2030-12-31 23:59:00', 4320, 2160, 0, 0, 0, 'Elemental Invasion: Water'); 
 
 -- ----------------------------------------
 -- Elemental Rift from which the NPCs spawn
@@ -14,7 +14,7 @@ DELETE FROM gameobject WHERE guid BETWEEN 94611 AND 94615;
 DELETE FROM game_event_gameobject WHERE guid BETWEEN 94611 AND 94615;
 DELETE FROM gameobject_battleground WHERE guid BETWEEN 94611 AND 94615;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-(94611, 179665, 1, 1, 1, 6601.08, -4167.38, 658.598, -1.0472, 0, 0, -0.500001, 0.866025, 300, 300, 0, 1),      -- Water Elemental Rifts
+(94611, 179665, 1, 1, 1, 6601.08, -4167.38, 658.598, -1.0472, 0, 0, -0.500001, 0.866025, 300, 300, 0, 1), -- Water Elemental Rifts
 (94612, 179665, 1, 1, 1, 6498.69, -4173.11, 658.959, 2.32129, 0, 0, 0.91706, 0.398748, 300, 300, 0, 1),
 (94613, 179665, 1, 1, 1, 6541.6, -4061.05, 658.296, -3.05433, 0, 0, -0.999048, 0.0436174, 300, 300, 0, 1),
 (94614, 179665, 1, 1, 1, 6466.32, -4035.07, 658.459, 2.23402, 0, 0, 0.898794, 0.438372, 300, 300, 0, 1),
