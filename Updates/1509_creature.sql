@@ -5,7 +5,7 @@ INSERT INTO dbscripts_on_event VALUES
 UPDATE creature_template SET UnitFlags=32768 WHERE entry IN(21685,21686,21687);
 
 UPDATE creature_template SET MovementType=2 WHERE entry IN(21685);
-DELETE FROM creature_movement_template WHERE entry=14536;
+DELETE FROM creature_movement_template WHERE entry=21685;
 INSERT INTO creature_movement_template (entry, PathId, point, position_x, position_y, position_z,waittime, script_id, orientation) VALUES
 (21685,1,1,-3419.458,1383.739,228.1865,0,0,100),
 (21685,1,2,-3420.999,1395.204,257.6374,0,0,100),
