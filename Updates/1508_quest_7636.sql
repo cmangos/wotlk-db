@@ -424,7 +424,8 @@ INSERT INTO creature_movement_template (entry, PathId, point, position_x, positi
 
 -- Precious
 -- remove static spawn, summoned by Simone instead
-DELETE FROM creature WHERE id=14528;
+DELETE FROM npc_gossip WHERE npc_guid IN (SELECT guid FROM creature WHERE id = 14528);
+DELETE FROM creature WHERE id = 14528;
 
 -- Simone the Inconspicuous
 UPDATE creature SET position_x=-6972.83, position_y=-736.328, position_z=-266.453, orientation=4.15786, spawntimesecsmin=10800, spawntimesecsmax=10800, MovementType=2 WHERE id=14527;
