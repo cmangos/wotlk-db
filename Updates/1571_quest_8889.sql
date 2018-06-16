@@ -6,11 +6,11 @@ UPDATE creature SET spawntimesecsmin=30, spawntimesecsmax=30 WHERE id=17984; -- 
 
 DELETE FROM spell_script_target WHERE entry IN(31628,31630,31631);
 INSERT INTO spell_script_target (entry,type,targetEntry,inverseEffectMask) VALUES
-(31628,3,152546,0),
-(31630,3,152543,0),
-(31631,3,152549,0);
+(31628,3,63696,0),
+(31630,3,63693,0),
+(31631,3,68026,0);
 
-UPDATE creature SET MovementType=2 WHERE guid IN(63694,63695,63697,63690,63691,63692,68000,68266);   -- odnaleŸæ wszystkie te guidy !!!!!!!!!!
+UPDATE creature SET MovementType=2 WHERE guid IN(63694,63695,63697,63690,63691,63692,68000,68266);
 DELETE FROM `creature_movement` WHERE `id` IN(63694,63695,63697,63690,63691,63692,68000,68266);
 INSERT INTO `creature_movement` (`id`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
 (63694,1,9348.7,-7889.25,144.975,3000,1798401,2.72285),
@@ -39,14 +39,14 @@ DELETE FROM `dbscripts_on_go_template_use` WHERE `id` IN(180916,180919,180920);
 INSERT INTO `dbscripts_on_go_template_use` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
 (180916,0,18,0,0,0,0,0,0,0,17984,63694,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 1',0,0,0,0),
 (180916,0,18,0,0,0,0,0,0,0,17984,63695,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 2',0,0,0,0),
-(180916,0,18,0,0,0,0,0,0,0,17984,152546,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 3',0,0,0,0),
+(180916,0,18,0,0,0,0,0,0,0,17984,63696,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 3',0,0,0,0),
 (180916,0,18,0,0,0,0,0,0,0,17984,63697,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 4',0,0,0,0),
 
 (180919,0,18,0,0,0,0,0,0,0,17984,63690,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 1',0,0,0,0),
 (180919,0,18,0,0,0,0,0,0,0,17984,63691,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 2',0,0,0,0),
 (180919,0,18,0,0,0,0,0,0,0,17984,63692,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 3',0,0,0,0),
-(180919,0,18,0,0,0,0,0,0,0,17984,152543,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 4',0,0,0,0),
+(180919,0,18,0,0,0,0,0,0,0,17984,63693,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 4',0,0,0,0),
 
 (180920,0,18,0,0,0,0,0,0,0,17984,68000,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 1',0,0,0,0),
-(180920,0,18,0,0,0,0,0,0,0,17984,152549,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 2',0,0,0,0),
+(180920,0,18,0,0,0,0,0,0,0,17984,68026,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 2',0,0,0,0),
 (180920,0,18,0,0,0,0,0,0,0,17984,68266,23,'Duskwither Spire Power Source - Despawn Power Source Invisible Bunny 3',0,0,0,0);
