@@ -102,8 +102,8 @@ INSERT INTO `dbscripts_on_event` (`id`,`delay`,`command`,`datalong`,`datalong2`,
 (@ALLY_EVENT,13,0,0,0,@BARON,100,3,2000001645,0,0,0,0,0,0,0,'Baron yell 2'),
 (@ALLY_EVENT,17,0,0,0,@GOC,100,3,2000001646,0,0,0,0,0,0,0,'Goc yell 2'),
 (@ALLY_EVENT,21,0,0,0,@BARON,100,3,2000001647,0,0,0,0,0,0,0,'Baron yell 3'),
-(@ALLY_EVENT,23,5,46,512,@BARON,100,0,0,0,0,0,0,0,0,0,'Baron Remove UnitFlag - Immune to NPC'),
-(@ALLY_EVENT,23,5,46,768,@GOC,100,0,0,0,0,0,0,0,0,0,'Goc Remove UnitFlag - Immune to NPC/Player'),
+(@ALLY_EVENT,23,5,59,512,@BARON,100,0,0,0,0,0,0,0,0,0,'Baron Remove UnitFlag - Immune to NPC'),
+(@ALLY_EVENT,23,5,59,768,@GOC,100,0,0,0,0,0,0,0,0,0,'Goc Remove UnitFlag - Immune to NPC/Player'),
 (@ALLY_EVENT,24,26,0,0,@GOC,100,3,0,0,0,0,0,0,0,0,'Goc attack Player'),
 (@ALLY_EVENT,24,3,0,1000,@BARON,100,3,0,0,0,0,3717.383545,5381.583984,-5.516471,2.659832,'Baron move');
 
@@ -150,21 +150,21 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (2244802,9,0,0,0,0,0,0,2000001650,0,0,0,0,0,0,0,'Rexxar yell 2'),
 (2244802,14,0,0,0,@GOC,100,3,2000001646,0,0,0,0,0,0,0,'Goc yell 2'),
 (2244802,18,0,0,0,0,0,0,2000001651,0,0,0,0,0,0,0,'Rexxar yell 3'),
-(2244802,19,5,46,512,0,0,0,0,0,0,0,0,0,0,0,'Rexxar Remove UnitFlag - Immune to NPC'),
-(2244802,19,5,46,768,@GOC,100,0,0,0,0,0,0,0,0,0,'Goc Remove UnitFlag - Immune to NPC/Player'),
+(2244802,19,5,59,512,0,0,0,0,0,0,0,0,0,0,0,'Rexxar Remove UnitFlag - Immune to NPC'),
+(2244802,19,5,59,768,@GOC,100,0,0,0,0,0,0,0,0,0,'Goc Remove UnitFlag - Immune to NPC/Player'),
 (2244802,20,26,0,0,@GOC,100,3,0,0,0,0,0,0,0,0,'Goc attack Rexxar');
 
 DELETE FROM `dbscripts_on_creature_death` WHERE `id`=@GOC;
 INSERT INTO `dbscripts_on_creature_death` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES
 (@GOC,0,44,@BARON,0,@SABELLIAN,100,3,0,0,0,0,0,0,0,0,'Baron transform to human form'),
-(@GOC,0,4,46,512,@BARON,100,3,0,0,0,0,0,0,0,0,'Baron Add UnitFlag - Immune to NPC'),
+(@GOC,0,4,59,512,@BARON,100,3,0,0,0,0,0,0,0,0,'Baron Add UnitFlag - Immune to NPC'),
 (@GOC,1,3,0,1000,@BARON,100,3,0,0,0,0,3724.598145,5355.335938,-8.116101,1.696503,'Baron move'),
 (@GOC,2,0,0,0,@BARON,100,3,2000001648,0,0,0,0,0,0,0,'Baron yell 4'),
 (@GOC,5,15,39225,0,@BARON,100,3,0,0,0,0,0,0,0,0,'Baron cast [DND]Sablemane''s Teleport (Rank 1)'),
 (@GOC,6,18,0,0,@BARON,100,2,0,0,0,0,0,0,0,0,'Baron despawn'),
 
 (@GOC,0,3,0,300,@REXXAR,100,3,0,0,0,0,3713.322,5355.852,-8.061543,100,'Rexxar move'),
-(@GOC,0,4,46,512,@REXXAR,100,3,0,0,0,0,0,0,0,0,'Rexxar Add UnitFlag - Immune to NPC'),
+(@GOC,0,4,59,512,@REXXAR,100,3,0,0,0,0,0,0,0,0,'Rexxar Add UnitFlag - Immune to NPC'),
 (@GOC,2,0,0,0,@REXXAR,100,3,2000001652,0,0,0,0,0,0,0,'Rexxar yell 4'),
 (@GOC,5,24,22268,0,@REXXAR,100,3,0,0,0,0,0,0,0,0,'Rexxar mount'),
 (@GOC,5,39,1,0,@REXXAR,100,3,0,0,0,0,0,0,0,0,'Rexxar fly on'),
