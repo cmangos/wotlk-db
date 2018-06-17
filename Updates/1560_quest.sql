@@ -172,14 +172,14 @@ INSERT INTO `dbscripts_on_creature_death` (`id`,`delay`,`command`,`datalong`,`da
 
 DELETE FROM `dbscript_string` WHERE `entry` BETWEEN 2000001643 AND 2000001653;
 INSERT INTO `dbscript_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES
-(2000001643,'Who dares rouse Goc from his restful slumber?',0,0,0,0,0,0,0,0,0,1,0,53,'Goc yell 1'),
-(2000001644,'It''s only right that you know the name of the one who will take your life.',0,0,0,0,0,0,0,0,0,1,0,397,'Baron yell 1'),
-(2000001645,'Baron Sablemane. It will be on your lips as you gasp your dying breath.',0,0,0,0,0,0,0,0,0,1,0,153,'Baron yell 2'),
-(2000001646,'Your name is as insignificant to me as the names of the thousands who have died under the might of Goc. I will crush you and $N!',0,0,0,0,0,0,0,0,0,1,0,53,'Goc yell 2'),
-(2000001647,'Let us begin.',0,0,0,0,0,0,0,0,0,1,0,15,'Baron yell 3'),
-(2000001648,'We will speak again, but away from here.',0,0,0,0,0,0,0,0,0,1,0,396,'Baron yell 4'),
-(2000001649,'I am Rexxar, son of the Mok''Nathal, champion of the Horde.',0,0,0,0,0,0,0,0,0,1,0,397,'Rexxar yell 1'),
-(2000001650,'And their torment at your hands is at an end. By my name, I shall put an end to your life.',0,0,0,0,0,0,0,0,0,1,0,113,'Rexxar yell 2'),
-(2000001651,'Prepare yourself for the end.',0,0,0,0,0,0,0,0,0,1,0,15,'Rexxar yell 3'),
-(2000001652,'I could not have achieved this victory without you. We will speak back at Thunderlord Stronghold.',0,0,0,0,0,0,0,0,0,1,0,396,'Rexxar yell 4'),
-(2000001653,'Who dares place this affront upon the altar of Goc?',0,0,0,0,0,0,0,0,0,1,0,53,'Goc yell 0');
+(2000001643,'Who dares rouse Goc from his restful slumber?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,53,'Goc yell 1'),
+(2000001644,'It''s only right that you know the name of the one who will take your life.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,397,'Baron yell 1'),
+(2000001645,'Baron Sablemane. It will be on your lips as you gasp your dying breath.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,153,'Baron yell 2'),
+(2000001646,'Your name is as insignificant to me as the names of the thousands who have died under the might of Goc. I will crush you and $N!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,53,'Goc yell 2'),
+(2000001647,'Let us begin.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,15,'Baron yell 3'),
+(2000001648,'We will speak again, but away from here.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,396,'Baron yell 4'),
+(2000001649,'I am Rexxar, son of the Mok''Nathal, champion of the Horde.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,397,'Rexxar yell 1'),
+(2000001650,'And their torment at your hands is at an end. By my name, I shall put an end to your life.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,113,'Rexxar yell 2'),
+(2000001651,'Prepare yourself for the end.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,15,'Rexxar yell 3'),
+(2000001652,'I could not have achieved this victory without you. We will speak back at Thunderlord Stronghold.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,396,'Rexxar yell 4'),
+(2000001653,'Who dares place this affront upon the altar of Goc?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,53,'Goc yell 0');

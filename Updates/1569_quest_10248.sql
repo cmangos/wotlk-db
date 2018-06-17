@@ -1,4 +1,5 @@
 -- You, Robot q.10248
+-- Author: Saltgurka
 DELETE FROM creature WHERE id=19851; -- Delete static Negatron spawn
 UPDATE creature SET spawntimesecsmin=120, spawntimesecsmax=120 WHERE id=19849; -- Scrap Reaver spawntime should be 2min
 UPDATE creature_template SET MovementType=2, SpeedWalk=(7/2.5), SpeedRun=(12/7), UnitFlags=33024 WHERE entry=19851; -- Negatron
