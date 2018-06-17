@@ -28,7 +28,7 @@ INSERT INTO `dbscripts_on_event` (`id`,`delay`,`command`,`datalong`,`datalong2`,
 
 DELETE FROM `dbscripts_on_spell` WHERE `id` IN(34630);
 INSERT INTO `dbscripts_on_spell` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
-(34630,0,5,46,33554432,0,0,0,0,0,0,0,6,'Scrap Reaver - Remove UNIT_FLAG_NOT_SELECTABLE',0,0,0,0);
+(34630,0,5,59,33554432,0,0,0,0,0,0,0,6,'Scrap Reaver - Remove UNIT_FLAG_NOT_SELECTABLE',0,0,0,0);
 
 -- Negatron path
 DELETE FROM `creature_movement_template` WHERE `entry`=19851;
@@ -56,11 +56,11 @@ INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` BETWEEN 1985101 AND 1985105;
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
 (1985101,0,0,0,0,0,2000001655,0,0,0,0,0,0,'Negatron - I AM DEATH!  PREPARE YOUR TOWN FOR ANNIHILATION!',0,0,0,0),
-(1985101,6,5,46,256,0,0,0,0,0,0,0,0,'Negatron - Remove UNIT_FLAG_IMMUNE_TO_PLAYER',0,0,0,0),
-(1985101,6,26,0,0,0,0,0,0,0,19849,40,1,'Negatron - Attack Scrap Reaver',0,0,0,0),
+(1985101,6,5,59,256,0,0,0,0,0,0,0,0,'Negatron - Remove UNIT_FLAG_IMMUNE_TO_PLAYER',0,0,0,0),
+(1985101,7,26,0,0,0,0,0,0,0,19849,40,1,'Negatron - Attack Scrap Reaver',0,0,0,0),
 
 (1985102,0,0,0,0,0,2000001656,0,0,0,0,0,0,'Negatron - YOUR SAD ATTEMPT AT CREATING A FEL REAVER TO STOP ME HAS FAILED!  NOW, ON TO AREA 52!',0,0,0,0),
-(1985102,0,2,46,33536,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33536',0,0,0,0),
+(1985102,0,2,59,33536,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33536',0,0,0,0),
 
 (1985103,0,15,34427,0,0,0,0,0,0,0,0,0,'Negatron - Cast Ethereal Teleport',0,0,0,0),
 (1985103,0,3,0,0,0,0,0,0,0,0,0,8,'Negatron - Teleport',3044.2,3622.36,143.269,0.7621227),
@@ -76,7 +76,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (1985103,1,20,2,1,0,0,0,0,0,19570,70009,16,'Rocket-Chief Fuselage - Start moving on PathId 1',0,0,0,0),
 
 (1985104,3,1,54,0,0,0,0,0,0,0,0,0,'Negatron - OneShotSpecialAttack1H',0,0,0,0),
-(1985104,3,2,46,33024,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33024',0,0,0,0),
+(1985104,3,2,59,33024,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33024',0,0,0,0),
 (1985104,3,9,94656,18000000,0,0,0,0,0,0,0,0,'Negatron - Respawn Rocket Fire GOB',0,0,0,0),
 (1985104,3,9,94657,18000000,0,0,0,0,0,0,0,0,'Negatron - Respawn Rocket Fire GOB',0,0,0,0),
 (1985104,3,9,94658,18000000,0,0,0,0,0,0,0,0,'Negatron - Respawn Rocket Fire GOB',0,0,0,0),
@@ -90,7 +90,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (1985105,0,1,54,0,0,0,0,0,0,0,0,0,'Negatron - OneShotSpecialAttack1H',0,0,0,0),
 (1985105,7,1,54,0,0,0,0,0,0,0,0,0,'Negatron - OneShotSpecialAttack1H',0,0,0,0),
 (1985105,14,1,54,0,0,0,0,0,0,0,0,0,'Negatron - OneShotSpecialAttack1H',0,0,0,0),
-(1985105,25,2,46,33536,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33536',0,0,0,0),
+(1985105,25,2,59,33536,0,0,0,0,0,0,0,0,'Negatron - Set UnitFlags 33536',0,0,0,0),
 (1985105,26,0,0,0,0,2000001657,0,0,0,0,0,0,'Negatron - HAHAHA!  YOUR FEEBLE ROCKET IS DESTROYED!  I''LL RETURN LATER TO FINISH OFF THE REST OF YOUR PUNY TOWN!',0,0,0,0),
 (1985105,30,15,34427,0,0,0,0,0,0,0,0,0,'Negatron - Cast Ethereal Teleport',0,0,0,0),
 (1985105,31,18,500,0,0,0,0,0,0,0,0,0,'Negatron - Despawn Self',0,0,0,0),
