@@ -17,7 +17,7 @@ INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_
 (139941,19961,530,1,0,0,2944.593,4789.739,282.8492,4.101524,300,300,0,0,0,0,0,2),
 (139942,19961,530,1,0,0,2985.281,4760.728,285.2068,3.543018,300,300,0,0,0,0,0,0);
 
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (139942, 0, 0, 1, 16, 173, 0, NULL);
 
 INSERT INTO `creature_movement` (`id`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
