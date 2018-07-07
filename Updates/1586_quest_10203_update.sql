@@ -17,7 +17,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 -- Doing everything in dbscripts_on_quest_end is better because this way Blastfizzle won't stop moving when a player talks to him 
 -- (Yes, it's Blizzlike that he keeps gossip and quest flags during the script)
 DELETE FROM `creature_movement_template` WHERE `entry`=19634;
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN(1963401,1963402);
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN(1963401,1963402,1963403);
 DELETE FROM `dbscripts_on_quest_end` WHERE `id`=10203;
 INSERT INTO `dbscripts_on_quest_end` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
 (10203,0,25,1,0,0,0,0,0,0,0,0,0,'Lead Sapper Blastfizzle - Set Run On',0,0,0,0),
