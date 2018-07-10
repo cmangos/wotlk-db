@@ -63,3 +63,9 @@ INSERT INTO `npc_vendor_template` (entry, item, maxcount, incrtime, ExtendedCost
 (116, 3857, 0, 0, 0, 0, 'Coal'),
 (116, 5956, 0, 0, 0, 0, 'Blacksmith Hammer'),
 (116, 18567, 0, 0, 0, 0, 'Elemental Flux');
+
+-- correct positions for Legion Hold teleporter and the return routes
+REPLACE INTO spell_target_position(id, target_map, target_position_x, target_position_y, target_position_z, target_orientation) VALUES
+('37387', '530', '-2742.77', '2727', '124.81', '5.29');
+UPDATE areatrigger_teleport SET target_position_x=-3277.86,target_position_y=2831.64,target_position_z=123.02,target_orientation=1.5708 WHERE id IN(4561,4562);
+
