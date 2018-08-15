@@ -53,7 +53,7 @@ DB_HOST="localhost"
 DB_PORT="3306"
 
 ## Define the database in which you want to add clean WoTLK-DB
-DATABASE="mangos"
+DATABASE="wotlkmangos"
 
 ## Define your username
 USERNAME="mangos"
