@@ -80,10 +80,10 @@ INSERT INTO dbscript_string (entry,content_default,sound,type,language,emote,com
 
 -- The Lich King
 UPDATE creature_template_addon SET auras = NULL WHERE entry = 28765;
-DELETE FROM creature_addon WHERE guid IN (128581,128582);
+DELETE FROM creature_addon WHERE guid IN (128581,129882);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 (128581, 0, 0, 1, 0, 0, 0, 53274),
-(128582, 0, 0, 1, 0, 0, 0, 53274);
+(129882, 0, 0, 1, 0, 0, 0, 53274);
 DELETE FROM dbscript_random_templates WHERE id = 20035;
 INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
 (20035,0,2000001684,0,'28765 - Random Whisper'),
