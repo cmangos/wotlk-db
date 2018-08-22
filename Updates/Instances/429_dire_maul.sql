@@ -2729,10 +2729,10 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+364, 181288, 429, 536.586, 602.55, -4.75474, 5.74615, 0, 0, 0, 0, 180, 180, 100, 1), -- Midsummer Bonfire
 (@OGUID+365, 181346, 429, 536.586, 602.55, -4.75474, 5.74615, 0, 0, 0, 0, 180, 180, 100, 1), -- Flame of Dire Maul
 (@OGUID+366, 181376, 429, 536.586, 602.55, -4.75474, 5.74615, 0, 0, 0, 0, 180, 180, 100, 1), -- Midsummer Bonfire Campfire Damage Trap
-(@OGUID+367, 300050, 429, -38.94, 812.86, -29.53, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- TEMP Pedestal of Immol'thar
-(@OGUID+368, 300051, 429, -38.94, 812.85, -29.53, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- TEMP Circle of Dark Summoning
-(@OGUID+369, 300060, 429, 263.38, -452.69, -119.96, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- TEMP Alzzin's Chamber
-(@OGUID+370, 300064, 429, 263.38, -452.69, -119.96, 0, 0, 0, 0, 0, 180, 180, 0, 1); -- TEMP Haunted Locus
+(@OGUID+367, 179701, 429, -38.94, 812.86, -29.53, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- Circle Loc (spell focus)
+(@OGUID+368, 179675, 429, -38.94, 812.85, -29.53, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- Warlock Mount Quest Portal Spell Focus
+(@OGUID+369, 181047, 429, 263.38, -452.69, -119.96, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- Isalien Brazier Spell Focus
+(@OGUID+370, 181096, 429, 263.38, -452.69, -119.96, 0, 0, 0, 0, 0, 180, 180, 0, 1); -- Brazier of Invocation Spell Focus 20 yd
 
 -- ======
 -- EVENTS
@@ -2907,7 +2907,7 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 (5525, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500.42, 540.966, -25.3846, 2.72271, 'WP movement'),
 (5525, 15, 18, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'despawn');
 
-DELETE FROM `dbscript_string` WHERE `entry` IN (2000000543,2000007708,2000007709,2000007710,2000007711,2000007712,2000005460,2000005461,2000005462,2000005463,2000005464);
+DELETE FROM `dbscript_string` WHERE `entry` IN (2000000268,2000000269,2000000543,2000007708,2000007709,2000007710,2000007711,2000007712,2000005460,2000005461,2000005462,2000005463,2000005464);
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 (2000000268, 'Hey, who Fengus callin\' a gnoll lover?!  Take da prisoners to da king; you smart to bring them with their weapons and show da king that they a threat.  I\'ll go see if Fengus talk smack when I give him da beatdown!  HAR!', 0, 6, 0, 0, 'Captain Kromcrush - Yell Fengus 1'),
 (2000000269, 'OK Fengus, where you at?!  You come call me a gnoll lover while I give you da hammer upside da head!', 0, 6, 0, 0, 'Captain Kromcrush - Yell Fengus 2'),
