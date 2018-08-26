@@ -52,7 +52,7 @@ UPDATE npc_spellclick_spells SET cast_flags=1 WHERE npc_entry IN (27850);
 -- missing RP-GG spell
 DELETE FROM npc_spellclick_spells WHERE npc_entry IN (30560);
 INSERT INTO npc_spellclick_spells (npc_entry,spell_id,quest_start,quest_start_active,quest_end,cast_flags,condition_id) VALUES
-(30560,57347,0,0,0,1,0);
+(30560,57347,0,0,0,1,@conditionId);
 DELETE FROM dbscripts_on_spell WHERE id=57347;
 INSERT INTO dbscripts_on_spell (id,delay,command,datalong,data_flags,comments) VALUES
 (57347,0,18,0,2,'despawn self');
@@ -72,7 +72,7 @@ UPDATE creature SET phaseMask = 1 WHERE id IN (31841,31842);
 
 -- update npc phase mask for horde control
 UPDATE creature SET phaseMask = 64 WHERE id IN (32296,39173,32619,32625,32623,32620,32617,34953);
-UPDATE creature SET phaseMask = 64 WHERE guid IN (131731,131729,131839,  131261,131271,131270,131268,131265,131262,131258,131266,131267,131263,131260,131259,131264,131269,
+UPDATE creature SET phaseMask = 64 WHERE guid IN (131731,131729,131839,131261,131271,131270,131268,131265,131262,131258,131266,131267,131263,131260,131259,131264,131269,
 131283,131285,131350,131303,131300,131309,131282,131312,131307,131290,131301,131292,131315,131294,131296,131297,131295,131299,131310,131286,131287,131288,131289,131308,131317,131306,131316,
 131293,131314,131302,131313,131304,131311,131318,131284,131319,131321,131277,131276,131274,131275,131305,131320,131322,131272,131273);
 UPDATE gameobject SET phaseMask = 64 WHERE id IN (192371,192372,192373,192360,192361,192359,192358,192354,192355,192378,192379,192399,192338,192363,192362,192368,192369,192370,192364,192367,
@@ -103,6 +103,8 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, position_x, position_
 
 -- wrong entry; to be replaced by 32615
 DELETE FROM creature WHERE guid=131839;
+-- update addon guid
+UPDATE creature_addon SET guid=76296 WHERE guid=131839;
 -- fix portal position
 UPDATE creature SET position_x=5407.84, position_y=2819.29, position_z=418.676, orientation=0.471239 WHERE id IN (32620,32621);
 -- fix wrong spawn entry
