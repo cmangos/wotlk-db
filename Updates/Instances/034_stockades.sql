@@ -144,8 +144,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+6, 75298, 34, 151.69, -65.131, -34.8562, -1.18682, 0, 0, 0.559193, -0.829037, 86400, 86400, 100, 1), -- Large Solid Chest
 (@OGUID+7, 75298, 34, 173.185, 146.955, -33.9396, -2.05949, 0, 0, -0.857168, 0.515037, 86400, 86400, 100, 1); -- Large Solid Chest
 
--- INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-
 -- ======
 -- EVENTS
 -- ======
