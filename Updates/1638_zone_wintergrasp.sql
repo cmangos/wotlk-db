@@ -2,7 +2,7 @@
 
 -- *** Wintergrasp conditions
 SET @conditionId=1529;
-DELETE FROM conditions WHERE condition_entry BETWEEN @conditionId AND @conditionId+5;
+DELETE FROM conditions WHERE condition_entry BETWEEN @conditionId AND @conditionId+10;
 INSERT INTO conditions(condition_entry,type,value1,value2,comments) VALUES
 (@conditionId,38,4197,3,'Wintergrasp - Check fortress entrance allowance'),
 (@conditionId+1,38,4197,4,'Wintergrasp - Sunken Ring teleport allowance'),
