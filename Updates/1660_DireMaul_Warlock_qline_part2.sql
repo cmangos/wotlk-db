@@ -1,10 +1,3 @@
-
-
-
-
-***************************** guidy id itp wszystko sprawdze
-
-
 /*
 ########################################
 # Quest: Dreadsteed of Xoroth (7631)
@@ -70,41 +63,41 @@ UPDATE `gameobject_template` SET `type` = 0, `flags` = 20, `size` = 3.6 WHERE `e
 
 SET @GUID := 574241; -- portal start guid
 DELETE FROM `gameobject` WHERE `id` IN (179669, 179670, 179671, 300051, 179668, 179681) AND `map` = 429;
-INSERT INTO `gameobject` (`guid`,`id`,`map`,`position_x`,`position_y`,`position_z`,`orientation`,`rotation0`,`rotation1`,`rotation2`,`rotation3`,`spawntimesecs`,`animprogress`,`state`) VALUES
+INSERT INTO `gameobject` (`guid`,`id`,`map`,`position_x`,`position_y`,`position_z`,`orientation`,`rotation0`,`rotation1`,`rotation2`,`rotation3`,`spawntimesecsmin`,`spawntimesecsmax`,`animprogress`,`state`) VALUES
 -- Warlock Ritual Symbols
-(99774, 179669, 429, -57.1792, 812.96, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99775, 179669, 429, -28.8647, 828.021, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99776, 179669, 429, -25.8848, 798.921, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99777, 179670, 429, -50.8857, 826.376, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99778, 179670, 429, -21.8534, 820.043, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99779, 179670, 429, -37.3899, 793.225, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99780, 179671, 429, -38.9241, 831.486, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99781, 179671, 429, -20.693, 807.962, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
-(99782, 179671, 429, -53.5593, 801.216, -29.5358, -2.00713, 0, 0, 0, 0, -900, 0, 1),
+(99774, 179669, 429, -57.1792, 812.96, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99775, 179669, 429, -28.8647, 828.021, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99776, 179669, 429, -25.8848, 798.921, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99777, 179670, 429, -50.8857, 826.376, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99778, 179670, 429, -21.8534, 820.043, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99779, 179670, 429, -37.3899, 793.225, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99780, 179671, 429, -38.9241, 831.486, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99781, 179671, 429, -20.693, 807.962, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
+(99782, 179671, 429, -53.5593, 801.216, -29.5358, -2.00713, 0, 0, 0, 0, -900, -900,0, 1),
 -- Warlock Mount Ritual Circle
-(99784, 179668, 429, -38.5911, 812.632, -29.5358, 0.401425, 0, 0, 0, 0, -900, 0, 1),
+(99784, 179668, 429, -38.5911, 812.632, -29.5358, 0.401425, 0, 0, 0, 0, -900, -900,0, 1),
 -- Dreadsteed Portals
-(@GUID, 179681, 429,-39.3283, 812.609, -29.5358, -2.87979, 0, 0, 0, 0, -900, 0, 0),  -- Dreadsteed boss comes from this one
-(@GUID+1, 179681, 429,-82.9582, 866.112, -28.6244, -0.872664, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+2, 179681, 429,-15.0206, 878.409, -28.5044, -1.91986 , 0, 0, 0, 0, -900, 0, 0),
-(@GUID+3, 179681, 429,-97.5622, 848.091, -28.6988, -0.523598, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+4, 179681, 429,-98.1468, 778.083, -28.3443, 0.541051, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+5, 179681, 429,-105.782, 826.821, -28.5458, -0.191985, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+6, 179681, 429,20.9339 , 848.326, -28.517, -2.61799, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+7, 179681, 429,-14.4863, 747.953, -28.8277, 1.91986, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+8, 179681, 429,5.8428  , 865.497, -28.7417, -2.28638, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+9, 179681, 429,-62.4677, 878.058, -28.8368, -1.20428, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+10, 179681, 429,29.2777 , 824.413, -28.4003, -2.9845, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+11, 179681, 429,-37.7177, 743.281, -28.7158, 1.5708, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+12, 179681, 429,-61.2501, 747.296, -28.4663, 1.23918, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+13, 179681, 429,21.162  , 778.232, -28.4788, 2.60054, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+14, 179681, 429,29.5943 , 801.049, -28.4482, 2.96704, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+15, 179681, 429,5.62079 , 759.756, -28.3198, 2.25147, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+16, 179681, 429,-106.235, 800.934, -28.6321, 0.174532, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+17, 179681, 429,-39.7076, 882.205, -28.8242, -1.53589, 0, 0, 0, 0, -900, 0, 0),
-(@GUID+18, 179681, 429,-82.6964, 759.662, -28.6398, 0.890117, 0, 0, 0, 0, -900, 0, 0),
+(@GUID, 179681, 429,-39.3283, 812.609, -29.5358, -2.87979, 0, 0, 0, 0, -900, -900,0, 0),  -- Dreadsteed boss comes from this one
+(@GUID+1, 179681, 429,-82.9582, 866.112, -28.6244, -0.872664, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+2, 179681, 429,-15.0206, 878.409, -28.5044, -1.91986 , 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+3, 179681, 429,-97.5622, 848.091, -28.6988, -0.523598, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+4, 179681, 429,-98.1468, 778.083, -28.3443, 0.541051, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+5, 179681, 429,-105.782, 826.821, -28.5458, -0.191985, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+6, 179681, 429,20.9339 , 848.326, -28.517, -2.61799, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+7, 179681, 429,-14.4863, 747.953, -28.8277, 1.91986, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+8, 179681, 429,5.8428  , 865.497, -28.7417, -2.28638, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+9, 179681, 429,-62.4677, 878.058, -28.8368, -1.20428, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+10, 179681, 429,29.2777 , 824.413, -28.4003, -2.9845, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+11, 179681, 429,-37.7177, 743.281, -28.7158, 1.5708, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+12, 179681, 429,-61.2501, 747.296, -28.4663, 1.23918, 0, 0, 0, 0, -900,-900, 0, 0),
+(@GUID+13, 179681, 429,21.162  , 778.232, -28.4788, 2.60054, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+14, 179681, 429,29.5943 , 801.049, -28.4482, 2.96704, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+15, 179681, 429,5.62079 , 759.756, -28.3198, 2.25147, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+16, 179681, 429,-106.235, 800.934, -28.6321, 0.174532, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+17, 179681, 429,-39.7076, 882.205, -28.8242, -1.53589, 0, 0, 0, 0, -900, -900,0, 0),
+(@GUID+18, 179681, 429,-82.6964, 759.662, -28.6398, 0.890117, 0, 0, 0, 0, -900, -900,0, 0),
 -- TEMP Circle of Dark Summoning
-(99896, 300051, 429, -38.94, 812.85, -29.53, 0, 0, 0, 0, 0, -180, 0, 1);
+(99896, 300051, 429, -38.94, 812.85, -29.53, 0, 0, 0, 0, 0, -180, -180,0, 1);
 
 DELETE FROM `dbscripts_on_event` WHERE `id` IN (8420, 8428);
 INSERT INTO `dbscripts_on_event` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES
@@ -146,8 +139,8 @@ INSERT INTO `conditions` (`condition_entry`,`type`,`value1`,`value2`) VALUES
 (3147,18,5,0),
 (3148,18,6,0);
 
-DELETE FROM `db_script_string` WHERE `entry` IN (2000007708, 2000007709, 2000007710, 2000007711, 2000007712);
-INSERT INTO `db_script_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES
+DELETE FROM `dbscript_string` WHERE `entry` IN (2000007708, 2000007709, 2000007710, 2000007711, 2000007712);
+INSERT INTO `dbscript_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES
 (2000007708, 'Ah, freedom! Although brief, so sweet it is...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 0, 0, 'J''eevee yell on spawn'),
 (2000007709, 'Well duties call, yes? First, the bell... to give you vigor!', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'J''eevee say 1'),
 (2000007710, 'Next, I''ll place the wheel... to protect you from harm.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'J''eevee say 2'),
@@ -190,9 +183,9 @@ INSERT INTO `dbscripts_on_go_template_use` (`id`,`delay`,`command`,`datalong`,`d
 (179673, 45, 15, 23226, 0, 14501, 40, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Cast Ritual Candle Aura on Ritual Mob');
 
 DELETE FROM `creature_movement_template` WHERE `entry` IN (14483, 14482);
-INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`textid1`,`textid2`,`textid3`,`textid4`,`textid5`,`emote`,`spell`,`orientation`,`model1`,`model2`) VALUES
-(14483, 0, -38.48, 812.93, -29.535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14482, 0, -38.48, 812.93, -29.535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
+(14483, 1, -38.48, 812.93, -29.535, 0, 0, 0),
+(14482, 1, -38.48, 812.93, -29.535, 0, 0, 0);
 
 /*
 ########################################
@@ -241,7 +234,7 @@ INSERT INTO `dbscripts_on_event` (`id`,`delay`,`command`,`datalong`,`datalong2`,
 (8438, 3, 20, 2, 0, 14500, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'J''eevee set waypoint movement (Scholomance)'),
 (8438, 40, 8, 14500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'J''eevee give quest credit (Scholomance)');
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (1450002,1450007,1450012);
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` BETWEEN 1450001 AND 1450017; -- remove old script
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES
 (1450002, 0, 0, 0, 0, 0, 0, 0, 2000007714, 0, 0, 0, 0, 0, 0, 0, 'J''eevee say 2 on reach wp 2 (Scholomance)'),
 (1450007, 0, 0, 0, 0, 0, 0, 0, 2000007715, 0, 0, 0, 0, 0, 0, 0, 'J''eevee say 3 on reach wp 7 (Scholomance)'),
@@ -250,22 +243,22 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (1450012, 8, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'J''eevee despawn self on reach wp 12 (Scholomance)');
 
 DELETE FROM `creature_movement_template` WHERE `entry` = 14500;
-INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`textid1`,`textid2`,`textid3`,`textid4`,`textid5`,`emote`,`spell`,`orientation`,`model1`,`model2`) VALUES
-(14500, 1, 38.784, 160.639, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 2, 36.804, 160.705, 83.545, 3000, 1450002, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14500, 3, 39.287, 160.044, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 4, 41.666, 154.591, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 5, 45.255, 155.014, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 6, 44.930, 161.186, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 7, 44.347, 161.120, 83.545, 4000, 1450007, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14500, 8, 46.758, 157.877, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14500, 9, 44.640, 154.405, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 10, 33.498, 156.046, 83.545, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-(14500, 11, 28.269, 160.792, 83.545, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14500, 12, 33.294, 160.895, 83.545, 10000, 1450012, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
+(14500, 1, 38.784, 160.639, 83.545, 0, 0, 0), 
+(14500, 2, 36.804, 160.705, 83.545, 3000, 1450002, 0),
+(14500, 3, 39.287, 160.044, 83.545, 0, 0, 0), 
+(14500, 4, 41.666, 154.591, 83.545, 0, 0, 0), 
+(14500, 5, 45.255, 155.014, 83.545, 0, 0, 0), 
+(14500, 6, 44.930, 161.186, 83.545, 0, 0, 0), 
+(14500, 7, 44.347, 161.120, 83.545, 4000, 1450007, 0),
+(14500, 8, 46.758, 157.877, 83.545, 0, 0, 0),
+(14500, 9, 44.640, 154.405, 83.545, 0, 0, 0), 
+(14500, 10, 33.498, 156.046, 83.545, 0, 0, 0), 
+(14500, 11, 28.269, 160.792, 83.545, 4000, 0, 0),
+(14500, 12, 33.294, 160.895, 83.545, 10000, 1450012, 0);
 
-DELETE FROM `db_script_string` WHERE `entry` IN (2000007713,2000007714,2000007715,2000007716);
-INSERT INTO `db_script_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES
+DELETE FROM `dbscript_string` WHERE `entry` IN (2000007713,2000007714,2000007715,2000007716);
+INSERT INTO `dbscript_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES
 (2000007713, 'Ah, here we are! Well let\'s get to work, shall we...?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'J''eevee say 1 (Scholomance)'),
 (2000007714, 'Oh, right! Over here now...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'J''eevee say 2 (Scholomance)'),
 (2000007715, 'And now... the final step!', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'J''eevee say 3 (Scholomance)'),
@@ -279,10 +272,10 @@ INSERT INTO `db_script_string` (`entry`,`content_default`,`content_loc1`,`conten
 */
 DELETE FROM `dbscripts_on_spell` WHERE `id` IN (23161,5784,23214,13819,34767,34769);
 INSERT INTO `dbscripts_on_spell` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`)VALUES
-(23161,0,15,31725,0,0,0,8,0,0,0,0,0,0,0,0,'Dreadsteed Spell Effect'),
-(5784,0,15,31725,0,0,0,8,0,0,0,0,0,0,0,0,'Felsteed Spell Effect'),
-(23214,0,15,31726,0,0,0,8,0,0,0,0,0,0,0,0,'Charger Spell Effect'),
-(13819,0,15,31726,0,0,0,8,0,0,0,0,0,0,0,0,'Warhorse Spell Effect'),
-(34767,0,15,31726,0,0,0,8,0,0,0,0,0,0,0,0,'Charger Spell Effect - Blood Elf'),
-(34769,0,15,31726,0,0,0,8,0,0,0,0,0,0,0,0,'Warhorse Spell Effect - Blood Elf');
+(23161,0,15,31725,1,0,0,0,0,0,0,0,0,0,0,0,'Dreadsteed Spell Effect'),
+(5784,0,15,31725,1,0,0,0,0,0,0,0,0,0,0,0,'Felsteed Spell Effect'),
+(23214,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Charger Spell Effect'),
+(13819,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Warhorse Spell Effect'),
+(34767,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Charger Spell Effect - Blood Elf'),
+(34769,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Warhorse Spell Effect - Blood Elf');
 

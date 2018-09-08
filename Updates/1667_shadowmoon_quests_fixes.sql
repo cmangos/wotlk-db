@@ -1,8 +1,3 @@
-
--- sprawdz dobrze cale ... czy wogole potrzebne!!!!!!!!!
-
-
-
 -- handled correctly by serverside spell
 DELETE FROM dbscripts_on_event WHERE id=13852 AND delay IN(0,60) AND datalong IN(48342);
 
