@@ -67,9 +67,18 @@ DELETE FROM creature WHERE guid IN (140988,140989,140990);
 INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 (140988, 22982, 530, 1, 0, 0, 2522.945, 7322.241, 373.4666, 6.161012, 300, 300, 0, 0, 9250, 0, 0, 0),
 (140989, 22982, 530, 1, 0, 0, 2530.897, 7333.324, 373.7191, 4.694936, 300, 300, 0, 0, 9250, 0, 0, 0),
-(14099, 22982, 530, 1, 0, 0, 2514.656, 7355.287, 380.8192, 2.932153, 300, 300, 0, 0, 9250, 0, 0, 0);
+(140990, 22982, 530, 1, 0, 0, 2514.656, 7355.287, 380.8192, 2.932153, 300, 300, 0, 0, 9250, 0, 0, 0);
 
 -- Skyguard Windcharger (-5/+10)
+DELETE FROM creature_addon WHERE guid IN (79497,79487,74807,79503,79512);
+DELETE FROM creature_movement WHERE id IN (79497,79487,74807,79503,79512);
+DELETE FROM game_event_creature WHERE guid IN (79497,79487,74807,79503,79512);
+DELETE FROM game_event_creature_data WHERE guid IN (79497,79487,74807,79503,79512);
+DELETE FROM creature_battleground WHERE guid IN (79497,79487,74807,79503,79512);
+DELETE FROM creature_linking WHERE guid IN (79497,79487,74807,79503,79512)
+OR master_guid IN (79497,79487,74807,79503,79512);
+DELETE FROM creature WHERE guid IN (79497,79487,74807,79503,79512);
+
 DELETE FROM creature_addon WHERE guid BETWEEN 140991 AND 140995;
 DELETE FROM creature_movement WHERE id BETWEEN 140991 AND 140995;
 DELETE FROM game_event_creature WHERE guid BETWEEN 140991 AND 140995;

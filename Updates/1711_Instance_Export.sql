@@ -236,7 +236,7 @@ UPDATE `creature_template` SET `UnitFlags` = 33555200 WHERE `entry` = 21931;
 UPDATE `creature_template` SET `UnitFlags` = 33555200 WHERE `entry` = 21988;
 
 -- Sethekk Spirit 18703,20700
-UPDATE `creature_template` SET `HeroicEntry` = 20700, `UnitFlags` = 33587264, `ExtraFlags` = 524288 WHERE `entry` = 18703;
+UPDATE `creature_template` SET `DifficultyEntry1` = 20700, `UnitFlags` = 33587264, `ExtraFlags` = 524288 WHERE `entry` = 18703;
 -- Copying Values of 18703 as of now its unknown if another template has to be used or if the nonheroic Spirit also has Level 63, which would make 20700 obsolete
 UPDATE `creature_template` SET `MinLevel` = 63, `MaxLevel` = 63, `FactionAlliance` = 16, `FactionHorde` = 16, `UnitFlags` = 33587264, `ExtraFlags` = 524288, `SpeedWalk` = 0.285714, `SpeedRun` = 1.11111, `Expansion` = 1, `DamageMultiplier` = 17, `MinLevelHealth` = 7461, `MaxLevelHealth` = 7461, `MinMeleeDmg` = 2430, `MaxMeleeDmg` = 3339, `MeleeAttackPower` = 1271, `MovementType` = 1 WHERE `entry` = 20700;
 
@@ -289,11 +289,13 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (34350, 1, 19964, 0),
 (34350, 1, 19969, 0);
 
--- Old Hillsbrad Foothills
-UPDATE areatrigger_teleport SET required_quest_done_heroic=10285, status_failed_text='You have not completed the Escape from Durnholde Keep Attunement quest chain.' WHERE id IN (4321);
+-- Old Hillsbrad Foothills -- status_failed_text doesnt exist in wotlk core
+-- UPDATE areatrigger_teleport SET required_quest_done_heroic=10285, status_failed_text='You have not completed the Escape from Durnholde Keep Attunement quest chain.' WHERE id IN (4321);
+UPDATE areatrigger_teleport SET required_quest_done_heroic=10285 WHERE id IN (4321);
 
--- Black Morass
-UPDATE areatrigger_teleport SET required_quest_done_heroic=10298, status_failed_text='You have not completed The Opening of the Dark Portal Attunement quest chain.' WHERE id IN (4320);
+-- Black Morass -- status_failed_text doesnt exist in wotlk core
+-- UPDATE areatrigger_teleport SET required_quest_done_heroic=10298, status_failed_text='You have not completed The Opening of the Dark Portal Attunement quest chain.' WHERE id IN (4320);
+UPDATE areatrigger_teleport SET required_quest_done_heroic=10298 WHERE id IN (4320);
 
 -- Decrease Shade of Aran leash range some
 UPDATE creature_template SET Leash=50 WHERE entry=16524; -- 60 951_leash_export

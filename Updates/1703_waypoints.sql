@@ -191,7 +191,7 @@ UPDATE creature SET position_x=-11013.9, position_y=1526.34, position_z=43.5456,
 DELETE FROM creature WHERE guid=1007529;
 INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 ('1007529', '589', '0', '1', '0', '0', '-11019.1', '1420.03', '43.4838', '0.572904', '300', '300', '0', '0', '0', '0', '0', '2');
-UPDATE creature SET MovementType=2, spawndist=0 WHERE guid=90334;
+UPDATE creature SET MovementType = 2, spawndist = 0 WHERE guid=90334;
 DELETE FROM creature_movement WHERE id IN (90334,90358,1007529);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, orientation, waittime, script_id) VALUES
 ('90334', '1', '-10990.4', '1470.57', '43.2027', '6.26301', '0', '0'),
@@ -240,7 +240,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, or
 ('90358', '16', '-11025.5', '1558.66', '43.5138', '5.97881', '0', '0'),
 ('90358', '17', '-11014.9', '1555.34', '43.464', '5.97881', '0', '0'),
 ('90358', '18', '-11012.5', '1548.38', '43.2418', '4.81328', '0', '0'),
-('90358', '19', '-11012.2', '1530.67', '43.8959', '4.71118', '0', '0'),
+('90358', '19', '-11012.2', '1530.67', '43.8959', '4.71118', '0', '0');
 
 -- Defias Henchman (594)
 UPDATE creature SET MovementType=2, spawndist=0 WHERE guid IN (89539,89540,89545,89546);
@@ -12582,7 +12582,7 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, or
 
 -- Bog Lord (18127)
 UPDATE creature SET position_x=-214.959, position_y=8064.65, position_z=18.6028, orientation=4.66475, spawndist=0, MovementType=2 WHERE guid=64439;
-DELETE FROM creature WHERE guid IN (xxxx67);
+DELETE FROM creature WHERE guid IN (1002475);
 INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 ('1002475', '18127', '530', '1', '0', '0', '-139.09', '8044.04', '18.4877', '5.32998', '300', '300', '0', '0', '0', '0', '0', '2');
 DELETE FROM creature_movement WHERE id IN (64439,1002475);
