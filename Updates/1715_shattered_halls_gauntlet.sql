@@ -13,7 +13,7 @@ DELETE FROM game_event_creature_data WHERE guid BETWEEN 140996 AND 141006;
 DELETE FROM creature_battleground WHERE guid BETWEEN 140996 AND 141006;
 DELETE FROM creature_linking WHERE guid BETWEEN 140996 AND 141006
 OR master_guid BETWEEN 140996 AND 141006;
-DELETE FROM creature WHERE guid BETWEEN 140986 AND 141006;
+DELETE FROM creature WHERE guid BETWEEN 140996 AND 141006;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
 ('140996', '17693', '540', '3', '0', '0', '342.09', '316.053', '1.91817', '3.10806', '7200', '7200','0', '0', '14147', '0', '0', '0'),
 ('140997', '17462', '540', '3', '0', '0', '338.854', '312.779', '1.91817', '1.46265', '7200', '7200','0', '0', '9431', '0', '0', '0'),
