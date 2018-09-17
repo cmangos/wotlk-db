@@ -6,4 +6,4 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (1818001,0,10,17130,300000,3,0,0,0,0,0,0,0,'Hemet Nesingwary - Summon Talbuk Stag 3',-1416.502,6317.921,40.0441,0.466735),
 (1818001,2,22,495,16,0,0,0,0,0,18200,15,7,'Shado ''Fitz'' Farstrider - Set Faction 495',0,0,0,0),
 (1818001,2,22,495,16,0,0,0,0,0,0,0,0,'Hemet Nesingwary - Set Faction 495',0,0,0,0),
-(1818001,2,0,0,0,0,2000001287,0,0,0,0,0,0,'Hemet Nesingwary - Uh oh, those stags don\'t look pleased with us!',0,0,0,0);
+(1818001,2,0,0,0,0,2000001325,0,0,0,0,0,0,'Hemet Nesingwary - Uh oh, those stags don\'t look pleased with us!',0,0,0,0);
