@@ -1,5 +1,8 @@
 -- q.11253 'Sniff Out the Enemy'
 
+-- q item must be removed after q. completed
+UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11253;
+
 -- Missing added - WoTLKDB FREE guids used
 DELETE FROM gameobject WHERE guid = 15125;
 DELETE FROM game_event_gameobject WHERE guid = 15125;
