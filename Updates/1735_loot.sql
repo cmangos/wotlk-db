@@ -1,5 +1,5 @@
 -- North Fleet Marine
-UPDATE creature_template SET PickpocketLootId = 23983 WHERE entry = 23983;
+UPDATE creature_template SET PickpocketLootId = 23983, MinLootGold = 404, MaxLootGold = 3720 WHERE entry = 23983;
 
 DELETE FROM creature_loot_template WHERE entry = 23983;
 INSERT INTO creature_loot_template (entry, item, ChanceOrQuestChance, groupid, mincountOrRef, maxcount, condition_id, comments) VALUES
