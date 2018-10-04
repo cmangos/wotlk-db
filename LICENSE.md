@@ -1,7 +1,7 @@
 LEGAL NOTICE
 ------------
 
-**Wotlk-DB** is released under the GPLv3+.
+**Wotlk-DB** is released under the GPLv3+. (gpl-3.0)
 
 The terms and conditions of this license are described below:
 
@@ -18,11 +18,11 @@ The terms and conditions of this license are described below:
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-This file (`LICENSE.mdown`) **must** be a part of any redistributable packages
+This file (`LICENSE.md`) **must** be a part of any redistributable packages
 made from this software.  No licenses should be removed from this software if
 you are making redistributable copies.
 
 
 CONTENT COPYRIGHT
 -----------------
-Game content is Copyright © 2004-2018 Blizzard Entertainment
+Game content is Copyright Â© 2004-2018 Blizzard Entertainment
