@@ -16,12 +16,52 @@ UPDATE creature SET DeathState = 0 WHERE guid IN (133990,133992,133993,133994,13
 UPDATE creature_template SET UnitFlags = 0 WHERE entry = 17133;
 
 -- Sunseeker Gene-Splicer
+-- has no aura ... but UNIT_FIELD_FLAGS: 33587264 must be set for all death guids
 DELETE FROM creature_template_addon WHERE entry = 19507;
 INSERT INTO creature_template_addon (entry,mount,bytes1,b2_0_sheath,b2_1_pvp_state,emote,moveflags,auras) VALUES
-(19507,0,7,1,0,0,0,NULL);
+(19507,0,0,1,0,0,0,NULL);
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 19507);
 UPDATE creature SET modelid = 0, DeathState = 0 WHERE id = 19507; -- modelid also corrected
-UPDATE creature_template SET UnitFlags = 33587264 WHERE entry = 19507;
+UPDATE creature_template SET UnitFlags = 32832 WHERE entry = 19507;
+-- individual addons
+DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 19507);
+INSERT INTO creature_addon (guid,mount,bytes1,b2_0_sheath,b2_1_pvp_state,emote,moveflags,auras) VALUES
+-- alive
+(83093,0,0,1,0,69,0,NULL), -- .go -131.5275 507.6039 -17.74161 553
+(83097,0,0,1,0,69,0,NULL), -- .go -160.4898 499.1520 -17.74157 553
+(83103,0,0,1,0,69,0,NULL), -- .go -150.3988 526.5366 -17.74155 553
+-- death
+(140316,0,7,1,0,0,0,NULL),
+(140317,0,7,1,0,0,0,NULL),
+(140318,0,7,1,0,0,0,NULL),
+(140319,0,7,1,0,0,0,NULL),
+(140320,0,7,1,0,0,0,NULL),
+(140321,0,7,1,0,0,0,NULL),
+(140322,0,7,1,0,0,0,NULL),
+(140323,0,7,1,0,0,0,NULL),
+(140324,0,7,1,0,0,0,NULL),
+(140325,0,7,1,0,0,0,NULL),
+(140326,0,7,1,0,0,0,NULL),
+(140327,0,7,1,0,0,0,NULL);
+UPDATE creature SET spawndist = 0, MovementType = 2, DeathState = 0 WHERE guid BETWEEN 140316 AND 140327;
+DELETE FROM creature_movement WHERE id BETWEEN 140316 AND 140327;
+INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
+(140316,1,-157.634,411.701,-17.6124,3000,1950701,1.27409),
+(140317,1,-177.217,408.964,-17.6069,3000,1950701,2.07694),
+(140318,1,-150.54,400.302,-17.7579,3000,1950701,2.75762),
+(140319,1,-172.605,403.925,-17.6111,3000,1950701,4.74729),
+(140320,1,-173.274,390.129,-17.6073,3000,1950701,3.50811),
+(140321,1,-177.095,378.248,-17.6081,3000,1950701,5.18363),
+(140322,1,-172.32,380.316,-17.6107,3000,1950701,0.890118),
+(140323,1,-166.857,398.471,-17.6142,3000,1950701,4.2237),
+(140324,1,-154.356,386.376,-17.7216,3000,1950701,4.43314),
+(140325,1,-179.922,401.107,-17.6042,3000,1950701,0.488692),
+(140326,1,-164.275,375.683,-17.6168,3000,1950701,2.75762),
+(140327,1,-152.4,372.664,-17.6055,3000,1950701,0.331613);
+DELETE FROM dbscripts_on_creature_movement WHERE id = 1950701;
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(1950701,0,4,59,33554432,0,0,0,0,0,0,0,0,0,0,0,0,''), -- for TBC datalong = 46 
+(1950701,1,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'ide');
 
 -- Cooling Infernal
 -- s.31261 should be used instead of DeathState
