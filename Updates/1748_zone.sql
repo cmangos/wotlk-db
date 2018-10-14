@@ -1,4 +1,4 @@
--- Whisper Gulth - Howling Fjord
+-- Whisper Gulch - Howling Fjord
 
 -- Squeeg Idolhunter
 UPDATE creature SET MovementType = 2, spawndist = 0 WHERE guid = 84034;
