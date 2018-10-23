@@ -271,6 +271,7 @@ INSERT INTO `dbscript_string` (`entry`,`content_default`,`content_loc1`,`content
 -- example: https://youtu.be/JbW1mTqcsaQ?t=61
 */
 DELETE FROM `dbscripts_on_spell` WHERE `id` IN (23161,5784,23214,13819,34767,34769);
+/* removes mount aura from player - req more research
 INSERT INTO `dbscripts_on_spell` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`)VALUES
 (23161,0,15,31725,1,0,0,0,0,0,0,0,0,0,0,0,'Dreadsteed Spell Effect'),
 (5784,0,15,31725,1,0,0,0,0,0,0,0,0,0,0,0,'Felsteed Spell Effect'),
@@ -278,4 +279,4 @@ INSERT INTO `dbscripts_on_spell` (`id`,`delay`,`command`,`datalong`,`datalong2`,
 (13819,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Warhorse Spell Effect'),
 (34767,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Charger Spell Effect - Blood Elf'),
 (34769,0,15,31726,1,0,0,0,0,0,0,0,0,0,0,0,'Warhorse Spell Effect - Blood Elf');
-
+*/
