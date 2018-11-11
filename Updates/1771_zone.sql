@@ -42,11 +42,11 @@ INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp
 (24197,0,0,2,1,214,0,NULL);
 
 -- Lead Archaeologist Malzie
--- in 3.x.x can also start q.5387 'Portents of Uldum'
-DELETE FROM creature_questrelation WHERE quest = 5387;
-INSERT INTO creature_questrelation (id, quest) VALUES
-(2963,5387),
-(24473,5387);
+-- in 3.x.x can also start q.2963 'Portents of Uldum'
+ DELETE FROM creature_questrelation WHERE quest = 2963;
+ INSERT INTO creature_questrelation (id, quest) VALUES
+ (5387,2963),
+ (24473,2963);
 
 -- Steel Gate Excavator 24398
 -- missing spawns added -- Free WoTLKDB guids reused
