@@ -40,12 +40,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 DELETE FROM `pool_template` WHERE `entry` = 1004;
 INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (1004, 1, 'Lord Melenas (2038)');
-DELETE FROM `pool_creature` WHERE `pool_entry` = 1004;
-INSERT INTO `pool_creature` (`guid`, `pool_entry`, `description`) VALUES
-(1550, 1004, 'Lord Melenas #1'),
-(1552, 1004, 'Lord Melenas #2'),
-(1554, 1004, 'Lord Melenas #3');
+DELETE FROM `pool_creature_template` WHERE `pool_entry` = 1004;
+INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+(2038, 1004, 0, 'Lord Melenas (2038)');
 	
 -- Correct Ashenvale Outrunner 12856 due to aura 20540
 UPDATE `creature_template` SET `SpeedWalk`= (2.5 / 2.5), `SpeedRun` = (8 / 7) WHERE `entry` = 12856;
-
