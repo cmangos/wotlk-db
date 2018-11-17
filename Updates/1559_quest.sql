@@ -1,3 +1,8 @@
+-- The Missing Diplomat questline fixes
+-- quest credit now granted through different trigger, 302 will be used to summon Tervosh at Sentry Point in SD2
+DELETE FROM `areatrigger_involvedrelation` WHERE `id` IN (302,1667);
+INSERT INTO `areatrigger_involvedrelation` VALUES (1667,1265);
+
 -- link Old Town Thug (4969) summoned guards to Dashel Stonefist (4961)
 DELETE FROM creature_linking_template WHERE entry IN (4961,4969) OR master_entry IN (4961,4969);
 INSERT INTO creature_linking_template (entry, map, master_entry, flag, search_range) VALUES
