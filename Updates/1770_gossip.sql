@@ -1,9 +1,11 @@
 -- Sage Mistwalker 24186
 -- missing gossip added
--- should lead to another gossip menu - we missing menu and text ids
+DELETE FROM gossip_menu WHERE entry = 8909;
+INSERT INTO gossip_menu VALUES
+(8909, 11872, 0, 0);
 DELETE FROM gossip_menu_option WHERE menu_id = 8908;
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, condition_id) VALUES
-(8908, 0, 0, 'I have misplaced my worg disguise.', 1, 1, -1, 0, 890801, 0, 0, NULL, 1558);
+(8908, 0, 0, 'I have misplaced my worg disguise.', 1, 1, 8909, 0, 890801, 0, 0, NULL, 1558);
 DELETE FROM dbscripts_on_gossip WHERE id = 890801;
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (890801, 0, 15, 43379, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'cast: The Cleansing: Create Worg Disguise');
@@ -18,10 +20,12 @@ INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 
 -- Watcher Moonleaf 24273
 -- missing gossip added
--- should lead to another gossip menu - we missing menu and text ids
+DELETE FROM gossip_menu WHERE entry = 8919;
+INSERT INTO gossip_menu VALUES
+(8919, 11870, 0, 0);
 DELETE FROM gossip_menu_option WHERE menu_id = 8918;
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, condition_id) VALUES
-(8918, 0, 0, 'I have misplaced my worg disguise.', 1, 1, -1, 0, 891801, 0, 0, NULL, 1563);
+(8918, 0, 0, 'I have misplaced my worg disguise.', 1, 1, 8919, 0, 891801, 0, 0, NULL, 1563);
 DELETE FROM dbscripts_on_gossip WHERE id = 891801;
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (891801, 0, 15, 43379, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'cast: The Cleansing: Create Worg Disguise');
@@ -32,3 +36,9 @@ INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (1561, -3, 1560, 0), -- not completed 1560
 (1562, -1, 1561, 1559),
 (1563, -1, 1562, 1553);
+
+-- missing texts added
+DELETE FROM npc_text WHERE ID IN (11870,11872);
+INSERT INTO npc_text (ID, text0_0, prob0, em0_1) VALUES
+(11870,'Very well, but try not to lose this one, okay?', 1, 6),
+(11872,'How could you lose it? Very well, but try not to \'lose\' this one as well.', 1, 5);
