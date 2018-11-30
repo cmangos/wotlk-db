@@ -1005,8 +1005,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+92, 146091, 43, -136.916, 414.704, -72.737, -1.85517, -0.021164, 0.000875, -0.800126, 0.599458, 3600, 3600, 100, 1), -- Bonfire
 (@OGUID+93, 180055, 43, -97.6, 173.8, -79, 2.08, 0, 0, 0, 0, -300, -300, 100, 1); -- Mysterious Wailing Caverns Chest
 
--- INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-
 -- =========
 -- DBSCRIPTS
 -- =========

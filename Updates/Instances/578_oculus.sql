@@ -293,8 +293,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 (@OGUID+15, 193995, 578, 3, 1, 945.794, 1025.96, 359.967, 2.652894, 0, 0, 0.970294, 0.241927, 7200, 7200, 255, 1),
 (@OGUID+16, 193995, 578, 3, 1, 936.102, 1063.24, 359.967, 1.047198, 0, 0, 0.500001, 0.866025, 7200, 7200, 255, 1);
 
--- INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-
 -- ======
 -- EVENTS
 -- ======

@@ -771,8 +771,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+365, 201906, 33, -201.818, 2165.14, 80.6793, 1.37881, 0, 0, 0.636078, 0.771625, 180, 180, 255, 1),
 (@OGUID+366, 202105, 33, -227.738, 2168.46, 79.7658, -2.23402, 0, 0, -0.898794, 0.438372, 180, 180, 255, 1);
 
--- INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-
 -- ======
 -- EVENTS
 -- ======
