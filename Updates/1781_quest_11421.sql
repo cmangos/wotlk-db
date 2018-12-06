@@ -19,6 +19,8 @@ DELETE FROM creature_template_spells WHERE entry IN (27992,27993);
 INSERT INTO creature_template_spells (entry, spell1, spell2, spell3, spell4) VALUES
 (27992,43986,43997,0,0),
 (27993,43986,43997,0,0);
+-- spawntime corrected
+UPDATE creature SET spawntimesecsmin = 10, spawntimesecsmax = 10 WHERE id IN (27992,27993);
 
 -- Dragonflayer Installation I / Dragonflayer Installation II / Dragonflayer Installation III
 DELETE FROM creature_template_addon WHERE entry IN (24538,24646,24647);
