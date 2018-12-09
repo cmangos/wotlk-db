@@ -12,10 +12,10 @@ INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (110929,110930,110931,110932);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
-(110929,0,0,1,1,0,0,NULL),
-(110930,0,0,1,1,0,0,NULL),
-(110931,0,0,1,1,0,0,NULL),
-(110932,0,0,1,1,0,0,NULL);
+(110929,0,0,1,0,0,0,NULL),
+(110930,0,0,1,0,0,0,NULL),
+(110931,0,0,1,0,0,0,NULL),
+(110932,0,0,1,0,0,0,NULL);
 -- waypoints
 UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (110929,110930,110931,110932);
 DELETE FROM creature_movement WHERE id IN (110929,110930,110931,110932);
