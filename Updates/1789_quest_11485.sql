@@ -12,8 +12,8 @@ INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalo
 DELETE FROM game_event_gameobject WHERE guid  = 120831;
 DELETE FROM gameobject_battleground WHERE guid = 120831;
 DELETE FROM gameobject WHERE guid = 120831;
-INSERT INTO gameobject(guid, id, map, spawnMask, phaseMaskm, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-INSERT INTO gameobject VALUES (120831,186952,571,1,1,479.076,-5941.57,308.747,1.29984,0,0,0.605121,0.796133,300,300,255,1);
+INSERT INTO gameobject(guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
+(120831,186952,571,1,1,479.076,-5941.57,308.747,1.29984,0,0,0.605121,0.796133,300,300,255,1);
 -- Iron Rune Construct
 UPDATE creature_template SET MinLevel = 70, MaxLevel = 70, MinLevelHealth = 8982, MaxLevelHealth = 8982, Armor = 6719, MeleeBaseAttackTime = 2000, RangedBaseAttackTime = 2000, MeleeAttackPower = 642, MinMeleeDmg = 291, MaxMeleeDmg = 415 WHERE entry = 24806;
 DELETE FROM creature_template_spells WHERE entry = 24806;
