@@ -19,7 +19,7 @@ DELETE FROM creature_linking WHERE guid IN (SELECT guid FROM creature WHERE id =
 DELETE FROM creature WHERE id = 24846;
 
 -- Baelgun's Event Generator (Cave) 24845
-UPDATE creature SET MovementType = 0 WHERE id = 24845;
+UPDATE creature SET MovementType = 0, spawndist = 0 WHERE id = 24845;
 
 -- Part of Baelgun's Event Generator (Cave) EAI
 DELETE FROM dbscripts_on_relay WHERE id = 20102;
