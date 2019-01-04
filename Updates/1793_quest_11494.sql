@@ -1,16 +1,17 @@
 -- q.11494 'Lightning Infused Relics'
 
 -- missing objects added (spell focus)
-DELETE FROM game_event_gameobject WHERE guid BETWEEN 120832 AND 120837;
-DELETE FROM gameobject_battleground WHERE guid BETWEEN 120832 AND 120837;
-DELETE FROM gameobject WHERE guid BETWEEN 120832 AND 120837;
+-- WoTLK Range 571x Free guids used
+DELETE FROM game_event_gameobject WHERE guid BETWEEN 5710068 AND 5710073;
+DELETE FROM gameobject_battleground WHERE guid BETWEEN 5710068 AND 5710073;
+DELETE FROM gameobject WHERE guid BETWEEN 5710068 AND 5710073;
 INSERT INTO gameobject(guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-(120832, 186959, 571, 1,1,276.119, -5755.25, 268.457, 3.7836, 0, 0, 0.948919, -0.315521, 300,300, 255, 1),
-(120833, 186959, 571, 1,1,278.375, -5758.48, 268.457, 3.81109, 0, 0, 0.944492, -0.328534, 300,300, 255, 1),
-(120834, 186959, 571, 1,1,280.69, -5761.47, 268.457, 3.73648, 0, 0, 0.956089, -0.293078, 300,300, 255, 1),
-(120835, 186959, 571, 1,1,255.829, -5891.18, 83.1141, 3.04533, 0, 0, 0.998842, 0.048113, 300,300, 255, 1),
-(120836, 186959, 571, 1,1,158.849, -5823.5, 7.08305, 0.151136, 0, 0, 0.0754962, 0.997146, 300,300, 255, 1),
-(120837, 186959, 571, 1,1,156.96, -5712.1, 189.392, 4.41821, 0, 0, 0.803105, -0.595837, 300,300, 255, 1);
+(5710068, 186959, 571, 1,1,276.119, -5755.25, 268.457, 3.7836, 0, 0, 0.948919, -0.315521, 300,300, 255, 1),
+(5710069, 186959, 571, 1,1,278.375, -5758.48, 268.457, 3.81109, 0, 0, 0.944492, -0.328534, 300,300, 255, 1),
+(5710070, 186959, 571, 1,1,280.69, -5761.47, 268.457, 3.73648, 0, 0, 0.956089, -0.293078, 300,300, 255, 1),
+(5710071, 186959, 571, 1,1,255.829, -5891.18, 83.1141, 3.04533, 0, 0, 0.998842, 0.048113, 300,300, 255, 1),
+(5710072, 186959, 571, 1,1,158.849, -5823.5, 7.08305, 0.151136, 0, 0, 0.0754962, 0.997146, 300,300, 255, 1),
+(5710073, 186959, 571, 1,1,156.96, -5712.1, 189.392, 4.41821, 0, 0, 0.803105, -0.595837, 300,300, 255, 1);
 
 -- gossip corrected
 UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 902404, condition_id = 1569 WHERE menu_id = 9024 AND id = 3;

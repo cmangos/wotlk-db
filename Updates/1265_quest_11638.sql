@@ -1,13 +1,13 @@
 -- q.11638 'Return My Remains'
 
 -- objects
--- missing spawn added - WoTLK free guid reused
-DELETE FROM game_event_gameobject WHERE guid = 15702;
-DELETE FROM gameobject_battleground WHERE guid = 15702;
-DELETE FROM gameobject WHERE guid = 15702;
+-- missing spawn added - WoTLK Range 571x Free guids used
+DELETE FROM game_event_gameobject WHERE guid = 5710023;
+DELETE FROM gameobject_battleground WHERE guid = 5710023;
+DELETE FROM gameobject WHERE guid = 5710023;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
 -- Farseer Grimwalker's Remains
-(15702, 187680, 571, 1,1,4521.143,5670.449,81.38843,6.178466, 0, 0, -0.05233574,0.9986296, -15, -15, 255, 1);
+(5710023, 187680, 571, 1,1,4521.143,5670.449,81.38843,6.178466, 0, 0, -0.05233574,0.9986296, -15, -15, 255, 1);
 
 -- target for spell
 DELETE FROM spell_script_target WHERE entry = 45608;
@@ -20,7 +20,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (11638,0,21,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'active'),
 (11638,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,3.979351,''),
 (11638,1,1,16,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
-(11638,2,9,15702,15,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(11638,2,9,5710023,15,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (11638,7,15,45608,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 UPDATE quest_template SET CompleteScript = 11638 WHERE entry = 11638;
 

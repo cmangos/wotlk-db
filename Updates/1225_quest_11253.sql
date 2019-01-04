@@ -3,12 +3,12 @@
 -- q item must be removed after q. completed
 UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11253;
 
--- Missing added - WoTLKDB FREE guids used
-DELETE FROM gameobject WHERE guid = 15125;
-DELETE FROM game_event_gameobject WHERE guid = 15125;
-DELETE FROM gameobject_battleground WHERE guid = 15125;
+-- Missing added - WoTLK Range 571x Free guids used
+DELETE FROM gameobject WHERE guid = 5710001;
+DELETE FROM game_event_gameobject WHERE guid = 5710001;
+DELETE FROM gameobject_battleground WHERE guid = 5710001;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-(15125, 300166, 571, 1, 1, 1862.02,-6184.39,25.2394,2.24799, 0, 0, 0.512574, 0.858643, 300, 300, 0, 1);
+(5710001, 300166, 571, 1, 1, 1862.02,-6184.39,25.2394,2.24799, 0, 0, 0.512574, 0.858643, 300, 300, 0, 1);
 
 -- Plaguehound Tracker
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096, MovementType = 2 WHERE Entry = 24156; -- wont stop movement if player decide not fo follow him

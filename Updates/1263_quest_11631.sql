@@ -4,15 +4,15 @@
 UPDATE quest_template SET ReqSourceCount1 = 1 WHERE entry = 11631;
 
 -- objects
--- missing spawn added - WoTLK free guids reused
-DELETE FROM game_event_gameobject WHERE guid IN (15145,15683);
-DELETE FROM gameobject_battleground WHERE guid IN (15145,15683);
-DELETE FROM gameobject WHERE guid IN (15145,15683);
+-- missing spawn added - WoTLK Range 571x Free guids used
+DELETE FROM game_event_gameobject WHERE guid IN (5710021,5710022);
+DELETE FROM gameobject_battleground WHERE guid IN (5710021,5710022);
+DELETE FROM gameobject WHERE guid IN (5710021,5710022);
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
 -- TEMP Snarlfang's Totem
-(15145, 300172, 571, 1,1,4524.03, 5674.23, 81.7021, 6.10745, 0, 0, 0.0877551, -0.996142, 300, 300, 255, 1),
+(5710021, 300172, 571, 1,1,4524.03, 5674.23, 81.7021, 6.10745, 0, 0, 0.0877551, -0.996142, 300, 300, 255, 1),
 -- Blue aura, short column, scale 6
-(15683, 187679, 571, 1,1,4528.17, 5678.6, 82.2334, 0.6283169, 0, 0, 0.3090162, 0.9510568, -25, -25, 255, 1);
+(5710022, 187679, 571, 1,1,4528.17, 5678.6, 82.2334, 0.6283169, 0, 0, 0.3090162, 0.9510568, -25, -25, 255, 1);
 
 -- EVENT
 DELETE FROM dbscripts_on_event WHERE id = 16716;
@@ -23,7 +23,7 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 (16716,1,10,25457,25000,0,0,0,0x08,0,0,0,0,4530.323,5680.649,82.45662,3.769911,'summon - Vision of Magmoth Shaman'),
 (16716,1,10,25457,25000,0,0,0,0x08,0,0,0,0,4529.922,5678.596,82.38788,2.286381,'summon - Vision of Magmoth Shaman'),
 (16716,1,10,25456,25000,0,0,0,0x08,0,0,0,0,4525.96,5677.24,82.0634,0.6290413,'summon - Vision of Kaganishu'),
-(16716,2,9,15683,25,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(16716,2,9,5710022,25,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (16716,14,0,0,0,0,25374,100,3,2000001508,0,0,0,0,0,0,0,'whisper to player');
 -- texts
 DELETE FROM dbscript_string WHERE entry IN (2000001506,2000001507,2000001508);

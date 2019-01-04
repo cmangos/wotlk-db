@@ -465,12 +465,12 @@ INSERT INTO gossip_menu_option (menu_id,id,option_icon,option_text,option_id,npc
 DELETE FROM dbscripts_on_gossip WHERE id = 942901;
 INSERT INTO dbscripts_on_gossip (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
 (942901,0,15,47326,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
--- missing objects added
-DELETE FROM game_event_gameobject WHERE guid = 94605;
-DELETE FROM gameobject_battleground WHERE guid = 94605;
-DELETE FROM gameobject WHERE guid = 94605;
+-- missing objects added - WoTLK Range 571x Free guids used
+DELETE FROM game_event_gameobject WHERE guid = 5710039;
+DELETE FROM gameobject_battleground WHERE guid = 5710039;
+DELETE FROM gameobject WHERE guid = 5710039;
 INSERT INTO gameobject(guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-(94605, 300190, 571, 1,1,4220.31, 5273.23, 57.3599, 5.85246, 0, 0, 0.2137, -0.976899, 25, 25, 255, 1);
+(5710039, 300190, 571, 1,1,4220.31, 5273.23, 57.3599, 5.85246, 0, 0, 0.2137, -0.976899, 25, 25, 255, 1);
 
 -- Fizzcrank Paratrooper Teleporter
 -- Player should be able to use teleporter only if aura 47219 is active

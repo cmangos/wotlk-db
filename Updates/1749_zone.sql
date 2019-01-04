@@ -26,14 +26,14 @@ INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp
 (24236,0,0,1,0,0,0,43320);
 
 -- Camp Winterhoof Brave
--- missing spawn added -- Free WoTLKDB guids reused
-DELETE FROM creature_addon WHERE guid = 48269;
-DELETE FROM creature_movement WHERE id = 48269;
-DELETE FROM creature_linking WHERE guid = 48269;
-DELETE FROM creature_linking WHERE master_guid = 48269;
-DELETE FROM creature WHERE guid = 48269;
+-- missing spawn added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid = 5710842;
+DELETE FROM creature_movement WHERE id = 5710842;
+DELETE FROM creature_linking WHERE guid = 5710842;
+DELETE FROM creature_linking WHERE master_guid = 5710842;
+DELETE FROM creature WHERE guid = 5710842;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
-(48269,24031,571,1,1,0,0,2702.356,-4305.032,293.0581,3.979351,300,300,0,0,42540,0,0,0);
+(5710842,24031,571,1,1,0,0,2702.356,-4305.032,293.0581,3.979351,300,300,0,0,42540,0,0,0);
 -- updates
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid = 117224;
 -- waypoints

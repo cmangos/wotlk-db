@@ -3,17 +3,17 @@
 -- Alliance: 11798
 
 -- ELM General Purpose Bunny
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid = 140594;
-DELETE FROM creature_movement WHERE id = 140594;
-DELETE FROM game_event_creature WHERE guid = 140594;
-DELETE FROM game_event_creature_data WHERE guid = 140594;
-DELETE FROM creature_battleground WHERE guid = 140594;
-DELETE FROM creature_linking WHERE guid = 140594
-OR master_guid = 140594;
-DELETE FROM creature WHERE guid = 140594;
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid = 5710272;
+DELETE FROM creature_movement WHERE id = 5710272;
+DELETE FROM game_event_creature WHERE guid = 5710272;
+DELETE FROM game_event_creature_data WHERE guid = 5710272;
+DELETE FROM creature_battleground WHERE guid = 5710272;
+DELETE FROM creature_linking WHERE guid = 5710272
+OR master_guid = 5710272;
+DELETE FROM creature WHERE guid = 5710272;
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140594,23837,571,1,1,0,0,4000.19,4853.58,25.9716,5.585053,300,300,0,0,42,0,0,0);
+(5710272,23837,571,1,1,0,0,4000.19,4853.58,25.9716,5.585053,300,300,0,0,42,0,0,0);
 
 -- Event
 DELETE FROM dbscripts_on_event WHERE id = 17209;

@@ -9,23 +9,23 @@ UPDATE creature SET position_x = 1587.194702, position_y = -6167.454590, positio
 UPDATE creature SET position_x = 1619.732056, position_y = -6154.648926, position_z = 9.191553, orientation = 3.961897 WHERE guid = 117636;
 
 -- North Fleet Soldier
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (86672);
-DELETE FROM creature_movement WHERE id IN (86672);
-DELETE FROM game_event_creature WHERE guid IN (86672);
-DELETE FROM game_event_creature_data WHERE guid IN (86672);
-DELETE FROM creature_battleground WHERE guid IN (86672);
-DELETE FROM creature_linking WHERE guid IN (86672)
-OR master_guid IN (86672);
-DELETE FROM creature WHERE guid IN (86672);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710128);
+DELETE FROM creature_movement WHERE id IN (5710128);
+DELETE FROM game_event_creature WHERE guid IN (5710128);
+DELETE FROM game_event_creature_data WHERE guid IN (5710128);
+DELETE FROM creature_battleground WHERE guid IN (5710128);
+DELETE FROM creature_linking WHERE guid IN (5710128)
+OR master_guid IN (5710128);
+DELETE FROM creature WHERE guid IN (5710128);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(86672,23793,571,1,1,0,0,1616.74,-6271.49,5.55558,0.9424778,300,300,0,0,7984,0,0,0);
+(5710128,23793,571,1,1,0,0,1616.74,-6271.49,5.55558,0.9424778,300,300,0,0,7984,0,0,0);
 -- position corrected
 UPDATE creature SET position_x = 1589.74, position_y = -6247.23, position_z = 5.88722, orientation = 0.541052 WHERE guid = 118608;
 -- Individual Addons
-DELETE FROM creature_addon WHERE guid IN (86672,118604,118605,118606,118607,118608,118609,118610,118611,118612,118613,118617,118618,118619);
+DELETE FROM creature_addon WHERE guid IN (5710128,118604,118605,118606,118607,118608,118609,118610,118611,118612,118613,118617,118618,118619);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
-(86672,0,0,1,0,333,0,NULL),
+(5710128,0,0,1,0,333,0,NULL),
 (118604,0,0,1,0,333,0,NULL),
 (118605,0,0,1,0,333,0,NULL),
 (118606,0,0,1,0,333,0,NULL),
@@ -130,32 +130,32 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2386601,27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
 -- North Fleet Marksman
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (86673,86674);
-DELETE FROM creature_movement WHERE id IN (86673,86674);
-DELETE FROM game_event_creature WHERE guid IN (86673,86674);
-DELETE FROM game_event_creature_data WHERE guid IN (86673,86674);
-DELETE FROM creature_battleground WHERE guid IN (86673,86674);
-DELETE FROM creature_linking WHERE guid IN (86673,86674)
-OR master_guid IN (86673,86674);
-DELETE FROM creature WHERE guid IN (86673,86674);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710129,5710130);
+DELETE FROM creature_movement WHERE id IN (5710129,5710130);
+DELETE FROM game_event_creature WHERE guid IN (5710129,5710130);
+DELETE FROM game_event_creature_data WHERE guid IN (5710129,5710130);
+DELETE FROM creature_battleground WHERE guid IN (5710129,5710130);
+DELETE FROM creature_linking WHERE guid IN (5710129,5710130)
+OR master_guid IN (5710129,5710130);
+DELETE FROM creature WHERE guid IN (5710129,5710130);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(86673,23946,571,1,1,0,0,1600.3,-6236.03,5.81873,0.4886922,300,300,0,0,6986,2991,0,0),
-(86674,23946,571,1,1,0,0,1606.37,-6241.61,6.15574,1.194417,300,300,0,0,6986,2991,0,0);
+(5710129,23946,571,1,1,0,0,1600.3,-6236.03,5.81873,0.4886922,300,300,0,0,6986,2991,0,0),
+(5710130,23946,571,1,1,0,0,1606.37,-6241.61,6.15574,1.194417,300,300,0,0,6986,2991,0,0);
 -- Individual Addons
-DELETE FROM creature_addon WHERE guid IN (86673,86674,108488,108489);
+DELETE FROM creature_addon WHERE guid IN (5710129,5710130,108488,108489);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
-(86673,0,0,2,0,214,0,NULL),
-(86674,0,0,2,0,214,0,NULL),
+(5710129,0,0,2,0,214,0,NULL),
+(5710130,0,0,2,0,214,0,NULL),
 (108488,0,0,2,0,214,0,NULL),
 (108489,0,0,2,0,214,0,NULL);
 -- Waypoints
-UPDATE creature SET SpawnDist = 0, MovementType = 2 WHERE guid IN (86673,86674,108486,108487,108488,108489);
-DELETE FROM creature_movement WHERE id IN (86673,86674,108486,108487,108488,108489);
+UPDATE creature SET SpawnDist = 0, MovementType = 2 WHERE guid IN (5710129,5710130,108486,108487,108488,108489);
+DELETE FROM creature_movement WHERE id IN (5710129,5710130,108486,108487,108488,108489);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 -- shooters
-(86673,1,1600.3,-6236.03,5.81873,10000,2394601,0.4886922),
-(86674,1,1606.37,-6241.61,6.15574,10000,2394601,1.194417),
+(5710129,1,1600.3,-6236.03,5.81873,10000,2394601,0.4886922),
+(5710130,1,1606.37,-6241.61,6.15574,10000,2394601,1.194417),
 (108488,1,1561.16,-6192.22,7.55799,10000,2394601,0.346932),
 (108489,1,1557.03,-6184.53,8.55068,10000,2394601,0.2626),
 -- others

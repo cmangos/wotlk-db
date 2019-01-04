@@ -3,17 +3,17 @@
 UPDATE quest_template SET ReqSourceCount2 = 1 WHERE entry = 11957;
 
 -- Coldarra Invisman
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (76293);
-DELETE FROM creature_movement WHERE id IN (76293);
-DELETE FROM game_event_creature WHERE guid IN (76293);
-DELETE FROM game_event_creature_data WHERE guid IN (76293);
-DELETE FROM creature_battleground WHERE guid IN (76293);
-DELETE FROM creature_linking WHERE guid IN (76293)
-OR master_guid IN (76293);
-DELETE FROM creature WHERE guid IN (76293);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710685);
+DELETE FROM creature_movement WHERE id IN (5710685);
+DELETE FROM game_event_creature WHERE guid IN (5710685);
+DELETE FROM game_event_creature_data WHERE guid IN (5710685);
+DELETE FROM creature_battleground WHERE guid IN (5710685);
+DELETE FROM creature_linking WHERE guid IN (5710685)
+OR master_guid IN (5710685);
+DELETE FROM creature WHERE guid IN (5710685);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(76293,24771,571,1,1,0,0,4030.92,7327.35,635.973,2.897247,15,15,0,0,4979,0,0,0);
+(5710685,24771,571,1,1,0,0,4030.92,7327.35,635.973,2.897247,15,15,0,0,4979,0,0,0);
 
 -- target corrected for spell
 DELETE FROM spell_script_target WHERE entry = 46793;

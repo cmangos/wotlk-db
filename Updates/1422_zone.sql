@@ -1,20 +1,20 @@
 -- The Wailing Ziggurat - Borean Tundra
 
 -- Ziggurat Defender
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid BETWEEN 140943 AND 140946;
-DELETE FROM creature_movement WHERE id BETWEEN 140943 AND 140946;
-DELETE FROM game_event_creature WHERE guid BETWEEN 140943 AND 140946;
-DELETE FROM game_event_creature_data WHERE guid BETWEEN 140943 AND 140946;
-DELETE FROM creature_battleground WHERE guid BETWEEN 140943 AND 140946;
-DELETE FROM creature_linking WHERE guid BETWEEN 140943 AND 140946
-OR master_guid BETWEEN 140943 AND 140946;
-DELETE FROM creature WHERE guid BETWEEN 140943 AND 140946;
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid BETWEEN 5710592 AND 5710595;
+DELETE FROM creature_movement WHERE id BETWEEN 5710592 AND 5710595;
+DELETE FROM game_event_creature WHERE guid BETWEEN 5710592 AND 5710595;
+DELETE FROM game_event_creature_data WHERE guid BETWEEN 5710592 AND 5710595;
+DELETE FROM creature_battleground WHERE guid BETWEEN 5710592 AND 5710595;
+DELETE FROM creature_linking WHERE guid BETWEEN 5710592 AND 5710595
+OR master_guid BETWEEN 5710592 AND 5710595;
+DELETE FROM creature WHERE guid BETWEEN 5710592 AND 5710595;
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140943,26202,571,1,1,0,0,3246.69,3685.95,21.8294,2.79863,300,300,7,0,9291,0,0,1),
-(140944,26202,571,1,1,0,0,3186.61,3846.66,27.6716,2.74634,300,300,7,0,8982,0,0,1),
-(140945,26202,571,1,1,0,0,3187.02,3875.21,27.3123,3.65135,300,300,7,0,8982,0,0,1),
-(140946,26202,571,1,1,0,0,3228.15,3877.85,30.3962,1.90855,300,300,7,0,8982,0,0,1);
+(5710592,26202,571,1,1,0,0,3246.69,3685.95,21.8294,2.79863,300,300,7,0,9291,0,0,1),
+(5710593,26202,571,1,1,0,0,3186.61,3846.66,27.6716,2.74634,300,300,7,0,8982,0,0,1),
+(5710594,26202,571,1,1,0,0,3187.02,3875.21,27.3123,3.65135,300,300,7,0,8982,0,0,1),
+(5710595,26202,571,1,1,0,0,3228.15,3877.85,30.3962,1.90855,300,300,7,0,8982,0,0,1);
 -- Updates
 UPDATE creature SET spawndist = 7, MovementType = 1 WHERE id = 26202;
 UPDATE creature SET position_x = 3397.803711, position_y = 3726.490723, position_z = 24.050314 WHERE guid = 104161;
@@ -67,24 +67,24 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2617101,0,1,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
 -- Fleeing Cultist
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (140947);
-DELETE FROM creature_movement WHERE id IN (140947);
-DELETE FROM game_event_creature WHERE guid IN (140947);
-DELETE FROM game_event_creature_data WHERE guid IN (140947);
-DELETE FROM creature_battleground WHERE guid IN (140947);
-DELETE FROM creature_linking WHERE guid IN (140947)
-OR master_guid IN (140947);
-DELETE FROM creature WHERE guid IN (140947);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710596);
+DELETE FROM creature_movement WHERE id IN (5710596);
+DELETE FROM game_event_creature WHERE guid IN (5710596);
+DELETE FROM game_event_creature_data WHERE guid IN (5710596);
+DELETE FROM creature_battleground WHERE guid IN (5710596);
+DELETE FROM creature_linking WHERE guid IN (5710596)
+OR master_guid IN (5710596);
+DELETE FROM creature WHERE guid IN (5710596);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140947,26189,571,1,1,0,0,3324.54,3692.76,32.4366,0.772935,15,45,0,0,9082,2991,0,2);
+(5710596,26189,571,1,1,0,0,3324.54,3692.76,32.4366,0.772935,15,45,0,0,9082,2991,0,2);
 -- Updates
 UPDATE creature SET position_x = 3326.143799, position_y = 3685.778809, position_z = 32.434845, orientation = 6.000155, spawntimesecsmin = 15, spawntimesecsmax = 45, spawndist = 0, MovementType = 2 WHERE guid = 102713;
 UPDATE creature SET position_x = 3325.825439, position_y = 3686.762695, position_z = 32.436146, orientation = 5.804603, spawntimesecsmin = 15, spawntimesecsmax = 45, spawndist = 0, MovementType = 2 WHERE guid = 102738;
 UPDATE creature SET position_x = 3325.403809, position_y = 3692.391113, position_z = 32.436203, orientation = 0.738640, spawntimesecsmin = 15, spawntimesecsmax = 45, spawndist = 0, MovementType = 2 WHERE guid = 102714;
 -- Waypoints
-UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (102713,102738,102714,140947);
-DELETE FROM creature_movement WHERE id IN (102713,102738,102714,140947);
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (102713,102738,102714,5710596);
+DELETE FROM creature_movement WHERE id IN (102713,102738,102714,5710596);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 -- #102713
 (102713,1,3326.143799,3685.778809,32.434845,0,5,6.000155),
@@ -117,18 +117,18 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (102714,8,3389.18,3693.69,21.2981,0,0,5.2446),
 (102714,9,3396.24,3667.11,19.844,0,0,4.7655),
 (102714,10,3398.16,3632.91,18.382,2000,2618901,4.78906),
--- #140947
-(140947,1,3324.54,3692.76,32.4366,0,5,0.772935),
-(140947,2,3326.06,3693.48,32.4345,0,9,0.924927),
-(140947,3,3332.6,3700.17,32.3982,0,0,0.693212),
-(140947,4,3340.63,3708.63,32.4319,0,0,0.504717),
-(140947,5,3353.88,3714.07,21.5039,0,0,0.26517),
-(140947,6,3360.84,3715.85,21.5455,0,0,0.0177696),
-(140947,7,3368.14,3710.26,21.6697,0,0,5.50771),
-(140947,8,3379.11,3697.9,21.7296,0,0,5.25639),
-(140947,9,3385.83,3678.35,21.0381,0,0,4.89903),
-(140947,10,3388.94,3658.54,20.6177,0,0,4.85977),
-(140947,11,3391.87,3637.75,19.8821,2000,2618901,4.88725);
+-- #5710596
+(5710596,1,3324.54,3692.76,32.4366,0,5,0.772935),
+(5710596,2,3326.06,3693.48,32.4345,0,9,0.924927),
+(5710596,3,3332.6,3700.17,32.3982,0,0,0.693212),
+(5710596,4,3340.63,3708.63,32.4319,0,0,0.504717),
+(5710596,5,3353.88,3714.07,21.5039,0,0,0.26517),
+(5710596,6,3360.84,3715.85,21.5455,0,0,0.0177696),
+(5710596,7,3368.14,3710.26,21.6697,0,0,5.50771),
+(5710596,8,3379.11,3697.9,21.7296,0,0,5.25639),
+(5710596,9,3385.83,3678.35,21.0381,0,0,4.89903),
+(5710596,10,3388.94,3658.54,20.6177,0,0,4.85977),
+(5710596,11,3391.87,3637.75,19.8821,2000,2618901,4.88725);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2618901;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2618901,1,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'unactive'),
@@ -150,4 +150,4 @@ INSERT INTO pool_template (entry, max_limit, description) VALUES
 DELETE FROM pool_creature WHERE pool_entry = 16463;
 INSERT INTO pool_creature (guid, pool_entry, chance, description) VALUES
 (102714, 16463, 0, 'Borean Tundra - Fleeing Cultist'),
-(140947, 16463, 0, 'Borean Tundra - Fleeing Cultist');
+(5710596, 16463, 0, 'Borean Tundra - Fleeing Cultist');

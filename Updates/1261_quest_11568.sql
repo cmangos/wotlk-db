@@ -1,15 +1,15 @@
 -- q.11568 'A return to Resting'
 
 -- Objects
--- missing spawns added - WoTLK free guids reused
-DELETE FROM game_event_gameobject WHERE guid BETWEEN 15120 AND 15123;
-DELETE FROM gameobject_battleground WHERE guid BETWEEN 15120 AND 15123;
-DELETE FROM gameobject WHERE guid BETWEEN 15120 AND 15123;
+-- missing spawns added - WoTLK Range 571x Free guids used
+DELETE FROM game_event_gameobject WHERE guid BETWEEN 5710017 AND 5710020;
+DELETE FROM gameobject_battleground WHERE guid BETWEEN 5710017 AND 5710020;
+DELETE FROM gameobject WHERE guid BETWEEN 5710017 AND 5710020;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
-(15120, 187386, 571, 1,1,-17.0786, -4883.18 ,298.535 ,0.1047193, 0, 0, 0.05233574,0.9986296, -30, -30, 255, 1), -- shield
-(15121, 187385, 571, 1,1, 11.99067,-4981.4  ,303.3151,1.06465,   0, 0, 0.5075378, 0.8616294, -30, -30, 255, 1), -- staff
-(15122, 187383, 571, 1,1,-83.31532,-5014.222,306.4164,6.265733,  0, 0,-0.00872612,0.9999619, -30, -30, 255, 1), -- heart
-(15123, 187384, 571, 1,1,-108.6433,-5143.833,324.7471,2.460913,  0, 0, 0.9426413, 0.3338076, -30, -30, 255, 1); -- armor
+(5710017, 187386, 571, 1,1,-17.0786, -4883.18 ,298.535 ,0.1047193, 0, 0, 0.05233574,0.9986296, -30, -30, 255, 1), -- shield
+(5710018, 187385, 571, 1,1, 11.99067,-4981.4  ,303.3151,1.06465,   0, 0, 0.5075378, 0.8616294, -30, -30, 255, 1), -- staff
+(5710019, 187383, 571, 1,1,-83.31532,-5014.222,306.4164,6.265733,  0, 0,-0.00872612,0.9999619, -30, -30, 255, 1), -- heart
+(5710020, 187384, 571, 1,1,-108.6433,-5143.833,324.7471,2.460913,  0, 0, 0.9426413, 0.3338076, -30, -30, 255, 1); -- armor
 
 -- Correct target for spell=45323
 DELETE FROM spell_script_target WHERE entry = 45323;
@@ -36,20 +36,20 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2522901,2523001,2523101,2523201);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- #2522901
-(2522901,0,9,15122,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(2522901,0,9,5710019,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (2522901,0,0,0,0,0,24877,100104,7 | 0x10,2000001503,0,0,0,0,0,0,0,''),
 (2522901,3,0,0,0,0,24877,100104,7 | 0x10,2000001504,0,0,0,0,0,0,0,''),
 (2522901,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle'),
 -- #2523001
-(2523001,0,9,15123,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(2523001,0,9,5710020,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (2523001,0,0,0,0,0,24875,100024,7 | 0x10,2000001505,0,0,0,0,0,0,0,''),
 (2523001,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle'),
 -- #2523101
-(2523101,0,9,15121,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(2523101,0,9,5710018,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (2523101,0,0,0,0,0,24876,100070,7 | 0x10,2000001502,0,0,0,0,0,0,0,''),
 (2523101,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle'),
 -- #2523201
-(2523201,0,9,15120,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
+(2523201,0,9,5710017,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object'),
 (2523201,0,0,0,0,0,24874,99811,7 | 0x10,2000001501,0,0,0,0,0,0,0,''),
 (2523201,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle');
 

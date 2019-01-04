@@ -121,18 +121,18 @@ DELETE FROM creature_linking WHERE guid IN (99159,99158)
  OR master_guid IN (99159,99158);
 
 -- Plagued Scavenger
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (99159,99158);
-DELETE FROM creature_movement WHERE id IN (99159,99158);
-DELETE FROM game_event_creature WHERE guid IN (99159,99158);
-DELETE FROM game_event_creature_data WHERE guid IN (99159,99158);
-DELETE FROM creature_battleground WHERE guid IN (99159,99158);
-DELETE FROM creature_linking WHERE guid IN (99159,99158)
-OR master_guid IN (99159,99158);
-DELETE FROM creature WHERE guid IN (99159,99158);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710686,5710687);
+DELETE FROM creature_movement WHERE id IN (5710686,5710687);
+DELETE FROM game_event_creature WHERE guid IN (5710686,5710687);
+DELETE FROM game_event_creature_data WHERE guid IN (5710686,5710687);
+DELETE FROM creature_battleground WHERE guid IN (5710686,5710687);
+DELETE FROM creature_linking WHERE guid IN (5710686,5710687)
+OR master_guid IN (5710686,5710687);
+DELETE FROM creature WHERE guid IN (5710686,5710687);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(99159,25650,571,1,1,0,0,2543.9,5268.49,31.0185,1.86007,120,120,7,0,6986,0,0,1),
-(99158,25650,571,1,1,0,0,2672.24,5308.25,31.0133,4.30266,120,120,7,0,6986,0,0,1);
+(5710686,25650,571,1,1,0,0,2543.9,5268.49,31.0185,1.86007,120,120,7,0,6986,0,0,1),
+(5710687,25650,571,1,1,0,0,2672.24,5308.25,31.0133,4.30266,120,120,7,0,6986,0,0,1);
 -- Updates
 UPDATE creature SET spawntimesecsmin = 120, spawntimesecsmax = 120 WHERE id = 25650;
 UPDATE creature SET position_x = 2507.341553, position_y = 5313.238770, position_z = 33.075111, orientation = 5.743868 WHERE guid = 100584;

@@ -1,19 +1,19 @@
 -- Nifflevar - Howling Fjord
 
 -- Dragonflayer Rune-Seer
--- missing spawn added -- Free WoTLKDB guids reused
-DELETE FROM creature_addon WHERE guid = 29395;
-DELETE FROM creature_movement WHERE id = 29395;
-DELETE FROM creature_linking WHERE guid = 29395;
-DELETE FROM creature_linking WHERE master_guid = 29395;
-DELETE FROM creature WHERE guid = 29395;
+-- missing spawn added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid = 5710820;
+DELETE FROM creature_movement WHERE id = 5710820;
+DELETE FROM creature_linking WHERE guid = 5710820;
+DELETE FROM creature_linking WHERE master_guid = 5710820;
+DELETE FROM creature WHERE guid = 5710820;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
-(29395,23656,571,1,1,0,0,797.724,-5496.69,217.406,0.9930317,300,300,0,0,5588,6882,0,0);
+(5710820,23656,571,1,1,0,0,797.724,-5496.69,217.406,0.9930317,300,300,0,0,5588,6882,0,0);
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (105311); -- not req.
-DELETE FROM creature_addon WHERE guid IN (29395);
+DELETE FROM creature_addon WHERE guid IN (5710820);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
-(29395,0,1,1,0,0,0,NULL);
+(5710820,0,1,1,0,0,0,NULL);
 -- positions corrected
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid = 105280;
 UPDATE creature SET position_x = 811.719543, position_y = -5474.778320, position_z = 212.431030, spawndist = 5, MovementType = 1 WHERE guid = 105279;
@@ -59,14 +59,14 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2365601,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
 -- Dragonflayer Warrior
--- missing spawn added -- Free WoTLKDB guids reused
-DELETE FROM creature_addon WHERE guid = 31825;
-DELETE FROM creature_movement WHERE id = 31825;
-DELETE FROM creature_linking WHERE guid = 31825;
-DELETE FROM creature_linking WHERE master_guid = 31825;
-DELETE FROM creature WHERE guid = 31825;
+-- missing spawn added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid = 5710821;
+DELETE FROM creature_movement WHERE id = 5710821;
+DELETE FROM creature_linking WHERE guid = 5710821;
+DELETE FROM creature_linking WHERE master_guid = 5710821;
+DELETE FROM creature WHERE guid = 5710821;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
-(31825,23654,571,1,1,0,0,933.08,-5467.32,189.765,2.52669,300,300,0,0,6986,0,0,2);
+(5710821,23654,571,1,1,0,0,933.08,-5467.32,189.765,2.52669,300,300,0,0,6986,0,0,2);
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (105132,105146);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
@@ -76,42 +76,42 @@ INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, em
 UPDATE creature SET position_x = 989.073792, position_y = -5370.008789, position_z = 192.698792, spawndist = 7, MovementType = 1 WHERE guid = 105139;
 UPDATE creature SET position_x = 807.116150, position_y = -5603.335938, position_z = 227.055923, orientation = 5.721898, spawndist = 0, MovementType = 1 WHERE guid = 105137;
 -- waypoints
-UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (31825,105137,105141,105143,105144,105145,105148,105149,105150,105151);
-DELETE FROM creature_movement WHERE id IN (31825,105137,105141,105143,105144,105145,105148,105149,105150,105151);
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (5710821,105137,105141,105143,105144,105145,105148,105149,105150,105151);
+DELETE FROM creature_movement WHERE id IN (5710821,105137,105141,105143,105144,105145,105148,105149,105150,105151);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
--- #31825
-(31825,1,925.157,-5461.22,193.201,0,0,2.59738),
-(31825,2,913.663,-5455.37,197.527,0,0,2.73089),
-(31825,3,902.673,-5451.45,201.693,0,0,2.84478),
-(31825,4,892.37,-5448.76,204.653,0,0,2.89976),
-(31825,5,884.64,-5447,205.85,0,0,3.22098),
-(31825,6,873.528,-5450.25,207.409,0,0,3.57441),
-(31825,7,864.358,-5457.08,210.41,0,0,4.05586),
-(31825,8,856.125,-5468.93,211.95,0,0,4.26399),
-(31825,9,849.335,-5484.4,213.053,0,0,4.2954),
-(31825,10,843.615,-5498.92,213.526,0,0,4.35431),
-(31825,11,838.674,-5512.26,212.593,0,0,4.65511),
-(31825,12,838.234,-5525.32,210.35,0,0,4.73915),
-(31825,13,839.781,-5536.78,207.187,0,0,4.95905),
-(31825,14,843.262,-5547.11,203.199,0,0,5.33761),
-(31825,15,852.199,-5553,199.451,0,0,5.93843),
-(31825,16,861.856,-5553.57,197.723,0,0,0.0832846),
-(31825,17,874.391,-5549.47,194.506,0,0,0.362101),
-(31825,18,886.31,-5544.47,192.369,0,0,0.263926),
-(31825,19,901.366,-5542.39,192.891,0,0,0.106846),
-(31825,20,914.575,-5543.97,190.277,0,0,6.11515),
-(31825,21,927.43,-5546.74,187.082,0,0,5.95021),
-(31825,22,937.873,-5552.25,185.654,0,0,5.76172),
-(31825,23,948.506,-5558.31,184.773,0,0,0.134335),
-(31825,24,957.332,-5550.67,185.18,0,0,1.01005),
-(31825,25,958.82,-5540.25,185.289,0,0,1.54805),
-(31825,26,957.618,-5527.01,185.538,0,0,1.7444),
-(31825,27,954.759,-5517.92,185.728,0,0,2.39707),
-(31825,28,947.249,-5510.41,185.821,0,0,2.15619),
-(31825,29,944.242,-5503.54,185.848,0,0,1.81455),
-(31825,30,944.352,-5494.47,186.051,0,0,1.3276),
-(31825,31,947.411,-5483.66,185.961,0,0,2.12871),
-(31825,32,933.584,-5467.7,189.334,0,0,2.42323),
+-- #5710821
+(5710821,1,925.157,-5461.22,193.201,0,0,2.59738),
+(5710821,2,913.663,-5455.37,197.527,0,0,2.73089),
+(5710821,3,902.673,-5451.45,201.693,0,0,2.84478),
+(5710821,4,892.37,-5448.76,204.653,0,0,2.89976),
+(5710821,5,884.64,-5447,205.85,0,0,3.22098),
+(5710821,6,873.528,-5450.25,207.409,0,0,3.57441),
+(5710821,7,864.358,-5457.08,210.41,0,0,4.05586),
+(5710821,8,856.125,-5468.93,211.95,0,0,4.26399),
+(5710821,9,849.335,-5484.4,213.053,0,0,4.2954),
+(5710821,10,843.615,-5498.92,213.526,0,0,4.35431),
+(5710821,11,838.674,-5512.26,212.593,0,0,4.65511),
+(5710821,12,838.234,-5525.32,210.35,0,0,4.73915),
+(5710821,13,839.781,-5536.78,207.187,0,0,4.95905),
+(5710821,14,843.262,-5547.11,203.199,0,0,5.33761),
+(5710821,15,852.199,-5553,199.451,0,0,5.93843),
+(5710821,16,861.856,-5553.57,197.723,0,0,0.0832846),
+(5710821,17,874.391,-5549.47,194.506,0,0,0.362101),
+(5710821,18,886.31,-5544.47,192.369,0,0,0.263926),
+(5710821,19,901.366,-5542.39,192.891,0,0,0.106846),
+(5710821,20,914.575,-5543.97,190.277,0,0,6.11515),
+(5710821,21,927.43,-5546.74,187.082,0,0,5.95021),
+(5710821,22,937.873,-5552.25,185.654,0,0,5.76172),
+(5710821,23,948.506,-5558.31,184.773,0,0,0.134335),
+(5710821,24,957.332,-5550.67,185.18,0,0,1.01005),
+(5710821,25,958.82,-5540.25,185.289,0,0,1.54805),
+(5710821,26,957.618,-5527.01,185.538,0,0,1.7444),
+(5710821,27,954.759,-5517.92,185.728,0,0,2.39707),
+(5710821,28,947.249,-5510.41,185.821,0,0,2.15619),
+(5710821,29,944.242,-5503.54,185.848,0,0,1.81455),
+(5710821,30,944.352,-5494.47,186.051,0,0,1.3276),
+(5710821,31,947.411,-5483.66,185.961,0,0,2.12871),
+(5710821,32,933.584,-5467.7,189.334,0,0,2.42323),
 -- #105137
 (105137,1,817.226,-5610,225.575,0,0,5.73368),
 (105137,2,835.132,-5622.62,223.42,0,0,5.54911),

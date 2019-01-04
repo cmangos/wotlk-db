@@ -1,20 +1,20 @@
 -- Naxxanar - Borean Tundra
 
 -- En'kilah Gargoyle
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (140936);
-DELETE FROM creature_movement WHERE id IN (140936);
-DELETE FROM game_event_creature WHERE guid IN (140936);
-DELETE FROM game_event_creature_data WHERE guid IN (140936);
-DELETE FROM creature_battleground WHERE guid IN (140936);
-DELETE FROM creature_linking WHERE guid IN (140936)
-OR master_guid IN (140936);
-DELETE FROM creature WHERE guid IN (140936);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710585);
+DELETE FROM creature_movement WHERE id IN (5710585);
+DELETE FROM game_event_creature WHERE guid IN (5710585);
+DELETE FROM game_event_creature_data WHERE guid IN (5710585);
+DELETE FROM creature_battleground WHERE guid IN (5710585);
+DELETE FROM creature_linking WHERE guid IN (5710585)
+OR master_guid IN (5710585);
+DELETE FROM creature WHERE guid IN (5710585);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140936,25387,571,1,1,0,0,3769.018,3522.702,371.428,2.146755,300,300,0,0,9291,3231,0,2);
+(5710585,25387,571,1,1,0,0,3769.018,3522.702,371.428,2.146755,300,300,0,0,9291,3231,0,2);
 -- Waypoints
-UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (100016,100017,100018,100032,100034,100061,140936);
-DELETE FROM creature_movement WHERE id IN (100016,100017,100018,100032,100034,100061,140936);
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (100016,100017,100018,100032,100034,100061,5710585);
+DELETE FROM creature_movement WHERE id IN (100016,100017,100018,100032,100034,100061,5710585);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 -- #100016
 (100016,1,3769.164,3582.061,398.5081,0,5,0),
@@ -102,27 +102,27 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (100061,19,3747.756,3631.474,383.3364,0,0,0),
 (100061,20,3740.781,3623.69,382.892,0,0,0),
 (100061,21,3737.535,3613.53,382.892,0,0,0),
--- #140936
-(140936,1,3769.018,3522.702,371.428,4000,2538702,2.146755),
-(140936,2,3769.018,3522.702,371.428,2000,3,2.146755);
+-- #5710585
+(5710585,1,3769.018,3522.702,371.428,4000,2538702,2.146755),
+(5710585,2,3769.018,3522.702,371.428,2000,3,2.146755);
 
 -- Naxxanar Skeletal Mage
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (140937,140938,140939);
-DELETE FROM creature_movement WHERE id IN (140937,140938,140939);
-DELETE FROM game_event_creature WHERE guid IN (140937,140938,140939);
-DELETE FROM game_event_creature_data WHERE guid IN (140937,140938,140939);
-DELETE FROM creature_battleground WHERE guid IN (140937,140938,140939);
-DELETE FROM creature_linking WHERE guid IN (140937,140938,140939)
-OR master_guid IN (140937,140938,140939);
-DELETE FROM creature WHERE guid IN (140937,140938,140939);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710586,5710587,5710588);
+DELETE FROM creature_movement WHERE id IN (5710586,5710587,5710588);
+DELETE FROM game_event_creature WHERE guid IN (5710586,5710587,5710588);
+DELETE FROM game_event_creature_data WHERE guid IN (5710586,5710587,5710588);
+DELETE FROM creature_battleground WHERE guid IN (5710586,5710587,5710588);
+DELETE FROM creature_linking WHERE guid IN (5710586,5710587,5710588)
+OR master_guid IN (5710586,5710587,5710588);
+DELETE FROM creature WHERE guid IN (5710586,5710587,5710588);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140937,25396,571,1,1,0,0,3762.96,3542.92,294.611,2.338741,300,300,0,0,9610,3309,0,0),
-(140938,25396,571,1,1,0,0,3753.64,3536.27,294.699,1.73421,300,300,0,0,9610,3309,0,0),
-(140939,25396,571,1,1,0,0,3723.36,3503.79,304.127,2.79625,300,300,0,0,9610,3309,0,2);
+(5710586,25396,571,1,1,0,0,3762.96,3542.92,294.611,2.338741,300,300,0,0,9610,3309,0,0),
+(5710587,25396,571,1,1,0,0,3753.64,3536.27,294.699,1.73421,300,300,0,0,9610,3309,0,0),
+(5710588,25396,571,1,1,0,0,3723.36,3503.79,304.127,2.79625,300,300,0,0,9610,3309,0,2);
 -- Waypoints
-UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (100737,100741,100773,140939);
-DELETE FROM creature_movement WHERE id IN (100737,100741,100773,140939);
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (100737,100741,100773,5710588);
+DELETE FROM creature_movement WHERE id IN (100737,100741,100773,5710588);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 -- #100737
 (100737,1,3683.02,3597.87,304.223,0,0,0.964667),
@@ -168,23 +168,23 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (100773,13,3804.13,3567.17,304.12,0,0,1.68631),
 (100773,14,3802.53,3578.87,304.268,0,0,1.72951),
 (100773,15,3800.27,3591.8,304.221,5000,0,1.86695),
--- #140939
-(140939,1,3712.36,3509.27,304.198,0,0,2.53707),
-(140939,2,3703.97,3514.57,304.398,0,0,2.52506),
-(140939,3,3695.83,3521.26,304.11,5000,0,2.36405),
-(140939,4,3703.44,3514.84,304.316,0,0,5.61952),
-(140939,5,3712.91,3508.67,304.193,0,0,5.83158),
-(140939,6,3722.96,3503.88,304.126,0,0,6.07095),
-(140939,7,3732.57,3502.13,304.126,0,0,6.28301),
-(140939,8,3740.02,3502.4,304.119,0,0,0.137267),
-(140939,9,3753.31,3504.84,304.341,0,0,0.160829),
-(140939,10,3761.36,3506.3,304.209,0,0,0.312517),
-(140939,11,3766.13,3508.21,304.173,5000,0,0.430312),
-(140939,12,3761.82,3506.54,304.205,0,0,3.32765),
-(140939,13,3753.75,3504.89,304.322,0,0,3.36299),
-(140939,14,3740.76,3502.7,304.117,0,0,3.18627),
-(140939,15,3733,3502.06,304.124,0,0,3.14968),
-(140939,16,3724.18,3503.6,304.125,0,0,2.86693);
+-- #5710588
+(5710588,1,3712.36,3509.27,304.198,0,0,2.53707),
+(5710588,2,3703.97,3514.57,304.398,0,0,2.52506),
+(5710588,3,3695.83,3521.26,304.11,5000,0,2.36405),
+(5710588,4,3703.44,3514.84,304.316,0,0,5.61952),
+(5710588,5,3712.91,3508.67,304.193,0,0,5.83158),
+(5710588,6,3722.96,3503.88,304.126,0,0,6.07095),
+(5710588,7,3732.57,3502.13,304.126,0,0,6.28301),
+(5710588,8,3740.02,3502.4,304.119,0,0,0.137267),
+(5710588,9,3753.31,3504.84,304.341,0,0,0.160829),
+(5710588,10,3761.36,3506.3,304.209,0,0,0.312517),
+(5710588,11,3766.13,3508.21,304.173,5000,0,0.430312),
+(5710588,12,3761.82,3506.54,304.205,0,0,3.32765),
+(5710588,13,3753.75,3504.89,304.322,0,0,3.36299),
+(5710588,14,3740.76,3502.7,304.117,0,0,3.18627),
+(5710588,15,3733,3502.06,304.124,0,0,3.14968),
+(5710588,16,3724.18,3503.6,304.125,0,0,2.86693);
 
 -- Darkfallen Deathblade
 DELETE FROM creature_template_addon WHERE entry = 26103;
@@ -315,22 +315,22 @@ INSERT INTO spell_script_target (entry,type,targetEntry,inverseEffectMask) VALUE
 (46482,1,26093,0);
 
 -- Naxxanar Caster
--- missing added - WoTLK free guids reused
-DELETE FROM creature_addon WHERE guid IN (140940,140941,140942);
-DELETE FROM creature_movement WHERE id IN (140940,140941,140942);
-DELETE FROM game_event_creature WHERE guid IN (140940,140941,140942);
-DELETE FROM game_event_creature_data WHERE guid IN (140940,140941,140942);
-DELETE FROM creature_battleground WHERE guid IN (140940,140941,140942);
-DELETE FROM creature_linking WHERE guid IN (140940,140941,140942)
-OR master_guid IN (140940,140941,140942);
-DELETE FROM creature WHERE guid IN (140940,140941,140942);
+-- missing added - WoTLK Range 571x Free guids used
+DELETE FROM creature_addon WHERE guid IN (5710589,5710590,5710591);
+DELETE FROM creature_movement WHERE id IN (5710589,5710590,5710591);
+DELETE FROM game_event_creature WHERE guid IN (5710589,5710590,5710591);
+DELETE FROM game_event_creature_data WHERE guid IN (5710589,5710590,5710591);
+DELETE FROM creature_battleground WHERE guid IN (5710589,5710590,5710591);
+DELETE FROM creature_linking WHERE guid IN (5710589,5710590,5710591)
+OR master_guid IN (5710589,5710590,5710591);
+DELETE FROM creature WHERE guid IN (5710589,5710590,5710591);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
-(140940,26094,571,1,1,0,0,3728.22,3550.71,353.1,0.827637,300,300,0,0,8982,3155,0,2),
-(140941,26094,571,1,1,0,0,3755.952,3555.982,352.6088,5.532694,300,300,0,0,8982,3155,0,2),
-(140942,26094,571,1,1,0,0,3743.178,3547.562,352.5811,1.937315,300,300,0,0,8982,3155,0,2);
+(5710589,26094,571,1,1,0,0,3728.22,3550.71,353.1,0.827637,300,300,0,0,8982,3155,0,2),
+(5710590,26094,571,1,1,0,0,3755.952,3555.982,352.6088,5.532694,300,300,0,0,8982,3155,0,2),
+(5710591,26094,571,1,1,0,0,3743.178,3547.562,352.5811,1.937315,300,300,0,0,8982,3155,0,2);
 -- Waypoints
-UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (118296,118305,118316,118319,118323,140940,140941,140942);
-DELETE FROM creature_movement WHERE id IN (118296,118305,118316,118319,118323,140940,140941,140942);
+UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (118296,118305,118316,118319,118323,5710589,5710590,5710591);
+DELETE FROM creature_movement WHERE id IN (118296,118305,118316,118319,118323,5710589,5710590,5710591);
 INSERT INTO creature_movement (id, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
 -- #118296
 (118296,1,3722.89,3578.42,353.603,5000,2609401,4.55531),
@@ -342,12 +342,12 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (118319,1,3759.26,3570.97,352.413,5000,2609401,0.785398),
 -- #118323
 (118323,1,3719.68,3563.54,353.035,5000,2609401,0.034907),
--- #140940
-(140940,1,3728.22,3550.71,353.1,5000,2609401,0.827637),
--- #140941
-(140941,1,3755.952,3555.982,352.6088,5000,2609401,5.532694),
--- #140942
-(140942,1,3743.178,3547.562,352.5811,5000,2609401,1.937315);
+-- #5710589
+(5710589,1,3728.22,3550.71,353.1,5000,2609401,0.827637),
+-- #5710590
+(5710590,1,3755.952,3555.982,352.6088,5000,2609401,5.532694),
+-- #5710591
+(5710591,1,3743.178,3547.562,352.5811,5000,2609401,1.937315);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2609401;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2609401,0,15,46477,5,0,0,0,0,0,0,0,0,0,0,0,0,''),
