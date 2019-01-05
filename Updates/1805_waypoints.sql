@@ -13,7 +13,7 @@ DELETE FROM creature WHERE guid = 5711473;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 (5711473,23693,571,1,1,0,0,1029.02,-3452.07,201.733,4.83812,300,300,0,0,7984,0,0,0);
 -- Updates
-UPDATE creature SET position_x = ,1333.997, position_y = -3704.304, position_z = 138.3772, orientation = 4.992879 WHERE guid = 108900;
+UPDATE creature SET position_x = 1333.997, position_y = -3704.304, position_z = 138.3772, orientation = 4.992879 WHERE guid = 108900;
 UPDATE creature SET position_x = 1535.262, position_y = -3661.017, position_z = 169.9189, orientation = 1.584843 WHERE guid = 108892;
 -- waypoints
 UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (108900,5711473,108892);
