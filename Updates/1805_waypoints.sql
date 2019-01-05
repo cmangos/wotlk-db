@@ -72,3 +72,12 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, wa
 (108892,19,1499.973,-3698.898,166.4468,0,0,100),
 (108892,20,1527.744,-3713.448,173.0301,0,0,100),
 (108892,21,1547.203,-3692.157,173.3356,0,0,100);
+
+-- Deranged Explorer
+UPDATE creature SET spawntimesecsmin = 300, spawntimesecsmax = 300 WHERE guid = 5710839;
+
+-- Ball and chain 175544
+DELETE FROM gameobject WHERE guid IN (5710074,5710075);
+INSERT INTO gameobject (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
+(5710074,175544,571,1,1407.669,-3107.788,166.078,1.274088,0,0,0.5948219,0.8038574,300,300,255,1),
+(5710075,175544,571,1,1406.463,-3106.099,166.0601,3.909541,0,0,-0.9271832,0.3746083,300,300,255,1);
