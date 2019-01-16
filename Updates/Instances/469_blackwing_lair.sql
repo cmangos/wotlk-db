@@ -167,15 +167,10 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+75, 3, -7664.98, -1005.61, 440.254, 100, 0, 0),
 (@CGUID+75, 4, -7647.92, -1020.32, 440.232, 100, 0, 0);
 
-UPDATE creature_template SET MovementType=2 WHERE entry IN (11981,14601);
-DELETE FROM creature_movement_template WHERE entry IN (10162,11981,11983,13996,14601);
+DELETE FROM creature_movement_template WHERE entry IN (10162,11983,13996,14601);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 (10162, 0, 1, 169.33, -444.8, 121.98, 6.27848, 0, 0),
 (10162, 0, 2, 161.91, -444.92, 121.98, 3.28768, 0, 0),
-
--- Flamegor
-(11981, 0, 1, -7407.94, -1031.04, 477.35, 0.87, 5000, 0),
-(11981, 0, 2, -7394.51, -1021.57, 477.166, 3.72994, 5000, 0),
 
 (11983, 0, 1, -7443.8, -908.338, 465.355, 100, 0, 0),
 (11983, 0, 2, -7458.05, -889.8, 465.217, 100, 0, 0),
@@ -193,6 +188,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (11983, 0, 14, -7458.05, -889.8, 465.217, 100, 0, 0),
 (11983, 0, 15, -7443.95, -908.115, 465.328, 100, 0, 0),
 (11983, 0, 16, -7418.69, -947.728, 464.981, 100, 0, 0),
+
 (13996, 0, 1, -7466.55, -1015.38, 408.566, 6.02879, 0, 0),
 (13996, 0, 2, -7453.62, -1019.73, 408.57, 5.64238, 0, 0),
 (13996, 0, 3, -7443.76, -1031.75, 408.613, 5.3455, 0, 0),
@@ -208,6 +204,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (13996, 0, 13, -7514.11, -974.566, 423.477, 3.04035, 0, 0),
 (13996, 0, 14, -7519.98, -969.585, 423.429, 2.28873, 0, 0),
 (13996, 0, 15, -7526.96, -961.592, 427.805, 2.28873, 0, 1),
+
 (13996, 1, 1, -7487.86, -1036.58, 408.562, 4.01652, 0, 0),
 (13996, 1, 2, -7490.35, -1046.43, 408.571, 4.754, 0, 0),
 (13996, 1, 3, -7478.75, -1064.94, 408.633, 5.27001, 0, 0),
@@ -288,11 +285,119 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+94, @CGUID+97, 1155), -- Blackwing Technician -> Blackwing Technician
 (@CGUID+95, @CGUID+89, 9344), -- Blackwing Technician -> Vaelastrasz the Corrupt
 (@CGUID+96, @CGUID+95, 1155), -- Blackwing Technician -> Blackwing Technician
-(@CGUID+97, @CGUID+89, 9344); -- Blackwing Technician -> Vaelastrasz the Corrupt
+(@CGUID+97, @CGUID+89, 9344), -- Blackwing Technician -> Vaelastrasz the Corrupt
+(@CGUID+42, @CGUID+41, 143), -- Death Talon Wyrmguard -> Death Talon Wyrmguard
+(@CGUID+43, @CGUID+41, 143), -- Death Talon Wyrmguard -> Death Talon Wyrmguard
+(@CGUID+339, @CGUID+136, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+340, @CGUID+136, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+143, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+144, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+145, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+146, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+147, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+148, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+149, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+150, @CGUID+142, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+48, @CGUID+142, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+341, @CGUID+142, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+342, @CGUID+142, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+343, @CGUID+142, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+151, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+152, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+153, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+154, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+158, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+155, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+157, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+156, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+160, @CGUID+159, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+52, @CGUID+159, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+344, @CGUID+159, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+345, @CGUID+159, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+346, @CGUID+159, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+30, @CGUID+105, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+29, @CGUID+105, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+44, @CGUID+105, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+14, @CGUID+105, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+31, @CGUID+114, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+32, @CGUID+114, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+45, @CGUID+114, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+15, @CGUID+114, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+18, @CGUID+134, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+19, @CGUID+134, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+35, @CGUID+134, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+36, @CGUID+134, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+47, @CGUID+134, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+16, @CGUID+119, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+17, @CGUID+119, 3), -- Blackwing Spellbinder -> Blackwing Technician
+(@CGUID+33, @CGUID+119, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+34, @CGUID+119, 3), -- Blackwing Warlock -> Blackwing Technician
+(@CGUID+46, @CGUID+119, 3), -- Death Talon Overseer -> Blackwing Technician
+(@CGUID+137, @CGUID+136, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+138, @CGUID+136, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+139, @CGUID+136, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+140, @CGUID+136, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+141, @CGUID+136, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+106, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+107, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+99, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+100, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+101, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+102, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+103, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+104, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+98, @CGUID+105, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+109, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+117, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+108, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+111, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+110, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+115, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+116, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+113, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+112, @CGUID+114, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+135, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+133, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+127, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+132, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+130, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+129, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+128, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+131, @CGUID+134, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+120, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+122, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+125, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+123, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+126, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+121, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+118, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+124, @CGUID+119, 143), -- Blackwing Technician -> Blackwing Technician
+(@CGUID+49, @CGUID+40, 143), -- Death Talon Overseer -> Death Talon Wyrmguard
+(@CGUID+50, @CGUID+40, 143), -- Death Talon Overseer -> Death Talon Wyrmguard
+(@CGUID+51, @CGUID+40, 143), -- Death Talon Overseer -> Death Talon Wyrmguard
+(@CGUID+37, @CGUID+39, 143), -- Death Talon Wyrmguard -> Death Talon Wyrmguard
+(@CGUID+38, @CGUID+39, 143), -- Death Talon Wyrmguard -> Death Talon Wyrmguard
+(@CGUID+53, @CGUID+63, 1027), -- Death Talon Flamescale -> Death Talon Captain
+(@CGUID+56, @CGUID+63, 1027), -- Death Talon Seether -> Death Talon Captain
+(@CGUID+60, @CGUID+63, 1027), -- Death Talon Wyrmkin -> Death Talon Captain
+(@CGUID+57, @CGUID+63, 1027), -- Death Talon Seether -> Death Talon Captain
+(@CGUID+59, @CGUID+63, 1027), -- Death Talon Wyrmkin -> Death Talon Captain
+(@CGUID+55, @CGUID+64, 1027), -- Death Talon Flamescale -> Death Talon Captain
+(@CGUID+54, @CGUID+64, 1027), -- Death Talon Flamescale -> Death Talon Captain
+(@CGUID+61, @CGUID+64, 1027), -- Death Talon Wyrmkin -> Death Talon Captain
+(@CGUID+62, @CGUID+64, 1027), -- Death Talon Wyrmkin -> Death Talon Captain
+(@CGUID+58, @CGUID+64, 1027); -- Death Talon Seether -> Death Talon Captain
 
 REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 (12557, 469, 12435, 1159, 0), -- Grethok the Controller -> Razorgore the Untamed
-(14456, 469, 12557, 1167, 0); -- Blackwing Guardsman -> Grethok the Controller
+(14456, 469, 12557, 1167, 0), -- Blackwing Guardsman -> Grethok the Controller
+(14024, 469, 12017, 1024, 0), -- Corrupted Blue Whelp -> Broodlord Lashlayer
+(14023, 469, 12017, 1024, 0), -- Corrupted Green Whelp -> Broodlord Lashlayer
+(14025, 469, 12017, 1024, 0), -- Corrupted Bronze Whelp -> Broodlord Lashlayer
+(14022, 469, 12017, 1024, 0), -- Corrupted Red Whelp -> Broodlord Lashlayer
+(12467, 469, 12017, 1024, 0), -- Death Talon Captain -> Broodlord Lashlayer
+(12458, 469, 12017, 1024, 0), -- Blackwing Taskmaster -> Broodlord Lashlayer
+(12468, 469, 12017, 1024, 0); -- Death Talon Hatcher -> Broodlord Lashlayer
 
 INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `DeathState`, `MovementType`) VALUES
 (@CGUID+1, 10162, 469, -7588.27, -1261.92, 482.03, 0.610865, 604800, 604800, 0, 0, 0, 0), -- Lord Victor Nefarius
@@ -632,7 +737,18 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+335, 16604, 469, -7592.7, -1029.95, 408.24, 5.32325, 10, 10, 0, 0, 0, 0), -- Blackwing Spell Marker
 (@CGUID+336, 16604, 469, -7626.67, -1009.63, 413.465, 3.19395, 10, 10, 0, 0, 0, 0), -- Blackwing Spell Marker
 (@CGUID+337, 16604, 469, -7599.65, -1077.8, 408.24, 3.54302, 10, 10, 0, 0, 0, 0), -- Blackwing Spell Marker
-(@CGUID+338, 16604, 469, -7583.24, -990.03, 407.282, 2.89725, 10, 10, 0, 0, 0, 0); -- Blackwing Spell Marker
+(@CGUID+338, 16604, 469, -7583.24, -990.03, 407.282, 2.89725, 10, 10, 0, 0, 0, 0), -- Blackwing Spell Marker
+-- Pack 1 (first room, entrance)
+(@CGUID+339, 12459, 469, -7547.44, -1041.23, 449.242, 3.03514, 604800, 604800, 2, 0, 0, 1), -- Blackwing Warlock
+(@CGUID+340, 12459, 469, -7547.4, -1017.41, 449.242, 1.7463, 604800, 604800, 2, 0, 0, 1), -- Blackwing Warlock
+-- Pack 2 (first room, wall on the right)
+(@CGUID+341, 12459, 469, -7494.59, -1037.94, 449.242, 3.61084, 604800, 604800, 2, 0, 0, 1), -- Blackwing Warlock
+(@CGUID+342, 12459, 469, -7519.54, -1055.8, 449.242, 4.25801, 604800, 604800, 0, 0, 0, 0), -- Blackwing Warlock
+(@CGUID+343, 12457, 469, -7526, -1055.04, 449.242, 5.39919, 604800, 604800, 0, 0, 0, 2), -- Blackwing Spellbinder
+-- Pack 3 (first room, alcove on the left)
+(@CGUID+344, 12457, 469, -7539.89, -980.115, 449.24, 2.57532, 604800, 604800, 0, 0, 0, 2), -- Blackwing Warlock
+(@CGUID+345, 12459, 469, -7518.77, -967.764, 449.24, 1.41136, 604800, 604800, 3, 0, 0, 1), -- Blackwing Warlock
+(@CGUID+346, 12459, 469, -7532.98, -978.992, 449.24, 5.66115, 604800, 604800, 3, 0, 0, 1); -- Blackwing Spellbinder
 
 -- ===========
 -- GAMEOBJECTS
