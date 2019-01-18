@@ -110,7 +110,7 @@ INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`
 DELETE FROM `game_event_quest` WHERE `quest` in (11377,11379,11380,11381);
 DELETE FROM game_event_quest WHERE event BETWEEN 1127 AND 1130;
 INSERT INTO game_event_quest(event,quest) VALUES
-(1127,11377), (1128,11379), (1129,11380), (1130,11380);
+(1127,11377), (1128,11379), (1129,11380), (1130,11381);
 
 DELETE FROM `game_event` WHERE `entry` BETWEEN 1131 AND 1135;
 INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`holiday`,`linkedTo`,`EventGroup`,`description`) VALUES 
@@ -130,7 +130,7 @@ INSERT INTO `game_event` (`entry`,`start_time`,`end_time`,`occurence`,`length`,`
 (1137,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,11,'Gretta the Arbiter - Random Daily - Defending Your Title'),
 (1138,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,11,'Gretta the Arbiter - Random Daily - Maintaining Discipline'),
 (1139,'2011-01-14 02:00:00','2020-12-31 00:00:00',0,1440,0,0,11,'Gretta the Arbiter - Random Daily - The Aberrations Must Die');
-DELETE FROM `game_event_quest` WHERE `quest` in (11377,11379,11380,11381);
+DELETE FROM `game_event_quest` WHERE `quest` in (13424,13423,13422,13425);
 DELETE FROM game_event_quest WHERE event BETWEEN 1136 AND 1139;
 INSERT INTO game_event_quest(event,quest) VALUES
 (1136,13424), (1137,13423), (1138,13422), (1139,13425);
