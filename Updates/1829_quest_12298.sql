@@ -3,7 +3,8 @@
 UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 954601 WHERE menu_id = 9546 AND id = 1;
 DELETE FROM dbscripts_on_gossip WHERE id IN (9546,954601); 
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(954601,0,17,33634,10,0,0,0,0,0,0,0,0,0,0,0,0,'10 x Orehammer\'s Precision Bombs');
+(954601,0,17,33634,10,0,0,0,0,0,0,0,0,0,0,0,0,'10 x Orehammer\'s Precision Bombs'),
+(954601,1,30,745,0,0,0,0,0,0,0,0,0,0,0,0,0,'taxi path');
 -- only when quest is active
 UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 954602, condition_id = 20006 WHERE menu_id = 9546 AND id = 2;
 DELETE FROM conditions WHERE condition_entry = 20006;
