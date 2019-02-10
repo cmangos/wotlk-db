@@ -25,3 +25,6 @@ INSERT INTO creature_loot_template (entry, item, ChanceOrQuestChance, groupid, m
 (23740,31952,  0.05,  0,1,1,0,'Khorium Lockbox'),
 -- quest item
 (23740,33351,   -26,  0,1,1,0,'Undamaged Ram Horn');
+DELETE FROM conditions WHERE condition_entry = 20007;
+INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
+(20007, 9, 11284, 0);
