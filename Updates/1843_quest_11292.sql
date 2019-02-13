@@ -1,5 +1,26 @@
 -- q.11292 'Preying Upon the Weak'
 
+DELETE FROM dbscripts_on_quest_end WHERE id = 11292;
+INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(11292,0,31,24139,50,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24139'),
+(11292,1,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'active'),
+(11292,1,21,1,0,0,24139,50,7,0,0,0,0,0,0,0,0,'buddy: active'),
+(11292,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1.605703,''),
+(11292,2,0,0,0,0,0,0,0,2000001834,0,0,0,0,0,0,0,''),
+(11292,7,0,0,0,0,24139,50,7,2000001835,0,0,0,0,0,0,0,'buddy: say'),
+(11292,12,0,0,0,0,24139,50,7,2000001836,0,0,0,0,0,0,0,'buddy: say'),
+(11292,18,0,0,0,0,0,0,0,2000001837,0,0,0,0,0,0,0,''),
+(11292,23,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0.7679449,''),
+(11292,23,21,0,0,0,24139,50,7,0,0,0,0,0,0,0,0,'buddy: unactive'),
+(11292,24,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
+UPDATE quest_template SET CompleteScript = 11292 WHERE entry = 11292;
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000001834 AND 2000001837;
+INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES 
+(2000001834,'Hey, Gil, you give my offer any more thought? I\'ll have plenty of skins and preserved meat to trade for those heavy yeti furs or down your men are working with.',0,0,0,1,NULL),
+(2000001835,'Much as I\'d like to do business with you, Jethan, all this stuff is the property of the Alliance expeditionary forces.',0,0,0,274,NULL),
+(2000001836,'Maybe after everything dies down, you and I can make a deal with some of the surplus. I\'m sure the troops will give your people plenty of business as they head into the Grizzly Hills.',0,0,0,1,NULL),
+(2000001837,'I\'ll be lookin\' forward to it. Guess I\'ll get to preserving this meat, then. A good quartermaster won\'t turn down a reliable supply of rations.',0,0,0,1,NULL);
+
 -- Sprung Trap
 DELETE FROM game_event_gameobject WHERE guid IN (SELECT guid FROM gameobject WHERE id IN (186616,186617,186619,186620));
 DELETE FROM gameobject_battleground WHERE guid IN (SELECT guid FROM gameobject WHERE id IN (186616,186617,186619,186620));
