@@ -43,11 +43,11 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2451403,3,9,26639,30,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
 (2451403,14,20,2,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
--- Part of Steelfeather 23662 EAI
+-- Part of Steelfeather 24514 EAI
 DELETE FROM dbscripts_on_relay WHERE id  = 20149;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(20149,23,34,20015,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Steelfeather 23662 EAI'),
-(20149,25,15,43984,0,0,0,0,4,0,0,0,0,0,0,0,0,'Part of Steelfeather 23662 EAI');
+(20149,23,34,20015,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Steelfeather 24514 EAI'),
+(20149,25,15,43984,0,0,0,0,4,0,0,0,0,0,0,0,0,'Part of Steelfeather 24514 EAI');
 DELETE FROM conditions WHERE condition_entry = 20015;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 (20015, 1, 43969, 0);
