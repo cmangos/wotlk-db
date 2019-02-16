@@ -190,7 +190,7 @@ DELETE FROM creature_linking WHERE guid = 5711891;
 DELETE FROM creature_linking WHERE master_guid = 5711891;
 DELETE FROM creature WHERE guid = 5711891;
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
-(5712077,24638,571,1,1,0,0,2392.43,-4651.98,229.12,2.87164,180,180,0,0,9291,0,0,0);
+(5711891,24638,571,1,1,0,0,2392.43,-4651.98,229.12,2.87164,180,180,0,0,9291,0,0,0);
 UPDATE creature_template SET MovementType = 2 WHERE Entry = 24638;
 UPDATE creature SET spawndist = 0, MovementType = 2 WHERE id = 24638;
 DELETE FROM creature_movement WHERE id = 5711891;
