@@ -27,7 +27,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (11349,7,0,0,0,0,0,0,0,2000001843,0,0,0,0,0,0,0,''),
 (11349,12,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (11349,14,0,0,0,0,0,0,0,2000001844,0,0,0,0,0,0,0,''),
-(11349,15,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive'),
+(11349,15,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
 UPDATE quest_template SET CompleteScript = 11349 WHERE entry = 11349;
 DELETE FROM dbscript_string WHERE entry IN (2000000239,2000000240,2000000241);
 DELETE FROM dbscript_string WHERE entry BETWEEN 2000001842 AND 2000001844;
