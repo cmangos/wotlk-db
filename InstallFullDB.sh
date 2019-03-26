@@ -61,8 +61,8 @@ USERNAME="mangos"
 ## Define your password (It is suggested to restrict read access to this file!)
 PASSWORD="mangos"
 
-## Define the path to your core's folder (This is optional)
-##   If set the core updates located under sql/updates from this mangos-directory will be added automatically
+## Define the path to your core's folder
+## Core updates located under sql/updates from this mangos-directory will be added automatically
 CORE_PATH=""
 
 ## Define your mysql programm if this differs
@@ -72,7 +72,7 @@ MYSQL="mysql"
 FORCE_WAIT="YES"
 
 ## Define if the 'dev' directory for processing development SQL files needs to be used
-##   Set the variable to "YES" to use the dev directory
+## Set the variable to "YES" to use the dev directory
 DEV_UPDATES="NO"
 
 # Enjoy using the tool
@@ -153,7 +153,33 @@ if [ "$COUNT" != 0 ]
 then
   echo "  $COUNT DB updates applied successfully"
 else
-  echo "  Did not found any new DB update to apply"
+  echo "  Did not find any new DB update to apply"
+fi
+echo
+echo
+
+## Instances
+echo "> Processing instance files ..."
+COUNT=0
+for INSTANCE in "${ADDITIONAL_PATH}Updates/Instances/"[0-9]*.sql
+do
+  if [ -e "$INSTANCE" ]
+  then
+    echo "    Appending $INSTANCE"
+    $MYSQL_COMMAND < "$INSTANCE"
+    if [[ $? != 0 ]]
+    then
+      echo "ERROR: cannot apply $INSTANCE"
+      exit 1
+    fi
+    ((COUNT++))
+  fi
+done
+if [ "$COUNT" != 0 ]
+then
+  echo "  $COUNT Instance files applied successfully"
+else
+  echo "  Did not find any instance file to apply"
 fi
 echo
 echo
