@@ -7,8 +7,8 @@
 ####################################################################################################
 
 # need to be changed on each official DB/CORE release
-FULLDB_FILE="WoTLKDB_1_1_13965.sql"
-DB_TITLE="v1.1 'The Warsong'"
+FULLDB_FILE="WoTLKDB_1_2_13992.sql"
+DB_TITLE="v1.2 'Ymiron'"
 NEXT_MILESTONES="0.19 0.20"
 
 #internal use

@@ -1,4 +1,29 @@
 ===============================================================
+WoTLKDB v1.2 'Ymiron' for CMaNGOS 13992 for 3.3.5a
+===============================================================
+
+Main changes:
+* Borean Tundra - Completed
+* Howling Fjord - Completed
+* Lots of Quests / spawns / gossips / Events / Waypoints were added
+* Utgarde Keep
+* Utgarde Pinnacle
+* Nexus
+* Oculus
+* Wintergrasp - Updated
+* New Instance File System - Implemented
+* Taxi Shortcuts - Implemented
+* Elemental Invasion - Implemented
+* Zeppelin Masters - Sound and Yell - Implemented
+* Lots updates for ACID Scrips 
+* Lots updates backported from L4G
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB (up to 1.7.0 'New Hope')
+* ACID Scripts    Removed from main file - Pls Use ./InstallFullDB.sh Tool to Implemented it
+* spell_templates Removed from main file - Pls Use ./InstallFullDB.sh Tool to Implemented it
+
+
+===============================================================
 WoTLKDB v1.1 'The Warsong' for CMaNGOS 13965 for 3.3.5a
 ===============================================================
 
