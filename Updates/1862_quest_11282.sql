@@ -1,6 +1,12 @@
 -- q.11282 'A Lesson in Fear'
 
 -- Part of Winterskorn Defender 24015 EAI
+DELETE FROM dbscript_random_templates WHERE id = 20104; 
+INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
+(20104,1,20152,0,'24015 - Random Scripts (q.11282)'),
+(20104,1,20153,0,'24015 - Random Scripts (q.11282)'),
+(20104,1,20154,0,'24015 - Random Scripts (q.11282)');
+
 DELETE FROM dbscripts_on_relay WHERE id IN (20152,20153,20154);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- #20152
