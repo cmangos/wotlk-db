@@ -332,7 +332,23 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+96, 0, 3, 1, 16, 0, 0, NULL), -- Amani'shi Flame Caster
 (@CGUID+120, 0, 1, 1, 16, 0, 0, '18950'), -- Amani'shi Guardian
 (@CGUID+127, 0, 1, 1, 16, 0, 0, '18950'), -- Amani'shi Guardian
-(@CGUID+319, 0, 1, 1, 16, 0, 0, '18950'); -- Amani'shi Handler
+(@CGUID+319, 0, 1, 1, 16, 0, 0, '18950'), -- Amani'shi Handler
+(@CGUID+398, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Wind Walker
+(@CGUID+399, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Wind Walker
+(@CGUID+400, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Wind Walker
+(@CGUID+401, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Wind Walker
+(@CGUID+402, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Protector
+(@CGUID+403, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Protector
+(@CGUID+404, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Protector
+(@CGUID+405, 0, 0, 1, 16, 375, 0, '18950'), -- Amani'shi Protector
+(@CGUID+479, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+480, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+481, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+482, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+483, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+484, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+485, 0, 8, 0, 0, 0, 0, '18950'), -- Amani'shi Savage
+(@CGUID+486, 0, 8, 0, 0, 0, 0, '18950'); -- Amani'shi Savage
 
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (23542, 0, 0, 1, 16, 0, 0, NULL), -- Amani'shi Axe Thrower
