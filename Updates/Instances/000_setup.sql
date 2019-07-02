@@ -4,8 +4,11 @@
 DROP TABLE IF EXISTS tmp_creature;
 DROP TABLE IF EXISTS tmp_gameobject;
 
-CREATE TABLE tmp_creature (SELECT guid, id, map FROM creature WHERE map IN (574,575,576,578));
-CREATE TABLE tmp_gameobject (SELECT guid, id, map FROM gameobject WHERE map IN (574,575,576,578));
+CREATE TABLE tmp_creature LIKE creature;
+CREATE TABLE tmp_gameobject LIKE gameobject;
+
+INSERT tmp_creature SELECT * FROM creature WHERE map IN (574,575,576,578);
+INSERT tmp_gameobject SELECT * FROM gameobject WHERE map IN (574,575,576,578);
 
 ALTER TABLE tmp_creature ADD INDEX (guid);
 ALTER TABLE tmp_creature ADD INDEX (id);
