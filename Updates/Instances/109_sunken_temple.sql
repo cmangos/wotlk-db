@@ -5,7 +5,6 @@ DB%Complete: 80
 DBComment:
 * probably movement missing e.g @CGUID+6, @CGUID+9, @CGUID+23, @CGUID+24, @CGUID+54, @CGUID+64, @CGUID+70, @CGUID+108
 * movement missing for entry 5720 + 5721 + 8580 in circle clockwise
-* go 148838 wrong scale and position
 * Hazzas (Leader) & Morphaz should fly nearly synchronized, so i guess they should share path and/or should be linked. Or Spawnpositions & Waypointorder or Speeds needs adjustments
 EndDBScriptData */
 
