@@ -701,7 +701,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+134, 4530, 47, 2012.42, 1518.29, 79.6513, 0.626741, 7200, 7200, 3, 0, 0, 1), -- Razorfen Handler
 (@CGUID+135, 4530, 47, 2015.55, 1537.19, 80.89, 1.04361, 7200, 7200, 3, 0, 0, 1), -- Razorfen Handler
 (@CGUID+136, 4530, 47, 2000.33, 1558.83, 82.009, 0.571824, 7200, 7200, 0, 0, 0, 0), -- Razorfen Handler
-(@CGUID+137, 4530, 47, 2032.3, 1650.53, 81.4707, 4.05184, 7200, 7200, 2, 0, 0, 1), -- Razorfen Handler
+(@CGUID+137, 4530, 47, 2033.56, 1651.39, 81.17, 4.05184, 7200, 7200, 2, 0, 0, 1), -- Razorfen Handler
 (@CGUID+138, 4531, 47, 2104.29, 1469.47, 73.7013, 5.53269, 7200, 7200, 0, 0, 0, 0), -- Razorfen Beast Trainer
 (@CGUID+139, 4531, 47, 2101.57, 1450.09, 73.8959, 1.93731, 7200, 7200, 0, 0, 0, 0), -- Razorfen Beast Trainer
 (@CGUID+140, 4532, 47, 2146.03, 1614.74, 81.6781, 4.85866, 7200, 7200, 0, 0, 0, 0), -- Razorfen Beastmaster
@@ -842,9 +842,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+97, 1735, 47, 2170.717, 1882.292, 73.03286, 0.2712798, 0, 0, 0.1352243, 0.990815, 86400, 86400, 255, 1), -- Iron Deposit
 (@OGUID+98, 1735, 47, 2128.257, 2016.687, 65.90177, 5.707228, 0, 0, -0.2840147, 0.9588199, 86400, 86400, 255, 1), -- Iron Deposit
 (@OGUID+99, 74447, 47, 2090.24, 1465.26, 73.8674, -1.27409, 0, 0, -0.594823, 0.803857, 86400, 86400, 255, 1); -- Large Iron Bound Chest
-
-
--- INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
 
 -- ======
 -- EVENTS
