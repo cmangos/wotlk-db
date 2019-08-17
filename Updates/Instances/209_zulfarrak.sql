@@ -1101,6 +1101,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (760711, 0, 29, 1, 0, 0, 7607, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Disable Gossip'),
 (760713, 0, 15, 10772, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Cast Create Weegli''s Barrel'),
 (760713, 2, 13, 0, 0, 0, 141612, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Use Weegli''s Barrel'),
+(760713, 3, 40, 0, 0, 0, 141612, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Despawn Weegli''s Barrel'),
 (760713, 5, 0, 0, 0, 0, 7267, @CGUID+160, 16, 2000005552, 0, 0, 0, 0, 0, 0, 0, 'Ukorz Sandscalp - Yell Intro'),
 (760801, 0, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Murta Grimgut - Stop Movement'),
 (760802, 0, 1, 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Murta Grimgut - Emote Cheer'),
@@ -1112,13 +1113,13 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 
-DELETE FROM dbscripts_on_relay WHERE id=2;
+DELETE FROM dbscripts_on_relay WHERE id=3;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(2, 0, 25, 1, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Set Run On'),
-(2, 6, 0, 0, 0, 0, 7607, @CGUID+241, 16, 2000005551, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Say Start Door Bombing'),
-(2, 6, 29, 1, 2, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Remove Gossip Flag'),
-(2, 6, 22, 0, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Update Faction to Default'),
-(2, 6, 32, 0, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Start WP Movement');
+(3, 0, 25, 1, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Set Run On'),
+(3, 6, 0, 0, 0, 0, 7607, @CGUID+241, 16, 2000005551, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Say Start Door Bombing'),
+(3, 6, 29, 1, 2, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Remove Gossip Flag'),
+(3, 6, 22, 0, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Update Faction to Default'),
+(3, 6, 32, 0, 0, 0, 7607, @CGUID+241, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Start WP Movement');
 
 DELETE FROM dbscripts_on_event WHERE id=2609;
 INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -1245,7 +1246,7 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (94001, 0, 0, 0, 0, 0, 0, 0, 0, 2000005548, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Say Start Door Bombing'),
 (94101, 0, 0, 0, 0, 0, 0, 0, 0, 2000005549, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - Say Start Combat 1'),
 (94101, 0, 29, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - Remove Gossip Flag'),
-(94101, 0, 45, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - start bombing script'),
+(94101, 0, 45, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - start bombing script'),
 (94101, 3, 0, 0, 0, 0, 0, 0, 0, 2000005550, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - Say Start Combat 2'),
 (94101, 6, 22, 14, 0, 0, 7605, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Raven - Update Faction'),
 (94101, 6, 22, 14, 0, 0, 7606, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Oro Eyegouge - Update Faction'),
