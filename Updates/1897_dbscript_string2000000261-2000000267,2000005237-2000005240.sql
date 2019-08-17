@@ -15,7 +15,7 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `content_loc1`, `cont
 (2000005908, 'I know that a terrible enemy pursued him after he won the horn, but I... I don\'t recall... what happened... next.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL),
 (2000005909, 'It is as though my memories are shrouded in mist. I cannot even recall what became of my brother. Is this how you mean that he is in danger?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL),
 (2000005910, 'The disturbances in the tomb, they must be involved. Look around you, $N. Do you see them?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL),
-(2000005911, 'Yes, they are at fault, but I am powerless to stop them. Will you warn the people of Tunka\'lo, stranger, that their past and their ancestors are in danger?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL),
+(2000005911, 'Yes, they are at fault, but I am powerless to stop them. Will you warn the people of Tunka\'lo, stranger, that their past and their ancestors are in danger?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL);
 
 DELETE FROM `dbscripts_on_gossip` WHERE `id` IN (9874,9906);
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
