@@ -2821,7 +2821,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 
 -- (@CGUID+XXX 17260, 532, 1, -11124.99, -1908.318, 110.124, 5.864306, 7200, 7200, 0, 0, 0, 0), -- Nightbane Helper Target - Removed probably due to scripting reasons
 
-
 -- ===========
 -- GAMEOBJECTS
 -- ===========
