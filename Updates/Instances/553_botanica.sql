@@ -590,18 +590,18 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+97, 19507, 553, 3, -131.5275, 507.6039, -17.74161, 4.153883, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Gene-Splicer
 (@CGUID+98, 19507, 553, 3, -150.3988, 526.5366, -17.74155, 3.630285, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Gene-Splicer
 (@CGUID+99, 19507, 553, 3, -160.4898, 499.152, -17.74157, 3.193953, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Gene-Splicer
-(@CGUID+100, 19507, 553, 3, -157.634, 411.701, -17.6124, 1.27409, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+101, 19507, 553, 3, -177.217, 408.964, -17.6069, 2.07694, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+102, 19507, 553, 3, -150.54, 400.302, -17.7579, 2.75762, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+103, 19507, 553, 3, -172.605, 403.925, -17.6111, 4.74729, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+104, 19507, 553, 3, -173.274, 390.129, -17.6073, 3.50811, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+105, 19507, 553, 3, -177.095, 378.248, -17.6081, 5.18363, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+106, 19507, 553, 3, -172.32, 380.316, -17.6107, 0.890118, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+107, 19507, 553, 3, -166.857, 398.471, -17.6142, 4.2237, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+108, 19507, 553, 3, -154.356, 386.376, -17.7216, 4.43314, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+109, 19507, 553, 3, -179.922, 401.107, -17.6042, 0.488692, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+110, 19507, 553, 3, -164.275, 375.683, -17.6168, 2.75762, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
-(@CGUID+111, 19507, 553, 3, -152.4, 372.664, -17.6055, 0.331613, 7200, 7200, 0, 0, 1, 0), -- Sunseeker Gene-Splicer
+(@CGUID+100, 19507, 553, 3, -157.634, 411.701, -17.6124, 1.27409, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+101, 19507, 553, 3, -177.217, 408.964, -17.6069, 2.07694, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+102, 19507, 553, 3, -150.54, 400.302, -17.7579, 2.75762, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+103, 19507, 553, 3, -172.605, 403.925, -17.6111, 4.74729, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+104, 19507, 553, 3, -173.274, 390.129, -17.6073, 3.50811, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+105, 19507, 553, 3, -177.095, 378.248, -17.6081, 5.18363, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+106, 19507, 553, 3, -172.32, 380.316, -17.6107, 0.890118, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+107, 19507, 553, 3, -166.857, 398.471, -17.6142, 4.2237, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+108, 19507, 553, 3, -154.356, 386.376, -17.7216, 4.43314, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+109, 19507, 553, 3, -179.922, 401.107, -17.6042, 0.488692, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+110, 19507, 553, 3, -164.275, 375.683, -17.6168, 2.75762, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
+(@CGUID+111, 19507, 553, 3, -152.4, 372.664, -17.6055, 0.331613, 7200, 7200, 0, 0, 0, 2), -- Sunseeker Gene-Splicer
 (@CGUID+112, 19508, 553, 3, -129.1739, 503.9626, -17.74162, 3.385939, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Herbalist
 (@CGUID+113, 19508, 553, 3, -163.5266, 504.2899, -17.74156, 3.909538, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Herbalist
 (@CGUID+114, 19508, 553, 3, -16.2609, 482.706, -5.38576, 3.94444, 7200, 7200, 0, 0, 0, 0), -- Sunseeker Herbalist
@@ -798,8 +798,9 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (1950504, 2, 15, 34222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Channeler (Botanica) - Cast Sunseeker Blessing AOE'),
 (1950505, 1, 1, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Channeler (Botanica) - Emote'),
 (1950506, 1, 15, 34173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Channeler (Botanica) - Cast Sunseeker Blessing'),
-(1950701, 0, 4, 59, 33554432, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Gene-Splicer - UNIT_FLAG_NOT_SELECTABLE'),
-(1950701, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Gene-Splicer - MovementType 0');
+(1950701, 0, 4, 59, 33587264, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Gene-Splicer - (UNIT_FLAG_UNK_6 + UNIT_FLAG_SWIMMING) + UNIT_FLAG_NOT_SELECTABLE'),
+(1950701, 0, 22, 190, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Gene-Splicer - Set Faction 190'),
+(1950701, 1, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sunseeker Gene-Splicer - MovementType 0');
 
 DELETE FROM `dbscript_string` WHERE `entry` IN (2000020091,2000020092,2000020093,2000020094,2000020095,2000020096,2000020097,2000020098,2000020099,2000020100);
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
