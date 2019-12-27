@@ -3137,7 +3137,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+289, 185324, 532, 1, -11080.6, -1876.43, 219.869, -1.79769, 0, 0, 0, 0, 43200, 43200, 100, 1), -- Chessboard
 (@OGUID+290, 185521, 532, 1, -11186.2, -1665.14, 281.398, 0.671952, 0, 0, 0, 0, 43200, 43200, 100, 0), -- Massive Door
 (@OGUID+291, 181958, 532, 1, -11126.9, -1874.45, 91.4726, 0, 0, 0, 0, 1, 180, 180, 0, 1), -- Master's Terrace Focus
-(@OGUID+292, 181958, 532, 1, -11164.4, -1906.24, 91.47, 0, 0, 0, 0, 0, 180, 180, 0, 1); -- Master's Terrace Focus
+(@OGUID+292, 181958, 532, 1, -11164.4, -1906.24, 91.47, 0, 0, 0, 0, 0, 180, 180, 0, 1), -- Master's Terrace Focus
+-- WoTLK ONLY
+(@OGUID+293, 194092, 532, 1, -11126.9, -1874.45, 91.4726,-0.226892,0,0,-0.113203,0.993572,180,180,255,1); -- Blackened Urn
 
 -- ======
 -- EVENTS
@@ -3246,11 +3248,11 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (1646801, 1, 1, 1, 0, 0, 0, 0, 0, 6, 273, 274, 11, 0, 0, 0, 0, 'Spectral Patron - EMOTE_ONESHOT_TALK'),
 (1647001, 1, 1, 274, 0, 0, 0, 0, 0, 1, 11, 6, 273, 0, 0, 0, 0, 'Ghostly Philanthropist - EMOTE_ONESHOT_NO'),
 (1640701, 0, 0, 0, 0, 0, 0, 0, 0, 2000020012, 2000020013, 2000020014, 0, 0, 0, 0, 0, 'Spectral Servant - Random Say'),
-(1640701, 5, 31, 16159, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Spectral Servant - Search for 16159'),
+(1640701, 5, 31, 16159, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Spectral Servant - Search for 16159'),
 (1640701, 6, 0, 0, 0, 0, 16159, 60, 3, 2000020010, 2000020011, 0, 0, 0, 0, 0, 0, 'Force Calliard - Random Say'),
 (1555101, 0, 0, 0, 0, 0, 0, 0, 0, 2000020008, 2000020009, 2000020128, 0, 0, 0, 0, 0, 'Spectral Stable Hand - Random Say'),
 (1555101, 0, 1, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Spectral Stable Hand - STATE_USESTANDING'),
-(1555101, 5, 31, 16159, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Spectral Stable Hand - Search for 16159'),
+(1555101, 5, 31, 16159, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Spectral Stable Hand - Search for 16159'),
 (1555101, 6, 0, 0, 0, 0, 16159, 60, 3, 2000020010, 2000020011, 0, 0, 0, 0, 0, 0, 'Force Calliard - Random Say');
 
 DELETE FROM `dbscript_string` WHERE `entry` IN (2000020008,2000020009,2000020010,2000020011,2000020012,2000020013,2000020014,2000020015,2000020016,2000020017,2000020018,2000020019,2000020020,2000020021,2000020128);
@@ -3273,7 +3275,10 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+
+INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('194092','0','15','31116','0','0','0','0','4','0','0','0','0','0','0','0','0','cast Summon Nightbane'); -- WoTLK Only
+
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
