@@ -6,8 +6,7 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (20106,1,20162,0,'29277 - Random OOC Scripts'),
 (20106,1,20163,0,'29277 - Random OOC Scripts'),
 (20106,1,20164,0,'29277 - Random OOC Scripts'),
-(20106,1,20165,0,'29277 - Random OOC Scripts'),
-(20106,1,20166,0,'29277 - Random OOC Scripts');
+(20106,1,20165,0,'29277 - Random OOC Scripts');
 DELETE FROM dbscripts_on_relay WHERE id BETWEEN 20161 AND 20166;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- #20161
