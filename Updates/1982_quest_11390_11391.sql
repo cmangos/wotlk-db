@@ -14,6 +14,7 @@ UPDATE creature SET position_x = 1965.408, position_y = -3260.609, position_z = 
 -- move to Wotlk 571x range
 UPDATE creature SET guid = 5712161 WHERE guid = 102855;
 -- gossip corrected
+DELETE FROM npc_gossip WHERE npc_guid = 102855;
 DELETE FROM dbscripts_on_gossip WHERE id = 895401; 
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (895401,0,15,45973,0,0,0,0,6,0,0,0,0,0,0,0,0,'');
