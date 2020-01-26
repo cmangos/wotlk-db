@@ -2834,25 +2834,25 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (1784801,0,0,0,0,0,0,0,0,2000020114,0,0,0,0,0,0,0,'Lt. Drake - say 1'),
 (1784802,0,20,2,1,0,0,0,0,0,0,0,0,0,0,0,0,'Lt. Drake - switch to path 1'),
 (1784802,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Lt. Drake - run off'),
-(1784803,0,2,46,32832,0,0,0,0,0,0,0,0,0,0,0,0,'Lt. Drake - become attackable'),
+(1784803,0,2,59,32832,0,0,0,0,0,0,0,0,0,0,0,0,'Lt. Drake - become attackable'), -- wotlk has 59
 
 (1809201, 0, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Pause Waypoints'),
 (1809201, 0, 15, 33133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Cast Transform'),
 (1809201, 1, 44, 18170, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Morph to Infinite Slayer'),
-(1809201, 1, 5, 46, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'),
+(1809201, 1, 5, 59, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'), -- wotlk has 59
 (1809201, 2, 26, 0, 0, 0, 17876, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Guardsman - Attack Thrall'),
 
 (1809301, 0, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Pause Waypoints'),
 (1809301, 0, 15, 33133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Cast Transform'),
 (1809301, 1, 44, 18172, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Morph to Infinite Saboteor'),
-(1809301, 1, 5, 46, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'),
+(1809301, 1, 5, 59, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'), -- wotlk has 59
 (1809301, 2, 0, 0, 0, 0, 0, 0, 0, 2000020110, 2000020111, 2000020112, 2000020113, 0, 0, 0, 0, 'Tarren Mill Protector - Random Say'),
 (1809301, 2, 26, 0, 0, 0, 17876, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Protector - Attack Thrall'),
 
 (1809401, 0, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Pause Waypoints'),
 (1809401, 0, 15, 33133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Cast Transform'),
 (1809401, 1, 44, 18171, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Morph to Infinite Defiler'),
-(1809401, 1, 5, 46, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'),
+(1809401, 1, 5, 59, 768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Remove Unit Flag IMMUNE_TO_PLAYER and IMMUNE_TO_NPC'), -- wotlk has 59
 (1809401, 2, 26, 0, 0, 0, 17876, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarren Mill Lookout - Attack Thrall');
 
 DELETE FROM `dbscript_string` WHERE `entry` IN (2000020110,2000020111,2000020112,2000020113,2000020114);

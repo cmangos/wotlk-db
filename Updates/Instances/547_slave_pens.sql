@@ -1126,8 +1126,8 @@ DELETE FROM dbscripts_on_gossip WHERE id IN(7540,7520);
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('7520', '0', '8', '17893', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Give Kill Credit to Group'),
 ('7520', '0', '13', '0', '0', '0', '182094', '5', '1', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Open cage'),
-('7520', '0', '5', '46', '256', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Remove Unit Flag IMMUNE_TO_PLAYER'),
-('7520', '0', '5', '46', '512', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Remove Unit Flag IMMUNE_TO_NPC'),
+('7520', '0', '5', '59', '256', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Remove Unit Flag IMMUNE_TO_PLAYER'), -- wotlk has UNIT_FIELD_FLAGS 59
+('7520', '0', '5', '59', '512', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Remove Unit Flag IMMUNE_TO_NPC'), -- wotlk has UNIT_FIELD_FLAGS 59
 ('7520', '0', '22', '113', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Change faction'),
 ('7520', '0', '29', '1', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Remove NPC Gossip flag'),
 ('7520', '0', '20', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Naturalist Bite - Move Waypoint'),
