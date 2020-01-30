@@ -1,4 +1,4 @@
-UPDATE `creature` SET `MovementType`='1' WHERE `guid` IN (29077, 29078, 29134, 29137, 29139);
+UPDATE `creature` SET `MovementType`='1', spawndist = 7 WHERE `guid` IN (29077, 29078, 29134, 29137, 29139);
 DELETE FROM `creature_movement` WHERE `id` IN (29077, 29078, 29134, 29137, 29139);
 
 SET @GUID := 29096;
