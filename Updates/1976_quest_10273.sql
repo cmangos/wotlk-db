@@ -1,7 +1,7 @@
 -- q.10273 'Troublesome Distractions'
 
 -- Nether-Stalker 20101
-UPDATE creature_template SET Faction = 16, EquipmentTemplateId = 747, MovementType = 0 WHERE Entry = 20101;
+UPDATE creature_template SET Faction = 16, EquipmentTemplateId = 2352, MovementType = 0 WHERE Entry = 20101;
 -- Wind Trader Marid 20071 
 DELETE FROM npc_gossip WHERE npc_guid = 71519;
 UPDATE creature SET spawntimesecsmin = 30, spawntimesecsmax = 30 WHERE id = 20071;
@@ -34,6 +34,6 @@ INSERT INTO creature_movement_template (entry,pathId,point,position_x,position_y
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2007101;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2007101,1,0,0,0,0,0,0,0,2000005787,0,0,0,0,0,0,0,''),
-(2007101,3,22,14,0x01 | 0x10 | 0x20,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(2007101,3,22,14,0x01 | 0x10,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (2007101,6,10,20101,60000,0,0,0,0,0,0,0,0,4322.216,2148.113,124.918,4.014257,'Summon Nether-stalker'),
 (2007101,6,10,20101,60000,0,0,0,0,0,0,0,0,4327.583,2133.33,126.4966,3.508112,'Summon Nether-stalker');
