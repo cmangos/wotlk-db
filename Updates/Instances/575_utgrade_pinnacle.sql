@@ -607,12 +607,12 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2655301,2655302,3087101);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(2655301,1,35,5,1,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event Type 5 (A) to Self'),
-(2655301,38,35,6,1,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event Type 6 (B) to Self'),
+(2655301,1000,35,5,1,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event Type 5 (A) to Self'),
+(2655301,38000,35,6,1,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event Type 6 (B) to Self'),
 (2655302,0,35,8,1,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event Type 8 (C) to Self'),
-(2655302,1,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'idle'),
-(3087101,1,13,0,0,0,192918,20,1,0,0,0,0,0,0,0,0,'use object'),
-(3087101,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'idle');
+(2655302,1000,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'idle'),
+(3087101,1000,13,0,0,0,192918,20,1,0,0,0,0,0,0,0,0,'use object'),
+(3087101,2000,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'idle');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -621,15 +621,15 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 DELETE FROM `dbscripts_on_relay` WHERE id IN (20156,20157);
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Part of Dragonflayer Spectator 26667 EAI
-(20156,1,31,29280,255,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: - Search for 29280'),
-(20156,2,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: STATE_STAND'),
-(20156,2,35,5,1,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: Send AI Event Type 5 (A) to Self'),
-(20156,3,3,0,700,0,0,0,0,0,0,0,0,297.249,-305.994,86.3384,1.55221,'Part of Dragonflayer Spectator 26667 EAI: move'),
-(20156,5,3,0,700,0,0,0,0,0,0,0,0,297.835,-284.509,86.3457,1.55221,'Part of Dragonflayer Spectator 26667 EAI: move'),
-(20156,8,18,0,0,0,0,0,0x40,0,0,0,0,0,0,0,0,'desp'),
+(20156,1000,31,29280,255,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: - Search for 29280'),
+(20156,2000,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: STATE_STAND'),
+(20156,2000,35,5,1,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dragonflayer Spectator 26667 EAI: Send AI Event Type 5 (A) to Self'),
+(20156,3000,3,0,700,0,0,0,0,0,0,0,0,297.249,-305.994,86.3384,1.55221,'Part of Dragonflayer Spectator 26667 EAI: move'),
+(20156,5000,3,0,700,0,0,0,0,0,0,0,0,297.835,-284.509,86.3457,1.55221,'Part of Dragonflayer Spectator 26667 EAI: move'),
+(20156,8000,18,0,0,0,0,0,0x40,0,0,0,0,0,0,0,0,'desp'),
 -- Part of Ritual Target 27327 EAI
-(20157,1,31,29280,255,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ritual Target 27327 EAI: - Search for 29280'),
-(20157,60,11,@OGUID+9,30,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ritual Target 27327 EAI: - open object (anim: closing mirror)');
+(20157,1000,31,29280,255,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ritual Target 27327 EAI: - Search for 29280'),
+(20157,60000,11,@OGUID+9,30,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ritual Target 27327 EAI: - open object (anim: closing mirror)');
 
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -647,17 +647,17 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 (13131,0,9,@OGUID+99,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
 (13131,0,9,@OGUID+100,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
 (13131,0,9,@OGUID+101,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+102,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+103,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+104,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+105,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+106,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+107,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+108,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+109,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+110,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+111,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
-(13131,1,9,@OGUID+112,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject');
+(13131,1000,9,@OGUID+102,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+103,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+104,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+105,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+106,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+107,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+108,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+109,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+110,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+111,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(13131,1000,9,@OGUID+112,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject');
 UPDATE quest_template SET CompleteScript = 13131 WHERE entry = 13131;
 
 -- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES

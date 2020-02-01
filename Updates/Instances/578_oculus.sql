@@ -337,22 +337,22 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 DELETE FROM `dbscripts_on_creature_death` WHERE `id` IN (27654,27447,27655,27656);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Varos
-(27654,6,3,0,0,0,27658,75,0,0,0,0,0,939.73,1044.25,359.96,0,'Belgaristrasz - move out of the cage'),
-(27654,6,3,0,0,0,27657,75,0,0,0,0,0,948.57,1032.11,359.96,0,'Verdisa - move out of the cage'),
-(27654,6,3,0,0,0,27659,75,0,0,0,0,0,941.93,1060.08,359.96,0,'Eternos - move out of the cage'),
-(27654,9,0,0,0,0,27658,75,0,2000005525,0,0,0,0,0,0,0,'Belgaristrasz - say greet'),
-(27654,17,0,0,0,0,27447,360,0,2000005526,0,0,0,0,0,0,0,'Varos - yell intro, map wide'),
-(27654,17,16,13648,8,0,27447,360,0,0,0,0,0,0,0,0,0,'Varos - yell intro sound, map wide'),
+(27654,6000,3,0,0,0,27658,75,0,0,0,0,0,939.73,1044.25,359.96,0,'Belgaristrasz - move out of the cage'),
+(27654,6000,3,0,0,0,27657,75,0,0,0,0,0,948.57,1032.11,359.96,0,'Verdisa - move out of the cage'),
+(27654,6000,3,0,0,0,27659,75,0,0,0,0,0,941.93,1060.08,359.96,0,'Eternos - move out of the cage'),
+(27654,9000,0,0,0,0,27658,75,0,2000005525,0,0,0,0,0,0,0,'Belgaristrasz - say greet'),
+(27654,17000,0,0,0,0,27447,360,0,2000005526,0,0,0,0,0,0,0,'Varos - yell intro, map wide'),
+(27654,17000,16,13648,8,0,27447,360,0,0,0,0,0,0,0,0,0,'Varos - yell intro sound, map wide'),
 -- Image of Belgaristrasz
-(27447,1,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
-(27447,5,0,0,0,0,28012,75,0,2000005527,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Varos'),
+(27447,1000,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
+(27447,5000,0,0,0,0,28012,75,0,2000005527,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Varos'),
 -- Image of Belgaristrasz
-(27655,1,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
-(27655,5,0,0,0,0,28012,75,0,2000005528,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
-(27655,10,0,0,0,0,28012,75,0,2000005898,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
+(27655,1000,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
+(27655,5000,0,0,0,0,28012,75,0,2000005528,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
+(27655,10000,0,0,0,0,28012,75,0,2000005898,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
 -- Image of Belgaristrasz
 (27656,0,10,28012,180000,0,0,0,0,0,0,0,0,1022.39,1051.51,605.62,0.07,'Summon Image of Belgaristrasz'),
-(27656,1,15,12980,0,0,28012,360,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual');
+(27656,1000,15,12980,0,0,28012,360,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual');
 
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -361,19 +361,19 @@ DELETE FROM `dbscripts_on_relay` WHERE id BETWEEN 20047 AND 20050;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- for Amber Drake - related to vehicle control
 (20047,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Amber Drake: veh -> player'),
-(20047,4,15,49459,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake: player -> player'),
-(20047,4,15,49460,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
-(20047,5,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
+(20047,4000,15,49459,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake: player -> player'),
+(20047,4000,15,49460,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
+(20047,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
 -- for Emerald Drake - related to vehicle control
 (20048,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Emerald Drake: veh -> player'),
-(20048,4,15,49427,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake: player -> player'),
-(20048,4,15,49346,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
-(20048,5,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
+(20048,4000,15,49427,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake: player -> player'),
+(20048,4000,15,49346,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
+(20048,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
 -- for Ruby Drake - related to vehicle control
 (20049,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Ruby Drake: veh -> player'),
-(20049,4,15,49463,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake: player -> player'),
-(20049,4,15,49464,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
-(20049,5,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
+(20049,4000,15,49463,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake: player -> player'),
+(20049,4000,15,49464,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
+(20049,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
 -- for all drakes - related to vehicle control
 (20050,0,15,50550,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Oculus Drakes: veh -> player'),
 (20050,0,15,50553,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Oculus Drakes: player -> player');
