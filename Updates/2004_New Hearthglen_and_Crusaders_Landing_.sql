@@ -14,14 +14,14 @@ DELETE FROM gameobject_battleground WHERE guid = '15391';
 UPDATE gameobject SET guid = 5710796 WHERE guid = 88605;
 
 -- New Hearthglen Ballista - missing added
-DELETE FROM gameobject WHERE guid BETWEEN 5710797 AND 5710799;
-DELETE FROM game_event_gameobject WHERE guid BETWEEN 5710797 AND 5710799;
-DELETE FROM gameobject_battleground WHERE guid BETWEEN 5710797 AND 5710799;
+DELETE FROM gameobject WHERE guid BETWEEN 5710797 AND 5710800;
+DELETE FROM game_event_gameobject WHERE guid BETWEEN 5710797 AND 5710800;
+DELETE FROM gameobject_battleground WHERE guid BETWEEN 5710797 AND 5710800;
 INSERT INTO gameobject (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
 (5710797,188673,571,1,1,2617.793,-509.1414,6.016647,-0.8901166,0,0,-0.4305105,0.9025856,300,300,100,1),
 (5710798,188673,571,1,1,2518.175,-297.0017,0.902489,2.600535,0,0,0.9636297,0.267241,300,300,100,1),
-(5710799,188673,571,1,1,2693.801,-235.2656,140.9695,-3.071766,0,0,-0.9993906,0.03490613,300,300,100,1);
--- 5710800 -- one missing (left corner Crusader's Landing) -- need data
+(5710799,188673,571,1,1,2693.801,-235.2656,140.9695,-3.071766,0,0,-0.9993906,0.03490613,300,300,100,1),
+(5710800,188673,571,1,1,2597.768,-213.5538,1.457854,2.321287,0,0,0.9170599,0.3987495,300,300,100,1);
 -- Moved to WoTLK Range 571x
 UPDATE gameobject SET guid = 5710801 WHERE guid = 54977;
 UPDATE gameobject SET guid = 5710802 WHERE guid = 54978;
@@ -248,7 +248,7 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id
 (5712226,27203,571,1,1,0,0,2629.09,-539.216,2.60439,0.16783,300,300,7,0,9291,0,0,1), -- random movement
 (5712227,27203,571,1,1,0,0,2587.24,-250.902,0.879002,5.5753,300,300,0,0,9291,0,0,0),
 (5712228,27203,571,1,1,0,0,2583.71,-258.775,0.831241,5.6774,300,300,0,0,9291,0,0,0),
-(5712229,27203,571,1,1,0,0,2600.9,-221.631,1.9204,4.87649,300,300,0,0,9291,0,0,0); -- (vid xyz - sniff req)
+(5712229,27203,571,1,1,0,0,2601.505,-217.2466,2.017498,4.502949,300,300,0,0,9291,0,0,0);
 -- Moved to WoTLK Range 571x
 UPDATE creature SET guid = 5712230 WHERE guid = 102136;
 UPDATE creature SET guid = 5712231 WHERE guid = 102151;
