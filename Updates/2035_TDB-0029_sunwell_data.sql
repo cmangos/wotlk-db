@@ -25,6 +25,6 @@ INSERT INTO `spell_script_target` (`entry`,`type`,`targetEntry`,`inverseEffectMa
 (46174,1,25848,0),(46219,1,25592,0),(46319,1,25953,0);
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (1375);
-INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `comments`) VALUES
-(1375, 0, 1, 375, 'GENERIC EMOTE - EMOTE_STATE_READY2H');
+-- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `comments`) VALUES
+-- (1375, 0, 1, 375, 'GENERIC EMOTE - EMOTE_STATE_READY2H');
 
