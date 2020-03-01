@@ -1,5 +1,5 @@
 -- Broggok Poison Cloud 17662,18602
-UPDATE `creature_template` SET `HeroicEntry` = 18602, `UnitFlags` = 33947648 WHERE `entry` = 17662;
+UPDATE `creature_template` SET `DifficultyEntry1` = 18602, `UnitFlags` = 33947648 WHERE `entry` = 17662;
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70, `Faction` = 14, `UnitFlags` = 33947648 WHERE `entry` = 18602; -- 524288
 
 -- Broggok 17380,18601
