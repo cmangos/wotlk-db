@@ -53,3 +53,13 @@ INSERT INTO `npc_vendor` VALUES (26081, 10858, 1, 7200, 0, 0, 'Plans: Solid Iron
 
 -- Jannos Ironwill 1471
 UPDATE `npc_vendor` SET `maxcount` = 1, `incrtime` = 7200 WHERE `entry` = 1471 AND `item` = 10858;
+
+-- Missing vendor template added
+DELETE FROM `npc_vendor_template` WHERE `entry` = 116;
+INSERT INTO `npc_vendor_template` (entry, item, maxcount, incrtime, ExtendedCost, condition_id, comments) VALUES 
+(116, 2880, 0, 0, 0, 0, 'Weak Flux'),
+(116, 2901, 0, 0, 0, 0, 'Mining Pick'),
+(116, 3466, 0, 0, 0, 0, 'Strong Flux'),
+(116, 3857, 0, 0, 0, 0, 'Coal'),
+(116, 5956, 0, 0, 0, 0, 'Blacksmith Hammer'),
+(116, 18567, 0, 0, 0, 0, 'Elemental Flux');
