@@ -1,6 +1,6 @@
 -- https://www.wowhead.com/npc=815/bookie-herod#comments - http://wowwiki.wikia.com/wiki/Bookie_Herod?oldid=1834194
 -- https://www.wowhead.com/npc=2638/syndicate-spectre#comments
--- Add Spawns - freed up guids in tbc-db due to Instance Separation (free in classic-db, not in wotlk-db)
+-- Add Spawns
 DELETE FROM `creature` WHERE `guid` BETWEEN 1559 AND 1561;
 DELETE FROM `creature_addon` WHERE `guid` BETWEEN 1559 AND 1561;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
