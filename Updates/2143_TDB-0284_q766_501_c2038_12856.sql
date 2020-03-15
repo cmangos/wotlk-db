@@ -25,7 +25,14 @@ UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -8 WHERE `item` = 48
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (2384,2385,2406,2407) AND `item` = 3496; -- Starving Mountain Lion, Feral Mountain Lion, Mountain Lion, Hulking Mountain Lion
 
 -- Fix Lord Melenas spawn point. (Credit: Trinitycore)
-DELETE FROM `creature` WHERE `id` = 2038;
+DELETE FROM creature_addon WHERE guid IN (1550,1552,1554);
+DELETE FROM creature_movement WHERE id IN (1550,1552,1554);
+DELETE FROM game_event_creature WHERE guid IN (1550,1552,1554);
+DELETE FROM game_event_creature_data WHERE guid IN (1550,1552,1554);
+DELETE FROM creature_battleground WHERE guid IN (1550,1552,1554);
+DELETE FROM creature_linking WHERE guid IN (1550,1552,1554)
+OR master_guid IN (1550,1552,1554);
+DELETE FROM creature WHERE guid IN (1550,1552,1554);
 INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (1550, 2038, 1, 10107.08, 1206.241, 1311.55, 4.468043, 300, 300, 0, 0),
 (1552, 2038, 1, 10127.8, 1202.00, 1323.30, 3.01113, 300, 300, 0, 0),

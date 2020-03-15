@@ -5,3 +5,5 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `content_loc1`, `cont
 
 UPDATE `dbscripts_on_quest_start` SET `dataint`=2000001549 WHERE `id`=11108 AND `delay`=48 AND `command`=0;
 UPDATE `dbscripts_on_quest_start` SET `dataint`=2000001550 WHERE `id`=11108 AND `delay`=55 AND `command`=0;
+
+DELETE FROM dbscript_string WHERE entry IN (2000001549,2000001550); -- duplicates
