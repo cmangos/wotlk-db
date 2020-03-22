@@ -211,19 +211,19 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2835702,0,45,0,20161,0,0,0,0,0,0,0,0,0,0,0,0,'Start Random Script 2');
 DELETE FROM dbscript_random_templates WHERE id BETWEEN 20160 AND 20161;
 INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
-(20160,1,20291,65,'28357 - Random Script - Base'),
-(20160,1,20292,35,'28357 - Random Script - 1-2'),
-(20161,1,20291,65,'28357 - Random Script - Base'),
-(20161,1,20293,35,'28357 - Random Script - 2-2');
+(20160,1,20291,70,'28357 - Random Script - Base'),
+(20160,1,20292,30,'28357 - Random Script - 1-2'),
+(20161,1,20291,70,'28357 - Random Script - Base'),
+(20161,1,20293,30,'28357 - Random Script - 2-2');
 DELETE FROM dbscripts_on_relay WHERE id BETWEEN 20291 AND 20293;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (20291,0,31,1,1,0,0,0,0,-70000,0,0,0,0,0,0,0,'Part of Instructor Razuvious: Random Script - Base - must fail'),
-(20292,0,31,28383,20,0,0,0,0,-70000,0,0,0,0,0,0,0,'search for 28383'),
+(20292,0,31,28390,20,0,0,0,0,-70000,0,0,0,0,0,0,0,'search for 28390'),
 (20292,100,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,''),
 (20292,200,3,0,0,0,0,0,0,0,0,0,0,2482.32,-5552.39,420.641,1.51,''),
 (20292,3000,0,0,0,0,0,0,0x04,2000020355,0,0,0,0,0,0,0,''),
 (20292,4000,20,2,0,0,28383,6090058,23,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoint'),
-(20293,0,31,28383,20,0,0,0,0,-70000,0,0,0,0,0,0,0,'search for 28383'),
+(20293,0,31,28390,20,0,0,0,0,-70000,0,0,0,0,0,0,0,'search for 28390'),
 (20293,100,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,''),
 (20293,200,3,0,0,0,0,0,0,0,0,0,0,2510.38,-5592.75,420.643,6.19,''),
 (20293,3000,0,0,0,0,0,0,0x04,2000020355,0,0,0,0,0,0,0,''),
