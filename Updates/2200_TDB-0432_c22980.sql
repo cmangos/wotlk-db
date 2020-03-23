@@ -64,9 +64,9 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 (2298006,6,39,0,0,0,0,0,0,0,22980,161468,23,'Skyguard Scout (Buddy 1) - Fly Off',0,0,0,0),
 (2298006,6,39,0,0,0,0,0,0,0,22980,161469,23,'Skyguard Scout (Buddy 2) - Fly Off',0,0,0,0),
 
-(2298007,0,20,2,1,0,0,0,0,0,22982,79868,23,'Skyguard Scout - Start PathId 1 for Skyguard Navigator',0,0,0,0),
+(2298007,0,20,2,1,0,0,0,0,0,22982,140990,23,'Skyguard Scout - Start PathId 1 for Skyguard Navigator',0,0,0,0),
 
-(2298008,0,20,2,3,0,0,0,0,0,22982,79868,23,'Skyguard Scout - Start PathId 3 for Skyguard Navigator',0,0,0,0),
+(2298008,0,20,2,3,0,0,0,0,0,22982,140990,23,'Skyguard Scout - Start PathId 3 for Skyguard Navigator',0,0,0,0),
 
 (2298009,0,21,1,0,0,0,0,0,0,23347,150,7,'Skyguard Scout - Set Tork Active Object',0,0,0,0), -- Turned off in Tork's own waypoints
 (2298009,0,20,2,2,0,0,0,0,0,23347,150,7,'Skyguard Scout - Start PathId 2 for Tork',0,0,0,0);

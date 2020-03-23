@@ -1,12 +1,12 @@
 -- Respawn and add pooling for Nethervine Crystal g.185182 using sniff data
 
-DELETE FROM pool_template WHERE entry=25644 AND description='Nethervine Crystal (185182)';
+DELETE FROM pool_template WHERE entry=25900 AND description='Nethervine Crystal (185182)';
 INSERT INTO pool_template (entry, max_limit, description) VALUES
-(25644, 40, 'Nethervine Crystal (185182)');
+(25900, 40, 'Nethervine Crystal (185182)');
 
 DELETE FROM `pool_gameobject_template` WHERE id=185182;
 INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES 
-(185182, 25644, 0, 'Nethervine Crystal (185182)');
+(185182, 25900, 0, 'Nethervine Crystal (185182)');
 
 -- 74 -> 101
 SET @GUID := 161047;

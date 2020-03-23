@@ -42,7 +42,7 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 (22930, 40114, 70, 1, -40114, 1, 0, 'Auchindoun: Mana-Tombs (Boss Loot) - Yor (Heroic) - Rare and Epic Items'),
 (22930, 40118, 30, 0, -40118, 1, 0, 'Auchindoun: Mana-Tombs Heroic Epic Gems');
 
-DELETE FROM `reference_loot_template` WHERE entry IN (40109,40114);
+DELETE FROM `reference_loot_template` WHERE entry IN (40109,40114,40118);
 INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 (40109, 31554, 0, 1, 1, 1, 0, 'Windchanneller\'s Tunic'),
 (40109, 31562, 0, 1, 1, 1, 0, 'Skystalker\'s Tunic'),
@@ -57,5 +57,7 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (40114, 31921, 4, 1, 1, 1, 0, 'Yor\'s Collapsing Band'),
 (40114, 31922, 4, 1, 1, 1, 0, 'Ring of Conflict Survival'),
 (40114, 31923, 4, 1, 1, 1, 0, 'Band of the Crystalline Void'),
-(40114, 31924, 4, 1, 1, 1, 0, 'Yor\'s Revenge');
-
+(40114, 31924, 4, 1, 1, 1, 0, 'Yor\'s Revenge'),
+(40118, 30583, 0, 1, 1, 1, 0, 'Timeless Chrysoprase'),
+(40118, 30584, 0, 1, 1, 1, 0, 'Enscribed Fire Opal'),
+(40118, 30585, 0, 1, 1, 1, 0, 'Glistening Fire Opal');

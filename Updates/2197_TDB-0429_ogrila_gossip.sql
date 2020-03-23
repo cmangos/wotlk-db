@@ -31,16 +31,12 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `commen
 (10145, -1, 10144, 10130, 'q.11026 Rewarded AND Has Max Rank Friendly With Faction ID: 1038'),
 -- Jho'nass (Entry: 23428)
 (10146, 8, 11091, 0, 'q.11091 Rewarded'),
-(10147, -1, 10146, 10130, 'q.11091 Rewarded AND Has Max Rank Friendly With Faction ID: 1038');
-
+(10147, -1, 10146, 10130, 'q.11091 Rewarded AND Has Max Rank Friendly With Faction ID: 1038'),
 -- Skyguard
-DELETE FROM conditions WHERE condition_entry IN(41); -- Delete old honored condition
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `comments`) VALUES 
 (10148, 5, 1031, 4, 'Has Minimum Rank Friendly With Faction ID: 1031'),
 (10149, 5, 1031, 5, 'Has Minimum Rank Honored With Faction ID: 1031'),
 (10150, 5, 1031, 6, 'Has Minimum Rank Revered With Faction ID: 1031'),
 (10151, 5, 1031, 7, 'Has Minimum Rank Exalted With Faction ID: 1031'),
-
 (10152, 30, 1031, 4, 'Has Max Rank Friendly With Faction ID: 1031'),
 (10153, 30, 1031, 5, 'Has Max Rank Honored With Faction ID: 1031'),
 (10154, 30, 1031, 6, 'Has Max Rank Revered With Faction ID: 1031'),

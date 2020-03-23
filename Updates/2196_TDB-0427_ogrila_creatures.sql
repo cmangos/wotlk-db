@@ -674,7 +674,14 @@ DELETE FROM creature_movement WHERE id IN(99236,99237);
 
 -- Vile Fire-Soul c.22298
 -- 0 -> 7 spawns
-DELETE FROM creature WHERE id=22298;
+DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM creature_movement WHERE id IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM game_event_creature WHERE guid IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM game_event_creature_data WHERE guid IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM creature_battleground WHERE guid IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM creature_linking WHERE guid IN (SELECT guid FROM creature WHERE id = 22298)
+OR master_guid IN (SELECT guid FROM creature WHERE id = 22298);
+DELETE FROM creature WHERE id = 22298;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES 
 (161460, 22298, 530, 1, 0, 0, 1300.55, 7265.37, 365.398, 0.263684, 300, 300, 0, 0, 0, 0, 0, 2),
 (161461, 22298, 530, 1, 0, 0, 1340.53, 7145.31, 370.966, 3.29942, 300, 300, 0, 0, 0, 0, 0, 2),

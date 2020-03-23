@@ -32,7 +32,7 @@ INSERT INTO npc_text VALUES
 
 DELETE FROM creature_template_addon WHERE entry IN(19467);
 DELETE FROM creature_addon WHERE guid IN(69727);
-INSERT INTO creature_addon(guid, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES
+INSERT INTO creature_addon(guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 ('69727', '0', '6', '1', '16', '0', '0', NULL);
 
 UPDATE creature SET position_x=4946.936,position_y=3849.208,position_z=211.5767,orientation=3.892084 WHERE id IN(20132);
@@ -120,7 +120,7 @@ UPDATE creature_template SET UnitFlags=33024 WHERE entry IN(19467);
 UPDATE creature_template SET UnitFlags=33024 WHERE entry IN(19466);
 UPDATE creature_template SET UnitFlags=32768 WHERE entry IN(18537);
 UPDATE creature_template SET UnitFlags=33344 WHERE entry IN(20132);
-UPDATE creature_template SET UnitFlags=0, FactionAlliance=35,FactionHorde=35 WHERE entry IN(20794);
+UPDATE creature_template SET UnitFlags=0, Faction=35 WHERE entry IN(20794);
 
 UPDATE `creature_template` SET `MovementType`='0' WHERE `Entry`='18538';
 UPDATE `creature_template` SET `MovementType`='0' WHERE `Entry`='18537';
@@ -230,5 +230,3 @@ INSERT INTO creature_movement_template(entry, pathId, point, position_x, positio
 (20929,2,2,4846.495,3797.641,207.0281,0,0,100),
 (20929,2,3,4839.137,3782.313,206.7041,60000,0,100),
 (20929,2,4,4854.88,3821.945,207.0635,1000,3,4.049164);
-
-

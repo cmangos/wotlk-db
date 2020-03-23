@@ -1,6 +1,5 @@
 -- delete extras which don't belong
 DELETE FROM creature WHERE guid=94444; -- Ethereum Nullifier
-DELETE FROM creature WHERE guid IN (150224,150240); -- Ethereum Jailor
 
 -- repositioning various spawns based on retail data
 UPDATE creature SET position_x=3982.25, position_y=2107.69, position_z=254.613, orientation=4.57354 WHERE guid=67506;
