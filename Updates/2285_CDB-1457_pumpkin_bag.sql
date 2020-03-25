@@ -769,9 +769,13 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 (15307, 20400, 0.16, 0, 1, 1, 6012),
 (15541, 20400, 0.06, 0, 1, 1, 6012),
 (15756, 20400, 0.18, 0, 1, 1, 6012),
-(16022, 20400, 0.04, 0, 1, 1, 6012);
+(16018, 20400, 0.04, 0, 1, 1, 6012);
 
 DELETE FROM `reference_loot_template` WHERE `item` = 20400;
 INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
 (5759, 20400, 5.9, 0, 1, 1, 6012);
 
+-- Event is active. - Hallow's End
+DELETE FROM `conditions` WHERE `condition_entry` = 6012;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(6012, 12, 12, 0);
