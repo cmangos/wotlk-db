@@ -67,7 +67,7 @@ INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position
 (23380,6,2575.606,7193.863,363.8637,0,0,100),
 (23380,7,2587.886,7161.841,364.5957,0,0,100),
 (23380,8,2603.697,7122.514,365.4023,0,0,100),
-(23380,9,2607.468,7087.224,365.3389,1,1000,100);
+(23380,9,2607.468,7087.224,365.3389,1000,1,100);
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` BETWEEN 2336501 AND 2336505;
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES

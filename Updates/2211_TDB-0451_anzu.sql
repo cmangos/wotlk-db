@@ -1,8 +1,8 @@
 -- has accompanying core commit and instance file change
 -- increased duration for Rejuvenation and Regrowth
 DELETE FROM spell_proc_event WHERE entry = 40250;
-INSERT INTO spell_proc_event(entry,SpellFamilyName,SpellFamilyMask0) VALUES
-(40250,7,0x0000000000000010 | 0x0000000000000040 | 0x0000001000000000);
+INSERT INTO spell_proc_event(entry,SpellFamilyMaskA0,SpellFamilyMaskA1) VALUES
+(40250,0x00000050,0x00000010);
 UPDATE creature_template SET UnitFlags=33555200,InhabitType=4 WHERE entry IN(23058,23057,23046);
 UPDATE creature_template SET UnitFlags=33600,ModelId1=21492,MovementType=0,Scale=1 WHERE entry IN(23035);
 UPDATE creature_template SET UnitFlags=(64 + 4096) WHERE entry IN(23134,23135,23136);

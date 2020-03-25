@@ -1,11 +1,11 @@
 -- Fixes for q.11026/q.11051 Banish the Demons/Banish More Demons
 
 DELETE FROM `creature_template_addon` WHERE `entry`=23327;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (23327, 0, 0, 1, 16, 0, 0, '40857');
 
 DELETE FROM `creature_template_addon` WHERE `entry`=23322;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (23322, 0, 0, 1, 16, 0, 0, '40849');
 
 -- Banishment
