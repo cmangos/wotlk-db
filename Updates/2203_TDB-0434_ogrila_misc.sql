@@ -37,8 +37,8 @@ INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN(2336201);
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
-(2336201,2,28,8,0,0,0,0,0,0,0,0,0,'Torki - Set StandState Kneel',0,0,0,0),
-(2336201,11,28,0,0,0,0,0,0,0,0,0,0,'Torki - Set StandState Stand',0,0,0,0);
+(2336201,2000,28,8,0,0,0,0,0,0,0,0,0,'Torki - Set StandState Kneel',0,0,0,0),
+(2336201,11000,28,0,0,0,0,0,0,0,0,0,0,'Torki - Set StandState Stand',0,0,0,0);
 
 -- ---------------------------
 -- Jho'nass c.23428
@@ -53,8 +53,8 @@ INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN(2342801);
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
-(2342801,1,28,8,0,0,0,0,0,0,0,0,0,'Jho''nass - Set StandState Kneel',0,0,0,0),
-(2342801,14,28,0,0,0,0,0,0,0,0,0,0,'Jho''nass - Set StandState Stand',0,0,0,0);
+(2342801,1000,28,8,0,0,0,0,0,0,0,0,0,'Jho''nass - Set StandState Kneel',0,0,0,0),
+(2342801,14000,28,0,0,0,0,0,0,0,0,0,0,'Jho''nass - Set StandState Stand',0,0,0,0);
 
 -- ---------------------------
 -- Skyguard Navigator c.22982
@@ -88,20 +88,20 @@ INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`position_x`,
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` BETWEEN 2298203 AND 2298207;
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
 (2298203,0,1,397,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotPointNoSheathe',0,0,0,0),
-(2298203,3,1,113,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotSaluteNoSheath',0,0,0,0),
-(2298203,9,1,397,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotPointNoSheathe',0,0,0,0),
+(2298203,3000,1,113,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotSaluteNoSheath',0,0,0,0),
+(2298203,9000,1,397,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotPointNoSheathe',0,0,0,0),
 
-(2298204,11,1,397,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotPointNoSheathe',0,0,0,0),
+(2298204,11000,1,397,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - OneShotPointNoSheathe',0,0,0,0),
 
 (2298205,0,20,2,2,0,0,0,0,0,0,0,0,'Skyguard Navigator - Start PathId 2',0,0,0,0),
 
 (2298206,0,0,0,0,0,2000001605,0,0,0,0,0,0,'Skyguard Navigator - %s spills his beverage.',0,0,0,0),
-(2298206,1,0,0,0,0,2000001606,0,0,0,0,0,0,'Skyguard Navigator - SKYGUARD SCOUT!!',0,0,0,0),
-(2298206,8,1,69,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - STATE_USESTANDING',0,0,0,0),
-(2298206,12,0,0,0,0,2000001607,0,0,0,0,0,0,'Skyguard Navigator - %s cleans up the mess while muttering curses about the Skyguard hotshot pilots.',0,0,0,0),
-(2298206,33,1,0,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - ONESHOT_NONE',0,0,0,0),
+(2298206,1000,0,0,0,0,2000001606,0,0,0,0,0,0,'Skyguard Navigator - SKYGUARD SCOUT!!',0,0,0,0),
+(2298206,8000,1,69,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - STATE_USESTANDING',0,0,0,0),
+(2298206,12000,0,0,0,0,2000001607,0,0,0,0,0,0,'Skyguard Navigator - %s cleans up the mess while muttering curses about the Skyguard hotshot pilots.',0,0,0,0),
+(2298206,33000,1,0,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - ONESHOT_NONE',0,0,0,0),
 
-(2298207,1,20,2,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - Start PathId 0',0,0,0,0);
+(2298207,1000,20,2,0,0,0,0,0,0,0,0,0,'Skyguard Navigator - Start PathId 0',0,0,0,0);
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN(1092);
 INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES

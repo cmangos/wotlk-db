@@ -12,7 +12,7 @@ INSERT INTO gameobject_template (entry,type,displayId,name,size,data0,data1,data
 
 DELETE FROM `dbscripts_on_go_template_use` WHERE `id` IN(122088);
 INSERT INTO `dbscripts_on_go_template_use` (`id`,`delay`,`command`,`datalong`,`datalong2`,`datalong3`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`buddy_entry`,`search_radius`,`data_flags`,`comments`,`x`,`y`,`z`,`o`) VALUES
-(122088,1,40,0,0,0,0,0,0,0,0,0,0,'Containment Coffer - Despawn Self on Use',0,0,0,0);
+(122088,1000,40,0,0,0,0,0,0,0,0,0,0,'Containment Coffer - Despawn Self on Use',0,0,0,0);
 
 UPDATE creature SET spawntimesecsmin=180, spawntimesecsmax=180 WHERE id=6492;
 -- The NPCs are invisible on spawn so we have no way to get sniffed spawn coords.
