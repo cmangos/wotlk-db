@@ -24,8 +24,8 @@ UPDATE `creature_model_info` SET `bounding_radius` = 0.3, `combat_reach` = 10 WH
 -- Rift Lord 17839, 20744, 21140, 22172 & Rift Keeper 21104, 22170, 21148, 22171
 UPDATE `creature_template` SET `Leash` = 80 WHERE `entry` IN (17839, 20744, 21140, 22172, 21104, 22170, 21148, 22171);
 
-UPDATE `creature_template` SET `lootid` = 21104 WHERE `entry` = 21148;
+-- UPDATE `creature_template` SET `lootid` = 21104 WHERE `entry` = 21148;
 UPDATE `creature_template` SET `MechanicImmuneMask` = 1034927867 WHERE `entry` IN (20744,22170);
-UPDATE `creature_template` SET `lootid` = 22170 WHERE `entry` = 22171;
+-- UPDATE `creature_template` SET `lootid` = 22170 WHERE `entry` = 22171;
 UPDATE `creature_template` SET `KillCredit1` = 17839 WHERE `entry` IN (17839,20744);
 

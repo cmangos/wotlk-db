@@ -21,8 +21,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (93634, 2641, 0, -304.242, -4087.69, 152.297, 2.74346, 350, 350, 0, 2),
 (93742, 4465, 0, -300.881, -4190.36, 136.562, 1.74982, 350, 350, 0, 2),
 (93747, 2641, 0, -334.77, -4118.18, 152.151, 3.31985, 350, 350, 0, 2),
-(93755, 2641, 0, -334.77, -4118.18, 152.151, 3.51878, 350, 350, 0, 2),
-
+(93755, 2641, 0, -334.77, -4118.18, 152.151, 3.51878, 350, 350, 0, 2);
 
 -- Soaring Razorbeak 8276
 UPDATE `creature_template` SET `InhabitType` = 5 WHERE `entry` = 8276;
@@ -389,7 +388,6 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (93755, 15, -333.224, -4134.23, 152.062, 100, 0, 0),
 (93755, 16, -334.77, -4118.18, 152.151, 100, 0, 0);
 
-
 DELETE FROM `creature_movement_template` WHERE `entry` IN (17655,14737,14739);
 INSERT INTO `creature_movement_template` (`entry`, `pathid`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 (17655, 0, 1, 7604.85, -6905.62, 93.7619, 0.820305, 60000, 0),
@@ -419,7 +417,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathid`, `point`, `position_
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (1026,1473701,1473702,1473901);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `data_flags`, `dataint`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(1026, 0, 1, 26, 0, 0x04, 0, 0, 0, 0, 'GENERIC EMOTE - EMOTE_STATE_STAND'),
+(1026, 0, 1, 26, 0, 0x04, 0, 0, 0, 0, 0, 'GENERIC EMOTE - EMOTE_STATE_STAND'),
 
 (1473701, 2, 1, 16, 0, 0x04, 0, 0, 0, 0, 0, 'Smith Slagtree - EMOTE_ONESHOT_KNEEL'),
 (1473702, 2, 15, 23488, 1, 0x04, 0, 0, 0, 0, 0, 'Smith Slagtree - Cast Spirit Hammer'),

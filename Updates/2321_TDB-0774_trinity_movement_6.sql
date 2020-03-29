@@ -31,7 +31,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 -- Duke Ragereaver 10820 - missing weapon
 -- https://wow.gamepedia.com/index.php?title=Duke_Ragereaver&oldid=2962986
 -- https://web.archive.org/web/20120326204038/http://www.wowhead.com/npc=10820
-UPDATE `creature_template` SET `HealthMultiplier` = 1.50, `MinLevelHealth` = 2217, `MaxLevelHealth` = 2217, `UnitClass` = 2, `MinLevelMana` = 1534, `MaxLevelMana` = 1534, `LootId` = 10820 WHERE `entry` = 10820; -- 1.35 1
+UPDATE `creature_template` SET `HealthMultiplier` = 1.50, `MinLevelHealth` = 2217, `MaxLevelHealth` = 2217, `UnitClass` = 2, `MinLevelMana` = 1534, `MaxLevelMana` = 1534, `LootId` = 0 WHERE `entry` = 10820; -- 1.35 1
 /*
 DELETE FROM `creature_loot_template` WHERE `entry` = 10820;
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
