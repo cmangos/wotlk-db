@@ -21,6 +21,9 @@
 -- Gameobject custom changes
 -- -------------------------------
 
+-- ============================================================
+-- Classic section
+-- ============================================================
 -- Make Moonwell GO server-side (visible by GM only)
 UPDATE gameobject_template SET data3=1 WHERE entry=177272; 
 
@@ -46,7 +49,6 @@ UPDATE gameobject_template SET data2=10 WHERE entry=109515;
 -- Set a 70 yards diameter for Ragnaros GO because because it needs to be triggered by SD2 script otherwise (and said script do not exist yet)
 UPDATE gameobject_template SET data2=70 WHERE entry=178088;
 
-
 -- Currently the core cannot make a GO usable for a specific quest if the items it holds are not objectives of the quest
 
 -- Link Hive'Ashi Pod GO to quest 1126 so it is usable by players on the quest
@@ -57,6 +59,19 @@ UPDATE gameobject_template SET data8=3602 WHERE entry IN (152620, 152621, 152622
 
 -- Link Crate with Holes, Snufflenose Command Stick and Snufflenose Owner's Manual GOs to quest 1221 so they are usable by players on the quest
 UPDATE gameobject_template SET data8=1221 WHERE entry IN (68865, 21530, 21277);
+
+-- Thaurissan Relic - original tbc-db value 0, classic-db (and classic sniff) value 3702 - the quest which involves actually using this object is 3701
+UPDATE gameobject_template SET data1=3701 WHERE entry=153556;
+
+-- ============================================================
+-- TBC section
+-- ============================================================
+-- Hellfire Hot Spot Spreader
+UPDATE gameobject_template SET data8=1 WHERE entry=183929; -- set serverside so that it's not visible to players
+-- Sealed Tome traps
+UPDATE gameobject_template SET data8=1 WHERE entry IN (181831,181838,181840,181842,181844);
+-- Corki's Prison - make data match 182351
+UPDATE gameobject_template SET data2=19660800 WHERE entry IN (182349,182350);
 
 -- -------------------------------
 -- Creature custom changes
