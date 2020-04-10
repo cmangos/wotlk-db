@@ -21,7 +21,7 @@ INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALU
 (39802, 39934, 0, 'Western Plaguelands - Large Solid Chest (153463) / Large Mithril Bound Chest (153468) - #2'),
 (39803, 39934, 0, 'Western Plaguelands - Large Solid Chest (153463) / Large Mithril Bound Chest (153468) - #3');
 
-DELETE FROM `pool_gameobject` WHERE `guid` IN (5,20,45486,55580);
+DELETE FROM `pool_gameobject` WHERE `guid` IN (5,20,45486,53164);
 DELETE FROM `pool_gameobject` WHERE `guid` BETWEEN 106000 AND 106005;
 INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
 (106000, 39801, 0, 'Western Plaguelands - Large Solid Chest (153463)'),

@@ -7,7 +7,7 @@ UPDATE `gameobject` SET `position_x` = 6520.667, `position_y` = -3264.038, `posi
 UPDATE `gameobject` SET `position_x` = 6417.923, `position_y` = -4281.615, `position_z` = 666.0338, `orientation` = -0.7504914 WHERE `guid` = 49088;
 UPDATE `gameobject` SET `position_x` = 3459.301, `position_y` = -4918.522, `position_z` = 170.4553, `orientation` = -1.692969 WHERE `guid` = 53163;
 UPDATE `gameobject` SET `position_x` = 3191.122, `position_y` = -4639.979, `position_z` = 119.9467, `orientation` = -2.949606 WHERE `guid` = 45910;
-UPDATE `gameobject` SET `position_x` = 3021.77, `position_y` = -4980.581, `position_z` = 106.6563, `orientation` = 1.832595 WHERE `guid` = 53092
+UPDATE `gameobject` SET `position_x` = 3021.77, `position_y` = -4980.581, `position_z` = 106.6563, `orientation` = 1.832595 WHERE `guid` = 53092;
 UPDATE `gameobject` SET `position_x` = 3003.645, `position_y` = -4886.261, `position_z` = 108.3842, `orientation` = 0.5061455 WHERE `guid` = 45734;
 UPDATE `gameobject` SET `position_x` = 2601.594, `position_y` = -5512.311, `position_z` = 158.7127, `orientation` = -0.03490669 WHERE `guid` = 45931;
 UPDATE `gameobject` SET `position_x` = 2544.61, `position_y` = -3704.674, `position_z` = 179.6404, `orientation` = 0.2443461 WHERE `guid` = 45915;
@@ -65,10 +65,3 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (9933, 4306, 1, 0, 2, 2, 0, 'Silk Cloth'),
 (9933, 4338, 1, 0, 1, 1, 0, 'Mageweave Cloth'),
 (9933, 8838, 2, 2, 1, 2, 0, 'Sungrass');
-
--- Improve 0311_o181798.sql - loot
-DELETE FROM `gameobject_loot_template` WHERE `entry` = 181798 AND `item` IN (4306,8838);
-INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
-(181798, 8838, 2, 0, 1, 2, 0, 'Sungrass'),
-(181798, 4306, 1, 0, 2, 2, 0, 'Silk Cloth');
-

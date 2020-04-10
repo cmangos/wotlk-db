@@ -1,8 +1,9 @@
 -- Popluate Ashenvale - Demon Fall Ridge thx @TrinityCore
-DELETE FROM `creature` WHERE `guid` IN (20082,140597);
+DELETE FROM `creature` WHERE `guid` IN (20082,140597,108999,108972,108973,108974,108975);
 DELETE FROM `creature` WHERE `guid` = 5300000;
+
 DELETE FROM `creature` WHERE `guid` BETWEEN 5300007 AND 5300015;
-DELETE FROM `creature` WHERE `guid` BETWEEN 108860 AND 108999;
+DELETE FROM `creature` WHERE `guid` BETWEEN 108860 AND 108885;
 INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `movementtype`) VALUES
 (108860, 11697, 1, 1377.44, -2831.15, 108.027, 5.77812, 300, 300, 10, 2),
 (108861, 11697, 1, 1442.84, -2781.55, 143.33, 3.40741, 300, 300, 10, 1),

@@ -18,7 +18,7 @@ UPDATE `creature_template` SET `UnitFlags` = 32832 WHERE `entry` = 12124; -- rec
 -- 12125 Mammoth Shark
 UPDATE `creature_template` SET `UnitFlags` = 32768 WHERE `entry` = 12125; -- recheck MeleeBaseAttackTime
 DELETE FROM `creature_template_addon` WHERE `entry` = 12125;
-INSERT INTO `creature_template_addon` (`entry`, `b2_0_sheath`, `b2_1_pvp_flags`, `auras`) VALUES
+INSERT INTO `creature_template_addon` (`entry`, `b2_0_sheath`, `b2_1_pvp_state`, `auras`) VALUES
 (12125, 1, 16, '12787');
 
 -- 15661 Baby Shark - NSR
