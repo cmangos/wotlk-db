@@ -29,10 +29,10 @@ have to create and add the right SQL file. This helps tracking what changes are 
 
 Installation
 ------------
-**Wotlk-DB** is the main content database for: `mangos` where the world is defined
+**Wotlk-DB** is the main content database for: `wotlkmangos` where the world is defined
 with creatures, items, objects, quests, etc.
 
-It must be applied after creating the `mangos` database from your CMaNGOS core distribution [CMaNGOS-WOTLK][10] from [CMaNGOS Project][11].
+It must be applied after creating the `wotlkmangos` database from your CMaNGOS core distribution [CMaNGOS-WOTLK][10] from [CMaNGOS Project][11].
 
 If you used the default values when installing your mangos core, simply run into a bash compatible shell (like Bash Git for Windows) the following command  ./InstallFullDB.sh .
 
