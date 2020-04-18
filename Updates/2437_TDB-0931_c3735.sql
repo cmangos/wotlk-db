@@ -1,5 +1,6 @@
 -- (Re)Add Spawns and Pooling for Apothecary Falthis 3735
 DELETE FROM `creature` WHERE `id` = 3735;
+DELETE FROM `creature` WHERE `guid` BETWEEN 80272 AND 80274;
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `movementtype`) VALUES
 (80272, 3735, 1, 0, 0, 3861.7, -214.578, 4.53143, 1.95477, 14400, 21600, 0, 0), 
 (80273, 3735, 1, 0, 0, 3828.21, -182.37, 1.15311, 0.873313, 14400, 21600, 0, 0),

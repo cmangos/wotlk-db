@@ -3,7 +3,7 @@ UPDATE creature_template SET InhabitType=4 WHERE entry IN(22923,23378);
 INSERT INTO `creature_template_addon` (`entry`, `auras`) VALUES (22923, '18950');
 INSERT INTO `creature_template_addon` (`entry`, `auras`) VALUES (23378, '18950');
 DELETE FROM dbscripts_on_gossip WHERE id IN(870301,870401);
-INSERT INTO dbscripts_on_gossip VALUES
+INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 ('870301', '0', '15', '41137', '0', '0', '0', '0', '2', '0', '0', '0', '0', '0', '0', '0', '0', 'cast Simon Game, begin game, solo'),
 ('870401', '0', '15', '41139', '0', '0', '0', '0', '2', '0', '0', '0', '0', '0', '0', '0', '0', 'cast Simon Game, begin game, group');
 

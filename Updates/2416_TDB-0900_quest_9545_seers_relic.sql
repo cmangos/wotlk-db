@@ -26,3 +26,5 @@ UPDATE creature_template SET `Unitflags` = 33024 WHERE `entry` = 17417;
 -- Laughing Skull Ambusher 17418
 UPDATE creature_template SET `Unitflags` = 33024 WHERE `entry` = 17418;
 
+-- remove event
+DELETE FROM dbscripts_on_event WHERE id = 10745; 

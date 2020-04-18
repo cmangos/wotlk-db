@@ -7,12 +7,12 @@ UPDATE creature_template SET MovementType = 2 WHERE Entry = 23900;
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id = 23907;
 
 -- Missing GOs
-DELETE FROM gameobject WHERE guid BETWEEN 10228 AND 10231;
-INSERT INTO gameobject VALUES 
-(10228, 186484, 1, 1, -3802.11, -4670.21, 9.05096, 0.13963, 0, 0, 0, 0, 900, 900, 100, 1),
-(10229, 186484, 1, 1, -3809.38, -4678.87, 9.13407, 3.76991, 0, 0, 0, 0, 900, 900, 100, 1),
-(10230, 186484, 1, 1, -3902.36, -4629.96, 9.83544, 1.95477, 0, 0, 0, 0, 900, 900, 100, 1),
-(10231, 186484, 1, 1, -3890.56, -4620.39, 9.63953, 6.10865, 0, 0, 0, 0, 900, 900, 100, 1);
+DELETE FROM gameobject WHERE guid IN (10200,10206,10210,10211);
+INSERT INTO gameobject (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax, animprogress, state) VALUES
+(10200, 186484, 1, 1, -3802.11, -4670.21, 9.05096, 0.13963, 0, 0, 0, 0, 900, 900, 100, 1),
+(10206, 186484, 1, 1, -3809.38, -4678.87, 9.13407, 3.76991, 0, 0, 0, 0, 900, 900, 100, 1),
+(10210, 186484, 1, 1, -3902.36, -4629.96, 9.83544, 1.95477, 0, 0, 0, 0, 900, 900, 100, 1),
+(10211, 186484, 1, 1, -3890.56, -4620.39, 9.63953, 6.10865, 0, 0, 0, 0, 900, 900, 100, 1);
 
 -- Spell Targeting for fireworks
 DELETE FROM spell_script_target WHERE entry BETWEEN 10228 AND 10231;
@@ -29,7 +29,7 @@ DELETE FROM dbscripts_on_quest_start WHERE id = 11198 AND command = 10 AND datal
 
 DELETE FROM dbscripts_on_quest_start WHERE id = 11198;
 DELETE FROM dbscripts_on_relay WHERE id = 10161;
-INSERT INTO dbscripts_on_relay VALUES 
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES 
 (10161, 0, 10, 23899, 0, 0, 0, 0, 8, 1, 0, 0, -1, -3925.856, -4808.686, -18.17249, 0, 'spawn Tethyr'),
 (10161, 2000, 0, 0, 0, 0, 0, 0, 0, 2000005636, 0, 0, 0, 0, 0, 0, 0, 'yell'),
 (10161, 5000, 10, 23900, 600000, 0, 0, 0, 8, 1, 0, 0, 0, -3784.833, -4641.188, 7.358997, 0, 'spawn Theramore Marksman'),
@@ -46,7 +46,7 @@ INSERT INTO dbscripts_on_relay VALUES
 (10161, 5000, 10, 23900, 600000, 11, 0, 0, 8, 1, 0, 0, 0, -3773.892, -4637.090, 7.940006, 0, 'spawn Theramore Marksman');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id like '23899%';
-INSERT INTO dbscripts_on_creature_movement VALUES 
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES 
 (2389915, 0, 0, 0, 0, 0, 23905, 150, 7, 2000005634, 0, 0, 0, 0, 0, 0, 0, 'yell_tethyr_1'),
 (2389915, 6000, 0, 0, 0, 0, 23905, 150, 7, 2000005635, 0, 0, 0, 0, 0, 0, 0, 'yell_tethyr_2');
 
