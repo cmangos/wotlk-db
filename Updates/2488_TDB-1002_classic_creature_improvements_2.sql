@@ -13,6 +13,8 @@ UPDATE creature SET guid = 5301224 WHERE guid = 44255;
 UPDATE creature_addon SET guid = 5301224 WHERE guid = 44255;
 UPDATE creature SET guid = 5301225 WHERE guid = 44256;
 UPDATE creature_addon SET guid = 5301225 WHERE guid = 44256;
+-- not req. anymore
+DELETE FROM npc_gossip WHERE npc_guid IN(49936,49937);
 
 -- Twilight Prophet
 UPDATE `creature` SET `position_x`='-7553.29', `position_y`='1742.48', `position_z`='6.15128', `orientation`='4.59986',`spawndist`='0',`movementtype`='2' WHERE `guid` = '43322';
