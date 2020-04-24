@@ -3,7 +3,7 @@ UPDATE creature_template SET UnitFlags=64 WHERE entry IN(15348);
 UPDATE creature_model_info SET bounding_radius=1.5,combat_reach=6 WHERE modelid IN(15742);
 -- general rajaxx
 -- allies
-UPDATE creature_template SET Faction=1608,NpcFlags=1,UnitFlags=(33280+4096) WHERE entry IN(15471);
+UPDATE creature_template SET Faction=1608,NpcFlags=4225,UnitFlags=(33280+4096) WHERE entry IN(15471);
 UPDATE creature_model_info SET bounding_radius=0.306,combat_reach=1.5 WHERE modelid IN(15688);
 UPDATE creature_model_info SET bounding_radius=0.389,combat_reach=1.5 WHERE modelid IN(15689);
 UPDATE creature_template SET Faction=1608,UnitFlags=(33280+4096) WHERE entry IN(15473);
@@ -25,6 +25,7 @@ UPDATE creature_model_info SET bounding_radius=3,combat_reach=5.736 WHERE modeli
 UPDATE creature_template SET UnitFlags=64 WHERE entry IN(15369);
 UPDATE creature_model_info SET bounding_radius=1,combat_reach=3 WHERE modelid IN(15431);
 UPDATE creature_template SET Faction=310 WHERE entry IN(15546);
+DELETE FROM spell_target_position WHERE id IN (26538,26539,25709,25825,25826,25827,25828);
 INSERT INTO spell_target_position(id, target_map, target_position_x, target_position_y, target_position_z, target_orientation) VALUES
 (26538,509,-9674.4707,1528.4133,22.457,0.8677835), -- guessed position
 (26539,509,-9711.537,1550.658,24.97404,0.8677835),
