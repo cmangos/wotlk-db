@@ -1,5 +1,5 @@
 -- Fix faction for Gavis Greyshield
-UPDATE creature_template SET FactionAlliance=16, FactionHorde=16 WHERE entry=23941;
+UPDATE creature_template SET Faction=16 WHERE entry=23941;
 -- Mobs in the area respawns quickly (3< according to wowhead comments https://www.wowhead.com/quest=11134/the-end-of-the-deserters#comments)
 UPDATE creature SET spawntimesecsmin=120, spawntimesecsmax=240 WHERE id IN(23941,23637,5057); -- 2-4min variance
 
