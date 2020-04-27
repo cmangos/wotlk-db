@@ -4,7 +4,7 @@
 SET @COND:=412;
 
 DELETE FROM dbscripts_on_gossip WHERE id=3141;
-INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, comments) VALUES
+INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (3141, 0, 34, @COND, 0, 0, 0, 0, 0x08, 0, 0, 0, 0, 0, 0, 0, 0, 'Darrowshire Spirit - Terminate if Player has not quest 5211'),
 (3141, 1000, 8, 11064, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Darrowshire Spirit - Send kill credit Darrowshire Spirit'),
 (3141, 1000, 18, 3000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Darrowshire Spirit - Despawn');

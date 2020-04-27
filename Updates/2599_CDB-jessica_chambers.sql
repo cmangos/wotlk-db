@@ -2,8 +2,8 @@
 -- changed timing to avoid this script to overlap with Commander Eligor Dawnbringer's one
 
 -- NPC 16115 (Commander Eligor Dawnbringer) will start the script by allowing NPC 16256 (Jessica Chambers) to move and trigger WP scripts
-DELETE FROM dbscripts_on_creature_movement WHERE id=1611501 AND delay=256;
-INSERT INTO dbscripts_on_creature_movement VALUES
+DELETE FROM dbscripts_on_creature_movement WHERE id=1611501 AND delay=256000;
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1611501, 256000, 32, 0, 0, 0, 16256, 25, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'unpause WP movement');
 
 UPDATE creature SET MovementType=2 WHERE id=16256;
