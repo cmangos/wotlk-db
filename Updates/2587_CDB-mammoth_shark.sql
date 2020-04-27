@@ -1,13 +1,13 @@
 -- Add missing spawns of NPC 12125 (Mammoth Shark)
 -- Source: Project Silvermoon Database
-DELETE FROM creature_addon WHERE guid BETWEEN 135121 AND 125175;
-DELETE FROM creature_movement WHERE id BETWEEN 135121 AND 125175;
-DELETE FROM game_event_creature WHERE guid BETWEEN 135121 AND 125175;
-DELETE FROM game_event_creature_data WHERE guid BETWEEN 135121 AND 125175;
-DELETE FROM creature_battleground WHERE guid BETWEEN 135121 AND 125175;
-DELETE FROM creature_linking WHERE guid BETWEEN 135121 AND 125175 
-OR master_guid BETWEEN 135121 AND 125175;
-DELETE FROM creature WHERE guid BETWEEN 135121 AND 125175;
+DELETE FROM creature_addon WHERE guid BETWEEN 135121 AND 135129;
+DELETE FROM creature_movement WHERE id BETWEEN 135121 AND 135129;
+DELETE FROM game_event_creature WHERE guid BETWEEN 135121 AND 135129;
+DELETE FROM game_event_creature_data WHERE guid BETWEEN 135121 AND 135129;
+DELETE FROM creature_battleground WHERE guid BETWEEN 135121 AND 135129;
+DELETE FROM creature_linking WHERE guid BETWEEN 135121 AND 135129 
+OR master_guid BETWEEN 135121 AND 135129;
+DELETE FROM creature WHERE guid BETWEEN 135121 AND 135129;
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
 (135121,12125,1,1,1,0,0,2247.58, -7314.71, -32.7716, 5.07837, 900, 900, 10, 0, 10796, 0, 0, 1),
 (135122,12125,1,1,1,0,0,2141.54, -7237.98, -32.0054, 1.83467, 900, 900, 10, 0, 10796, 0, 0, 1),
