@@ -9,9 +9,9 @@ INSERT INTO npc_text VALUES
 SET @COND = 117;
 
 DELETE FROM conditions WHERE condition_entry BETWEEN @COND + 1 AND @COND + 2;
-INSERT INTO conditions (condition_entry, type, value1, value2, comments) VALUES
-(@COND + 1, 24, 21130, 1, 'Player Has Less Than 1 of Item ID 21130 in Inventory/Bank'),
-(@COND + 2, -1, 97, @COND + 1, '(Quest ID 8620 Taken AND Player Has Less Than 1 of Item ID 21130 in Inventory/Bank)');
+INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
+(@COND + 1, 23, 21130, 1, 0, 0, 1, 'Player Has Less Than 1 of Item ID 21130 in Inventory/Bank'),
+(@COND + 2, -1, 65, @COND + 1, 0, 0, 0, '(Quest ID 8620 Taken AND Player Has Less Than 1 of Item ID 21130 in Inventory/Bank)');
 
 DELETE FROM gossip_menu WHERE entry=6646 AND text_id=7884;
 INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES 

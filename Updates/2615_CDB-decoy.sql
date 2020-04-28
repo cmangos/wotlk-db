@@ -54,7 +54,7 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 -- Add movement templates
 -- Doctor Weavil
 DELETE FROM creature_movement_template WHERE entry=15552;
-INSERT INTO creature_movement_template (entry, pathId, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
+INSERT INTO creature_movement_template (entry, pathId, point, position_x, position_y, position_z, orientation, waittime, script_id) VALUES
 (15552, 0, 1, 5087.84,    -5078.97,    921.911,    4.785346, 0, 0),
 (15552, 0, 2, 5088.041016,-5086.741699,922.343689, 4.675390, 0, 0),
 (15552, 0, 3, 5085.540039,-5106.164551,928.060547, 4.491607, 0, 0),
@@ -66,7 +66,7 @@ INSERT INTO creature_movement_template (entry, pathId, point, position_x, positi
 
 -- Doctor Weavil Flying Machine
 DELETE FROM creature_movement_template WHERE entry=15553;
-INSERT INTO creature_movement_template (entry, pathId, point, position_x, position_y, position_z, waittime, script_id, orientation) VALUES
+INSERT INTO creature_movement_template (entry, pathId, point, position_x, position_y, position_z, orientation, waittime, script_id) VALUES
 (15553, 0, 1, 5107.60,-5153.11,945.29,1.8841, 0, 0),
 (15553, 0, 2, 5093.37,-5113.39,932.313,1.80318, 0, 0),
 (15553, 0, 3, 5087.84,-5078.97,921.911,1.81497, 0, 1555301),
