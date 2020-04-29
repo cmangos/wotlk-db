@@ -7,7 +7,8 @@
 ####################################################################################################
 
 # need to be changed on each official DB/CORE release
-FULLDB_FILE="WoTLKDB_1_2_13992.sql"
+FULLDB_FILE_ZIP="WoTLKDB_1_2_13992.sql.gz"
+FULLDB_FILE=${FULLDB_FILE_ZIP%.gz}
 DB_TITLE="v1.2 'Ymiron'"
 NEXT_MILESTONES="0.19 0.20"
 
@@ -122,6 +123,9 @@ fi
 
 ## Full Database
 echo "> Processing WoTLK database $DB_TITLE ..."
+echo "  - Unziping $FULLDB_FILE_ZIP"
+gzip -kdf "${ADDITIONAL_PATH}Full_DB/$FULLDB_FILE_ZIP"
+echo "  - Applying $FULLDB_FILE"
 $MYSQL_COMMAND < "${ADDITIONAL_PATH}Full_DB/$FULLDB_FILE"
 if [[ $? != 0 ]]
 then
