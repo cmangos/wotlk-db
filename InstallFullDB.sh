@@ -7,9 +7,9 @@
 ####################################################################################################
 
 # need to be changed on each official DB/CORE release
-FULLDB_FILE_ZIP="WoTLKDB_1_2_13992.sql.gz"
+FULLDB_FILE_ZIP="WoTLKDB_1_3_14015.sql.gz"
 FULLDB_FILE=${FULLDB_FILE_ZIP%.gz}
-DB_TITLE="v1.2 'Ymiron'"
+DB_TITLE="v1.3 'Antares'"
 NEXT_MILESTONES="0.19 0.20"
 
 #internal use

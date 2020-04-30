@@ -1,4 +1,19 @@
 ===============================================================
+WoTLKDB v1.3 'Antares' for CMaNGOS 14015 for 3.3.5a
+===============================================================
+
+Main changes:
+* All Pre-WoTLK Instances moved to 'Instance File System'
+* We started Scripting Dragonblight - Northrend
+* Lots updates backported from CDB   (sync with 1.10.1 'The Shifting Sands') 
+* Lots updates backported from TBCDB (sync with 1.8.0  'Vengeance Strikes Back')
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added
+* ACID Scripts    Readded to Release file
+* spell_templates Readded to Release file
+
+
+===============================================================
 WoTLKDB v1.2 'Ymiron' for CMaNGOS 13992 for 3.3.5a
 ===============================================================
 
