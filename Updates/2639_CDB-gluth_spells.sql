@@ -1,5 +1,6 @@
 -- Add DB support for Gluth encounter in Naxxramas: missing spell targets and DB script event
 
+/* spells does not exist in wotlk
 -- Call all Zombie Chow - periodic call effect
 DELETE FROM spell_script_target WHERE entry=29682;
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
@@ -14,6 +15,7 @@ INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VA
 DELETE FROM spell_script_target WHERE entry=28238;
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
 (28238, 1, 15932, 0);
+*/
 
 -- Decimate event script
 DELETE FROM dbscript_string WHERE entry=2000000033;
