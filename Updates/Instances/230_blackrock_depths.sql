@@ -2799,6 +2799,7 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 (@CGUID+998, 0, 15735, 0, 0, 0, 2); -- Emperor Dagran Thaurissan (Feast of Winter Veil)
 
 INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+-- WOTLK+
 (@OGUID+600, 26),
 (@OGUID+601, 26),
 (@OGUID+602, 26),
