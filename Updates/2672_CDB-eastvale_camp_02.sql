@@ -165,3 +165,9 @@ INSERT INTO creature_movement VALUES
 (81349, 26, -9519.26, -1282.58, 44.1293, 2.94567, 0, 0, NULL),
 (81349, 27, -9528.26, -1288.32, 43.7139, 3.97167, 0, 0, NULL),
 (81349, 28, -9535.73, -1299.14, 44.2706, 4.66917, 0, 0, NULL);
+
+-- missing Generic script added:
+-- Add missing generic dbscript
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (1234);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(1234, 0, 1, 234, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'GENERIC EMOTE - STATE_WORK_CHOPWOOD');
