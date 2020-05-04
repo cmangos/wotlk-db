@@ -11,4 +11,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, priority, command, datalong, data
 (10850, 7500, 0, 8, 22293, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Fel Reaver Quest Credit'),
 (10850, 7500, 0, 15, 38763, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Fel Reaver Suicide');
 
-
+-- missing text added
+DELETE FROM `dbscript_string` WHERE `entry` = 2000005788;
+INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES 
+(2000005788, '%s begins to sputter as its engine malfunctions.', 0, 2, 0, 0, 'Fel reaver SAY 1');
