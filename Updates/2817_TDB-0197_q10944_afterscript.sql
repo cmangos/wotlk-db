@@ -16,7 +16,7 @@ UPDATE creature_model_info SET bounding_radius=1.2 WHERE modelid=21123;
 
 -- Addon for Olum's Spirit c.22870
 DELETE FROM `creature_template_addon` WHERE `entry`=22870;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (22870, 0, 0, 1, 16, 0, 0, '36545 36550');
 
 -- Illidan's Presence c.22865
@@ -24,7 +24,7 @@ UPDATE creature_template SET SpeedRun=7/7, UnitFlags=33554752 WHERE entry=22865;
 
 -- Illidan's Presence c.22865
 DELETE FROM `creature_template_addon` WHERE `entry`=22865;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (22865, 0, 0, 1, 16, 0, 0, '37816');
 
 -- Olum's Sacrifice s.39552 target
