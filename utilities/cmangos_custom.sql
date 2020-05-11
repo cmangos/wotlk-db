@@ -83,8 +83,6 @@ UPDATE gameobject_template SET data3=0, data8=1 WHERE entry=178673; -- 21650, 0
 -- Classic section
 -- ============================================================
 
--- Mana Agate should have class=0 like all other mana gems
-UPDATE item_template SET class=0 WHERE entry=5514;
 
 -- -------------------------------
 -- Creature custom changes
