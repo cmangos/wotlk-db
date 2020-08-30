@@ -27,7 +27,7 @@ UPDATE quest_template SET RequiredCondition = 20079 WHERE entry IN (12264,12265)
 
 -- q.12267 'Neltharion's Flame'
 -- becomes available after q.12264 'Culling the Damned' & q.12265 'Defiling the Defilers' completed.
-DELETE FROM conditions WHERE condition_entry BETWEEN 20080 AND 20078;
+DELETE FROM conditions WHERE condition_entry BETWEEN 20080 AND 20082;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES 
 (20080, 8, 12264, 0),
 (20081, 8, 12265, 0),
