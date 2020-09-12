@@ -1,4 +1,4 @@
--- Onslaught Rave Priest
+-- Onslaught Raven Priest
 -- waypoints fixed
 DELETE FROM creature_movement WHERE id = 516715;
 INSERT INTO creature_movement (id,point,position_x,position_y,position_z,orientation,waittime,script_id) VALUES
