@@ -23,15 +23,15 @@ INSERT INTO achievement_criteria_requirement VALUES
 (8758, 0, 0, 0),
 (8759, 0, 0, 0);
 
--- Ancient Protector - pvp script
+-- Ancient Protector - source area 4609
 DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (7630);
 INSERT INTO achievement_criteria_requirement VALUES
-(7630, 22, 0, 0);
+(7630, 6, 4609, 0);
 
--- Ancient Courtyard Protector - pvp script
+-- Ancient Courtyard Protector - source area 4609
 DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (7631);
 INSERT INTO achievement_criteria_requirement VALUES
-(7631, 22, 0, 0);
+(7631, 6, 4609, 0);
 
 -- Drop it now - pvp script
 DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (7629);
