@@ -17,6 +17,6 @@ INSERT INTO achievement_criteria_requirement VALUES
 (3693, 22, 0, 0);
 
 -- Take a chill pill - target aura 24378
-DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (1258);
+DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (3879);
 INSERT INTO achievement_criteria_requirement VALUES
-(1258, 7, 24378, 0);
+(3879, 7, 24378, 0);

@@ -6,6 +6,8 @@ DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (7020) AND typ
 
 -- Ironman
 DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (1824) AND type=11;
+INSERT INTO achievement_criteria_requirement VALUES
+(1824, 17, 0, 0);
 
 -- Save the Day - pvp script
 DELETE FROM achievement_criteria_requirement WHERE criteria_id IN (5605,5606);
