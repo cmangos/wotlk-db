@@ -1,0 +1,29 @@
+
+-- Honorable defenders and spirit healers are summonded by script
+
+-- Cleanup EotS
+SET @CGUID := 5660000;
+DELETE FROM creature WHERE guid BETWEEN @CGUID AND @CGUID + 7;
+DELETE FROM creature_battleground WHERE guid BETWEEN @CGUID AND @CGUID + 7;
+-- static spawned spirit healers
+DELETE FROM creature WHERE guid IN (150021,150019,150017,150023,150022,150020,150018,150016);
+DELETE FROM creature_battleground WHERE guid IN (150021,150019,150017,150023,150022,150020,150018,150016);
+
+-- Cleanup AB
+SET @CGUID := 5290111;
+DELETE FROM creature WHERE guid BETWEEN @CGUID AND @CGUID + 9;
+DELETE FROM creature_battleground WHERE guid BETWEEN @CGUID AND @CGUID + 9;
+-- static spawned spirit healers
+DELETE FROM creature WHERE guid IN (5290005, 5290004, 5290003, 5290002, 5290001, 5290011, 5290010, 5290009, 5290008, 5290007);
+DELETE FROM creature_battleground WHERE guid IN (5290005, 5290004, 5290003, 5290002, 5290001, 5290011, 5290010, 5290009, 5290008, 5290007);
+
+-- Cleanup AV
+-- static spawned spirit healers
+DELETE FROM creature WHERE guid IN (150380,150381,150382,150383,150384,150385,150386,150387,150388,150389,150390,150391,150392,150393);
+DELETE FROM creature_battleground WHERE guid IN (150380,150381,150382,150383,150384,150385,150386,150387,150388,150389,150390,150391,150392,150393);
+
+-- add missing honorable trigger auras in c_t_a
+DELETE FROM creature_template_addon WHERE entry IN (36349,36350);
+INSERT INTO creature_template_addon (entry, auras) VALUES
+(36349, 68652),
+(36350, 68652);
