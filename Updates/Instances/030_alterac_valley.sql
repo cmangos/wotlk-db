@@ -150,7 +150,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 
 -- INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+36, 0, 0, 1, 16, 0, 0, NULL), -- Irondeep Trogg
 (@CGUID+37, 0, 0, 1, 16, 0, 0, NULL), -- Irondeep Trogg
 (@CGUID+38, 0, 0, 1, 16, 0, 0, NULL), -- Irondeep Trogg
@@ -177,7 +177,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (@CGUID+955, 0, 0, 1, 16, 0, 0, NULL), -- Irondeep Peon
 (@CGUID+956, 0, 0, 1, 16, 0, 0, NULL); -- Irondeep Peon
 
-REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES
+REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (10987, 0, 0, 1, 16, 233, 0, NULL), -- Irondeep Trogg
 (10991, 0, 0, 1, 16, 0, 0, NULL), -- Wildpaw Gnoll
 (11603, 0, 0, 1, 16, 233, 0, NULL), -- Whitewhisker Digger
