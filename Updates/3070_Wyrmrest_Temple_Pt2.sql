@@ -20,8 +20,10 @@ INSERT INTO creature_movement (id, point, position_x, position_y, position_z, or
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (527088,527090);
 INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
-(527088,0,0,0,0,0,0,29266),
-(527090,0,0,0,0,0,0,29266);
+(527088,0,0,1,0,0,0,29266),
+(527090,0,0,1,0,0,0,29266);
+UPDATE creature SET position_x = 3592.494, position_y = 191.1563, position_z = -113.6729, orientation = 1.22173 WHERE guid = 527090;
+UPDATE creature SET position_x = 3611.361, position_y = 204.7483, position_z = -113.6808, orientation = 3.665191 WHERE guid = 527088;
 
 -- Invisible Stalker (Scale x3) 23155
 DELETE FROM creature_addon WHERE guid IN (501118,501119,501121,501122);
