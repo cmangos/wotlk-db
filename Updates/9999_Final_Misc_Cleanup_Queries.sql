@@ -113,10 +113,10 @@ UPDATE conditions SET comments=CONCAT('Source of Condition''s Last Waypoint <= '
 UPDATE conditions SET comments=CONCAT('Source of Condition''s Last Waypoint >= ',value1) WHERE type=33 AND value2=2 AND comments IS NULL; -- CONDITION_LAST_WAYPOINT
 -- CONDITION_XP_USER
 UPDATE conditions SET comments=CONCAT('Player Gender: Male') WHERE type=35 AND value1=0 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
-UPDATE conditions SET comments=CONCAT('Player Gender: Femal') WHERE type=35 AND value1=1 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
+UPDATE conditions SET comments=CONCAT('Player Gender: Female') WHERE type=35 AND value1=1 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('Player Gender: None') WHERE type=35 AND value1=2 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('NPC Gender: Male') WHERE type=35 AND value1=0 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
-UPDATE conditions SET comments=CONCAT('NPC Gender: Femal') WHERE type=35 AND value1=1 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
+UPDATE conditions SET comments=CONCAT('NPC Gender: Female') WHERE type=35 AND value1=1 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('NPC Gender: None') WHERE type=35 AND value1=2 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('Player is Dead') WHERE type=36 AND value1=0 AND value2=0 AND comments IS NULL; -- CONDITION_DEAD_OR_AWAY
 UPDATE conditions SET comments=CONCAT('All Players in Group are Dead') WHERE type=36 AND value1=1 AND value2=0 AND comments IS NULL; -- CONDITION_DEAD_OR_AWAY
