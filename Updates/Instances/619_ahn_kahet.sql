@@ -313,9 +313,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 
 -- addons
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(29308,0,0,0,0,0,8192,NULL),
+(29308,0,0,0,0,0,0,NULL),
 (29309,0,0,1,0,0,0,NULL),
-(29310,0,50331648,1,0,0,8192,'56075'),
+(29310,0,50331648,1,0,0,0,NULL),
 (29311,0,0,1,0,0,0,NULL),
 (30114,0,8,1,0,0,0,NULL),
 (30172,0,0,1,0,0,0,NULL),
@@ -538,7 +538,9 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+246,4,483.404,-501.689,26.356,100,0,0);
 
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
-(30385,619,29310,4112,100);
+(30385,619,29310,4112,100),
+(30391,619,30258,4112,100),
+(30435,619,30258,4112,100);
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 -- Ahn'kahar Web Winder & Ahn'kahar Spell Flinger linked to Ahn'kahar Slasher
