@@ -291,9 +291,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+78,10,538.632,741.819,786.836,100,0,0),
 (@CGUID+78,11,525.963,745.027,795.93,100,0,0);
 
-INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
-(30114,619,29310,4,50),
-(30385,619,29310,4112,100);
+-- INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 -- Anub'ar Webspinner / Anub'ar Skirmisher linked to Anub'ar Warrior
