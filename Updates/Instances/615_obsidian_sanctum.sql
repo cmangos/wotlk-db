@@ -319,7 +319,20 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+21,11,3112.96,653.493,79.6289,100,0,0),
 (@CGUID+21,12,3106.78,627.043,77.543,100,0,0);
 
--- INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(30453,615,28860,1,0),
+(30680,615,28860,1,0),
+(30681,615,28860,1,0),
+(30682,615,28860,1,0),
+(31204,615,28860,4096,0),
+(31214,615,28860,4096,0),
+(31218,615,28860,4096,0),
+(31219,615,28860,4096,0),
+(30688,615,30451,4096,0),
+(30858,615,30449,4096,0),
+(30882,615,30452,4112,0),
+(30890,615,30452,4096,0),
+(31138,615,30452,4096,0);
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 -- Onyx Sanctum Guardian to Onyx Sanctum Guardian
