@@ -1,9 +1,16 @@
+-- Battle For Undercity - Part 1
+/*
+guids reserve
+HORDE					550000 AND 550199;
+ALLINCE					550200 AND 550399;
+Forsaken rebelion squad	550400 AND 550599;
+
 -- ======================================
 -- HORDE
 -- ======================================
 
--- NOTE: most of horde stuff if guessed ... sourced from vids
-/*
+NOTE: most of horde stuff if guessed ... sourced from vids
+
 https://www.youtube.com/watch?v=cqvnd_1aleY
 https://www.youtube.com/watch?v=flPCbRZAaQI
 https://www.youtube.com/watch?v=DrVajpz3G14
@@ -388,14 +395,14 @@ INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp
 -- Forsaken rebelion squad
 -- ======================================
 -- Creatures
-DELETE FROM creature_addon WHERE guid BETWEEN 550400 AND 552100;
-DELETE FROM creature_movement WHERE id BETWEEN 550400 AND 552100;
-DELETE FROM game_event_creature WHERE guid BETWEEN 550400 AND 552100;
-DELETE FROM game_event_creature_data WHERE guid BETWEEN 550400 AND 552100;
-DELETE FROM creature_battleground WHERE guid BETWEEN 550400 AND 552100;
-DELETE FROM creature_linking WHERE guid BETWEEN 550400 AND 552100
- OR master_guid BETWEEN 550400 AND 552100;
-DELETE FROM creature WHERE guid BETWEEN 550400 AND 552100;
+DELETE FROM creature_addon WHERE guid BETWEEN 550400 AND 550599;
+DELETE FROM creature_movement WHERE id BETWEEN 550400 AND 550599;
+DELETE FROM game_event_creature WHERE guid BETWEEN 550400 AND 550599;
+DELETE FROM game_event_creature_data WHERE guid BETWEEN 550400 AND 550599;
+DELETE FROM creature_battleground WHERE guid BETWEEN 550400 AND 550599;
+DELETE FROM creature_linking WHERE guid BETWEEN 550400 AND 550599
+ OR master_guid BETWEEN 550400 AND 550599;
+DELETE FROM creature WHERE guid BETWEEN 550400 AND 550599;
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
 -- Varimathras 32521
 (550400,32521,0,1,128,0,0,1297.36,339.5299,-59.99975,1.518436,300,300,0,0,0,0,0,0),
