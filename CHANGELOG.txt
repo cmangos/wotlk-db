@@ -1,4 +1,44 @@
 ===============================================================
+WoTLKDB v1.4 'WrathGate' for CMaNGOS 14029 for 3.3.5a
+===============================================================
+
+Main changes:
+* Dragonblight - Completed
+	- all quests
+	- all areas spawns/waypoints/events
+* All Northrend guids moved to new 500k Range
+* Wrathgate storyline - both factions
+* Breadcrumbs quests - redone
+* Instances:
+	- Azjol-Nerub - Reconstructed and added 'Instance File System'
+	- Ahn'kahet: The Old Kingdom - Reconstructed and added 'Instance File System'
+	- The Obsidian Sanctum - Reconstructed and added 'Instance File System'
+	- The Ruby Sanctum - Reconstructed and added 'Instance File System' 
+* Creature linking: vehicle accessories - specific accessories despawn / die on vehicle death
+* Various updates for Strand of the Ancients
+* Isle of conquest:
+    - fix gameobjects and creature factions
+    - spell targets for teleporters
+    - battleground boss scripts
+    - spawn missing creatures and gameobjects
+    - broken cannon script
+    - vehicle scripts
+* Add graveyard zones for battlegrounds
+* Add battleground honorable defenders auras (IoC, EotS and AB)
+* Add spell script targets for battleground / outdoor PvP flags unlock spells
+* Add event scripts for Wintergrasp towers (on tower damanged / destroyed)
+* Add various achievement criterias for battlegrounds and Wintergrasp
+* Update spirit healers in battlegrounds (add missing / remove the ones spawned by script)
+* Alterac Valley:
+    - fix spawn mask of creatures and gameobjects for level 80
+    - fix creature levels and factions for level 70 and 80
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+
+===============================================================
 WoTLKDB v1.3 'Antares' for CMaNGOS 14015 for 3.3.5a
 ===============================================================
 

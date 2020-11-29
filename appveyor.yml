@@ -1,5 +1,5 @@
 # Specify version format
-version: "1.3.{build} 'Antares'"
+version: "1.4.{build} 'WrathGate'"
 
 # specify custom environment variables
 environment:

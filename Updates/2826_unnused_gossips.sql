@@ -1,1 +1,0 @@
-DELETE FROM npc_gossip WHERE npc_guid IN (66695,66697);
