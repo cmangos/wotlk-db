@@ -63,6 +63,10 @@ UPDATE gameobject_template SET data8=1221 WHERE entry IN (68865, 21530, 21277);
 -- Thaurissan Relic - original tbc-db value 0, classic-db (and classic sniff) value 3702 - the quest which involves actually using this object is 3701
 UPDATE gameobject_template SET data1=3701 WHERE entry=153556;
 
+-- Ritual Candle Aura
+UPDATE gameobject_template SET `data8`=1 WHERE entry=179688; -- add serverside attribute so that it's not visible to players
+UPDATE gameobject_template SET `faction`=1375 WHERE entry=179688; -- "Treasure" faction 1375 here is guessed based on when patch 1.4 was released, and the fact that it's hostile to Demon faction 90
+
 -- ============================================================
 -- TBC section
 -- ============================================================
