@@ -103,7 +103,7 @@ INSERT INTO creature_movement_template(entry, pathId, point, position_x, positio
 INSERT INTO dbscripts_on_creature_movement(id, delay, priority, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, condition_id, comments) VALUES
 ('1991803', '1000', '0', '20', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Time Watcher - Start waypoint movement');
 
-UPDATE creature SET MovementType=3 WHERE guid IN(1002286,1002287);
+UPDATE creature SET MovementType=3 WHERE guid IN(24440,72680);
 
 
 -- ---------------------------------------
