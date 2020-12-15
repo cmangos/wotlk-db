@@ -3258,7 +3258,7 @@ INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`,
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1144401,1144801,1424101,1149201,1149202,1432501,1435301,1435307,1435308,1435401,1435402,1435101,1435102);
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (1450004,1450005,1450006,1450007,1450008); -- 1450001-1450003 used in Scholomance file
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (1450004,1450005,1450006,1450007,1450008,1450012); -- 1450001-1450003 used in Scholomance file
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (1144401, 0, 1, 193, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Gordok Mage-Lord - EMOTE_STATE_SPELLPRECAST'),
 (1144401, 0, 15, 21227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Gordok Mage-Lord - Cast Fire & Ice Channeling'),
