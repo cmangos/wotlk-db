@@ -304,6 +304,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+115,0,8,0,0,0,0,NULL),
 (@CGUID+116,0,8,0,0,0,0,NULL);
 
+DELETE FROM `creature_movement_template` WHERE entry IN (26893,26690,26691,26692);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
 -- Grauf 26893
 (26893,0,1,310.216,-510.53,120.549,0,0,100),
