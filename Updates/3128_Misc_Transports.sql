@@ -135,3 +135,10 @@ UPDATE creature_template SET GossipMenuId = 9070 WHERE Entry = 25018;
 DELETE FROM `gossip_menu` WHERE `entry`=9070;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 (9070, 12267, 0, 0);
+
+-- Marine Halters 24841
+UPDATE creature_template SET GossipMenuId = 9037 WHERE Entry = 24841;
+
+DELETE FROM npc_text WHERE ID IN(12266);
+INSERT INTO npc_text (ID, text0_1, lang0, prob0, em0_1,em0_2,em0_3) VALUES
+(12266,'I\'m almost jealous of our Mr. Wavesinger. Why, he may well be prettier than me!',7,1,1,3,11);
