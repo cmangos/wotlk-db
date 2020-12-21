@@ -1,0 +1,20 @@
+-- Transport: Northspear
+-- Menethil Harbor <--> Howling Fjord
+
+SET @CGUID := 6120000;
+SET @OGUID := 6120000;
+
+DELETE FROM `creature` WHERE `map` = 612;
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`) VALUES
+-- Sailor Jansen 31759
+(@CGUID+0,31759,612,1,1,0,0,-7.134033203125, 6.42626953125, 9.418913841247558593, 1.164549231529235839,120,120,0,0,0,0,0), -- waypoints
+-- Sailor Berg 31760
+(@CGUID+1,31760,612,1,1,0,0,-24.341796875, -1.49609375, 11.7906646728515625, 4.530611515045166015,120,120,0,0,0,0,0), -- waypoints
+-- Sailor Davies 31761
+(@CGUID+2,31761,612,1,1,0,0,17.772705078125, -7.64404296875, 9.804525375366210937, 0.068165071308612823,120,120,0,0,0,0,0), -- waypoints
+-- Navigator Marcus 31762
+(@CGUID+3,31762,612,1,1,0,0,34.08345413208007812, -0.00284500000998377, 19.79710960388183593, 3.124139308929443359,120,120,0,0,0,0,0),
+-- Captain John Brookman 31763
+(@CGUID+4,31763,612,1,1,0,0,30.11512184143066406, -5.08847904205322265, 19.32815933227539062, 3.089232683181762695,120,120,0,0,0,0,0), -- waypoints
+-- First Mate Kacy Dishon 31764
+(@CGUID+5,31764,612,1,1,0,0,26.07068443298339843, 2.057754993438720703, 19.32802200317382812, 3.001966238021850585,120,120,0,0,0,0,0);
