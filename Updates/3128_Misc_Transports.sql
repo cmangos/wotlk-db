@@ -70,3 +70,24 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 
 -- Mariner Bladewhisper 24996 -- gossip
 UPDATE creature_template SET GossipMenuId = 9059 WHERE Entry = 24996;
+
+-- Captain Galind Windsword 25050 -- gossip
+UPDATE creature_template SET GossipMenuId = 9082 WHERE Entry = 25050;
+DELETE FROM `gossip_menu` WHERE `entry`=9082;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9082, 12277, 0, 0);
+
+-- Mariner Stillglider 25056 -- gossip
+UPDATE creature_template SET GossipMenuId = 9080 WHERE Entry = 25056;
+DELETE FROM `gossip_menu` WHERE `entry`=9080;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9080, 12279, 0, 0);
+
+-- Mariner Frostnight 25055 -- gossip
+UPDATE creature_template SET GossipMenuId = 9081 WHERE Entry = 25055;
+DELETE FROM `gossip_menu` WHERE `entry`=9081;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9081, 12278, 0, 0);
+
+-- Mariner Keenstar 25054 -- gossip
+UPDATE creature_template SET GossipMenuId = 9081 WHERE Entry = 25054;
