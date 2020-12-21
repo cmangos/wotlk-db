@@ -1,0 +1,20 @@
+-- Transport: The Kraken
+-- Stormwind <--> Borean Tundra
+
+SET @CGUID := 6140000;
+SET @OGUID := 6140000;
+
+DELETE FROM `creature` WHERE `map` = 614;
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`) VALUES
+-- Captain Constance 31788
+(@CGUID+0,31788,614,1,1,0,0,27.59510612487792968, -2.34423804283142089, 19.32810592651367187, 3.228859186172485351,120,120,0,0,0,0,0),
+-- First Mate Fitzgerald 31789
+(@CGUID+1,31789,614,1,1,0,0,28.09979438781738281, 5.993898868560791015, 19.32798957824707031, 3.647738218307495117,120,120,0,0,0,0,0),
+-- Navigator Meyer 31790
+(@CGUID+2,31790,614,1,1,0,0,34.22357559204101562, 0.067648001015186309, 19.76265525817871093, 3.071779489517211914,120,120,0,0,0,0,0),
+-- Sailor Dawning 31791
+(@CGUID+3,31791,614,1,1,0,0,-4.509765625, 6.7589111328125, 9.362600326538085937, 3.494414329528808593,120,120,0,0,0,0,0), -- waypoints
+-- Sailor Picardo 31792
+(@CGUID+4,31792,614,1,1,0,0,-1.572265625, -1.4178466796875, 9.376440048217773437, 1.206750392913818359,120,120,0,0,0,0,0), -- waypoints
+-- Sailor Phillips 31793
+(@CGUID+5,31793,614,1,1,0,0,15.9443359375, 0.0001220703125, 9.870411872863769531, 4.451737403869628906,120,120,0,0,0,0,0); -- waypoints
