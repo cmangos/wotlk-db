@@ -109,7 +109,7 @@ DELETE FROM `gossip_menu` WHERE `entry`=9066;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 (9066, 12262, 0, 0);
 
--- Sentinel Brightgrass 25013 9072
+-- Sentinel Brightgrass 25013
 UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25013;
 DELETE FROM `gossip_menu` WHERE `entry`=9072;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
@@ -118,20 +118,20 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 -- Sentinel Winterdew 25014
 UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25014;
 
--- Sailor Wills 25016 9071
-UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25016;
+-- Sailor Wills 25016
+UPDATE creature_template SET GossipMenuId = 9071 WHERE Entry = 25016;
 DELETE FROM `gossip_menu` WHERE `entry`=9071;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 (9071, 12268, 0, 0);
 
 -- Sailor Fairfolk 25017
-UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25017;
+UPDATE creature_template SET GossipMenuId = 9069 WHERE Entry = 25017;
 DELETE FROM `gossip_menu` WHERE `entry`=9069;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 (9069, 12266, 0, 0);
 
 -- Sailor Stoneheel 25018
-UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25018;
+UPDATE creature_template SET GossipMenuId = 9070 WHERE Entry = 25018;
 DELETE FROM `gossip_menu` WHERE `entry`=9070;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 (9070, 12267, 0, 0);
