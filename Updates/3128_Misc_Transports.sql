@@ -16,14 +16,13 @@ UPDATE creature_template SET UnitFlags = 33555200 WHERE entry = 24973;
 UPDATE creature_template SET EquipmentTemplateId = 736 WHERE entry = 24911;
  
 -- missing object -- map 571
--- Stairway to Merci 186949
+-- Stairway to Merci 187117
 DELETE FROM `gameobject` WHERE `guid` = 520437;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
-(520437, 186949, 571, 1, 1, 64.314239501953125, -3754.6875, -0.13587099313735961, 0.558503925800323486, 0, 0, 0.275636672973632812, 0.961261868476867675, -120, -120, 0, 1);
-
+(520437, 187117, 571, 1, 1, 97.52007, -3684.329, 2.943869, -2.024579, 0, 0, -0.8480473, 0.5299206, -120, -120, 0, 1);
 -- [DND] Icecrown Flight To Airship Bunny (A) 30476
 DELETE FROM creature_template_addon WHERE entry IN (30476);
-INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
+INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 (30476,0,0,1,0,0,0,'56852');
 
 -- Navigator Zippik 34730 -- gossip
