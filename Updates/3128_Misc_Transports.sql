@@ -139,6 +139,13 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 -- Marine Halters 24841
 UPDATE creature_template SET GossipMenuId = 9037 WHERE Entry = 24841;
 
-DELETE FROM npc_text WHERE ID IN(12266);
-INSERT INTO npc_text (ID, text0_1, lang0, prob0, em0_1,em0_2,em0_3) VALUES
-(12266,'I\'m almost jealous of our Mr. Wavesinger. Why, he may well be prettier than me!',7,1,1,3,11);
+-- Sailor Henders 24838
+UPDATE creature_template SET GossipMenuId = 9033 WHERE Entry = 24838;
+DELETE FROM `gossip_menu` WHERE `entry`=9033;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9033, 12211, 0, 0);
+
+DELETE FROM npc_text WHERE ID IN(12211,12266);
+INSERT INTO npc_text (ID, text0_0, text0_1, lang0, prob0, em0_1,em0_2,em0_3) VALUES
+(12211,'Fine day fer sailin\', innit?','',7,1,1,0,0),
+(12266,'','I\'m almost jealous of our Mr. Wavesinger. Why, he may well be prettier than me!',7,1,1,3,11);
