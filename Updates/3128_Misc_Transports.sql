@@ -90,3 +90,48 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 
 -- Mariner Keenstar 25054 -- gossip
 UPDATE creature_template SET GossipMenuId = 9081 WHERE Entry = 25054;
+
+-- Navigator Landerson 25015 -- gossip
+UPDATE creature_template SET GossipMenuId = 9067 WHERE Entry = 25015;
+DELETE FROM `gossip_menu` WHERE `entry`=9067;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9067, 12263, 0, 0);
+
+-- Captain Angelina Soluna 25009
+UPDATE creature_template SET GossipMenuId = 9068 WHERE Entry = 25009;
+DELETE FROM `gossip_menu` WHERE `entry`=9068;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9068, 12264, 0, 0);
+
+-- First Mate Wavesinger 25011
+UPDATE creature_template SET GossipMenuId = 9066 WHERE Entry = 25011;
+DELETE FROM `gossip_menu` WHERE `entry`=9066;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9066, 12262, 0, 0);
+
+-- Sentinel Brightgrass 25013 9072
+UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25013;
+DELETE FROM `gossip_menu` WHERE `entry`=9072;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9072, 12270, 0, 0);
+
+-- Sentinel Winterdew 25014
+UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25014;
+
+-- Sailor Wills 25016 9071
+UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25016;
+DELETE FROM `gossip_menu` WHERE `entry`=9071;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9071, 12268, 0, 0);
+
+-- Sailor Fairfolk 25017
+UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25017;
+DELETE FROM `gossip_menu` WHERE `entry`=9069;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9069, 12266, 0, 0);
+
+-- Sailor Stoneheel 25018
+UPDATE creature_template SET GossipMenuId = 9072 WHERE Entry = 25018;
+DELETE FROM `gossip_menu` WHERE `entry`=9070;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(9070, 12267, 0, 0);
