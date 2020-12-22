@@ -149,3 +149,9 @@ DELETE FROM npc_text WHERE ID IN(12211,12266);
 INSERT INTO npc_text (ID, text0_0, text0_1, lang0, prob0, em0_1,em0_2,em0_3) VALUES
 (12211,'Fine day fer sailin\', innit?','',7,1,1,0,0),
 (12266,'','I\'m almost jealous of our Mr. Wavesinger. Why, he may well be prettier than me!',7,1,1,3,11);
+
+-- Snack-O-Matic IV 24934
+-- Vend-O-Tron D-Luxe 24935
+REPLACE INTO creature_template_addon (entry,auras) VALUES
+(24934,28782),
+(24935,28782);
