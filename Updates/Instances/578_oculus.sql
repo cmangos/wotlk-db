@@ -362,22 +362,10 @@ DELETE FROM `dbscripts_on_relay` WHERE id BETWEEN 20047 AND 20050;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- for Amber Drake - related to vehicle control
 (20047,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Amber Drake: veh -> player'),
-(20047,4000,15,49459,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake: player -> player'),
-(20047,4000,15,49460,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
-(20047,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Amber Drake:'),
 -- for Emerald Drake - related to vehicle control
 (20048,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Emerald Drake: veh -> player'),
-(20048,4000,15,49427,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake: player -> player'),
-(20048,4000,15,49346,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
-(20048,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Emerald Drake:'),
 -- for Ruby Drake - related to vehicle control
-(20049,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Ruby Drake: veh -> player'),
-(20049,4000,15,49463,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake: player -> player'),
-(20049,4000,15,49464,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
-(20049,5000,15,53797,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Ruby Drake:'),
--- for all drakes - related to vehicle control
-(20050,0,15,50550,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Oculus Drakes: veh -> player'),
-(20050,0,15,50553,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Oculus Drakes: player -> player');
+(20049,0,37,0,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Ruby Drake: veh -> player');
 
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
