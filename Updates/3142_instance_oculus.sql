@@ -1,7 +1,3 @@
-
--- spell implemented by spell script
+-- Not reQ anymore
+DELETE FROM spell_area WHERE spell = 50296;
 DELETE FROM dbscripts_on_relay WHERE id IN (20050);
-DELETE FROM dbscripts_on_relay WHERE id IN (20048,20049,20047) AND command=15;
-
--- Fix condition for flight aura
-UPDATE spell_area SET aura_spell=0, area=4228 WHERE spell=50296;

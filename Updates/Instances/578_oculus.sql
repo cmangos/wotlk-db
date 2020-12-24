@@ -179,9 +179,9 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (28276,0,50331648,1,0,0,8192,NULL),
 (32261,0,0,1,0,0,0,NULL),
 -- summoned drakes
-(27755,0,0,0,0,0,0,'50325'),
-(27692,0,0,0,0,0,0,'50325'),
-(27756,0,0,0,0,0,0,'50248 50325');
+(27755,0,0,0,0,0,0,'50325 50296'),
+(27692,0,0,0,0,0,0,'50325 50296'),
+(27756,0,0,0,0,0,0,'50248 50325 50296');
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
