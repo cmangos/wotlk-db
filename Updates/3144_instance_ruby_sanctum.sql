@@ -21,22 +21,6 @@ INSERT INTO creature_template_addon (entry, auras) VALUES
 (40135, 74803),
 (40001, 74629);
 
--- missing vehicle accessories
-DELETE FROM vehicle_accessory WHERE vehicle_entry IN (40081,40470,40471,40472);
-INSERT INTO vehicle_accessory (vehicle_entry, seat, accessory_entry, comment) VALUES
-(40081,0,40083, 'Orb Carrier - Shadow Orb 1'),
-(40081,1,40100, 'Orb Carrier - Shadow Orb 2'),
-(40470,0,40083, 'Orb Carrier - Shadow Orb 1'),
-(40470,1,40100, 'Orb Carrier - Shadow Orb 2'),
-(40471,0,40083, 'Orb Carrier - Shadow Orb 1'),
-(40471,1,40100, 'Orb Carrier - Shadow Orb 2'),
-(40471,2,40468, 'Orb Carrier - Shadow Orb 3'),
-(40471,3,40469, 'Orb Carrier - Shadow Orb 4'),
-(40472,0,40083, 'Orb Carrier - Shadow Orb 1'),
-(40472,1,40100, 'Orb Carrier - Shadow Orb 2'),
-(40472,2,40468, 'Orb Carrier - Shadow Orb 3'),
-(40472,3,40469, 'Orb Carrier - Shadow Orb 4');
-
 -- Halion Controller is on all phases
 UPDATE creature SET phaseMask=33 WHERE id=40146;
 

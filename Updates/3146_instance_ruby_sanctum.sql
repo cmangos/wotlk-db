@@ -5,8 +5,8 @@ UPDATE creature_template SET Faction=14, UnitFlags=33554432, MinLevelHealth=3963
 -- Twilight ring
 UPDATE gameobject_template SET flags=48 WHERE entry=203624;
 
--- Orb rotation focus movement
-UPDATE creature_template SET MovementType=2 WHERE entry=40091;
+-- Orb rotation focus movement (all difficulty entries)
+UPDATE creature_template SET MovementType=2 WHERE entry IN (40091,43280,43281,43282);
 
 DELETE FROM creature_movement_template WHERE entry=40091;
 INSERT INTO creature_movement_template (entry,pathId,point,position_x,position_y,position_z,orientation,waittime,script_id) VALUES
