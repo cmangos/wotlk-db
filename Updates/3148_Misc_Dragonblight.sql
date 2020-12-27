@@ -42,3 +42,12 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2619801,0,31,27178,10,0,0,0,0,0,0,0,0,0,0,0,0,'search for 27178'),
 (2619801,1,22,1812,0x01 | 0x02,0,27178,15,7,0,0,0,0,0,0,0,0,'buddy: faction change'),
 (2619801,10,26,0,0,0,27178,15,1,0,0,0,0,0,0,0,0,'attack start');
+
+-- Invisible Stalker - corrections
+DELETE FROM creature_movement WHERE id IN (500601);
+INSERT INTO creature_movement (id,point,position_x,position_y,position_z,orientation,waittime,script_id) VALUES
+(500601,1,4756.25,1307.29,163.356,0,300000,1521405);
+DELETE FROM dbscripts_on_creature_movement WHERE id = 1521409;
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(1521409,0,10,27611,900000,1,0,0,0,1,0,0,0,4907.66,1460.16,214.942,3.51683,'');
+UPDATE creature_movement SET script_id = 1521409 WHERE id =  500589;
