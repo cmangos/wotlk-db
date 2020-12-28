@@ -52,25 +52,25 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+11,0,0,1,0,0,8192,NULL);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (28859,30248,30234);
+DELETE FROM `creature_movement_template` WHERE entry IN (28859,30248,30234,32295);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Malygos 28859
-(28859,0,1,812.73,1391.67,283.276,0,0,0),
-(28859,0,2,848.291,1358.61,283.276,0,0,0),
-(28859,0,3,853.923,1307.91,283.276,0,0,0),
-(28859,0,4,847.144,1265.54,283.276,0,0,0),
-(28859,0,5,839.923,1245.24,283.276,0,0,0),
-(28859,0,6,827.346,1221.82,283.276,0,0,0),
-(28859,0,7,803.273,1203.85,283.276,0,0,0),
-(28859,0,8,772.937,1197.98,283.276,0,0,0),
-(28859,0,9,732.114,1200.65,283.276,0,0,0),
-(28859,0,10,693.876,1217.99,283.276,0,0,0),
-(28859,0,11,664.504,1256.54,283.276,0,0,0),
-(28859,0,12,650.15,1303.48,283.276,0,0,0),
-(28859,0,13,662.911,1350.29,283.276,0,0,0),
-(28859,0,14,677.639,1377.61,283.276,0,0,0),
-(28859,0,15,704.82,1401.16,283.276,0,0,0),
-(28859,0,16,755.264,1417.1,283.276,0,0,0),
+(28859,0,1,803.273,1203.85,283.276,0,0,0),
+(28859,0,2,772.937,1197.98,283.276,0,0,0),
+(28859,0,3,732.114,1200.65,283.276,0,0,0),
+(28859,0,4,693.876,1217.99,283.276,0,0,0),
+(28859,0,5,664.504,1256.54,283.276,0,0,0),
+(28859,0,6,650.15,1303.48,283.276,0,0,0),
+(28859,0,7,662.911,1350.29,283.276,0,0,0),
+(28859,0,8,677.639,1377.61,283.276,0,0,0),
+(28859,0,9,704.82,1401.16,283.276,0,0,0),
+(28859,0,10,755.264,1417.1,283.276,0,0,0),
+(28859,0,11,812.73,1391.67,283.276,0,0,0),
+(28859,0,12,848.291,1358.61,283.276,0,0,0),
+(28859,0,13,853.923,1307.91,283.276,0,0,0),
+(28859,0,14,847.144,1265.54,283.276,0,0,0),
+(28859,0,15,839.923,1245.24,283.276,0,0,0),
+(28859,0,16,827.346,1221.82,283.276,0,0,0),
 -- Hover Disk 30248
 (30248,0,1,744.5175,1274.396,282.3402,0,0,0),
 (30248,0,2,735.6585,1279.234,282.3402,0,0,0),
@@ -110,7 +110,11 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (30234,3,2,770.608,1287.52,277.0551,0,0,0),
 (30234,3,3,776.096,1303.01,274.0536,0,0,0),
 (30234,3,4,763.998,1316.44,270.1367,0,0,0),
-(30234,3,5,754.212,1320.46,266.171,0,10000,20);
+(30234,3,5,754.212,1320.46,266.171,0,10000,20),
+-- Alexstrasza the Life-Binder 32295
+(32295,0,1,855.336,1224.684,300.083,100,0,0),
+(32295,0,2,854.548,1225.3,300.083,100,0,0),
+(32295,0,3,788.073,1276.091,246.90585,100,1000,3229503);
 
 -- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 
@@ -120,8 +124,12 @@ INSERT INTO creature_spawn_data(Guid,Id) VALUES
 (@CGUID+1, 1);
 
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(30234,616,28859,4096,0),
 (30245,616,28859,4096,0),
-(30249,616,28859,4096,0);
+(30249,616,28859,4096,0),
+(30248,616,28859,4096,0),
+(30084,616,28859,4096,0),
+(30592,616,28859,16+4096,0);
 
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
@@ -173,7 +181,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 DELETE FROM `dbscripts_on_creature_death` WHERE `id` IN (28859);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (28859,0,18,3000,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Despawn Self'),
-(28859,100,9,0,0,0,193908,100,4,0,0,0,0,0,0,0,0,'portal respawn');
+(28859,10000,10,32295,180000,0,0,0,0,1,0,0,0,841.476,1235.288,289.670,2.4891,'Malygos - spawn Alexstrasza after death');
 
 DELETE FROM dbscripts_on_go_template_use WHERE id IN (193958,193960);
 INSERT INTO dbscripts_on_go_template_use (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
@@ -188,8 +196,19 @@ INSERT INTO dbscripts_on_go_template_use (id,delay,command,datalong,datalong2,da
 (193960,2000,40,0,0,0,193960,10,4,0,0,0,0,0,0,0,0,'The Focusing Iris - self despawn'),
 (193960,5000,40,0,0,0,193908,100,4,0,0,0,0,0,0,0,0,'The Focusing Iris - portal despawn');
 
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3229503);
+INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(3229503,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - pause WP Movement'),
+(3229503,0,9,@OGUID+6,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn loot 10 man'),
+(3229503,0,9,@OGUID+7,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn loot 25 man'),
+(3229503,0,9,@OGUID+1,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn portal'),
+(3229503,0,15,61028,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - Cast Alexstrasza\'s Gift Beam'),
+(3229503,0,15,61023,0,0,32448,@CGUID+13,0x11,0,0,0,0,0,0,0,0,'Alexstrasza\'s Gift - Cast Alexstrasza\'s Gift Visual'),
+(3229503,5000,0,0,0,0,0,0,0,2000020746,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 1'),
+(3229503,12000,0,0,0,0,0,0,0,2000020747,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 2'),
+(3229503,16000,0,0,0,0,0,0,0,2000020748,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 3'),
+(3229503,40000,0,0,0,0,0,0,0,2000020749,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 4');
 
--- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
