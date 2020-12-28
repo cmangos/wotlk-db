@@ -101,4 +101,6 @@ UPDATE gameobject_template SET data3=0, data8=1 WHERE entry=178673; -- 21650, 0
 -- WoTLK section
 -- ============================================================
 
--- None
+-- The Eye of Eternity
+-- The Focusing Iris 193958 193960 & Exit Portal 193908 - must despawn
+UPDATE gameobject_template SET data5 = 1 WHERE entry IN (193958,193960,193908);
