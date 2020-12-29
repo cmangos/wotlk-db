@@ -37,16 +37,17 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+13,32448,616,3,1,0,0,754.544,1301.71,220.083,3.9968,3600,3600,0,0,3052,0,0,0);
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (28859,30090,30118,30161,30234,30245,30334,31253,32448);
+DELETE FROM `creature_template_addon` WHERE entry IN (28859,30090,30118,30161,30234,30245,30334,31253,32295,32448);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (28859,0,50331648,1,0,0,0,NULL),
 (30090,0,50331648,1,0,0,8192,'55883'),
 (30118,0,50331648,1,0,0,8192,'55949'),
 (30161,0,0,1,0,0,0,'60534'),
-(30234,0,0,1,0,0,0,43775),
-(30245,0,0,1,0,0,0,63150),
+(30234,0,0,1,0,0,0,'43775'),
+(30245,0,0,1,0,0,0,'63150'),
 (30334,0,0,1,0,0,8192,NULL),
 (31253,0,0,1,0,0,8192,NULL),
+(32295,0,50331648,1,0,0,0,NULL),
 (32448,0,50331648,1,0,0,8192,NULL);
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
@@ -95,22 +96,22 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (30234,0,2,742.2078,1290.518,276.2484,0,0,0),
 (30234,0,3,754.5398,1284.3,273.5815,0,0,0),
 (30234,0,4,766.5588,1290.345,269.6655,0,0,0),
-(30234,0,5,773.4768,1301.474,266.582,0,10000,20),
+(30234,0,5,773.4768,1301.474,266.582,0,100000,0),
 (30234,1,1,754.4617,1283.859,285.0522,0,0,0),
 (30234,1,2,766.2931,1312.904,277.0551,0,0,0),
 (30234,1,3,754.3397,1319.759,274.0536,0,0,0),
 (30234,1,4,742.1018,1312.714,270.1367,0,0,0),
-(30234,1,5,735.6851,1301.422,266.7208,0,10000,20),
+(30234,1,5,735.6851,1301.422,266.7208,0,100000,0),
 (30234,2,1,778.6023,1301.635,285.671,0,0,0), 
 (30234,2,2,740.015,1315.03,276.2484,0,0,0),
 (30234,2,3,733.492,1301.373,273.5815,0,0,0),
 (30234,2,4,741.451,1288.25,273.5815,0,0,0),
-(30234,2,5,754.832,1283.89,266.171,0,10000,20),
+(30234,2,5,754.832,1283.89,266.171,0,100000,0),
 (30234,3,1,730.3984,1301.644,285.091,0,0,0),
 (30234,3,2,770.608,1287.52,277.0551,0,0,0),
 (30234,3,3,776.096,1303.01,274.0536,0,0,0),
 (30234,3,4,763.998,1316.44,270.1367,0,0,0),
-(30234,3,5,754.212,1320.46,266.171,0,10000,20),
+(30234,3,5,754.212,1320.46,266.171,0,100000,0),
 -- Alexstrasza the Life-Binder 32295
 (32295,0,1,855.336,1224.684,300.083,100,0,0),
 (32295,0,2,854.548,1225.3,300.083,100,0,0),
@@ -209,6 +210,15 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`
 (3229503,16000,0,0,0,0,0,0,0,2000020748,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 3'),
 (3229503,40000,0,0,0,0,0,0,0,2000020749,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 4');
 
+SET @TGUID := 2000020746;
+DELETE FROM dbscript_string WHERE entry IN (@TGUID,@TGUID+1,@TGUID+2,@TGUID+3,@TGUID+4,@TGUID+5);
+INSERT INTO dbscript_string (entry, content_default, sound,type,comment) VALUES
+(@TGUID,'I did what I had to, brother. You gave me no alternative.',14406,1,'Eye of Eternity - Alexstrasza - Epilogue 1'),
+(@TGUID+1,'And so ends the Nexus War.',14407,1,'Eye of Eternity - Alexstrasza - Epilogue 2'),
+(@TGUID+2,'This resolution pains me deeply, but the destruction, the monumental loss of life had to end. Regardless of Malygos'' recent transgressions, I will mourn his loss. He was once a guardian, a protector. This day, one of the world''s mightiest has fallen.',14408,1,'Eye of Eternity - Alexstrasza - Epilogue 3'),
+(@TGUID+3,'The red dragonflight will take on the burden of mending the devastation wrought on Azeroth. Return home to your people and rest. Tomorrow will bring you new challenges, and you must be ready to face them. Life...goes on.',14409,1,'Eye of Eternity - Alexstrasza - Epilogue 4');
+
+
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -216,5 +226,4 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
