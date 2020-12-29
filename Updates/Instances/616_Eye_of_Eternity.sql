@@ -114,11 +114,12 @@ INSERT INTO creature_spawn_data(Guid,Id) VALUES
 (@CGUID+1, 1);
 
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(30084,616,28859,4096,0),
 (30234,616,28859,4096,0),
 (30245,616,28859,4096,0),
 (30249,616,28859,4096,0),
-(30248,616,28859,4096,0),
-(30084,616,28859,4096,0),
+(30248,616,30249,16+4096,0),
+(30282,616,28859,4096,0),
 (30592,616,28859,16+4096,0);
 
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES

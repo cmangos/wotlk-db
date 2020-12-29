@@ -38,3 +38,6 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 
 -- gameobject flags
 UPDATE gameobject_template SET flags=32 WHERE entry=193070;
+
+-- update vehicle regen
+UPDATE creature_template SET RegenerateStats=12 WHERE entry IN (30161,31752);
