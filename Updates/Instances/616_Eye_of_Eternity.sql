@@ -8,6 +8,7 @@ EndDBScriptData */
 SET @CGUID := 6160000; -- creatures
 SET @OGUID := 6160000; -- gameobjects
 SET @PGUID := 53800;   -- pools
+SET @TGUID := 2000020746; -- texts
 
 -- =========
 -- CREATURES
@@ -56,22 +57,10 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 DELETE FROM `creature_movement_template` WHERE entry IN (28859,30248,30234,32295);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Malygos 28859
-(28859,0,1,803.273,1203.85,283.276,0,0,0),
-(28859,0,2,772.937,1197.98,283.276,0,0,0),
-(28859,0,3,732.114,1200.65,283.276,0,0,0),
-(28859,0,4,693.876,1217.99,283.276,0,0,0),
-(28859,0,5,664.504,1256.54,283.276,0,0,0),
-(28859,0,6,650.15,1303.48,283.276,0,0,0),
-(28859,0,7,662.911,1350.29,283.276,0,0,0),
-(28859,0,8,677.639,1377.61,283.276,0,0,0),
-(28859,0,9,704.82,1401.16,283.276,0,0,0),
-(28859,0,10,755.264,1417.1,283.276,0,0,0),
-(28859,0,11,812.73,1391.67,283.276,0,0,0),
-(28859,0,12,848.291,1358.61,283.276,0,0,0),
-(28859,0,13,853.923,1307.91,283.276,0,0,0),
-(28859,0,14,847.144,1265.54,283.276,0,0,0),
-(28859,0,15,839.923,1245.24,283.276,0,0,0),
-(28859,0,16,827.346,1221.82,283.276,0,0,0),
+(28859,0,1,681.60156,1207.4656,296.10846,3.3734,12000,2885901),
+(28859,0,2,667.27295,1381.0862,295.97543,2.2934,12000,2885901),
+(28859,0,3,817.99976,1403.616,295.97275,0.16899,12000,2885901),
+(28859,0,4,811.4829,1213.8649,295.97217,0.0983,12000,2885901),
 -- Hover Disk 30248
 (30248,0,1,744.5175,1274.396,282.3402,0,0,0),
 (30248,0,2,735.6585,1279.234,282.3402,0,0,0),
@@ -197,7 +186,7 @@ INSERT INTO dbscripts_on_go_template_use (id,delay,command,datalong,datalong2,da
 (193960,2000,40,0,0,0,193960,10,4,0,0,0,0,0,0,0,0,'The Focusing Iris - self despawn'),
 (193960,5000,40,0,0,0,193908,100,4,0,0,0,0,0,0,0,0,'The Focusing Iris - portal despawn');
 
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (3229503);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3229503,2885901);
 INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (3229503,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - pause WP Movement'),
 (3229503,0,9,@OGUID+6,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn loot 10 man'),
@@ -205,19 +194,19 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`
 (3229503,0,9,@OGUID+1,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn portal'),
 (3229503,0,15,61028,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - Cast Alexstrasza\'s Gift Beam'),
 (3229503,0,15,61023,0,0,32448,@CGUID+13,0x11,0,0,0,0,0,0,0,0,'Alexstrasza\'s Gift - Cast Alexstrasza\'s Gift Visual'),
-(3229503,5000,0,0,0,0,0,0,0,2000020746,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 1'),
-(3229503,12000,0,0,0,0,0,0,0,2000020747,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 2'),
-(3229503,16000,0,0,0,0,0,0,0,2000020748,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 3'),
-(3229503,40000,0,0,0,0,0,0,0,2000020749,0,0,0,0,0,0,0,'Alexstrasza\'s - say epilogue 4');
+(3229503,5000,0,0,0,0,0,0,0,@TGUID,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 1'),
+(3229503,12000,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 2'),
+(3229503,16000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 3'),
+(3229503,40000,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 4'),
+(2885901,1000,15,56046,0,0,30118,50,0x01,0,0,0,0,0,0,0,0,'Malygos - cast Portal Beam'),
+(2885901,11000,47,3,0,0,0,0,0,0,0,0,0,0,0,0,0,'Malygos - interrupt casting');
 
-SET @TGUID := 2000020746;
-DELETE FROM dbscript_string WHERE entry IN (@TGUID,@TGUID+1,@TGUID+2,@TGUID+3,@TGUID+4,@TGUID+5);
+DELETE FROM dbscript_string WHERE entry IN (@TGUID,@TGUID+1,@TGUID+2,@TGUID+3);
 INSERT INTO dbscript_string (entry, content_default, sound,type,comment) VALUES
 (@TGUID,'I did what I had to, brother. You gave me no alternative.',14406,1,'Eye of Eternity - Alexstrasza - Epilogue 1'),
 (@TGUID+1,'And so ends the Nexus War.',14407,1,'Eye of Eternity - Alexstrasza - Epilogue 2'),
 (@TGUID+2,'This resolution pains me deeply, but the destruction, the monumental loss of life had to end. Regardless of Malygos'' recent transgressions, I will mourn his loss. He was once a guardian, a protector. This day, one of the world''s mightiest has fallen.',14408,1,'Eye of Eternity - Alexstrasza - Epilogue 3'),
 (@TGUID+3,'The red dragonflight will take on the burden of mending the devastation wrought on Azeroth. Return home to your people and rest. Tomorrow will bring you new challenges, and you must be ready to face them. Life...goes on.',14409,1,'Eye of Eternity - Alexstrasza - Epilogue 4');
-
 
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

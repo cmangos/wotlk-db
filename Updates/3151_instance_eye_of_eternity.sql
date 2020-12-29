@@ -35,3 +35,6 @@ INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,
 (3229503,12000,0,0,0,0,0,0,@TGUID+1,'Alexstrasza\'s - say epilogue 2'),
 (3229503,16000,0,0,0,0,0,0,@TGUID+2,'Alexstrasza\'s - say epilogue 3'),
 (3229503,40000,0,0,0,0,0,0,@TGUID+3,'Alexstrasza\'s - say epilogue 4');
+
+-- gameobject flags
+UPDATE gameobject_template SET flags=32 WHERE entry=193070;
