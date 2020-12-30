@@ -41,3 +41,18 @@ UPDATE gameobject_template SET flags=32 WHERE entry=193070;
 
 -- update vehicle regen
 UPDATE creature_template SET RegenerateStats=12 WHERE entry IN (30161,31752);
+
+-- spell script targets for vortex and surge of power
+DELETE FROM spell_script_target WHERE entry IN (55853,56263,56264,56265,56266,61071,61072,61073,61074,61075,56505);
+INSERT INTO spell_script_target VALUES
+(55853,1,30090,0),
+(56263,1,30090,0),
+(56264,1,30090,0),
+(56265,1,30090,0),
+(56266,1,30090,0),
+(61071,1,30090,0),
+(61072,1,30090,0),
+(61073,1,30090,0),
+(61074,1,30090,0),
+(61075,1,30090,0),
+(56505,1,30334,0);
