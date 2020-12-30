@@ -3,12 +3,13 @@
 -- Hover Disk 30234
 UPDATE creature_template SET UnitFlags = 33554432, MovementType = 2 WHERE entry = 30234;
 -- control spell
-DELETE FROM npc_spellclick_spells WHERE npc_entry = 30234;
+DELETE FROM npc_spellclick_spells WHERE npc_entry IN (30234,30248);
 INSERT INTO npc_spellclick_spells (npc_entry, spell_id, quest_start, quest_start_active, quest_end, cast_flags, condition_id) VALUES
-(30234,61421,0,0,0,1,0);
+(30234,61421,0,0,0,1,0),
+(30248,61421,0,0,0,1,0);
 
--- Hover Disk 30248
-UPDATE creature_template SET MovementType = 3 WHERE entry = 30248;
+-- Hover Disk 30248 & 30248
+UPDATE creature_template SET UnitFlags = 33554432, MovementType = 3 WHERE entry IN (30234,30248);
 
 -- Heart of Magic 194159
 -- must be accesable in heroic mode

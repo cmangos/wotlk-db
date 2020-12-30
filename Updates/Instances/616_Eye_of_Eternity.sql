@@ -38,7 +38,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+13,32448,616,3,1,0,0,754.544,1301.71,220.083,3.9968,3600,3600,0,0,3052,0,0,0);
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (28859,30090,30118,30161,30234,30245,30334,31253,32295,32448);
+DELETE FROM `creature_template_addon` WHERE entry IN (28859,30090,30118,30161,30234,30245,30248,30334,31253,32295,32448);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (28859,0,50331648,1,0,0,0,NULL),
 (30090,0,50331648,1,0,0,8192,'55883'),
@@ -46,6 +46,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (30161,0,0,1,0,0,0,'60534'),
 (30234,0,0,1,0,0,0,'43775'),
 (30245,0,0,1,0,0,0,'63150'),
+(30248,0,0,1,0,0,0,'43775'),
 (30334,0,0,1,0,0,8192,NULL),
 (31253,0,0,1,0,0,8192,NULL),
 (32295,0,50331648,1,0,0,0,NULL),
