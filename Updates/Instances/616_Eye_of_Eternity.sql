@@ -332,9 +332,6 @@ INSERT INTO dbscripts_on_go_template_use (id,delay,command,datalong,datalong2,da
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (3229503,2885901);
 INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (3229503,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - pause WP Movement'),
-(3229503,0,9,@OGUID+6,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn loot 10 man'),
-(3229503,0,9,@OGUID+7,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn loot 25 man'),
-(3229503,0,9,@OGUID+1,3600,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - respawn portal'),
 (3229503,0,15,61028,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - Cast Alexstrasza\'s Gift Beam'),
 (3229503,0,15,61023,0,0,32448,@CGUID+13,0x11,0,0,0,0,0,0,0,0,'Alexstrasza\'s Gift - Cast Alexstrasza\'s Gift Visual'),
 (3229503,5000,0,0,0,0,0,0,0,@TGUID,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 1'),

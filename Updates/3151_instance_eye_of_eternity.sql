@@ -26,9 +26,6 @@ INSERT INTO dbscript_string (entry, content_default, sound,type,comment) VALUES
 DELETE FROM dbscripts_on_creature_movement WHERE id=3229503;
 INSERT INTO dbscripts_on_creature_movement (id,delay,command,datalong,datalong2,buddy_entry,search_radius,data_flags,dataint,comments) VALUES
 (3229503,0,32,1,0,0,0,0,0,'Alexstrasza - pause WP Movement'),
-(3229503,0,9,6160006,1800,0,0,0,0,'Alexstrasza - respawn loot 10 man'),
-(3229503,0,9,6160007,1800,0,0,0,0,'Alexstrasza - respawn loot 25 man'),
-(3229503,0,9,6160001,1800,0,0,0,0,'Alexstrasza - respawn portal'),
 (3229503,0,15,61028,0,0,0,0,0,'Alexstrasza - Cast Alexstrasza\'s Gift Beam'),
 (3229503,0,15,61023,0,32448,6160013,0x11,0,'Alexstrasza\'s Gift - Cast Alexstrasza\'s Gift Visual'),
 (3229503,5000,0,0,0,0,0,0,@TGUID,'Alexstrasza\'s - say epilogue 1'),
