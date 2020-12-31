@@ -263,7 +263,7 @@ INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`,
 (30249,616,28859,4096,0),
 (30248,616,28859,4096,0),
 (30282,616,28859,4096,0),
-(30592,616,28859,16+4096,0);
+(30592,616,28859,16+4096+8192,0);
 
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
