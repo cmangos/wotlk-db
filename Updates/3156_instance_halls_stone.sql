@@ -78,7 +78,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (27980,1,5,1293.723022,667.221008,189.607651,100,1000,2798001);
 
 -- creature movement scripts
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (192163,192163);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (2798001,2798001);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (2798001,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Earthen Dwarf - pause WP Movement'),
 (2798001,0,25,0,0,0,27978,100,0,0,0,0,0,0,0,0,0,'Earthen Dwarf - attack Sjonnir');
