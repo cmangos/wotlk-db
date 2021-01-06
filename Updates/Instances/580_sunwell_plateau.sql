@@ -444,12 +444,12 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+327, 2, 1806.641, 586.4019, 51.12543, 0, 0, 0),
 (@CGUID+327, 3, 1800.891, 580.1519, 51.12543, 0, 0, 0),
 (@CGUID+327, 4, 1797.641, 568.9019, 53.12543, 0, 0, 0),
-(@CGUID+327, 5, 1795.163, 559.262, 55.45198, 0, 0, 2548602), -- Emote state
+(@CGUID+327, 5, 1795.163, 559.262, 55.45198, 0, 100, 2548602), -- Emote state
 -- Pathing for Shadowsword Vanquisher Entry: 25486
 (@CGUID+328, 1, 1797.451, 588.6753, 51.14029, 0, 0, 0),
 (@CGUID+328, 2, 1798.701, 581.4253, 51.14029, 0, 0, 0),
 (@CGUID+328, 3, 1793.201, 573.4253, 53.14029, 0, 0, 0),
-(@CGUID+328, 4, 1782.493, 565.2297, 56.48238, 0, 0, 2548602), -- Emote state
+(@CGUID+328, 4, 1782.493, 565.2297, 56.48238, 0, 100, 2548602), -- Emote state
 -- Pathing for Shadowsword Manafiend Entry: 25483
 (@CGUID+330, 1, 1761.895, 511.8103, 80.35925, 0, 0, 0),
 (@CGUID+330, 2, 1770.5, 498.5753, 74.15498, 0, 0, 0),
@@ -600,8 +600,8 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (25644, 0, 15, 1755.888, 924.1495, 15.58635, 100, 18000, 2564401),
 (25644, 0, 16, 1755.888, 924.1495, 15.58635, 100, 0, 2564402),
 -- Shadowsword Deathbringer 25485 - ZoneCombatPulse would pull all surrounding groups which is not intended - HACK
-(25485, 0, 1, 1680.382, 542.687, 85.27053, 0, 0, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
-(25485, 0, 2, 1680.382, 542.687, 85.27053, 0, 0, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
+(25485, 0, 1, 1680.382, 542.687, 85.27053, 0, 10, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
+(25485, 0, 2, 1680.382, 542.687, 85.27053, 0, 10, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
 (25485, 0, 3, 1666.52, 562.1425, 85.08298, 0, 0, 0),
 (25485, 0, 4, 1650.734, 568.0248, 85.12753, 0, 0, 0),
 (25485, 0, 5, 1632.968, 584.8542, 84.9715, 0, 0, 0),
@@ -625,10 +625,10 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (25485, 0, 23, 1572.274, 537.1907, 38.79183, 0, 0, 0),
 (25485, 0, 24, 1583.751, 521.8306, 32.67748, 0, 0, 0),
 (25485, 0, 25, 1588.915, 506.6923, 32.80248, 0, 0, 0),
-(25485, 0, 26, 1588.915, 506.6923, 32.80248, 0, 0, 1),
+(25485, 0, 26, 1588.915, 506.6923, 32.80248, 0, 100, 1),
 -- Pathing for Volatile Fiend Entry: 25851
-(25851, 0, 1, 1697.917, 502.315, 86.48821, 0, 0, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
-(25851, 0, 2, 1697.917, 502.315, 86.48821, 0, 0, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
+(25851, 0, 1, 1697.917, 502.315, 86.48821, 0, 10, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
+(25851, 0, 2, 1697.917, 502.315, 86.48821, 0, 10, 5), -- spawnpoint - hack due to movementtype change and waypoint script execution delay
 (25851, 0, 3, 1666.52, 562.1425, 85.08298, 0, 0, 0),
 (25851, 0, 4, 1650.734, 568.0248, 85.12753, 0, 0, 0),
 (25851, 0, 5, 1632.968, 584.8542, 84.9715, 0, 0, 0),
@@ -652,7 +652,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (25851, 0, 23, 1572.274, 537.1907, 38.79183, 0, 0, 0),
 (25851, 0, 24, 1583.751, 521.8306, 32.67748, 0, 0, 0),
 (25851, 0, 25, 1588.915, 506.6923, 32.80248, 0, 0, 0),
-(25851, 0, 26, 1588.915, 506.6923, 32.80248, 0, 0, 1);
+(25851, 0, 26, 1588.915, 506.6923, 32.80248, 0, 100, 1);
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+153, 0, 0, 1, 0, 0, 0, '45769 18950 18943'), -- Sunblade Protector
