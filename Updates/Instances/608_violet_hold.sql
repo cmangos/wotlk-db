@@ -39,7 +39,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+10,29312,608,3,1,0,0,1844.56,748.708,38.742,0.820305,86400,86400,0,0,227580,0,0,0),
 -- Ichoron 29313
 (@CGUID+11,29313,608,3,1,0,0,1942.04,749.523,30.9523,2.30383,86400,86400,0,0,227580,69658,0,0),
--- Zuramat the Obliterator 29314 
+-- Zuramat the Obliterator 29314
 (@CGUID+12,29314,608,3,1,0,0,1934.15,860.946,47.295,3.97935,86400,86400,0,0,227580,0,0,0),
 -- Erekem 29315
 (@CGUID+13,29315,608,3,1,0,0,1871.46,871.036,43.4152,5.11381,86400,86400,0,0,136548,74500,0,0),
@@ -116,26 +116,109 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+5,0,0,1,0,0,0,NULL),
 (@CGUID+44,0,0,1,0,0,0,NULL);
 
--- INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+DELETE FROM `creature_movement_template` WHERE entry IN (29266,29314,31079);
+INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- Xevozz 29266
+(29266,0,1,1905.5573,841.3157,38.65529,100,0,0),
+(29266,0,2,1899.4531,832.533,38.707516,100,1000,2926601),
+-- Lavanthor 29312
+(29312,0,1,1857.5451,765.4296,38.6519,100,0,0),
+(29312,0,2,1864.5377,775.4355,38.6467,100,1000,2926601),
+-- Ichoron 29313
+(29313,0,1,1930.5714,762.9065,31.988142,100,0,0),
+(29313,0,2,1923.6571,770.67175,34.072556,100,0,0),
+(29313,0,3,1910.6315,784.4096,37.090145,100,0,0),
+(29313,0,4,1906.5955,788.3828,37.99429,100,1000,2926601),
+-- Zuramat 29314
+(29314,0,1,1927.0851,852.1342,47.19214,100,0,0),
+(29314,0,2,1923.2262,847.32965,47.155415,100,1000,2926601),
+-- Erekem 29315
+(29315,0,1,1874.9656,859.4174,43.3335,100,0,0),
+(29315,0,2,1877.4371,851.5638,43.3335,100,1000,2926601),
+-- Moragg 29316
+(29316,0,1,1893.0819,743.8965,47.6671 ,100,0,0),
+(29316,0,2,1890.2272,756.4537,47.6671,100,1000,2926601),
+-- Erekem Guard 29395
+(29395,0,1,1883.8885,853.9411,43.333588,100,0,0),
+(29395,0,2,1882.4610,851.9995,43.333588,100,1000,2926601),
+(29395,1,1,1870.6835,853.7429,43.333588,100,0,0),
+(29395,1,2,1872.3028,851.8318,43.333588,100,1000,2926601),
+-- Lieutenant Sinclari 30658
+(30658,0,1,1829.1422,798.219,44.36212,100,2000,3065801),
+(30658,0,2,1829.1422,798.219,44.36212,0.12217,3000,3065802),
+(30658,0,3,1820.12,803.916,44.36466,100,15000,3065803),
+(30658,1,1,1820.9203,804.0025,44.364655,100,0,0),
+(30658,1,2,1827.8864,804.05554,44.36467,100,1000,7),
+-- Violet Hold Guard 30659
+(30659,0,1,1806.955,803.851,44.36,100,1000,3065901),
+-- Azure Saboteur 31079
+(31079,0,1,1886.3100,821.5830,38.638538,100,0,0),
+(31079,0,2,1882.6068,835.1575,38.701836,100,0,0),
+(31079,0,3,1880.4750,842.0772,43.333542,100,0,0),
+(31079,0,4,1874.0802,863.9732,43.330002,100,1000,3107901),
+(31079,1,1,1889.6897,807.00323,38.399143,100,0,0),
+(31079,1,2,1906.9099,818.2574,38.865963,100,0,0),
+(31079,1,3,1929.0299,824.2713,46.091652,100,0,0),
+(31079,1,4,1928.4412,842.8891,47.150776,100,0,0),
+(31079,1,5,1927.4545,851.6091,47.190945,100,0,0),
+(31079,1,6,1927.9467,852.29865,47.19637,100,1000,3107901),
+(31079,2,1,1889.0962,810.0487,38.438713,100,0,0),
+(31079,2,2,1896.5471,823.5473,38.72863,100,0,0),
+(31079,2,3,1906.6663,842.3111,38.633514,100,1000,3107901),
+(31079,3,1,1888.6721,801.2348,38.42305,100,0,0),
+(31079,3,2,1901.9874,793.32544,38.65126,100,1000,3107901),
+(31079,4,1,1874.3681,787.017,39.0805,100,0,0),
+(31079,4,2,1855.283,760.859,38.6528,100,1000,3107901),
+(31079,5,1,1885.2438,777.5424,38.6332,100,0,0),
+(31079,5,2,1888.1802,763.5512,47.6668,100,0,0),
+(31079,5,3,1893.4327,740.6964,47.6600,100,1000,3107901),
+-- Arakkoa Windwalker 32226
+(32226,0,1,1874.9656,859.4174,43.3335,100,0,0),
+(32226,0,2,1877.4371,851.5638,43.3335,100,1000,2926601),
+-- Arakkoa Talon Guard 32228
+(32228,0,1,1883.8885,853.9411,43.333588,100,0,0),
+(32228,0,2,1882.4610,851.9995,43.333588,100,1000,2926601),
+(32228,1,1,1870.6835,853.7429,43.333588,100,0,0),
+(32228,1,2,1872.3028,851.8318,43.333588,100,1000,2926601),
+-- Void Lord 32230
+(32230,0,1,1927.0851,852.1342,47.19214,100,0,0),
+(32230,0,2,1923.2262,847.32965,47.155415,100,1000,2926601),
+-- Ethereal Wind Trader 32231
+(32231,0,1,1905.5573,841.3157,38.65529,100,0,0),
+(32231,0,2,1899.4531,832.533,38.707516,100,1000,2926601),
+-- Swirling Water Revenant 32234
+(32234,0,1,1930.5714,762.9065,31.988142,100,0,0),
+(32234,0,2,1923.6571,770.67175,34.072556,100,0,0),
+(32234,0,3,1910.6315,784.4096,37.090145,100,0,0),
+(32234,0,4,1906.5955,788.3828,37.99429,100,1000,2926601),
+-- Chaos Watcher 32235
+(32235,0,1,1893.0819,743.8965,47.6671 ,100,0,0),
+(32235,0,2,1890.2272,756.4537,47.6671,100,1000,2926601),
+-- Lava Hound 32237
+(32237,0,1,1857.5451,765.4296,38.6519,100,0,0),
+(32237,0,2,1864.5377,775.4355,38.6467,100,1000,2926601);
+
 -- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 -- Erekem Guard 29395 to Erekem 29315
-(29395,608,29315,7,0),
--- x to Lieutenant Sinclari 30658
-(30660,608,30658,16,0),
-(30661,608,30658,16,0),
-(30662,608,30658,16,0),
-(30663,608,30658,16,0),
-(30664,608,30658,16,0),
-(30665,608,30658,16,0),
-(30666,608,30658,16,0),
-(30667,608,30658,16,0),
-(30668,608,30658,16,0),
-(30695,608,30658,16,0),
-(31079,608,30658,16,0),
-(31134,608,30658,16,0),
-(32191,608,30658,16,0);
+(29395,608,29315,1+2+4096,0),
+-- Arakkoa Talon Guard 32228 to Arakkoa Windwalker 32226
+(32228,608,32226,1+2+4096,0),
+-- Trash mobs to Lieutenant Sinclari 30658
+(30660,608,30658,8192,0),
+(30661,608,30658,8192,0),
+(30662,608,30658,8192,0),
+(30663,608,30658,8192,0),
+(30664,608,30658,8192,0),
+(30665,608,30658,8192,0),
+(30666,608,30658,8192,0),
+(30667,608,30658,8192,0),
+(30668,608,30658,8192,0),
+(30695,608,30658,8192,0),
+(31079,608,30658,8192,0),
+(31134,608,30658,8192,0),
+(32191,608,30658,8192,0);
 
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
@@ -193,15 +276,62 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
--- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+DELETE FROM `dbscripts_on_creature_death` WHERE id IN (31134);
+INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(31134,0,18,1,0,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - despawn self'),
+(31134,1000,10,30658,0,0,0,0,0,0,0,0,0,1819.1594,804.06683,44.447987,0.08726,'Cyanigosa - summon Sinclari at the end'),
+(31134,2000,0,0,0,0,30658,150,4,@TGUID+2,0,0,0,0,0,0,0,'Sinclari - say end'),
+(31134,2000,29,1,0,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - remove npc flag'),
+(31134,2000,20,2,1,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - start WP movement'),
+(31134,12000,29,1,1,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - add npc flag');
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2926601,3107901,3065801,3065802,3065803,3065901);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(2926601,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Violet Hold boss - pause WP Movement'),
+(2926601,3000,48,768,0,0,0,0,0,0,0,0,0,0,0,0,0,'Violet Hold boss - remove immune player and immune npc unit flags'),
+(3107901,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - pause WP Movement'),
+(3107901,3000,15,58291,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - cast Shield Disruption'),
+(3107901,4000,15,58291,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - cast Shield Disruption'),
+(3107901,5000,15,58291,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - cast Shield Disruption'),
+(3107901,7000,15,51347,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - cast Teleport Visual Only'),
+(3107901,7000,35,1000,150,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - send custom AI event A around'),
+(3107901,8000,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - despawn self'),
+(3065801,0,1,432,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - emote'),
+(3065801,0,10,30837,0,0,0,0,0,0,0,0,0,1888.146,803.382,58.604,3.072,'Sinclari - summon defense systems'),
+(3065802,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Sinclari - say begin'),
+(3065802,3000,18,0,0,0,31011,@CGUID+42,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
+(3065802,3000,18,0,0,0,31011,@CGUID+43,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
+(3065802,3000,18,0,0,0,31011,@CGUID+44,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
+(3065802,3000,25,1,0,0,30659,@CGUID+24,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,3000,25,1,0,0,30659,@CGUID+25,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,3000,25,1,0,0,30659,@CGUID+26,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,3000,25,1,0,0,30659,@CGUID+27,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,4000,20,2,0,0,30659,@CGUID+24,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,4000,20,2,0,0,30659,@CGUID+25,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,4000,20,2,0,0,30659,@CGUID+26,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065802,4000,20,2,0,0,30659,@CGUID+27,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
+(3065803,0,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Sinclari - say close door'),
+(3065803,3000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - emote'),
+(3065803,9000,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - despawn self'),
+(3065803,10000,10,30658,0,0,0,0,0,0,0,0,0,1816.1852,804.0629,44.44799,3.17649,'Sinclari - summon Sinclari behind the door'),
+(3065901,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Violet Hold Guard - despawn self');
+
+DELETE FROM `dbscripts_on_go_template_use` WHERE id IN (193615,193611);
+INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(193611,0,10,30837,0,0,0,0,0,0,0,0,0,1888.146,803.382,58.604,3.072,'Activation Crystal - summon defense systems'),
+(193611,0,27,4,0,0,0,0,0,0,0,0,0,0,0,0,0,'Activation Crystal - set no-interact');
+
+DELETE FROM `dbscript_string` WHERE `entry` IN (@TGUID+0,@TGUID+1,@TGUID+2);
+INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
+(@TGUID+0,'Prison guards, we are leaving! These adventurers are taking over! Go, go, go!',0,1,0,5,'sinclari: say_begin'),
+(@TGUID+1,'I\'m locking the door. Good luck, and thank you for doing this.',0,0,0,396,'sinclari: say_lock_door'),
+(@TGUID+2,'You did it! You held the Blue Dragonflight back and defeated their commander. Amazing work!',0,0,0,396,'sinclari: say_victory');
+
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
