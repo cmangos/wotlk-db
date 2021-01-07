@@ -10,7 +10,9 @@ SET @OGUID := 5950000; -- gameobjects
 SET @PGUID := 53100;   -- pools
 
 -- texts
-SET @TGUID := 2000025101; -- texts
+-- 2000025800 - 2000025999 Reserved
+SET @TGUID := 2000025800;
+
 
 
 -- =========

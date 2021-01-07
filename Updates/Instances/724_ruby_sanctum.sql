@@ -9,6 +9,12 @@ SET @CGUID := 7240000; -- creatures
 SET @OGUID := 7240000; -- gameobjects
 SET @PGUID := 52600;   -- pools
 
+-- texts
+-- 2000029400 - 2000029599 Reserved
+SET @TGUID := 2000029400;
+
+
+
 -- =========
 -- CREATURES
 -- =========
@@ -333,16 +339,27 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3975101,1,31,26712,30,0,0,0,0,0,0,0,0,0,0,0,0,'search for 26712'),
 (3975101,100,15,76221,4,0,26712,35,1,0,0,0,0,0,0,0,0,'Cast Barrier Channel on target'),
 -- Sanctum Guardian Xerestrasza 40429
-(4042901,0,0,0,0,0,0,0,0,2000005535,0,0,0,0,0,0,0,'Xerestrasza: 1st yell text'),
-(4042902,0,0,0,0,0,0,0,0,2000005536,0,0,0,0,0,0,0,'Xerestrasza: 2nd yell text'),
-(4042903,0,0,0,0,0,0,0,0,2000005537,0,0,0,0,0,0,0,'Xerestrasza: 3rd yell text'),
+(4042901,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Xerestrasza: 1st yell text'),
+(4042902,0,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Xerestrasza: 2nd yell text'),
+(4042903,0,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Xerestrasza: 3rd yell text'),
 (4042903,100,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Xerestrasza: stop movement'),
-(4042903,7000,0,0,0,0,0,0,0,2000005538,0,0,0,0,0,0,0,'Xerestrasza: 4th yell text'),
-(4042903,18000,0,0,0,0,0,0,0,2000005539,0,0,0,0,0,0,0,'Xerestrasza: 5th yell text'),
-(4042903,28000,0,0,0,0,0,0,0,2000005540,0,0,0,0,0,0,0,'Xerestrasza: 6th yell text'),
-(4042903,38000,0,0,0,0,0,0,0,2000005541,0,0,0,0,0,0,0,'Xerestrasza: 7th yell text'),
-(4042903,47000,0,0,0,0,0,0,0,2000005542,0,0,0,0,0,0,0,'Xerestrasza: 8th yell text'),
+(4042903,7000,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Xerestrasza: 4th yell text'),
+(4042903,18000,0,0,0,0,0,0,0,@TGUID+4,0,0,0,0,0,0,0,'Xerestrasza: 5th yell text'),
+(4042903,28000,0,0,0,0,0,0,0,@TGUID+5,0,0,0,0,0,0,0,'Xerestrasza: 6th yell text'),
+(4042903,38000,0,0,0,0,0,0,0,@TGUID+6,0,0,0,0,0,0,0,'Xerestrasza: 7th yell text'),
+(4042903,47000,0,0,0,0,0,0,0,@TGUID+7,0,0,0,0,0,0,0,'Xerestrasza: 8th yell text'),
 (4042903,54000,29,2,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'Xerestrasza: set quest giver flag');
+
+DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+7;
+INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
+(@TGUID+0,'Thank you! I could not have held out for much longer.... A terrible thing has happened here.',17491,1,0,5,'Xerestrasza: say_epilogue_1'),
+(@TGUID+1,'We believed the Sanctum was well-fortified, but we were not prepared for the nature of this assault.',17492,0,0,1,'Xerestrasza: say_epilogue_2'),
+(@TGUID+2,'The Black dragonkin materialized from thin air, and set upon us before we could react.',17493,0,0,1,'Xerestrasza: say_epilogue_3'),
+(@TGUID+3,'We did not stand a chance. As my brethren perished around me, I managed to retreat here and bar the entrance.',17494,0,0,1,'Xerestrasza: say_epilogue_4'),
+(@TGUID+4,'They slaughtered us with cold efficiency, but the true focus of their interest seemed to be the eggs kept here in the Sanctum.',17495,0,0,1,'Xerestrasza: say_epilogue_5'),
+(@TGUID+5,'The commander of the forces on the ground here is a cruel brute named Zarithrian, but I fear there are greater powers at work.',17496,0,0,1,'Xerestrasza: say_epilogue_6'),
+(@TGUID+6,'In their initial assault, I caught a glimpse of their true leader, a fearsome full-grown twilight dragon.',17497,0,0,1,'Xerestrasza: say_epilogue_7'),
+(@TGUID+7,'I know not the extent of their plans, heroes, but I know this:  They cannot be allowed to succeed!',17498,0,0,5,'Xerestrasza: say_epilogue_8');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -353,16 +370,4 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN 2000005535 AND 2000005542;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(2000005535,'Thank you! I could not have held out for much longer.... A terrible thing has happened here.',17491,1,0,5,'Xerestrasza: say_epilogue_1'),
-(2000005536,'We believed the Sanctum was well-fortified, but we were not prepared for the nature of this assault.',17492,0,0,1,'Xerestrasza: say_epilogue_2'),
-(2000005537,'The Black dragonkin materialized from thin air, and set upon us before we could react.',17493,0,0,1,'Xerestrasza: say_epilogue_3'),
-(2000005538,'We did not stand a chance. As my brethren perished around me, I managed to retreat here and bar the entrance.',17494,0,0,1,'Xerestrasza: say_epilogue_4'),
-(2000005539,'They slaughtered us with cold efficiency, but the true focus of their interest seemed to be the eggs kept here in the Sanctum.',17495,0,0,1,'Xerestrasza: say_epilogue_5'),
-(2000005540,'The commander of the forces on the ground here is a cruel brute named Zarithrian, but I fear there are greater powers at work.',17496,0,0,1,'Xerestrasza: say_epilogue_6'),
-(2000005541,'In their initial assault, I caught a glimpse of their true leader, a fearsome full-grown twilight dragon.',17497,0,0,1,'Xerestrasza: say_epilogue_7'),
-(2000005542,'I know not the extent of their plans, heroes, but I know this:  They cannot be allowed to succeed!',17498,0,0,5,'Xerestrasza: say_epilogue_8');
-
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES

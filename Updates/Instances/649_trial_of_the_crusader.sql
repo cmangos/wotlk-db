@@ -9,6 +9,12 @@ SET @CGUID := 6490000; -- creatures
 SET @OGUID := 6490000; -- gameobjects
 SET @PGUID := 54300;   -- pools
 
+-- texts
+-- 2000028600 - 2000028799 Reserved
+SET @TGUID := 2000028600;
+
+
+
 -- =========
 -- CREATURES
 -- =========
