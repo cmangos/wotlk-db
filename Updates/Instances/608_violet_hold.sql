@@ -277,6 +277,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
+DELETE FROM spell_script_target WHERE entry IN (54258,54264,54265,54266,54267);
+INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
+(54258,3,@CGUID+17,0),
+(54264,3,@CGUID+18,0),
+(54265,3,@CGUID+19,0),
+(54266,3,@CGUID+16,0),
+(54267,3,@CGUID+15,0);
+
 DELETE FROM `dbscripts_on_creature_death` WHERE id IN (31134);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (31134,0,18,1,0,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - despawn self'),

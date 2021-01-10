@@ -1,6 +1,6 @@
 
 -- script targets
-DELETE FROM spell_script_target WHERE entry IN (59474,54160,57912,57930,58040);
+DELETE FROM spell_script_target WHERE entry IN (59474,54160,57912,57930,58040,54269);
 INSERT INTO spell_script_target VALUES
 (59474,1,29266,0),
 (59474,1,32231,0),
@@ -20,8 +20,10 @@ INSERT INTO spell_script_target VALUES
 (57912,1,30667,0),
 (57912,1,30668,0),
 (57912,1,32191,0),
+(57912,1,29321,0),
 (57930,1,30857,0),
-(58040,1,30896,0);
+(58040,1,30896,0),
+(54269,1,29313,0);
 
 -- Fix units
 UPDATE creature_template SET faction=1718 WHERE entry=30837;
