@@ -21,10 +21,12 @@ INSERT INTO spell_script_target VALUES
 (57912,1,30668,0),
 (57912,1,32191,0),
 (57912,1,29321,0),
+(57912,1,29364,0),
+(57912,1,29365,0),
 (57930,1,30857,0),
 (58040,1,30896,0),
 (54269,1,29313,0);
 
 -- Fix units
 UPDATE creature_template SET faction=1718 WHERE entry=30837;
-UPDATE creature_template SET MinLevel=80, MaxLevel=80 WHERE entry= 29364;
+UPDATE creature_template SET MinLevel=75, MaxLevel=75 WHERE entry= 29364;

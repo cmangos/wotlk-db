@@ -201,6 +201,8 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 -- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+-- Void Sentry ball 29365 to Void Sentry 29364
+(29365,608,29364,16+8192,5),
 -- Erekem Guard 29395 to Erekem 29315
 (29395,608,29315,1+2+4096,0),
 -- Arakkoa Talon Guard 32228 to Arakkoa Windwalker 32226
