@@ -30,3 +30,5 @@ INSERT INTO spell_script_target VALUES
 -- Fix units
 UPDATE creature_template SET faction=1718 WHERE entry=30837;
 UPDATE creature_template SET MinLevel=75, MaxLevel=75 WHERE entry= 29364;
+UPDATE creature_template SET MinLevel=77, MaxLevel=77 WHERE entry= 32582;
+UPDATE creature_template SET MinLevel=80, MaxLevel=80 WHERE entry= 32583;
