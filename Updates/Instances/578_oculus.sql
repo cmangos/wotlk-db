@@ -193,7 +193,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 
 -- Waypoints
 -- Ley-Guardian Eregos - summoned (BaseScript wont remove it)
-UPDATE creature_template SET MovementType = 2 WHERE entry = 27656;
+UPDATE creature_template SET MovementType = 2 WHERE entry IN (27656,31561);
 DELETE FROM `creature_movement_template` WHERE entry = 27656;
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
 -- Ley-Guardian Eregos
