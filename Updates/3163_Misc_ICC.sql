@@ -114,7 +114,7 @@ INSERT INTO npc_vendor (entry, item, maxcount, incrtime, ExtendedCost) VALUES
 UPDATE creature_template SET UnitFlags = 768 WHERE entry = 37120;
 
 -- Niby the Almighty 38182
-UPDATE creature_template SET NpcFlags = 4225, GossipMenuId = 11098 WHERE entry = 38182;
+UPDATE creature_template SET NpcFlags = 4225, GossipMenuId = 11104 WHERE entry = 38182;
 -- Haragg the Unseen 38181
 UPDATE creature_template SET Faction = 1735, UnitFlags = 33536, GossipMenuId = 11104, EquipmentTemplateId = 2527 WHERE entry = 38181;
 DELETE FROM creature_equip_template WHERE entry=2527;
