@@ -3,7 +3,7 @@ SET @ENTRY := 16823;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -708.30505,`position_y` = 2609.6428,`position_z` = 91.01124, `orientation` = 0.224904835224151611 WHERE `id` = @ENTRY;
 UPDATE `creature_template_addon` SET `emote` = 0 WHERE `entry` = @ENTRY;
 DELETE FROM `creature_movement_template` WHERE `entry` = @ENTRY;
-INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`entry`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@ENTRY, 1, -708.30505, 2609.6428, 91.01124, 100, 10000, 1682303),
 (@ENTRY, 2, -715.83636, 2596.8953, 91.011246, 100, 0, 0),
 (@ENTRY, 3, -715.83636, 2596.8953, 91.011246, 3.543018341064453125, 45000, 1682301),
@@ -34,7 +34,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 SET @ENTRY := 19263;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -1169.1476,`position_y` = 3247.6526,`position_z` = 115.8963 WHERE `id` = @ENTRY;
 DELETE FROM `creature_movement_template` WHERE `entry` = @ENTRY;
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@ENTRY, 0, 1, -1169.1476, 3247.6526, 115.8963, 100, 0, 0),
 (@ENTRY, 0, 2, -1176.5558, 3243.1106, 114.60441, 100, 0, 0),
 (@ENTRY, 0, 3, -1183.971, 3239.4177, 113.42218, 100, 0, 0),
@@ -53,7 +53,7 @@ SET @GUID := 75689;
 UPDATE `creature` SET `spawndist`=0, `MovementType`=2, `position_x`=-3049.762, `position_y`=4943.09, `position_z`=-22.1865, `spawntimesecsmin` = 120, `spawntimesecsmax` = 300 WHERE `guid`=@GUID;
 UPDATE `creature` SET `spawndist`=0, `MovementType`=0, `position_x`=-3059.272, `position_y`=4938.409, `position_z`=-21.7935, `spawntimesecsmin` = 120, `spawntimesecsmax` = 300 WHERE `guid`=75690;
 DELETE FROM `creature_movement` WHERE `id`=@GUID;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@GUID, 1, -2962.236, 4952.288, -22.08331, 100, 0, 5),
 (@GUID, 2, -2944.132, 4971.261, -21.78384, 100, 0, 0),
 (@GUID, 3, -2929.484, 5005.881, -22.49984, 100, 0, 0),
@@ -89,7 +89,7 @@ UPDATE `creature` SET `spawndist`=0, `MovementType`=0, `position_x`=-2854.46 , `
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-2855.576,`position_y`=5060.972,`position_z`=-19.11174 WHERE `guid`= 78290;
 DELETE FROM `creature_movement` WHERE `id` = 78290;
 DELETE FROM `creature_movement_template` WHERE `entry`= 22272;
-INSERT INTO `creature_movement_template` (`entry`,`point`,`position_x`,`position_y`,`position_z`,`orientation`,`waittime`,`script_id`) VALUES
+INSERT INTO `creature_movement_template` (`entry`,`point`,`positionx`,`positiony`,`positionz`,`orientation`,`waittime`,`scriptid`) VALUES
 (22272, 1, -2855.576, 5060.972, -19.11174, 100, 0, 0),
 (22272, 2, -2846.081, 5070.058, -18.10468, 100, 0, 0),
 (22272, 3, -2838.776, 5074.004, -17.35468, 100, 0, 0),
@@ -108,7 +108,7 @@ UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=2091.0728,`pos
 UPDATE `creature` SET `spawndist`=0,`MovementType`=0,`position_x`=2094.6752,`position_y`=4735.022,`position_z`=143.7814 WHERE `guid`= 74097;
 REPLACE INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES (74097, 74096, 512);
 DELETE FROM `creature_movement` WHERE `id`=@GUID;
-INSERT INTO `creature_movement` (`id`,`point`,`position_x`,`position_y`,`position_z`,`orientation`,`waittime`,`script_id`) VALUES
+INSERT INTO `creature_movement` (`id`,`point`,`positionx`,`positiony`,`positionz`,`orientation`,`waittime`,`scriptid`) VALUES
 (@GUID, 1, 2091.0728, 4737.275, 143.78003, 100, 0, 0),
 (@GUID, 2, 2121.3452, 4779.1426, 143.98746, 100, 0, 0),
 (@GUID, 3, 2152.2275, 4755.893, 153.68098, 100, 0, 0);
@@ -118,7 +118,7 @@ INSERT INTO `creature_movement` (`id`,`point`,`position_x`,`position_y`,`positio
 -- Readd Pathing for Kor'kron Wyvern Rider 21153 (74219,74220)
 DELETE FROM `creature_movement` WHERE `id` IN (SELECT guid from creature where id IN (21153)) ORDER BY id,point;
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 2115301;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`, `comment`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`, `comment`) VALUES
 /*
 (74219, 1, -3014.28, 2567.43, 141.622, 100, 0, 9, 'GENERIC - Set Active Object On'),
 (74219, 2, -2997.18, 2547.18, 141.622, 100, 0, 0, NULL),
@@ -178,7 +178,7 @@ SET @GUID := 57951;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -700.562,`position_y` = 2712.6985,`position_z` = 94.734665 WHERE `guid` = @GUID;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0, `position_x` = -698.546,`position_y` = 2713.9548,`position_z` = 94.734665 WHERE `guid` = 57952;
 DELETE FROM `creature_movement` WHERE `id` = @GUID;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@GUID, 1, -700.562, 2712.6985, 94.734665, 100, 0, 0),
 (@GUID, 2, -703.22766, 2713.1536, 94.73219, 100, 0, 0),
 (@GUID, 3, -710.5607, 2711.432, 94.721115, 100, 0, 0),
@@ -231,7 +231,7 @@ SET @GUID := 57943;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -774.9339,`position_y` = 2639.4988,`position_z` = 107.93347 WHERE `guid` = @GUID;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0, `position_x` = -774.5711,`position_y` = 2638.5059,`position_z` = 107.93347 WHERE `guid` = 57944;
 DELETE FROM `creature_movement` WHERE `id` = @GUID;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@GUID, 01, -774.9339, 2639.4988, 107.93347, 100, 0, 0),
 (@GUID, 02, -774.5711, 2638.5059, 107.93347, 100, 0, 0),
 (@GUID, 03, -760.7536, 2645.9062, 107.93347, 100, 0, 0),
@@ -260,7 +260,7 @@ SET @GUID := 57948;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -660.2137,`position_y` = 2763.4387,`position_z` = 90.42306 WHERE `guid` = @GUID;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0, `position_x` = -657.5147,`position_y` = 2762.2771,`position_z` = 89.2967 WHERE `guid` = 151000;
 DELETE FROM `creature_movement` WHERE `id` = @GUID;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@GUID, 1, -660.2137, 2763.4387, 90.42306, 100, 0, 0),
 (@GUID, 2, -675.24036, 2770.6475, 93.3978, 100, 0, 0),
 (@GUID, 3, -694.93475, 2767.0405, 95.037445, 100, 0, 0),
@@ -271,7 +271,7 @@ SET @GUID := 57923;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 2, `position_x` = -874.9681,`position_y` = 2770.691,`position_z` = 35.034378 WHERE `guid` = @GUID;
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0, `position_x` = -877.9042,`position_y` = 2772.1533,`position_z` = 32.89001 WHERE `guid` = 57937;
 DELETE FROM `creature_movement` WHERE `id` = @GUID;
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (@GUID, 1, -874.9681, 2770.691, 35.034378, 100, 0, 0),
 (@GUID, 2, -867.01086, 2766.6047, 40.72687, 100, 0, 0),
 (@GUID, 3, -865.31287, 2738.136, 57.46007, 100, 0, 0),
