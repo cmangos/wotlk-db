@@ -313,7 +313,9 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+22,7,5208.8535,2220.6455,658.38434,100,0,0),
 (@CGUID+22,8,5211.6025,2204.7432,655.92426,100,0,0);
 
--- INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(36536,632,36502,16+4096,0);
+
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
 
