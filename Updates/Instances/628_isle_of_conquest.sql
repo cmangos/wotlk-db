@@ -168,11 +168,18 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (13116,13117,25748);
+DELETE FROM `creature_template_addon` WHERE entry IN (13116,13117,25748,35379,35380,36349,36350,35377);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (13116,0,0,0,0,0,0,NULL),
 (13117,0,0,0,0,0,0,NULL),
-(25748,0,0,0,0,0,0,45948);
+(25748,0,0,0,0,0,0,45948),
+(35379,0,0,0,0,0,0,6157),
+(35380,0,0,0,0,0,0,66157),
+(36349,0,0,0,0,0,0,68652),
+(36350,0,0,0,0,0,0,68652),
+(35377,0,0,0,0,0,0,67359);
+
+
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
@@ -200,7 +207,17 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (35336,0,7,793.339,-232.55,-0.078396,4.69487,1000,3);
 
 -- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
--- INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+
+DELETE FROM `creature_linking_template` WHERE `entry` IN (28319,32629,36356,34777,34778,36355,34918,34919);
+INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(36356, 628, 34776, 8224, 5),
+(34777, 628, 34776, 8224, 5),
+(34778, 628, 35069, 8224, 5),
+(36355, 628, 35069, 8224, 5),
+(28319, 571, 28312, 8224, 5),
+(32629, 571, 32627, 8224, 5),
+(34918, 628, 34922, 3, 30),
+(34919, 628, 34924, 3, 30);
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
 
@@ -411,6 +428,44 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3500301,4000,15,51347,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gunship captain - Cast Teleport Visual Only'),
 (3500301,5000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Gunship captain - Despawn');
 
+DELETE FROM dbscripts_on_event WHERE id IN (22080,22082,22078,22079,22081,22083);
+INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, x, y, z, o, comments) VALUES
+-- front gate alliance
+(22080, 0, 10, 35377, 0, 412.8299, -852.2292, 68.23322, 0, 'summon Door Fire on front alliance gate destroyed'),
+(22080, 0, 10, 35377, 0, 415.901,  -852.3941, 87.59631, 0, 'summon Door Fire on front alliance gate destroyed'),
+(22080, 0, 10, 35377, 0, 412.0677, -864.5746, 68.24164, 0, 'summon Door Fire on front alliance gate destroyed'),
+(22080, 0, 10, 35377, 0, 413.1962, -811.158,  87.83065, 0, 'summon Door Fire on front alliance gate destroyed'),
+-- west gate alliance
+(22082, 0, 10, 35377, 0, 337.2813, -762.0278, 76.03584, 0, 'summon Door Fire on west alliance gate destroyed'),
+(22082, 0, 10, 35377, 0, 373.9618, -769.5504, 88.71865, 0, 'summon Door Fire on west alliance gate destroyed'),
+(22082, 0, 10, 35377, 0, 333.4219, -759.8004, 88.20628, 0, 'summon Door Fire on west alliance gate destroyed'),
+-- !BIG NOTE!: following coords are guesswork or made up
+-- east gate alliance
+(22078, 0, 10, 35377, 0, 369.5700, -902.3808, 68.42002, 0, 'summon Door Fire on east alliance gate destroyed'),
+(22078, 0, 10, 35377, 0, 368.9431, -903.0549, 87.90176, 0, 'summon Door Fire on east alliance gate destroyed'),
+(22078, 0, 10, 35377, 0, 330.4990, -901.8975, 88.64622, 0, 'summon Door Fire on east alliance gate destroyed'),
+-- front horde
+(22079, 0, 10, 35377, 20000, 1138.7783, -773.1696, 48.57696, 0, 'summon Door Fire on front horde gate destroyed'),
+(22079, 0, 10, 35377, 20000, 1162.5317, -753.8282, 48.62722, 0, 'summon Door Fire on front horde gate destroyed'),
+(22079, 0, 10, 35377, 20000, 1161.8109, -770.3510, 48.62722, 0, 'summon Door Fire on front horde gate destroyed'),
+-- west horde
+(22083, 0, 10, 35377, 20000, 1208.0107, -688.5151, 48.80675, 0, 'summon Door Fire on west horde gate destroyed'),
+(22083, 0, 10, 35377, 20000, 1207.5378, -666.9844, 49.06026, 0, 'summon Door Fire on west horde gate destroyed'),
+(22083, 0, 10, 35377, 20000, 1227.3540, -670.9146, 48.44815, 0, 'summon Door Fire on west horde gate destroyed'),
+-- east horde
+(22081, 0, 10, 35377, 20000, 1209.4190, -858.9687, 49.11448, 0, 'summon Door Fire on east horde gate destroyed'),
+(22081, 0, 10, 35377, 20000, 1228.9729, -843.1778, 48.94345, 0, 'summon Door Fire on east horde gate destroyed'),
+(22081, 0, 10, 35377, 20000, 1208.0471, -843.0504, 48.92275, 0, 'summon Door Fire on east horde gate destroyed');
+
+DELETE FROM dbscripts_on_relay WHERE id IN (20500,20501,20502);
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(20500,10,31,22515,15,0,0,0,0,0,0,0,0,0,0,0,0,'Part of High Commander Halford Wyrmbane / Overlord Agmar EAI: search for 22515 (terminate if not found)'),
+(20500,500,15,66776,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of High Commander Halford Wyrmbane / Overlord Agmar EAI: cast 66776'),
+(20500,900,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of High Commander Halford Wyrmbane / Overlord Agmar EAI: send self event A'),
+(20501,0,29,16777216,0,0,0,0,0,0,0,0,0,0,0,0,0,'remove npc flag spellclick'),
+(20502,1,3,0,0,0,0,0,0,0,0,0,0,772.602,-852.394,12.48976,1.58825,'move to position'),
+(20502,8,29,16777216,1,0,0,0,0,0,0,0,0,0,0,0,0,'add npc flag spellclick');
+
 DELETE FROM `dbscript_string` WHERE entry = @TGUID+0;
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `broadcast_text_id`, `comment`) VALUES
 (@TGUID+0,'All aboard the gunship! Man the guns!','0','1','0','0','0','Gunship Captain - yell on spawn');
@@ -420,8 +475,6 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
