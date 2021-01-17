@@ -190,4 +190,28 @@ UPDATE conditions t, (SELECT DISTINCT condition_entry, comments FROM conditions)
    SET t.comments = CONCAT('(',t1.comments,' AND ',t2.comments,')')
  WHERE t.value1 = t1.condition_entry AND t.value2= t2.condition_entry AND t.comments IS NULL
    AND t.type = -1;
-
+  
+-- Backport Corrections  
+-- Classic -> WOTLK
+UPDATE dbscripts_on_creature_death SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_event SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_relay SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_creature_movement SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_quest_end SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_quest_start SET datalong = 82 WHERE datalong = 147 AND command = 2;
+UPDATE dbscripts_on_spell SET datalong = 82 WHERE datalong = 147 AND command = 2;
+-- TBC -> WOTLK
+UPDATE dbscripts_on_creature_death SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_event SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_relay SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_creature_movement SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_quest_end SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_quest_start SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_spell SET datalong = 82 WHERE datalong = 168 AND command = 2;
+UPDATE dbscripts_on_creature_death SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_event SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_relay SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_creature_movement SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_quest_end SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_quest_start SET datalong = 59 WHERE datalong = 46 AND command = 2;
+UPDATE dbscripts_on_spell SET datalong = 59 WHERE datalong = 46 AND command = 2;
