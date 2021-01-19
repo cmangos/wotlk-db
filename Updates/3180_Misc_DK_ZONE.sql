@@ -1,5 +1,8 @@
 -- DK ZONE Fixes
 
+-- Acherus Dummy 28935
+UPDATE creature_template SET InhabitType = 4 WHERE entry = 28935;
+
 -- Gluttonous Geist 28905
 UPDATE creature SET spawntimesecsmin = 30, spawntimesecsmax = 30 WHERE id = 28905;
 -- Gothik the Harvester 28890
