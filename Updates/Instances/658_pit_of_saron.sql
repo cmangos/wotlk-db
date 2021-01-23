@@ -344,7 +344,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+286,37713,658,3,1,0,0,626.212,112.326,510.01,6.17846,14400,14400,0,0,80640,8814,0,0);
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (32780,36476,36477,36494,36495,36658,36661,36794,36874,36886,36877,36891,36907,36913,37222,37711,37712,37713);
+DELETE FROM `creature_template_addon` WHERE entry IN (32780,36476,36477,36494,36495,36658,36661,36794,36830,36874,36886,36877,36891,36907,36913,37222,37711,37712,37713);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (32780,0,0,1,0,0,0,NULL),
 (36476,0,0,1,0,0,0,NULL),
@@ -473,17 +473,20 @@ INSERT INTO creature_conditional_spawn (guid, EntryAlliance, EntryHorde, Comment
 (@CGUID+158,36773,36767,'PoS - Horde Slave 36773 / Alliance Slave 36767'),
 (@CGUID+159,36773,36767,'PoS - Horde Slave 36773 / Alliance Slave 36767');
 
-DELETE FROM `creature_linking_template` WHERE `master_entry` = 36494;
+DELETE FROM `creature_linking_template` WHERE `entry` IN (36907,36658);
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
-(36907,658,36494,1,0);
+(36907,658,36494,1,0),
+(36658,658,36794,8192,30);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (37583,37774) AND pathId=1;
 DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId=2;
 DELETE FROM `creature_movement_template` WHERE entry IN (37496,37584) AND pathId BETWEEN 9 AND 17;
 DELETE FROM `creature_movement_template` WHERE entry IN (37497,37588) AND pathId BETWEEN 4 AND 7;
 DELETE FROM `creature_movement_template` WHERE entry IN (37498,37587) AND pathId BETWEEN 3 AND 5;
-DELETE FROM `creature_movement_template` WHERE entry IN (37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794);
+DELETE FROM `creature_movement_template` WHERE entry IN (36477,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- Krick 36477
+(36477,0,1,838.8732,118.114006,509.732,3.3595,1000,3647701),
 -- Alliance Slave 36764
 (36764,0,1,691.8768,-150.4028,528.0264,100,0,0),
 (36764,0,2,692.1875,-163.0215,527.246,100,0,0),
@@ -647,11 +650,90 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 -- Corrupted Champion 36796
 (36796,0,1,440.7882,213.75868,528.71027,100,1000,7),
 -- Scourgelord Tyrannus 36794
-(36794,0,1,716.38196,181.1927,582.37604,100,1000,7),
+(36794,0,1,716.38196,181.1927,582.37604,100,1000,3679401),
+(36794,1,1,641.8559,89.27604,583.1108,100,0,0),
+(36794,1,2,794.1667,115.68577,583.1108,100,0,0),
+(36794,1,3,873.783,136.97743,623.6115,100,0,0),
+(36794,1,4,872.90454,139.2743,622.44464,100,0,0),
+(36794,1,5,888.7917,171.34029,591.36145,100,0,0),
+(36794,1,6,861.3073,209.84549,591.36145,100,0,0),
+(36794,1,7,830.49133,254.55556,591.36145,100,0,0),
+(36794,1,8,780.4844,277.64062,591.36145,100,0,0),
+(36794,1,9,732.67706,272.46353,591.36145,100,0,0),
+(36794,1,10,683.9028,265.27603,591.36145,100,0,0),
+(36794,1,11,612.3368,284.7934,553.49976,100,0,0),
+(36794,1,12,554.816,303.18576,553.4998,100,0,0),
+(36794,1,13,498.10245,309.0625,553.4998,100,0,0),
+(36794,1,14,470.41666,230.01736,553.4998,100,0,0),
+(36794,1,15,454.0087,175.21355,553.4998,100,0,0),
+(36794,1,16,492.42883,127.18056,583.1108,100,0,0),
+(36794,1,17,551.26044,121.63541,583.1108,100,0,0),
+(36794,1,18,647.5573,126.35416,583.1108,100,0,0),
+(36794,1,19,766.2222,130.92535,583.1108,100,0,0),
+(36794,1,20,829.408,42.338543,583.1108,100,0,0),
+(36794,1,21,746.7101,-53.032986,583.1108,100,0,0),
+(36794,1,22,663.23785,-77.322914,583.1108,100,0,0),
+(36794,1,23,618.6389,3.369792,583.1108,100,0,0),
+-- Fallen Warrior 36841
+(36841,0,1,943.9626,-64.600975,592.5323,100,0,0),
+(36841,0,2,933.671,-53.38114,591.9073,100,0,0),
+(36841,0,3,931.8698,-39.411644,591.0975,100,0,0),
+(36841,0,4,932.2065,-29.835077,589.59503,100,0,0),
+(36841,0,5,932.6393,-21.315575,586.84503,1.68074,1000,3684101),
+(36841,1,1,929.54364,-68.73554,591.9947,100,0,0),
+(36841,1,2,923.04,-63.96327,592.0975,100,0,0),
+(36841,1,3,916.8791,-38.884624,588.8475,100,0,0),
+(36841,1,4,917.21576,-29.308062,586.72003,100,0,0),
+(36841,1,5,917.6642,-20.452187,584.59503,100,1000,3684101),
+(36841,2,1,924.1915,-46.620453,590.9725,100,0,0),
+(36841,2,2,924.175,-14.84304,583.97003,100,0,0),
+(36841,2,3,929.0277,12.827184,576.8562,100,0,0),
+(36841,2,4,939.0779,30.528597,572.7901,100,0,0),
+(36841,2,5,942.88745,39.22293,570.5279,100,1000,3684101),
+(36841,3,1,940.86884,-52.149593,592.1573,100,0,0),
+(36841,3,2,932.02234,-40.40119,591.0975,100,0,0),
+(36841,3,3,934.11523,-15.693359,585.2158,100,0,0),
+(36841,3,4,937.3538,2.1525154,578.4151,100,0,0),
+(36841,3,5,956.8341,16.420652,574.83215,100,1000,3684101),
+(36841,4,1,926.4499,-56.284153,591.8475,100,0,0),
+(36841,4,2,914.31854,-42.22956,588.9725,100,0,0),
+(36841,4,3,919.187,-14.496518,583.47003,100,0,0),
+(36841,4,4,930.4441,23.748713,574.7312,100,0,0),
+(36841,4,5,938.3078,41.229588,570.6529,100,1000,3684101),
+(36841,5,1,926.38367,-53.14757,591.7225,100,0,0),
+(36841,5,2,927.6476,-21.027779,586.22003,100,1000,3684101),
+-- Wrathbone Coldwraith 36842
+(36842,0,1,920.7483,-43.092014,590.0975,100,0,0),
+(36842,0,2,922.9393,-28.199654,587.59503,100,0,0),
+(36842,0,3,924.93054,-12.454862,583.22003,100,0,0),
+(36842,0,4,931.40625,15.836805,575.9812,100,0,0),
+(36842,0,5,936.05206,30.387154,573.0401,100,1000,3684101),
+(36842,1,1,933.8507,-48.39236,591.7823,100,0,0),
+(36842,1,2,933.7292,-38.06597,591.4073,100,0,0),
+(36842,1,3,933.98267,-25.130209,588.4658,100,1000,3684101),
+(36842,2,1,920.1823,-48.84375,590.9725,100,0,0),
+(36842,2,2,922.8301,-28.68164,587.34503,100,1000,3684101),
+(36842,3,1,934.02606,-14.08507,584.4658,100,0,0),
+(36842,3,2,937.00696,0.149306,579.1651,100,0,0),
+(36842,3,3,949.5868,23.911459,574.0401,100,1000,3684101),
 -- Lady Sylvanas Windrunner 36990
 (36990,0,1,440.7882,213.75868,528.71027,6.23082,1000,3699001),
+(36990,1,1,777.2274,119.5521,510.0363,6.05,1000,3699003),
+(36990,1,2,823.3984,114.49068,509.4899,100,1000,3699002),
+(36990,1,3,812.7118,85.65625,509.27676,100,0,0),
+(36990,1,4,815.32117,62.435764,509.95938,100,0,0),
+(36990,1,5,820.57117,42.34722,509.83438,100,0,0),
+(36990,1,6,830.0643,20.479166,510.2001,100,0,0),
+(36990,1,7,845.9167,1.947917,510.143,100,1000,7),
 -- Lady Jaina Proudmoore 36993
 (36993,0,1,440.7882,213.75868,528.71027,6.23082,1000,3699301),
+(36993,1,1,777.2274,119.5521,510.0363,6.05,1000,3699003),
+(36993,1,2,821.3056,117.86676,509.37094,100,1000,3699302),
+(36993,1,3,812.7118,85.65625,509.27676,100,0,0),
+(36993,1,4,815.32117,62.435764,509.95938,100,0,0),
+(36993,1,5,820.57117,42.34722,509.83438,100,0,0),
+(36993,1,6,830.0643,20.479166,510.2001,100,0,0),
+(36993,1,7,845.9167,1.947917,510.143,100,1000,7),
 -- Ymirjar Deathbringer 36892
 (36892,0,1,939.4566,80.375,564.98615,100,0,0),
 (36892,0,2,914.7256,76.66406,553.80286,100,1000,3689201),
@@ -1000,7 +1082,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (3676401,3676701,3757201,3759102,3699001,3699301,3758301,3749801,3689201,3749802);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3676401,3676701,3757201,3759102,3699001,3699301,3758301,3749801,3689201,3749802,3699002,3699302,3679401,3647701,3684101,3699003);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Garfrost ending event
 (3676401,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliance | Horde Slave - pause WP Movement'),
@@ -1011,6 +1093,9 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3757201,0,1,233,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliance | Horde Slave - set emote state'),
 (3759102,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus | Gorkun Ironskull - pause WP Movement'),
 (3759102,0,1,333,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus | Gorkun Ironskull - set emote state'),
+(3759102,0,0,0,0,0,0,0,0,@TGUID+26,0,0,0,0,0,0,0,'Martin Victus | Gorkun Ironskull - say epilogue'),
+(3759102,2000,0,0,0,0,36794,600,0,@TGUID+25,0,0,0,0,0,0,0,'Tyrannus - say epilogue 2'),
+(3759102,4000,1,333,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus | Gorkun Ironskull - set emote state'),
 -- Intro Sylvanas
 (3699001,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - pause WP Movement'),
 (3699001,0,1,333,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - set emote state'),
@@ -1025,7 +1110,6 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3699001,42000,0,0,0,0,36794,@CGUID+168,16,@TGUID+7,0,0,0,0,0,0,0,'Tyrannus - intro 4'),
 (3699001,45000,25,1,0,0,36794,@CGUID+168,16,0,0,0,0,0,0,0,0,'Tyrannus - set run on'),
 (3699001,46000,20,2,0,0,36794,@CGUID+168,16,0,0,0,0,0,0,0,0,'Tyrannus - move WP'),
-(3699001,46000,18,17000,0,0,36794,@CGUID+168,17,0,0,0,0,0,0,0,0,'Tyrannus - despawn on timer'),
 (3699001,52000,0,0,0,0,0,0,0,@TGUID+10,0,0,0,0,0,0,0,'Sylvanas - intro 3'),
 (3699001,57000,0,0,0,0,0,0,0,@TGUID+12,0,0,0,0,0,0,0,'Sylvanas - intro 4'),
 -- Intro Jaina
@@ -1042,7 +1126,6 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3699301,42000,0,0,0,0,36794,@CGUID+168,16,@TGUID+7,0,0,0,0,0,0,0,'Tyrannus - intro 4'),
 (3699301,45000,25,1,0,0,36794,@CGUID+168,16,0,0,0,0,0,0,0,0,'Tyrannus - set run on'),
 (3699301,46000,20,2,0,0,36794,@CGUID+168,16,0,0,0,0,0,0,0,0,'Tyrannus - move WP'),
-(3699301,46000,18,17000,0,0,36794,@CGUID+168,17,0,0,0,0,0,0,0,0,'Tyrannus - despawn on timer'),
 (3699301,46000,0,0,0,0,0,0,0,@TGUID+8,0,0,0,0,0,0,0,'Jaina - intro 3'),
 (3699301,52000,0,0,0,0,0,0,0,@TGUID+9,0,0,0,0,0,0,0,'Jaina - intro 4'),
 (3699301,57000,0,0,0,0,0,0,0,@TGUID+11,0,0,0,0,0,0,0,'Jaina - intro 5'),
@@ -1053,9 +1136,53 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3749802,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliance | Horde soldier - pause WP Movement'),
 (3749802,0,15,69413,1,0,0,0,0,0,0,0,0,0,0,0,0,'Alliance | Horde soldier - cast Strangulating'),
 (3689201,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Ymirjar Deathbringer - pause WP Movement'),
-(3689201,0,15,69516,0,0,0,0,0,0,0,0,0,0,0,0,0,'Ymirjar Deathbringer - cast Summon Undead');
+(3689201,0,15,69516,0,0,0,0,0,0,0,0,0,0,0,0,0,'Ymirjar Deathbringer - cast Summon Undead'),
+-- Tyrannus intro
+(3679401,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Tyrannus - pause WP Movement'),
+(3679401,0,10,36794,0,0,0,0,0,0,0,0,0,578.7934,122.40464,583.1108,0.0502,'Tyrannus - summon new Tyrannus'),
+(3679401,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Tyrannus - despawn self'),
+-- Krick
+(3647701,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Krick - pause WP Movement'),
+(3647701,0,0,0,0,0,0,0,0,@TGUID+13,0,0,0,0,0,0,0,'Krick - say outro'),
+(3647701,0,1,431,0,0,0,0,0,0,0,0,0,0,0,0,0,'Krick - set emote state'),
+-- Sylvanas - Krick event
+(3699002,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - pause WP Movement'),
+(3699002,0,36,0,0,0,36477,@CGUID+107,17,0,0,0,0,0,0,0,0,'Sylvanas - face Krick'),
+(3699002,6000,0,0,0,0,0,0,0,@TGUID+15,0,0,0,0,0,0,0,'Sylvanas - say outro 2'),
+(3699002,13000,0,0,0,0,36477,@CGUID+107,16,@TGUID+16,0,0,0,0,0,0,0,'Krick - say outro 3'),
+(3699002,30000,0,0,0,0,0,0,0,@TGUID+18,0,0,0,0,0,0,0,'Sylvanas - say outro 4'),
+(3699002,37000,0,0,0,0,36477,@CGUID+107,16,@TGUID+19,0,0,0,0,0,0,0,'Krick - say outro 5'),
+(3699002,43000,0,0,0,0,36794,200,0,@TGUID+20,0,0,0,0,0,0,0,'Tyrannus - say outro 6'),
+(3699002,48000,15,69413,1,0,36477,@CGUID+107,16,0,0,0,0,0,0,0,0,'Krick - cast Strangulating'),
+(3699002,50000,0,0,0,0,36477,@CGUID+107,16,@TGUID+21,0,0,0,0,0,0,0,'Krick - say outro 7'),
+(3699002,52000,15,69347,1,0,36794,200,0,0,0,0,0,0,0,0,0,'Tyrannus - cast Necromantic Power'),
+(3699002,54000,15,7,1,0,36477,@CGUID+107,16,0,0,0,0,0,0,0,0,'Krick - cast Suicide'),
+(3699002,57000,0,0,0,0,36794,200,0,@TGUID+22,0,0,0,0,0,0,0,'Tyrannus - say outro 8'),
+(3699002,68000,20,2,1,0,36794,200,0,0,0,0,0,0,0,0,0,'Tyrannus - move WP'),
+(3699002,68000,0,0,0,0,0,0,0,@TGUID+24,0,0,0,0,0,0,0,'Sylvanas - say outro 9'),
+(3699002,72000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - unpause WP Movement'),
+-- Jaina - Krick event
+(3699302,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Jaina - pause WP Movement'),
+(3699302,0,36,0,0,0,36477,@CGUID+107,17,0,0,0,0,0,0,0,0,'Jaina - face Krick'),
+(3699302,6000,0,0,0,0,0,0,0,@TGUID+14,0,0,0,0,0,0,0,'Jaina - say outro 2'),
+(3699302,13000,0,0,0,0,36477,@CGUID+107,16,@TGUID+16,0,0,0,0,0,0,0,'Krick - say outro 3'),
+(3699302,30000,0,0,0,0,0,0,0,@TGUID+17,0,0,0,0,0,0,0,'Jaina - say outro 4'),
+(3699302,37000,0,0,0,0,36477,@CGUID+107,16,@TGUID+19,0,0,0,0,0,0,0,'Krick - say outro 5'),
+(3699302,43000,0,0,0,0,36794,200,0,@TGUID+20,0,0,0,0,0,0,0,'Tyrannus - say outro 6'),
+(3699302,48000,15,69413,1,0,36477,@CGUID+107,16,0,0,0,0,0,0,0,0,'Krick - cast Strangulating'),
+(3699302,50000,0,0,0,0,36477,@CGUID+107,16,@TGUID+21,0,0,0,0,0,0,0,'Krick - say outro 7'),
+(3699302,52000,15,69347,1,0,36794,200,0,0,0,0,0,0,0,0,0,'Tyrannus - cast Necromantic Power'),
+(3699302,54000,15,7,1,0,36477,@CGUID+107,16,0,0,0,0,0,0,0,0,'Krick - cast Suicide'),
+(3699302,57000,0,0,0,0,36794,200,0,@TGUID+22,0,0,0,0,0,0,0,'Tyrannus - say outro 8'),
+(3699302,68000,20,2,1,0,36794,200,0,0,0,0,0,0,0,0,0,'Tyrannus - move WP'),
+(3699302,68000,0,0,0,0,0,0,0,@TGUID+23,0,0,0,0,0,0,0,'Jaina - say outro 9'),
+(3699302,72000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Jaina - unpause WP Movement'),
+(3699003,0,20,2,0,0,36477,@CGUID+107,16,0,0,0,0,0,0,0,0,'Krick - move WP'),
+-- Ending event
+(3684101,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'warrior - pause WP Movement'),
+(3684101,0,1,27,0,0,0,0,0,0,0,0,0,0,0,0,0,'warrior - set emote state');
 
-DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+12;
+DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+26;
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 (@TGUID+0,'Intruders have entered the masters domain. Signal the alarms!',16747,1,0,0,'tyrannus intro 1'),
 (@TGUID+1,'Heroes of the Alliance, attack!',16626,1,0,5,'jaina intro 1'),
@@ -1069,7 +1196,21 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 (@TGUID+9,'You will have to make your way across this quarry on your own.',16629,0,0,1,'jaina intro 4'),
 (@TGUID+10,'You will have to battle your way through this cesspit on your own.',17047,0,0,1,'sylvanas intro 3'),
 (@TGUID+11,'Free any Alliance slaves that you come across. We will most certainly need their assistance in battling Tyrannus. I will gather reinforcements and join you on the other side of the quarry.',16630,0,0,0,'jaina intro 5'),
-(@TGUID+12,'Free any Horde slaves that you come across. We will most certainly need their assistance in battling Tyrannus. I will gather reinforcements and join you on the other side of the quarry.',17048,0,0,0,'sylvanas intro 4');
+(@TGUID+12,'Free any Horde slaves that you come across. We will most certainly need their assistance in battling Tyrannus. I will gather reinforcements and join you on the other side of the quarry.',17048,0,0,0,'sylvanas intro 4'),
+(@TGUID+13,'Wait! Stop! Don\'t kill me, please! I\'ll tell you everything!',16934,1,0,431,'krick outro 1'),
+(@TGUID+14,'I\'m not so naive as to believe your appeal for clemency, but I will listen.',16611,1,0,1,'jaina outro 2'),
+(@TGUID+15,'Why should the Banshee Queen spare your miserable life?',17033,1,0,396,'sylvanas outro 2'),
+(@TGUID+16,'What you seek is in the master''s lair, but you must destroy Tyrannus to gain entry. Within the Halls of Reflection you will find Frostmourne. It... it holds the truth.',16935,1,0,0,'krick outro 3'),
+(@TGUID+17,'Frostmourne lies unguarded? Impossible!',16612,1,0,0,'jaina outro 4'),
+(@TGUID+18,'Frostmourne? The Lich King is never without his blade! If you are lying to me...',17034,1,0,15,'sylvanas outro 4'),
+(@TGUID+19,'I swear it is true! Please, don''t kill me!!',16936,1,0,0,'krick outro 5'),
+(@TGUID+20,'Worthless gnat! Death is all that awaits you!',16753,1,0,0,'tyrannus outro 6'),
+(@TGUID+21,'Urg... no!!',16937,1,0,0,'krick outro 7'),
+(@TGUID+22,'Do not think that I shall permit you entry into my master\'s sanctum so easily. Pursue me if you dare.',16754,1,0,0,'tyrannus outro 8'),
+(@TGUID+23,'What a cruel end. Come, heroes. We must see if the gnome''s story is true. If we can separate Arthas from Frostmourne, we might have a chance at stopping him.',16613,1,0,0,'jaina outro 9'),
+(@TGUID+24,'A fitting end for a traitor. Come, we must free the slaves and see what is within the Lich King''s chamber for ourselves.',17035,1,0,396,'sylvanas outro 9'),
+(@TGUID+25,'Another shall take his place. You waste your time.',16752,6,0,0,'tyrannus garfrost dead'),
+(@TGUID+26,'The forgemaster is dead! Get geared up men, we have a Scourgelord to kill.',0,1,0,0,'victus and ironskull garfrost dead');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
