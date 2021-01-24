@@ -25,7 +25,12 @@ INSERT INTO creature_equip_template (entry, equipentry1) VALUES
 (52515,49346);
 UPDATE creature_template SET EquipmentTemplateId=52515 WHERE entry IN (36494,37613);
 
+DELETE FROM vehicle_accessory WHERE vehicle_entry IN (36476,36661);
+INSERT INTO vehicle_accessory VALUES
+(36476,0,36477,'Ick and Krick'),
+(36661,0,36658,'Rimefang and Tyrannus');
+
 -- Fix creature
-UPDATE creature_template SET MinLevel=80, MaxLevel=80, faction=14 WHERE entry=37670;
+UPDATE creature_template SET MinLevel=80, MaxLevel=80, faction=14 WHERE entry IN (36610,37610,37670);
 UPDATE creature_template SET faction=1771, MinLevel=80, MaxLevel=80, UnitFlags=UnitFlags|256 WHERE entry IN (36796,37657);
 UPDATE creature_template SET UnitFlags=32832 WHERE entry IN (36830,37638);
