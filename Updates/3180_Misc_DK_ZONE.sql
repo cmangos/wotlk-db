@@ -103,3 +103,10 @@ INSERT INTO creature_movement_template (entry, pathId, point, position_x, positi
 (28906,4,4,1934.88,-5854.3,128.325,100,0,0),
 (28906,4,5,1868.49,-5900.39,120.756,100,0,0),
 (28906,4,6,1818.15,-5930,115.077,100,120000,20);
+
+-- Acherus Deathcharger (Summon)
+-- spawn effect
+DELETE FROM dbscripts_on_spell WHERE id = 48778;
+INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(48778,0,15,50772,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'');
+
