@@ -474,27 +474,27 @@ INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`,
 (36907,658,36494,1,0),
 (36658,658,36794,8192,30);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (37583,37774) AND pathId=1;
-DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId=2;
+DELETE FROM `creature_movement_template` WHERE entry IN (37583,37774) AND pathId IN (1,2);
+DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId IN (2,3);
 DELETE FROM `creature_movement_template` WHERE entry IN (37496,37584) AND pathId BETWEEN 9 AND 17;
 DELETE FROM `creature_movement_template` WHERE entry IN (37497,37588) AND pathId BETWEEN 4 AND 7;
 DELETE FROM `creature_movement_template` WHERE entry IN (37498,37587) AND pathId BETWEEN 3 AND 5;
-DELETE FROM `creature_movement_template` WHERE entry IN (36477,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842);
+DELETE FROM `creature_movement_template` WHERE entry IN (36477,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842,38188,38189);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Krick 36477
 (36477,0,1,838.8732,118.114006,509.732,3.3595,1000,3647701),
 -- Rimefang 36661
-(36661,0,1,1069.8281,138.38368,665.04535,100,0,0),
-(36661,0,2,1063.0416,164.51736,665.04535,100,0,0),
-(36661,0,3,1031.158,195.1441,665.04535,100,0,0),
-(36661,0,4,1019.0868,197.80382,665.04535,100,0,0),
-(36661,0,5,1003.3455,195.68404,664.9339,100,0,0),
-(36661,0,6,982.21704,186.40973,665.04535,100,0,0),
-(36661,0,7,967.6233,168.96701,665.04535,100,0,0),
-(36661,0,8,969.1198,140.47223,665.04535,100,0,0),
-(36661,0,9,986.7153,141.64236,665.04535,100,0,0),
-(36661,0,10,1012.6007,142.49654,665.04535,100,0,0),
-(36661,0,11,1047.868,126.49306,665.04535,100,0,0),
+(36661,0,1,1069.8281,138.38368,665.04535,100,30000,0),
+(36661,0,2,1063.0416,164.51736,665.04535,100,30000,0),
+(36661,0,3,1031.158,195.1441,665.04535,100,30000,0),
+(36661,0,4,1019.0868,197.80382,665.04535,100,30000,0),
+(36661,0,5,1003.3455,195.68404,664.9339,100,30000,0),
+(36661,0,6,982.21704,186.40973,665.04535,100,30000,0),
+(36661,0,7,967.6233,168.96701,665.04535,100,30000,0),
+(36661,0,8,969.1198,140.47223,665.04535,100,30000,0),
+(36661,0,9,986.7153,141.64236,665.04535,100,30000,0),
+(36661,0,10,1012.6007,142.49654,665.04535,100,30000,0),
+(36661,0,11,1047.868,126.49306,665.04535,100,30000,0),
 -- Alliance Slave 36764
 (36764,0,1,691.8768,-150.4028,528.0264,100,0,0),
 (36764,0,2,692.1875,-163.0215,527.246,100,0,0),
@@ -1066,8 +1066,13 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (37581,0,4,986.661,165.611,628.2811,100,1000,3758102),
 -- Archmage Koreln 37582
 (37582,2,1,438.50522,211.53993,528.7085,100,1000,3758301),
+(37582,3,1,1067.27,104.783,630.45496,2.09439,1000,7),
+(37582,3,2,1062.3956,119.74144,628.37634,100,0,0),
+(37582,3,3,1047.2424,144.2186,628.2811,100,0,0),
+(37582,3,4,989.65594,165.43643,628.2811,100,1000,7),
 -- Dark Ranger Kalira 37583
 (37583,1,1,438.9462,215.42708,528.70874,100,1000,3758301),
+(37583,2,1,1055.76,99.3194,629.83936,2.09439,1000,7),
 -- Coliseum Champion 37584 (horde footman)
 (37584,9,1,442.1875,225.44098,528.8313,100,0,0),
 (37584,9,2,449.1875,226.2118,528.8313,100,1000,3749801),
@@ -1154,12 +1159,34 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 -- Gorkun Ironskull 37592
 (37592,0,1,693.5434,-165.7882,527.371,1.623156,1000,3759102),
 -- Sindragosa 37755
-(37755,0,1,900.106,181.677,659.374,100,5000,3775501),
-(37755,0,2,759.148,199.955,720.857,100,1000,1),
+(37755,0,1,842.86115,194.55556,531.6536,6.108652,16000,0),
+(37755,0,2,900.106,181.677,659.374,100,5000,3775501),
+(37755,0,3,759.148,199.955,720.857,100,1000,1),
 -- Archmage Elandra 37774
 (37774,1,1,438.9462,215.42708,528.70874,100,1000,3758301),
+(37774,2,1,1055.76,99.3194,629.83936,2.09439,1000,7),
 -- Dark Ranger Loralen 37779
-(37779,2,1,438.50522,211.53993,528.7085,100,1000,3758301);
+(37779,2,1,438.50522,211.53993,528.7085,100,1000,3758301),
+(37779,3,1,1067.27,104.783,630.45496,2.09439,1000,7),
+(37779,3,2,1062.3956,119.74144,628.37634,100,0,0),
+(37779,3,3,1047.2424,144.2186,628.2811,100,0,0),
+(37779,3,4,989.65594,165.43643,628.2811,100,1000,7),
+-- Lady Jaina Proudmoore 38188 (ending event)
+(38188,0,1,1062.85,100.075,631.0021,2.0943951,1000,7),
+(38188,0,2,1057.76,111.927,628.4123,100,3000,3818801),
+(38188,0,3,1054.6492,128.36151,628.3333,100,0,0),
+(38188,0,4,989.65594,165.43643,628.2811,3.126,7000,3818802),
+(38188,0,5,1054.1927,187.3507,628.2811,100,0,0),
+(38188,0,6,1073.6024,210.74306,628.2149,100,0,0),
+(38188,0,7,1090.5869,230.04839,632.3357,100,0,3818803),
+-- Lady Sylvanas Windrunner 38189 (ending event)
+(38189,0,1,1062.85,100.075,631.0021,2.0943951,1000,7),
+(38189,0,2,1057.76,111.927,628.4123,100,3000,3818901),
+(38189,0,3,1054.6492,128.36151,628.3333,100,0,0),
+(38189,0,4,989.65594,165.43643,628.2811,100,0,0),
+(38189,0,5,1054.1927,187.3507,628.2811,100,0,0),
+(38189,0,6,1073.6024,210.74306,628.2149,100,0,0),
+(38189,0,7,1090.5869,230.04839,632.3357,100,0,3818803);
 
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Iceborn Proto-Drake 36891
@@ -1273,7 +1300,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (3676401,3676701,3757201,3759102,3699001,3699301,3758301,3749801,3689201,3749802,3699002,3699302,3679401,3647701,3684101,3699003,3758001,3757601,3758101,3758002,3757202,3757203,3758002,3758102,3775501);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3676401,3676701,3757201,3759102,3699001,3699301,3758301,3749801,3689201,3749802,3699002,3699302,3679401,3647701);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3684101,3699003,3758001,3757601,3758101,3758002,3757202,3757203,3758002,3758102,3775501,3818901,3818801,3818802,3818803);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Garfrost ending event
 (3676401,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliance | Horde Slave - pause WP Movement'),
@@ -1381,23 +1409,117 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3757601,0,1,425,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliace | Horde soldier - set emote state'),
 (3757203,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliace | Horde soldier - pause WP Movement'),
 (3757203,0,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alliace | Horde soldier - set emote state'),
+-- Sylvanas / Jaina ending
+(3818901,0,0,0,0,0,0,0,0,@TGUID+36,0,0,0,0,0,0,0,'Sylvanas - say outro'),
+(3818901,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - set run'),
+(3818801,0,0,0,0,0,0,0,0,@TGUID+34,0,0,0,0,0,0,0,'Jaina - say outro 1'),
+(3818801,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Jaina - set run'),
+(3818802,0,0,0,0,0,0,0,0,@TGUID+35,0,0,0,0,0,0,0,'Jaina - say outro 2'),
+(3818803,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas / Jaina - pause WP'),
+(3818803,0,11,@OGUID+21,600,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas / Jaina - open door'),
+-- Gorkun Ironskull ending
 (3758102,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gorkun Ironskull - pause WP'),
 (3758102,0,0,0,0,0,0,0,0,@TGUID+30,0,0,0,0,0,0,0,'Gorkun Ironskull - say epilogue 1'),
-(3758102,4000,10,38189,0,0,0,0,0,0,0,0,0,1067.533,76.954865,630.99414,1.81514,'Gorkun Ironskull - summon Sylvanas'),
-(3758102,5000,10,37755,0,0,0,0,0,0,0,0,0,842.86115,194.55556,531.6536,6.10865,'Gorkun Ironskull - summon Sindragosa'),
+(3758102,1000,10,37755,0,0,0,0,0,0,0,0,0,842.86115,194.55556,531.6536,6.10865,'Gorkun Ironskull - summon Sindragosa'),
 (3758102,8000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gorkun Ironskull - set emote state'),
 (3758102,13000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gorkun Ironskull - set emote state'),
 (3758102,17000,0,0,0,0,0,0,0,@TGUID+31,0,0,0,0,0,0,0,'Gorkun Ironskull - say epilogue 2'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+30,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+36,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+39,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+45,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+48,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+50,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+53,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+55,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+56,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+58,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+59,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+62,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,25000,15,70573,0,0,24110,@CGUID+63,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758102,29000,15,70638,0,0,38189,170,0,0,0,0,0,0,0,0,0,'Sylvanas - cast Call of Sylvanas visual'),
+(3758102,30000,15,70636,1,0,38189,170,0,0,0,0,0,0,0,0,0,'Sylvanas - cast Call of Sylvanas summon'),
+(3758102,30000,15,70642,1,0,38189,170,0,0,0,0,0,0,0,0,0,'Sylvanas - cast Call of Sylvanas channel'),
+(3758102,30000,0,0,0,0,38189,170,0,@TGUID+33,0,0,0,0,0,0,0,'Sylvanas - say take cover'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+30,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+36,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+39,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+45,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+48,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+50,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+53,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+55,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+56,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+58,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+59,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+62,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,41000,14,70573,0,0,24110,@CGUID+63,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758102,43000,32,0,0,0,38189,170,0,0,0,0,0,0,0,0,0,'Sylvanas - unpause WP'),
+(3758102,43000,32,0,0,0,37779,170,0,0,0,0,0,0,0,0,0,'Loralen - unpause WP'),
+-- Marting Victims ending
 (3758002,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus - pause WP'),
 (3758002,0,0,0,0,0,0,0,0,@TGUID+29,0,0,0,0,0,0,0,'Martin Victus - say epilogue 1'),
-(3758002,4000,10,38188,0,0,0,0,0,0,0,0,0,1067.533,76.954865,630.99414,1.81514,'Martin Victus - summon Jaina'),
-(3758002,5000,10,37755,0,0,0,0,0,0,0,0,0,842.86115,194.55556,531.6536,6.10865,'Martin Victus - summon Sindragosa'),
+(3758002,1000,10,37755,0,0,0,0,0,0,0,0,0,842.86115,194.55556,531.6536,6.10865,'Martin Victus - summon Sindragosa'),
 (3758002,8000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus - set emote state'),
 (3758002,13000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Martin Victus - set emote state'),
 (3758002,17000,0,0,0,0,0,0,0,@TGUID+31,0,0,0,0,0,0,0,'Martin Victus - say epilogue 2'),
-(3775501,0,15,70521,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sindragosa - cast Frost Bomb');
+(3758002,25000,15,70573,0,0,24110,@CGUID+30,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+36,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+39,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+45,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+48,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+50,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+53,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+55,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+56,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+58,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+59,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+62,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,25000,15,70573,0,0,24110,@CGUID+63,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - Cast Arcane Form'),
+(3758002,29000,15,70623,0,0,38188,170,0,0,0,0,0,0,0,0,0,'Jaina - cast Jaina\'s Call visual'),
+(3758002,30000,15,70527,1,0,38188,170,0,0,0,0,0,0,0,0,0,'Jaina - cast Jaina\'s Call summon'),
+(3758002,30000,15,54219,1,0,37774,170,0,0,0,0,0,0,0,0,0,'Eladra - cast Arcane Channeling'),
+(3758002,30000,15,54219,1,0,37582,170,0,0,0,0,0,0,0,0,0,'Koreld - cast Arcane Channeling'),
+(3758002,30000,0,0,0,0,38188,170,0,@TGUID+32,0,0,0,0,0,0,0,'Jaina - say take cover'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+30,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+36,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+39,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+45,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+48,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+50,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+53,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+55,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+56,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+58,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+59,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+62,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,41000,14,70573,0,0,24110,@CGUID+63,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - remove aura Arcane Form'),
+(3758002,30000,47,3,0,0,37774,170,0,0,0,0,0,0,0,0,0,'Eladra - interrupt Channeling'),
+(3758002,30000,47,3,0,0,37582,170,0,0,0,0,0,0,0,0,0,'Koreln - interrupt Arcane Channeling'),
+(3758002,43000,32,0,0,0,38188,170,0,0,0,0,0,0,0,0,0,'Jaina - unpause WP'),
+(3758002,43000,32,0,0,0,37582,170,0,0,0,0,0,0,0,0,0,'Koreln - unpause WP'),
+-- Sindragosa event
+(3775501,0,15,70521,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sindragosa - cast Frost Bomb'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+24,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+25,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+26,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+27,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+29,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+32,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+34,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+37,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+40,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+41,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+42,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+43,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+46,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+49,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+51,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+57,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+61,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath'),
+(3775501,3000,15,70518,1,0,24110,@CGUID+65,16,0,0,0,0,0,0,0,0,'General Purpose Bunny Large - cast Frozen Aftermath');
 
-DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+31;
+DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+36;
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 (@TGUID+0,'Intruders have entered the masters domain. Signal the alarms!',16747,1,0,0,'tyrannus intro 1'),
 (@TGUID+1,'Heroes of the Alliance, attack!',16626,1,0,5,'jaina intro 1'),
@@ -1430,7 +1552,12 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 (@TGUID+28,'Heroes! We will hold off the undead as long as we can, even to our dying breath. Deal with the Scourgelord!',17150,1,0,0,'ironskull hold undead'),
 (@TGUID+29,'Brave champions, we owe you our lives, our freedom... Though it be a tiny gesture in the face of this enormous debt, I pledge that from this day forth, all will know of your deeds, and the blazing path of light you cut through the shadow of this dark citadel.',17149,1,0,5,'victus victory'),
 (@TGUID+30,'Brave champions, we owe you our lives, our freedom... Though it be a tiny gesture in the face of this enormous debt, I pledge that from this day forth, all will know of your deeds, and the blazing path of light you cut through the shadow of this dark citadel.',17151,1,0,5,'ironskull victory'),
-(@TGUID+31,'This day will stand as a testament not only to your valor, but to the fact that no foe, not even the Lich King himself, can stand when Alliance and Horde set aside their differences and ---',0,1,0,0,'victus or ironskull victory 2');
+(@TGUID+31,'This day will stand as a testament not only to your valor, but to the fact that no foe, not even the Lich King himself, can stand when Alliance and Horde set aside their differences and ---',0,1,0,0,'victus or ironskull victory 2'),
+(@TGUID+32,'Heroes, to me!',16614,0,0,5,'jaina take cover'),
+(@TGUID+33,'Take cover behind me! Quickly!',17037,0,0,5,'sylvanas take cover'),
+(@TGUID+34,'The Frost Queen is gone. We must keep moving - our objective is near.',16615,0,0,0,'jaina outro 1'),
+(@TGUID+35,'I... I could not save them... Damn you, Arthas! DAMN YOU!',16616,0,0,0,'jaina outro 2'),
+(@TGUID+36,'I thought he''d never shut up. At last, Sindragosa silenced that long-winded fool. To the Halls of Reflection, champions! Our objective is near... I can sense it.',17036,0,0,396,'sylvanas outro 1');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

@@ -32,9 +32,10 @@ INSERT INTO vehicle_accessory VALUES
 
 -- Fix creature
 UPDATE creature_template SET MinLevel=80, MaxLevel=80, faction=14 WHERE entry IN (36610,37610,37670);
-UPDATE creature_template SET MinLevel=82, MaxLevel=82, faction=14 WHERE entry IN (36731);
+UPDATE creature_template SET MinLevel=80, MaxLevel=80, faction=14 WHERE entry IN (36731);
 UPDATE creature_template SET faction=1771, MinLevel=80, MaxLevel=80, UnitFlags=UnitFlags|256 WHERE entry IN (36796,37657);
 UPDATE creature_template SET UnitFlags=32832 WHERE entry IN (36830,37638);
 UPDATE creature_template SET UnitFlags=33554496 WHERE entry IN (36938,36658);
 
 UPDATE creature_template SET MovementType=2 WHERE entry=37755;
+UPDATE creature_template SET MinLevel=80, MaxLevel=80 WHERE entry IN (38189,38188);
