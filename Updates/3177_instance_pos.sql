@@ -39,3 +39,7 @@ UPDATE creature_template SET UnitFlags=33554496 WHERE entry IN (36938,36658);
 
 UPDATE creature_template SET MovementType=2 WHERE entry=37755;
 UPDATE creature_template SET MinLevel=80, MaxLevel=80 WHERE entry IN (38189,38188);
+UPDATE creature_template SET UnitFlags=33088 WHERE entry=36990;
+
+UPDATE creature_template SET UnitFlags=320, faction=534 WHERE entry IN (37572,37616,37575,37617,37576,37615);
+UPDATE creature_template SET UnitFlags=320, faction=714 WHERE entry IN (37577,37620,37578,37621,37579,37619);
