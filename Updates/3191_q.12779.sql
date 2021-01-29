@@ -11,12 +11,13 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 -- Part of Frostbrood Vanquisher EAI
 (20513,10,34,20223,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: area check'),
 (20513,100,15,51272,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: cast 51272'),
-(20513,1000,0,0,0,0,0,0,0,2000020101,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: warning'),
+(20513,1000,0,0,0,0,0,0,0,2000020101,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: Say warning'),
 (20513,10000,34,20223,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: area check'),
+(20513,10010,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: send AI Event A'),
 (20513,10100,14,52196,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Frostbrood Vanquisher EAI: Player Drop'),
 -- Part of Scarlet Ballista EAI
 (20514,100,31,28670,150,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Scarlet Ballista EAI: search for 28670'),
-(20514,200,26,0,0,0,28670,160,1,0,0,0,0,0,0,0,0,'Part of Scarlet Ballista EAI: search for 28670');
+(20514,200,26,0,0,0,28670,160,1,0,0,0,0,0,0,0,0,'Part of Scarlet Ballista EAI: start attack target');
 
 DELETE FROM conditions WHERE condition_entry BETWEEN 20205 AND 20223;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4) VALUES
