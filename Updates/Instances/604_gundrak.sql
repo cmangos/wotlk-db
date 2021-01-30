@@ -323,7 +323,9 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+9,0,0,1,0,0,0,NULL),
 (@CGUID+20,0,0,1,0,0,0,'54988');
 
--- INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+DELETE FROM `creature_movement_template` WHERE entry IN (29932);
+INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+(29932,0,1,1632.9088,917.4442,103.01675,100,1000,2993201);
 
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- @CGUID+222
@@ -437,9 +439,11 @@ INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `pat
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE id = 2998201;
+DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2998201,2993201);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(2998201,5000,15,46598,0,0,29931,10,1,0,0,0,0,0,0,0,0,0);
+(2998201,5000,15,46598,0,0,29931,10,1,0,0,0,0,0,0,0,0,0),
+(2993201,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Eck the Ferocious - pause WP'),
+(2993201,0,15,55837,1,0,0,0,0,0,0,0,0,0,0,0,0,'Eck the Ferocious - cast Eck Spring');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
