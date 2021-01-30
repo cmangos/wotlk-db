@@ -2,6 +2,7 @@
 
 -- Flesh Behemoth 29190
 UPDATE creature_template SET SpeedWalk=2.5/2.5,SpeedRun=16/7 WHERE entry = 29190;
+DELETE FROM creature_addon WHERE guid IN (561924,561925);
 DELETE FROM creature_template_addon WHERE entry = 29190;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
 (29190,0,0,1,0,0,0,'53624 53627');
