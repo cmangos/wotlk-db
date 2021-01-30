@@ -96,11 +96,11 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+61,27971,599,3,1,0,0,1032.59,475.946,207.803,2.04204,3600,3600,0,0,45516,0,0,0),
 (@CGUID+62,27971,599,3,1,0,0,1036.02,501.231,207.803,5.75959,3600,3600,0,0,45516,0,0,0),
 -- Lightning Construct 27972
-(@CGUID+63,27972,599,3,1,0,0,944.718,396.039,205.994,1.4247,3600,3600,5,0,94160,26663,0,1),
+(@CGUID+63,27972,599,3,1,0,0,944.718,396.039,205.994,1.4247,3600,3600,5,0,94160,26663,0,2),
 (@CGUID+64,27972,599,3,1,0,0,905.686,658.964,196.494,0.122173,3600,3600,0,0,94160,26663,0,0),
 (@CGUID+65,27972,599,3,1,0,0,906.657,674.535,196.494,0.069813,3600,3600,0,0,94160,26663,0,0),
-(@CGUID+66,27972,599,3,1,0,0,972.523,420.203,205.994,6.19658,3600,3600,5,0,94160,26663,0,1),
-(@CGUID+67,27972,599,3,1,0,0,981.751,388.79,205.994,3.85652,3600,3600,5,0,94160,26663,0,1),
+(@CGUID+66,27972,599,3,1,0,0,972.523,420.203,205.994,6.19658,3600,3600,5,0,94160,26663,0,2),
+(@CGUID+67,27972,599,3,1,0,0,981.751,388.79,205.994,3.85652,3600,3600,5,0,94160,26663,0,2),
 -- Crystalline Shardling 27973
 (@CGUID+68,27973,599,3,1,0,0,946.606,806.645,191.321,3.87463,3600,3600,0,0,11379,0,0,0),
 (@CGUID+69,27973,599,3,1,0,0,952.608,777.938,197.541,5.5676,3600,3600,0,0,11379,0,0,0),
@@ -198,7 +198,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+146,32258,599,3,1,0,0,1153.49,688.607,196.883,5.70723,3600,3600,0,0,8,0,0,0);
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (27960,27961,27962,27963,27964,27965,27966,27969,27970,27971,27973,27975,27977,27978,28055,28070,28130,28149,28234,28235,28824,30535,30897,30898,30899,32258);
+DELETE FROM `creature_template_addon` WHERE entry IN (27960,27961,27962,27963,27964,27965,27966,27969,27970,27971,27973,27975,27977,27978,28070,28130,28149,28234,28235,28824,30535,30897,30898,30899,32258);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (27960,0,0,1,0,0,0,NULL),
 (27961,0,0,1,0,233,0,NULL),
@@ -214,7 +214,6 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (27975,0,0,1,0,0,0,NULL),
 (27977,0,0,1,0,0,0,NULL),
 (27978,0,0,1,0,0,0,'50831'),
-(28055,0,0,1,0,0,0,'50549'),
 (28070,0,0,1,1,0,0,NULL),
 (28130,0,0,1,0,0,0,NULL),
 (28149,0,0,1,0,333,0,NULL),
@@ -227,16 +226,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (30899,0,0,1,0,0,0,NULL),
 (32258,0,0,1,0,0,0,NULL);
 
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(@CGUID+145,0,0,1,0,0,0,'50627'),
-(@CGUID+144,0,0,1,0,0,0,NULL),
-(@CGUID+143,0,0,1,0,0,0,NULL),
-(@CGUID+142,0,0,1,0,0,0,'50645'),
-(@CGUID+141,0,0,1,0,0,0,'50646'),
-(@CGUID+140,0,0,1,0,0,0,NULL),
-(@CGUID+139,0,0,1,0,0,0,NULL),
-(@CGUID+138,0,0,1,0,0,0,NULL),
-(@CGUID+137,0,0,1,0,0,0,NULL);
+-- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
 DELETE FROM `creature_movement_template` WHERE entry IN (27979,27982,27981,27980);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
@@ -285,7 +275,19 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (27980,1,4,1294.085938,642.811707,189.785004,100,0,0),
 (27980,1,5,1293.723022,667.221008,189.607651,100,1000,2798001);
 
--- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+(@CGUID+66,1,980.96704,415.2457,205.9943,100,0,0),
+(@CGUID+66,2,961.5862,421.18295,205.9943,100,0,0),
+(@CGUID+66,3,952.4949,416.09375,205.99431,100,0,0),
+(@CGUID+66,4,961.5862,421.18295,205.9943,100,0,0),
+(@CGUID+67,1,974.4719,382.47028,205.994313,100,0,0),
+(@CGUID+67,2,983.266,390.10507,205.99431,100,0,0),
+(@CGUID+67,3,986.55225,402.94382,205.9943,100,0,0),
+(@CGUID+67,4,983.266,390.10507,205.99431,100,0,0),
+(@CGUID+63,1,946.67285,409.32455,205.99431,100,0,0),
+(@CGUID+63,2,944.42615,394.0558,205.99432,100,0,0),
+(@CGUID+63,3,954.208,382.88315,205.99431,100,0,0),
+(@CGUID+63,4,944.42615,394.0558,205.99432,100,0,0);
 
 DELETE FROM `creature_linking_template` WHERE master_entry = 27978;
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
@@ -349,7 +351,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM spell_script_target WHERE entry IN (50790,50791,50793,50794,50802,50803,50825,50826,51001,51136,59867);
+DELETE FROM spell_script_target WHERE entry IN (50790,50791,50793,50794,50802,50803,50825,50826,51001,51136,59867,50626,50639,50640);
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
 (50790,0,192163,0),
 (50790,3,@CGUID+8,0),
@@ -372,7 +374,10 @@ INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VA
 (51136,3,@CGUID+9,0),
 (51136,3,@CGUID+130,0),
 (59867,3,@CGUID+9,0),
-(59867,3,@CGUID+130,0);
+(59867,3,@CGUID+130,0),
+(50626,3,@CGUID+66,0),
+(50639,3,@CGUID+67,0),
+(50640,3,@CGUID+63,0);
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2798001,2798001);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
