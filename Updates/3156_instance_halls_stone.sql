@@ -88,3 +88,9 @@ DELETE FROM dbscripts_on_go_template_use WHERE id IN (192163,192164);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (192163,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Left Pipe - send custom anim'),
 (192164,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Right Pipe - send custom anim');
+
+-- Fix achievement criterias
+-- Brann, achiev 2154
+DELETE FROM achievement_criteria_requirement WHERE criteria_id=7590 AND type=18;
+INSERT INTO achievement_criteria_requirement VALUES
+(7590,18,0,0);
