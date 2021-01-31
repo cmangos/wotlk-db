@@ -11,7 +11,7 @@ SET @PGUID := 53200;   -- pools
 
 -- texts
 -- 2000026000 - 2000026199 Reserved
-SET @TGUID := 2000026000; 
+SET @TGUID := 2000026000;
 
 
 
@@ -198,7 +198,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+146,32258,599,3,1,0,0,1153.49,688.607,196.883,5.70723,3600,3600,0,0,8,0,0,0);
 
 -- addons
-DELETE FROM `creature_template_addon` WHERE entry IN (27960,27961,27962,27963,27964,27965,27966,27969,27970,27971,27973,27975,27977,27978,28070,28130,28149,28234,28235,28824,30535,30897,30898,30899,32258);
+DELETE FROM `creature_template_addon` WHERE entry IN (27960,27961,27962,27963,27964,27965,27966,27969,27970,27971,27973,27975,27977,28070,28130,28149,28234,28235,28824,30535,30897,30898,30899,32258);
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (27960,0,0,1,0,0,0,NULL),
 (27961,0,0,1,0,233,0,NULL),
@@ -213,7 +213,6 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (27973,0,0,1,0,0,0,NULL),
 (27975,0,0,1,0,0,0,NULL),
 (27977,0,0,1,0,0,0,NULL),
-(27978,0,0,1,0,0,0,'50831'),
 (28070,0,0,1,1,0,0,NULL),
 (28130,0,0,1,0,0,0,NULL),
 (28149,0,0,1,0,333,0,NULL),
@@ -273,7 +272,45 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (27980,1,2,1294.167969,614.152771,196.552521,100,0,0),
 (27980,1,3,1294.221802,620.472046,196.552856,100,0,0),
 (27980,1,4,1294.085938,642.811707,189.785004,100,0,0),
-(27980,1,5,1293.723022,667.221008,189.607651,100,1000,2798001);
+(27980,1,5,1293.723022,667.221008,189.607651,100,1000,2798001),
+-- Brann Bronzebeard 28070
+(28070,0,1,1043.9346,472.11365,208.03754,100,0,0),
+(28070,0,2,1042.9742,471.8347,208.03754,100,0,0),
+(28070,0,3,1039.4265,470.8041,207.7491,100,0,0),
+(28070,0,4,1038.5204,470.54086,207.74913,100,0,0),
+(28070,0,5,1032.2615,466.1384,207.73586,100,0,0),
+(28070,0,6,1027.5498,462.82416,207.70856,100,0,0),
+(28070,0,7,1025.4147,461.3222,207.71948,100,0,0),
+(28070,0,8,1013.8148,450.56677,207.71974,100,0,0),
+(28070,0,9,998.88635,437.22464,207.36821,100,0,0),
+(28070,0,10,988.2123,424.7201,207.42499,100,0,0),
+(28070,0,11,981.5259,420.01968,205.9943,100,0,0),
+(28070,0,12,973.29675,421.35568,205.9943,100,0,0),
+(28070,0,13,961.14746,421.33258,205.9943,100,0,0),
+(28070,0,14,951.749,416.0841,205.99431,100,0,0),
+(28070,0,15,944.52466,406.57574,205.99431,100,0,0),
+(28070,0,16,945.3539,395.39194,205.99431,100,0,0),
+(28070,0,17,946.6389,386.1174,205.99432,100,0,0),
+(28070,0,18,943.14954,378.98688,207.42459,100,0,0),
+(28070,0,19,939.6467,375.48926,207.42229,100,1000,2807005),
+(28070,1,1,897.1759,331.77386,203.70638,100,1000,7),
+(28070,2,1,917.253,351.925,203.70636,3.92699,1000,7),
+(28070,3,1,939.6467,375.48926,207.42229,100,1000,1),
+(28070,4,1,1202.9099,667.049,196.24275,100,5000,2807001),
+(28070,4,2,1256.3298,667.028,189.6078,100,1000,2807002),
+(28070,4,3,1308.3298,666.755,189.62263,100,1000,2807003),
+(28070,5,1,1304.2399,667.208,189.62279,100,1000,2807004),
+-- Iron Sludge 28165
+(28165,0,1,1294.558594,724.552917,199.358749,100,0,0),
+(28165,0,2,1294.440918,720.004517,196.552719,100,0,0),
+(28165,0,3,1294.122314,712.838623,196.508331,100,0,0),
+(28165,0,4,1294.169189,691.502502,189.906830,100,0,0),
+(28165,0,5,1293.723022,667.221008,189.607651,100,1000,7),
+(28165,1,1,1293.861938,609.842773,199.346863,100,0,0),
+(28165,1,2,1294.167969,614.152771,196.552521,100,0,0),
+(28165,1,3,1294.221802,620.472046,196.552856,100,0,0),
+(28165,1,4,1294.085938,642.811707,189.785004,100,0,0),
+(28165,1,5,1293.723022,667.221008,189.607651,100,1000,7);
 
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 (@CGUID+66,1,980.96704,415.2457,205.9943,100,0,0),
@@ -379,15 +416,38 @@ INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VA
 (50639,3,@CGUID+67,0),
 (50640,3,@CGUID+63,0);
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2798001,2798001);
+DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (2798001,2798001,2807001,2807002,2807003,2807004,2807005);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (2798001,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Earthen Dwarf - pause WP Movement'),
-(2798001,0,25,0,0,0,27978,100,0,0,0,0,0,0,0,0,0,'Earthen Dwarf - attack Sjonnir');
+(2798001,0,25,0,0,0,27978,100,0,0,0,0,0,0,0,0,0,'Earthen Dwarf - attack Sjonnir'),
+(2807001,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - set emote state'),
+(2807001,3000,11,@OGUID+7,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - open door'),
+(2807001,4000,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - set emote state'),
+(2807002,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
+(2807002,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Sjonnir'),
+(2807003,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
+(2807003,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - set emote state'),
+(2807003,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
+(2807003,0,13,0,0,0,193906,10,1,0,0,0,0,0,0,0,0,'Brann Bronzebeard - open console'),
+(2807004,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
+(2807004,0,29,3,1,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - add gossip | quest flag'),
+(2807004,10000,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 1'),
+(2807004,22000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 2'),
+(2807005,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
+(2807005,0,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Tribunal'),
+(2807005,0,29,1,1,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - add gossip flag');
 
 DELETE FROM `dbscripts_on_go_template_use` WHERE id IN (192163,192164);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (192163,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Left Pipe - send custom anim'),
 (192164,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Right Pipe - send custom anim');
+
+DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+3;
+INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
+(@TGUID+0,'Don\'t worry. Old Brann has got your back. Keep that metal monstrosity busy and I\'ll see if I can sweet talk this machine into helping you.',14274,1,0,27,'brann before Sjonnir'),
+(@TGUID+1,'Loken?! That''s downright bothersome... We might\'ve neutralized the iron dwarves, but I\'d lay odds there''s another machine somewhere else churnin\' out a whole mess o\' these iron vrykul!',14278,1,0,1,'brann after Sjonnir 1'),
+(@TGUID+2,'I\'ll use the forge to make badtches o\' earthen to stand guard... But our greatest challenge still remains: find and stop Loken!',14279,1,0,1,'brann after Sjonnir 2'),
+(@TGUID+3,'Take a moment and relish this with me! Soon all will be revealed! Okay then, let\'s do this!',14247,1,0,4,'brann before Tribunal');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
