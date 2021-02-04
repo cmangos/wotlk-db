@@ -11,3 +11,6 @@ UPDATE creature_template SET faction=21, armor=8340, MinLevel=82, MaxLevel=82 WH
 
 UPDATE creature_template SET DamageMultiplier=7.5 WHERE entry IN (38136,38632,38633,38010,39000,39001);
 UPDATE creature_template SET DamageMultiplier=13 WHERE entry IN (38397,38396);
+
+-- Fix movement
+UPDATE creature_template SET MovementType=0 WHERE entry IN (37200,37187);

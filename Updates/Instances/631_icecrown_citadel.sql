@@ -355,7 +355,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+250,0,631,15,1,0,0,-47.5851,2208.98,27.9859,3.12414,604800,604800,0,0,218392,0,0,0), -- shared spawn
 -- Muradin Bronzebeard 37200 / High Overlord Saurfang 37187
 (@CGUID+251,0,631,15,1,0,0,-48.8073,2211.06,27.9859,3.14159,604800,604800,0,0,4183500,0,0,0), -- shared spawn
-(@CGUID+252,0,631,15,1,0,0,-555.958,2211.4,539.369,6.26573,604800,604800,0,0,4183500,0,0,0), -- shared spawn
 -- Precious 37217
 (@CGUID+254,37217,631,15,1,0,0,4446.56,3041.23,360.52,1.57312,604800,604800,5,0,3150000,0,0,2), -- waypoints
 -- Spire Frostwyrm 37230
@@ -464,11 +463,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+335,37824,631,15,1,0,0,4388.1,3213.29,408.74,3.83972,120,120,0,0,25200,0,0,0),
 (@CGUID+336,37824,631,15,1,0,0,4388.1,3213.29,408.74,3.83972,120,120,0,0,25200,0,0,0),
 (@CGUID+337,37824,631,15,1,0,0,4324.28,3215.04,408.705,5.58505,120,120,0,0,25200,0,0,0),
--- Skybreaker Marine 37830 / Kor'kron Reaver 36957
-(@CGUID+338,0,631,15,1,0,0,-560.399,2209.3,539.368,6.23082,604800,604800,0,0,252000,0,0,0), -- shared spawn
-(@CGUID+339,0,631,15,1,0,0,-557.936,2214.46,539.368,6.26573,604800,604800,0,0,252000,0,0,0), -- shared spawn
-(@CGUID+340,0,631,15,1,0,0,-557.958,2207.16,539.368,6.26573,604800,604800,0,0,252000,0,0,0), -- shared spawn
-(@CGUID+341,0,631,15,1,0,0,-560.451,2212.86,539.368,6.17846,604800,604800,0,0,252000,0,0,0), -- shared spawn
 -- Argent Champion 37928
 (@CGUID+342,37928,631,15,1,0,0,-105.076,2239.97,30.6542,-2.97294,30,30,0,0,945000,0,0,2), -- waypoints
 (@CGUID+343,37928,631,15,1,0,0,-76.2847,2214.99,27.9859,3.29148,30,30,0,0,945000,0,0,2), -- waypoints
@@ -1399,15 +1393,14 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
 -- Groups of Alliance/Horde depending spawns
 -- Note: horde group will spawn for alliance players / alliance group will spawn for horde players
-DELETE FROM creature_conditional_spawn WHERE guid IN (@CGUID+413,@CGUID+251,@CGUID+252,@CGUID+248,@CGUID+249,@CGUID+250,@CGUID+404,@CGUID+409,@CGUID+377,@CGUID+378,
+DELETE FROM creature_conditional_spawn WHERE guid IN (@CGUID+413,@CGUID+251,@CGUID+248,@CGUID+249,@CGUID+250,@CGUID+404,@CGUID+409,@CGUID+377,@CGUID+378,
 @CGUID+376,@CGUID+385,@CGUID+160,@CGUID+163,@CGUID+164,@CGUID+172,@CGUID+177,@CGUID+237,@CGUID+256,@CGUID+260,@CGUID+278,@CGUID+165,@CGUID+168,@CGUID+173,@CGUID+175,
-@CGUID+178,@CGUID+243,@CGUID+238,@CGUID+176,@CGUID+167,@CGUID+293,@CGUID+415,@CGUID+416,@CGUID+338,@CGUID+339,@CGUID+340,@CGUID+341);
+@CGUID+178,@CGUID+243,@CGUID+238,@CGUID+176,@CGUID+167,@CGUID+293,@CGUID+415,@CGUID+416);
 INSERT INTO creature_conditional_spawn (guid, EntryAlliance, EntryHorde, Comments) VALUES
 -- King Varian Wrynn 39371 / Garrosh Hellscream 39372
 (@CGUID+413,39371,39372,'ICC - King Varian Wrynn 39371 / Garrosh Hellscream 39372'),
 -- Muradin Bronzebeard 37200 / High Overlord Saurfang 37187
 (@CGUID+251,37200,37187,'ICC - Muradin Bronzebeard 37200 / High Overlord Saurfang 37187'),
-(@CGUID+252,37200,37187,'ICC - Muradin Bronzebeard 37200 / High Overlord Saurfang 37187'),
 -- Alliance Commander 37190 / Kor'kron General 37189
 (@CGUID+248,37190,37189,'ICC - Alliance Commander 37190 / Kor\'kron General 37189'),
 (@CGUID+249,37190,37189,'ICC - Alliance Commander 37190 / Kor\'kron General 37189'),
@@ -1465,12 +1458,7 @@ INSERT INTO creature_conditional_spawn (guid, EntryAlliance, EntryHorde, Comment
 -- Alliance - No Spawn / Skybreaker Dreadblade 37004
 (@CGUID+415,0,37004,'ICC - Alliance - No Spawn / Skybreaker Dreadblade 37004'),
 -- Alliance - No Spawn / Skybreaker Luminary 37016
-(@CGUID+416,0,37016,'ICC - Alliance - No Spawn / Skybreaker Luminary 37016'),
--- Skybreaker Marine 37830 / Kor'kron Reaver 36957
-(@CGUID+338,37830,36957,'ICC - Skybreaker Marine 37830 / Kor\'kron Reaver 36957'),
-(@CGUID+339,37830,36957,'ICC - Skybreaker Marine 37830 / Kor\'kron Reaver 36957'),
-(@CGUID+340,37830,36957,'ICC - Skybreaker Marine 37830 / Kor\'kron Reaver 36957'),
-(@CGUID+341,37830,36957,'ICC - Skybreaker Marine 37830 / Kor\'kron Reaver 36957');
+(@CGUID+416,0,37016,'ICC - Alliance - No Spawn / Skybreaker Luminary 37016');
 
 
 -- ===========
