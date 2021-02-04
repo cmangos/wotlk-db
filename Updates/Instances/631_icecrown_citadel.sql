@@ -1308,6 +1308,7 @@ INSERT INTO creature_spawn_data(Guid,Id) VALUES
 (@CGUID+266, 1),
 (@CGUID+267, 1);
 
+DELETE FROM `creature_linking_template` WHERE entry IN (37595,37663,37664,37972,37973,38008,37890,37949,38135,38136,38009,38010,38222);
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 -- Darkfallen Blood Knight linked to Darkfallen Advisor
 (37595,631,37571,3,30),
@@ -1320,7 +1321,15 @@ INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`,
 -- Prince Taldaram linked to Prince Valanar
 (37973,631,37970,3,0),
 -- Blood Orb Controller linked to Prince Valanar
-(38008,631,37970,3,0);
+(38008,631,37970,3,0),
+-- Lady Deathwhisper adds
+(37890,631,36855,16+4096,0),
+(37949,631,36855,16+4096,0),
+(38135,631,36855,16+4096,0),
+(38136,631,36855,16+4096,0),
+(38009,631,36855,16+4096,0),
+(38010,631,36855,16+4096,0),
+(38222,631,36855,16+4096,0);
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 -- 2x The Damned to The Damned
