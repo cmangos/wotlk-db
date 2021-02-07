@@ -626,8 +626,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 -- Alliance Gunship Cannon 36838
 (@CAGUID+1,36838,672,15,1,0,0,-6.155821,-25.23873,21.70498,4.712389,604800,604800,0,0,0,0,0,0),
 (@CAGUID+2,36838,672,15,1,0,0,-33.6443,-24.06576,21.68014,4.712389,604800,604800,0,0,0,0,0,0),
-(@CAGUID+3,36838,672,15,1,0,0,-24.6625,-24.5267,21.6443,4.71239,604800,604800,0,0,0,0,0,0),
-(@CAGUID+4,36838,672,15,1,0,0,-15.3503,-24.9037,21.6201,4.71239,604800,604800,0,0,0,0,0,0),
+(@CAGUID+3,36838,672,10,1,0,0,-24.6625,-24.5267,21.6443,4.71239,604800,604800,0,0,0,0,0,0),
+(@CAGUID+4,36838,672,10,1,0,0,-15.3503,-24.9037,21.6201,4.71239,604800,604800,0,0,0,0,0,0),
 -- Muradin Bronzebeard 36948
 (@CAGUID+5,36948,672,15,1,0,0,13.51547,-0.160213,20.87252,3.106686,604800,604800,0,0,0,0,0,0),
 -- Skybreaker Deckhand 36970
@@ -946,12 +946,27 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (37011,2,7,-101.508,2182.08,30.6546,100,600000,3701101),
 -- 37119
 (37119,0,1,-48.9184,2213.55,27.9859,3.22886,156000,3711901),
--- 37200 
+-- Muradin Bronzebeard - 37200
 (37200,0,1,-48.8073,2211.06,27.9859,3.14159,32000,3720001),
 (37200,0,2,80.6792,2211.6,30.1157,0.0373585,100,1),
--- 37187
+(37200,1,1,-533.4601,2211.236,539.29175,100,0,0),
+(37200,1,2,-500.2309,2211.1736,540.50146,100,1000,7),
+(37200,2,1,-522.0278,2223.6858,539.29205,100,0,0),
+(37200,2,2,-522.4153,2226.8557,539.29236,100,1000,3720002),
+(37200,2,3,-530.042847,2222.563965,539.290588,0.106222,1000,7),
+(37200,2,4,-562.874084,2211.271729,539.285278,100,1000,3720003),
+-- High Overlord Saurfang 37187
 (37187,0,1,-48.8073,2211.06,27.9859,3.14159,50000,3718701),
 (37187,0,2,80.6792,2211.6,30.1157,0.0373585,100,1),
+(37187,1,1,-540.714783,2211.259521,539.291138,100,1000,7),
+(37187,1,2,-533.4601,2211.236,539.29175,100,0,0),
+(37187,1,3,-500.2309,2211.1736,540.50146,100,1000,7),
+(37187,2,1,-548.762695,2211.327881,539.291138,0.004127,7000,3718702),
+(37187,2,2,-562.874084,2211.271729,539.285278,100,1000,3718703),
+(37187,3,1,-522.665649,2229.580078,539.290894,100,1000,3718704),
+(37187,3,2,-522.665649,2229.580078,539.290894,100,1000,3718705),
+(37187,4,1,-522.665649,2229.580078,539.290894,100,1000,7),
+(37187,4,2,-521.326538,2249.804443,539.291077,100,1000,3718706),
 -- 37533
 (37533,0,1,4503.413,2441.861,217.8024,100,0,0),
 (37533,0,2,4516.862,2455.603,217.8024,100,0,0),
@@ -985,7 +1000,23 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (37230,1,5,-379.19,2102.62,242.657,100,0,0),
 (37230,1,6,-386.313,2090.87,227.501,100,0,0),
 (37230,1,7,-437.643,2078.05,197.009,100,5000,3723002),
-(37230,1,8,-436.737,2078.52,191.254,3.18684,1000,3723003);
+(37230,1,8,-436.737,2078.52,191.254,3.18684,1000,3723003),
+-- Deathbringer Saurfang 37813
+(37813,0,1,-495.85245,2211.5383,541.11395,100,1000,7),
+-- Skybreaker Marine - 37830
+(37830,0,1,-503.104004,2207.776855,539.466980,100,0,0),
+(37830,0,2,-499.850525,2209.117188,540.638123,100,1000,7),
+(37830,1,1,-503.185272,2210.961182,539.438049,100,0,0),
+(37830,1,2,-499.338318,2211.219727,540.822388,100,1000,7),
+(37830,2,1,-502.856903,2214.197021,539.556396,100,0,0),
+(37830,2,2,-499.196503,2213.059814,540.873718,100,1000,7),
+-- Kor'kron Reaver 37920
+(37920,0,1,-503.104004,2207.776855,539.466980,100,0,0),
+(37920,0,2,-499.850525,2209.117188,540.638123,100,1000,7),
+(37920,1,1,-503.185272,2210.961182,539.438049,100,0,0),
+(37920,1,2,-499.338318,2211.219727,540.822388,100,1000,7),
+(37920,2,1,-502.856903,2214.197021,539.556396,100,0,0),
+(37920,2,2,-499.196503,2213.059814,540.873718,100,1000,7);
 
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- @CGUID+72
@@ -1603,7 +1634,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (3672501,3701101,3702301,3702302,3769601,3769602,3769603,3711901,3720001,3718701,3723001,3723002,3723003);
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (3672501,3701101,3702301,3702302,3769601,3769602,3769603,3711901,3720001,3718701,3723001,3723002,3723003,3720002,3718702,3718703,3718704,3720003,3718705,3718706);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- 36725
 (3672501,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Nerub\ar Broodkeeper - pause WP Movement'),
@@ -1669,13 +1700,121 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3723002,0,39,0,0,0,0,0,0x04 | 0x08,0,0,0,0,0,0,0,0,'Spire Frostwyrm - Fly OFF'),
 -- 3723003
 (3723003,10,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Spire Frostwyrm - idle'),
-(3723003,100,2,59,32768,0,0,0,0x04,0,0,0,0,0,0,0,0,'Spire Frostwyrm - SET UnitFlags');
+(3723003,100,2,59,32768,0,0,0,0x04,0,0,0,0,0,0,0,0,'Spire Frostwyrm - SET UnitFlags'),
+-- Saurfang Alliance Outro
+(3720002,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - pause WP'),
+(3720002,9000,0,0,0,0,0,0,0,@TGUID+44,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 3'),
+(3720002,9000,1,333,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - set emote'),
+(3720002,25000,10,37187,0,0,0,0,0,0,0,0,0,-521.326538,2249.804443,539.291077,5.055635,'Muradin Bronzebeard - spawn High Overlord Saurfang'),
+(3720002,26000,20,2,3,0,37187,50,1,0,0,0,0,0,0,0,0,'High Overlord Saurfang - start WP'),
+(3720002,33000,0,0,0,0,0,0,0,@TGUID+45,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 4'),
+(3720002,41000,0,0,0,0,37187,50,0,@TGUID+46,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 5'),
+(3720002,52000,0,0,0,0,0,0,0,@TGUID+47,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 6'),
+(3720002,58000,10,37880,10000,0,0,0,0,0,0,0,0,-531.104797,2227.818848,539.290588,5.7257,'Muradin Bronzebeard - spawn Stormwind Portal'),
+(3720002,60000,10,37879,0,0,0,0,0,0,0,0,0,-529.816162,2229.761475,539.290588,6.0831,'Muradin Bronzebeard - spawn King Varian Wrynn'),
+(3720002,60000,10,37188,0,0,0,0,0,0,0,0,0,-530.000977,2227.036133,539.290649,0.1533,'Muradin Bronzebeard - spawn Lady Jaina Proudmoore'),
+(3720002,68000,0,0,0,0,37879,50,0,@TGUID+48,0,0,0,0,0,0,0,'King Varian Wrynn - say outro 7'),
+(3720002,73000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - unpause WP'),
+(3720002,78000,1,0,0,0,37187,50,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - clear emote'),
+(3720002,79000,32,0,0,0,37187,50,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - unpause WP'),
+(3720002,97000,28,8,0,0,37187,50,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - kneel'),
+(3720002,102000,0,0,0,0,37187,50,0,@TGUID+49,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 8'),
+(3720002,167000,0,0,0,0,37187,50,0,@TGUID+50,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 9'),
+(3720002,177000,0,0,0,0,37879,50,0,@TGUID+51,0,0,0,0,0,0,0,'King Varian Wrynn - say outro 10'),
+(3720002,195000,0,0,0,0,37187,50,0,@TGUID+61,0,0,0,0,0,0,0,'High Overlord Saurfang - emote nod'),
+(3720002,199000,32,0,0,0,37187,50,0,@TGUID+61,0,0,0,0,0,0,0,'High Overlord Saurfang - resume WP movement'),
+(3720002,259000,0,0,0,0,37188,50,0,@TGUID+52,0,0,0,0,0,0,0,'Lady Jaina Proudmoore - emote cry'),
+(3720002,262000,36,0,0,0,37879,50,0,0,0,0,0,0,0,0,0,'King Varian Wrynn - face Jaina'),
+(3720002,263000,0,0,0,0,37879,50,0,@TGUID+53,0,0,0,0,0,0,0,'King Varian Wrynn - say outro 13'),
+(3720002,269000,0,0,0,0,37188,50,0,@TGUID+62,0,0,0,0,0,0,0,'Lady Jaina Proudmoore - emote wipe tears'),
+(3720002,272000,0,0,0,0,37188,50,0,@TGUID+54,0,0,0,0,0,0,0,'Lady Jaina Proudmoore - say outro 14'),
+(3720002,282000,0,0,0,0,37879,50,0,@TGUID+55,0,0,0,0,0,0,0,'King Varian Wrynn - say outro 15'),
+(3720002,296000,0,0,0,0,0,0,0,@TGUID+56,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 16'),
+(3720002,300000,18,1,0,0,37879,50,0,0,0,0,0,0,0,0,0,'King Varian Wrynn - despawn'),
+(3720002,300000,18,1,0,0,37188,50,0,0,0,0,0,0,0,0,0,'Lady Jaina Proudmoore - despawn'),
+(3720002,300000,15,12980,1,0,37879,50,0,0,0,0,0,0,0,0,0,'King Varian Wrynn - cast Simple Teleport'),
+(3720002,300000,15,12980,1,0,37188,50,0,0,0,0,0,0,0,0,0,'Lady Jaina Proudmoore - cast Simple Teleport'),
+(3720002,300000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - unpause WP'),
+(3720003,0,18,1000,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - despawn'),
+(3720003,0,35,9,100,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - send AI event D'),
+(3720003,1000,10,37200,0,0,0,0,0,0,0,0,0,-555.958,2211.4,539.369,6.26573,'Muradin Bronzebeard - spawn Muradin Bronzebeard'),
+(3720003,1000,10,37830,0,0,0,0,0,0,0,0,0,-560.399,2209.3,539.368,6.23082,'Muradin Bronzebeard - spawn Skybreaker Marine'),
+(3720003,1000,10,37830,0,0,0,0,0,0,0,0,0,-557.936,2214.46,539.368,6.26573,'Muradin Bronzebeard - spawn Skybreaker Marine'),
+(3720003,1000,10,37830,0,0,0,0,0,0,0,0,0,-557.958,2207.16,539.368,6.26573,'Muradin Bronzebeard - spawn Skybreaker Marine'),
+(3720003,1000,10,37830,0,0,0,0,0,0,0,0,0,-560.451,2212.86,539.368,6.17846,'Muradin Bronzebeard - spawn Skybreaker Marine'),
+(3718704,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - pause WP'),
+(3718704,0,1,333,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - set emote'),
+(3718705,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - pause WP'),
+(3718705,1000,37,0,0,0,37813,@CGUID+334,17,0,0,0,0,0,0,0,0,'High Overlord Saurfang - move towards Deathbringer Saurfang'),
+(3718705,22000,15,46598,0,0,37813,@CGUID+334,17,0,0,0,0,0,0,0,0,'High Overlord Saurfang - take Deathbringer Saurfang'),
+(3718705,27000,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - stand'),
+(3718705,30000,20,2,4,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - start WP movement'),
+(3718706,0,18,1000,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - despawn'),
+(3718706,0,18,1000,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - despawn'),
+-- Saurfang Horde Outro
+(3718702,0,0,0,0,0,0,0,0,@TGUID+60,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 4'),
+(3718703,0,18,1000,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - despawn'),
+(3718703,0,18,1000,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - despawn'),
+(3718703,0,35,9,100,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - send AI event D'),
+(3718703,1000,10,37187,0,0,0,0,0,0,0,0,0,-555.958,2211.4,539.369,6.26573,'High Overlord Saurfang - spawn High Overlord Saurfang'),
+(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-560.399,2209.3,539.368,6.23082,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
+(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-557.936,2214.46,539.368,6.26573,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
+(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-557.958,2207.16,539.368,6.26573,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
+(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-560.451,2212.86,539.368,6.17846,'High Overlord Saurfang - spawn Kor\'kron Reaver');
 
 DELETE FROM `dbscripts_on_creature_death` WHERE `id` IN (36612);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (36612,0,35,8,500,0,0,0,0,0,0,0,0,0,0,0,0,'SEND EVENT C');
 
-DELETE FROM `dbscripts_on_relay` WHERE `id` IN (20503,20504,20505,20506,20507,20508);
+DELETE FROM `dbscripts_on_gossip` WHERE `id` IN (1093401,1095301);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- Alliance Saurfang intro
+(1093401,0,29,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - remove gossip flag'),
+(1093401,0,0,0,0,0,0,0,0,@TGUID+26,0,0,0,0,0,0,0,'Muradin Bronzebeard - say intro 1'),
+(1093401,0,25,1,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - Set Run'),
+(1093401,2000,0,0,0,0,37813,@CGUID+334,16,@TGUID+27,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 2'),
+(1093401,2000,13,0,0,0,201825,100,1,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - open door'),
+(1093401,3000,20,2,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - Start WP'),
+(1093401,3000,22,974,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - update faction'),
+(1093401,3000,48,33554432,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - remove not selectable unit flag'),
+(1093401,4000,1,333,10,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - set Emote'),
+(1093401,4000,35,5,10,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - send AI event custom A'),
+(1093401,20000,0,0,0,0,37813,@CGUID+334,16,@TGUID+28,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 3'),
+(1093401,20000,43,0,0,0,201825,100,1,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - close door'),
+(1093401,32000,0,0,0,0,0,0,0,@TGUID+29,0,0,0,0,0,0,0,'Muradin Bronzebeard - say intro 4'),
+(1093401,39000,0,0,0,0,0,0,0,@TGUID+30,0,0,0,0,0,0,0,'Muradin Bronzebeard - say intro 5'),
+(1093401,39000,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - set run'),
+(1093401,40000,35,6,10,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - send AI event custom B'),
+(1093401,40000,20,2,1,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - charge - start WP movement'),
+(1093401,42000,15,70572,1,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - case Grip of Agony'),
+(1093401,45000,0,0,0,0,37813,@CGUID+334,16,@TGUID+31,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 6'),
+(1093401,49000,48,768,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - remove immune npc | player unit flags'),
+-- Horde Saurfang intro
+(1095301,0,29,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - remove gossip flag'),
+(1095301,0,0,0,0,0,0,0,0,@TGUID+32,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 1'),
+(1095301,0,25,1,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - Set Run'),
+(1095301,5000,0,0,0,0,37813,@CGUID+334,16,@TGUID+33,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 2'),
+(1095301,5000,13,0,0,0,201825,100,1,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - open door'),
+(1095301,6000,20,2,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - Start WP'),
+(1095301,6000,22,974,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - update faction'),
+(1095301,6000,48,33554432,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - remove not selectable unit flag'),
+(1095301,7000,35,5,50,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - send AI event custom A'),
+(1095301,22000,20,2,1,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - Start WP'),
+(1095301,22000,43,0,0,0,201825,100,1,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - close door'),
+(1095301,28000,0,0,0,0,0,0,0,@TGUID+34,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 3'),
+(1095301,37000,0,0,0,0,37813,@CGUID+334,16,@TGUID+35,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 4'),
+(1095301,47000,0,0,0,0,0,0,0,@TGUID+36,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 5'),
+(1095301,64000,0,0,0,0,0,0,0,@TGUID+37,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 6'),
+(1095301,81000,0,0,0,0,0,0,0,@TGUID+38,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 7'),
+(1095301,81000,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - set run'),
+(1095301,85000,0,0,0,0,0,0,0,@TGUID+39,0,0,0,0,0,0,0,'High Overlord Saurfang - say intro 8'),
+(1095301,85000,35,6,50,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - send AI event custom B'),
+(1095301,85000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - charge - resume WP movement'),
+(1095301,87000,15,70572,1,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - case Grip of Agony'),
+(1095301,90000,0,0,0,0,37813,@CGUID+334,16,@TGUID+40,0,0,0,0,0,0,0,'Deathbringer Saurfang - say intro 9'),
+(1095301,99000,48,768,0,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'Deathbringer Saurfang - remove immune npc | player unit flags');
+
+DELETE FROM `dbscripts_on_relay` WHERE `id` IN (20503,20504,20505,20506,20507,20508,20519,20520);
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (20503,0,10,37011,604800,1,0,0,0x08,1,0,0,0,-157.436,2199.02,35.2337,0,'Part of Argent Champion 37928 EAI - summon 37011'),
 (20504,0,10,37011,604800,0,0,0,0x08,1,0,0,0,-158.351,2226.26,35.2329,0,'Part of Argent Champion 37928 EAI - summon 37011'),
@@ -1685,7 +1824,26 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalon
 (20507,5,31,37230,60,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Rope Beam Stalker 37231: target check'),
 (20507,10,15,70153,0,0,37230,100,1,0,0,0,0,0,0,0,0,'Part of Rope Beam Stalker 37231: cast Rope Beam'),
 (20508,5,31,23033,60,0,0,0,0,0,0,0,0,0,0,0,0,'Part of 37127 / 38125 EAI: target check'),
-(20508,10,15,69929,0,0,23033,100,1,0,0,0,0,0,0,0,0,'Part of 37127 / 38125 EAI: cast Spirit Stream');
+(20508,10,15,69929,0,0,23033,100,1,0,0,0,0,0,0,0,0,'Part of 37127 / 38125 EAI: cast Spirit Stream'),
+-- Saurfang Ally outro
+(20519,3000,0,0,0,0,0,0,0,@TGUID+41,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 1'),
+(20519,3000,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - set run off'),
+(20519,10000,37,0,0,0,37813,@CGUID+334,17,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - move towards Saurfang'),
+(20519,15000,0,0,0,0,0,0,0,@TGUID+42,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 2'),
+(20519,15000,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - set run on'),
+(20519,23000,0,0,0,0,0,0,0,@TGUID+43,0,0,0,0,0,0,0,'Muradin Bronzebeard - say outro 3'),
+(20519,24000,20,2,2,0,0,0,0,0,0,0,0,0,0,0,0,'Muradin Bronzebeard - move WP'),
+-- Saurfang Horde outro
+(20520,3000,0,0,0,0,0,0,0,@TGUID+57,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 1'),
+(20520,7000,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - set run off'),
+(20520,8000,37,0,0,0,37813,@CGUID+334,17,0,0,0,0,0,0,0,0,'High Overlord Saurfang - move towards Saurfang'),
+(20520,18000,28,8,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - kneel'),
+(20520,22000,1,15,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - emote roar'),
+(20520,28000,0,0,0,0,0,0,0,@TGUID+59,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 3'),
+(20520,35000,0,0,0,0,0,0,0,@TGUID+58,0,0,0,0,0,0,0,'High Overlord Saurfang - say outro 2'),
+(20520,35000,15,46598,1,0,37813,@CGUID+334,16,0,0,0,0,0,0,0,0,'High Overlord Saurfang - take Deathbringer Saurfang'),
+(20520,40000,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - stand'),
+(20520,41000,20,2,2,0,0,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - move WP');
 
 DELETE FROM `dbscripts_on_event` WHERE `id` IN (22869,22870,22900,22907,22908,22909,23426,23438);
 INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -1734,7 +1892,7 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 (23438,1000,11,@OGUID+25,0,0,0,0,0,0,0,0,0,0,0,0,0,'Open Door Doodad_IceCrown_OrangeTubes02'),
 (23438,9000,12,@OGUID+21,0,0,0,0,0,0,0,0,0,0,0,0,0,'Open Door Scientist Airlock Door Orange');
 
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+25;
+DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+62;
 INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `broadcast_text_id`, `comment`) VALUES
 (@TGUID+0,'You cannot escape us!','16923','1','0','0','0','Vengeful Fleshreaper - Yell 1'),
 (@TGUID+1,'The living... here?!','16925','1','0','0','0','Vengeful Fleshreaper - Yell 2'),
@@ -1761,13 +1919,51 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 (@TGUID+22,'A screeching cry pierces the air above!','0','3','0','0','37161','ICC - Spire Frostwyrm - YELL'),
 (@TGUID+23,'I... awaken!','16866','1','0','0','0','Deathbound Ward - say awake 1'),
 (@TGUID+24,'The master\'s sanctum has been disturbed!','16865','1','0','0','0','Deathbound Ward - say awake 2'),
-(@TGUID+25,'Who... goes there...?','16867','1','0','0','0','Deathbound Ward - say awake 3');
-
+(@TGUID+25,'Who... goes there...?','16867','1','0','0','0','Deathbound Ward - say awake 3'),
+-- Deathbringer Saurfang - Alliance Intro
+(@TGUID+26,'Let\'s get a move on then! Move ou...','16974','1','0','22','0','ICC - Muradin Bronzebeard - Saurfang Intro Ally 1'),
+(@TGUID+27,'For every Horde soldier that you killed, for every Alliance dog that fell, the Lich King''s armies grew. Even now the Val\'kyr work to raise your fallen... As Scourge.','16701','1','0','397','0','ICC - Deathbringer Saurfang - Saurfang Intro Ally 2'),
+(@TGUID+28,'Things are about to get much worse. Come, taste the power that the Lich King has bestowed upon me!','16702','1','0','375','0','ICC - Deathbringer Saurfang - Saurfang Intro Ally 3'),
+(@TGUID+29,'A lone orc, against the might of the Alliance?','16970','1','0','6','0','ICC - Muradin Bronzebeard - Saurfang Intro Ally 4'),
+(@TGUID+30,'Charge!','16971','1','0','0','0','ICC - Muradin Bronzebeard - Saurfang Intro Ally 5'),
+(@TGUID+31,'Dwarves...','16703','1','0','153','0','ICC - Deathbringer Saurfang - Saurfang Intro Ally 6'),
+-- Deathbringer Saurfang - Horde Intro
+(@TGUID+32,'Kor\'kron, move out! Champions, watch your backs. The Scourge have been..','17103','1','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 1'),
+(@TGUID+33,'Join me, father. Join me and we will crush this world in the name of the Scourge -- for the glory of the Lich King!','16704','1','0','0','0','ICC - Deathbringer Saurfang - Saurfang Intro Horde 2'),
+(@TGUID+34,'My boy died at the Wrath Gate. I am here only to collect his body.','17097','0','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 3'),
+(@TGUID+35,'Stubborn and old. What chance do you have? I am stronger, and more powerful than you ever were.','16705','1','0','0','0','ICC - Deathbringer Saurfang - Saurfang Intro Horde 4'),
+(@TGUID+36,'We named him Dranosh. It means "Heart of Draenor" in orcish. I would not let the warlocks take him. My boy would be safe, hidden away by the elders of Garadar.','17098','0','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 5'),
+(@TGUID+37,'I made a promise to his mother before she died; that I would cross the Dark Portal alone - whether I lived or died, my son would be safe. Untainted...','17099','0','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 6'),
+(@TGUID+38,'Today, I fulfill that promise.','17100','0','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 7'),
+(@TGUID+39,'High Overlord Saurfang charges!','17104','2','0','0','0','ICC - Overlord Saurfang - Saurfang Intro Horde 8'),
+(@TGUID+40,'Pathetic old orc. Come then heroes. Come and face the might of the Scourge!','16706','1','0','0','0','ICC - Deathbringer Saurfang - Saurfang Intro Horde 9'),
+-- Deathbringer Saurfang - Outro dialogues
+(@TGUID+41,'%s gasps for air','16975','2','0','0','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 1'),
+(@TGUID+42,'That was Saurfang''s boy - the Horde commander at the Wrath Gate. Such a tragic end...','16976','0','0','274','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 2'),
+(@TGUID+43,'What in the... There, in the distance!','16977','0','0','25','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 3'),
+(@TGUID+44,'Soldiers, fall in! Looks like the Horde are comin'' in to take another shot!','16978','1','0','0','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 4'),
+(@TGUID+45,'Don\'t force my hand, orc. We can''t let you pass.','16972','0','0','0','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 5'),
+(@TGUID+46,'Behind you lies the body of my only son. Nothing will keep me from him.','17094','0','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Ally 6'),
+(@TGUID+47,'He... I can\'t do it. Get back on your ship and we\'ll spare your life.','16973','0','0','0','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 7'),
+(@TGUID+48,'Stand down, Muradin. Let a grieving father pass.','16690','0','0','25','0','ICC - Varian - Saurfang Outro Ally 8'),
+(@TGUID+49,'Blood and thunder, my son.','17096','0','1','0','0','ICC - Overlord Saurfang - Saurfang Outro Ally 9'),
+(@TGUID+50,'I will not forget this kindess. I thank you, highness.','17095','0','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Ally 10'),
+(@TGUID+51,'I... I was not at the Wrathgate. But the soldiers who survived told me much of what happened. Your son fought with honor. He died a hero''s death. He deserves a hero''s burial.','16691','0','0','1','0','ICC - Varian - Saurfang Outro Ally 11'),
+(@TGUID+52,'%s cries.','16651','2','0','18','0','ICC - Jaina - Saurfang Outro Ally 12'),
+(@TGUID+53,'Jaina, why are you crying?','16692','0','0','6','0','ICC - Varian - Saurfang Outro Ally 13'),
+(@TGUID+54,'It was nothing, your majesty. Just... I\'m proud of my king.','16652','0','0','0','0','ICC - Jaina - Saurfang Outro Ally 14'),
+(@TGUID+55,'Bah! Muradin, secure the deck and prepare our soldiers for an assault on the upper citadel. I''ll send out another regiment from Stormwind.','16693','0','0','0','0','ICC - Varian - Saurfang Outro Ally 15'),
+(@TGUID+56,'Right away, yer majesty!','16979','0','0','0','0','ICC - Muradin Bronzebeard - Saurfang Outro Ally 16'),
+(@TGUID+57,'%s coughs.','17105','2','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Horde 1'),
+(@TGUID+58,'%s weeps over the corpse of his son.','17106','2','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Horde 2'),
+(@TGUID+59,'You will have a proper ceremony in Nagrand next to the pyres of your mother and ancestors.','17101','0','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Horde 3'),
+(@TGUID+60,'Honor, young heroes... no matter how dire the battle... Never forsake it!','17102','0','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Horde 4'),
+(@TGUID+61,'%s nods.','0','2','0','0','0','ICC - Overlord Saurfang - Saurfang Outro Ally 12'),
+(@TGUID+62,'%s wipes her tears away and smiles at King Varian Wrynn.','0','2','0','0','0','ICC - Jaina - Saurfang Outro Ally 13');
 
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
