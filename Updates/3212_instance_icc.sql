@@ -55,7 +55,21 @@ INSERT INTO npc_spellclick_spells (npc_entry,spell_id,quest_start,cast_flags) VA
 -- spells for cannons
 DELETE FROM creature_template_spells WHERE entry IN (36838,36839);
 INSERT INTO creature_template_spells (entry,setId,spell1,spell2) VALUES
-(36838,0,69399,70175),
-(36839,0,69399,70175);
+(36838,0,69399,70174),
+(36839,0,69399,70174);
 
 UPDATE creature_template SET EquipmentTemplateId=2023 WHERE entry=37920;
+
+-- script targets
+DELETE FROM spell_script_target WHERE entry IN (70175,69400,70104,69705);
+INSERT INTO spell_script_target (entry,type,targetEntry,inverseEffectMask) VALUES
+(70175,1,37215,5),
+(70175,1,37540,5),
+(69400,1,37215,5),
+(69400,1,37540,5),
+(69705,1,36838,0),
+(69705,1,36839,0);
+
+DELETE FROM spell_target_position WHERE id IN (72340);
+INSERT INTO spell_target_position VALUES
+(72340,631,-548.983,2211.24,539.29,0);

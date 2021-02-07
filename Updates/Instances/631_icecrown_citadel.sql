@@ -657,6 +657,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 -- Safe Area (IGB) 37519
 (@CAGUID+26,37519,672,15,1,0,0,-28.27504,15.59459,20.5379,0,604800,604800,0,0,5808,0,0,0),
 (@CAGUID+27,37519,672,15,1,0,0,39.44747,0.136515,25.23212,0,604800,604800,0,0,5808,0,0,0),
+-- The Skybreaker 37540
+(@CAGUID+28,37540,672,15,1,0,0,-13.142929,-0.36969,12.890905,0,604800,604800,0,0,5808,0,0,0),
 
 -- ============================================================
 -- Transport: Orgrim’s Hammer (Icecrown Citadel Raid) - map:673
@@ -696,6 +698,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CHGUID+27,37833,673,15,1,0,0,60.45466,0.021568,38.70344,3.124139,604800,604800,0,0,0,0,0,0),
 -- High Overlord Saurfang 36939
 (@CHGUID+28,36939,673,15,1,0,0,37.18615,0.00016,36.78849,3.159046,604800,604800,0,0,4183500,0,0,0),
+-- Orgrim's Hammer 37215
+(@CHGUID+29,37215,673,15,1,0,0,3.838599,0.183334,24.100487,0,604800,604800,0,0,5808,0,0,0),
 
 -- ======================================================================
 -- Transport: Zeppelin, Horde (The Mighty Wind) (Icecrown Raid) - map:718
@@ -833,7 +837,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+229,0,0,1,0,0,0,'65985');
 
 
-DELETE FROM `creature_movement_template` WHERE entry IN(36880,37025,37217,37696,37038,37011,37119,37200,37187,37533,37534,37230);
+DELETE FROM `creature_movement_template` WHERE entry IN(36880,37025,37217,37696,37038,37011,37119,37200,37187,37533,37534,37230,37813,37830,37920,37117);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- 36880
 (36880,0,1,4357.13,3055.51,360.52,4.74729,90000,0),
@@ -851,6 +855,9 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (37025,0,10,4268.66,3068.96,360.557,1.575,15000,0),
 (37025,0,11,4268.03,3053.27,360.521,100,0,0),
 (37025,0,12,4268.7,3029.4,360.518,100,0,0),
+-- Kor'kron Battle-Mage 37117 (local map coords)
+(37117,0,1,34.91754,-10.442627,36.849182,100,0,0),
+(37117,0,2,13.58548,0.38671875,34.99243,100,1000,3711701),
 -- 37217
 (37217,0,1,4446.83,3046.26,360.523,100,0,0),
 (37217,0,2,4444.28,3029.06,360.518,100,0,0),
@@ -1634,7 +1641,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (3672501,3701101,3702301,3702302,3769601,3769602,3769603,3711901,3720001,3718701,3723001,3723002,3723003,3720002,3718702,3718703,3718704,3720003,3718705,3718706);
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (3672501,3701101,3702301,3702302,3769601,3769602,3769603,3711901,3720001,3718701,3723001,3723002,3723003,3720002,3718702,3718703,3718704,3720003,3718705,3718706,3711701);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- 36725
 (3672501,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Nerub\ar Broodkeeper - pause WP Movement'),
@@ -1760,7 +1767,10 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-560.399,2209.3,539.368,6.23082,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
 (3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-557.936,2214.46,539.368,6.26573,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
 (3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-557.958,2207.16,539.368,6.26573,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
-(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-560.451,2212.86,539.368,6.17846,'High Overlord Saurfang - spawn Kor\'kron Reaver');
+(3718703,1000,10,36957,0,0,0,0,0,0,0,0,0,-560.451,2212.86,539.368,6.17846,'High Overlord Saurfang - spawn Kor\'kron Reaver'),
+-- Gunship encounter scripts
+(3711701,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gunship Mage - pause WP'),
+(3711701,0,15,69705,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gunship Mage - cast Below Zero');
 
 DELETE FROM `dbscripts_on_creature_death` WHERE `id` IN (36612);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
