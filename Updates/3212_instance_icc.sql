@@ -21,6 +21,8 @@ UPDATE gossip_menu_option SET action_script_id=1095301 WHERE menu_id=10953;
 
 -- Set elevator as active
 UPDATE gameobject_template SET ExtraFlags=4096 WHERE entry=202220;
+-- Set teleporters as active
+UPDATE gameobject_template SET ExtraFlags=4096 WHERE entry IN (202235,202242,202243,202244,202245,202246,202190);
 
 -- Missing teleport
 SET @CONDID := 20228;
@@ -55,18 +57,21 @@ INSERT INTO npc_spellclick_spells (npc_entry,spell_id,quest_start,cast_flags) VA
 -- spells for cannons
 DELETE FROM creature_template_spells WHERE entry IN (36838,36839);
 INSERT INTO creature_template_spells (entry,setId,spell1,spell2) VALUES
-(36838,0,69399,70174),
-(36839,0,69399,70174);
+(36838,0,69399,69401),
+(36839,0,70172,70174);
 
 UPDATE creature_template SET EquipmentTemplateId=2023 WHERE entry=37920;
 
+-- Gunship creatures don't regen HP
+UPDATE creature_template SET RegenerateStats=0 WHERE entry IN (37540,37215);
+
 -- script targets
-DELETE FROM spell_script_target WHERE entry IN (70175,69400,70104,69705);
+DELETE FROM spell_script_target WHERE entry IN (70175,69400,70104,69705,70173);
 INSERT INTO spell_script_target (entry,type,targetEntry,inverseEffectMask) VALUES
-(70175,1,37215,5),
+(69402,1,37215,5),
 (70175,1,37540,5),
 (69400,1,37215,5),
-(69400,1,37540,5),
+(70173,1,37540,5),
 (69705,1,36838,0),
 (69705,1,36839,0);
 
