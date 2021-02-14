@@ -18,7 +18,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20250, 9, 12105, 0, 0, 0, 1), -- player didnt start quest yet
 (20251, 8, 12105, 0, 0, 0, 1), -- player didnt finish quest yet
 (20252, -2, 20251, 20250, 0, 0, 0), -- or
-(20253, -1, 20252, 20249, 11, 0, 0); -- above + alliance only
+(20253, -1, 20252, 20249, 22, 0, 0); -- above + alliance only
 UPDATE creature_loot_template SET condition_id = 20253 WHERE item = 36940;
 
 -- Mikhail's Journal 37830 - Horde
