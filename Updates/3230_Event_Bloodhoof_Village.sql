@@ -1,7 +1,7 @@
 -- Training Event in Bloodhoof Village - Mulgore
 
 -- Hulfnar Stonetotem / Thontek Rumblehoof
-UPDATE creature_template_addon SET bytes1 = 0 WHERE entry IN (10599,10600);;
+UPDATE creature_template_addon SET bytes1 = 0 WHERE entry IN (10599,10600);
 DELETE FROM dbscripts_on_relay WHERE id BETWEEN 5 AND 13;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- Part of Krang Stonehoof EAI
