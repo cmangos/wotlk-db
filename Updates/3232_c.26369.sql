@@ -380,5 +380,7 @@ INSERT INTO creature_spawn_data (guid, Id) VALUES
 (518129,1),(517048,1),(517055,1);
 
 -- Tellhorn Stag
+UPDATE creature SET spawndist = 10, MovementType = 1 WHERE id = 26363;
 UPDATE creature SET position_x = 3532.746094, position_y = -2988.157715, position_z = 217.363770, spawndist = 10, MovementType = 1 WHERE guid = 513403;
 UPDATE creature SET position_x = 3663.939453, position_y = -3048.607666, position_z = 250.145966, spawndist = 10, MovementType = 1 WHERE guid = 513559;
+UPDATE creature SET position_x = 3864.718750, position_y = -2794.539551, position_z = 235.804932, spawndist = 10, MovementType = 1 WHERE guid = 513577;
