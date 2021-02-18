@@ -4,6 +4,9 @@
 -- Increase spawn time for event NPCs; the script will handle this properly
 UPDATE creature SET spawntimesecsmin=1800, spawntimesecsmax=1800 WHERE guid IN (561924,561925,561903,561938,561941,561939);
 
+-- no equipment for Tirion
+UPDATE creature_template SET EquipmentTemplateId=0 WHERE entry=29175;
+
 -- Flesh Behemoth 29190
 DELETE FROM creature_movement WHERE id IN (561924,561925);
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
@@ -108,6 +111,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (29175,0,3,2253.47,-5284.3545,82.474,100,0,0),
 (29175,0,4,2281.2556,-5299.5728,85.09321,1.69296,1000,2917501),
 (29175,1,1,2282.8252,-5284.2954,82.63342,100,1000,7),
+(29175,2,1,2271.0044,-5280.692,82.00697,100,1000,7),
 -- Korfax, Champion of the Light 29176
 (29176,1,1,2285.42,-5305.125,86.24626,1.62315,1000,7),
 (29176,2,1,2280.1504,-5271.0415,81.94575,100,1000,7),
@@ -163,7 +167,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (2919901,2917501);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (2919901,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Death Knight - pause WP Movement'),
-(2919901,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Death Knight - unmount'),
+(2919901,0,14,53658,0,0,0,0,0,0,0,0,0,0,0,0,0,'Death Knight - remove The Light of Dawn aura'),
 (2919901,0,28,8,0,0,0,0,0,0,0,0,0,0,0,0,0,'Death Knight - kneel'),
 (2917501,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Highlord Tirion Fordring - pause WP Movement'),
 (2917501,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Highlord Tirion Fordring - unmount'),
