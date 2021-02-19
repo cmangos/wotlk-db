@@ -118,6 +118,7 @@ UPDATE gameobject_template SET data15=1 WHERE entry IN(186648);
 -- not blizzlike but how it actually should work - Brutallus Death Cloud - should always use 11686 ingame
 UPDATE creature_template SET ModelId1=169,ModelId2=11686 WHERE entry IN(25703);
 UPDATE creature_template SET ModelId1=1126,ModelId2=11686 WHERE entry IN(25267);
+UPDATE creature_template SET ModelId1=1126,ModelId2=11686 WHERE entry IN(25265);
 
 -- -------------------------------
 -- Quest custom changes
