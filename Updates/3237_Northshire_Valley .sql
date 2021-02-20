@@ -44,4 +44,4 @@ UPDATE creature SET position_x = -8743.093750, position_y = -173.946426, positio
 UPDATE creature SET position_x = -8747.939453, position_y = -119.266769, position_z = 85.453308 WHERE guid = 80017;
 UPDATE creature SET position_x = -8705.436523, position_y = -67.374557, position_z = 90.116730 WHERE guid = 80053;
 -- Kobold Laborer 80
-UPDATE creature SET spawndist = 3, MovementType = 1 WHERE WHERE id = 80;
+UPDATE creature SET spawndist = 3, MovementType = 1 WHERE id = 80;
