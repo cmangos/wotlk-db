@@ -440,7 +440,24 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (@CGUID+133, 10, -238.155, 2189.58, 97.3452, 0, 0, 0),
 (@CGUID+133, 11, -233.807, 2207.58, 97.3452, 0, 0, 0);
 
--- INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- WOTLK+ only
+INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+(@CGUID+305, 1, -225.0868, 2196.2327, 79.76343, 2.87979, 5000, 3688501),
+(@CGUID+305, 2, -201.7234, 2160.1958, 79.76387, 5.73978, 5000, 3688501),
+(@CGUID+305, 3, -226.0850, 2192.7986, 79.84625, 3.19395, 5000, 3688501),
+(@CGUID+306, 1, -204.45486, 2187.106, 79.76471, 100, 0, 0),
+(@CGUID+306, 2, -207.67882, 2179.375, 79.76559, 100, 0, 0),
+(@CGUID+306, 3, -205.57118, 2178.991, 79.76536, 6.24635, 5000, 3688501),
+(@CGUID+306, 4, -207.67882, 2179.375, 79.76559, 100, 0, 0),
+(@CGUID+306, 5, -204.45486, 2187.106, 79.76471, 100, 0, 0),
+(@CGUID+306, 6, -199.86458, 2191.736, 79.84777, 1.11701, 5000, 3688501),
+(@CGUID+307, 1, -199.56051, 2203.20263, 79.764137, 5.95967, 5000, 3688501),
+(@CGUID+307, 2, -218.01600, 2216.69000, 79.845400, 1.98968, 5000, 3688501);
+
+DELETE FROM `creature_movement_template` WHERE `entry` IN (36272,36565);
+INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+(36272, 0, 1, -196.24826, 2197.2239, 79.76562, 100, 1000, 3627201),
+(36565, 0, 1, -221.41145, 2206.8247, 79.76253, 100, 1000, 3627201);
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
@@ -648,10 +665,44 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+302, 36296, 33, -208.09, 2217.39, 79.8469, 4.81711, 43200, 43200, 0, 0, 0, 0), -- Apothecary Hummel
 (@CGUID+303, 36565, 33, -210.359, 2214.61, 79.8476, 1.0472, 43200, 43200, 0, 0, 0, 0), -- Apothecary Baxter
 (@CGUID+304, 36643, 33, -212.951, 2191.71, 79.8481, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss Manager
-(@CGUID+305, 36885, 33, -226.085, 2192.8, 79.8463, 3.19395, 43200, 43200, 0, 0, 0, 0), -- Crown Apothecary
-(@CGUID+306, 36885, 33, -199.865, 2191.74, 79.8478, 1.11701, 43200, 43200, 0, 0, 0, 0), -- Crown Apothecary
-(@CGUID+307, 36885, 33, -218.016, 2216.69, 79.8454, 1.98968, 43200, 43200, 0, 0, 0, 0), -- Crown Apothecary
-(@CGUID+308, 38208, 33, -239.238, 2156.19, 90.7073, 5.67232, 180, 180, 0, 0, 0, 0); -- Investigator Fezzen Brasstacks
+(@CGUID+305, 36885, 33, -226.085, 2192.8, 79.8463, 3.19395, 43200, 43200, 0, 0, 0, 2), -- Crown Apothecary
+(@CGUID+306, 36885, 33, -199.865, 2191.74, 79.8478, 1.11701, 43200, 43200, 0, 0, 0, 2), -- Crown Apothecary
+(@CGUID+307, 36885, 33, -218.016, 2216.69, 79.8454, 1.98968, 43200, 43200, 0, 0, 0, 2), -- Crown Apothecary
+(@CGUID+308, 38208, 33, -239.238, 2156.19, 90.7073, 5.67232, 180, 180, 0, 0, 0, 0), -- Investigator Fezzen Brasstacks
+(@CGUID+309, 36530, 33, -218.3697, 2217.6093, 79.84506, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+310, 36530, 33, -230.8125, 2185.4982, 79.84583, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+311, 36530, 33, -229.8142, 2170.8940, 79.84965, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+312, 36530, 33, -202.6493, 2180.4895, 79.84852, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+313, 36530, 33, -197.8420, 2203.8369, 79.84732, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+314, 36530, 33, -204.2274, 2162.3264, 79.84864, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+315, 36530, 33, -213.9930, 2209.8488, 79.84777, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+316, 36530, 33, -205.2465, 2204.8542, 79.84710, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+317, 36530, 33, -197.2604, 2196.2900, 79.84710, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+318, 36530, 33, -219.0312, 2161.6613, 79.84820, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+319, 36530, 33, -211.0277, 2163.4843, 79.84878, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+320, 36530, 33, -212.4826, 2216.8195, 79.84779, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+321, 36530, 33, -205.0052, 2219.2153, 79.84557, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+322, 36530, 33, -220.6354, 2222.0070, 79.84278, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+323, 36530, 33, -207.3107, 2212.9426, 79.84712, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+324, 36530, 33, -216.9496, 2225.1528, 79.84320, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+325, 36530, 33, -199.9062, 2211.9252, 79.84727, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+326, 36530, 33, -197.1701, 2217.7465, 79.84375, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+327, 36530, 33, -204.5729, 2226.9011, 79.84292, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+328, 36530, 33, -210.8316, 2223.7221, 79.84461, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+329, 36530, 33, -192.2569, 2210.7761, 79.84515, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+330, 36530, 33, -191.8281, 2222.5798, 79.84314, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+331, 36530, 33, -182.7291, 2214.0539, 79.81827, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+332, 36530, 33, -198.4548, 2224.2622, 79.84032, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+333, 36530, 33, -189.0816, 2216.9113, 79.84313, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+334, 36530, 33, -182.5885, 2219.7309, 79.83676, 0, 180, 180, 0, 0, 0, 0), -- [DND] Valentine Boss - Vial Bunny
+(@CGUID+335, 10441, 33, -227.29513, 2194.06591, 82.96970, 2.0071287, 180, 180, 0, 0, 0, 0), -- Plagued Rat
+(@CGUID+336, 16117, 33, -229.19792, 2192.68408, 80.21551, 0, 180, 180, 0, 0, 0, 0), -- Plagued Swine
+(@CGUID+337, 23033, 33, -224.46875, 2209.68408, 80.92681, 0, 180, 180, 0, 0, 0, 0), -- Invisible Stalker (Floating)
+(@CGUID+338, 23033, 33, -224.36631, 2212.08325, 80.92657, 0, 180, 180, 0, 0, 0, 0), -- Invisible Stalker (Floating)
+(@CGUID+339, 15108, 33, -226.63716, 2231.36987, 80.23510, 1.9198621, 180, 180, 0, 0, 0, 0), -- Forsaken Horse
+(@CGUID+340, 11153, 33, -223.67535, 2246.43579, 80.19229, 5.0789079, 180, 180, 0, 0, 0, 0), -- Red Skeletal Horse
+(@CGUID+341, 6486,  33, -224.77256, 2232.83520, 80.12980, 1.9722220, 180, 180, 0, 0, 0, 0), -- Black Skeletal Horse
+(@CGUID+342, 6486,  33, -217.33854, 2247.86108, 80.18035, 4.8869218, 180, 180, 0, 0, 0, 0); -- Black Skeletal Horse
 
 -- ===========
 -- GAMEOBJECTS
@@ -867,6 +918,9 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 (@CGUID+83, -8),
 (@CGUID+84, -8),
 (@CGUID+85, -8),
+(@CGUID+93, -8),
+(@CGUID+94, -8),
+(@CGUID+95, -8),
 (@CGUID+105, -8),
 (@CGUID+107, -8),
 (@CGUID+108, -8),
@@ -878,7 +932,41 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 (@CGUID+305, 8),
 (@CGUID+306, 8),
 (@CGUID+307, 8),
-(@CGUID+308, 8);
+(@CGUID+308, 8),
+(@CGUID+309, 8),
+(@CGUID+310, 8),
+(@CGUID+311, 8),
+(@CGUID+312, 8),
+(@CGUID+313, 8),
+(@CGUID+314, 8),
+(@CGUID+315, 8),
+(@CGUID+316, 8),
+(@CGUID+317, 8),
+(@CGUID+318, 8),
+(@CGUID+319, 8),
+(@CGUID+320, 8),
+(@CGUID+321, 8),
+(@CGUID+322, 8),
+(@CGUID+323, 8),
+(@CGUID+324, 8),
+(@CGUID+325, 8),
+(@CGUID+326, 8),
+(@CGUID+327, 8),
+(@CGUID+328, 8),
+(@CGUID+329, 8),
+(@CGUID+330, 8),
+(@CGUID+331, 8),
+(@CGUID+332, 8),
+(@CGUID+333, 8),
+(@CGUID+334, 8),
+(@CGUID+335, 8),
+(@CGUID+336, 8),
+(@CGUID+337, 8),
+(@CGUID+338, 8),
+(@CGUID+339, 8),
+(@CGUID+340, 8),
+(@CGUID+341, 8),
+(@CGUID+342, 8);
 
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
@@ -917,7 +1005,12 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 -- =========
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (3688501,3627201);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(3688501,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - set emote state'),
+(3627201,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - pause WP'),
+(3627201,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - set emote state');
 
 INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (@OGUID+18, 0, 11, @OGUID+20, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
