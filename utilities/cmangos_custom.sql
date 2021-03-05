@@ -24,6 +24,10 @@
 -- ============================================================
 -- Classic section
 -- ============================================================
+
+-- Containment Coffer TRAP - make it invisible
+UPDATE gameobject_template SET displayId=0 WHERE entry=103575;
+
 -- Make Moonwell GO server-side (visible by GM only)
 UPDATE gameobject_template SET data3=1 WHERE entry=177272; 
 
