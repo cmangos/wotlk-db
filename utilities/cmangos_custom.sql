@@ -116,3 +116,6 @@ UPDATE gameobject_template SET data5 = 1 WHERE entry IN (193958,193960,193908);
 -- Coldwind Tree
 -- radius reduced to 2 - original 5 often did not trigger effect0 = player could spam credit. 
 UPDATE gameobject_template SET data1 = 2 WHERE entry IN (188539);
+
+-- Wolfsbane Root 189313 - must despawn
+UPDATE gameobject_template SET data5 = 1 WHERE entry IN (189313);
