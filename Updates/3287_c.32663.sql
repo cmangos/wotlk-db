@@ -92,3 +92,8 @@ INSERT INTO pet_levelstats (creature_entry, level, hp, mana, armor, str, agi, st
 DELETE FROM creature_template_spells WHERE entry = 32663;
 INSERT INTO creature_template_spells(entry, spell1, spell2, spell3, spell4, spell5, spell6, spell7, spell8) VALUES
 (32663,0,0,0,47031,0,0,0,0);
+
+-- summon pet script
+DELETE FROM dbscripts_on_gossip WHERE id=930101 AND command=15 and delay=1000;
+INSERT INTO dbscripts_on_gossip (id,delay,command,datalong,buddy_entry,search_radius,data_flags,comments) VALUES
+(930101,1000,15,47014,32663,10,32,'Budd - Cast Budd\'s Attention Span');
