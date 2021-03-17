@@ -88,3 +88,7 @@ INSERT INTO pet_levelstats (creature_entry, level, hp, mana, armor, str, agi, st
 (32663,83,10019,0,10673,0,0,0,0,0),
 (32663,84,10300,0,10990,0,0,0,0,0),
 (32663,85,10595,0,11307,0,0,0,0,0);
+-- Pet Bar
+DELETE FROM creature_template_spells WHERE entry = 32663;
+INSERT INTO creature_template_spells(entry, spell1, spell2, spell3, spell4, spell5, spell6, spell7, spell8) VALUES
+(32663,0,0,0,47031,0,0,0,0);
