@@ -48,7 +48,6 @@ DELETE FROM dbscripts_on_go_use WHERE id IN (SELECT guid FROM tmp_gameobject);
 DELETE FROM dbscripts_on_go_template_use WHERE id IN (SELECT id FROM tmp_gameobject);
 DELETE FROM game_event_gameobject WHERE guid IN (SELECT guid FROM tmp_gameobject);
 DELETE FROM gameobject_battleground WHERE guid IN (SELECT guid FROM tmp_gameobject);
-DELETE FROM gameobject_addon WHERE guid IN (SELECT guid FROM tmp_gameobject);
 DELETE FROM gameobject WHERE guid IN (SELECT guid FROM tmp_gameobject);
 
 DROP TABLE IF EXISTS tmp_creature;
@@ -56,4 +55,5 @@ DROP TABLE IF EXISTS tmp_gameobject;
 
 -- WoTLK ONLY
 -- currently used by instances only
+DELETE FROM gameobject_addon WHERE guid IN (SELECT guid FROM tmp_gameobject);
 DELETE FROM creature_conditional_spawn;
