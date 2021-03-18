@@ -495,7 +495,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 -- Gauntlet Imp Trigger
 (@CGUID+342, 1, 1697.917, 502.315, 86.48821, 1.658063, 10000, 2584801);
 
-DELETE FROM `creature_movement_template` WHERE `entry` IN (25485); -- nonexistant spawn
+DELETE FROM `creature_movement_template` WHERE `entry` IN (25485); -- nonstatic spawns
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Pathing for Anchorite Elbadon Entry: 25639
 (25639, 0, 1, 1770.309, 930.3347, 15.5708, 0, 0, 0),

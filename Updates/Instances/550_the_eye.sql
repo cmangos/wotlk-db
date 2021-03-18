@@ -508,6 +508,10 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (19514, 0, 7, 294.213, -32.4156, 43.6141, 100, 0, 0),
 (19514, 0, 8, 332.342, -47.5406, 43.6975, 100, 0, 0);
 
+DELETE FROM creature_spawn_data WHERE guid IN(@CGUID+3);
+INSERT INTO creature_spawn_data(Guid,Id) VALUES
+(@CGUID+3, 1);
+
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
