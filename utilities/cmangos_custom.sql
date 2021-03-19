@@ -79,6 +79,10 @@ UPDATE gameobject_template SET data1 = 5 WHERE entry BETWEEN 176094 AND 176097;
 UPDATE gameobject_template SET `data8`=1 WHERE entry=179688; -- add serverside attribute so that it's not visible to players
 UPDATE gameobject_template SET `faction`=1375 WHERE entry=179688; -- "Treasure" faction 1375 here is guessed based on when patch 1.4 was released, and the fact that it's hostile to Demon faction 90
 
+-- Musty Tome 176150/176151
+-- must despawn after used (has that flag set up.. but with restock timer it will never happen)
+UPDATE gameobject_template SET data2=0 WHERE entry IN (176150,176151);
+
 -- ============================================================
 -- TBC section
 -- ============================================================
