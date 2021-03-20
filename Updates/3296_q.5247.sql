@@ -31,7 +31,7 @@ INSERT INTO dbscript_string (entry, content_default, sound, type, language, emot
 (2000003261,'Ishnu... Oshalan thara dormil... Anu\'dorin...',0,0,0,0,NULL),
 (2000003262,'Yes, I was able to reseal the relic, $N.',0,0,0,2,NULL);
 
--- Jin'Zil's Smoke 19544
+-- Aurora's Book 178229
 -- missing spawn added
 DELETE FROM gameobject WHERE guid = 34;
 DELETE FROM game_event_gameobject WHERE guid = 34;
