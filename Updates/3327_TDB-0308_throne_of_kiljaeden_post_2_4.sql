@@ -1,7 +1,9 @@
 -- Respawn Throne of Kil'jaeden in Outland Guid Range Post 2.4
 SET @CGUID := 5301501;
-DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` IN (24918,24919,24921,24933,24959));
-DELETE FROM `creature` WHERE `id` IN (18728,22320,22323,24918,24919,24921,24933,24937,24955,24959) AND `guid` NOT BETWEEN 5300041 AND 5300059; -- Generic Cosmetic Trigger - LAB 24921 on IoQD
+DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` IN (24918,24919,24921,24933));
+DELETE FROM `creature` WHERE `id` IN (18728,22320,22323,24918,24919,24921,24933,24937,24955) AND `guid` NOT BETWEEN 5300041 AND 5300059; -- Generic Cosmetic Trigger - LAB 24921 on IoQD
+-- one generic removed
+DELETE FROM `creature` WHERE guid = 97064;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
 -- Doom Lord Kazzak 18728
 (@CGUID + 01, 18728, 530, 1, 0, 0, 943.48980712890625, 2269.76904296875, 306.746673583984375, 3.281219005584716796, 172800, 345600, 0, 0, 0, 0, 0, 0),
@@ -386,8 +388,8 @@ REPLACE INTO `creature_template_addon` (`entry`, `bytes1`, `b2_0_sheath`, `b2_1_
 (24919, 0, 1, 16, 0, NULL), -- Wrath Herald
 (24921, 0, 1, 16, 0, NULL), -- Generic Cosmetic Trigger - LAB
 (24933, 0, 1, 16, 383, '32567'), -- Suspended Terrorguard
-(24955, 0, 1, 16, 0, NULL), -- Emaciated Felblood
-(24959, 0, 1, 16, 0, NULL); -- Generic Quest Trigger - LAB
+(24955, 0, 1, 16, 0, NULL); -- Emaciated Felblood
+
 
 -- Felblood Initiate 24918
 UPDATE `creature_model_info` SET `bounding_radius`= 0.4528056, `combat_reach` = 1.8, `gender` = 0, `modelid_other_gender` = 22980 WHERE `modelid` = 22979;
