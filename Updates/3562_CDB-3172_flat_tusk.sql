@@ -13,9 +13,9 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id
 -- update
 UPDATE creature SET position_x = 432.488067626953125, position_y = -4213.39990234375, position_z = 24.5885009765625, orientation = 5.288347721099853515 WHERE (guid = 12218);
 -- POOLS
-DELETE FROM `pool_creature_template` WHERE `id` = 5822;
+DELETE FROM `pool_creature_template` WHERE `id` = 5824;
 INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 ('5824', '1254', '0', 'Captain Flat Tusk (5824)');
-DELETE FROM `pool_template` WHERE `entry` = 1250;
+DELETE FROM `pool_template` WHERE `entry` = 1254;
 INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 ('1254', '1', 'Captain Flat Tusk (5824)');

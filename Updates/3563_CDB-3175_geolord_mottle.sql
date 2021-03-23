@@ -13,9 +13,9 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id
 -- update
 UPDATE creature SET position_x = 424.3211975097656250, position_y = -4245.12597656250, position_z = 26.34619140625000000, orientation = 1.745329260826110839 WHERE (guid = 12384);
 -- POOLS
-DELETE FROM `pool_creature_template` WHERE `id` = 5822;
+DELETE FROM `pool_creature_template` WHERE `id` = 5826;
 INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 ('5826', '1255', '0', 'Geolord Mottle (5826)');
-DELETE FROM `pool_template` WHERE `entry` = 1250;
+DELETE FROM `pool_template` WHERE `entry` = 1255;
 INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 ('1255', '1', 'Geolord Mottle (5826)');
