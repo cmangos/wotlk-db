@@ -5,6 +5,7 @@ DELETE FROM creature_template_addon WHERE entry = 24917;
 INSERT INTO creature_template_addon(entry,auras) VALUES
 (24917,'35319 44855');
 
+/*
 DELETE FROM gossip_menu WHERE entry IN(9060,9303,9304,9305,9306,9307,9293,9052,9065,9063,9064,9127,9111,9087,9050,9115) AND condition_id > 0;
 REPLACE INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
 -- 24932 - Exarch Nasuun
@@ -54,6 +55,7 @@ INSERT INTO gossip_menu_option(menu_id,id,option_text,option_broadcast_text,opti
 (9046,1,'',24224,1,1,9305,10308),
 (9046,2,'',24227,1,1,9304,10306),
 (9046,3,'',24229,1,1,9306,10313);
+*/
 
 DELETE FROM npc_text WHERE id IN (12255,12257,12339,12319,12226,12260,12300,12301,12302,12303,12238,12240,12285,12322,12604,12304,12305);
 DELETE FROM npc_text_broadcast_text WHERE Id IN(12255,12257,12339,12319,12226,12260,12300,12301,12302,12303,12238,12240,12285,12322);
@@ -85,6 +87,7 @@ INSERT INTO npc_text_broadcast_text(Id, Prob0, BroadcastTextId0) VALUES
 (12305,1,24233),
 (12306,1,24234);
 
+/*
 DELETE FROM npc_vendor_template WHERE entry IN(514);
 INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES
 (514, 32227, 0, 0, 1642),
@@ -135,13 +138,14 @@ INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `Ext
 (514, 35768, 0, 0, 0),
 (514, 35769, 0, 0, 0),
 (514, 37504, 0, 0, 0);
+*/
 DELETE FROM npc_vendor WHERE entry = 25950;
-DELETE FROM game_event_creature_data WHERE guid IN(5301172,5300787);
-INSERT INTO game_event_creature_data(guid,vendor_id,event) VALUES
-(5301172,514,314);
+-- DELETE FROM game_event_creature_data WHERE guid IN(5301172,5300787); -- not implemented in Wotlk
+-- INSERT INTO game_event_creature_data(guid,vendor_id,event) VALUES -- not implemented in Wotlk
+-- (5301172,514,314);
 UPDATE creature_template SET VendorTemplateId=0 WHERE entry IN(25046);
-INSERT INTO game_event_creature_data(guid,vendor_id,event) VALUES
-(5300787,505,309);
+-- INSERT INTO game_event_creature_data(guid,vendor_id,event) VALUES -- not implemented in Wotlk
+-- (5300787,505,309); -- not implemented in Wotlk
 DELETE FROM conditions WHERE condition_entry BETWEEN 10301 AND 10319;
 INSERT INTO conditions(condition_entry,type,value1) VALUES
 (10301,12,301),
@@ -327,7 +331,7 @@ UPDATE creature SET modelid=0 WHERE guid IN(96655) AND id IN(24932);
 UPDATE creature SET position_x=-1829.8804931640625,position_y=5500.44140625,position_z=-12.3447799682617187,orientation=3.717551231384277343 WHERE guid IN(5301222) AND id IN(27666);
 UPDATE creature SET position_x=-1847.711181640625,position_y=5506.6083984375,position_z=-12.3446521759033203,orientation=5.06145477294921875 WHERE guid IN(40444) AND id IN(27667);
 UPDATE creature SET MovementType=1,spawndist=3 WHERE guid IN(5300786) AND id IN(25045);
-REPLACE INTO creature_template_addon(entry, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES
+REPLACE INTO creature_template_addon(entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 ('25063', '22860', '0', '0', '0', '0', '33555456', '45187');
 UPDATE creature_template SET RegenerateStats=0 WHERE entry IN(24938);
 DELETE FROM spell_script_target WHERE entry IN(45188);
