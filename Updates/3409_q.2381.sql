@@ -11,7 +11,8 @@ INSERT INTO dbscripts_on_quest_start (id, delay, command, datalong, datalong2, d
 (2381,2110,0,0,0,0,7166,40,7,2000003312,0,0,0,0,0,0,0,'buddy: say'),
 (2381,4000,15,6668,0,0,7166,40,7,0,0,0,0,0,0,0,0,'buddy cast: Red Firework'),
 (2381,7010,15,6668,0,0,7166,40,7,0,0,0,0,0,0,0,0,'buddy cast: Red Firework'),
-(2381,9000,15,6668,0,0,7166,40,7,0,0,0,0,0,0,0,0,'buddy cast: Red Firework');
+(2381,9000,15,6668,0,0,7166,40,7,0,0,0,0,0,0,0,0,'buddy cast: Red Firework'),
+(2381,9100,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
 UPDATE quest_template SET StartScript = 2381 WHERE entry = 2381;
 DELETE FROM dbscript_string WHERE entry BETWEEN 2000003310 AND 2000003312;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
