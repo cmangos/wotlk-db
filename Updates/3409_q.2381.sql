@@ -27,8 +27,8 @@ INSERT INTO gossip_menu (entry,text_id,script_id,condition_id) VALUES
 (524,1041,0,0);
 DELETE FROM gossip_menu_option WHERE menu_id IN(524,20011);
 INSERT INTO gossip_menu_option(menu_id, id, option_icon, option_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, condition_id) VALUES
-(524,0,0,'Press the yellow button labeled \'Thieves\' Tools.\'',1,1,-1,0,52401,0,0,NULL,218),
-(524,1,0,'Press the red button labeled \'E.C.A.C.\'',1,1,-1,0,52402,0,0,NULL,218);
+(524,0,0,'Press the yellow button labeled \'Thieves\' Tools.\'',1,1,-1,0,52402,0,0,NULL,218),
+(524,1,0,'Press the red button labeled \'E.C.A.C.\'',1,1,-1,0,52401,0,0,NULL,218);
 UPDATE dbscripts_on_gossip SET id=52401 WHERE id=2001101;
 UPDATE dbscripts_on_gossip SET id=52402 WHERE id=2001102;
 -- spells must be casted everytime Player req. (no cooldown)
