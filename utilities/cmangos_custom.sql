@@ -84,7 +84,10 @@ UPDATE gameobject_template SET `faction`=1375 WHERE entry=179688; -- "Treasure" 
 UPDATE gameobject_template SET data2=0 WHERE entry IN (176150,176151);
 
 -- Make PX-238 Winter Wondervolt TRAP GO server-side (visible by GM only)
-UPDATE gameobject_template SET `data8`=1 WHERE entry=180797; 
+UPDATE gameobject_template SET `data8`=1 WHERE entry=180797;
+
+-- Verigan's Fist: must despawn during scripted quest
+UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413; 
 
 
 -- ============================================================
