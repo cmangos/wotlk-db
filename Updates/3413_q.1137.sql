@@ -1,5 +1,5 @@
 -- q.1137 'News for Fizzle'
-DELETE FROM dbscripts_on_quest_end WHERE id = 1271;
+DELETE FROM dbscripts_on_quest_end WHERE id = 1137;
 INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1137,200,0,0,0,0,0,0,0,2000003320,0,0,0,0,0,0,0,''),
 (1137,3000,1,1,0,0,0,0,6,0,0,0,0,0,0,0,0,''),
