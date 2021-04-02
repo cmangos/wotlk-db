@@ -1,5 +1,5 @@
 -- q.1108 'Indurium'
-DELETE FROM dbscripts_on_quest_end WHERE id = 1271;
+DELETE FROM dbscripts_on_quest_end WHERE id = 1108;
 INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1108,0,29,2,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'NPCFlags removed'),
 (1108,10,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'active'),
