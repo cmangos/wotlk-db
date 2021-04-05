@@ -28,23 +28,23 @@ INSERT INTO creature_movement_template (entry, point, position_x, position_y, po
 DELETE FROM dbscripts_on_relay WHERE id IN (20531);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (20531,1,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: Active'),
-(20531,100,0,0,0,0,0,0,0x04,2000029615,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
-(20531,5000,0,0,0,0,0,0,0x04,2000029616,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
-(20531,13000,0,0,0,0,0,0,0x04,2000029617,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
+(20531,100,0,0,0,0,0,0,0x04,2000020791,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
+(20531,5000,0,0,0,0,0,0,0x04,2000020792,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
+(20531,13000,0,0,0,0,0,0,0x04,2000020793,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
 (20531,16000,25,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: RUN ON'),
 (20531,17000,20,2,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: waypoints'),
 (20531,27000,15,48651,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: Cast 48651'),
-(20531,27010,0,0,0,0,0,0,0x04,2000029618,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
+(20531,27010,0,0,0,0,0,0,0x04,2000020794,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
 (20531,28500,15,46598,0,0,27409,20,1,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: Cast 46598'),
-(20531,31000,0,0,0,0,0,0,0x04,2000029619,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
+(20531,31000,0,0,0,0,0,0,0x04,2000020795,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: text'),
 (20531,31010,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Freed Alliance Scout 27411 EAI: idle');
-DELETE FROM dbscript_string WHERE entry BETWEEN 2000029615 AND 2000029619;
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000020791 AND 2000020795;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
-(2000029615,'Were you bitten?',0,0,7,274,NULL),
-(2000029616,'Answer me!  Were you bloody bitten?',0,1,7,5,NULL),
-(2000029617,'You don\'t even know, do you?  The trappers?  They\'re not human... we have to get out of here!  Come, quick!',0,0,7,25,NULL),
-(2000029618,'Take Ducal\'s horse, he\'s one of them now!',0,0,7,25,NULL),
-(2000029619,'There\'s lamp oil in the back - make use of it.  The fiends hate fire!',0,0,7,0,NULL);
+(2000020791,'Were you bitten?',0,0,7,274,NULL),
+(2000020792,'Answer me!  Were you bloody bitten?',0,1,7,5,NULL),
+(2000020793,'You don\'t even know, do you?  The trappers?  They\'re not human... we have to get out of here!  Come, quick!',0,0,7,25,NULL),
+(2000020794,'Take Ducal\'s horse, he\'s one of them now!',0,0,7,25,NULL),
+(2000020795,'There\'s lamp oil in the back - make use of it.  The fiends hate fire!',0,0,7,0,NULL);
 
 -- Ducal's Horse 27409
 UPDATE creature_template SET RegenerateStats = 0 WHERE entry = 27409;

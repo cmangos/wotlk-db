@@ -102,7 +102,7 @@ INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalo
 (930101,1100,15,47025,0,0,32663,50,7|0x20,0,0,0,0,0,0,0,0,'Budd - Cast Attention Span'),
 (930101,1300,15,47019,0,0,32663,50,7|0x20,0,0,0,0,0,0,0,0,'Budd - Cast Budd Pet Periodic Trigger'),
 (930101,1500,18,0,0,0,0,0,4,0,0,0,0,0,0,0,0,'despawn static Budd'),
-(930101,2000,0,0,0,0,32663,50,7|0x20,2000029620,0,0,0,0,0,0,0,'Budd - say');
+(930101,2000,0,0,0,0,32663,50,7|0x20,2000020796,0,0,0,0,0,0,0,'Budd - say');
 DELETE FROM spell_script_target WHERE entry IN (47035);
 INSERT INTO spell_script_target (entry,type,targetEntry,inverseEffectMask) VALUES
 (47035,1,26425,6),
@@ -115,20 +115,20 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 DELETE FROM dbscripts_on_spell WHERE id IN (47027);
 INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (47027,0,0,20222,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'32663 - Random OOC Texts');
-DELETE FROM dbscript_string WHERE entry BETWEEN 2000029620 AND 2000029626;
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000020796 AND 2000020802;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
-(2000029620,'Ey, mon! Take me to mah troll bruddas!',0,0,0,0,NULL),
-(2000029621,'Time to play some troll tag, mon!',0,0,0,0,NULL),
-(2000029622,'My troll bruddas be in for some real fun today, mon!',0,0,0,0,NULL),
-(2000029623,'Hee hee hee! Dis gunna be some fun, mon!',0,0,0,0,NULL),
-(2000029624,'You sure we be goin\' da right way, mon?',0,0,0,0,NULL),
-(2000029625,'<sniff, sniff> I can smell \'em, mon.',0,0,0,0,NULL),
-(2000029626,'Nuttin\' says luvin\' like a little tap on da noggin.',0,0,0,0,NULL);
+(2000020796,'Ey, mon! Take me to mah troll bruddas!',0,0,0,0,NULL),
+(2000020797,'Time to play some troll tag, mon!',0,0,0,0,NULL),
+(2000020798,'My troll bruddas be in for some real fun today, mon!',0,0,0,0,NULL),
+(2000020799,'Hee hee hee! Dis gunna be some fun, mon!',0,0,0,0,NULL),
+(2000020800,'You sure we be goin\' da right way, mon?',0,0,0,0,NULL),
+(2000020801,'<sniff, sniff> I can smell \'em, mon.',0,0,0,0,NULL),
+(2000020802,'Nuttin\' says luvin\' like a little tap on da noggin.',0,0,0,0,NULL);
 DELETE FROM dbscript_random_templates WHERE id = 20222;
 INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
-(20222,0,2000029621,0,'32663 - Random OOC Texts'),
-(20222,0,2000029622,0,'32663 - Random OOC Texts'),
-(20222,0,2000029623,0,'32663 - Random OOC Texts'),
-(20222,0,2000029624,0,'32663 - Random OOC Texts'),
-(20222,0,2000029625,0,'32663 - Random OOC Texts'),
-(20222,0,2000029626,0,'32663 - Random OOC Texts');
+(20222,0,2000020797,0,'32663 - Random OOC Texts'),
+(20222,0,2000020798,0,'32663 - Random OOC Texts'),
+(20222,0,2000020799,0,'32663 - Random OOC Texts'),
+(20222,0,2000020800,0,'32663 - Random OOC Texts'),
+(20222,0,2000020801,0,'32663 - Random OOC Texts'),
+(20222,0,2000020802,0,'32663 - Random OOC Texts');
