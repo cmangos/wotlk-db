@@ -14,7 +14,7 @@ DELETE FROM gossip_menu WHERE entry IN(6030);
 INSERT INTO gossip_menu(entry,text_id) VALUES
 (6030,7181);
 
-DELETE FROM gossip_menu WHERE entry IN(7182);
+DELETE FROM gossip_menu WHERE entry IN(6029);
 INSERT INTO gossip_menu(entry,text_id) VALUES
 (6029,7182);
 
