@@ -8,7 +8,7 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (20564,17000,0,0,0,0,0,0,0x04,2000020868,0,0,0,0,0,0,0,'Part of Hugh Glass 26484 EAI: say'),
 (20564,22000,0,0,0,0,0,0,0x04,2000020869,0,0,0,0,0,0,0,'Part of Hugh Glass 26484 EAI: say'),
 (20564,23000,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Hugh Glass 26484 EAI: unactive');
-DELETE FROM dbscript_string WHERE entry BETWEEN 2000020865 AND 20000208x;
+DELETE FROM dbscript_string WHERE entry BETWEEN 2000020865 AND 2000020869;
 INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
 (2000020865,'Wake up, Griselda. Here, girl.',0,0,0,22,NULL),
 (2000020866,'They\'ll never find us here, will they? We won\'t let them get us like they got Limpy Joe and Flannel McGee!',0,0,0,5,NULL),
