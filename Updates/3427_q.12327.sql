@@ -7,8 +7,8 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (20556,10,0,0,0,0,27619,35,0x04,2000020831,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: buddy say'),
 (20556,7000,0,0,0,0,0,0,2,2000020832,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: say'),
 (20556,7100,15,49131,0,0,0,0,2,0,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: credit'),
-(20556,9900,14,49097,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: remove aura'),
-(20556,10000,15,49098,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: teleport back');
+(20556,12900,14,49097,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: remove aura'),
+(20556,13000,15,49098,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Prince Theraldis 27624 EAI: teleport back');
 DELETE FROM conditions WHERE condition_entry = 20287;
 INSERT INTO conditions (condition_entry, type, value1, value2, flags) VALUES 
 (20287, 1, 49097, 0, 0);
