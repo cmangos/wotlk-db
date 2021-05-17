@@ -40,8 +40,7 @@ UPDATE `creature` SET `position_x` = '-4151.89599609375', `position_y` = '-2179.
 UPDATE `creature` SET `position_x` = '-4104.99853515625', `position_y` = '-2211.540283203125', `position_z` = '53.2454376220703125', `orientation` = '0.314159274101257324', `spawndist` = '0', `MovementType` = '0' WHERE (`guid` = '13617');
 
 UPDATE `creature_template_addon` SET `emote` = '0' WHERE (`entry` = '3374');
-
-DELETE FROM `creature_addon` WHERE `guid` IN ('13583', '13584', '13591', '13593', '13594', '13598', '13600', '13605', '13606', '13607', '13610', '13611', '13612', '13613', '13614', '13615', '13616', '13617');
+DELETE FROM `creature_addon` WHERE `guid` IN ('13581','13582','13585','13590','13592','13599','13602','13603','13604','13608','13609','13583', '13584', '13591', '13593', '13594', '13598', '13600', '13605', '13606', '13607', '13610', '13611', '13612', '13613', '13614', '13615', '13616', '13617');
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`) VALUES
 ('13581', '0', '0', '1', '16', '173', '0'),
 ('13582', '0', '0', '1', '16', '173', '0'),
