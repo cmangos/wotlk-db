@@ -1,12 +1,12 @@
 -- missing spawns added
 DELETE FROM creature_addon WHERE guid IN (502,517,566);
-DELETE FROM creature_movement WHERE id IN (12158,12268);
-DELETE FROM game_event_creature WHERE guid IN (12158,12268);
-DELETE FROM game_event_creature_data WHERE guid IN (12158,12268);
-DELETE FROM creature_battleground WHERE guid IN (12158,12268);
-DELETE FROM creature_linking WHERE guid IN (12158,12268)
-OR master_guid IN (12158,12268);
-DELETE FROM creature WHERE guid IN (12158,12268);
+DELETE FROM creature_movement WHERE id IN (502,517,566);
+DELETE FROM game_event_creature WHERE guid IN (502,517,566);
+DELETE FROM game_event_creature_data WHERE guid IN (502,517,566);
+DELETE FROM creature_battleground WHERE guid IN (502,517,566);
+DELETE FROM creature_linking WHERE guid IN (502,517,566)
+OR master_guid IN (502,517,566);
+DELETE FROM creature WHERE guid IN (502,517,566);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) VALUES
 (502,3392,1,1,1,0,0,-4176.35449218750, -2235.1992187500000, 51.03125000000000000, 5.194896697998046875,275,275,0,0,600,618,0,0),
 (517,3392,1,1,1,0,0,-4208.52392578125 , -2274.225341796875, 50.26688766479492187, 3.925816535949707031,275,275,0,0,600,618,0,0),

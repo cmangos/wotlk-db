@@ -16,7 +16,7 @@ UPDATE creature SET position_x = -1302.0343017578125, position_y = -1220.4333496
 DELETE FROM `pool_creature_template` WHERE `id` = 3204;
 INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 (2304, 1204, 0,'Captain Ironhill (2304)');
-DELETE FROM `pool_template` WHERE `entry` = 1202;
+DELETE FROM `pool_template` WHERE `entry` = 1204;
 INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (1204, 1,'Captain Ironhill (2304)');
 
