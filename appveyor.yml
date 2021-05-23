@@ -1,5 +1,5 @@
 # Specify version format
-version: "1.4.{build} 'WrathGate'"
+version: "1.5.{build} 'Arugal's Fate'"
 
 # specify custom environment variables
 environment:

@@ -7,9 +7,9 @@
 ####################################################################################################
 
 # need to be changed on each official DB/CORE release
-FULLDB_FILE_ZIP="WoTLKDB_1_4_14029.sql.gz"
+FULLDB_FILE_ZIP="WoTLKDB_1_5_14034.sql.gz"
 FULLDB_FILE=${FULLDB_FILE_ZIP%.gz}
-DB_TITLE="v1.4 'WrathGate'"
+DB_TITLE="v1.5 'Arugal's Fate'"
 NEXT_MILESTONES="0.19 0.20"
 
 #internal use

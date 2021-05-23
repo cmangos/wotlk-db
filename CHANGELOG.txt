@@ -1,4 +1,41 @@
 ===============================================================
+WoTLKDB v1.5 'Arugal's Fate' for CMaNGOS 14034 for 3.3.5a
+===============================================================
+
+Main changes:
+* Grizzly Hills - Completed
+	- all quests
+	- all areas spawns/waypoints/events
+* Death Knights Starting Zone - Revisited
+	- all quests
+	- all areas spawns/waypoints/events
+* All Transports Populated	
+* Love is in the Air - Updated
+* BG:  Alterac valley - Updated
+* All WoTLK-era Instances moved to 'Instance File System'
+* Instances:
+	- Drak'Tharon - Reconstructed
+	- The Eye of Eternity - Reconstructed
+	- Icecrown Citadel - Reconstructed (still req. more work)
+	- The Violet Hold  - Updated
+	- Ruby Sanctum     - Updated
+	- Utgarde Pinnacle - Updated
+	- Halls of Stone   - Updated
+	- Utgarde Keep     - Updated
+	- Ulduar           - Updated	
+	- The Nexus        - Updated
+	- Azjol-Nerub      - Updated
+	- Pit of Saron     - Updated
+	- Forge of Souls   - Updated
+	- Halls of Reflection - Updated
+	- Ahn'kahet: The Old Kingdom - Updated
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+
+===============================================================
 WoTLKDB v1.4 'WrathGate' for CMaNGOS 14029 for 3.3.5a
 ===============================================================
 
