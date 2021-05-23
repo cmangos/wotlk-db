@@ -116,7 +116,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+5,0,0,1,0,0,0,NULL),
 (@CGUID+44,0,0,1,0,0,0,NULL);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (29266,29314,31079);
+DELETE FROM `creature_movement_template` WHERE entry IN (29266,29312,29313,29314,29315,29316,29395,30658,30659,31079,32226,32228,32230,32231,32234,32235,32237);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Xevozz 29266
 (29266,0,1,1905.5573,841.3157,38.65529,100,0,0),

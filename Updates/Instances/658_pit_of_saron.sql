@@ -482,7 +482,7 @@ DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId
 DELETE FROM `creature_movement_template` WHERE entry IN (37496,37584) AND pathId BETWEEN 9 AND 17;
 DELETE FROM `creature_movement_template` WHERE entry IN (37497,37588) AND pathId BETWEEN 4 AND 7;
 DELETE FROM `creature_movement_template` WHERE entry IN (37498,37587) AND pathId BETWEEN 3 AND 5;
-DELETE FROM `creature_movement_template` WHERE entry IN (36477,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842,38188,38189);
+DELETE FROM `creature_movement_template` WHERE entry IN (37580,37581,36477,37755,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842,38188,38189);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Krick 36477
 (36477,0,1,838.8732,118.114006,509.732,3.3595,1000,3647701),

@@ -227,7 +227,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
-DELETE FROM `creature_movement_template` WHERE entry IN (27979,27982,27981,27980);
+DELETE FROM `creature_movement_template` WHERE entry IN (27979,27982,27981,27980,28070,28165);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Forged Iron Trogg 27979
 (27979,0,1,1294.558594,724.552917,199.358749,100,0,0),

@@ -227,7 +227,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+58,0,0,1,0,173,0,NULL),
 (@CGUID+59,0,0,1,0,0,0,NULL);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (28921,28922,29117,29118,29119,29096,29097,29098,29062,29063,29064);
+DELETE FROM `creature_movement_template` WHERE entry IN (28921,28922,29062,29063,29064,29096,29097,29098,29117,29118,29119,29213,29216,29217);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 -- Hadronox 28921
 (28921,0,1,568.497,513.034,698.679,100,0,0),
