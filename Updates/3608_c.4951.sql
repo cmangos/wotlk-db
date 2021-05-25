@@ -1,5 +1,4 @@
 -- Theramore Practicing Guard 4951
-UPDATE creature_template SET ExtraFlags = 2114 WHERE entry = 4951;
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 4951);
 DELETE FROM creature_template_addon WHERE entry = 4951;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
