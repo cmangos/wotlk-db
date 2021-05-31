@@ -83,7 +83,7 @@ DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 2
 DELETE FROM creature_template_addon WHERE entry = 29692;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 (29692,0,0,1,0,0,0,NULL);
-UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id = 29692;
+UPDATE creature SET spawndist = 0, MovementType = 0, spawntimesecsmin = 180, spawntimesecsmax = 180 WHERE id = 29692;
 -- 44 total spawns
 DELETE FROM pool_template WHERE entry = 20004;
 INSERT INTO pool_template (entry, max_limit, description) VALUES
