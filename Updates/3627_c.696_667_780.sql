@@ -1,16 +1,16 @@
 -- Skullsplitter Axe Thrower 696
 -- missing added (1242 - duplicate - reused)
-DELETE FROM creature_addon WHERE guid IN (1242,2577,2606,3217);
-DELETE FROM creature_movement WHERE id IN (1242,2577,2606,3217);
-DELETE FROM game_event_creature WHERE guid IN (1242,2577,2606,3217);
-DELETE FROM game_event_creature_data WHERE guid IN (1242,2577,2606,3217);
-DELETE FROM creature_battleground WHERE guid IN (1242,2577,2606,3217);
-DELETE FROM creature_linking WHERE guid IN (1242,2577,2606,3217)
- OR master_guid IN (1242,2577,2606,3217);
-DELETE FROM creature WHERE guid IN (1242,2577,2606,3217);
+DELETE FROM creature_addon WHERE guid IN (1242,2481,2606,3217);
+DELETE FROM creature_movement WHERE id IN (1242,2481,2606,3217);
+DELETE FROM game_event_creature WHERE guid IN (1242,2481,2606,3217);
+DELETE FROM game_event_creature_data WHERE guid IN (1242,2481,2606,3217);
+DELETE FROM creature_battleground WHERE guid IN (1242,2481,2606,3217);
+DELETE FROM creature_linking WHERE guid IN (1242,2481,2606,3217)
+ OR master_guid IN (1242,2481,2606,3217);
+DELETE FROM creature WHERE guid IN (1242,2481,2606,3217);
 INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, currentwaypoint, curhealth, curmana, DeathState, MovementType) values
 (1242,696,0,1,1,0,0,-12841.8,-813.187,55.7517,4.11767,300,300,3,0,1678,0,0,1),
-(2577,696,0,1,1,0,0,-12475.3,-789.743,40.2949,4.92495,300,300,10,0,1678,0,0,1),
+(2481,696,0,1,1,0,0,-12475.3,-789.743,40.2949,4.92495,300,300,10,0,1678,0,0,1),
 (2606,696,0,1,1,0,0,-12781.5,-554.275,41.1535,2.72973,300,300,10,0,1678,0,0,1),
 (3217,696,0,1,1,0,0,-12875.1,-827.561,54.6184,5.75208,300,300,3,0,1678,0,0,1);
 -- updates
