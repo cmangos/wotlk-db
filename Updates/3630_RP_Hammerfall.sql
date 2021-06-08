@@ -1,6 +1,6 @@
 -- Pack of Trolls attacking Hammerfall 
 -- Updates
-UPDATE creature SET spawntimesecsmin = 120, spawntimesecsmax = 300 WHERE id = 140697; -- make event happen on random timer
+UPDATE creature SET spawntimesecsmin = 120, spawntimesecsmax = 300 WHERE guid = 140697; -- make event happen on random timer
 UPDATE creature_movement SET waittime = 1000, script_id = 5 WHERE id = 140697 AND point = 1;
 UPDATE creature_movement SET waittime = 0, script_id = 0 WHERE id = 140697 AND point IN (2,3);
 -- links
