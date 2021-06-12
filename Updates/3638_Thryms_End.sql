@@ -448,3 +448,4 @@ UPDATE creature SET position_x = 5576.393555, position_y = -1268.678223, positio
 UPDATE creature SET position_x = 5574.035156, position_y = -1373.479004, position_z = 234.879959 WHERE guid = 525026;
 UPDATE creature SET position_x = 5615.411133, position_y = -1338.071045, position_z = 234.456558 WHERE guid = 525028;
 UPDATE creature SET spawndist = 10, MovementType = 1 WHERE id = 29452;
+UPDATE creature_template SET MaxLevel = 75 WHERE entry = 29452;
