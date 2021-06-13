@@ -1,11 +1,5 @@
 -- Thrym's End - Zul'Drak
 
--- OBJECT
--- not spawned by default there
-DELETE FROM gameobject WHERE guid = '514775';
-DELETE FROM game_event_gameobject WHERE guid = '514775';
-DELETE FROM gameobject_battleground WHERE guid = '514775';
-
 -- Gymer 29647
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 29647);
 DELETE FROM creature_template_addon WHERE entry = 29647;
@@ -58,9 +52,9 @@ INSERT INTO creature_movement (id,point,position_x,position_y,position_z,orienta
 (525032,10,5679.895,-1415.837,258.9202,100,0,0),
 (525032,11,5678.986,-1448.672,258.9202,100,0,0);
 -- Set run on spawn
-DELETE FROM creature_spawn_data WHERE guid IN(518629,525031,525032);
+DELETE FROM creature_spawn_data WHERE guid IN(525030,525031,525032);
 INSERT INTO creature_spawn_data(Guid,Id) VALUES
-(518629, 1),
+(525030, 1),
 (525031, 1),
 (525032, 1);
 
