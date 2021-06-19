@@ -49,6 +49,10 @@ UPDATE gameobject_template SET data8=1 WHERE entry=179325; -- Stormpike Landmine
 -- Make Supply Crate trap GO only visible by GM
  UPDATE gameobject_template SET data8=1 WHERE entry IN (175534, 175535, 175536, 175537);
 
+-- Set radius of Supply Crate trap to zero to prevent trap from triggering with coming by players (it should trigger on player usage of original GO)
+UPDATE gameobject_template SET data2=0 WHERE entry IN (175534, 175535, 175536, 175537);
+
+
 -- Make Dawn's Gambit Trap only visible by GM
 UPDATE gameobject_template SET data2=5, data3=0, data8=0 WHERE entry=176110;
 -- Dawn's Gambit: add data from GO trap 176110 until we are able to trigger trap GOs without spells
@@ -122,6 +126,10 @@ UPDATE gameobject_template SET data3=0, data8=1 WHERE entry=178673; -- 21650, 0
 
 -- Zul'Aman - Tanzar's Trunk - Is not subject to group loot per blizzlike data but all the other chests are. Confirmed data in sniff to be 0, however no such issues reported on retail. Confirmation that blizz sends unfixed GO template data???
 UPDATE gameobject_template SET data15=1 WHERE entry IN(186648);
+
+-- Make some trap GO only visible by GM
+UPDATE gameobject_template SET data8=1 WHERE entry=184718; -- Cauldron Summoner
+UPDATE gameobject_template SET data8=1 WHERE entry=184722; -- Cauldron Bug Summoner
 
 -- -------------------------------
 -- Item custom changes
