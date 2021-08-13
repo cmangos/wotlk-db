@@ -5,6 +5,7 @@ DELETE FROM creature_movement WHERE id IN(SELECT guid FROM creature WHERE id IN(
 DELETE FROM creature_movement_template WHERE entry IN(16867,19411,19410,16870,19312,19264);
 DELETE FROM creature_template_addon WHERE entry=16867; -- Not all should have STATE_READY1H
 DELETE FROM creature_addon WHERE `guid` IN(SELECT guid FROM creature WHERE id IN(16867,16870));
+DELETE FROM creature_addon WHERE `guid` IN (69300,69302,69306,69308,69311,69313,69317,69319); -- 19410,19411 (bytes1 = 1,3,8) static
 DELETE FROM creature WHERE id IN(16867,19411,19410,16870,19312,19264);
 INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, curhealth, curmana, MovementType) VALUES
 -- Shattered Hand Warlock
@@ -98,7 +99,7 @@ INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_
 (161597,16867,530,1,0,0,-217.39133,3082.152,-59.46206,3.037524938583374023,300,300,15,0,0,2),
 (161598,16867,530,1,0,0,-215.99654,2563.0542,7.1334257,5.420352458953857421,300,300,15,0,0,1);
 
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES 
 (161566, 0, 0, 1, 16, 333, 0, NULL),
 (161565, 0, 0, 1, 16, 333, 0, NULL),
 (161569, 0, 0, 1, 16, 333, 0, NULL),
