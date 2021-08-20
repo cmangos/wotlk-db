@@ -127,6 +127,10 @@ UPDATE gameobject_template SET data15=1 WHERE entry IN(186648);
 UPDATE gameobject_template SET data8=1 WHERE entry=184718; -- Cauldron Summoner
 UPDATE gameobject_template SET data8=1 WHERE entry=184722; -- Cauldron Bug Summoner
 
+-- Bogblossom 185497,185500 - consumable
+UPDATE `gameobject_template` SET `data5` = 1 WHERE `entry` IN (185497,185500);
+
+
 -- -------------------------------
 -- Item custom changes
 -- -------------------------------
