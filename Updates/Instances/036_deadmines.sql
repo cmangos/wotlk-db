@@ -679,10 +679,10 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (647, 0, 13, -64.1282, -832.9458, 41.23405, 100, 2000, 0);
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(@CGUID+71, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
-(@CGUID+73, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
-(@CGUID+77, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
-(@CGUID+79, 0, 0, 1, 16, 0, 0, NULL); -- Goblin Woodcarver
+(@CGUID+62, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
+(@CGUID+64, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
+(@CGUID+68, 0, 0, 1, 16, 0, 0, NULL), -- Goblin Woodcarver
+(@CGUID+70, 0, 0, 1, 16, 0, 0, NULL); -- Goblin Woodcarver
 
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (598, 0, 0, 1, 16, 233, 0, NULL), -- Defias Miner
