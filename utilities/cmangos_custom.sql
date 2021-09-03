@@ -103,6 +103,17 @@ UPDATE gameobject_template SET data2=0 WHERE entry=176211;
 -- Verigan's Fist: must despawn during scripted quest
 UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413;
 
+
+-- Temporary fix data6 for GO 178559 (Larva Spewer) in prevision of coming core update
+UPDATE gameobject_template SET data6=0 WHERE entry=178559;
+
+-- Drek'Thar's Scrolls 179004 - seemingly never used
+UPDATE `gameobject_template` SET `data1` = 0 WHERE `entry` = 179004;
+
+-- Inconspicuous Landmark 142189 - consumable, despawn on s.11462 expire
+UPDATE `gameobject_template` SET `data5` = 1 WHERE `entry` = 142189; -- 19660800 / 65536 = 300sec
+
+
 -- ============================================================
 -- TBC section
 -- ============================================================
