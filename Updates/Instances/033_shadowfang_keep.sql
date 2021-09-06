@@ -483,39 +483,39 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (36272,0,1,-196.24826,2197.2239,79.76562,100,1000,3627201),
 (36565,0,1,-221.41145,2206.8247,79.76253,100,1000,3627201);
 
--- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
+-- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
 
-REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(2529, 0, 0, 1, 16, 0, 0, NULL), -- Son of Arugal
-(3849, 0, 0, 1, 16, 0, 0, NULL), -- Deathstalker Adamant
-(3850, 0, 0, 1, 16, 0, 0, NULL), -- Sorcerer Ashcrombe
-(3851, 0, 0, 1, 16, 0, 0, '12544'), -- Shadowfang Whitescalp
-(3853, 0, 0, 1, 16, 0, 0, NULL), -- Shadowfang Moonwalker
-(3854, 0, 0, 1, 16, 0, 0, NULL), -- Shadowfang Wolfguard
-(3855, 0, 0, 1, 16, 0, 0, NULL), -- Shadowfang Darksoul
-(3857, 0, 0, 1, 16, 0, 0, NULL), -- Shadowfang Glutton
-(3859, 0, 0, 1, 16, 0, 0, NULL), -- Shadowfang Ragetooth
-(3861, 0, 0, 1, 16, 0, 0, NULL), -- Bleak Worg
-(3862, 0, 0, 1, 16, 0, 0, ''), -- Slavering Worg
-(3863, 0, 0, 1, 16, 0, 0, NULL), -- Lupine Horror
-(3864, 0, 0, 1, 16, 0, 0, NULL), -- Fel Steed
-(3866, 0, 0, 1, 16, 0, 0, NULL), -- Vile Bat
-(3868, 0, 0, 1, 16, 0, 0, NULL), -- Blood Seeker
-(3872, 0, 0, 1, 16, 0, 0, '7165'), -- Deathsworn Captain
-(3873, 0, 0, 1, 16, 0, 0, NULL), -- Tormented Officer
-(3875, 0, 0, 1, 16, 0, 0, NULL), -- Haunted Servitor
-(3877, 0, 0, 1, 16, 0, 0, NULL), -- Wailing Guardsman
-(3886, 0, 0, 1, 16, 0, 0, NULL), -- Razorclaw the Butcher
-(3887, 0, 0, 1, 16, 0, 0, NULL), -- Baron Silverlaine
-(3914, 0, 0, 1, 16, 0, 0, NULL), -- Rethilgore
-(3927, 0, 0, 1, 16, 0, 0, NULL), -- Wolf Master Nandos
-(4274, 0, 0, 1, 16, 0, 0, NULL), -- Fenrus the Devourer
-(4275, 0, 0, 1, 16, 0, 0, NULL), -- Archmage Arugal
-(4278, 0, 0, 1, 16, 0, 0, NULL), -- Commander Springvale
-(4279, 0, 0, 1, 16, 0, 0, NULL), -- Odo the Blindwatcher
-(4444, 0, 7, 1, 16, 0, 0, NULL), -- Deathstalker Vincent
-(5058, 0, 0, 1, 16, 0, 0, NULL), -- Wolfguard Worg
-(10000, 0, 0, 1, 16, 0, 0, NULL); -- Arugal
+REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
+(2529, 0, 0, 1, 0, 0, NULL), -- Son of Arugal
+(3849, 0, 0, 1, 0, 0, NULL), -- Deathstalker Adamant
+(3850, 0, 0, 1, 0, 0, NULL), -- Sorcerer Ashcrombe
+(3851, 0, 0, 1, 0, 0, '12544'), -- Shadowfang Whitescalp
+(3853, 0, 0, 1, 0, 0, NULL), -- Shadowfang Moonwalker
+(3854, 0, 0, 1, 0, 0, NULL), -- Shadowfang Wolfguard
+(3855, 0, 0, 1, 0, 0, NULL), -- Shadowfang Darksoul
+(3857, 0, 0, 1, 0, 0, NULL), -- Shadowfang Glutton
+(3859, 0, 0, 1, 0, 0, NULL), -- Shadowfang Ragetooth
+(3861, 0, 0, 1, 0, 0, NULL), -- Bleak Worg
+(3862, 0, 0, 1, 0, 0, ''), -- Slavering Worg
+(3863, 0, 0, 1, 0, 0, NULL), -- Lupine Horror
+(3864, 0, 0, 1, 0, 0, NULL), -- Fel Steed
+(3866, 0, 0, 1, 0, 0, NULL), -- Vile Bat
+(3868, 0, 0, 1, 0, 0, NULL), -- Blood Seeker
+(3872, 0, 0, 1, 0, 0, '7165'), -- Deathsworn Captain
+(3873, 0, 0, 1, 0, 0, NULL), -- Tormented Officer
+(3875, 0, 0, 1, 0, 0, NULL), -- Haunted Servitor
+(3877, 0, 0, 1, 0, 0, NULL), -- Wailing Guardsman
+(3886, 0, 0, 1, 0, 0, NULL), -- Razorclaw the Butcher
+(3887, 0, 0, 1, 0, 0, NULL), -- Baron Silverlaine
+(3914, 0, 0, 1, 0, 0, NULL), -- Rethilgore
+(3927, 0, 0, 1, 0, 0, NULL), -- Wolf Master Nandos
+(4274, 0, 0, 1, 0, 0, NULL), -- Fenrus the Devourer
+(4275, 0, 0, 1, 0, 0, NULL), -- Archmage Arugal
+(4278, 0, 0, 1, 0, 0, NULL), -- Commander Springvale
+(4279, 0, 0, 1, 0, 0, NULL), -- Odo the Blindwatcher
+(4444, 0, 7, 1, 0, 0, NULL), -- Deathstalker Vincent
+(5058, 0, 0, 1, 0, 0, NULL), -- Wolfguard Worg
+(10000, 0, 0, 1, 0, 0, NULL); -- Arugal
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+86, @CGUID+74, 3), -- Lupine Horror -> Bleak Worg
@@ -1059,6 +1059,7 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (3688501,3627201);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- WOTLK+
 (3688501,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - set emote state'),
 (3627201,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - pause WP'),
 (3627201,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Apothecary - set emote state');

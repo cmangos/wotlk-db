@@ -603,152 +603,152 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (10899, 0, 21, 150.123, -244.737, 110.89, 0, 0, 0),
 (10899, 0, 22, 145.179, -242.707, 110.871, 0, 0, 0);
 
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(@CGUID+68, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+69, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+72, 0, 0, 1, 16, 0, 0, '6606'), -- Scarshield Legionnaire
-(@CGUID+73, 0, 0, 1, 16, 0, 0, '6606'), -- Scarshield Legionnaire
-(@CGUID+79, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+80, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+85, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+93, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+98, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+100, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+101, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+102, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+104, 0, 1, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(@CGUID+160, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Mystic
-(@CGUID+161, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Mystic
-(@CGUID+162, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Mystic
-(@CGUID+167, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Shadow Priest
-(@CGUID+168, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Shadow Priest
-(@CGUID+169, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Shadow Priest
-(@CGUID+171, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Shadow Priest
-(@CGUID+174, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Shadow Priest
-(@CGUID+175, 0, 8, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Priest
-(@CGUID+176, 0, 8, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Priest
-(@CGUID+180, 0, 0, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Priest
-(@CGUID+183, 0, 0, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Priest
-(@CGUID+193, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Headhunter
-(@CGUID+212, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Grunt
-(@CGUID+216, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Grunt
-(@CGUID+218, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Grunt
-(@CGUID+221, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Grunt
-(@CGUID+222, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Grunt
-(@CGUID+223, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Grunt
-(@CGUID+224, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Grunt
-(@CGUID+225, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Grunt
-(@CGUID+227, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Grunt
-(@CGUID+229, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Legionnaire
-(@CGUID+234, 0, 0, 1, 16, 0, 0, '13236'), -- Firebrand Darkweaver
-(@CGUID+238, 0, 0, 1, 16, 0, 0, '13236'), -- Firebrand Darkweaver
-(@CGUID+241, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Darkweaver
-(@CGUID+242, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Darkweaver
-(@CGUID+254, 0, 0, 1, 16, 0, 0, '6606'), -- Firebrand Invoker
-(@CGUID+258, 0, 0, 1, 16, 0, 0, '12380'), -- Firebrand Dreadweaver
-(@CGUID+260, 0, 1, 1, 16, 0, 0, NULL), -- Firebrand Dreadweaver
-(@CGUID+261, 0, 0, 1, 16, 0, 0, '12380'), -- Firebrand Pyromancer
-(@CGUID+264, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Shadow Hunter
-(@CGUID+265, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Shadow Hunter
-(@CGUID+266, 0, 0, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Hunter
-(@CGUID+267, 0, 0, 1, 16, 0, 0, '12380'), -- Smolderthorn Shadow Hunter
-(@CGUID+277, 0, 1, 1, 16, 0, 0, NULL), -- Smolderthorn Witch Doctor
-(@CGUID+280, 0, 1, 1, 16, 0, 0, '8876'), -- Smolderthorn Axe Thrower
-(@CGUID+283, 0, 1, 1, 16, 0, 0, '8876'), -- Smolderthorn Axe Thrower
-(@CGUID+284, 0, 1, 1, 16, 0, 0, '8876'), -- Smolderthorn Axe Thrower
-(@CGUID+295, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Seer
-(@CGUID+296, 0, 0, 1, 16, 0, 0, '13236'), -- Smolderthorn Seer
-(@CGUID+322, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+323, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+324, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+325, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+327, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+328, 0, 0, 1, 16, 0, 0, '6606'), -- Bloodaxe Veteran
-(@CGUID+331, 0, 1, 1, 16, 0, 0, NULL), -- Bannok Grimaxe
-(@CGUID+332, 0, 1, 1, 16, 0, 0, NULL), -- Bannok Grimaxe
-(@CGUID+381, 0, 1, 1, 16, 0, 0, NULL), -- Bloodaxe Warmonger
-(@CGUID+391, 0, 0, 1, 16, 0, 0, '6606'), -- Ghok Bashguud
-(@CGUID+523, 0, 1, 1, 16, 0, 0, NULL), -- Blackhand Assassin (should not be stealthed? -> remove stealth from acid)
-(@CGUID+524, 0, 1, 1, 16, 0, 0, NULL), -- Blackhand Assassin (should not be stealthed? -> remove stealth from acid)
-(@CGUID+541, 0, 1, 1, 16, 0, 0, NULL); -- Blackhand Iron Guard
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
+(@CGUID+68, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+69, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+72, 0, 0, 1, 0, 0, '6606'), -- Scarshield Legionnaire
+(@CGUID+73, 0, 0, 1, 0, 0, '6606'), -- Scarshield Legionnaire
+(@CGUID+79, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+80, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+85, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+93, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+98, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+100, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+101, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+102, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+104, 0, 1, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(@CGUID+160, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Mystic
+(@CGUID+161, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Mystic
+(@CGUID+162, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Mystic
+(@CGUID+167, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Shadow Priest
+(@CGUID+168, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Shadow Priest
+(@CGUID+169, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Shadow Priest
+(@CGUID+171, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Shadow Priest
+(@CGUID+174, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Shadow Priest
+(@CGUID+175, 0, 8, 1, 0, 0, '12380'), -- Smolderthorn Shadow Priest
+(@CGUID+176, 0, 8, 1, 0, 0, '12380'), -- Smolderthorn Shadow Priest
+(@CGUID+180, 0, 0, 1, 0, 0, '12380'), -- Smolderthorn Shadow Priest
+(@CGUID+183, 0, 0, 1, 0, 0, '12380'), -- Smolderthorn Shadow Priest
+(@CGUID+193, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Headhunter
+(@CGUID+212, 0, 0, 1, 0, 0, '6606'), -- Firebrand Grunt
+(@CGUID+216, 0, 1, 1, 0, 0, NULL), -- Firebrand Grunt
+(@CGUID+218, 0, 1, 1, 0, 0, NULL), -- Firebrand Grunt
+(@CGUID+221, 0, 1, 1, 0, 0, NULL), -- Firebrand Grunt
+(@CGUID+222, 0, 0, 1, 0, 0, '6606'), -- Firebrand Grunt
+(@CGUID+223, 0, 0, 1, 0, 0, '6606'), -- Firebrand Grunt
+(@CGUID+224, 0, 0, 1, 0, 0, '6606'), -- Firebrand Grunt
+(@CGUID+225, 0, 1, 1, 0, 0, NULL), -- Firebrand Grunt
+(@CGUID+227, 0, 0, 1, 0, 0, '6606'), -- Firebrand Grunt
+(@CGUID+229, 0, 1, 1, 0, 0, NULL), -- Firebrand Legionnaire
+(@CGUID+234, 0, 0, 1, 0, 0, '13236'), -- Firebrand Darkweaver
+(@CGUID+238, 0, 0, 1, 0, 0, '13236'), -- Firebrand Darkweaver
+(@CGUID+241, 0, 1, 1, 0, 0, NULL), -- Firebrand Darkweaver
+(@CGUID+242, 0, 0, 1, 0, 0, '6606'), -- Firebrand Darkweaver
+(@CGUID+254, 0, 0, 1, 0, 0, '6606'), -- Firebrand Invoker
+(@CGUID+258, 0, 0, 1, 0, 0, '12380'), -- Firebrand Dreadweaver
+(@CGUID+260, 0, 1, 1, 0, 0, NULL), -- Firebrand Dreadweaver
+(@CGUID+261, 0, 0, 1, 0, 0, '12380'), -- Firebrand Pyromancer
+(@CGUID+264, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Shadow Hunter
+(@CGUID+265, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Shadow Hunter
+(@CGUID+266, 0, 0, 1, 0, 0, '12380'), -- Smolderthorn Shadow Hunter
+(@CGUID+267, 0, 0, 1, 0, 0, '12380'), -- Smolderthorn Shadow Hunter
+(@CGUID+277, 0, 1, 1, 0, 0, NULL), -- Smolderthorn Witch Doctor
+(@CGUID+280, 0, 1, 1, 0, 0, '8876'), -- Smolderthorn Axe Thrower
+(@CGUID+283, 0, 1, 1, 0, 0, '8876'), -- Smolderthorn Axe Thrower
+(@CGUID+284, 0, 1, 1, 0, 0, '8876'), -- Smolderthorn Axe Thrower
+(@CGUID+295, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Seer
+(@CGUID+296, 0, 0, 1, 0, 0, '13236'), -- Smolderthorn Seer
+(@CGUID+322, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+323, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+324, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+325, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+327, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+328, 0, 0, 1, 0, 0, '6606'), -- Bloodaxe Veteran
+(@CGUID+331, 0, 1, 1, 0, 0, NULL), -- Bannok Grimaxe
+(@CGUID+332, 0, 1, 1, 0, 0, NULL), -- Bannok Grimaxe
+(@CGUID+381, 0, 1, 1, 0, 0, NULL), -- Bloodaxe Warmonger
+(@CGUID+391, 0, 0, 1, 0, 0, '6606'), -- Ghok Bashguud
+(@CGUID+523, 0, 1, 1, 0, 0, NULL), -- Blackhand Assassin (should not be stealthed? -> remove stealth from acid)
+(@CGUID+524, 0, 1, 1, 0, 0, NULL), -- Blackhand Assassin (should not be stealthed? -> remove stealth from acid)
+(@CGUID+541, 0, 1, 1, 0, 0, NULL); -- Blackhand Iron Guard
 
-REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(9045, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Acolyte
-(9096, 0, 0, 1, 16, 0, 0, '3417'), -- Rage Talon Dragonspawn
-(9097, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Legionnaire
-(9098, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Spellbinder
-(9196, 0, 0, 1, 16, 0, 0, NULL), -- Highlord Omokk
-(9197, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Battle Mage
-(9198, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Mystic
-(9199, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Enforcer
-(9200, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Reaver
-(9201, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Ogre Magus
-(9216, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Warlord
-(9217, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Lord Magus
-(9218, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Battle Lord
-(9219, 0, 0, 1, 16, 0, 0, NULL), -- Spirestone Butcher
-(9236, 0, 8, 1, 16, 0, 0, '12380'), -- Shadow Hunter Vosh'gajin
-(9237, 0, 0, 1, 16, 0, 0, NULL), -- War Master Voone
-(9239, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Mystic
-(9240, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Shadow Priest
-(9241, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Headhunter
-(9257, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Warlock
-(9258, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Raider
-(9259, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Grunt
-(9260, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Legionnaire
-(9261, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Darkweaver
-(9262, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Invoker
-(9263, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Dreadweaver
-(9264, 0, 0, 1, 16, 0, 0, NULL), -- Firebrand Pyromancer
-(9265, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Shadow Hunter
-(9266, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Witch Doctor
-(9267, 0, 0, 1, 16, 0, 0, '8876'), -- Smolderthorn Axe Thrower
-(9268, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Berserker
-(9269, 0, 0, 1, 16, 0, 0, NULL), -- Smolderthorn Seer
-(9416, 0, 0, 1, 16, 0, 0, NULL), -- Scarshield Worg
-(9568, 0, 0, 1, 16, 0, 0, NULL), -- Overlord Wyrmthalak
-(9583, 0, 0, 1, 16, 0, 0, ''), -- Bloodaxe Veteran
-(9596, 0, 0, 1, 16, 0, 0, NULL), -- Bannok Grimaxe
-(9692, 0, 0, 1, 16, 0, 0, NULL), -- Bloodaxe Raider
-(9693, 0, 0, 1, 16, 0, 0, NULL), -- Bloodaxe Evoker
-(9696, 0, 0, 1, 0, 0, 0, NULL), -- Bloodaxe Worg
-(9701, 0, 0, 1, 16, 0, 0, NULL), -- Spire Scorpid
-(9716, 0, 0, 1, 16, 0, 0, NULL), -- Bloodaxe Warmonger
-(9717, 0, 0, 1, 16, 0, 0, NULL), -- Bloodaxe Summoner
-(9718, 0, 0, 1, 16, 0, 0, NULL), -- Ghok Bashguud
-(9736, 0, 0, 1, 16, 0, 0, NULL), -- Quartermaster Zigris
-(9816, 0, 0, 1, 16, 0, 0, NULL), -- Pyroguard Emberseer
-(9817, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Dreadweaver
-(9818, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Summoner
-(9819, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Veteran
-(10083, 0, 0, 1, 16, 0, 0, NULL), -- Rage Talon Flamescale
-(10177, 0, 0, 1, 16, 0, 0, NULL), -- Spire Scarab
-(10220, 0, 0, 1, 16, 0, 0, '8876'), -- Halycon
-(10221, 0, 0, 1, 16, 0, 0, NULL), -- Bloodaxe Worg Pup
-(10257, 0, 0, 1, 16, 0, 0, NULL), -- Bijou
-(10299, 0, 8, 1, 16, 0, 0, NULL), -- Scarshield Infiltrator
-(10316, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Incarcerator
-(10317, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Elite
-(10318, 0, 0, 1, 16, 0, 0, '22766'), -- Blackhand Assassin
-(10319, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Iron Guard
-(10363, 0, 0, 1, 16, 0, 0, NULL), -- General Drakkisath
-(10366, 0, 0, 1, 16, 0, 0, NULL), -- Rage Talon Dragon Guard
-(10371, 0, 0, 1, 16, 0, 0, NULL), -- Rage Talon Captain
-(10372, 0, 0, 1, 16, 0, 0, NULL), -- Rage Talon Fire Tongue
-(10374, 0, 0, 1, 16, 0, 0, NULL), -- Spire Spider
-(10375, 0, 0, 1, 16, 0, 0, NULL), -- Spire Spiderling
-(10376, 0, 0, 1, 16, 0, 0, NULL), -- Crystal Fang
-(10430, 0, 0, 1, 16, 0, 0, '15506'), -- The Beast
-(10509, 0, 0, 1, 16, 0, 0, NULL), -- Jed Runewatcher
-(10596, 0, 0, 1, 16, 0, 0, NULL), -- Mother Smolderweb
-(10740, 0, 7, 0, 0, 0, 0, NULL), -- Awbee
-(10762, 0, 0, 1, 16, 0, 0, NULL), -- Blackhand Thug
-(10799, 0, 0, 1, 16, 0, 0, NULL), -- Warosh
-(10814, 0, 0, 1, 16, 0, 0, NULL), -- Chromatic Elite Guard
-(10899, 0, 0, 1, 16, 0, 0, NULL), -- Goraluk Anvilcrack
-(15560, 0, 0, 1, 16, 0, 0, '25824'), -- Elder Stonefort
-(16044, 0, 0, 1, 16, 0, 0, NULL), -- Mor Grayhoof Trigger
-(16048, 0, 0, 1, 16, 0, 0, NULL); -- Lord Valthalak Trigger
+REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
+(9045, 0, 0, 1, 0, 0, NULL), -- Scarshield Acolyte
+(9096, 0, 0, 1, 0, 0, '3417'), -- Rage Talon Dragonspawn
+(9097, 0, 0, 1, 0, 0, NULL), -- Scarshield Legionnaire
+(9098, 0, 0, 1, 0, 0, NULL), -- Scarshield Spellbinder
+(9196, 0, 0, 1, 0, 0, NULL), -- Highlord Omokk
+(9197, 0, 0, 1, 0, 0, NULL), -- Spirestone Battle Mage
+(9198, 0, 0, 1, 0, 0, NULL), -- Spirestone Mystic
+(9199, 0, 0, 1, 0, 0, NULL), -- Spirestone Enforcer
+(9200, 0, 0, 1, 0, 0, NULL), -- Spirestone Reaver
+(9201, 0, 0, 1, 0, 0, NULL), -- Spirestone Ogre Magus
+(9216, 0, 0, 1, 0, 0, NULL), -- Spirestone Warlord
+(9217, 0, 0, 1, 0, 0, NULL), -- Spirestone Lord Magus
+(9218, 0, 0, 1, 0, 0, NULL), -- Spirestone Battle Lord
+(9219, 0, 0, 1, 0, 0, NULL), -- Spirestone Butcher
+(9236, 0, 8, 1, 0, 0, '12380'), -- Shadow Hunter Vosh'gajin
+(9237, 0, 0, 1, 0, 0, NULL), -- War Master Voone
+(9239, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Mystic
+(9240, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Shadow Priest
+(9241, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Headhunter
+(9257, 0, 0, 1, 0, 0, NULL), -- Scarshield Warlock
+(9258, 0, 0, 1, 0, 0, NULL), -- Scarshield Raider
+(9259, 0, 0, 1, 0, 0, NULL), -- Firebrand Grunt
+(9260, 0, 0, 1, 0, 0, NULL), -- Firebrand Legionnaire
+(9261, 0, 0, 1, 0, 0, NULL), -- Firebrand Darkweaver
+(9262, 0, 0, 1, 0, 0, NULL), -- Firebrand Invoker
+(9263, 0, 0, 1, 0, 0, NULL), -- Firebrand Dreadweaver
+(9264, 0, 0, 1, 0, 0, NULL), -- Firebrand Pyromancer
+(9265, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Shadow Hunter
+(9266, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Witch Doctor
+(9267, 0, 0, 1, 0, 0, '8876'), -- Smolderthorn Axe Thrower
+(9268, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Berserker
+(9269, 0, 0, 1, 0, 0, NULL), -- Smolderthorn Seer
+(9416, 0, 0, 1, 0, 0, NULL), -- Scarshield Worg
+(9568, 0, 0, 1, 0, 0, NULL), -- Overlord Wyrmthalak
+(9583, 0, 0, 1, 0, 0, ''), -- Bloodaxe Veteran
+(9596, 0, 0, 1, 0, 0, NULL), -- Bannok Grimaxe
+(9692, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Raider
+(9693, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Evoker
+(9696, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Worg
+(9701, 0, 0, 1, 0, 0, NULL), -- Spire Scorpid
+(9716, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Warmonger
+(9717, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Summoner
+(9718, 0, 0, 1, 0, 0, NULL), -- Ghok Bashguud
+(9736, 0, 0, 1, 0, 0, NULL), -- Quartermaster Zigris
+(9816, 0, 0, 1, 0, 0, NULL), -- Pyroguard Emberseer
+(9817, 0, 0, 1, 0, 0, NULL), -- Blackhand Dreadweaver
+(9818, 0, 0, 1, 0, 0, NULL), -- Blackhand Summoner
+(9819, 0, 0, 1, 0, 0, NULL), -- Blackhand Veteran
+(10083, 0, 0, 1, 0, 0, NULL), -- Rage Talon Flamescale
+(10177, 0, 0, 1, 0, 0, NULL), -- Spire Scarab
+(10220, 0, 0, 1, 0, 0, '8876'), -- Halycon
+(10221, 0, 0, 1, 0, 0, NULL), -- Bloodaxe Worg Pup
+(10257, 0, 0, 1, 0, 0, NULL), -- Bijou
+(10299, 0, 8, 1, 0, 0, NULL), -- Scarshield Infiltrator
+(10316, 0, 0, 1, 0, 0, NULL), -- Blackhand Incarcerator
+(10317, 0, 0, 1, 0, 0, NULL), -- Blackhand Elite
+(10318, 0, 0, 1, 0, 0, '22766'), -- Blackhand Assassin
+(10319, 0, 0, 1, 0, 0, NULL), -- Blackhand Iron Guard
+(10363, 0, 0, 1, 0, 0, NULL), -- General Drakkisath
+(10366, 0, 0, 1, 0, 0, NULL), -- Rage Talon Dragon Guard
+(10371, 0, 0, 1, 0, 0, NULL), -- Rage Talon Captain
+(10372, 0, 0, 1, 0, 0, NULL), -- Rage Talon Fire Tongue
+(10374, 0, 0, 1, 0, 0, NULL), -- Spire Spider
+(10375, 0, 0, 1, 0, 0, NULL), -- Spire Spiderling
+(10376, 0, 0, 1, 0, 0, NULL), -- Crystal Fang
+(10430, 0, 0, 1, 0, 0, '15506'), -- The Beast
+(10509, 0, 0, 1, 0, 0, NULL), -- Jed Runewatcher
+(10596, 0, 0, 1, 0, 0, NULL), -- Mother Smolderweb
+(10740, 0, 7, 0, 0, 0, NULL), -- Awbee
+(10762, 0, 0, 1, 0, 0, NULL), -- Blackhand Thug
+(10799, 0, 0, 1, 0, 0, NULL), -- Warosh
+(10814, 0, 0, 1, 0, 0, NULL), -- Chromatic Elite Guard
+(10899, 0, 0, 1, 0, 0, NULL), -- Goraluk Anvilcrack
+(15560, 0, 0, 1, 0, 0, '25824'), -- Elder Stonefort
+(16044, 0, 0, 1, 0, 0, NULL), -- Mor Grayhoof Trigger
+(16048, 0, 0, 1, 0, 0, NULL); -- Lord Valthalak Trigger
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+84, @CGUID+83, 515), -- Scarshield Legionnaire -> Scarshield Legionnaire
@@ -1447,7 +1447,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+39, 136965, 229, 215.773, -341.663, 76.8612, 1.92859, 0, 0, 0.821647, 0.569997, 120, 120, 0, 1), -- Bonfire
 (@OGUID+40, 136966, 229, 229.028, -307.81, 76.9668, 2.72271, 0, 0, 0.978148, 0.207912, 120, 120, 0, 1), -- Bonfire
 -- 41 - 46
-(@OGUID+47, 164725, 229, 126.879, -319.109, 70.935, 3.14159, 0, 0, 1, 0, 180, 180, 100, 0), -- Dragonspine Door (WoTLK update only - doors must be permanent open)
+(@OGUID+47, 164725, 229, 126.879, -319.109, 70.935, 3.14159, 0, 0, 1, 0, 180, 180, 100, 0), -- Dragonspine Door (WoTLK+)
 (@OGUID+48, 164726, 229, 108.036, -420.331, 110.954, 3.14159, 0, 0, 1, 0, 180, 180, 100, 0), -- Doodad_PortcullisActive01
 (@OGUID+49, 175124, 229, 208.798, -433.633, 110.888, -2.82743, 0, 0, 0, 1, 300, 300, 255, 1), -- Rookery Egg
 (@OGUID+50, 175124, 229, 199.588, -433.807, 110.885, 1.11701, 0, 0, 0, 1, 300, 300, 255, 1), -- Rookery Egg
@@ -1689,12 +1689,12 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+286, 175334, 229, -9.06949, -462.313, -18.6442, 3.13474, 0, 0, 0.999994, 0.00342519, 25, 25, 100, 1), -- Bijou's Belongings
 (@OGUID+287, 175382, 229, 67.1283, -297.421, 91.4255, -0.034906, 0, 0, 0, 1, 180, 180, 255, 1), -- Doomrigger's Coffer
 (@OGUID+288, 175385, 229, 65.4179, -280.416, 94.0465, 0.069812, 0, 0, 0, 1, 180, 180, 255, 1), -- Darkstone Tablet
-(@OGUID+289, 175528, 229, 100.257, -313.14, 66.5453, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier01  (WoTLK update only - permanent in use)
-(@OGUID+290, 175529, 229, 100.257, -324.88, 66.5453, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier02  (WoTLK update only - permanent in use)
-(@OGUID+291, 175530, 229, 110.215, -324.88, 68.0355, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier03  (WoTLK update only - permanent in use)
-(@OGUID+292, 175531, 229, 110.215, -313.14, 68.0355, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier04  (WoTLK update only - permanent in use)
-(@OGUID+293, 175532, 229, 120.462, -324.88, 73.5331, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier05  (WoTLK update only - permanent in use)
-(@OGUID+294, 175533, 229, 120.462, -313.14, 73.5331, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier06  (WoTLK update only - permanent in use)
+(@OGUID+289, 175528, 229, 100.257, -313.14, 66.5453, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier01
+(@OGUID+290, 175529, 229, 100.257, -324.88, 66.5453, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier02
+(@OGUID+291, 175530, 229, 110.215, -324.88, 68.0355, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier03
+(@OGUID+292, 175531, 229, 110.215, -313.14, 68.0355, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier04
+(@OGUID+293, 175532, 229, 120.462, -324.88, 73.5331, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier05
+(@OGUID+294, 175533, 229, 120.462, -313.14, 73.5331, 3.14159, 0, 0, 1, 0, 180, 180, 255, 1), -- Doodad_DarkIronBrazier06
 (@OGUID+295, 175571, 229, -47.9095, -369.089, 51.5425, 1.37881, 0, 0, 0.400546, -0.916277, -65, -65, 255, 1), -- Ogre Coup Summoning Circle
 (@OGUID+296, 175571, 229, -27.8804, -385.891, 48.5067, 3.7001, 0, 0, 0.400546, -0.916277, -65, -65, 255, 1), -- Ogre Coup Summoning Circle
 (@OGUID+297, 175571, 229, -13.7275, -384.816, 48.9746, 3.68265, 0, 0, 0.400546, -0.916277, -65, -65, 255, 1), -- Ogre Coup Summoning Circle
