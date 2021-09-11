@@ -17,22 +17,34 @@
 --	- Data or their parsing were wrong
 
 
--- -------------------------------
--- Gameobject custom changes
--- -------------------------------
-
 -- ============================================================
 -- Classic section
 -- ============================================================
 
--- Containment Coffer TRAP - make it invisible
-UPDATE gameobject_template SET displayId=0 WHERE entry=103575;
+-- -------------------------------
+-- Gameobject custom changes
+-- -------------------------------
 
 -- Make Moonwell GO server-side (visible by GM only)
 UPDATE gameobject_template SET data3=1 WHERE entry=177272;
 
 -- Make Incantion of Celebras Trap only visible by GM
 UPDATE gameobject_template SET data8=1 WHERE entry=178963;
+
+-- Make some trap GO only visible by GM
+UPDATE gameobject_template SET data8=1 WHERE entry=103575; -- Containment Coffer TRAP
+UPDATE gameobject_template SET data8=1 WHERE entry=128972; -- Shallow Grave TRAP
+UPDATE gameobject_template SET data8=1 WHERE entry=176592; -- Shellfish Trap
+UPDATE gameobject_template SET data8=1 WHERE entry=176750; -- Kodo Bones
+UPDATE gameobject_template SET data8=1 WHERE entry=177493; -- Fire of Elune (Trap
+UPDATE gameobject_template SET data8=1 WHERE entry=177529; -- Altar of Elune (Trap
+UPDATE gameobject_template SET data8=1 WHERE entry=178124; -- Resonite Crystal (Trap
+UPDATE gameobject_template SET data8=1 WHERE entry=178248; -- Naga Brazier (trap
+UPDATE gameobject_template SET data8=1 WHERE entry=171941; -- Blackrock Keg Trap
+UPDATE gameobject_template SET data8=1 WHERE entry=180391; -- Heart of Hakkar Spell Emitter
+UPDATE gameobject_template SET data8=1 WHERE entry=181214; -- Necropolis critter spawner
+UPDATE gameobject_template SET data8=1 WHERE entry=179324; -- Frostwolf Landmine
+UPDATE gameobject_template SET data8=1 WHERE entry=179325; -- Stormpike Landmine
 
 -- Set radius of Supply Crate trap to zero to prevent trap from being triggered by nearby players (it should trigger on player usage of original GO)
 UPDATE gameobject_template SET data2=0 WHERE entry IN (175534, 175535, 175536, 175537);
@@ -74,28 +86,28 @@ UPDATE gameobject_template SET data1=3701 WHERE entry=153556;
 UPDATE gameobject_template SET `data8`=1 WHERE entry=179688; -- add serverside attribute so that it's not visible to players
 UPDATE gameobject_template SET `faction`=1375 WHERE entry=179688; -- "Treasure" faction 1375 here is guessed based on when patch 1.4 was released, and the fact that it's hostile to Demon faction 90
 
+-- Make PX-238 Winter Wondervolt TRAP GO server-side (visible by GM only)
+UPDATE gameobject_template SET `data8`=1 WHERE entry=180797;
+
 -- Andorhal Tower
 -- SpellFocus radius reduced to 5 (sync with eff1 from spell:17016 that activates target there = 5y)
 UPDATE gameobject_template SET data1 = 5 WHERE entry BETWEEN 176094 AND 176097;
-
--- Ritual Candle Aura
-UPDATE gameobject_template SET `data8`=1 WHERE entry=179688; -- add serverside attribute so that it's not visible to players
-UPDATE gameobject_template SET `faction`=1375 WHERE entry=179688; -- "Treasure" faction 1375 here is guessed based on when patch 1.4 was released, and the fact that it's hostile to Demon faction 90
 
 -- Musty Tome 176150/176151
 -- must despawn after used (has that flag set up.. but with restock timer it will never happen)
 UPDATE gameobject_template SET data2=0 WHERE entry IN (176150,176151);
 
--- Make PX-238 Winter Wondervolt TRAP GO server-side (visible by GM only)
-UPDATE gameobject_template SET `data8`=1 WHERE entry=180797;
-
 -- Verigan's Fist: must despawn during scripted quest
-UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413; 
-
+UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413;
 
 -- ============================================================
 -- TBC section
 -- ============================================================
+
+-- -------------------------------
+-- Gameobject custom changes
+-- -------------------------------
+
 -- Hellfire Hot Spot Spreader
 UPDATE gameobject_template SET data8=1 WHERE entry=183929; -- set serverside so that it's not visible to players
 -- Sealed Tome traps
@@ -112,16 +124,21 @@ UPDATE gameobject_template SET data15=1 WHERE entry IN(186648);
 -- Item custom changes
 -- -------------------------------
 
--- None
 
 -- -------------------------------
 -- Creature custom changes
 -- -------------------------------
 
--- not blizzlike but how it actually should work - Brutallus Death Cloud - should always use 11686 ingame
-UPDATE creature_template SET ModelId1=169,ModelId2=11686 WHERE entry IN(25703);
-UPDATE creature_template SET ModelId1=1126,ModelId2=11686 WHERE entry IN(25267);
-UPDATE creature_template SET ModelId1=1126,ModelId2=11686 WHERE entry IN(25265);
+-- modelids with probability = 0
+UPDATE creature_template SET `modelid2` = 0 WHERE `entry` IN (
+17734, -- Underbog Lord
+17459, -- Chess Waiting Room (DND)
+18095, -- Doomfire
+18104, -- Doomfire Targeting
+25265, -- Demonic Vapor
+25267, -- Demonic Vapor (Trail)
+25703 -- Brutallus Death Cloud
+);
 
 -- -------------------------------
 -- Quest custom changes
