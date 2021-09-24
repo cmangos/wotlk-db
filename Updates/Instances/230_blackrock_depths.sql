@@ -608,10 +608,14 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (9679, 0, 4, 519.44, -217.02, -59.34, 0, 0, 0),
 (9679, 0, 5, 506.55, -153.49, -62.34, 0, 1, 967901);
 
--- TBC only
-DELETE FROM `creature_movement_template` WHERE entry IN (28206);
+DELETE FROM `creature_movement_template` WHERE entry IN (28206,23872);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
-(28206, 0, 1, 847.823, -181.144, -49.6707, 1.85005, 1440000, 9839501);
+-- TBC only
+(28206, 0, 1, 847.823, -181.144, -49.6707, 1.85005, 1440000, 9839501),
+-- TBC+
+-- Coren Direbrew
+(23872, 0, 1, 888.460999, -130.908997, -49.743698, 100, 0, 0),
+(23872, 0, 2, 895.405029, -126.959000, -49.749298, 100, 0, 0);
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+1, 0, 0, 1, 0, 0, '13589'), -- Anvilrage Overseer
@@ -763,7 +767,11 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `emote`,
 (@CGUID+1090, 0, 0, 1, 0, 0, '14869'), -- Hammered Patron
 (@CGUID+1115, 0, 1, 1, 0, 0, NULL), -- Tortured Slave
 (@CGUID+1116, 0, 0, 1, 0, 0, NULL), -- Tortured Slave
-(@CGUID+1117, 0, 0, 1, 93, 0, NULL); -- Tortured Slave
+(@CGUID+1117, 0, 0, 1, 93, 0, NULL), -- Tortured Slave
+
+(@CGUID+1320, 0, 0, 1, 69, 0, NULL), -- Dark Iron Antagonist
+(@CGUID+1321, 0, 0, 1, 69, 0, NULL), -- Dark Iron Antagonist
+(@CGUID+1322, 0, 0, 1, 69, 0, NULL); -- Dark Iron Antagonist
 
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
 (8889, 0, 0, 1, 0, 0, NULL), -- Anvilrage Overseer
@@ -844,7 +852,10 @@ REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath
 (10117, 0, 7, 1, 0, 0, NULL), -- Tortured Slave
 (12944, 0, 0, 1, 0, 0, NULL), -- Lokhtos Darkbargainer
 (15549, 0, 0, 1, 0, 0, '25824'), -- Elder Morndeep
-(16079, 0, 0, 1, 0, 0, NULL); -- Theldren Trigger
+(16079, 0, 0, 1, 0, 0, NULL), -- Theldren Trigger
+
+-- TBC+
+(28067, 0, 0, 1, 69, 0, '50976'); -- Dark Iron Brewer
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+364, @CGUID+1005, 1031), -- Anvilrage Reservist -> General Angerforge
@@ -1075,7 +1086,12 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+921, @CGUID+18, 512), -- Bloodhound --> Anvilrage Warden
 (@CGUID+922, @CGUID+18, 512), -- Bloodhound --> Anvilrage Warden
 (@CGUID+924, @CGUID+923, 512), -- Bloodhound --> Bloodhound
-(@CGUID+925, @CGUID+923, 512); -- Bloodhound --> Bloodhound
+(@CGUID+925, @CGUID+923, 512), -- Bloodhound --> Bloodhound
+
+-- TBC+
+(@CGUID+1323, @CGUID+1312, 128), -- Dark Iron Antagonist -> Coren Direbrew
+(@CGUID+1324, @CGUID+1312, 128), -- Dark Iron Antagonist -> Coren Direbrew
+(@CGUID+1325, @CGUID+1312, 128); -- Dark Iron Antagonist -> Coren Direbrew
 
 REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 (8900, 230, 8983, 1, 100), -- Doomforge Arcanasmith -> Golem Lord Argelmach
@@ -2221,14 +2237,25 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+1309, 23853, 230, 847.645, -175.846, -49.6706, 2.07694, 180, 180, 0, 0, 0, 0), -- [DNT] L70ETC Samuro Controller
 (@CGUID+1310, 23854, 230, 843.406, -178.133, -49.67, 2.04204, 180, 180, 0, 0, 0, 0), -- [DNT] L70ETC Sig Controller
 (@CGUID+1311, 23855, 230, 847.554, -180.631, -49.6707, 2.04204, 180, 180, 0, 0, 0, 0), -- [DNT] L70ETC Chief Thunder-Skins Controller
-(@CGUID+1312, 23872, 230, 891.839, -129.183, -49.6599, 5.25344, 604800, 604800, 0, 0, 0, 0), -- Coren Direbrew
+(@CGUID+1312, 23872, 230, 891.839, -129.183, -49.6599, 5.25344, 604800, 604800, 0, 0, 0, 2), -- Coren Direbrew
 (@CGUID+1313, 28206, 230, 847.823, -181.144, -49.6707, 1.85005, 180, 180, 0, 0, 0, 2), -- [DND] L70ETC Drums
 (@CGUID+1314, 28209, 230, 849.49, -179.317, -49.671, 4.10152, 180, 180, 0, 0, 0, 0), -- Mizli Crankwheel
 (@CGUID+1315, 28210, 230, 845.881, -182.203, -49.6705, 1.18682, 180, 180, 0, 0, 0, 0), -- Ognip Blastbolt
 (@CGUID+1316, 28225, 230, 872.331, -135.744, -49.7576, 3.84395, 180, 180, 0, 0, 0, 0), -- Griz Gutshank
 (@CGUID+1317, 28226, 230, 870.685, -139.139, -49.7589, 3.64473, 180, 180, 0, 0, 0, 0), -- Snaggletooth
 (@CGUID+1318, 28227, 230, 868.815, -135.761, -49.759, 3.67615, 180, 180, 0, 0, 0, 0), -- Slobbermouth
-(@CGUID+1319, 26719, 230, 885.674, -162.749, -49.759, 1.86371, 180, 180, 0, 0, 0, 0); -- Brewfest Spy
+(@CGUID+1319, 26719, 230, 885.674, -162.749, -49.759, 1.86371, 180, 180, 0, 0, 0, 0), -- Brewfest Spy
+(@CGUID+1320, 23795, 230, 428.038, 7.31007, -71.0616, 1.98968, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (entrance portal)
+(@CGUID+1321, 23795, 230, 426.549, 2.64216, -70.9197, 2.04204, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (entrance portal)
+(@CGUID+1322, 23795, 230, 425.946, 12.8322, -70.9413, 4.86947, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (entrance portal)
+(@CGUID+1323, 23795, 230, 895.378, -132.172, -49.6642, 2.6529, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (respawned along with Coren Direbrew)
+(@CGUID+1324, 23795, 230, 893.984, -133.288, -49.6654, 2.58309, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (respawned along with Coren Direbrew)
+(@CGUID+1325, 23795, 230, 896.267, -130.483, -49.6625, 2.60054, 7200, 7200, 0, 0, 0, 0), -- Dark Iron Antagonist (respawned along with Coren Direbrew)
+(@CGUID+1326, 26774, 230, 843.234, -128.448, -54.0389, 4.06662, 7200, 7200, 0, 0, 0, 0), -- Direbrew Summon Loc bunny
+(@CGUID+1327, 26775, 230, 852.561, -145.327, -49.6707, 4.88692, 7200, 7200, 0, 0, 0, 0), -- Direbrew Goto Loc bunny
+(@CGUID+1328, 27890, 230, 418.818, 4.4148, -70.9833, 0.767945, 7200, 7200, 0, 0, 0, 0), -- Brewfest - Direbrew Mole Machine Loc bunny
+(@CGUID+1329, 27890, 230, 901.349, -143.915, -49.673, 0.436332, 7200, 7200, 0, 0, 0, 0), -- Brewfest - Direbrew Mole Machine Loc bunny
+(@CGUID+1330, 28067, 230, 891.229, -174.558, -43.8419, 0.401426, 7200, 7200, 0, 0, 0, 0); -- Dark Iron Brewer
 
 -- WOTLK ONLY
 UPDATE `creature` SET `spawnmask` = 0 WHERE `guid` BETWEEN @CGUID+1300 AND @CGUID+1311; -- Grim Guzzler - L70ETC Concert
@@ -2717,65 +2744,84 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+483, 165658, 230, 884.4476, -410.5084, -48.20438, 4.3458700, 0, 0, -0.8241262, 0.56640610, 604800, 604800, 100, 1), -- Dark Iron Deposit
 (@OGUID+484, 165658, 230, 964.4655, -436.6402, -54.68636, 5.9690270, 0, 0, -0.1564341, 0.98768840, 604800, 604800, 100, 1), -- Dark Iron Deposit
 
+-- TBC+
+(@OGUID+600, 188478, 230, 422.414, 7.88809, -71.1907, 0.767944, 0, 0, 0.374606, 0.927184, 7200, 7200, 100, 0), -- Dark Iron Mole Machine
+(@OGUID+601, 188478, 230, 905.88, -141.802, -49.7579, 0.436332, 0, 0, 0.216439, 0.976296, 7200, 7200, 100, 0), -- Dark Iron Mole Machine
+(@OGUID+602, 188498, 230, 417.741, 12.4861, -70.9043, 5.23599, 0, 0, -0.5, 0.866025, 7200, 7200, 100, 1), -- Mole Machine Console
+(@OGUID+603, 188498, 230, 422.238, 14.1072, -70.9194, 4.50295, 0, 0, -0.777145, 0.629321, 7200, 7200, 100, 1), -- Mole Machine Console
+(@OGUID+604, 188498, 230, 425.861, 11.4283, -71.086, 3.85718, 0, 0, -0.936671, 0.35021, 7200, 7200, 100, 1), -- Mole Machine Console
+(@OGUID+605, 188498, 230, 427.428, 8.26156, -71.1829, 3.31614, 0, 0, -0.996194, 0.087165, 7200, 7200, 100, 1), -- Mole Machine Console
+(@OGUID+606, 188498, 230, 425.845, 3.87212, -71.0512, 2.56563, 0, 0, 0.958819, 0.284016, 7200, 7200, 100, 1), -- Mole Machine Console
+(@OGUID+607, 190367, 230, 422.341, 7.8398, -70.9082, 4.69494, 0, 0, -0.71325, 0.70091, 7200, 7200, 100, 1), -- Steam Main
+(@OGUID+608, 190368, 230, 421.052, 7.45351, -71.2003, 3.71755, 0, 0, -0.958819, 0.284016, 7200, 7200, 100, 1), -- Steam small
+(@OGUID+609, 190368, 230, 422.779, 6.05404, -71.1546, 5.51524, 0, 0, -0.374606, 0.927184, 7200, 7200, 100, 1), -- Steam small
+(@OGUID+610, 190368, 230, 422.805, 8.58296, -71.1728, 5.0091, 0, 0, -0.594823, 0.803857, 7200, 7200, 100, 1), -- Steam small
+(@OGUID+611, 190386, 230, 422.916, 6.78027, -71.4137, 6.16101, 0, 0, -0.0610485, 0.998135, 7200, 7200, 100, 1), -- Rock Rubble
+(@OGUID+612, 190386, 230, 421.414, 7.64368, -71.2077, 4.39823, 0, 0, -0.809016, 0.587786, 7200, 7200, 100, 1), -- Rock Rubble
+(@OGUID+613, 190386, 230, 421.375, 9.14138, -71.3621, 3.82227, 0, 0, -0.942641, 0.333808, 7200, 7200, 100, 1), -- Rock Rubble
+(@OGUID+614, 190395, 230, 892.807, -173.295, -42.8627, 4.32842, 0, 0, -0.829037, 0.559194, 7200, 7200, 100, 1), -- Cauldron Smoke
+(@OGUID+615, 190395, 230, 893.581, -175.627, -42.9461, 4.36332, 0, 0, -0.819152, 0.573577, 7200, 7200, 100, 1), -- Cauldron Smoke
+(@OGUID+616, 188509, 230, 902.58, -160.198, -49.7587, 3.62823, 0, 0, -0.970544, 0.240925, 7200, 7200, 100, 1), -- Dark Iron Mole Machine (Minion Summoner Trap)
+
 -- WOTLK+
-(@OGUID+600, 195253, 230, 876.175, -218.116, -37.5498, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+601, 195253, 230, 892.459, -168.132, -37.2257, -2.61799, 0, 0, -0.965925, 0.258821, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+602, 195253, 230, 897.07, -206.645, -37.4959, 2.07694, 0, 0, 0.861629, 0.507539, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+603, 195253, 230, 886.68, -212.39, -37.4664, 2.07694, 0, 0, 0.861629, 0.507539, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+604, 195253, 230, 855.381, -230.789, -37.2527, 2.11185, 0, 0, 0.870356, 0.492424, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+605, 195253, 230, 898.565, -178.468, -37.0915, -2.61799, 0, 0, -0.965925, 0.258821, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+606, 195253, 230, 843.094, -229.722, -36.9933, 0.558504, 0, 0, 0.275637, 0.961262, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
-(@OGUID+607, 195256, 230, 855.561, -142.067, -48.0872, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+608, 195256, 230, 879.826, -145.935, -49.7594, -1.85005, 0, 0, -0.798635, 0.601815, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+609, 195256, 230, 874.269, -182.294, -43.7037, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+610, 195256, 230, 870.174, -219.478, -43.7037, 2.96704, 0, 0, 0.996194, 0.087165, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+611, 195256, 230, 886.752, -156.676, -49.7605, -3.03684, 0, 0, -0.998629, 0.0523532, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+612, 195256, 230, 848.401, -146.281, -48.0859, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
-(@OGUID+613, 195264, 230, 830.654, -163.978, -48.88, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+614, 195264, 230, 891.046, -170.57, -42.8332, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+615, 195264, 230, 821.517, -174.795, -48.8382, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+616, 195264, 230, 858.851, -172.606, -48.8478, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+617, 195264, 230, 866.958, -144.804, -48.8856, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+618, 195264, 230, 877.285, -169.196, -48.8409, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+619, 195264, 230, 893.253, -198.25, -42.8703, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+620, 195264, 230, 830.051, -154.908, -48.8725, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+621, 195264, 230, 845.779, -147.699, -48.8352, -1.16937, 0, 0, -0.551936, 0.833886, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+622, 195264, 230, 896.01, -202.806, -42.8655, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+623, 195264, 230, 821.511, -165.19, -48.8584, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+624, 195264, 230, 869.124, -163.9, -48.864, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+625, 195264, 230, 817.588, -180.07, -48.8832, -0.471238, 0, 0, -0.233445, 0.97237, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+626, 195264, 230, 842.664, -190.035, -48.9151, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+627, 195264, 230, 859.877, -164.822, -48.8168, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+628, 195264, 230, 814.409, -163.35, -48.8338, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+629, 195264, 230, 874.01, -140.864, -48.8708, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+630, 195264, 230, 876.237, -144.417, -48.8697, 2.93214, 0, 0, 0.994521, 0.104536, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+631, 195264, 230, 825.645, -172.156, -48.8906, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+632, 195264, 230, 863.471, -196.908, -42.7922, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+633, 195264, 230, 857.5, -201.502, -42.8256, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+634, 195264, 230, 838.307, -151.834, -48.8711, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+635, 195264, 230, 813.797, -173.237, -48.8576, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+636, 195264, 230, 884.739, -164.978, -48.8522, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+637, 195264, 230, 824.186, -181.403, -48.8683, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+638, 195264, 230, 859.089, -139.845, -48.8765, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+639, 195264, 230, 866.536, -176.091, -48.8598, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+640, 195264, 230, 852.691, -206.595, -42.8749, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+641, 195264, 230, 878.632, -161.085, -48.8504, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+642, 195264, 230, 868.826, -132.477, -48.8574, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
-(@OGUID+643, 195266, 230, 904.153, -202.728, -37.4635, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
-(@OGUID+644, 195266, 230, 862.141, -226.757, -37.2087, 2.16421, 0, 0, 0.882947, 0.469473, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
-(@OGUID+645, 195266, 230, 848.73, -234.751, -37.2759, 2.16421, 0, 0, 0.882947, 0.469473, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
-(@OGUID+646, 195266, 230, 907.949, -200.629, -37.4735, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
-(@OGUID+647, 195266, 230, 838.715, -222.66, -37.0062, 0.575957, 0, 0, 0.284015, 0.95882, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
-(@OGUID+648, 195273, 230, 867.617, -130.514, -45.2255, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+649, 195273, 230, 860.128, -134.844, -45.1896, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+650, 195273, 230, 839.243, -146.911, -45.1784, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+651, 195273, 230, 813.863, -161.558, -45.3045, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+652, 195273, 230, 838.528, -216.232, -40.4566, 1.91986, 0, 0, 0.819152, 0.573577, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+653, 195273, 230, 888.095, -157.43, -45.9001, -2.67035, 0, 0, -0.972369, 0.233448, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+654, 195273, 230, 850.869, -209.102, -40.4154, 1.91986, 0, 0, 0.819152, 0.573577, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+655, 195273, 230, 880.24, -144.102, -45.7563, -2.67035, 0, 0, -0.972369, 0.233448, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+656, 195273, 230, 831.004, -151.674, -45.2715, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
-(@OGUID+657, 195273, 230, 825.044, -196.507, -45.1789, 0.488691, 0, 0, 0.241921, 0.970296, 180, 180, 255, 1); -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+700, 195253, 230, 876.175, -218.116, -37.5498, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+701, 195253, 230, 892.459, -168.132, -37.2257, -2.61799, 0, 0, -0.965925, 0.258821, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+702, 195253, 230, 897.07, -206.645, -37.4959, 2.07694, 0, 0, 0.861629, 0.507539, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+703, 195253, 230, 886.68, -212.39, -37.4664, 2.07694, 0, 0, 0.861629, 0.507539, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+704, 195253, 230, 855.381, -230.789, -37.2527, 2.11185, 0, 0, 0.870356, 0.492424, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+705, 195253, 230, 898.565, -178.468, -37.0915, -2.61799, 0, 0, -0.965925, 0.258821, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+706, 195253, 230, 843.094, -229.722, -36.9933, 0.558504, 0, 0, 0.275637, 0.961262, 180, 180, 255, 1), -- Hanging, Streamer x3 - Brewfest
+(@OGUID+707, 195256, 230, 855.561, -142.067, -48.0872, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+708, 195256, 230, 879.826, -145.935, -49.7594, -1.85005, 0, 0, -0.798635, 0.601815, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+709, 195256, 230, 874.269, -182.294, -43.7037, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+710, 195256, 230, 870.174, -219.478, -43.7037, 2.96704, 0, 0, 0.996194, 0.087165, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+711, 195256, 230, 886.752, -156.676, -49.7605, -3.03684, 0, 0, -0.998629, 0.0523532, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+712, 195256, 230, 848.401, -146.281, -48.0859, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Standing, Exterior, Medium - Brewfest
+(@OGUID+713, 195264, 230, 830.654, -163.978, -48.88, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+714, 195264, 230, 891.046, -170.57, -42.8332, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+715, 195264, 230, 821.517, -174.795, -48.8382, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+716, 195264, 230, 858.851, -172.606, -48.8478, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+717, 195264, 230, 866.958, -144.804, -48.8856, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+718, 195264, 230, 877.285, -169.196, -48.8409, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+719, 195264, 230, 893.253, -198.25, -42.8703, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+720, 195264, 230, 830.051, -154.908, -48.8725, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+721, 195264, 230, 845.779, -147.699, -48.8352, -1.16937, 0, 0, -0.551936, 0.833886, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+722, 195264, 230, 896.01, -202.806, -42.8655, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+723, 195264, 230, 821.511, -165.19, -48.8584, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+724, 195264, 230, 869.124, -163.9, -48.864, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+725, 195264, 230, 817.588, -180.07, -48.8832, -0.471238, 0, 0, -0.233445, 0.97237, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+726, 195264, 230, 842.664, -190.035, -48.9151, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+727, 195264, 230, 859.877, -164.822, -48.8168, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+728, 195264, 230, 814.409, -163.35, -48.8338, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+729, 195264, 230, 874.01, -140.864, -48.8708, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+730, 195264, 230, 876.237, -144.417, -48.8697, 2.93214, 0, 0, 0.994521, 0.104536, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+731, 195264, 230, 825.645, -172.156, -48.8906, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+732, 195264, 230, 863.471, -196.908, -42.7922, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+733, 195264, 230, 857.5, -201.502, -42.8256, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+734, 195264, 230, 838.307, -151.834, -48.8711, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+735, 195264, 230, 813.797, -173.237, -48.8576, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+736, 195264, 230, 884.739, -164.978, -48.8522, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+737, 195264, 230, 824.186, -181.403, -48.8683, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+738, 195264, 230, 859.089, -139.845, -48.8765, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+739, 195264, 230, 866.536, -176.091, -48.8598, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+740, 195264, 230, 852.691, -206.595, -42.8749, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+741, 195264, 230, 878.632, -161.085, -48.8504, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+742, 195264, 230, 868.826, -132.477, -48.8574, 0.628317, 0, 0, 0.309016, 0.951057, 180, 180, 255, 1), -- Standing, Interior, Medium - Brewfest
+(@OGUID+743, 195266, 230, 904.153, -202.728, -37.4635, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
+(@OGUID+744, 195266, 230, 862.141, -226.757, -37.2087, 2.16421, 0, 0, 0.882947, 0.469473, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
+(@OGUID+745, 195266, 230, 848.73, -234.751, -37.2759, 2.16421, 0, 0, 0.882947, 0.469473, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
+(@OGUID+746, 195266, 230, 907.949, -200.629, -37.4735, 2.09439, 0, 0, 0.866025, 0.500001, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
+(@OGUID+747, 195266, 230, 838.715, -222.66, -37.0062, 0.575957, 0, 0, 0.284015, 0.95882, 180, 180, 255, 1), -- Hanging, Streamer - Brewfest
+(@OGUID+748, 195273, 230, 867.617, -130.514, -45.2255, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+749, 195273, 230, 860.128, -134.844, -45.1896, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+750, 195273, 230, 839.243, -146.911, -45.1784, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+751, 195273, 230, 813.863, -161.558, -45.3045, -1.11701, 0, 0, -0.529919, 0.848048, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+752, 195273, 230, 838.528, -216.232, -40.4566, 1.91986, 0, 0, 0.819152, 0.573577, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+753, 195273, 230, 888.095, -157.43, -45.9001, -2.67035, 0, 0, -0.972369, 0.233448, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+754, 195273, 230, 850.869, -209.102, -40.4154, 1.91986, 0, 0, 0.819152, 0.573577, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+755, 195273, 230, 880.24, -144.102, -45.7563, -2.67035, 0, 0, -0.972369, 0.233448, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+756, 195273, 230, 831.004, -151.674, -45.2715, -1.15192, 0, 0, -0.544639, 0.838671, 180, 180, 255, 1), -- Hanging, Tall/Thin, Medium - Brewfest
+(@OGUID+757, 195273, 230, 825.044, -196.507, -45.1789, 0.488691, 0, 0, 0.241921, 0.970296, 180, 180, 255, 1); -- Hanging, Tall/Thin, Medium - Brewfest
 
 -- ======
 -- EVENTS
@@ -2787,13 +2833,24 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- TBC+
 -- Brewfest
 (@CGUID+1312, 26),
-(@CGUID+1319, 26);
+(@CGUID+1319, 26),
+(@CGUID+1320, 26),
+(@CGUID+1321, 26),
+(@CGUID+1322, 26),
+(@CGUID+1323, 26),
+(@CGUID+1324, 26),
+(@CGUID+1325, 26),
+(@CGUID+1326, 26),
+(@CGUID+1327, 26),
+(@CGUID+1328, 26),
+(@CGUID+1329, 26),
+(@CGUID+1330, 26);
 
 INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 (@CGUID+998, 0, 15735, 0, 0, 0, 2); -- Emperor Dagran Thaurissan (Feast of Winter Veil)
 
 INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
--- WOTLK+
+-- TBC+
 (@OGUID+600, 26),
 (@OGUID+601, 26),
 (@OGUID+602, 26),
@@ -2811,47 +2868,66 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@OGUID+614, 26),
 (@OGUID+615, 26),
 (@OGUID+616, 26),
-(@OGUID+617, 26),
-(@OGUID+618, 26),
-(@OGUID+619, 26),
-(@OGUID+620, 26),
-(@OGUID+621, 26),
-(@OGUID+622, 26),
-(@OGUID+623, 26),
-(@OGUID+624, 26),
-(@OGUID+625, 26),
-(@OGUID+626, 26),
-(@OGUID+627, 26),
-(@OGUID+628, 26),
-(@OGUID+629, 26),
-(@OGUID+630, 26),
-(@OGUID+631, 26),
-(@OGUID+632, 26),
-(@OGUID+633, 26),
-(@OGUID+634, 26),
-(@OGUID+635, 26),
-(@OGUID+636, 26),
-(@OGUID+637, 26),
-(@OGUID+638, 26),
-(@OGUID+639, 26),
-(@OGUID+640, 26),
-(@OGUID+641, 26),
-(@OGUID+642, 26),
-(@OGUID+643, 26),
-(@OGUID+644, 26),
-(@OGUID+645, 26),
-(@OGUID+646, 26),
-(@OGUID+647, 26),
-(@OGUID+648, 26),
-(@OGUID+649, 26),
-(@OGUID+650, 26),
-(@OGUID+651, 26),
-(@OGUID+652, 26),
-(@OGUID+653, 26),
-(@OGUID+654, 26),
-(@OGUID+655, 26),
-(@OGUID+656, 26),
-(@OGUID+657, 26);
+
+-- WOTLK+
+(@OGUID+700, 26),
+(@OGUID+701, 26),
+(@OGUID+702, 26),
+(@OGUID+703, 26),
+(@OGUID+704, 26),
+(@OGUID+705, 26),
+(@OGUID+706, 26),
+(@OGUID+707, 26),
+(@OGUID+708, 26),
+(@OGUID+709, 26),
+(@OGUID+710, 26),
+(@OGUID+711, 26),
+(@OGUID+712, 26),
+(@OGUID+713, 26),
+(@OGUID+714, 26),
+(@OGUID+715, 26),
+(@OGUID+716, 26),
+(@OGUID+717, 26),
+(@OGUID+718, 26),
+(@OGUID+719, 26),
+(@OGUID+720, 26),
+(@OGUID+721, 26),
+(@OGUID+722, 26),
+(@OGUID+723, 26),
+(@OGUID+724, 26),
+(@OGUID+725, 26),
+(@OGUID+726, 26),
+(@OGUID+727, 26),
+(@OGUID+728, 26),
+(@OGUID+729, 26),
+(@OGUID+730, 26),
+(@OGUID+731, 26),
+(@OGUID+732, 26),
+(@OGUID+733, 26),
+(@OGUID+734, 26),
+(@OGUID+735, 26),
+(@OGUID+736, 26),
+(@OGUID+737, 26),
+(@OGUID+738, 26),
+(@OGUID+739, 26),
+(@OGUID+740, 26),
+(@OGUID+741, 26),
+(@OGUID+742, 26),
+(@OGUID+743, 26),
+(@OGUID+744, 26),
+(@OGUID+745, 26),
+(@OGUID+746, 26),
+(@OGUID+747, 26),
+(@OGUID+748, 26),
+(@OGUID+749, 26),
+(@OGUID+750, 26),
+(@OGUID+751, 26),
+(@OGUID+752, 26),
+(@OGUID+753, 26),
+(@OGUID+754, 26),
+(@OGUID+755, 26),
+(@OGUID+756, 26),
+(@OGUID+757, 26);
 
 -- =======
 -- POOLING
@@ -3081,7 +3157,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 
-DELETE FROM dbscripts_on_gossip WHERE id IN (194502,197001);
+DELETE FROM dbscripts_on_gossip WHERE id IN (194502,197001,964801);
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (194502, 1000, 9, @OGUID+112, 300, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'spawn Spectral Chalice'),
 
@@ -3090,7 +3166,10 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (197001, 0, 22, 21, 0, 0, 10043, @CGUID+1110, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Ribbly Crony - update faction'),
 (197001, 0, 22, 21, 0, 0, 10043, @CGUID+1111, 16, 0, 0, 0, 0, 0, 0, 0, 0, 'Ribbly Crony - update faction'),
 (197001, 3000, 0, 0, 0, 0, 0, 0, 0, 4973, 0, 0, 0, 0, 0, 0, 0, ''),
-(197001, 5000, 26, 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ribbly  - attack player');
+(197001, 5000, 26, 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ribbly  - attack player'),
+
+-- TBC+
+(964801, 0, 15, 50631, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Dark Iron Brewer - cast Dark Iron Brewer Drinks on player');
 
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
