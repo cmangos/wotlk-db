@@ -511,4 +511,5 @@ UPDATE quest_template SET StartScript=entry WHERE entry IN(11122,11412);
 
 UPDATE quest_template SET PrevQuestId=11409 WHERE entry IN(12194);
 
-
+INSERT INTO creature_questrelation VALUES
+('28329', '12318');
