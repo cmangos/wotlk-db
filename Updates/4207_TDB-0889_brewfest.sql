@@ -504,6 +504,8 @@ UPDATE quest_template SET PrevQuestId=11409 WHERE entry IN(12194);
 
 INSERT INTO game_event_creature SELECT guid, 26 FROM creature WHERE id IN(19175,19169,19177,19176);
 
+INSERT INTO game_event_creature SELECT guid, 26 FROM creature WHERE id IN(18927,19148,19171,19172);
+
 INSERT INTO creature_questrelation VALUES
 ('28329', '12318');
 
@@ -517,9 +519,23 @@ INSERT INTO creature_questrelation VALUES
 ('19177', '11446'),
 ('19176', '11446');
 
+DELETE FROM creature_questrelation WHERE quest=11441;
+INSERT INTO creature_questrelation VALUES
+('18927', '11441'),
+('19148', '11441'),
+('19171', '11441'),
+('19172', '11441');
+
 -- Add mechanic immunities for Coren Direbrew
 UPDATE creature_template SET MechanicImmuneMask=MechanicImmuneMask|1|2|4|16|64|256|512|4096|65536|8388608|33554432|536870912 WHERE Entry=23872;
 
 -- Alliance keg throwing quests should not require special event
 UPDATE quest_template SET SpecialFlags=SpecialFlags&~2 WHERE entry IN(11293,11122);
+
+-- Coren Direbrew does not have gossip in tbc
+UPDATE creature_template SET GossipMenuId=0 WHERE entry IN(23872);
+
+-- Apple Trap corrections
+UPDATE gameobject SET position_x=1094.778 ,position_y=-4409.1606,position_z=20.863832,orientation=5.98648 WHERE guid IN(31763) AND id IN(186331);
+DELETE FROM gameobject WHERE guid IN(31703) AND id IN(186331);
 
