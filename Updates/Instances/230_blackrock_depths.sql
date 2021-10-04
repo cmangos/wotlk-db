@@ -2268,6 +2268,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+1330, 28067, 230, 891.229, -174.558, -43.8419, 0.401426, 7200, 7200, 0, 0, 0, 0); -- Dark Iron Brewer
 
 -- WOTLK ONLY
+UPDATE `creature` SET `spawntimesecsmin` = 604800, `spawntimesecsmax` = 604800 WHERE `id` = 23872; -- Coren Direbrew (Respawned by Gossip)
 UPDATE `creature` SET `spawnmask` = 0 WHERE `guid` BETWEEN @CGUID+1300 AND @CGUID+1311; -- Grim Guzzler - L70ETC Concert
 UPDATE `creature` SET `spawnmask` = 0 WHERE `guid` BETWEEN @CGUID+1313 AND @CGUID+1315; -- Grim Guzzler - L70ETC Pre-Concert
 UPDATE `creature` SET `spawnmask` = 0 WHERE `guid` BETWEEN @CGUID+1316 AND @CGUID+1318; -- Arena PvP Season 4
