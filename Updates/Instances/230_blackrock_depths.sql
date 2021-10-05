@@ -3224,4 +3224,9 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
 
+-- Dark Iron Antagonists at entrance have different unitflags and faction
+INSERT INTO creature_spawn_data VALUES
+(@CGUID+1322,10000),
+(@CGUID+1321,10000),
+(@CGUID+1320,10000);
 

@@ -552,4 +552,8 @@ INSERT INTO game_event_time VALUES
 ('86', '2012-09-20 02:00:00', '2025-12-31 00:00:00'),
 ('87', '2012-09-20 17:55:00', '2025-12-31 00:00:00');
 
+-- Dark Iron Antagonist - correct flags
+UPDATE creature_template SET Faction=35,UnitFlags=33024 WHERE entry IN(23795);
+INSERT INTO creature_spawn_data_template(entry,UnitFlags,Faction) VALUES
+(10000,54,32768);
 
