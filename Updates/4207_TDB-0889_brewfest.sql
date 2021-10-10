@@ -587,3 +587,15 @@ INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`positionx`,`
 (26834,1,2,861.37445,-160.42833,-46.94759,0,0,100),
 (26834,1,3,876.1157,-154.38808,-47.39205,0,0,100),
 (26834,1,4,901.6615,-143.77754,-49.225437,1000,0,100);
+
+-- Honorary brewer stamps - different for horde and alliance
+DELETE FROM conditions WHERE condition_entry IN(10343,10344);
+INSERT INTO conditions VALUES
+('10343', '-1', '477', '4', '0', '0', '0', ''),
+('10344', '-1', '477', '3', '0', '0', '0', '');
+
+DELETE FROM npc_vendor_template WHERE entry IN(602) AND item IN(33978,34028);
+INSERT INTO npc_vendor_template VALUES
+('602', '33978', '0', '0', '2273', '10343', '\"Honorary Brewer\" Hand Stamp'),
+('602', '34028', '0', '0', '2273', '10344', '\"Honorary Brewer\" Hand Stamp');
+
