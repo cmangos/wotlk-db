@@ -573,10 +573,14 @@ INSERT INTO game_event_time VALUES
 ('87', '2012-09-20 17:55:00', '2025-12-31 00:00:00');
 
 -- Dark Iron Antagonist - correct flags
-UPDATE creature_template SET Faction=35,UnitFlags=33024 WHERE entry IN(23795);
+UPDATE creature_template SET Faction=35,UnitFlags=33024, `Detection` = 5 WHERE entry IN(23795);
 DELETE FROM `creature_spawn_data_template` WHERE `entry` = 10000; -- doesnt have PRIMARY KEY atm (soonTM), not that this delete matters
 INSERT INTO creature_spawn_data_template(entry,Faction,UnitFlags) VALUES
 (10000,54,32768);
+
+UPDATE `broadcast_text` SET `ChatTypeID` = 6 WHERE `Id` = 22391; -- zonewide yell emote
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 9839501; -- renamed 2820601
 
 -- disable quest Welcome to brewfest
 DELETE FROM creature_involvedrelation WHERE quest IN(11442,11447);
