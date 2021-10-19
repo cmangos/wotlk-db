@@ -574,7 +574,8 @@ INSERT INTO game_event_time VALUES
 
 -- Dark Iron Antagonist - correct flags
 UPDATE creature_template SET Faction=35,UnitFlags=33024 WHERE entry IN(23795);
-INSERT INTO creature_spawn_data_template(entry,UnitFlags,Faction) VALUES
+DELETE FROM `creature_spawn_data_template` WHERE `entry` = 10000; -- doesnt have PRIMARY KEY atm (soonTM), not that this delete matters
+INSERT INTO creature_spawn_data_template(entry,Faction,UnitFlags) VALUES
 (10000,54,32768);
 
 -- disable quest Welcome to brewfest
