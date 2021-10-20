@@ -562,7 +562,7 @@ DELETE FROM gameobject WHERE guid IN(31703) AND id IN(186331);
 UPDATE quest_template SET PrevQuestId=11441 WHERE entry IN(12022);
 UPDATE quest_template SET PrevQuestId=11446 WHERE entry IN(12191);
 
-UPDATE quest_template SET EndText='You''re from the Brewfest camp? Glory day!  Brewfest may yet be saved.$B$B$N, Coren Direbrew must be stopped!  We cannot let him sabotage our sacred holiday.  Our brews must flow!' WHERE entry IN(12318);
+UPDATE quest_template SET `OfferRewardText` = 'You''re from the Brewfest camp? Glory day!  Brewfest may yet be saved.$B$B$N, Coren Direbrew must be stopped!  We cannot let him sabotage our sacred holiday.  Our brews must flow!' WHERE entry IN(12318);
 
 INSERT INTO game_event(entry, schedule_type, occurence, length, holiday, linkedTo, EventGroup, description) VALUES
 ('86', '1', '30', '15', '0', '26', '0', 'Brewfest: Dark Iron Attack'),
