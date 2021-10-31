@@ -115,6 +115,15 @@ UPDATE `gameobject_template` SET `data1` = 0 WHERE `entry` = 179004;
 UPDATE `gameobject_template` SET `data5` = 1 WHERE `entry` = 142189; -- 19660800 / 65536 = 300sec
 
 
+-- -------------------------------
+-- Creature custom changes
+-- -------------------------------
+
+-- modelids with probability = 0
+UPDATE creature_template SET `modelid2` = 0, `modelid3` = 0, `modelid4` = 0 WHERE `entry` IN (
+5764 -- Guardian of B
+);
+
 -- ============================================================
 -- TBC section
 -- ============================================================
@@ -159,6 +168,7 @@ UPDATE creature_template SET `modelid2` = 0 WHERE `entry` IN (
 18095, -- Doomfire
 18104, -- Doomfire Targeting
 20155, -- Hillsbrad Internment Lodge Quest Trigger
+20156, -- Thrall Quest Trigger
 25265, -- Demonic Vapor
 25267, -- Demonic Vapor (Trail)
 25703 -- Brutallus Death Cloud
