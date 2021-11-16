@@ -67,6 +67,21 @@ INSERT INTO page_text VALUES ('3624', 'Despite the statement, her words seemed t
 
 -- ------------------------------------------------------------------------- --
 
+-- First History Scroll (OBJECT entry=192493)
+-- Text missing
+DELETE FROM page_text WHERE entry = 3280;
+INSERT INTO page_text VALUES ('3280', 'Long ago, when the North Wind ruled these peaks alone, a powerful taunka chieftain\'s brother coveted these lands for himself.', '0');
+
+-- Second History Scroll (OBJECT entry=192494)
+-- Text missing
+DELETE FROM page_text WHERE entry = 3281;
+INSERT INTO page_text VALUES ('3281', 'The chieftain\'s brother, Stormhoof, gathered all his strength and set out to conquer the Storm Peaks from its rightful ruler, the North Wind.', '0');
+
+-- Third History Scroll (OBJECT entry=192495)
+-- Text missing
+DELETE FROM page_text WHERE entry = 3282;
+INSERT INTO page_text VALUES ('3282', 'Stormhoof ambushed the North Wind in the heart of its domain, and nearly succeeded in his plot. But the North Wind survived Stormhoof\'s treachery and executed the taunka as punishment for his invasion.', '0');
+
 -- Damaged Apprentice Journal (OBJECT entry=192651)
 -- All texts missing
 DELETE FROM page_text WHERE entry in (3284, 3285, 3286, 3287, 3288, 3289, 3290, 3291, 3292, 3293, 3294, 3295, 3296, 3297, 3298, 3299, 3300, 3301);
