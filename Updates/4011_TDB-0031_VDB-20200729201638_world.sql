@@ -1510,8 +1510,8 @@ INSERT INTO `creature_movement_template` (`entry`, `point`, `positionx`, `positi
 (13158, 16, 2512.050049, -906.869995, 56.323502, 100, 0, 0);
 
 -- creature 37880
-UPDATE `creature_movement` SET `waittime` = 1, `script_id` = 153601 WHERE `id` = 37880 AND `point` = 10;
-UPDATE `creature_movement` SET `waittime` = 1, `script_id` = 153602 WHERE `id` = 37880 AND `point` = 20;
+UPDATE `creature_movement` SET `waittime` = 1, `scriptid` = 153601 WHERE `id` = 37880 AND `point` = 10;
+UPDATE `creature_movement` SET `waittime` = 1, `scriptid` = 153602 WHERE `id` = 37880 AND `point` = 20;
 
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` BETWEEN 153601 AND 153602;
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `condition_id`, `comments`) VALUES
