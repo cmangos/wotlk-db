@@ -162,11 +162,12 @@ UPDATE `gameobject_template` SET `data5` = 1 WHERE `entry` IN (185497,185500);
 -- -------------------------------
 
 -- modelids with probability = 0
-UPDATE creature_template SET `modelid2` = 0 WHERE `entry` IN (
+UPDATE creature_template SET `modelid2` = 0, `modelid3` = 0, `modelid4` = 0 WHERE `entry` IN (
 17734, -- Underbog Lord
 17459, -- Chess Waiting Room (DND)
 18095, -- Doomfire
 18104, -- Doomfire Targeting
+19632, -- Lykul Stinger (6633,7350,11091)
 20155, -- Hillsbrad Internment Lodge Quest Trigger
 20156, -- Thrall Quest Trigger
 25265, -- Demonic Vapor
