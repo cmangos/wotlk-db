@@ -2595,9 +2595,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 -- (@CGUID+1162, 14777, 30, -1388.38, -226.065, 99.3698, 6.22783, 430, 430, 0, 0, 0, 0), -- West Frostwolf Warmaster
 -- (@CGUID+1164, 14943, 30, 633.803, -299.425, 30.1336, 3.46924, 490, 490, 0, 0, 0, 0), -- Guse's War Rider
 
--- TBC+
-
--- WOTLK+
+-- WOTLK only
 UPDATE `creature` SET `spawnMask` = 15 WHERE `map` = 30;
 
 -- ===========
@@ -3218,9 +3216,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+1026,181392,30,1,579.056,-76.7292,43.0804,0.488691,0,0,0.241921,0.970296,7200,7200,255,1), -- Hanging, Streamer - MFF
 (@OGUID+1027,181392,30,1,659.132,-122.51,54.9667,2.56563,0,0,0.958819,0.284016,7200,7200,255,1); -- Hanging, Streamer - MFF
 
--- TBC+
-
--- WOTLK+
+-- WOTLK only
 UPDATE `gameobject` SET `spawnMask` = 15 WHERE `map` = 30;
 
 -- ======
