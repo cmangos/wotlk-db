@@ -2,7 +2,7 @@ REPLACE INTO creature_spell_list_entry(Id, Name, ChanceSupportAction, ChanceRang
 (1498701, 'ZG - Powerful Healing Ward - totem template', 0, 0);
 
 REPLACE INTO creature_spell_list(Id, Position, SpellId, Flags, TargetId, ScriptId, Availability, Probability, InitialMin, InitialMax, RepeatMin, RepeatMax, Comments) VALUES
-(1498701, 0, 24684, 0, 100, 0, 100, 1, 4000, 10000,8000, 16000, 'Powerful Healing Ward - passive spell Powerful Healing Ward');
+(1498701, 0, 24684, 0, 101, 0, 100, 1, 4000, 10000,8000, 16000, 'Powerful Healing Ward - passive spell Powerful Healing Ward');
 
 UPDATE creature_template SET SpellList=1498701 WHERE entry IN(14987);
 
