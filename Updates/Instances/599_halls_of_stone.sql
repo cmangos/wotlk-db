@@ -228,7 +228,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
 DELETE FROM `creature_movement_template` WHERE entry IN (27979,27982,27981,27980,28070,28165);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Forged Iron Trogg 27979
 (27979,0,1,1294.558594,724.552917,199.358749,100,0,0),
 (27979,0,2,1294.440918,720.004517,196.552719,100,0,0),
@@ -312,7 +312,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (28165,1,4,1294.085938,642.811707,189.785004,100,0,0),
 (28165,1,5,1293.723022,667.221008,189.607651,100,1000,7);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 (@CGUID+66,1,980.96704,415.2457,205.9943,100,0,0),
 (@CGUID+66,2,961.5862,421.18295,205.9943,100,0,0),
 (@CGUID+66,3,952.4949,416.09375,205.99431,100,0,0),

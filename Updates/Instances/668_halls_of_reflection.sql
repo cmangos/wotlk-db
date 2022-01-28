@@ -176,7 +176,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 -- Note: Some entries also use movement paths in Pit of Saron and Forge of Souls
 DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId=0;
 DELETE FROM `creature_movement_template` WHERE entry IN (36954,36955,37554,37221,37223,37226,38112,38113);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`, `comment`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 -- The Lich King 36954
 (36954,0,1,5558.78,2254.04,733.01,100,0,0,''),
 (36954,0,2,5570.38,2241.01,733.016,100,0,0,''),
@@ -397,7 +397,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (38113,0,1,5335.01,1982.37,709.319,2.391,1000,3811301,'summon spirits');
 
 
--- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 -- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 

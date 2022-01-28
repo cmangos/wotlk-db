@@ -483,7 +483,7 @@ DELETE FROM `creature_movement_template` WHERE entry IN (37496,37584) AND pathId
 DELETE FROM `creature_movement_template` WHERE entry IN (37497,37588) AND pathId BETWEEN 4 AND 7;
 DELETE FROM `creature_movement_template` WHERE entry IN (37498,37587) AND pathId BETWEEN 3 AND 5;
 DELETE FROM `creature_movement_template` WHERE entry IN (37580,37581,36477,37755,37591,37592,36764,36765,36767,36770,36771,36773,37572,37575,37576,37577,37578,37579,36990,36993,36794,36796,36892,36841,36842,38188,38189);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Krick 36477
 (36477,0,1,838.8732,118.114006,509.732,3.3595,1000,3647701),
 -- Rimefang 36661
@@ -1165,7 +1165,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (38189,0,6,1073.6024,210.74306,628.2149,100,0,0),
 (38189,0,7,1090.5869,230.04839,632.3357,100,0,3818803);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Iceborn Proto-Drake 36891
 (@CGUID+248,1,615.4705,47.52778,512.4364,100,0,0),
 (@CGUID+248,2,619.30554,18.791666,513.59937,100,0,0),

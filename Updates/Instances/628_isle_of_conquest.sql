@@ -184,7 +184,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
 DELETE FROM `creature_movement_template` WHERE entry IN (35003,34960,35335,35336);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- 35003
 (35003,0,1,825.6667,-994.0052,134.35689,3.403392,10000,3500301),
 -- 34960
@@ -206,7 +206,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (35336,0,6,795.707,-229.325,0.007514,100,0,0),
 (35336,0,7,793.339,-232.55,-0.078396,4.69487,1000,3);
 
--- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 
 DELETE FROM `creature_linking_template` WHERE `entry` IN (28319,32629,36356,34777,34778,36355,34918,34919);
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES

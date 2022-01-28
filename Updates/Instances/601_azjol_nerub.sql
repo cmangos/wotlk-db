@@ -228,7 +228,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+59,0,0,1,0,0,0,NULL);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (28921,28922,29062,29063,29064,29096,29097,29098,29117,29118,29119,29213,29216,29217);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Hadronox 28921
 (28921,0,1,568.497,513.034,698.679,100,0,0),
 (28921,0,2,578.91,510.994,698.347,100,0,0),
@@ -426,7 +426,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (29217,0,6,550.642578,277.403870,223.889069,100,0,0),
 (29217,0,7,554.914978,257.096985,223.972000,100,1000,7);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 (@CGUID+78,1,511.484,747.182,804.678,100,0,0),
 (@CGUID+78,2,496.021,750.259,812.991,100,0,0),
 (@CGUID+78,3,485.559,752.694,817.727,100,0,0),

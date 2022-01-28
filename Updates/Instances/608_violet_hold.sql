@@ -117,7 +117,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+44,0,0,1,0,0,0,NULL);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (29266,29312,29313,29314,29315,29316,29395,30658,30659,31079,32226,32228,32230,32231,32234,32235,32237);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Xevozz 29266
 (29266,0,1,1905.5573,841.3157,38.65529,100,0,0),
 (29266,0,2,1899.4531,832.533,38.707516,100,1000,2926601),
@@ -198,7 +198,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (32237,0,1,1857.5451,765.4296,38.6519,100,0,0),
 (32237,0,2,1864.5377,775.4355,38.6467,100,1000,2926601);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 (@CGUID+37,1,1839.9092,813.988,44.14927,100,0,0),
 (@CGUID+37,2,1840.8655,813.6956,44.14927,100,0,0),
 (@CGUID+37,3,1837.6671,811.9218,44.203365,100,0,0),

@@ -190,7 +190,7 @@ DELETE FROM `creature_movement_template` WHERE entry IN (37498,37587) AND pathId
 DELETE FROM `creature_movement_template` WHERE entry IN (37582,37779) AND pathId=1;
 DELETE FROM `creature_movement_template` WHERE entry IN (37583,37774) AND pathId=0;
 DELETE FROM `creature_movement_template` WHERE entry IN (38160,38161);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Coliseum Champion 37496 (alliance footman)
 (37496,0,1,5621.552,2449.637,705.8517,100,0,0),
 (37496,0,2,5640.088,2466.305,708.6959,100,0,0),
@@ -550,7 +550,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (38161,0,2,5629.866,2466.567,708.675,100,0,0),
 (38161,0,3,5638.151,2477.083,708.6929,100,1000,3816101);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Soulguard Bonecaster 36564
 (@CGUID+59,1,5032.8438,2142.1228,645.94543,100,0,0),
 (@CGUID+59,2,5027.424,2145.6401,644.1788,100,0,0),

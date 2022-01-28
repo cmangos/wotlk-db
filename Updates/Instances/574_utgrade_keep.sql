@@ -255,9 +255,9 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+161,0,1,0,0,0,0,NULL),
 (@CGUID+165,0,0,0,0,69,0,NULL);
 
--- INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
+-- INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `WaitTime`, `ScriptId`, `Orientation`) VALUES
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `WaitTime`, `ScriptId`, `Orientation`) VALUES
 -- @CGUID+8
 (@CGUID+8,1,131.5176,75.93479,65.7934,2000,2395601,1.256637),
 -- @CGUID+9

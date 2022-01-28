@@ -393,7 +393,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+124,0,0,1,0,0,1,NULL);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (26497,26528,27877,27885,27891,27892,27903,27907,30571,26499);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- 26497
 (26497,0,1,1885.48,1297.84,145.299,0,0,0),
 (26497,0,2,1891.24,1294.99,144.17,0,0,0),
@@ -515,7 +515,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (26499,0,30,2091.99,1277.26,140.47,0.43,57000,2649930),
 (26499,0,31,2091.99,1277.26,140.47,0.43,1000,2649931);
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- @CGUID+143
 (@CGUID+143,1,2088.09,1279.23,140.827,2.19,1000,7),
 -- @CGUID+92

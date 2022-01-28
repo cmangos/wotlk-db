@@ -317,7 +317,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+128,0,8,1,0,0,0,NULL);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (26626,27431,27709,27753,28016);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- 26626
 (26626,1,1,-511.089,-602.558,2.56744,3.19395,100,2662601),
 (26626,1,2,-513.3407,-602.3148,2.2758,100,0,0),
@@ -348,7 +348,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (28016,0,11,-235.4742,-674.3039,131.8569,100,5000,2801605),
 (28016,0,12,-237.0976,-676.1854,131.8683,4.694936,500000,2801606); -- lich king event start 01/15/2009 10:33:58.000 end ?
 
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- @CGUID+43
 (@CGUID+43,1,-337.246,-596.033,72.6079,100,0,0),
 (@CGUID+43,2,-342.091,-597.237,72.6079,100,0,0),

@@ -195,7 +195,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 -- Ley-Guardian Eregos - summoned (BaseScript wont remove it)
 UPDATE creature_template SET MovementType = 2 WHERE entry IN (27656,31561);
 DELETE FROM `creature_movement_template` WHERE entry = 27656;
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `WaitTime`, `ScriptId`, `Orientation`) VALUES
 -- Ley-Guardian Eregos
 (27656,0,1,1064.03,1047.203,648.9442,0,5,100),
 (27656,0,2,1080.695,1016.914,651.9733,0,0,100),
@@ -207,7 +207,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (27656,0,8,1070.653,1075.219,646.2492,0,0,100);
 
 -- Individual waypoints
-INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
+INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `WaitTime`, `ScriptId`, `Orientation`) VALUES
 -- Azure Spellbinder
 (@CGUID+92,1,1166.95,993.672,361.07,0,0,3.92289),
 (@CGUID+92,2,1155.39,984.445,361.07,0,0,3.82079),

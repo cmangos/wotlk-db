@@ -62,7 +62,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+11,0,0,1,0,0,8192,NULL);
 
 DELETE FROM `creature_movement_template` WHERE entry IN (28859,30248,30234,32295);
-INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Malygos 28859
 (28859,0,1,681.60156,1207.4656,296.10846,3.3734,12000,2885901),
 (28859,0,2,667.27295,1381.0862,295.97543,2.2934,12000,2885901),
@@ -255,7 +255,7 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (32295,0,2,854.548,1225.3,300.083,100,0,0),
 (32295,0,3,788.073,1276.091,246.90585,100,1000,3229503);
 
--- INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 
 -- Set run on spawn
 DELETE FROM creature_spawn_data WHERE guid IN(@CGUID+1);
