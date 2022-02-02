@@ -334,8 +334,8 @@ INSERT INTO `creature_movement` (`id`, `point`, `positionx`, `positiony`, `posit
 (8166, 1, -9811.1689453125, -3249.5087890625, 59.47161865234375, 3.351032257080078125, 30000, 0),
 (8166, 2, -9785.197265625, -3218.103515625, 58.73384475708007812, 0.639645636081695556, 30000, 0);
 
-UPDATE `creature_movement` SET `position_x` = -9164.0283203125, `position_y` = -2442.940673828125, `position_z` = 110.9321975708007812, `orientation` = 0 WHERE `id` = 31809 AND `point` = 1; -- 6 spawn points here
-UPDATE `creature_movement` SET `position_x` = -9110.7197265625, `position_y` = -2477.34765625, `position_z` = 119.7031936645507812, `orientation` = 4.15621185302734375 WHERE `id` = 31809 AND `point` = 1; -- 6 spawn points here
+UPDATE `creature_movement` SET `positionx` = -9164.0283203125, `positiony` = -2442.940673828125, `positionz` = 110.9321975708007812, `orientation` = 0 WHERE `id` = 31809 AND `point` = 1; -- 6 spawn points here
+UPDATE `creature_movement` SET `positionx` = -9110.7197265625, `positiony` = -2477.34765625, `positionz` = 119.7031936645507812, `orientation` = 4.15621185302734375 WHERE `id` = 31809 AND `point` = 1; -- 6 spawn points here
 
 UPDATE `creature` SET `position_x` = -9237.3740234375, `position_y` = -2378.628173828125, `position_z` = 92.32212066650390625, `orientation` = 0.314159274101257324 WHERE `guid` = 31814 AND `id` = 485;
 UPDATE `creature` SET `position_x` = -9234.9951171875, `position_y` = -2376.046630859375, `position_z` = 92.17010498046875, `orientation` = 5.951572895050048828 WHERE `guid` = 31813 AND `id` = 485;
