@@ -17,10 +17,6 @@ SET @OAGUID := 6410000; -- gameobjects
 SET @CHGUID := 6420000; -- creatures
 SET @OHGUID := 6420000; -- gameobjects
 
--- texts
--- 2000028200 - 2000028399 Reserved
-SET @TGUID := 2000028200;
-
 
 
 -- =========
@@ -421,10 +417,12 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (66551,3,@CGUID+15,0),
 (66551,3,@CGUID+4,0);
 
+-- All aboard the gunship! Man the guns! 35241
+-- All aboard the gunship! Man the guns! 35228
 DELETE FROM dbscripts_on_creature_movement WHERE id = 3500301;
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (3500301,0,15,12980,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gunship captain - Cast Simple Teleport'),
-(3500301,3000,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Gunship captain - Yell'),
+(3500301,3000,0,0,0,0,0,0,0,35228,0,0,0,0,0,0,0,'Gunship captain - Yell'),
 (3500301,4000,15,51347,0,0,0,0,0,0,0,0,0,0,0,0,0,'Gunship captain - Cast Teleport Visual Only'),
 (3500301,5000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Gunship captain - Despawn');
 
@@ -466,11 +464,6 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (20502,1,3,0,0,0,0,0,0,0,0,0,0,772.602,-852.394,12.48976,1.58825,'move to position'),
 (20502,8,29,16777216,1,0,0,0,0,0,0,0,0,0,0,0,0,'add npc flag spellclick');
 
-DELETE FROM `dbscript_string` WHERE entry = @TGUID+0;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `broadcast_text_id`, `comment`) VALUES
-(@TGUID+0,'All aboard the gunship! Man the guns!','0','1','0','0','0','Gunship Captain - yell on spawn');
-
-
 -- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -479,5 +472,4 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES

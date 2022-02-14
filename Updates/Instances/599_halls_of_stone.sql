@@ -9,10 +9,6 @@ SET @CGUID := 5990000; -- creatures
 SET @OGUID := 5990000; -- gameobjects
 SET @PGUID := 53200;   -- pools
 
--- texts
--- 2000026000 - 2000026199 Reserved
-SET @TGUID := 2000026000;
-
 
 
 -- =========
@@ -424,30 +420,23 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (2807001,3000,11,@OGUID+7,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - open door'),
 (2807001,4000,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - set emote state'),
 (2807002,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
-(2807002,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Sjonnir'),
+(2807002,0,0,0,0,0,0,0,0,31555,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Sjonnir'),
 (2807003,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
 (2807003,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - set emote state'),
 (2807003,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
 (2807003,0,13,0,0,0,193906,10,1,0,0,0,0,0,0,0,0,'Brann Bronzebeard - open console'),
 (2807004,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
 (2807004,0,29,3,1,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - add gossip | quest flag'),
-(2807004,10000,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 1'),
-(2807004,22000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 2'),
+(2807004,10000,0,0,0,0,0,0,0,28591,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 1'),
+(2807004,22000,0,0,0,0,0,0,0,30584,0,0,0,0,0,0,0,'Brann Bronzebeard - say after Sjonnir 2'),
 (2807005,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - pause WP'),
-(2807005,0,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Tribunal'),
+(2807005,0,0,0,0,0,0,0,0,30523,0,0,0,0,0,0,0,'Brann Bronzebeard - say before Tribunal'),
 (2807005,0,29,1,1,0,0,0,0,0,0,0,0,0,0,0,0,'Brann Bronzebeard - add gossip flag');
 
 DELETE FROM `dbscripts_on_go_template_use` WHERE id IN (192163,192164);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (192163,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Left Pipe - send custom anim'),
 (192164,0,13,0,0,0,0,0,8,0,0,0,0,0,0,0,0,'Right Pipe - send custom anim');
-
-DELETE FROM `dbscript_string` WHERE entry BETWEEN @TGUID+0 AND @TGUID+3;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(@TGUID+0,'Don\'t worry. Old Brann has got your back. Keep that metal monstrosity busy and I\'ll see if I can sweet talk this machine into helping you.',14274,1,0,27,'brann before Sjonnir'),
-(@TGUID+1,'Loken?! That''s downright bothersome... We might\'ve neutralized the iron dwarves, but I\'d lay odds there''s another machine somewhere else churnin\' out a whole mess o\' these iron vrykul!',14278,1,0,1,'brann after Sjonnir 1'),
-(@TGUID+2,'I\'ll use the forge to make badtches o\' earthen to stand guard... But our greatest challenge still remains: find and stop Loken!',14279,1,0,1,'brann after Sjonnir 2'),
-(@TGUID+3,'Take a moment and relish this with me! Soon all will be revealed! Okay then, let\'s do this!',14247,1,0,4,'brann before Tribunal');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
@@ -457,7 +446,6 @@ INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `lan
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
 
 

@@ -11,10 +11,6 @@ SET @CGUID := 5780000; -- creatures
 SET @OGUID := 5780000; -- gameobjects
 SET @PGUID := 52300;   -- pools
 
--- texts
--- 2000025600 - 2000025799 Reserved
-SET @TGUID := 2000025600; 
-
 
 
 -- =========
@@ -348,16 +344,16 @@ INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`,
 (27654,6000,3,0,0,0,27658,75,0,0,0,0,0,939.73,1044.25,359.96,0,'Belgaristrasz - move out of the cage'),
 (27654,6000,3,0,0,0,27657,75,0,0,0,0,0,948.57,1032.11,359.96,0,'Verdisa - move out of the cage'),
 (27654,6000,3,0,0,0,27659,75,0,0,0,0,0,941.93,1060.08,359.96,0,'Eternos - move out of the cage'),
-(27654,9000,0,0,0,0,27658,75,0,@TGUID+0,0,0,0,0,0,0,0,'Belgaristrasz - say greet'),
-(27654,17000,0,0,0,0,27447,360,0,@TGUID+1,0,0,0,0,0,0,0,'Varos - yell intro, map wide'),
+(27654,9000,0,0,0,0,27658,75,0,26937,0,0,0,0,0,0,0,'Belgaristrasz - say greet'),
+(27654,17000,0,0,0,0,27447,360,0,31812,0,0,0,0,0,0,0,'Varos - yell intro, map wide'),
 (27654,17000,16,13648,8,0,27447,360,0,0,0,0,0,0,0,0,0,'Varos - yell intro sound, map wide'),
 -- Image of Belgaristrasz
 (27447,1000,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
-(27447,5000,0,0,0,0,28012,75,0,@TGUID+2,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Varos'),
+(27447,5000,0,0,0,0,28012,75,0,29537,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Varos'), -- 28079 same text
 -- Image of Belgaristrasz
 (27655,1000,15,12980,0,0,28012,10,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual'),
-(27655,5000,0,0,0,0,28012,75,0,@TGUID+3,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
-(27655,10000,0,0,0,0,28012,75,0,@TGUID+4,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
+(27655,5000,0,0,0,0,28012,75,0,29538,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'), -- 27389 same text
+(27655,10000,0,0,0,0,28012,75,0,28081,0,0,0,0,0,0,0,'Image of Belgaristrasz - say after Urom'),
 -- Image of Belgaristrasz
 (27656,0,10,28012,180000,0,0,0,0,0,0,0,0,1022.39,1051.51,605.62,0.07,'Summon Image of Belgaristrasz'),
 (27656,1000,15,12980,0,0,28012,360,0,0,0,0,0,0,0,0,0,'Image of Belgaristrasz - cast teleport visual');
@@ -397,13 +393,4 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+4;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(@TGUID+0,'Thank you for freeing us, mortals. Beware, the Blue Flight is alerted to your presence. Even now, Malygos sends Varos Cloudstrider and his ring guardians to defend the Oculus. You will need our help to stand a chance.',0,0,0,1,NULL),
-(@TGUID+1,'Intruders, your victory will be short-lived. I am Commander Varos Cloudstrider. My drakes control the skies and protect this conduit. I will see to it personally that the Oculus does not fall into your hands!',0,6,0,1,NULL),
-(@TGUID+2,'The trickster Mage-Lord Urom protects the third ring. He will appear alone and defenseless, but do not be fooled by appearances! Urom is a powerful conjurer who commands a menagerie of Phantasmal creatures. Seek him out above.',0,0,0,1,NULL),
-(@TGUID+3,'Your greatest challenge lies ahead. Ley-Guardian Eregos is a Blue dragon of immense power. You will find him flying above the uppermost ring.',0,0,0,0,NULL),
-(@TGUID+4,'The full power of your drakes has been unlocked.  Use their power to defeat Eregos!',0,0,0,1,NULL);
-
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES

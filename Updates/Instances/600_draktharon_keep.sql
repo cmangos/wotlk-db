@@ -11,10 +11,6 @@ SET @CGUID := 6000000; -- creatures
 SET @OGUID := 6000000; -- gameobjects
 SET @PGUID := 53300;   -- pools
 
--- texts
--- 2000026200 - 2000026399 Reserved
-SET @TGUID := 2000026200;
-
 
 
 -- =========
@@ -776,11 +772,11 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 -- 26625
 (2662501,10,20,1,2,0,0,0,12,0,0,0,0,0,0,0,0,'random movement - curent poss'),
 -- 26626
-(2662601,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'say'),
-(2662602,0,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'say'),
+(2662601,0,0,0,0,0,0,0,0,26474,0,0,0,0,0,0,0,'say'),
+(2662602,0,0,0,0,0,0,0,0,26464,0,0,0,0,0,0,0,'say'),
 (2662602,10,15,48597,1,0,26620,@CGUID+113,1|0x10,0,0,0,0,0,0,0,0,''),
 (2662602,2000,15,48605,1,0,26620,@CGUID+114,1|0x10,0,0,0,0,0,0,0,0,''),
-(2662602,6000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,''),
+(2662602,6000,0,0,0,0,0,0,0,26473,0,0,0,0,0,0,0,''),
 (2662602,10000,15,47506,0,0,0,0,0x04,0,0,0,0,0,0,0,0,''),
 (2662602,12000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'despawn'),
 -- 26635
@@ -807,21 +803,21 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (2770901,100,48,768,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'remove UnitFlags'),
 (2770901,200,15,49405,0,0,0,0,0,0,0,0,0,0,0,0,0,'remove UnitFlags'),
 -- 28016
-(2801601,500,0,0,0,0,0,0,0,@TGUID+6,0,0,0,0,0,0,0,'say'),
-(2801602,100,0,0,0,0,0,0,0,@TGUID+7,0,0,0,0,0,0,0,'say'),
-(2801602,9000,0,0,0,0,0,0,0,@TGUID+8,0,0,0,0,0,0,0,'say'),
-(2801603,0,0,0,0,0,0,0,0,@TGUID+9,0,0,0,0,0,0,0,'say'),
+(2801601,500,0,0,0,0,0,0,0,27933,0,0,0,0,0,0,0,'say'),
+(2801602,100,0,0,0,0,0,0,0,27934,0,0,0,0,0,0,0,'say'),
+(2801602,9000,0,0,0,0,0,0,0,27935,0,0,0,0,0,0,0,'say'),
+(2801603,0,0,0,0,0,0,0,0,27954,0,0,0,0,0,0,0,'say'),
 (2801603,10,28,8,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'kneel'),
 (2801603,1000,9,@OGUID+14,30,0,0,0,0,0,0,0,0,0,0,0,0,'Resp object'),
 (2801603,3000,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'stand'),
 (2801604,10,28,8,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'kneel'),
 (2801604,1000,9,@OGUID+15,30,0,0,0,0,0,0,0,0,0,0,0,0,'Resp object'),
 (2801604,3000,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'stand'),
-(2801605,0,0,0,0,0,0,0,0,@TGUID+10,0,0,0,0,0,0,0,'say'),
+(2801605,0,0,0,0,0,0,0,0,28118,0,0,0,0,0,0,0,'say'),
 (2801605,10,28,8,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'kneel'),
 (2801605,1000,9,@OGUID+16,30,0,0,0,0,0,0,0,0,0,0,0,0,'Resp object'),
 (2801605,3000,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'stand'),
-(2801606,0,0,0,0,0,0,0,0,@TGUID+11,0,0,0,0,0,0,0,'say'),
+(2801606,0,0,0,0,0,0,0,0,28119,0,0,0,0,0,0,0,'say'),
 (2801606,2000,15,51795,0,0,0,0,0,0,0,0,0,0,0,0,0,'cast 51795'),
 (2801606,7000,15,51802,0,0,28492,@OGUID+212,7|0x10,0,0,0,0,0,0,0,0,'cast 51802'),
 (2801606,7001,15,51802,0,0,28492,@OGUID+215,7|0x10,0,0,0,0,0,0,0,0,'cast 51802'),
@@ -830,31 +826,31 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (2801606,7004,40,0,0,0,190596,@OGUID+15,7|0x10,0,0,0,0,0,0,0,0,'despawn object'),
 (2801606,7005,40,0,0,0,190595,@OGUID+16,7|0x10,0,0,0,0,0,0,0,0,'despawn object'),
 (2801606,10000,15,51807,0,0,28492,@OGUID+213,7|0x10,0,0,0,0,0,0,0,0,'cast 51807'),
-(2801606,11000,0,0,0,0,0,0,0,@TGUID+12,0,0,0,0,0,0,0,'say'),
+(2801606,11000,0,0,0,0,0,0,0,28120,0,0,0,0,0,0,0,'say'),
 (2801606,17000,10,28498,120000,0,0,0,0x08,0,0,0,0,-237.1671,-702.1379,128.8857,1.570796,'Summon The Lich King 28498'),
 (2801606,17500,3,0,0,0,28498,50,7,0,0,0,0,-237.2737,-686.5334,132.1738,100,'buddy move'),
 (2801606,19000,28,8,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'kneel'),
-(2801606,22000,0,0,0,0,0,0,0,@TGUID+13,0,0,0,0,0,0,0,'say'),
-(2801606,28000,0,0,0,0,0,0,0,@TGUID+14,0,0,0,0,0,0,0,'say'),
-(2801606,34000,0,0,0,0,28498,50,7,@TGUID+15,0,0,0,0,0,0,0,'buddy say'),
-(2801606,40000,0,0,0,0,28498,50,7,@TGUID+16,0,0,0,0,0,0,0,'buddy say'),
-(2801606,50000,0,0,0,0,28498,50,7,@TGUID+17,0,0,0,0,0,0,0,'buddy say'),
-(2801606,56000,0,0,0,0,28498,50,7,@TGUID+18,0,0,0,0,0,0,0,'buddy say'),
+(2801606,22000,0,0,0,0,0,0,0,28125,0,0,0,0,0,0,0,'say'),
+(2801606,28000,0,0,0,0,0,0,0,28127,0,0,0,0,0,0,0,'say'),
+(2801606,34000,0,0,0,0,28498,50,7,28130,0,0,0,0,0,0,0,'buddy say'),
+(2801606,40000,0,0,0,0,28498,50,7,28131,0,0,0,0,0,0,0,'buddy say'),
+(2801606,50000,0,0,0,0,28498,50,7,28133,0,0,0,0,0,0,0,'buddy say'),
+(2801606,56000,0,0,0,0,28498,50,7,28134,0,0,0,0,0,0,0,'buddy say'),
 (2801606,57000,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'stand'),
 (2801606,62000,15,51825,0,0,28498,50,7,0,0,0,0,0,0,0,0,'buddy cast 51825'),
 (2801606,67000,1,15,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
-(2801606,70000,0,0,0,0,28498,50,7,@TGUID+19,0,0,0,0,0,0,0,'buddy say'),
-(2801606,79000,0,0,0,0,0,0,0,@TGUID+20,0,0,0,0,0,0,0,'say'),
-(2801606,85000,0,0,0,0,28498,50,7,@TGUID+21,0,0,0,0,0,0,0,'buddy say'),
-(2801606,91000,0,0,0,0,28498,50,7,@TGUID+22,0,0,0,0,0,0,0,'buddy say'),
+(2801606,70000,0,0,0,0,28498,50,7,28416,0,0,0,0,0,0,0,'buddy say'),
+(2801606,79000,0,0,0,0,0,0,0,28419,0,0,0,0,0,0,0,'say'),
+(2801606,85000,0,0,0,0,28498,50,7,28417,0,0,0,0,0,0,0,'buddy say'),
+(2801606,91000,0,0,0,0,28498,50,7,28418,0,0,0,0,0,0,0,'buddy say'),
 (2801606,101000,3,0,0,0,28498,50,7,0,0,0,0,-237.0624,-700.3821,130.4357,100,'buddy move'),
 (2801606,106000,18,0,0,0,28498,50,7,0,0,0,0,0,0,0,0,'buddy desp'),
 (2801606,107000,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'face player'),
-(2801606,112000,0,0,0,0,0,0,0,@TGUID+23,0,0,0,0,0,0,0,'say'),
-(2801606,120000,0,0,0,0,0,0,0,@TGUID+24,0,0,0,0,0,0,0,'say'),
-(2801606,127000,0,0,0,0,0,0,0,@TGUID+25,0,0,0,0,0,0,0,'say'),
-(2801606,137000,0,0,0,0,0,0,0,@TGUID+26,0,0,0,0,0,0,0,'say'),
-(2801606,144000,0,0,0,0,0,0,0,@TGUID+27,0,0,0,0,0,0,0,'say'),
+(2801606,112000,0,0,0,0,0,0,0,28420,0,0,0,0,0,0,0,'say'),
+(2801606,120000,0,0,0,0,0,0,0,28421,0,0,0,0,0,0,0,'say'),
+(2801606,127000,0,0,0,0,0,0,0,28422,0,0,0,0,0,0,0,'say'),
+(2801606,137000,0,0,0,0,0,0,0,28423,0,0,0,0,0,0,0,'say'),
+(2801606,144000,0,0,0,0,0,0,0,28424,0,0,0,0,0,0,0,'say'),
 (2801606,145000,29,3,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'NPc Flags added'),
 (2801606,145001,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'idle'),
 (2801606,145002,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
@@ -871,25 +867,25 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalon
 (20585,10,35,6,10,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Scourge Reanimator EAI: send event 6'),
 -- Part of Risen Drakkari Warrior EAI
 (20586,1,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: active'),
-(20586,10,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: say'),
+(20586,10,0,0,0,0,0,0,0,26538,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: say'),
 (20586,1,3,0,700,0,0,0,0x04,0,0,0,0,-299.6488,-637.6899,11.83638,0,'Part of Risen Drakkari Warrior EAI: move'),
 (20586,5000,20,2,0,0,26635,@CGUID+106,7|0x10,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: buddy wps'),
 (20586,5000,20,2,0,0,26636,@CGUID+115,7|0x10,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: buddy wps'),
 (20586,8000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: desp'),
 (20587,1,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: active'),
-(20587,10,0,0,0,0,0,0,0,@TGUID+4,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: say'),
+(20587,10,0,0,0,0,0,0,0,26537,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: say'),
 (20587,1,3,0,700,0,0,0,0x04,0,0,0,0,-312.2188,-579.4874,11.00646,0,'Part of Risen Drakkari Warrior EAI: move'),
 (20587,5000,20,2,0,0,26635,@CGUID+102,7|0x10,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: buddy wps'),
 (20587,5000,20,2,0,0,26635,@CGUID+111,7|0x10,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: buddy wps'),
 (20587,8000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Risen Drakkari Warrior EAI: desp'),
 -- Part of Darkweb Recluse EAI
 (20588,0,31,26675,100,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: search for 26675'),
-(20588,1,0,0,0,0,0,0,0,@TGUID+5,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: say'),
+(20588,1,0,0,0,0,0,0,0,26536,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: say'),
 (20588,100,3,0,700,0,0,0,0,0x04,0,0,0,-231.041,-725.077,29.6088,0,'Part of Darkweb Recluse EAI: forced move'),
 -- (20588,5000,15,48870,1,0,26675,@CGUID+140,7|0x10,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: cast on buddy'), -- this ones correct (no idea how to make them assist master)
 (20588,5000,15,48870,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: cast on buddy'), -- this is used instead
 (20589,0,31,26675,100,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: search for 26675'),
-(20589,1,0,0,0,0,0,0,0,@TGUID+5,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: say'),
+(20589,1,0,0,0,0,0,0,0,26536,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: say'),
 (20589,100,3,0,700,0,0,0,0,0x04,0,0,0,-296.091,-744.456,29.6306,4.40691,'Part of Darkweb Recluse EAI: forced move'),
 -- (20589,5000,15,48870,1,0,26675,@CGUID+139,7|0x10,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: cast on buddy'); -- this ones correct (no idea how to make them assist master)
 (20589,5000,15,48870,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Darkweb Recluse EAI: cast on buddy'),  -- this is used instead
@@ -906,36 +902,4 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+27;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(@TGUID+0,'Don\'t be so quick to escape! I have a parting gift....',0,1,0,0,NULL),
-(@TGUID+1,'Rise my warriors and fight for your new liege!',0,1,0,0,NULL),
-(@TGUID+2,'Please enjoy their company, the Lich King sends his regards!',0,1,0,11,NULL),
-(@TGUID+3,'Help mon! There\'s too many of dem!',0,1,0,0,NULL),
-(@TGUID+4,'Backup! We need backup!',0,1,0,0,NULL),
-(@TGUID+5,'%s flees back to it\'s den....',0,2,0,0,NULL),
-(@TGUID+6,'Ahh,  Back in Drak\'Tharon at last!',14006,0,0,71,NULL),
-(@TGUID+7,'Drakuru casts his gaze down on Drak\'Tharon Keep.',0,2,0,0,NULL),
-(@TGUID+8,'Ya done well, mon....',14007,0,0,21,NULL),
-(@TGUID+9,'Ya surpassed my greatest hopes.',14008,0,0,0,NULL),
-(@TGUID+10,'For your efforts, you be gettin\' da greatest of rewards....',14009,0,0,0,NULL),
-(@TGUID+11,'Revelation!',14010,0,0,5,NULL),
-(@TGUID+12,'Be still, friend, and behold da truth of things!',14011,0,0,0,NULL),
-(@TGUID+13,'Master, my mission be complete.',14012,0,0,0,NULL),
-(@TGUID+14,'With da help of these mortals, dis region been cleansed of all who oppose us.',14013,0,0,0,NULL),
-(@TGUID+15,'You have done well, Drakuru.',14749,0,0,396,NULL),
-(@TGUID+16,'Your betrayal of the Drakkari Empire has borne me a new army.',14750,0,0,396,NULL),
-(@TGUID+17,'Your army....',14751,0,0,0,NULL),
-(@TGUID+18,'Arise, and accept my gift.',14752,0,0,396,NULL),
-(@TGUID+19,'I charge you now with the cleansing of Zul\'Drak, Drakuru.',14753,0,0,397,NULL),
-(@TGUID+20,'As you wish, master.',14014,0,0,396,NULL),
-(@TGUID+21,'Fail me and it shall be your undoing...',14754,0,0,396,NULL),
-(@TGUID+22,'Succeed, and even greater power shall be yours!',14755,0,0,396,NULL),
-(@TGUID+23,'Forgive my deception, mon. It all been for your own good.',14015,0,0,396,NULL),
-(@TGUID+24,'Ya needed ta prove yer worthiness....',14016,0,0,396,NULL),
-(@TGUID+25,'I be needin\' worthy underlings in Zul\'Drak, mon. Ones ready to wield real power.',14017,0,0,396,NULL),
-(@TGUID+26,'You see for yourself now. Da Lich King be generous to dem who obey.',14018,0,0,396,NULL),
-(@TGUID+27,'Follow dis path, mon, and soon you be tastin\' immortality!',14019,0,0,396,NULL);
-
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES

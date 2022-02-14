@@ -9,10 +9,6 @@ SET @CGUID := 6030000; -- creatures
 SET @OGUID := 6030000; -- gameobjects
 SET @PGUID := 53500;   -- pools
 
--- texts
--- 2000026800 - 2000026999 Reserved
-SET @TGUID := 2000026800;
-
 
 
 -- =========
@@ -2757,18 +2753,18 @@ DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (3370102,3370103,335790
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- 3370102
 (3370102,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Set run on'),
-(3370102,0,0,0,0,0,0,0,0,@TGUID+11,0,0,0,0,0,0,0,'Say towers active 1'),
+(3370102,0,0,0,0,0,0,0,0,34446,0,0,0,0,0,0,0,'Say towers active 1'),
 -- 3370103
-(3370103,0,0,0,0,0,0,0,0,@TGUID+12,0,0,0,0,0,0,0,'Say towers active 2'),
+(3370103,0,0,0,0,0,0,0,0,34447,0,0,0,0,0,0,0,'Say towers active 2'),
 (3370103,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Pause movement'),
 -- 3357901
 (3357901,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Set run on'),
-(3357901,0,0,0,0,0,0,0,0,@TGUID+13,0,0,0,0,0,0,0,'Say event start 1'),
+(3357901,0,0,0,0,0,0,0,0,33671,0,0,0,0,0,0,0,'Say event start 1'),
 (3357901,0,29,1,2,0,0,0,0,0,0,0,0,0,0,0,0,'Remove NPC flag'),
-(3357901,9000,0,0,0,0,33624,50,0,@TGUID+14,0,0,0,0,0,0,0,'Say event start 2'),
-(3357901,17000,0,0,0,0,0,0,0,@TGUID+15,0,0,0,0,0,0,0,'Say event start 3'),
-(3357901,39000,0,0,0,0,33624,50,0,@TGUID+16,0,0,0,0,0,0,0,'Say event start 4'),
-(3357901,50000,0,0,0,0,0,0,0,@TGUID+17,0,0,0,0,0,0,0,'Say event start 5'),
+(3357901,9000,0,0,0,0,33624,50,0,33673,0,0,0,0,0,0,0,'Say event start 2'),
+(3357901,17000,0,0,0,0,0,0,0,33684,0,0,0,0,0,0,0,'Say event start 3'),
+(3357901,39000,0,0,0,0,33624,50,0,33677,0,0,0,0,0,0,0,'Say event start 4'),
+(3357901,50000,0,0,0,0,0,0,0,33687,0,0,0,0,0,0,0,'Say event start 5'),
 -- 3290603
 (3290603,3000,15,63292,0,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Freya Dummy Yellow'),
 -- 3290618
@@ -2777,55 +2773,29 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3290611,3000,15,63294,0,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Freya Dummy Blue'),
 -- 3411901
 (3411901,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Pause movement'),
-(3411901,2000,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Say epilogue 1'),
-(3411901,11000,0,0,0,0,33696,10,0,@TGUID+1,0,0,0,0,0,0,0,'Say epilogue 2'),
-(3411901,19000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Say epilogue 3'),
-(3411901,27000,0,0,0,0,33696,10,0,@TGUID+3,0,0,0,0,0,0,0,'Say epilogue 4'),
-(3411901,36000,0,0,0,0,0,0,0,@TGUID+4,0,0,0,0,0,0,0,'Say epilogue 5'),
-(3411901,44000,0,0,0,0,0,0,0,@TGUID+5,0,0,0,0,0,0,0,'Say epilogue 6'),
-(3411901,53000,0,0,0,0,33696,10,0,@TGUID+6,0,0,0,0,0,0,0,'Say epilogue 7'),
-(3411901,61000,0,0,0,0,33696,10,0,@TGUID+7,0,0,0,0,0,0,0,'Say epilogue 8'),
-(3411901,70000,0,0,0,0,0,0,0,@TGUID+8,0,0,0,0,0,0,0,'Say epilogue 9'),
-(3411901,78000,0,0,0,0,33696,10,0,@TGUID+9,0,0,0,0,0,0,0,'Say epilogue 10'),
-(3411901,86000,0,0,0,0,0,0,0,@TGUID+10,0,0,0,0,0,0,0,'Say epilogue 11'),
+(3411901,2000,0,0,0,0,0,0,0,34225,0,0,0,0,0,0,0,'Say epilogue 1'),
+(3411901,11000,0,0,0,0,33696,10,0,34227,0,0,0,0,0,0,0,'Say epilogue 2'),
+(3411901,19000,0,0,0,0,0,0,0,34226,0,0,0,0,0,0,0,'Say epilogue 3'),
+(3411901,27000,0,0,0,0,33696,10,0,34228,0,0,0,0,0,0,0,'Say epilogue 4'),
+(3411901,36000,0,0,0,0,0,0,0,34229,0,0,0,0,0,0,0,'Say epilogue 5'),
+(3411901,44000,0,0,0,0,0,0,0,34231,0,0,0,0,0,0,0,'Say epilogue 6'),
+(3411901,53000,0,0,0,0,33696,10,0,34230,0,0,0,0,0,0,0,'Say epilogue 7'),
+(3411901,61000,0,0,0,0,33696,10,0,34232,0,0,0,0,0,0,0,'Say epilogue 8'),
+(3411901,70000,0,0,0,0,0,0,0,34233,0,0,0,0,0,0,0,'Say epilogue 9'),
+(3411901,78000,0,0,0,0,33696,10,0,34234,0,0,0,0,0,0,0,'Say epilogue 10'),
+(3411901,86000,0,0,0,0,0,0,0,34235,0,0,0,0,0,0,0,'Say epilogue 11'),
 -- 3323502
-(3323502,0,0,0,0,0,0,0,0,@TGUID+18,0,0,0,0,0,0,0,'yell text'),
+(3323502,0,0,0,0,0,0,0,0,33833,0,0,0,0,0,0,0,'yell text'),
 -- 3323505
 (3323505,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Pause movement'),
 (3323505,0,29,1,1,0,0,0,0,0,0,0,0,0,0,0,0,'Set gossip flag'),
 -- 3406407
-(3406407,0,0,0,0,0,0,0,0,@TGUID+19,0,0,0,0,0,0,0,'yell text'),
+(3406407,0,0,0,0,0,0,0,0,34161,0,0,0,0,0,0,0,'yell text'),
 (3406407,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Pause movement'),
 (3406407,8000,10,32871,0,0,0,0,8,0,0,0,0,1632.53,-304.946,451.276,1.53,'spawn Algalon'),
-(3406407,36000,0,0,0,0,0,0,0,@TGUID+20,0,0,0,0,0,0,0,'yell text'),
+(3406407,36000,0,0,0,0,0,0,0,34029,0,0,0,0,0,0,0,'yell text'),
 (3406407,36000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Resume movement'),
 (3406407,36000,18,35000,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn self');
-
-
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+20;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `broadcast_text_id`, `comment`) VALUES
-(@TGUID+0,'What a battle! Did you see that, Rhydian?!','0','1','0','0','0','Brann Bronzebeard - say epilogue 1'),
-(@TGUID+1,'Our friends fought well, Brann, but we\'re not done yet.','0','1','0','0','0','Archmage Rhydian - say epilogue 2'),
-(@TGUID+2,'Perhaps so, but it\'s only a matter of time until we break back into Ulduar. Any luck finding a way to teleport inside?','0','1','0','0','0','Brann Bronzebeard - say epilogue 3'),
-(@TGUID+3,'None at all. I suspect it has something to do with that giant mechanical construct that our scouts spotted in front of the gate.','0','1','0','0','0','Archmage Rhydian - say epilogue 4'),
-(@TGUID+4,'Oi. So we\'ll have to contend with that thing after all then?','0','1','0','0','0','Brann Bronzebeard - say epilogue 5'),
-(@TGUID+5,'What about the plated proto-drake and the fire giant that were spotted nearby? Think your mages can handle those?','0','1','0','0','0','Brann Bronzebeard - say epilogue 6'),
-(@TGUID+6,'The Kirin Tor can\'t possibly spare any additional resources to take on anything that size. We may not have to though.','0','1','0','0','0','Archmage Rhydian - say epilogue 7'),
-(@TGUID+7,'We can sneak past them. As long as we can take down that construct in front of the gate, we should be able to get inside.','0','1','0','0','0','Archmage Rhydian - say epilogue 8'),
-(@TGUID+8,'Sneak?! What do you think we are, marmots?','0','1','0','0','0','Brann Bronzebeard - say epilogue 9'),
-(@TGUID+9,'We\'re hunting an old god, Brann.','0','1','0','0','0','Archmage Rhydian - say epilogue 10'),
-(@TGUID+10,'Fine. If our allies are going to be the ones getting their hands dirty, we\'ll leave it to them to decide how to proceed.','0','1','0','0','0','Brann Bronzebeard - say epilogue 11'),
-(@TGUID+11,'What... What did you just do, $n?! Brann! Braaaaannn!','0','1','0','0','0','High Explorer Dellorah - say towers active 1'),
-(@TGUID+12,'Brann! $n just activated the orbital defense system! If we don\'t get out of here soon, we\'re going to be toast!','0','1','0','0','0','High Explorer Dellorah - say towers active 2'),
-(@TGUID+13,'Pentarus, you heard the man. Have your mages release the shield and let these brave souls through!','0','1','0','0','0','Brann Bronzebeard - say event start 1'),
-(@TGUID+14,'Of course, Brann: We will have the shield down momentarily.','0','1','0','0','0','Archmage Rhydian - say event start 2'),
-(@TGUID+15,'Okay! Let\'s move out. Get into your machines; I\'ll speak to you from here via the radio.','15807','0','0','0','0','Bronzebeard Radio - say event start 3'),
-(@TGUID+16,'Mages of the Kirin Tor, on Brann\'s Command, release the shield! Defend this platform and our allies with your lives! For Dalaran!','0','1','0','0','0','Archmage Rhydian - say event start 4'),
-(@TGUID+17,'Our allies are ready. Bring down the shield and make way!','0','1','0','0','0','Brann Bronzebeard - say event start 5'),
-(@TGUID+18,'You\'ve defeated the Iron Council and unlocked the Archivum! Well done, lads!','15827','1','0','0','0','Brann archivum - say spawned'),
-(@TGUID+19,'We did it, lads! We got here before Algalon\'s arrival. Maybe we can rig the systems to interfere with his analysis--','15824','1','0','0','0','Brann algalon - say before Algalon'),
-(@TGUID+20,'I\'ll head back to the Archivum and see if I can jam his signal. I might be able to buy us some time while you take care of him.','15825','1','0','0','0','Brann algalon - say after Algalon');
-
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

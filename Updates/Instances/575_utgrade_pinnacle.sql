@@ -10,10 +10,6 @@ SET @CGUID := 5750000; -- creatures
 SET @OGUID := 5750000; -- gameobjects
 SET @PGUID := 52100;   -- pools
 
--- texts
--- 2000025200 - 2000025399 Reserved
-SET @TGUID := 2000025200; 
-
 
 
 -- =========
@@ -732,5 +728,4 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 (13131,1000,9,@OGUID+112,7200,0,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject');
 UPDATE quest_template SET CompleteScript = 13131 WHERE entry = 13131;
 
--- INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES

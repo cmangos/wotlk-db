@@ -10,10 +10,6 @@ SET @CGUID := 6320000; -- creatures
 SET @OGUID := 6320000; -- gameobjects
 SET @PGUID := 54200;   -- pools
 
--- texts
--- 2000029600 - 2000029799 Reserved
-SET @TGUID := 2000029600;
-
 
 -- =========
 -- CREATURES
@@ -735,45 +731,28 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 DELETE FROM `dbscripts_on_creature_movement` WHERE id IN (3816001,3816101,3758301);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (3816001,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Jaina - pause WP Movement'),
-(3816001,2000,0,0,0,0,0,0,0,@TGUID+12,0,0,0,0,0,0,0,'Jaina - say outro'),
+(3816001,2000,0,0,0,0,0,0,0,37387,0,0,0,0,0,0,0,'Jaina - say outro'),
 (3816101,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - pause WP Movement'),
-(3816101,2000,0,0,0,0,0,0,0,@TGUID+13,0,0,0,0,0,0,0,'Sylvanas - say outro'),
+(3816101,2000,0,0,0,0,0,0,0,37369,0,0,0,0,0,0,0,'Sylvanas - say outro'),
 (3758301,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'helper mage - pause WP Movement'),
 (3758301,0,15,54219,0,0,0,0,0,0,0,0,0,0,0,0,0,'helper mage - cast Arcane Channeling');
 
 DELETE FROM `dbscripts_on_gossip` WHERE id IN (1094201,1094301);
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (1094201,0,29,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sylvanas - remove gossip flag'),
-(1094201,1000,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Sylvanas - say intro'),
-(1094201,14000,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Sylvanas - say intro'),
-(1094201,24000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Sylvanas - say intro'),
-(1094201,35000,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Sylvanas - say intro'),
-(1094201,47000,0,0,0,0,0,0,0,@TGUID+4,0,0,0,0,0,0,0,'Sylvanas - say intro'),
+(1094201,1000,0,0,0,0,0,0,0,37380,0,0,0,0,0,0,0,'Sylvanas - say intro'),
+(1094201,14000,0,0,0,0,0,0,0,37381,0,0,0,0,0,0,0,'Sylvanas - say intro'),
+(1094201,24000,0,0,0,0,0,0,0,37382,0,0,0,0,0,0,0,'Sylvanas - say intro'),
+(1094201,35000,0,0,0,0,0,0,0,37383,0,0,0,0,0,0,0,'Sylvanas - say intro'),
+(1094201,47000,0,0,0,0,0,0,0,37384,0,0,0,0,0,0,0,'Sylvanas - say intro'),
 (1094301,0,29,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Jaina - remove gossip flag'),
-(1094301,1000,0,0,0,0,0,0,0,@TGUID+5,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,9000,0,0,0,0,0,0,0,@TGUID+6,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,19000,0,0,0,0,0,0,0,@TGUID+7,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,27000,0,0,0,0,0,0,0,@TGUID+8,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,37000,0,0,0,0,0,0,0,@TGUID+9,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,46000,0,0,0,0,0,0,0,@TGUID+10,0,0,0,0,0,0,0,'Jaina - say intro'),
-(1094301,58000,0,0,0,0,0,0,0,@TGUID+11,0,0,0,0,0,0,0,'Jaina - say intro');
-
-DELETE FROM `dbscript_string` WHERE `entry` BETWEEN @TGUID+0 AND @TGUID+13;
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(@TGUID+0,'The Argent Crusade and the Knights of the Ebon Blade have assaulted the gates of the Icecrown Citadel and are preparing for a massive attack upon the Scourge. Our mission is a bit more subtle, but equally as important.',17038,0,0,1,'sylvanas: say_intro'),
-(@TGUID+1,'With the attention of the Lich King turned towards the front gate, we\'ll be working our way through the side in search of information that will enable us to defeat him - once and for all.',17039,0,0,1,'sylvanas: say_intro'),
-(@TGUID+2,'Our scouts have reported that the Lich King has a private chamber, outside of the Frozen Throne, deep within a place called the Halls of Reflection. That is our target, champions.',17040,0,0,1,'sylvanas: say_intro'),
-(@TGUID+3,'We will cut a swath of destruction through this cursed place and find a way to enter the Halls of Reflection. If there is anything of value to be found here, it will be found in the halls.',17041,0,0,5,'sylvanas: say_intro'),
-(@TGUID+4,'The Dark Lady watches over you. Make haste!',17043,0,0,0,'sylvanas: say_intro'),
-(@TGUID+5,'Thank the Light for seeing you here safely! We have much work to do if we are to defeat the Lich King and put an end to the Scourge.',16617,0,0,1,'jaina: say_intro'),
-(@TGUID+6,'Our allies within the Argent Crusade and the Knights of the Ebon Blade have broken through the front gate of Icecrown and are attempting to establish a foothold within the citadel.',16618,0,0,1,'jaina: say_intro'),
-(@TGUID+7,'Their success hinges upon what we discover within these cursed halls. Although our mission is fraught with peril, we must persevere!',16619,0,0,1,'jaina: say_intro'),
-(@TGUID+8,'With the attention of the Lich King drawn towards the front gate, we will be working our way through the side in search of information that will enable us to defeat the Scourge once and for all.',16620,0,0,1,'jaina: say_intro'),
-(@TGUID+9,'King Varian\'s SI:7 agents have gathered information about a private sanctum of the Lich King\'s deep within a place called the Halls of Reflection.',16621,0,0,1,'jaina: say_intro'),
-(@TGUID+10,'We will carve a path through this wretched place and find a way to enter the Halls of Reflection. I sense powerful magic hidden away within those halls. Magic that could be the key to destroying the Scourge!',16622,0,0,1,'jaina: say_intro'),
-(@TGUID+11,'Make haste, champions! I will prepare the troops to fall in behind you.',16624,0,0,5,'jaina: say_intro'),
-(@TGUID+12,'Excellent work, champions! We shall set up our base camp in these chambers. My magi will get the Scourge transport device working shortly. Step inside it when you are ready for your next mission. I will meet you on the other side.',16625,1,0,5,'jaina: say_outro'),
-(@TGUID+13,'Excellent work, champions! We shall set up our base camp in these chambers. My magi will get the Scourge transport device working shortly. Step inside when you are ready for your next mission. I will meet you on the other side.',17044,1,0,5,'sylvanas: say_intro');
+(1094301,1000,0,0,0,0,0,0,0,37370,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,9000,0,0,0,0,0,0,0,37371,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,19000,0,0,0,0,0,0,0,37372,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,27000,0,0,0,0,0,0,0,37373,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,37000,0,0,0,0,0,0,0,37374,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,46000,0,0,0,0,0,0,0,37375,0,0,0,0,0,0,0,'Jaina - say intro'),
+(1094301,58000,0,0,0,0,0,0,0,37377,0,0,0,0,0,0,0,'Jaina - say intro');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

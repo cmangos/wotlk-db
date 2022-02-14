@@ -10,10 +10,6 @@ SET @CGUID := 6190000; -- creatures
 SET @OGUID := 6190000; -- gameobjects
 SET @PGUID := 52500;   -- pools
 
--- texts
--- 2000027800 - 2000027999 Reserved
-SET @TGUID := 2000027800;
-
 
 
 -- =========
@@ -669,11 +665,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 DELETE FROM dbscripts_on_go_template_use WHERE id IN (193093,193094);
 INSERT INTO dbscripts_on_go_template_use (id,delay,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,x,y,z,o,comments) VALUES
 -- Ancient Nerubian Device 193093
-(193093,0,0,0,0,0,29308,300,1,@TGUID+0,0,0,0,0,0,0,0,'Ancient Nerubian Device - buddy say');
-
-DELETE FROM dbscript_string WHERE entry = @TGUID+0;
-INSERT INTO dbscript_string (entry, content_default, sound, type, language, emote, comment) VALUES
-(@TGUID+0,'The hum of magic energy in the air diminishes...',0,2,0,0,NULL);
+(193093,0,0,0,0,0,29308,300,1,32345,0,0,0,0,0,0,0,'Ancient Nerubian Device - buddy say');
 
 -- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

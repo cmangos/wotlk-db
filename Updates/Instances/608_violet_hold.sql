@@ -9,10 +9,6 @@ SET @CGUID := 6080000; -- creatures
 SET @OGUID := 6080000; -- gameobjects
 SET @PGUID := 53700;   -- pools
 
--- texts
--- 2000027200 - 2000027399 Reserved
-SET @TGUID := 2000027200;
-
 
 
 -- =========
@@ -322,7 +318,7 @@ DELETE FROM `dbscripts_on_creature_death` WHERE id IN (31134);
 INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (31134,0,18,1,0,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - despawn self'),
 (31134,1000,10,30658,0,0,0,0,0,0,0,0,0,1819.1594,804.06683,44.447987,0.08726,'Cyanigosa - summon Sinclari at the end'),
-(31134,2000,0,0,0,0,30658,150,4,@TGUID+2,0,0,0,0,0,0,0,'Sinclari - say end'),
+(31134,2000,0,0,0,0,30658,150,4,31694,0,0,0,0,0,0,0,'Sinclari - say end'),
 (31134,2000,29,1,0,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - remove npc flag'),
 (31134,2000,20,2,1,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - start WP movement'),
 (31134,12000,29,1,1,0,30658,150,4,0,0,0,0,0,0,0,0,'Sinclari - add npc flag');
@@ -340,7 +336,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3107901,8000,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Azure Saboteur - despawn self'),
 (3065801,0,1,432,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - emote'),
 (3065801,0,10,30837,0,0,0,0,0,0,0,0,0,1888.146,803.382,58.604,3.072,'Sinclari - summon defense systems'),
-(3065802,0,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Sinclari - say begin'),
+(3065802,0,0,0,0,0,0,0,0,31474,0,0,0,0,0,0,0,'Sinclari - say begin'),
 (3065802,3000,18,0,0,0,31011,@CGUID+42,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
 (3065802,3000,18,0,0,0,31011,@CGUID+43,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
 (3065802,3000,18,0,0,0,31011,@CGUID+44,4+16,0,0,0,0,0,0,0,0,'Teleportation Portal (Intro) - despawn'),
@@ -352,7 +348,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3065802,4000,20,2,0,0,30659,@CGUID+25,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
 (3065802,4000,20,2,0,0,30659,@CGUID+26,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
 (3065802,4000,20,2,0,0,30659,@CGUID+27,4+16,0,0,0,0,0,0,0,0,'Violet Hold Guard - start wp movement'),
-(3065803,0,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Sinclari - say close door'),
+(3065803,0,0,0,0,0,0,0,0,31475,0,0,0,0,0,0,0,'Sinclari - say close door'),
 (3065803,3000,1,396,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - emote'),
 (3065803,9000,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sinclari - despawn self'),
 (3065803,10000,10,30658,0,0,0,0,0,0,0,0,0,1816.1852,804.0629,44.44799,3.17649,'Sinclari - summon Sinclari behind the door'),
@@ -362,12 +358,6 @@ DELETE FROM `dbscripts_on_go_template_use` WHERE id IN (193615,193611);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (193611,0,10,30837,0,0,0,0,0,0,0,0,0,1888.146,803.382,58.604,3.072,'Activation Crystal - summon defense systems'),
 (193611,0,27,4,0,0,0,0,0,0,0,0,0,0,0,0,0,'Activation Crystal - set no-interact');
-
-DELETE FROM `dbscript_string` WHERE `entry` IN (@TGUID+0,@TGUID+1,@TGUID+2);
-INSERT INTO `dbscript_string` (`entry`, `content_default`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
-(@TGUID+0,'Prison guards, we are leaving! These adventurers are taking over! Go, go, go!',0,1,0,5,'sinclari: say_begin'),
-(@TGUID+1,'I\'m locking the door. Good luck, and thank you for doing this.',0,0,0,396,'sinclari: say_lock_door'),
-(@TGUID+2,'You did it! You held the Blue Dragonflight back and defeated their commander. Amazing work!',0,0,0,396,'sinclari: say_victory');
 
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

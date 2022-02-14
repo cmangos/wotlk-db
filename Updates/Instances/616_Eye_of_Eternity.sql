@@ -9,11 +9,6 @@ SET @CGUID := 6160000; -- creatures
 SET @OGUID := 6160000; -- gameobjects
 SET @PGUID := 53800;   -- pools
 
--- texts
--- 2000027600 - 2000027799 Reserved
-SET @TGUID := 2000027600;
-
-
 
 
 -- =========
@@ -341,19 +336,12 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`
 (3229503,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - pause WP Movement'),
 (3229503,0,15,61028,0,0,0,0,0,0,0,0,0,0,0,0,0,'Alexstrasza - Cast Alexstrasza\'s Gift Beam'),
 (3229503,0,15,61023,0,0,32448,@CGUID+13,0x11,0,0,0,0,0,0,0,0,'Alexstrasza\'s Gift - Cast Alexstrasza\'s Gift Visual'),
-(3229503,5000,0,0,0,0,0,0,0,@TGUID+0,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 1'),
-(3229503,12000,0,0,0,0,0,0,0,@TGUID+1,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 2'),
-(3229503,16000,0,0,0,0,0,0,0,@TGUID+2,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 3'),
-(3229503,40000,0,0,0,0,0,0,0,@TGUID+3,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 4'),
+(3229503,5000,0,0,0,0,0,0,0,32626,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 1'),
+(3229503,12000,0,0,0,0,0,0,0,32627,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 2'),
+(3229503,16000,0,0,0,0,0,0,0,32628,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 3'),
+(3229503,40000,0,0,0,0,0,0,0,32629,0,0,0,0,0,0,0,'Alexstrasza - say epilogue 4'),
 (2885901,1000,15,56046,0,0,30118,50,0x01,0,0,0,0,0,0,0,0,'Malygos - cast Portal Beam'),
 (2885901,11000,47,3,0,0,0,0,0,0,0,0,0,0,0,0,0,'Malygos - interrupt casting');
-
-DELETE FROM dbscript_string WHERE entry BETWEEN @TGUID+0 AND @TGUID+3;
-INSERT INTO dbscript_string (entry, content_default, sound,type,comment) VALUES
-(@TGUID+0,'I did what I had to, brother. You gave me no alternative.',14406,1,'Eye of Eternity - Alexstrasza - Epilogue 1'),
-(@TGUID+1,'And so ends the Nexus War.',14407,1,'Eye of Eternity - Alexstrasza - Epilogue 2'),
-(@TGUID+2,'This resolution pains me deeply, but the destruction, the monumental loss of life had to end. Regardless of Malygos'' recent transgressions, I will mourn his loss. He was once a guardian, a protector. This day, one of the world''s mightiest has fallen.',14408,1,'Eye of Eternity - Alexstrasza - Epilogue 3'),
-(@TGUID+3,'The red dragonflight will take on the burden of mending the devastation wrought on Azeroth. Return home to your people and rest. Tomorrow will bring you new challenges, and you must be ready to face them. Life...goes on.',14409,1,'Eye of Eternity - Alexstrasza - Epilogue 4');
 
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
