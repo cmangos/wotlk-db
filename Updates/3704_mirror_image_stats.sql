@@ -1,2 +1,2 @@
-UPDATE creature_template SET MaxLevel=80 WHERE entry=31216;
+UPDATE creature_template SET MinLevel=80,MaxLevel=80,UnitClass=8 WHERE entry=31216;
 
