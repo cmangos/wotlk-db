@@ -54,6 +54,7 @@ MYSQL_PORT_DEFAULT="3306"
 MYSQL_USERNAME_DEFAULT="mangos"
 MYSQL_PASSWORD_DEFAULT="mangos"
 MYSQL_USERIP_DEFAULT="localhost"
+MYSQL_COLSTAT_DEFAULT="" # important to avoid issue with mysqldump using other db than OracleMySQL 8>
 WORLD_DB_NAME_DEFAULT="${EXPENSION_LC}mangos"
 REALM_DB_NAME_DEFAULT="${EXPENSION_LC}realmd"
 CHAR_DB_NAME_DEFAULT="${EXPENSION_LC}characters"
@@ -72,6 +73,7 @@ MYSQL_PORT="${MYSQL_PORT_DEFAULT}"
 MYSQL_USERNAME="${MYSQL_USERNAME_DEFAULT}"
 MYSQL_PASSWORD="${MYSQL_PASSWORD_DEFAULT}"
 MYSQL_USERIP="${MYSQL_USERIP_DEFAULT}"
+MYSQL_COLSTAT="${MYSQL_COLSTAT_DEFAULT}"
 WORLD_DB_NAME="${WORLD_DB_NAME_DEFAULT}"
 REALM_DB_NAME="${REALM_DB_NAME_DEFAULT}"
 CHAR_DB_NAME="${CHAR_DB_NAME_DEFAULT}"
@@ -87,6 +89,10 @@ FORCE_WAIT="${FORCE_WAIT_DEFAULT}"
 #possible search folder for core path
 DEFAULT_CORE_FOLDER="$EXPENSION_LC"
 
+# download backup address
+LAST_BACKUP_ADR="https://github.com/cmangos/${EXPENSION_LC}-db/releases/download/latest/${EXPENSION_LC}-all-backups.tar.gz"
+
+# extract db tittle, db content version, and last content update revision from content db
 function initialize()
 {
   if [ ! -f "${ADDITIONAL_PATH}Full_DB/$FULLDB_FILE_ZIP" ]; then
@@ -159,7 +165,7 @@ function initialize()
     return
   fi
 
-  if [[ $contentDBTittle =~ [\"\']$]]; then
+  if [[ $contentDBTittle =~ [\"\']$ ]]; then
     contentDBTittle="${contentDBTittle%?}"
   fi
 
@@ -178,7 +184,6 @@ function initialize()
     if [ -f "$file" ]; then
       cVers=$(basename "$file" ".sql")
       if [[ $cVers =~ $versRegex ]]; then
-        echo " c $cVers r ${BASH_REMATCH[1]}"
         if [[ ${BASH_REMATCH[1]} -lt 9999 ]]; then
           SOURCE_LAST_CONTENT_VERSION_UPDATE="$cVers"
           break
@@ -867,6 +872,16 @@ function check_dbs_accessibility()
       echo -ne "\033[0K\r"
       echo -ne "                                                                    "
       echo -ne "\033[0K\r"
+    fi
+  fi
+
+  local mysqldumpInfo=$("$MYSQL_DUMP_PATH" --version)
+  local mysqlOraReg="MySQL Community Server"
+  MYSQL_COLSTAT=""
+  if [[ $mysqldumpInfo =~ $mysqlOraReg ]]; then
+    local mysqlVerReg="Ver 8.[0-9]+\.[0-9]+"
+    if [[ $mysqldumpInfo =~ $mysqlVerReg ]]; then
+      MYSQL_COLSTAT=" --column-statistics=0"
     fi
   fi
 
@@ -1657,6 +1672,35 @@ function delete_all_databases_and_user
   true
 }
 
+function create_database()
+{
+  local dbname=""
+  local createSql=""
+  local dropSql=""
+  case $1 in
+    "WORLD") dbname="${WORLD_DB_NAME}"; createSql="$SQL_CREATE_WORLD_DB"; dropSql="$SQL_DROP_WORLD_DB";;
+    "CHAR") dbname="${CHAR_DB_NAME}"; createSql="$SQL_CREATE_CHAR_DB"; dropSql="$SQL_DROP_CHAR_DB";;
+    "REALM") dbname="${REALM_DB_NAME}"; createSql="$SQL_CREATE_REALM_DB"; dropSql="$SQL_DROP_REALM_DB";;
+    "LOGS") dbname="${LOGS_DB_NAME}"; createSql="$SQL_CREATE_LOGS_DB"; dropSql="$SQL_DROP_LOGS_DB";;
+  esac
+
+  echo -n "> Creating $dbname database ... "
+  local sqlcreate=("$dropSql")
+  sqlcreate+=("$createSql")
+  export MYSQL_PWD="$ROOTPASSWORD"
+  for sql in "${sqlcreate[@]}"
+  do
+    ERRORS=$("$MYSQL_PATH" -u"$ROOTUSERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -s -N -e"$sql" 2>&1)
+    if [[ $? != 0 ]]; then
+      echo "FAILED!"
+      echo ">>> $ERRORS"
+      false
+      return
+    fi
+  done
+  echo "SUCCESS"
+}
+
 function create_and_fill_world_db()
 {
   if [[ "$1" = true ]]; then
@@ -1670,23 +1714,9 @@ function create_and_fill_world_db()
     backup_create "WORLD"
   fi
 
-  echo -n "> Creating $WORLD_DB_NAME database ... "
-  local sqlcreate=("$SQL_DROP_WORLD_DB")
-  sqlcreate+=("$SQL_CREATE_WORLD_DB")
-  export MYSQL_PWD="$ROOTPASSWORD"
-  for sql in "${sqlcreate[@]}"
-  do
+  create_database "WORLD"
 
-    ERRORS=$("$MYSQL_PATH" -u"$ROOTUSERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -s -N -e"$sql" 2>&1)
-    if [[ $? != 0 ]]; then
-      echo "FAILED!"
-      echo ">>> $ERRORS"
-      echo "$?"
-      false
-      return
-    fi
-  done
-
+  echo -ne "Executing world db base sql ..."
   if ! execute_sql_file "$WORLD_DB_NAME" "$SQL_FILE_BASE_WORLD"; then
     echo "FAILED!"
     echo ">>> $ERRORS"
@@ -1715,22 +1745,9 @@ function create_and_fill_char_db()
     backup_create "CHAR"
   fi
 
-  echo -n "> Creating $CHAR_DB_NAME database ... "
-  local sqlcreate=("$SQL_DROP_CHAR_DB")
-  sqlcreate+=("$SQL_CREATE_CHAR_DB")
-  export MYSQL_PWD="$ROOTPASSWORD"
-  for sql in "${sqlcreate[@]}"
-  do
-    ERRORS=$("$MYSQL_PATH" -u"$ROOTUSERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -s -N -e"$sql" 2>&1)
-    if [[ $? != 0 ]]; then
-      echo "FAILED!"
-      echo ">>> $ERRORS"
-      export MYSQL_PWD="$MYSQL_PASSWORD"
-      false
-      return
-    fi
-  done
+  create_database "CHAR"
 
+  echo -ne "Executing char db base sql ..."
   if ! execute_sql_file "$CHAR_DB_NAME" "$SQL_FILE_BASE_CHAR"; then
     echo "FAILED!"
     echo ">>> $ERRORS"
@@ -1754,22 +1771,9 @@ function create_and_fill_realm_db()
     backup_create "REALM"
   fi
 
-  echo -n "> Creating $REALM_DB_NAME database..."
-  local sqlcreate=("$SQL_DROP_REALM_DB")
-  sqlcreate+=("$SQL_CREATE_REALM_DB")
-  export MYSQL_PWD="$ROOTPASSWORD"
-  for sql in "${sqlcreate[@]}"
-  do
-    ERRORS=$("$MYSQL_PATH" -u"$ROOTUSERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -s -N -e"$sql" 2>&1)
-    if [[ $? != 0 ]]; then
-      echo "FAILED!"
-      echo ">>> $ERRORS"
-      export MYSQL_PWD="$MYSQL_PASSWORD"
-      false
-      return
-    fi
-  done
+  create_database "REALM"
 
+  echo -ne "Executing realm db base sql ..."
   if ! execute_sql_file "$REALM_DB_NAME" "$SQL_FILE_BASE_REALM"; then
     echo "FAILED!"
     echo ">>> $ERRORS"
@@ -1788,21 +1792,10 @@ function create_and_fill_logs_db()
       return
     fi
   fi
-  echo -n "> Creating $LOGS_DB_NAME database..."
-  local sqlcreate=("$SQL_DROP_LOGS_DB")
-  sqlcreate+=("$SQL_CREATE_LOGS_DB")
-  export MYSQL_PWD="$ROOTPASSWORD"
-  for sql in "${sqlcreate[@]}"
-  do
-    ERRORS=$("$MYSQL_PATH" -u"$ROOTUSERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -s -N -e"$sql" 2>&1)
-    if [[ $? != 0 ]]; then
-      echo "FAILED!"
-      echo ">>> $ERRORS"
-      false
-      return
-    fi
-  done
 
+  create_database "LOGS"
+
+  echo -ne "Executing logs db base sql ..."
   if ! execute_sql_file "$LOGS_DB_NAME" "$SQL_FILE_BASE_LOGS"; then
     echo "FAILED!"
     echo ">>> $ERRORS"
@@ -2071,7 +2064,7 @@ function build_backup_filename()
     fi
   fi
 
-  BACKUP_FILE_NAME="backups/${EXPENSION_LC}-db_${dbname}_$(date +%y%m%d%H%M)_${cleanversion}_v${DB_CONTENT_RELEASE_VERSION}_${contentdbver}.sql"
+  BACKUP_FILE_NAME="backups/${EXPENSION_LC}-db_${dbname}_${cleanversion}_v${DB_CONTENT_RELEASE_VERSION}_${contentdbver}_$(date +%y%m%d%H%M).sql"
   true
 }
 
@@ -2110,7 +2103,7 @@ function backup_create()
 
   echo -ne "> Dumping $dbname ... "
   export MYSQL_PWD="$MYSQL_PASSWORD"
-  ERRORS=$("$MYSQL_DUMP_PATH" -u"$MYSQL_USERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -B ${dbname} --quick --single-transaction --compress --order-by-primary --column-statistics=0 --result-file="${filename}" 2>&1)
+  ERRORS=$("$MYSQL_DUMP_PATH" -u"$MYSQL_USERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" ${dbname} --quick --single-transaction --compress --order-by-primary${MYSQL_COLSTAT} --result-file="${filename}" 2>&1)
   if [[ $? != 0 ]]; then
     echo "FAILED!"
     echo ">>> $ERRORS"
@@ -2136,9 +2129,142 @@ function backup_create()
 function download_latest_backup_file()
 {
   clear
-  echo "not yet implemented"
+  curl -L "${LAST_BACKUP_ADR}" -o "backups/all-backups.tar.gz"
+  tar -xzvf backups/all-backups.tar.gz -C backups
   wait_key
   true
+}
+
+function backup_restore_file()
+{
+  local filename=${1:-""}
+  local warning=${2:-true}
+  local dbname=""
+  local dbtype=""
+
+  local regex="${EXPENSION_LC}-db_([A-Z]+)"
+  if [[ "$1" =~ $regex ]]; then
+    case ${BASH_REMATCH[1]} in
+      "WORLD") dbname="${WORLD_DB_NAME}"; dbtype="WORLD";;
+      "CHAR") dbname="${CHAR_DB_NAME}"; dbtype="CHAR";;
+      "REALM") dbname="${REALM_DB_NAME}"; dbtype="REALM";;
+      "LOGS") dbname="${LOGS_DB_NAME}"; dbtype="LOGS";;
+    esac
+  fi
+
+  if [[ $dbname = "" ]]; then
+    false
+    return
+  fi
+
+  if [[ "${warning}" = true ]]; then
+    local warningWord="YES"
+    echo "You are about to restore a previous backup to $dbname database"
+    if [[ "$dbtype" = "CHAR" ]]; then
+      echo "WARNING: ALL CHARACTERS WILL BE RESTORED TO A PREVIOUS STATE! (current progression can be lost)"
+      warningWord="RestoreChar"
+    else
+      if [[ "$dbtype" = "REALMD" ]]; then
+        echo "WARNING: ACCOUNTS AND REALM DATA WILL BE RESTORED TO A PREVIOUS STATE!"
+        warningWord="RestoreRealm"
+      fi
+    fi
+
+    if ! are_you_sure "$warningWord"; then
+      false
+      return
+    fi
+  fi
+
+  echo -ne "> Uncompressing $filename ... "
+  ERRORS=$(gzip -kdf "${filename}")
+  if [[ $? != 0 ]]; then
+    echo "FAILED!"
+    echo ">>> $ERRORS"
+    false
+    return
+  fi
+  echo "SUCCESS"
+  echo
+
+  filename=${filename%.gz}
+  echo -ne "> Restoring $filename ... "
+  export MYSQL_PWD="$MYSQL_PASSWORD"
+  ERRORS=$("$MYSQL_PATH" -u"$MYSQL_USERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -D"$dbname" -sN < "$filename" 2>&1)
+  if [[ $? != 0 ]]; then
+    echo "FAILED!"
+    echo ">>> $ERRORS"
+    false
+    return
+  fi
+  echo "SUCCESS"
+  true
+}
+
+function backup_restore_all_last()
+{
+  local filenames=()
+  local regex="${EXPENSION_LC}-db_([A-Z]+)"
+  local lastWorldFile=""
+  local lastCharFile=""
+  local lastRealmFile=""
+  local lastLogsFile=""
+  IFS=$'\n'
+  while read -r currFile; do
+    if [ ! -f "${currFile}" ]; then
+      continue
+    fi
+
+    if [ -z $lastWorldFile ]; then
+      if [[ "$currFile" =~ $regex ]]; then
+        if [[ "${BASH_REMATCH[1]}" = "WORLD" ]]; then
+          lastWorldFile="$currFile"
+          filenames+=("$currFile")
+          continue
+        fi
+      fi
+    fi
+
+    if [ -z $lastCharFile ]; then
+      if [[ "$currFile" =~ $regex ]]; then
+        if [[ "${BASH_REMATCH[1]}" = "CHAR" ]]; then
+          lastCharFile="$currFile"
+          filenames+=("$currFile")
+          continue
+        fi
+      fi
+    fi
+
+    if [ -z $lastRealmFile ]; then
+      if [[ "$currFile" =~ $regex ]]; then
+        if [[ "${BASH_REMATCH[1]}" = "REALM" ]]; then
+          lastRealmFile="$currFile"
+          filenames+=("$currFile")
+          continue
+        fi
+      fi
+    fi
+
+    if [ -z $lastLogsFile ]; then
+      if [[ "$currFile" =~ $regex ]]; then
+        if [[ "${BASH_REMATCH[1]}" = "LOGS" ]]; then
+          lastLogsFile="$currFile"
+          filenames+=("$currFile")
+          continue
+        fi
+      fi
+    fi
+
+    if [ ${#filenames[@]} -gt 3 ]; then
+      break;
+    fi
+
+  done < <(printf '%s\n' backups/${EXPENSION_LC}-db_*.gz | sort -zVr)
+  IFS="$OLDIFS"
+
+  for filename in "${filenames[@]}"; do
+    backup_restore_file "$filename" $1
+  done
 }
 
 function backup_restore()
@@ -2172,14 +2298,6 @@ function backup_restore()
     return
   fi
 
-  case $1 in
-    "WORLD") dbname="${WORLD_DB_NAME}";;
-    "CHAR") dbname="${CHAR_DB_NAME}";;
-    "REALM") dbname="${REALM_DB_NAME}";;
-    "LOGS") dbname="${LOGS_DB_NAME}";;
-    *) false; return;;
-  esac
-
   IFS=$'\n'
   local choice=100;
   while true; do
@@ -2195,49 +2313,14 @@ function backup_restore()
     fi
     echo "Invalid choice please retry."
   done
-  echo " ee ${filenames[*]}"
   local filename=${filenames[$choice]}
   IFS="$OLDIFS"
 
-  if [[ "${warning}" = true ]]; then
-    local warningWord="YES"
-    echo "You are about to restore a previous backup to $dbname database"
-    if [[ "$1" = "CHAR" ]]; then
-      echo "WARNING: ALL CHARACTERS WILL BE RESTORED TO A PREVIOUS STATE! (current progression can be lost)"
-      warningWord="RestoreChar"
-    else
-      if [[ "$1" = "REALMD" ]]; then
-        echo "WARNING: ACCOUNTS AND REALM DATA WILL BE RESTORED TO A PREVIOUS STATE!"
-        warningWord="RestoreRealm"
-      fi
-    fi
-
-    if ! are_you_sure "$warningWord"; then
-      false
-      return
-    fi
-  fi
-
-  echo -ne "> Uncompressing $filename ... "
-  ERRORS=$(gzip -kdf "${filename}")
-  if [[ $? != 0 ]]; then
-    echo "FAILED!"
-    echo ">>> $ERRORS"
+  if ! backup_restore_file "${filename}"; then
     false
     return
   fi
-  echo "SUCCESS"
-  echo
 
-  filename=${filename%.gz}
-  echo -ne "> Restoring $filename ... "
-  export MYSQL_PWD="$MYSQL_PASSWORD"
-  ERRORS=$("$MYSQL_PATH" -u"$MYSQL_USERNAME" -h"$MYSQL_HOST" -P"$MYSQL_PORT" -D"$dbname" -sN < "$filename" 2>&1)
-  if [[ $? != 0 ]]; then
-    echo "FAILED!"
-    echo ">>> $ERRORS"
-  fi
-  echo "SUCCESS"
   true
 }
 
@@ -2600,6 +2683,55 @@ function auto_script_create_all()
   true
 }
 
+# create all db and user without filling them
+function auto_script_create_all_db_and_user()
+{
+  echo "Creating all db and user..."
+  ROOTUSERNAME="$1"
+  ROOTPASSWORD="$2"
+
+  show_mysql_settings
+
+  if [[ "$3" != "DeleteAll" ]]; then
+    clear
+    if ! are_you_sure "DeleteAll"; then
+      false
+      return
+    fi
+  fi
+
+  force_wait
+
+  if ! set_try_root_connect_to_db; then
+    false
+    return
+  fi
+
+  if ! create_db_user_and_set_privileges; then
+    false
+    return
+  fi
+
+  if ! create_database "WORLD"; then
+    false
+    return
+  fi
+  if ! create_database "CHAR"; then
+    false
+    return
+  fi
+  if ! create_database "REALM"; then
+    false
+    return
+  fi
+  if ! create_database "LOGS"; then
+    false
+    return
+  fi
+
+  true
+}
+
 # install world db using config file settings and normal user
 function auto_script_install_world()
 {
@@ -2629,12 +2761,48 @@ function auto_script_install_world()
 # do a backup
 function auto_script_backup()
 {
+  show_mysql_settings
+  echo
+  echo "Starting to backup your database ..."
   backup_create "WORLD"
   if [[ "$1" = "full" ]];then
     backup_create "CHAR"
     backup_create "REALM"
     backup_create "LOGS"
   fi
+}
+
+# restore previous backup
+function auto_script_restore()
+{
+  show_mysql_settings
+  echo
+  echo "Starting to restore your database ..."
+
+  if [ -z $1 ]; then
+    echo "no files provided!"
+    false
+    return
+  fi
+
+  if [[ "$1" = "all-databases" ]]; then
+    if ! backup_restore_all_last $2; then
+      false
+      return
+    fi
+    true
+    return
+  fi
+
+  if [ ! -f "$1" ]; then
+    echo "provided file doesn't exist!"
+    false
+    return
+  fi
+
+  backup_restore_file $1 $2
+
+  true
 }
 
 # display little help
@@ -2656,8 +2824,15 @@ function show_help
   echo "    Install all db by droping previous one and recreate them from scratch"
   echo "    Require root access with arg1 as root username and arg2 as root password"
   echo
+  echo "   -CreateAllDBandUser rootuser rootpass"
+  echo "    Create only databases and set user right to them (no table or data will be created)"
+  echo
   echo "   -Backup [full]"
   echo "    Create a world database backup or a full backup if arg1 is set to full"
+  echo
+  echo "   -Restore filename"
+  echo "    Restore the file data to its specific database, only backup done by this tools are supported."
+  echo "    You can use 'all-database' as filename to try to restore all database using latest backup"
 }
 
 ###############################################
@@ -2693,6 +2868,14 @@ if [[ "$1" = "-InstallAll" ]]; then
   exit 0
 fi
 
+# only create db and user
+if [[ "$1" = "-CreateAllDBandUser" ]]; then
+  if ! auto_script_create_all_db_and_user $2 $3 $4; then
+    exit 1
+  fi
+
+  exit 0
+fi
 # check if user only want to install world db using config
 if [[ "$1" = "-World" ]]; then
   if ! auto_script_install_world; then
@@ -2711,6 +2894,14 @@ fi
 
 if [[ "$1" = "-Backup" ]]; then
   auto_script_backup $2
+  exit 0
+fi
+
+if [[ "$1" = "-Restore" ]]; then
+  if ! auto_script_restore $2 $3; then
+    exit 1
+  fi
+  exit 0
 fi
 
 # check if user only want to install world db using config
