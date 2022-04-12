@@ -24,3 +24,7 @@ UPDATE creature SET equipment_id = 0 WHERE id IN (19802,20872,20878,21742,21749,
 
 -- Items corrected
 UPDATE item_template SET Unk0 = 0 WHERE entry IN (34544,34548);
+
+-- These events shouldnt use use game_event_time - Removed
+-- thx to Killerwife
+DELETE FROM game_event_time WHERE  entry IN (3,4,5,7);
