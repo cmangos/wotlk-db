@@ -97,6 +97,9 @@ UPDATE gameobject_template SET data1 = 5 WHERE entry BETWEEN 176094 AND 176097;
 -- must despawn after used (has that flag set up.. but with restock timer it will never happen)
 UPDATE gameobject_template SET data2=0 WHERE entry IN (176150,176151);
 
+-- Cannonball: set radius to zero so it is only triggered through spell
+UPDATE gameobject_template SET data2=0 WHERE entry=176211;
+
 -- Verigan's Fist: must despawn during scripted quest
 UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413;
 
