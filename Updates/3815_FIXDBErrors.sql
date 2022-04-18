@@ -104,3 +104,12 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `priority`, `command`
 ('73807','0','0','21','0','0','0','0','0','0','102','0','0','0','0','0','0','0','0','Private Thorsen - Unactive'),
 ('73807','5000','0','0','0','0','0','733','20','0','108','0','0','0','0','0','0','0','0','Private Thorsen - Sergeant Yohwa (733) - Say Text'),
 ('73807','1000','0','0','0','0','0','0','0','0','106','0','0','0','0','0','0','0','0','Private Thorsen - Say Text');
+
+-- item_loot_template for 34548 redone
+DELETE FROM item_loot_template WHERE entry = 34548;
+INSERT INTO item_loot_template (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+('34548','32428','100','4','1','4','0','Heart of Darkness'),
+('34548','36201','9.6','0','-36201','1','0','Sunwell Plateau (Trash Loot) - Profession (-Design,-Pattern,-Plans,Study)'),
+('34548','50000','100','1','-50000','1','0','Cache of the Shattered Sun - Red/Blue/Yellow TBC Epic Gems'),
+('34548','50001','100','1','-50001','1','0','Cache of the Shattered Sun - Purple/Orangle/Green TBC Epic Gems'),
+('34548','50002','100','1','-50002','4','0','Cache of the Shattered Sun - Flasks and Mana/Wizard Oil');
