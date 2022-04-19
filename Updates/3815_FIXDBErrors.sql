@@ -113,3 +113,6 @@ INSERT INTO item_loot_template (`entry`, `item`, `ChanceOrQuestChance`, `groupid
 ('34548','50000','100','1','-50000','1','0','Cache of the Shattered Sun - Red/Blue/Yellow TBC Epic Gems'),
 ('34548','50001','100','1','-50001','1','0','Cache of the Shattered Sun - Purple/Orangle/Green TBC Epic Gems'),
 ('34548','50002','100','1','-50002','4','0','Cache of the Shattered Sun - Flasks and Mana/Wizard Oil');
+
+-- Anatoly - script moved to another range (Acid file)
+DELETE FROM dbscript_random_templates WHERE id = 20028;
