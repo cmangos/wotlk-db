@@ -25,4 +25,4 @@ DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHER
 19668, -- Shadowfiend
 21071, -- Totem of Spirits
 22484, -- Zeppit
-24981 -- Converted Sentry
+24981)); -- Converted Sentry

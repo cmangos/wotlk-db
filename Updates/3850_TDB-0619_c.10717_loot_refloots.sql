@@ -81,7 +81,7 @@ UPDATE `creature_loot_template` SET `item` = 60296, `mincountOrRef` = -60296 WHE
 DELETE FROM `reference_loot_template` WHERE `entry` IN (24016,24048,24050,24058,24068,24087); -- other dbs might still have npcs that use it
 -- https://tbc.wowhead.com/npc=6229/crowd-pummeler-9-60
 -- level 32 in classic, level 28 in tbc+
-UPDATE `creature_template` SET `MaxLevel` = 28 WHERE `entry` = 6229; -- maxlevel was not corrected 28-28
+UPDATE `creature_template` SET `MinLevel` = 28, `MaxLevel` = 28 WHERE `entry` = 6229; -- maxlevel was not corrected 28-28
 DELETE FROM `creature_loot_template` WHERE `entry` IN (6228,6229,6235,7361,7800,10433);
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 -- Dark Iron Ambassador 6228 -- 28 TBC+ 33 classic

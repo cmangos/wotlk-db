@@ -235,7 +235,7 @@ UPDATE creature SET equipment_id=50130 WHERE guid IN (79021,79022,79024);
 
 -- q.11004 World of Shadows end script
 DELETE FROM creature_movement_template WHERE entry IN (23038,23042);
-INSERT INTO creature_movement_template (entry,pathId,Point,PositionX,PositionY,PositionZ,Orientation,Waittime,Scriptid) VALUES
+INSERT INTO creature_movement_template (entry,pathId,Point,PositionX,PositionY,PositionZ,Waittime,Scriptid,Orientation) VALUES
 (23038, 0, 1, -3408.263, 3622.707, 278.0751, 14000, 2303801, 100),
 (23038, 0, 2, -3401.909, 3618.288, 277.5359, 0, 0, 100),
 (23038, 0, 3, -3401.054, 3617.369, 276.9967, 15000, 2303802, 100),
