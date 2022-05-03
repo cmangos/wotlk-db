@@ -10,8 +10,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 -- npc's should roam
 UPDATE `creature` SET `movementtype` = 1, `spawndist` = 1 WHERE `guid` IN (80464, 80465, 80443, 80447, 80460, 80461, 80456, 80458, 80446, 80457);
 
-UPDATE `creature_movement_template` SET `script_id` = 79401 WHERE `entry` = 794 AND `point` = 51;
-UPDATE `creature_movement_template` SET `script_id` = 79402 WHERE `entry` = 794 AND `point` = 28;
+UPDATE `creature_movement_template` SET `scriptid` = 79401 WHERE `entry` = 794 AND `point` = 51;
+UPDATE `creature_movement_template` SET `scriptid` = 79402 WHERE `entry` = 794 AND `point` = 28;
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (79401,79402);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `condition_id`, `comments`) VALUES
 (79401, 900000, 0, 0, 0, 0, 0, 0, 0, 0, 894, 0, 0, 0, 0, 0, 0, 0, 0, 'Matt 794 - Say'),
