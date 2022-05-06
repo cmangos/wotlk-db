@@ -11,7 +11,7 @@ UPDATE gameobject SET spawntimesecsmin = '-22', spawntimesecsmax = '-22' WHERE i
 
 DELETE FROM `dbscripts_on_quest_end` WHERE id = '2879';
 INSERT INTO `dbscripts_on_quest_end` (`id`, `command`, `datalong`, `datalong2`, `comments`) VALUES 
-('2879', '9', '50195', '22', 'The Stave of Equinex: Equinex Monolith Lights 1 - Respawn GameObject'),
-('2879', '9', '50224', '22', 'The Stave of Equinex: Equinex Monolith Lights 2 - Respawn GameObject');
+('2879', '9', '42252', '22', 'The Stave of Equinex: Equinex Monolith Lights 1 - Respawn GameObject'),
+('2879', '9', '42254', '22', 'The Stave of Equinex: Equinex Monolith Lights 2 - Respawn GameObject');
 
 UPDATE `quest_template` SET `CompleteScript`='2879' WHERE (`entry`='2879');
