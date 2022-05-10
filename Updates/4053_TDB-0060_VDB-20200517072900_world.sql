@@ -824,8 +824,8 @@ INSERT INTO `spawn_group_spawn` (`id`, `guid`, `slotid`) VALUES
 -- (2, 9085, 1, 1, 0),
 -- (2, 9083, 1, 1, 0);
 
-DELETE FROM `spawn_group_formation` WHERE `spawngroupid` = 2;
-INSERT INTO `spawn_group_formation` (`spawngroupid`, `formationtype`, `formationspread`, `formationoptions`, `movementid`, `movementtype`, comment) VALUES
+DELETE FROM `spawn_group_formation` WHERE `id` = 2;
+INSERT INTO `spawn_group_formation` (`id`, `formationtype`, `formationspread`, `formationoptions`, `pathid`, `movementtype`, comment) VALUES
 (2, 4, 4, 0, 6883, 2, 'Kargath Expeditionary Force c.entry 9082,9083,9084,9085,9086 & Linked to 9077 for RP');
 
 DELETE FROM creature_linking WHERE guid IN(SELECT guid from creature where id IN (9082,9083,9084,9085,9086));
@@ -836,8 +836,8 @@ DELETE FROM creature_linking_template WHERE master_entry IN(9082,9083,9084,9085,
 
 DELETE FROM creature_movement where id IN (SELECT guid from creature where id IN (9082,9083,9084,9085,9086));
 DELETE FROM creature_movement_template where entry IN (9082,9083,9084,9085,9086);
-DELETE FROM `waypoint_path` WHERE `entry` = 6883;
-INSERT INTO `waypoint_path` (`entry`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
+DELETE FROM `waypoint_path` WHERE `PathId` = 6883;
+INSERT INTO `waypoint_path` (`PathId`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (6883, 1, -6692.72, -2159.63, 244.195, 4.03171, 225000, 908601), -- -6692.72, -2159.63, 244.195, 4.03171 for 6883 as leader
 (6883, 2, -6698.09, -2166.71, 244.144, 100, 0, 0), -- -6689.95, -2161.96, 244.196, 3.9968 for 6886 as leader
 (6883, 3, -6724.88, -2177.67, 244.144, 100, 0, 0),
