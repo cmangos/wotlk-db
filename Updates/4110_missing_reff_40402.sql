@@ -1,5 +1,6 @@
 -- Magtheridon c.17257 -- loot redone using TDB data
-REPLACE INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+DELETE FROM `creature_loot_template` WHERE entry IN (17257); 
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 ('17257','29434','100','0','3','3','0','Badge of Justice'),
 ('17257','32385','100','0','1','1','4','Magtheridon\'s Head'),
 ('17257','32386','100','0','1','1','3','Magtheridon\'s Head'),
@@ -8,9 +9,9 @@ REPLACE INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 ('17257','40400','100','0','-40400','3','0','Magtheridon\'s Lair (Boss Loot) - Magtheridon - Epic Items (Tokens Only)'),
 ('17257','40401','100','0','-40401','1','0','Magtheridon\'s Lair (Boss Loot) - Magtheridon - Epic Items (Group 1) - (Non-Tokens Only)'),
 ('17257','40402','100','0','-40402','1','0','Magtheridon\'s Lair (Boss Loot) - Magtheridon - Epic Items (Group 2) - (Non-Tokens Only)'),
-('17257','50501','0.2','0','-50501','1','0','NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!'),
-DELETE FROM `reference_loot_template` WHERE entry = 34039
-REPLACE INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+('17257','50501','0.2','0','-50501','1','0','NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!');
+DELETE FROM `reference_loot_template` WHERE entry IN (40400,40401,40402,50501);
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 -- 40400
 ('40400','29753','0','1','1','1','0','Chestguard of the Fallen Defender'),
 ('40400','29754','0','1','1','1','0','Chestguard of the Fallen Champion'),
