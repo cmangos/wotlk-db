@@ -10,7 +10,7 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 ('17257','40401','100','0','-40401','1','0','Magtheridon\'s Lair (Boss Loot) - Magtheridon - Epic Items (Group 1) - (Non-Tokens Only)'),
 ('17257','40402','100','0','-40402','1','0','Magtheridon\'s Lair (Boss Loot) - Magtheridon - Epic Items (Group 2) - (Non-Tokens Only)'),
 ('17257','50501','0.2','0','-50501','1','0','NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!');
-DELETE FROM `reference_loot_template` WHERE entry IN (40400,40401,40402,50501);
+DELETE FROM `reference_loot_template` WHERE entry IN (34039,40400,40401,40402,50501); -- old duplicated by 40400-40402
 INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 -- 40400
 ('40400','29753','0','1','1','1','0','Chestguard of the Fallen Defender'),
