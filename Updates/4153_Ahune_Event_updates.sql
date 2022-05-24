@@ -16,6 +16,10 @@ DELETE FROM npc_text WHERE id IN (12572);
 DELETE FROM npc_text_broadcast_text WHERE Id IN (12572);
 INSERT INTO npc_text_broadcast_text (Id, Prob0, BroadcastTextId0) VALUES
 (12572, 0, 25373);
+-- Shaman Beam Bunny 000 - 003
+UPDATE creature_template SET MovementType = 3 WHERE entry IN (25964,25965,25966);
+-- text updates
+UPDATE broadcast_text SET ChatTypeId = 3 WHERE Id BETWEEN 24930 AND 24932;
 
 -- Wotlk+ updates
 -- Skarthis the Summoner 40446
