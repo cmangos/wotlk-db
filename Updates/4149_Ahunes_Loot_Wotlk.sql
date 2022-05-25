@@ -2,11 +2,11 @@
 -- Ice Chest corrected for WotLK
 DELETE FROM `gameobject_loot_template` WHERE entry=187892;
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
-('187892','34955','1','2','1','1','0','Scorched Stone'), -- around 2010 this was bugged ..later fixed (Cata prob). We want it working fine
-('187892','35498','20','2','1','1','0','Formula: Enchant Weapon - Deathfrost'),
+('187892','34955','1','0','1','1','0','Scorched Stone'), -- around 2010 this was bugged ..later fixed (Cata prob). We want it working fine
+('187892','35498','20','0','1','1','0','Formula: Enchant Weapon - Deathfrost'),
 ('187892','35723','100','0','1','1','0','Shards of Ahune'),
 ('187892','40403','100','1','-40403','1','0','reference - Slave Pens - Ahune BOSS Loot v3.3.5a'),
-('187892','54806','4','2','1','1','0','Frostscythe of Lord Ahune');
+('187892','54806','4','0','1','1','0','Frostscythe of Lord Ahune');
 -- ref corrected to wotlk data - 2010
 DELETE FROM `reference_loot_template` WHERE entry=40403;
 INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
@@ -30,7 +30,7 @@ INSERT INTO `pickpocketing_loot_template` (`entry`, `item`, `ChanceOrQuestChance
 ('40446','38274','25','0','1','1','0','Large Snail Shell'),
 ('40446','43575','24','0','1','1','0','Reinforced Junkbox'),
 ('40446','38273','17','0','1','1','0','Brain Coral'),
-('40446','33447','7','0','1','1','0','Runic Healing Potion');DELETE FROM `pickpocketing_loot_template` WHERE entry=40446;
+('40446','33447','7','0','1','1','0','Runic Healing Potion');
 DELETE FROM `creature_loot_template` WHERE entry=40446;
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 ('40446','17057','27','0','1','1','0','Shiny Fish Scales'),
