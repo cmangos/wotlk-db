@@ -4,6 +4,8 @@ DELETE FROM `gameobject_loot_template` WHERE entry=187892;
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 ('187892','34955','1','0','1','1','0','Scorched Stone'), -- around 2010 this was bugged ..later fixed (Cata prob). We want it working fine
 ('187892','35498','20','0','1','1','0','Formula: Enchant Weapon - Deathfrost'),
+('187892','35557','57','0','2','2','0','Huge Snowball'),
+('187892','35720','2','0','6','6','0','Lord of Frost\'s Private Label'),
 ('187892','35723','100','0','1','1','0','Shards of Ahune'),
 ('187892','40403','100','1','-40403','1','0','reference - Slave Pens - Ahune BOSS Loot v3.3.5a'),
 ('187892','54806','4','0','1','1','0','Frostscythe of Lord Ahune');
@@ -43,3 +45,8 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 ('40446','33445','1.9','0','1','1','0','Honeymint Tea'),
 ('40446','26044','0.2','0','-26044','1','0','reference - Cooking Recepies'),
 ('40446','50606','0.1','0','-50606','1','0','NPC LOOT (White World Drop) - (Item Levels: 80 (Scrolls VII)) - (NPC Levels ?-?)');
+
+-- item drop 35512 'Pocket Full of Snow'
+DELETE FROM `item_loot_template` WHERE entry=35512;
+INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+('35512','17202','100','0','2','5','0','Snowball');

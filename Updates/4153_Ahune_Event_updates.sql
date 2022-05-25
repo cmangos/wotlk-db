@@ -40,13 +40,23 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_br
 DELETE FROM dbscripts_on_gossip WHERE `id` IN (7540,7520);
 UPDATE gossip_menu_option SET action_script_id = 754001 WHERE menu_id = 7540;
 UPDATE gossip_menu_option SET action_script_id = 752001 WHERE menu_id = 7520;
+-- Spell Target
+DELETE FROM spell_script_target WHERE entry IN (46735);
+INSERT INTO spell_script_target (entry, type, targetEntry) VALUES
+(46735, 1, 26190);
+-- Id: 46320
+-- Name: Slippery Floor Ambient Periodic
+DELETE FROM `dbscripts_on_spell` WHERE `id` IN (46320);
+INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(46320, 1, 15, 45946, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 'cast 45946 t->t'),
+(46320, 10, 15, 45947, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 'cast 45947 t->t');
 
 
 -- Wotlk+ updates
 -- Skarthis the Summoner 40446
 UPDATE creature_template SET UnitClass = 2, MinLevelMana = 3994, MaxLevelMana = 3994 WHERE entry = 40446;
 -- Ahunite Frostwind 25757
-UPDATE creature_template SET MinLevel = 80, MaxLevel = 80, faction = 1998, UnitClass = 2, MinLevelMana = 3994, MaxLevelMana = 399 WHERE entry = 25757;
+UPDATE creature_template SET MinLevel = 80, MaxLevel = 80, faction = 1998, UnitClass = 2, MinLevelMana = 3994, MaxLevelMana = 3994 WHERE entry = 25757;
 UPDATE creature_template SET UnitClass = 2 WHERE entry = 26341;
 -- Frozen Core 25865
 UPDATE creature_template SET Expansion = 2 WHERE entry IN (25865,26339);
