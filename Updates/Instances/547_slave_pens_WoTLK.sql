@@ -928,6 +928,8 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- WoTLK+ groups
 -- creatures
 (@SGGUID+150, @CGUID+23, -1), -- [PH] Spank Target Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+137, -1), -- Earthen Ring Totem (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+138, -1), -- Earthen Ring Totem (Midsummer Fire Festival)
 (@SGGUID+150, @CGUID+211, -1), -- Luma Skymother (Midsummer Fire Festival)
 (@SGGUID+150, @CGUID+212, -1), -- Numa Cloudsister (Midsummer Fire Festival)
 (@SGGUID+150, @CGUID+213, -1), -- [PH] Ahune Summon Loc Bunny (Midsummer Fire Festival)
