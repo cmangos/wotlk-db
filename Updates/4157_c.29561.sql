@@ -2,8 +2,8 @@
 -- vendor list added 
 -- Source: TC
 UPDATE creature_template SET VendorTemplateId = 29561 WHERE entry = 29561;
-DELETE FROM `npc_vendor` WHERE `entry` = 29561;
-INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `comments`) VALUES
+DELETE FROM `npc_vendor_template` WHERE `entry` = 29561;
+INSERT INTO `npc_vendor_template` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `comments`) VALUES
 ('29561','0','5565','0','0','0',''),
 ('29561','0','16583','0','0','0',''),
 ('29561','0','17020','0','0','0',''),
