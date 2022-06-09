@@ -1131,6 +1131,7 @@ REPLACE INTO `creature_questrelation` (`id`, `quest`) VALUES (5875, 10788); -- B
 -- Respawn Unstable Mana Crystal Crate 180600 (+13) - Pooling?
 -- https://tbc.wowhead.com/object=180600/unstable-mana-crystal-crate
 SET @OGUID := 5300879;
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 180600);
 DELETE FROM `gameobject` WHERE `id` = 180600;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID := @OGUID + 0, 180600, 530, 9502.51, -6539.89, 21.621, -2.77507, 0, 0, -0.983255, 0.182237, 180, 180, 100, 1),
@@ -1183,6 +1184,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 
 -- Respawn Weapon Container 181107 (+8) - Pooling? (YES!)
 -- https://tbc.wowhead.com/item=22413/sindorei-armaments - https://tbc.wowhead.com/object=181107/weapon-container
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 181107);
 DELETE FROM `gameobject` WHERE `id` = 181107;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID := @OGUID + 1, 181107, 530, 8710.6220703125, -6034.11474609375, 8.514739990234375, 4.852017402648925781, 0, 0, -0.65605831146240234, 0.754710197448730468, 180, 180, 100, 1),
@@ -1209,6 +1211,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 
 -- Respawn Tainted Soil Sample 180921 (+0) - Pooling?
 -- https://tbc.wowhead.com/item=20771/tainted-soil-sample - https://tbc.wowhead.com/object=180921/tainted-soil-sample
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 180921);
 DELETE FROM `gameobject` WHERE `id` = 180921;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID := @OGUID + 1, 180921, 530, 8643.4521484375, -6983.33251953125, 64.5893096923828125, 5.6897735595703125, 0, 0, -0.29237174987792968, 0.956304728984832763, 120, 180, 100, 1),
@@ -1230,6 +1233,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID := @OGUID + 1, 180921, 530, 8871.0966796875, -7052.38134765625, 19.37977027893066406, 5.637413978576660156, 0, 0, -0.31730461120605468, 0.948323667049407958, 120, 180, 100, 1);
 
 -- https://tbc.wowhead.com/object=2845/tattered-chest
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 2845);
 DELETE FROM `gameobject` WHERE `id` = 2845;
 DELETE FROM `pool_gameobject` WHERE `guid` IN (5411,12099,12100,12101,12102,12103,12104,12105,12106,12107,12108,33899,33932,33953,56064,56065,56066); -- 39941	4	Eversong Woods - Master Chest Pool
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
@@ -1285,6 +1289,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID := @OGUID + 1, 181594, 530, 9189.0703125, -7195.3994140625, -3.4767611026763916, 6.195919513702392578, 0, 0, -0.04361915588378906, 0.999048233032226562, 10, 10, 100, 1);
 
 -- https://tbc.wowhead.com/object=181166/bloodthistle
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 181166);
 DELETE FROM `gameobject` WHERE `id` = 181166;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID := @OGUID + 1, 181166, 530, 8154.62, -6336.32, 67.6656, -0.610865, 0, 0, -0.300706, 0.953717, 45, 90, 255, 1),
@@ -1529,33 +1534,34 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID := @OGUID + 1, 1619, 530, 7082.03369140625, -7160.0068359375, 50.79169082641601562, 1.762782454490661621, 0, 0, 0.771624565124511718, 0.636078238487243652, 45, 90, 100, 1);
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13009, 0, 'Eversong Woods - Silverleaf (1617)'
+SELECT `guid`, 970, 0, 'Eversong Woods - Silverleaf (1617)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301151 AND 5301163; -- Master Herb Pool - Eversong Woods
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13010, 0, 'Ghostlands - Silverleaf (1617)'
+SELECT `guid`, 969, 0, 'Ghostlands - Silverleaf (1617)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301164 AND 5301174; -- Master Herb Pool - Ghostlands
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13009, 0, 'Eversong Woods - Peacebloom (1618)'
+SELECT `guid`, 970, 0, 'Eversong Woods - Peacebloom (1618)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301175 AND 5301184; -- Master Herb Pool - Eversong Woods
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13010, 0, 'Ghostlands - Peacebloom (1618)'
+SELECT `guid`, 969, 0, 'Ghostlands - Peacebloom (1618)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301185 AND 5301191; -- Master Herb Pool - Ghostlands
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13009, 0, 'Eversong Woods - Earthroot (1619)'
+SELECT `guid`, 970, 0, 'Eversong Woods - Earthroot (1619)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301192 AND 5301194; -- Master Herb Pool - Eversong Woods
 
 REPLACE INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`)
-SELECT `guid`, 13010, 0, 'Ghostlands - Earthroot (1619)'
+SELECT `guid`, 969, 0, 'Ghostlands - Earthroot (1619)'
 FROM `gameobject` WHERE `guid` BETWEEN 5301195 AND 5301204; -- Master Herb Pool - Ghostlands
 
-UPDATE `pool_template` SET `max_limit` = 41 WHERE `entry` = 13009; -- 13009	44	Master Herb Pool - Eversong Woods - 164 MAX
-UPDATE `pool_template` SET `max_limit` = 45 WHERE `entry` = 13010; -- 13010	34	Master Herb Pool - Ghostlands - 180 MAX
+UPDATE `pool_template` SET `max_limit` = 41 WHERE `entry` = 970; -- 970	44	Master Herb Pool - Eversong Woods - 164 MAX
+UPDATE `pool_template` SET `max_limit` = 45 WHERE `entry` = 969; -- 969	34	Master Herb Pool - Ghostlands - 180 MAX
 
 -- https://tbc.wowhead.com/item=21771/captain-kelisendras-cargo - https://tbc.wowhead.com/object=180917/captain-kelisendras-cargo
+DELETE FROM `pool_gameobject` WHERE guid IN (SELECT guid FROM gameobject WHERE id = 180917);
 DELETE FROM `gameobject` WHERE `id` = 180917;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID := @OGUID + 1, 180917, 530, 8881.94, -5731.91, 0.04281, -1.16937, 0, 0, -0.551937, 0.833886, 180, 300, 100, 1),
