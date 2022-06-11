@@ -1,6 +1,8 @@
 
 -- Missing QGC-"Texts"
 
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (4201,6467,8582,11857,11864,16200,24139,25697,25710,25849,142122,150075,179827);
+
 -- Ziz Fizziks
 INSERT INTO `questgiver_greeting` VALUES (4201, 0, ' ', 0, 0);
 
