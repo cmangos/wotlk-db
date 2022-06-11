@@ -1,5 +1,5 @@
 
--- Missing QGC-"Texts"
+-- Missing QGG-"Texts"
 
 DELETE FROM `questgiver_greeting` WHERE `Entry` in (4201,6467,8582,11857,11864,16200,24139,25697,25710,25849,142122,150075,179827);
 
@@ -51,10 +51,10 @@ INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (142122, 2875); --
 
 -- ----------------------------------------------------------------------- --
 
--- more real Missing QGC-Text-Ids needs to be added
+-- more real Missing QGG-Text-Ids needs to be added
 -- NPCs: 1377 , 1938 , 1952 , 2055 , 2229 , 2277 , 2500 , 2934 , 3050 , 3428 , 4454 , 4630 , 5598 , 5636 , 5675
 --       5878 , 6089 , 6868 , 7802 , 10321 , 10428 , 11036 , 11259 , 11596 , 14567 , 16281 , 16494 , 16787
 -- Object: 1740 - maybe same text as 186420
 
--- NPC 7777 had a real QGC-text in Classic and TBC (WotLK too?) about the Gordunni ogres in Feralas
+-- NPC 7777 had a real QGG-text in Classic and TBC (WotLK too?) about the Gordunni ogres in Feralas
 
