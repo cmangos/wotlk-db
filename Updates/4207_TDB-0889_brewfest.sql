@@ -520,3 +520,6 @@ INSERT INTO creature_questrelation VALUES
 -- Add mechanic immunities for Coren Direbrew
 UPDATE creature_template SET MechanicImmuneMask=MechanicImmuneMask|1|2|4|16|64|256|512|4096|65536|8388608|33554432|536870912 WHERE Entry=23872;
 
+-- Alliance keg throwing quests should not require special event
+UPDATE quest_template SET SpecialFlags=SpecialFlags&~2 WHERE entry IN(11293,11122);
+
