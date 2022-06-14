@@ -483,18 +483,18 @@ UPDATE npc_vendor_template SET ExtendedCost=0 WHERE item IN(33976,33977);
 DELETE FROM gossip_menu_option WHERE menu_id IN(8976, 8977, 8934, 8953);
 -- horde quest complete 11412
 INSERT INTO gossip_menu_option(menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
-('8976', '0', '0', 'Do you still need some help moving kegs from the crash site near Razor Hill?', '23546', '1', '1', '8977', '0', '0', '0', '0', '', '0', '10337'),
-('8977', '0', '0', 'I''m ready to work for you today!  Give me that ram!', '23545', '1', '1', '-1', '0', '8977', '0', '0', '', '0', '0');
+('8976', '0', '0', 'Do you still need some help moving kegs from the crash site near Razor Hill?', '23546', '1', '1', '897701', '0', '0', '0', '0', '', '0', '10337'),
+('8977', '0', '0', 'I''m ready to work for you today!  Give me that ram!', '23545', '1', '1', '-1', '0', '897701', '0', '0', '', '0', '0');
 
 -- ally quest completed 11122
 INSERT INTO gossip_menu_option(menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
 ('8934', '0', '0', 'Do you still need some help shipping kegs from Kharanos?', '23245', '1', '1', '8953', '0', '0', '0', '0', '', '0', '10338'),
-('8953', '0', '0', 'I''m ready to work for you today!  Give me the good stuff!', '23378', '1', '1', '-1', '0', '8977', '0', '0', '', '0', '0');
+('8953', '0', '0', 'I''m ready to work for you today!  Give me the good stuff!', '23378', '1', '1', '-1', '0', '897701', '0', '0', '', '0', '0');
 
-DELETE FROM dbscripts_on_gossip WHERE id IN(8977,8953);
+DELETE FROM dbscripts_on_gossip WHERE id IN(8977,8953,897701);
 INSERT INTO dbscripts_on_gossip(id, delay, priority, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, condition_id, comments) VALUES
-('8977', '0', '0', '15', '44368', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Cast Brewfest - Daily - Relay Race Accept - QUEST - DND'),
-('8977', '0', '0', '15', '44069', '0', '0', '0', '0', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Cast See Supplier Mark');
+('897701', '0', '0', '15', '44368', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Cast Brewfest - Daily - Relay Race Accept - QUEST - DND'),
+('897701', '0', '0', '15', '44069', '0', '0', '0', '0', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Cast See Supplier Mark');
 
 -- 11318 Now This is Ram Racing... Almost. (Alliance)
 -- 11293 Bark for the Barleybrews!
@@ -616,7 +616,7 @@ INSERT INTO creature_involvedrelation VALUES
 ('27216', '12192');
 
 -- Keg Tapping event - partial
-REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (10540, 1, 1, 1931.806152, -4162.047363, 41.432510, 100.000000, 0, 0), -- spline 0/13
 (10540, 1, 2, 1930.806152, -4162.047363, 41.182510, 100.000000, 0, 0), -- spline 1/13
 (10540, 1, 3, 1929.306152, -4163.547363, 41.182510, 100.000000, 0, 0), -- spline 2/13
@@ -1520,7 +1520,7 @@ REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `position_x
 UPDATE creature_movement_template SET point=point-2 WHERE entry IN(10540) AND pathId IN(1) AND point >465;
 UPDATE creature_movement_template SET point=point+1000 WHERE entry IN(10540) AND pathId IN(1);
 UPDATE creature_movement_template SET point=point-999 WHERE entry IN(10540) AND pathId IN(1);
-INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
+INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`positionx`,`positiony`,`positionz`,`waittime`,`scriptid`,`orientation`) VALUES
 (10540,1,1,1934.058,-4162.2583,40.92212,1000,1054001,100);
 
 UPDATE broadcast_text SET ChatTypeID=1 WHERE Id IN(22015,22016,22017,22018,22019,22020,22021,21919,21920,21921,21922,21923);
@@ -1579,7 +1579,7 @@ REPLACE INTO dbscripts_on_creature_movement VALUES
 ('1054005', '0', '0', '21', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Voljin set inactive'),
 ('1054005', '0', '0', '42', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Voljin reset items');
 
-REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
 (7937, 1, 1, -4827.952148, -1259.004150, 505.701599, 100.000000, 0, 0), -- spline 0/7
 (7937, 1, 2, -4828.952148, -1262.504150, 502.201599, 100.000000, 0, 0), -- spline 1/7
 (7937, 1, 3, -4829.202148, -1264.004150, 502.201599, 100.000000, 0, 0), -- spline 2/7
@@ -2761,7 +2761,7 @@ REPLACE INTO `creature_movement_template` (`entry`, pathId, `point`, `position_x
 UPDATE creature_movement_template SET point=point-3 WHERE entry IN(7937) AND pathId IN(1) AND point >570;
 UPDATE creature_movement_template SET point=point+2000 WHERE entry IN(7937) AND pathId IN(1);
 UPDATE creature_movement_template SET point=point-1999 WHERE entry IN(7937) AND pathId IN(1);
-INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`orientation`) VALUES
+INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`positionx`,`positiony`,`positionz`,`waittime`,`scriptid`,`orientation`) VALUES
 (7937,1,1,-4827.6274,-1257.1595,506.0353,1000,793701,100);
 
 UPDATE broadcast_text SET ChatTypeID=1 WHERE Id IN(23863,23864,23865,23866,23867,21957,21988,21989,21990,21994,21991,21999,21992,21993,21924,22001);
@@ -2820,4 +2820,3 @@ REPLACE INTO dbscripts_on_creature_movement VALUES
 ('793705', '0', '0', '20', '0', '0', '0', '0', '0', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Mekkatorque Change Movement To 0 - Idle'),
 ('793705', '0', '0', '21', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Mekkatorque set inactive'),
 ('793705', '0', '0', '42', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Mekkatorque reset items');
-
