@@ -7,7 +7,9 @@ EndDBScriptData */
 
 SET @CGUID := 2300000; -- creatures
 SET @OGUID := 2300000; -- gameobjects
+SET @SGGUID := 2300000; -- spawn_groups
 SET @PGUID := 46300; -- pools
+
 
 -- =========
 -- CREATURES
@@ -2848,105 +2850,110 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 -- ======
 
 INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
-(@CGUID+1119, 7), -- Elder Morndeep (Lunar Festival)
-
--- TBC+
--- Brewfest
-(@CGUID+1312, 26),
-(@CGUID+1319, 26),
-(@CGUID+1320, 26),
-(@CGUID+1321, 26),
-(@CGUID+1322, 26),
-(@CGUID+1323, 26),
-(@CGUID+1324, 26),
-(@CGUID+1325, 26),
-(@CGUID+1326, 26),
-(@CGUID+1327, 26),
-(@CGUID+1328, 26),
-(@CGUID+1329, 26),
-(@CGUID+1330, 26);
-
+(@CGUID+1119, 7); -- Elder Morndeep (Lunar Festival)
 INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 (@CGUID+998, 0, 15735, 0, 0, 0, 2); -- Emperor Dagran Thaurissan (Feast of Winter Veil)
 
-INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
--- TBC+
-(@OGUID+602, 26),
-(@OGUID+603, 26),
-(@OGUID+604, 26),
-(@OGUID+605, 26),
-(@OGUID+606, 26),
-(@OGUID+607, 26),
-(@OGUID+608, 26),
-(@OGUID+609, 26),
-(@OGUID+610, 26),
-(@OGUID+611, 26),
-(@OGUID+612, 26),
-(@OGUID+613, 26),
-(@OGUID+614, 26),
-(@OGUID+615, 26),
-(@OGUID+616, 26);
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- WOTLK+
-INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
-(@OGUID+700, 26),
-(@OGUID+701, 26),
-(@OGUID+702, 26),
-(@OGUID+703, 26),
-(@OGUID+704, 26),
-(@OGUID+705, 26),
-(@OGUID+706, 26),
-(@OGUID+707, 26),
-(@OGUID+708, 26),
-(@OGUID+709, 26),
-(@OGUID+710, 26),
-(@OGUID+711, 26),
-(@OGUID+712, 26),
-(@OGUID+713, 26),
-(@OGUID+714, 26),
-(@OGUID+715, 26),
-(@OGUID+716, 26),
-(@OGUID+717, 26),
-(@OGUID+718, 26),
-(@OGUID+719, 26),
-(@OGUID+720, 26),
-(@OGUID+721, 26),
-(@OGUID+722, 26),
-(@OGUID+723, 26),
-(@OGUID+724, 26),
-(@OGUID+725, 26),
-(@OGUID+726, 26),
-(@OGUID+727, 26),
-(@OGUID+728, 26),
-(@OGUID+729, 26),
-(@OGUID+730, 26),
-(@OGUID+731, 26),
-(@OGUID+732, 26),
-(@OGUID+733, 26),
-(@OGUID+734, 26),
-(@OGUID+735, 26),
-(@OGUID+736, 26),
-(@OGUID+737, 26),
-(@OGUID+738, 26),
-(@OGUID+739, 26),
-(@OGUID+740, 26),
-(@OGUID+741, 26),
-(@OGUID+742, 26),
-(@OGUID+743, 26),
-(@OGUID+744, 26),
-(@OGUID+745, 26),
-(@OGUID+746, 26),
-(@OGUID+747, 26),
-(@OGUID+748, 26),
-(@OGUID+749, 26),
-(@OGUID+750, 26),
-(@OGUID+751, 26),
-(@OGUID+752, 26),
-(@OGUID+753, 26),
-(@OGUID+754, 26),
-(@OGUID+755, 26),
-(@OGUID+756, 26),
-(@OGUID+757, 26);
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- WoTLK+ groups
+(@SGGUID+200, 'Blackrock Depths - Brewfest - creatures spawn with Event', 0, 0, 20315, 0),
+(@SGGUID+201, 'Blackrock Depths - Brewfest - objects spawn with Event', 1, 0, 20315, 0);
+
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- WoTLK+ groups
+-- creatures
+(@SGGUID+200, @CGUID+1312, -1),
+(@SGGUID+200, @CGUID+1319, -1),
+(@SGGUID+200, @CGUID+1320, -1),
+(@SGGUID+200, @CGUID+1321, -1),
+(@SGGUID+200, @CGUID+1322, -1),
+(@SGGUID+200, @CGUID+1323, -1),
+(@SGGUID+200, @CGUID+1324, -1),
+(@SGGUID+200, @CGUID+1325, -1),
+(@SGGUID+200, @CGUID+1326, -1),
+(@SGGUID+200, @CGUID+1327, -1),
+(@SGGUID+200, @CGUID+1328, -1),
+(@SGGUID+200, @CGUID+1329, -1),
+(@SGGUID+200, @CGUID+1330, -1),
+-- objects
+(@SGGUID+201, @OGUID+602, -1),
+(@SGGUID+201, @OGUID+603, -1),
+(@SGGUID+201, @OGUID+604, -1),
+(@SGGUID+201, @OGUID+605, -1),
+(@SGGUID+201, @OGUID+606, -1),
+(@SGGUID+201, @OGUID+607, -1),
+(@SGGUID+201, @OGUID+608, -1),
+(@SGGUID+201, @OGUID+609, -1),
+(@SGGUID+201, @OGUID+610, -1),
+(@SGGUID+201, @OGUID+611, -1),
+(@SGGUID+201, @OGUID+612, -1),
+(@SGGUID+201, @OGUID+613, -1),
+(@SGGUID+201, @OGUID+614, -1),
+(@SGGUID+201, @OGUID+615, -1),
+(@SGGUID+201, @OGUID+616, -1),
+(@SGGUID+201, @OGUID+700, -1),
+(@SGGUID+201, @OGUID+701, -1),
+(@SGGUID+201, @OGUID+702, -1),
+(@SGGUID+201, @OGUID+703, -1),
+(@SGGUID+201, @OGUID+704, -1),
+(@SGGUID+201, @OGUID+705, -1),
+(@SGGUID+201, @OGUID+706, -1),
+(@SGGUID+201, @OGUID+707, -1),
+(@SGGUID+201, @OGUID+708, -1),
+(@SGGUID+201, @OGUID+709, -1),
+(@SGGUID+201, @OGUID+710, -1),
+(@SGGUID+201, @OGUID+711, -1),
+(@SGGUID+201, @OGUID+712, -1),
+(@SGGUID+201, @OGUID+713, -1),
+(@SGGUID+201, @OGUID+714, -1),
+(@SGGUID+201, @OGUID+715, -1),
+(@SGGUID+201, @OGUID+716, -1),
+(@SGGUID+201, @OGUID+717, -1),
+(@SGGUID+201, @OGUID+718, -1),
+(@SGGUID+201, @OGUID+719, -1),
+(@SGGUID+201, @OGUID+720, -1),
+(@SGGUID+201, @OGUID+721, -1),
+(@SGGUID+201, @OGUID+722, -1),
+(@SGGUID+201, @OGUID+723, -1),
+(@SGGUID+201, @OGUID+724, -1),
+(@SGGUID+201, @OGUID+725, -1),
+(@SGGUID+201, @OGUID+7-1, -1),
+(@SGGUID+201, @OGUID+727, -1),
+(@SGGUID+201, @OGUID+728, -1),
+(@SGGUID+201, @OGUID+729, -1),
+(@SGGUID+201, @OGUID+730, -1),
+(@SGGUID+201, @OGUID+731, -1),
+(@SGGUID+201, @OGUID+732, -1),
+(@SGGUID+201, @OGUID+733, -1),
+(@SGGUID+201, @OGUID+734, -1),
+(@SGGUID+201, @OGUID+735, -1),
+(@SGGUID+201, @OGUID+736, -1),
+(@SGGUID+201, @OGUID+737, -1),
+(@SGGUID+201, @OGUID+738, -1),
+(@SGGUID+201, @OGUID+739, -1),
+(@SGGUID+201, @OGUID+740, -1),
+(@SGGUID+201, @OGUID+741, -1),
+(@SGGUID+201, @OGUID+742, -1),
+(@SGGUID+201, @OGUID+743, -1),
+(@SGGUID+201, @OGUID+744, -1),
+(@SGGUID+201, @OGUID+745, -1),
+(@SGGUID+201, @OGUID+746, -1),
+(@SGGUID+201, @OGUID+747, -1),
+(@SGGUID+201, @OGUID+748, -1),
+(@SGGUID+201, @OGUID+749, -1),
+(@SGGUID+201, @OGUID+750, -1),
+(@SGGUID+201, @OGUID+751, -1),
+(@SGGUID+201, @OGUID+752, -1),
+(@SGGUID+201, @OGUID+753, -1),
+(@SGGUID+201, @OGUID+754, -1),
+(@SGGUID+201, @OGUID+755, -1),
+(@SGGUID+201, @OGUID+756, -1),
+(@SGGUID+201, @OGUID+757, -1);
+
 
 -- =======
 -- POOLING
