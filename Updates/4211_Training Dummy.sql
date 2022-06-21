@@ -5,6 +5,12 @@ UPDATE creature_template SET MinLevelHealth=1, MaxLevelHealth=1, HealthMultiplie
 UPDATE creature_template SET MinLevelHealth=24009943, MaxLevelHealth=24009943, HealthMultiplier = 1721.760009765625, Unitflags = 0, DynamicFlags = 4, Detection = 5 WHERE Entry = 31146;
 UPDATE creature_template SET MinLevelHealth=1, MaxLevelHealth=1, HealthMultiplier = 0.000186999997822567, Unitflags = 0, DynamicFlags = 4, Detection = 5 WHERE Entry = 32666;
 UPDATE creature_template SET MinLevelHealth=1, MaxLevelHealth=1, HealthMultiplier = 0.000186999997822567, Unitflags = 0, DynamicFlags = 4, Detection = 5 WHERE Entry = 32667;
+DELETE FROM creature_template_addon WHERE entry IN (31144,31146,32666,32667);
+INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
+(31144,0,0,1,0,0,0,'7056'),
+(31146,0,0,1,0,0,0,'7056'),
+(32666,0,0,1,0,0,0,'7056'),
+(32667,0,0,1,0,0,0,'7056');
 
 -- missing spawns added
 -- Orgrimmar
