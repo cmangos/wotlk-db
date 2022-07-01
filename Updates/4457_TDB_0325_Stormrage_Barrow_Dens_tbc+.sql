@@ -2,12 +2,14 @@
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 22834);
 UPDATE `creature_template_addon` SET `bytes1` = 3, `emote` = 0 WHERE `entry` = 22834;
 UPDATE `creature_template` SET `SpeedWalk` = (2.5 / 2.5), `SpeedRun` = (8 / 7) WHERE `entry` = 22834;
+DELETE FROM `npc_gossip` WHERE `npc_guid` IN (42360,191405);
+INSERT INTO `npc_gossip` (`npc_guid`, `textid`) VALUES (191405, 10745); -- could confirm text, but not related gossipmenu
 
 -- Cenarion Dreamwarden 22835
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 22835);
-REPLACE INTO `creature_template_addon` (`entry`, `b2_0_sheath`, `b2_1_flags`) VALUES (22835, 1, 16);
-REPLACE INTO `creature_addon` (`guid`, `b2_0_sheath`, `b2_1_flags`, `emote`) VALUES (191409, 1, 16, 375);
-REPLACE INTO `creature_addon` (`guid`, `b2_0_sheath`, `b2_1_flags`, `emote`) VALUES (191410, 1, 16, 375);
+REPLACE INTO `creature_template_addon` (`entry`, `b2_0_sheath`, `b2_1_pvp_state`) VALUES (22835, 1, 16);
+REPLACE INTO `creature_addon` (`guid`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`) VALUES (191409, 1, 16, 375);
+REPLACE INTO `creature_addon` (`guid`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`) VALUES (191410, 1, 16, 375);
 UPDATE `creature_template` SET `SpeedWalk` = (2.5 / 2.5), `SpeedRun` = (8 / 7), `ExtraFlags` = `ExtraFlags`|1048576 WHERE `entry` = 22835;
 
 -- Dreamwarden Lurosa 22837
