@@ -264,13 +264,13 @@ WHERE entry = 7164;
 
 -- text fix (Honored Amongst the Guard) Alliance
 UPDATE quest_template SET
-RequestItemsText = 'The base buzzes with news of your exploits in the Field of Strife! You have struck mighty blows against our enemy - crushing their morale! For this, you have earned a rank of honor among the Stormpike.'
+RequestItemsText = 'The base buzzes with news of your exploits in the Field of Strife! You have struck mighty blows against our enemy - crushing their morale! For this, you have earned a rank of honor among the Stormpike.$b$bPresent your insignia.'
 WHERE entry = 7169;
 
 -- text fix (Earned Reverence) Horde
 UPDATE quest_template SET
 OfferRewardText = '<Warmaster Laggrond roars.>$b$bThey have already begun telling tales of your deeds, soldier. The Stormpike shakes in fear when your name is uttered. Carry on!',
-RequestItemsText = 'So many slain. Blood drenches the fields. Yet... You live... You have persevered. You have led our armies to many victories. For this, then, soldier, you have earned a new rank.'
+RequestItemsText = 'So many slain. Blood drenches the fields. Yet... You live... You have persevered. You have led our armies to many victories. For this, then, soldier, you have earned a new rank.$b$bPresent your insignia.'
 WHERE entry = 7165;
 
 -- text fix (Earned Reverence) Alliance
