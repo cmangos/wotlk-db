@@ -312,4 +312,8 @@ WHERE entry = 7386;
 
 -- --------------------------------------------------------------------------- --
 
+-- Slagg <Superior Butcher>
+UPDATE trainer_greeting SET
+Text='There is no treat finer than Barbecued Buzzard Wing.'
+WHERE Entry = 2818;
 
