@@ -1,7 +1,7 @@
 
 -- random fixes
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1740,1938,1952,2055,2229,2277,2500,2934,3050,3428,4454,4630,5598,5636,5675,6868,10428,11259,11596,14567);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1740,1938,1952,2055,2229,2277,2500,2934,3050,3428,4454,4630,5598,5636,5675,5878,6868,7802,10428,11259,11596,14567);
 
 -- Rok Orhan
 UPDATE `questgiver_greeting` SET `Text` = 'The Gordunni Ogres encroach upon our lands.  We send as many as are willing to face them in the desecrated ruins of Feralas. ' WHERE `Entry` = 7777 AND `Type` = 0;
@@ -51,8 +51,14 @@ INSERT INTO `questgiver_greeting` VALUES (5636, 0, 'What do you want? I''d be a 
 -- Carendin Halgar
 INSERT INTO `questgiver_greeting` VALUES (5675, 0, 'The summoning of beings from the chaos that lies beyond our world is essential to the mastery of the warlock arts, $N. I am glad to see the progress you have made.', 0, 0);
 
+-- Thun'grim Firegaze
+INSERT INTO `questgiver_greeting` VALUES (5878, 0, 'My vision has darkened, but there are many kinds of sight...', 0, 0);
+
 -- Jarkal Mossmeld
 INSERT INTO `questgiver_greeting` VALUES (6868, 0, 'Whatcha need, $c?  I trust that you''ve come out to this wasteland for a reason other than idle chit chat.', 0, 0);
+
+-- Galvan the Ancient
+INSERT INTO `questgiver_greeting` VALUES (7802, 0, 'So few make it this far, even fewer make it past. Do not become a statistic, $N.', 0, 0);
 
 -- Motega Firemane
 INSERT INTO `questgiver_greeting` VALUES (10428, 0, 'Whitereach Post started off as a small hunting camp... Now, everyone wants to set up shop and call this home.$b$b<Motega shrugs his shoulder>', 0, 0);
@@ -316,4 +322,96 @@ WHERE entry = 7386;
 UPDATE trainer_greeting SET
 Text='There is no treat finer than Barbecued Buzzard Wing.'
 WHERE Entry = 2818;
+
+-- Grumnus Steelshaper <Armorsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 5164;
+
+-- Shayis Steelfury <Armorsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7230;
+
+-- Borgus Steelhand <Weaponsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7232;
+
+-- Oglethorpe Obnoticus <Gnomish Engineering Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7406;
+
+-- Peter Galen <Dragonscale Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7866;
+
+-- Thorkaf Dragoneye <Dragonscale Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7867;
+
+-- Sarah Tanner <Elemental Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7868;
+
+-- Brumn Winterhoof <Elemental Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7869;
+
+-- Caryssia Moonhunter <Tribal Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7870;
+
+-- Se'Jib <Tribal Leatherworking Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7871;
+
+-- Tinkmaster Overspark <Gnomish Engineering Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 7944;
+
+-- Nixx Sprocketspring <Goblin Engineering Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 8126;
+
+-- Ironus Coldsteel <Weaponsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 11146;
+
+-- Okothos Ironrager <Armorsmith>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 11177;
+
+-- Borgosh Corebender <Weaponsmith>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 11178;
+
+-- Kylene <Barmaid>
+UPDATE trainer_greeting SET
+Text='There''s more than one way to cook a fish.'
+WHERE Entry = 19186;
+
+-- Kradu Grimblade <Weaponsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 20124;
+
+-- Zula Slagfury <Armorsmith Trainer>
+UPDATE trainer_greeting SET
+Text=''
+WHERE Entry = 20125;
+
+-- --------------------------------------------------------------------------- --
 
