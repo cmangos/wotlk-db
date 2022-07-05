@@ -72,6 +72,8 @@ INSERT INTO `questgiver_greeting` VALUES (11596, 0, 'My business plan never acco
 -- Derotain Mudsipper
 INSERT INTO `questgiver_greeting` VALUES (14567, 0, 'These Mithril Order guys are sissies.', 0, 0);
 
+UPDATE `questgiver_greeting` SET `Text` = ' ' WHERE `Text` = '';
+
 -- --------------------------------------------------------------------------- --
 
 -- Quest stuff fixes
@@ -320,97 +322,102 @@ WHERE entry = 7386;
 
 -- Slagg <Superior Butcher>
 UPDATE trainer_greeting SET
-Text='There is no treat finer than Barbecued Buzzard Wing.'
+Text = 'There is no treat finer than Barbecued Buzzard Wing.'
 WHERE Entry = 2818;
 
 -- Grumnus Steelshaper <Armorsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 5164;
 
 -- Shayis Steelfury <Armorsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7230;
+
+-- Kelgruk Bloodaxe <Weaponsmith Trainer>
+UPDATE trainer_greeting SET
+Text = ''
+WHERE Entry = 7231;
 
 -- Borgus Steelhand <Weaponsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7232;
 
 -- Oglethorpe Obnoticus <Gnomish Engineering Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7406;
 
 -- Peter Galen <Dragonscale Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7866;
 
 -- Thorkaf Dragoneye <Dragonscale Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7867;
 
 -- Sarah Tanner <Elemental Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7868;
 
 -- Brumn Winterhoof <Elemental Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7869;
 
 -- Caryssia Moonhunter <Tribal Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7870;
 
 -- Se'Jib <Tribal Leatherworking Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7871;
 
 -- Tinkmaster Overspark <Gnomish Engineering Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 7944;
 
 -- Nixx Sprocketspring <Goblin Engineering Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 8126;
 
 -- Ironus Coldsteel <Weaponsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 11146;
 
 -- Okothos Ironrager <Armorsmith>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 11177;
 
 -- Borgosh Corebender <Weaponsmith>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 11178;
 
 -- Kylene <Barmaid>
 UPDATE trainer_greeting SET
-Text='There''s more than one way to cook a fish.'
+Text = 'There''s more than one way to cook a fish.'
 WHERE Entry = 19186;
 
 -- Kradu Grimblade <Weaponsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 20124;
 
 -- Zula Slagfury <Armorsmith Trainer>
 UPDATE trainer_greeting SET
-Text=''
+Text = ''
 WHERE Entry = 20125;
 
 -- --------------------------------------------------------------------------- --
