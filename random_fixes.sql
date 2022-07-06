@@ -1,7 +1,7 @@
 
 -- random fixes
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1740,1938,1952,2055,2229,2277,2500,2934,3050,3428,4454,4630,5598,5636,5675,5878,6868,7802,10428,11259,11596,14567);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1740,1938,1952,2055,2229,2277,2500,2934,3050,3428,4454,4630,5598,5636,5675,5878,6868,7802,10428,11259,11596,14567,19936);
 
 -- Rok Orhan
 UPDATE `questgiver_greeting` SET `Text` = 'The Gordunni Ogres encroach upon our lands.  We send as many as are willing to face them in the desecrated ruins of Feralas. ' WHERE `Entry` = 7777 AND `Type` = 0;
@@ -71,6 +71,9 @@ INSERT INTO `questgiver_greeting` VALUES (11596, 0, 'My business plan never acco
 
 -- Derotain Mudsipper
 INSERT INTO `questgiver_greeting` VALUES (14567, 0, 'These Mithril Order guys are sissies.', 0, 0);
+
+-- Arazmodu
+INSERT INTO `questgiver_greeting` VALUES (19936, 0, ' ', 0, 0);
 
 UPDATE `questgiver_greeting` SET `Text` = ' ' WHERE `Text` = '';
 
