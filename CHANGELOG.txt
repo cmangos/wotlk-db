@@ -1,4 +1,26 @@
 ===============================================================
+WoTLKDB v1.6 'Holiday Fun' for CMaNGOS 14060 for 3.3.5a
+===============================================================
+
+Main changes:
+* Midsummer Fire Festival - Reconstructed
+	- quests
+	- spawns
+	- Event Boss Ahune - fixed and missing RP event added
+* Brewfest - Reconstructed
+	- quests
+	- spawns
+	- Event Boss Coren Direbrew - fixed
+* Event Bosses moved to Dungeon Finder
+* Zul'Drak - Northrend - Updated (work in progress)
+* Many creatures and objects moved to new 'Group Spawn' system
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+
+===============================================================
 WoTLKDB v1.5 'Arugal's Fate' for CMaNGOS 14034 for 3.3.5a
 ===============================================================
 
