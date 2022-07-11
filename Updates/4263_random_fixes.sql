@@ -104,8 +104,8 @@ UPDATE quest_template SET PrevQuestId = 705 WHERE entry = 1559;
 
 -- https://tbc.wowhead.com/search?q=Venom%20Bottle#objects
 -- they all are questgiver for quest 2933 , atm only o=142702 is it and a few of them are not spawned (yet?)
-DELETE FROM creature_questrelation WHERE quest = 2933;
-INSERT INTO creature_questrelation (id, quest) VALUES
+DELETE FROM gameobject_questrelation WHERE quest = 2933;
+INSERT INTO gameobject_questrelation (id, quest) VALUES
 (142702, 2933),
 (142703, 2933),
 (142704, 2933),
