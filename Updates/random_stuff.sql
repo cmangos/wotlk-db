@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 4080, 5393, 5637, 5694, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 4080, 5393, 5637, 5694, 7877, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -23,6 +23,9 @@ INSERT INTO `questgiver_greeting` VALUES (5637, 0, 'Pleased to meetcha, $c. Me n
 
 -- High Sorcerer Andromath
 INSERT INTO `questgiver_greeting` VALUES (5694, 0, ' ', 0, 0);
+
+-- Latronicus Moonspear
+INSERT INTO `questgiver_greeting` VALUES (7877, 0, ' ', 0, 0);
 
 -- Spy Mistress Repine
 INSERT INTO `questgiver_greeting` VALUES (27337, 0, ' ', 0, 0); -- wotlk
