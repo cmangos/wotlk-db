@@ -1,6 +1,7 @@
 -- Rotting Crawler 33713 (-0 / +8)
 UPDATE `creature_template` SET `ExtraFlags` = `ExtraFlags`|1048576 WHERE `entry` = 33713;
 
+DELETE FROM `creature` WHERE `id` = 6827 AND `guid` IN (82233,82248,82267,82274,82314,82521,82553); -- Crab 6827 - were all zombified
 DELETE FROM `creature` WHERE `id` = 33713 AND `guid` BETWEEN 534541 AND 534548;
 INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (534541, 33713, 530, 7545.6572265625, -5920.77978515625, -0.69005990028381347, 0.996847927570343017, 300, 300, 15, 1),
