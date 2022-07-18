@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 4080, 5393, 5637, 5694, 7877, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 6019, 7877, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -11,6 +11,12 @@ INSERT INTO `questgiver_greeting` VALUES (1284, 0, 'My blessings go to you, $c, 
 
 -- Pilot Stonegear
 INSERT INTO `questgiver_greeting` VALUES (1377, 0, 'Driving a Steam Tank isn''t for everyone.  It takes an iron grip and nerves of steel...lucky I have both!  How about you?  How''s your mettle?  Want to prove it to me?', 0, 0);
+
+-- Shandris Feathermoon
+INSERT INTO `questgiver_greeting` VALUES (3936, 0, 'In the name of Elune, the Sentinels keep vigilant watch over all our lands, from the cobbled streets of Darnassus to the edge of Ashenvale Forest.', 2, 0);
+
+-- Falfindel Waywarder
+INSERT INTO `questgiver_greeting` VALUES (4048, 0, 'You look as though you have traveled from afar, $r.', 2, 0);
 
 -- Kaela Shadowspear
 INSERT INTO `questgiver_greeting` VALUES (4080, 0, 'Gaxim is so focused on trying to convince the night elves that his methods are superior that I had no choice but to focus his energies on something--so I unleashed him on the Venture Co.$B$BI remain focused on helping the Charred Vale to the northwest.', 0, 0);
@@ -23,6 +29,9 @@ INSERT INTO `questgiver_greeting` VALUES (5637, 0, 'Pleased to meetcha, $c. Me n
 
 -- High Sorcerer Andromath
 INSERT INTO `questgiver_greeting` VALUES (5694, 0, ' ', 0, 0);
+
+-- Hornizz Brimbuzzle
+INSERT INTO `questgiver_greeting` VALUES (6019, 0, ' ', 0, 0);
 
 -- Latronicus Moonspear
 INSERT INTO `questgiver_greeting` VALUES (7877, 0, ' ', 0, 0);
