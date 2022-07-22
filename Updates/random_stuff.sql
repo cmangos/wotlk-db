@@ -75,7 +75,20 @@ WHERE Title = 'Candy Bucket' AND OfferRewardText IS NULL;
 
 -- --------------------------------------------------------------------------- --
 
--- several fixes but almost class/race/name placeholder stuff
+-- text fix (Seeping Corruption)
+UPDATE quest_template SET
+OfferRewardText = 'I never dreamed the elixir would take hold that quickly. Thank you, $n. I will get to work on the rest of these samples right away. I''m sure they''ll be usable by the Lady Sylvanas and the Forsaken soon enough.'
+WHERE entry = 3570;
+
+-- text fix (The Sparklematic 5200!)
+UPDATE quest_template SET
+OfferRewardText = 'You insert the grime-encrusted item and three silver coins into the Sparklematic 5200.  The machine surges to life in an almost frenzied attempt to purge the grime from the unknown item.  Loud, violent churning sounds beat from the heart of the machine.  The metal frame of the beast creaks and groans as it lurches from side to side...',
+RequestItemsText = 'It would seem that the device needs some sort of grime-encrusted object to clean and three silver coins to get the contraption working.  So long as both are present, the Sparklematic 5200 should work...'
+WHERE entry = 4602;
+
+-- --------------------------------------------------------------------------- --
+
+-- several text fixes but almost class/race/name placeholder stuff
 
 -- Explanation in case you think this isn't really needed:
 -- In most cases (in Class-Quests etc), the NPC is not talking directly about your class but about the class itself, so no placeholder is needed.
@@ -332,6 +345,16 @@ WHERE entry = 10350;
 UPDATE quest_template SET
 OfferRewardText = 'Ah, yet another power hungry initiate.  Wonderful!$B$BWouldn''t be much of a warlock if you didn''t thirst for power, now would you $gboy:girl;?  Let''s get on with it.'
 WHERE entry = 10605;
+
+-- --------------------------------------------------------------------------- --
+
+-- delete duplicates
+
+-- object sign "Just Maces" entry=2157
+DELETE FROM `gameobject` WHERE (`guid`=10714);
+
+-- there are many more duplicates in Stormwind like Stone Bench , Wooden Chair and other objects
+-- maybe it is wise to make a complete object respawn in SW to find all duplicates and other few misaligned objects like banner etc
 
 -- --------------------------------------------------------------------------- --
 
