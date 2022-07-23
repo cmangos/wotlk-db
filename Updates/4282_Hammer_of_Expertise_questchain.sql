@@ -35,3 +35,6 @@ UPDATE quest_template SET RequiredCondition = 3827 WHERE entry = 3321;
 
 -- q.2765 'Expert Blacksmith!'
 UPDATE quest_template SET PrevQuestId = 3321 WHERE entry = 2765;
+
+-- Script Fix
+UPDATE dbscripts_on_quest_start SET buddy_entry = 0, search_radius = 0, data_flags = 0x04 WHERE command = 29 AND id = 2765;
