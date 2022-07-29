@@ -1,14 +1,14 @@
 -- Reliquary of Pain & Voltarus - Zul'Drak
 
 -- Duplicates
-DELETE FROM creature_addon WHERE guid IN (523327,523240);
-DELETE FROM creature_movement WHERE id IN (523327,523240);
-DELETE FROM game_event_creature WHERE guid IN (523327,523240);
-DELETE FROM game_event_creature_data WHERE guid IN (523327,523240);
-DELETE FROM creature_battleground WHERE guid IN (523327,523240);
-DELETE FROM creature_linking WHERE guid IN (523327,523240)
- OR master_guid IN (523327,523240);
-DELETE FROM creature WHERE guid IN (523327,523240);
+DELETE FROM creature_addon WHERE guid IN (523327,523240,523381,523372);
+DELETE FROM creature_movement WHERE id IN (523327,523240,523381,523372);
+DELETE FROM game_event_creature WHERE guid IN (523327,523240,523381,523372);
+DELETE FROM game_event_creature_data WHERE guid IN (523327,523240,523381,523372);
+DELETE FROM creature_battleground WHERE guid IN (523327,523240,523381,523372);
+DELETE FROM creature_linking WHERE guid IN (523327,523240,523381,523372)
+ OR master_guid IN (523327,523240,523381,523372);
+DELETE FROM creature WHERE guid IN (523327,523240,523381,523372);
 
 -- teleport corrected 
 UPDATE areatrigger_teleport SET target_position_x = 6165.63, target_position_y = -2001.19, target_position_z = 408.168, target_orientation = 2.32628 WHERE id = 5051;
