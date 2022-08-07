@@ -45,3 +45,7 @@ INSERT INTO creature_movement_template (Entry, Point, PositionX, PositionY, Posi
 (28793,3,5971.161,-2133.242,249.2916,100,5000,0),
 (28793,4,5953.852,-2138.804,248.3089,100,0,0),
 (28793,5,5954.501,-2187.947,248.3032,100,0,0);
+DELETE FROM dbscripts_on_relay WHERE id = 20637;
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(20637,1,31,28805,100,0,0,0,0,0,0,0,0,0,0,0,0,'check if 28805 alive'),
+(20637,100,0,0,0,0,0,0,4,28858,0,0,0,0,0,0,0,'say');
