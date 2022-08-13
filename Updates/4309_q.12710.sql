@@ -75,7 +75,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2894806,9001,1,2,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (2894806,9002,0,0,0,0,0,0,0,29440,0,0,0,0,0,0,0,'say'),
 (2894806,11000,35,8,0,0,0,0,0,0,0,0,0,0,0,0,0,'send event AI 8'),
-(20641,1,12000,21,0,0,0,0,6,0,0,0,0,0,0,0,0,'unactive'),
+(2894806,12000,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive'),
 (2894806,13000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'despawn self');
 DELETE FROM dbscripts_on_relay WHERE id = 20641;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
