@@ -110,7 +110,7 @@ DELETE FROM dbscripts_on_gossip WHERE id = 1109101;
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1109101,1,6,571,0,0,0,0,0,0,0,0,0,5867.16,-1982.75,234.682,6.26956,'teleport target');
 -- correct teleport orientation
-UPDATE spell_target_position SET target_orientation = 6.075; 
+UPDATE spell_target_position SET target_orientation = 6.075 WHERE id = 52863;
 -- spell script
 DELETE FROM dbscripts_on_spell WHERE id = 54248;
 INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
