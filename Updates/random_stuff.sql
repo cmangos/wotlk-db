@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 16494, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -41,6 +41,9 @@ INSERT INTO `questgiver_greeting` VALUES (6019, 0, ' ', 0, 0);
 
 -- Latronicus Moonspear
 INSERT INTO `questgiver_greeting` VALUES (7877, 0, ' ', 0, 0);
+
+-- Lieutenant Rukag
+INSERT INTO `questgiver_greeting` VALUES (16494, 0, 'Good day to you, citizen. Have you come to aid us against the Scourge?', 1, 0);
 
 -- Spy Mistress Repine
 INSERT INTO `questgiver_greeting` VALUES (27337, 0, ' ', 0, 0); -- wotlk
