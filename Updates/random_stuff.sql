@@ -68,6 +68,11 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (1228, 1919);
 DELETE FROM `creature_questrelation` WHERE `id` = 7315 AND `quest` = 1698;
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (7315, 1698);
 
+-- https://www.wowhead.com/wotlk/quest=9462/call-of-fire
+-- 2nd Questgiver for "Call of Fire" (Farseer Javad)
+DELETE FROM `creature_questrelation` WHERE `id` = 23127 AND `quest` = 9462;
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (23127, 9462);
+
 -- --------------------------------------------------------------------------- --
 
 -- add all missing OfferRewardText-texts for Candy Bucket Quests (Rows matched: 87  Changed: 87  Warnings: 0)
@@ -75,6 +80,16 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (7315, 1698);
 UPDATE quest_template SET
 OfferRewardText = 'Candy buckets like this are located in inns throughout the realms. Go ahead... take some!'
 WHERE Title = 'Candy Bucket' AND OfferRewardText IS NULL;
+
+-- --------------------------------------------------------------------------- --
+
+-- wotlk only texts
+
+-- text fix (Show Your Work) Alliance
+UPDATE quest_template SET
+OfferRewardText = 'Today is the day you become a real engineer, $n.  Don''t worry about all those messy bombs and explosives, because it''s time to shine!',
+RequestItemsText = 'Once I receive your crafted engineering items for my review, you can become a certified gnomish engineer, granting you unlimited access to any gnome engineer trainer anywhere in the world.'
+WHERE entry = 3641;
 
 -- --------------------------------------------------------------------------- --
 
