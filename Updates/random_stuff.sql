@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 11036, 16494, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 11036, 16281, 16494, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -44,6 +44,9 @@ INSERT INTO `questgiver_greeting` VALUES (7877, 0, ' ', 0, 0);
 
 -- Leonid Barthalomew the Revered
 INSERT INTO `questgiver_greeting` VALUES (11036, 0, 'Through knowledge, may we find salvation.', 1, 0);
+
+-- Keeper of the Rolls
+INSERT INTO `questgiver_greeting` VALUES (16281, 0, 'The Argent Dawn will turn away none who are willing to sacrifice for our cause.', 1, 0);
 
 -- Lieutenant Rukag
 INSERT INTO `questgiver_greeting` VALUES (16494, 0, 'Good day to you, citizen. Have you come to aid us against the Scourge?', 1, 0);
@@ -106,6 +109,21 @@ UPDATE quest_template SET
 OfferRewardText = 'You insert the grime-encrusted item and three silver coins into the Sparklematic 5200.  The machine surges to life in an almost frenzied attempt to purge the grime from the unknown item.  Loud, violent churning sounds beat from the heart of the machine.  The metal frame of the beast creaks and groans as it lurches from side to side...',
 RequestItemsText = 'It would seem that the device needs some sort of grime-encrusted object to clean and three silver coins to get the contraption working.  So long as both are present, the Sparklematic 5200 should work...'
 WHERE entry = 4602;
+
+-- text fix (Letter from the Front)
+UPDATE quest_template SET
+RequestItemsText = 'Yes? What do you have there?'
+WHERE entry = 9295;
+
+-- text fix (Page from the Front)
+UPDATE quest_template SET
+RequestItemsText = 'Yes? What do you have there?'
+WHERE entry = 9300;
+
+-- text fix (Missive from the Front)
+UPDATE quest_template SET
+RequestItemsText = 'Yes? What do you have there?'
+WHERE entry = 9302;
 
 -- --------------------------------------------------------------------------- --
 
