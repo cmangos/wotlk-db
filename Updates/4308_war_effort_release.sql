@@ -18,18 +18,20 @@ REPLACE INTO `game_event` VALUES
 (121, 0, 525600, 1, 0, 0, 0, "AQ War Effort Phase 2 Transportation"),
 (122, 0, 525600, 1, 0, 0, 0, "AQ War Effort Phase 3 Gong"),
 (123, 0, 525600, 1, 0, 0, 0, "AQ War Effort Phase 4 10 Hour War"),
-(124, 0, 525600, 1, 0, 0, 0, "AQ War Effort Phase 5 Done");
-/*REPLACE INTO `game_event_time` (entry) VALUES
-(120),
-(131),
-(132),
-(133),
-(134),
-(135);
-*/
+(124, 0, 525600, 1, 0, 0, 0, "AQ War Effort Phase 5 Done"),
+(131, 0, 525600, 1, 0, 0, 0, "AQ War Effort Resource Phase 1"),
+(132, 0, 525600, 1, 0, 0, 0, "AQ War Effort Resource Phase 2"),
+(133, 0, 525600, 1, 0, 0, 0, "AQ War Effort Resource Phase 3"),
+(134, 0, 525600, 1, 0, 0, 0, "AQ War Effort Resource Phase 4"),
+(135, 0, 525600, 1, 0, 0, 0, "AQ War Effort Resource Phase 5");
+
+DELETE FROM game_event_gameobject WHERE event IN(120,121,122,123,124,131,132,133,134,135);
+DELETE FROM game_event_creature WHERE event IN(120,121,122,123,124,131,132,133,134,135);
 -- Add Alliance Gameobjects
 
-SET @OGUID := 155200;
+SET @OGUID := 155000;
+
+DELETE FROM gameobject WHERE guid BETWEEN @OGUID+0 AND @OGUID+54;
 
 -- Initial
 INSERT INTO `gameobject` (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin,spawntimesecsmax, animprogress, state) VALUES
@@ -111,7 +113,9 @@ INSERT INTO `game_event_gameobject` (guid, event) VALUES
 
 -- Add Horde Gameobjects
 
-SET @OGUID := 155255;
+SET @OGUID := 155500;
+
+DELETE FROM gameobject WHERE guid BETWEEN @OGUID+0 AND @OGUID+54;
 
 -- Initial
 INSERT INTO `gameobject` (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin,spawntimesecsmax, animprogress, state) VALUES
@@ -195,8 +199,9 @@ INSERT INTO `game_event_gameobject` (guid, event) VALUES
 
 -- Add Alliance NPCs
 
-SET @CGUID := 155200;
+SET @CGUID := 155000;
 
+DELETE FROM creature WHERE guid BETWEEN @CGUID+0 AND @CGUID+30;
 INSERT INTO `creature` (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawndist, currentwaypoint, curhealth, curmana, MovementType) VALUES
 (@CGUID+0,15707,0,1,0,0,-4956.09,-931.133,503.347,5.37561,120,0,0,15260,0,0),
 (@CGUID+1,15453,0,1,0,0,-4979.93,-1142.17,501.743,3.68264,120,0,0,15260,0,0),
@@ -270,8 +275,9 @@ DELETE FROM creature WHERE guid=86424; -- Alliance Recruiter spawned in the wron
 
 -- Add Horde NPCs
 
-SET @CGUID := 155231;
+SET @CGUID := 155500;
 
+DELETE FROM creature WHERE guid BETWEEN @CGUID+0 AND @CGUID+30;
 INSERT INTO `creature` (guid, id, map, spawnMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecsmin, spawndist, currentwaypoint, curhealth, curmana, MovementType) VALUES
 (@CGUID+0,15515,1,1,0,0,1588.17,-4179.9,39.9849,2.89725,120,0,0,14195,0,0),
 (@CGUID+1,15525,1,1,0,0,1595.76,-4174.4,39.7667,2.72271,120,0,0,15560,0,0),
@@ -340,7 +346,7 @@ INSERT INTO `game_event_creature` (guid, event) VALUES
 
 -- Fix Horde Quests
 
-UPDATE quest_template SET SpecialFlags=1 WHERE ENTRY IN (8605, 8608, 8610, 8614, 8583, 8589, 8591, 8581, 8543, 8601, 8550, 8612, 8546, 8616, 8553);
+UPDATE quest_template SET SpecialFlags=1 WHERE ENTRY IN (8605, 8608, 8610, 8614, 8583, 8589, 8591, 8581, 8543, 8601, 8550, 8612, 8546, 8616, 8533);
 
 REPLACE INTO creature_questrelation (id, quest) VALUES
 (15738, 8817), -- All of these quests can't be turned in
@@ -395,8 +401,9 @@ UPDATE creature_template SET UnitFlags=33554496 WHERE entry IN(15769,15770,15771
 UPDATE gameobject_template SET type=8 WHERE entry = 180810;
 UPDATE gameobject_template SET type=6 WHERE entry = 180811;
 
-SET @CGUID := 155300;
-REPLACE INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `DeathState`, `MovementType`) VALUES
+SET @CGUID := 155101;
+DELETE FROM creature WHERE guid BETWEEN @CGUID+0 AND @CGUID+80;
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `currentwaypoint`, `DeathState`, `MovementType`) VALUES
 (@CGUID+1, 15769, 1, 1, -5297.80419921875, -1808.358154296875, -55.2550277709960937, 0.366519153118133544, 7200, 7200, 0, 0, 0, 0),
 (@CGUID+2, 15769, 1, 1, -5547.27001953125, -2576.876220703125, -56.5728492736816406, 0.366519153118133544, 7200, 7200, 0, 0, 0, 0),
 (@CGUID+3, 15769, 1, 1, -5511.123046875, -3270.021240234375, -38.3257217407226562, 0.366519153118133544, 7200, 7200, 0, 0, 0, 0),
@@ -431,7 +438,7 @@ REPLACE INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positi
 (@CGUID+27, 15742, 1, 1, -6545.32,967.875,0.374282,0.785268, 1800, 1800, 0, 0, 0, 0);
 
 -- spawns around crystals
-REPLACE INTO creature(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+INSERT INTO creature(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (@CGUID+28,15743,1,1,-8231.39,1432.26,2.33149,0.690981,300,300,10,1),
 (@CGUID+29,15743,1,1,-8180.58,1611.38,1.44378,4.93212,300,300,10,1),
 (@CGUID+30,15743,1,1,-8258.69,1605.24,8.64291,5.53688,300,300,10,1),
@@ -486,9 +493,10 @@ REPLACE INTO creature(guid, id, map, spawnMask, position_x, position_y, position
 (@CGUID+79,15818,1,1,-7310.71,619.718,5.18511,1.3021,900,900,20,1),
 (@CGUID+80,15341,1,1,-8132.336,1525.154,37.974834,6.108652114868164062,900,900,20,1);
 
-REPLACE INTO game_event_creature SELECT guid, 123 FROM creature WHERE guid BETWEEN @CGUID + 1 AND @CGUID + 80;
+INSERT INTO game_event_creature SELECT guid, 123 FROM creature WHERE guid BETWEEN @CGUID + 1 AND @CGUID + 80;
 
-SET @OGUID := 155400;
+SET @OGUID := 155100;
+DELETE FROM gameobject WHERE guid BETWEEN @OGUID AND @OGUID+21;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`, `animprogress`, `state`) VALUES
 (@OGUID+1, 180810, 1, 1, -784.85382080078125, -2784.091552734375, 93.9261474609375, 0.296705186367034912, 0, 0, 0.147809028625488281, 0.989015936851501464, 7200, 7200, 100, 1),
 (@OGUID+2, 180810, 1, 1, -151.529251098632812, -2217.197998046875, 93.19226837158203125, 0.296705186367034912, 0, 0, 0.147809028625488281, 0.989015936851501464, 7200, 7200, 100, 1),
