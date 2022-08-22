@@ -524,9 +524,9 @@ INSERT INTO game_event_gameobject SELECT guid, 123 FROM gameobject WHERE guid BE
 
 DELETE FROM game_event_quest WHERE quest IN(8857,8858,8859,8743);
 INSERT INTO game_event_quest VALUEs
-(8857,123),
-(8858,123),
-(8859,123),
+(8859, 127),
+(8858, 126),
+(8857, 125),
 (8743,122),
 (8743,123);
 
