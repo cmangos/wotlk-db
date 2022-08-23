@@ -128,6 +128,14 @@ INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalon
 (54248,500,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'');
 
 -- Blightblood Troll 28931
+DELETE FROM creature_addon WHERE guid=522004;
+DELETE FROM creature_movement WHERE Id=522004;
+DELETE FROM game_event_creature WHERE guid=522004;
+DELETE FROM game_event_creature_data WHERE guid=522004;
+DELETE FROM creature_battleground WHERE guid=522004;
+DELETE FROM creature_linking WHERE guid=522004 OR master_guid=522004;
+DELETE FROM creature WHERE guid=522004;
+
 UPDATE creature_template SET SpellList=0 WHERE entry=28931;
 DELETE FROM creature_spell_list_entry WHERE Id = 2893100;
 INSERT INTO creature_spell_list_entry(Id, Name, ChanceSupportAction, ChanceRangedAttack) VALUES
