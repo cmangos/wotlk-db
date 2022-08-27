@@ -38,7 +38,8 @@ INSERT INTO creature_movement_template (Entry, Point, PositionX, PositionY, Posi
 (9077,33,-6666.63,-2223.8,278.563,100,0,0);
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 907701 AND 907704;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(907701,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'pause WP movement'),
+(907701,0,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'active'),
+(907701,1,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'pause WP movement'),
 (907701,1000,29,3,1,0,0,0,0,0,0,0,0,0,0,0,0,'npcFlags added'),
 (907701,5000,3,0,0,0,0,0,0,0,0,0,0,0,0,0,2.56563,''),
 (907702,0,0,0,0,0,9083,100,7,4661,0,0,0,0,0,0,0,''),
@@ -60,12 +61,12 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (907703,18000,3,0,0,0,9082,15,7,0,0,0,0,0,0,0,2.38871,''),
 (907703,19000,0,0,0,0,9082,15,7,4691,0,0,0,0,0,0,0,''),
 (907703,22000,32,0,0,0,9082,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
-(907703,22000,32,0,0,0,9083,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
-(907703,22000,32,0,0,0,9084,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
-(907703,22000,32,0,0,0,9085,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
-(907703,22000,32,0,0,0,9086,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
+(907703,22001,32,0,0,0,9083,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
+(907703,22002,32,0,0,0,9084,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
+(907703,22003,32,0,0,0,9085,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
+(907703,22004,32,0,0,0,9086,15,7,0,0,0,0,0,0,0,0,'unpause WP movement'),
 (907703,23000,29,2,0,0,9082,15,7,0,0,0,0,0,0,0,0,'npcFlags removed'),
-(907703,23000,29,2,0,0,9084,15,7,0,0,0,0,0,0,0,0,'npcFlags removed'),
+(907703,23001,29,2,0,0,9084,15,7,0,0,0,0,0,0,0,0,'npcFlags removed'),
 (907703,28000,0,0,0,0,9079,35,7,4679,0,0,0,0,0,0,0,''),
 (907703,32000,0,0,0,0,9078,35,7,4683,0,0,0,0,0,0,0,''),
 (907703,37000,0,0,0,0,9079,35,7,4685,0,0,0,0,0,0,0,''),
@@ -84,6 +85,33 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (907704,20000,0,0,0,0,0,0,0,4697,0,0,0,0,0,0,0,''),
 (907704,27000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'unpause WP movement'),
 (907704,28000,36,1,0,0,9079,15,3,0,0,0,0,0,0,0,0,'reset orientation'),
-(907704,28000,36,1,0,0,9078,15,3,0,0,0,0,0,0,0,0,'reset orientation');
+(907704,28001,36,1,0,0,9078,15,3,0,0,0,0,0,0,0,0,'reset orientation'),
+(907704,29000,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
 -- texts
-UPDATE `broadcast_text` SET `ChatTypeID` = 2 WHERE `Id` IN (4664,4669);
+UPDATE `broadcast_text` SET `ChatTypeID` = 2 WHERE `Id` IN (4664,4687,4669,4693,4695);
+
+-- let them finish patrol
+DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 908601 AND 908602;
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(908601,1,29,2,1,0,9082,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thal\trak Proudtusk - Add UNIT_NPC_FLAG_QUESTGIVER'),
+(908601,2,29,2,1,0,9084,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thunderheart - Add UNIT_NPC_FLAG_QUESTGIVER'),
+(908601,900,31,9077,200,0,0,0,0,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Terminate Script if Warlord Goretooth (9077) not found or dead'),
+(908601,990,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - active'),
+(908601,991,21,1,0,0,9082,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy active'),
+(908601,992,21,1,0,0,9083,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy active'),
+(908601,993,21,1,0,0,9084,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy active'),
+(908601,994,21,1,0,0,9085,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy active'),
+(908601,1000,32,1,0,0,9084,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thunderheart - pause WP movement'),
+(908601,1001,29,3,0,0,9077,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Warlord Goretooth - Remove UNIT_NPC_FLAG_GOSSIP & UNIT_NPC_FLAG_QUESTGIVER'),
+(908601,1002,32,0,0,0,9077,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Warlord Goretooth - unpause WP movement'),
+(908601,101000,32,0,0,0,9084,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thunderheart - unpause WP movement'),
+(908601,101001,29,2,0,0,9084,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thunderheart - Remove UNIT_NPC_FLAG_QUESTGIVER'),
+(908601,101002,29,2,0,0,9082,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thal\trak Proudtusk - Remove UNIT_NPC_FLAG_QUESTGIVER'),
+(908602,5000,29,2,1,0,9084,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thunderheart - Add UNIT_NPC_FLAG_QUESTGIVER'),
+(908602,5001,29,2,1,0,9082,200,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Thal\trak Proudtusk - Add UNIT_NPC_FLAG_QUESTGIVER'),
+(908602,5002,0,0,0,0,9083,200,7,4692,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - Razal\blade - Say'),
+(908602,5003,21,0,0,0,9082,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy unactive'),
+(908602,5004,21,0,0,0,9083,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy unactive'),
+(908602,5005,21,0,0,0,9084,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy unactive'),
+(908602,5006,21,0,0,0,9085,100,7,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - buddy unactive'),
+(908602,5007,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Formation Leader (Grunt Gargal) - unactive');
