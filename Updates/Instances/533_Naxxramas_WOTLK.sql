@@ -1447,7 +1447,7 @@ SET @SGUID := 23030; -- ScriptID
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID, @SGUID+1);
 REPLACE INTO `dbscripts_on_relay` (id, dataint, dataint2, dataint3, comments) VALUES
 (@SGUID, 7798, 0, 0, "Gluth - Emote on Enrage"),
-(@SGUID, 32321, 0, 0, "Gluth - Emote on Decimate");
+(@SGUID+1, 32321, 0, 0, "Gluth - Emote on Decimate");
 
 REPLACE INTO `creature_spell_list` (Id, Position, SpellId, Flags, TargetId, ScriptId, Availability, Probability, InitialMin, InitialMax, RepeatMin, RepeatMax, Comments) VALUES
 (1593201, 1, 54378, 0, 28783, 0, 100, 30, 10000, 10000, 10000, 10000, "Gluth - Mortal Wound"),
