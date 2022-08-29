@@ -1677,3 +1677,26 @@ UPDATE `broadcast_text` SET `SoundEntriesID1` = 8916 WHERE `ID` = 13100;
 UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 33087;
 UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 33088;
 UPDATE `broadcast_text` SET `SoundEntriesID1` = 14580 WHERE `ID` = 33116;
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8819 WHERE Id=12999; -- summon
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8809 WHERE Id=12995; -- Pray for mercy aggro1
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8810 WHERE Id=12996; -- scream your  aggro2
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8811 WHERE Id=12997; -- The end is   aggro3
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8812 WHERE Id=13017; -- your soul is bound chain 1
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8813 WHERE Id=13018; -- there will be no  chain2
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8814 WHERE Id=13019; -- do not rejoice, death
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8815 WHERE Id=13020; -- I will freeze |frost
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8816 WHERE Id=12998; -- master I req | help
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8817 WHERE Id=13021; -- the dark void | slay
+UPDATE `broadcast_text` SET ChatTypeID=2,SoundEntriesID1=8818 WHERE Id=13022; -- text emote | slay2
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9088 WHERE Id=13492; -- your petty | spec 1
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9089 WHERE Id=; -- you have spread | spec 2
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9090 WHERE Id=; -- enough!, I grow | spec 3 (missing)
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=14770 WHERE Id=12994; -- very well (lk resp)
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32803; -- Kel'Thuzad strikes!
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32804; -- A Guardian of 
+UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Soon we will eradicate the Alliance and Horde. Then the rest of Azeroth will fall before the might of my army.', `SoundEntriesID1` = 14768 WHERE `ID` = 12988; -- 2
+UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Invaders... here?! DESTROY them, Kel\'Thuzad! Naxxramas must not fall!', `SoundEntriesID1` = 14769 WHERE `ID` = 12989; -- 4
+UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Your forces are nearly marshaled to strike back against your enemies, my liege.', `SoundEntriesID1` = 14467 WHERE `ID` = 12990; -- 1
+UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Yes, master. The time of their ultimate demise draws close.... What is this?', `SoundEntriesID1` = 14468 WHERE `ID` = 12991; -- 3
+UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'As you command, master!', `SoundEntriesID1` = 14469 WHERE `ID` = 12992; -- 5
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 12993; --6
