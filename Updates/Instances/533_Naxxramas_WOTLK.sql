@@ -1712,3 +1712,5 @@ UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32331; -- teleports to the bal
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32977; -- raises more skeletons
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32976; -- teleports back into battle
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (32303, 32305, 32304);
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id IN (12156, 12178, 32324);
+UPDATE `broadcast_text` SET ChatTypeID=1 WHERE id IN (13083, 13023, 13025, 13085, 13086, 13087, 13088, 13089, 13090, 13096)
