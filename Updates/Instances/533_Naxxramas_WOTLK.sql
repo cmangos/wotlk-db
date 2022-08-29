@@ -1394,54 +1394,9 @@ REPLACE INTO `creature_spell_list` (Id, Position, SpellId, Flags, TargetId, Scri
 REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceRangedAttack) VALUES
 (1602801, "Naxxramas - Patchwerk", 0, 0),
 (1602802, "Naxxramas - Patchwerk - Berserk", 0, 100);
-
-REPLACE INTO `spell_scripts` VALUES (28307, "spell_hateful_strike_primer");
-
-UPDATE `creature_template` SET SpellList=1602801 WHERE entry IN (16028, 29324);
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx3, CastingTimeIndex, ProcChance, RangeIndex, Effect1, EffectImplicitTargetA1, EffectImplicitTargetB1, EffectRadiusIndex1, SpellIconID, SpellName, DmgMultiplier1, SchoolMask, IsServerside) VALUES
-(28307, 384, 256, 1, 101, 1, 3, 22, 15, 10, 1, "Hateful Strike Primer", 1, 1, 1);
-
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (11694, 7798);
-
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (13068, 13069, 13070, 13071);
-
-UPDATE `broadcast_text` SET SoundEntriesID1=8909 WHERE id=13068;
-UPDATE `broadcast_text` SET SoundEntriesID1=8910 WHERE id=13069;
-UPDATE `broadcast_text` SET SoundEntriesID1=8911 WHERE id=13070;
-UPDATE `broadcast_text` SET SoundEntriesID1=8912 WHERE id=13071;
 --Patchwerk End
 
---Grobbulus
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx2, Targets, CastingTimeIndex, ProcChance, DurationIndex, RangeIndex, Effect1, EffectDieSides1, EffectImplicitTargetA1, EffectRadiusIndex1, EffectMiscValue1, SpellIconID, SpellName, DmgMultiplier1, IsServerside) VALUES
-(28218, 256, 4, 64, 1, 101, 21, 13, 28, 1, 1, 12, 16290, 1, "Summon Fallout Slime", 1, 0);
-
-REPLACE INTO `spell_template` (`Id`, `SchoolMask`, `Category`, `Dispel`, `Mechanic`, `Attributes`, `AttributesEx`, `AttributesEx2`, `AttributesEx3`, `AttributesEx4`, `AttributesEx5`, `Stances`, `StancesNot`, `Targets`, `TargetCreatureType`, `RequiresSpellFocus`, `CasterAuraState`, `TargetAuraState`, `CasterAuraStateNot`, `TargetAuraStateNot`, `CastingTimeIndex`, `RecoveryTime`, `CategoryRecoveryTime`, `InterruptFlags`, `AuraInterruptFlags`, `ChannelInterruptFlags`, `procFlags`, `procChance`, `procCharges`, `maxLevel`, `baseLevel`, `spellLevel`, `DurationIndex`, `powerType`, `manaCost`, `manaCostPerLevel`, `manaPerSecond`, `manaPerSecondPerLevel`, `rangeIndex`, `speed`, `StackAmount`, `Totem1`, `Totem2`, `Reagent1`, `Reagent2`, `Reagent3`, `Reagent4`, `Reagent5`, `Reagent6`, `Reagent7`, `Reagent8`, `ReagentCount1`, `ReagentCount2`, `ReagentCount3`, `ReagentCount4`, `ReagentCount5`, `ReagentCount6`, `ReagentCount7`, `ReagentCount8`, `EquippedItemClass`, `EquippedItemSubClassMask`, `EquippedItemInventoryTypeMask`, `Effect1`, `Effect2`, `Effect3`, `EffectDieSides1`, `EffectDieSides2`, `EffectDieSides3`, `EffectRealPointsPerLevel1`, `EffectRealPointsPerLevel2`, `EffectRealPointsPerLevel3`, `EffectBasePoints1`, `EffectBasePoints2`, `EffectBasePoints3`, `EffectMechanic1`, `EffectMechanic2`, `EffectMechanic3`, `EffectImplicitTargetA1`, `EffectImplicitTargetA2`, `EffectImplicitTargetA3`, `EffectImplicitTargetB1`, `EffectImplicitTargetB2`, `EffectImplicitTargetB3`, `EffectRadiusIndex1`, `EffectRadiusIndex2`, `EffectRadiusIndex3`, `EffectApplyAuraName1`, `EffectApplyAuraName2`, `EffectApplyAuraName3`, `EffectAmplitude1`, `EffectAmplitude2`, `EffectAmplitude3`, `EffectMultipleValue1`, `EffectMultipleValue2`, `EffectMultipleValue3`, `EffectChainTarget1`, `EffectChainTarget2`, `EffectChainTarget3`, `EffectItemType1`, `EffectItemType2`, `EffectItemType3`, `EffectMiscValue1`, `EffectMiscValue2`, `EffectMiscValue3`, `EffectTriggerSpell1`, `EffectTriggerSpell2`, `EffectTriggerSpell3`, `EffectPointsPerComboPoint1`, `EffectPointsPerComboPoint2`, `EffectPointsPerComboPoint3`, `SpellVisual`, `SpellIconID`, `activeIconID`, `spellPriority`, `SpellName`, `SpellName2`, `SpellName3`, `SpellName4`, `SpellName5`, `SpellName6`, `SpellName7`, `SpellName8`, `ManaCostPercentage`, `StartRecoveryCategory`, `StartRecoveryTime`, `MaxTargetLevel`, `SpellFamilyName`, `SpellFamilyFlags`, `MaxAffectedTargets`, `DmgClass`, `PreventionType`, `DmgMultiplier1`, `DmgMultiplier2`, `DmgMultiplier3`, `TotemCategory1`, `TotemCategory2`, `AreaId`) VALUES
-('28218','1','0','0','0','256','0','4','0','0','0','0','0','64','0','0','0','0','0','0','1','0','0','0','0','0','0','101','0','0','0','0','21','0','0','0','0','0','13','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','-1','0','0','41','0','0','1','0','0','0','0','0','0','0','0','0','0','0','25','0','0','0','0','0','12','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','16290','0','0','0','0','0','0','0','0','0','1','0','0','Summon Fallout Slime','','','','','','','','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0');
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx2, CastingTimeIndex, ProcChance, RangeIndex, Effect1, EffectImplicitTargetA1, EffectImplicitTargetB1, EffectRadiusIndex1, SpellIconID, SpellName, DmgMultiplier1, DmgMultiplier2, SchoolMask, IsServerside) VALUES
-(30134, 256, 5, 1, 101, 6, 77, 22, 7, 28, 1, "Despawn Boss Adds", 1, 1, 1, 1);
-
-REPLACE INTO `creature_ai_scripts` (id, creature_id, event_type, event_chance, event_flags, action1_type, action2_type, action2_param1, action3_type, action3_param1, action3_param3, comment) VALUES
-(1636301, 16363, 11, 100, 1026, 50, 11, 28158, 11, 19951, 32, "Grobbulus Cloud - Set Passive State and Cast Poison and Cast Pacify Self on Spawn (10)"),
-(1636302, 16363, 11, 100, 1026, 50, 11, 54362, 11, 19951, 32, "Grobbulus Cloud - Set Passive State and Cast Poison and Cast Pacify Self on Spawn (25)");
-
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32318;
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32319;
---Grobbulus End
-
 --Gluth
-REPLACE INTO `spell_template` (`Id`, `Category`, `Dispel`, `Mechanic`, `Attributes`, `AttributesEx`, `AttributesEx2`, `AttributesEx3`, `AttributesEx4`, `AttributesEx5`, `AttributesEx6`, `Stances`, `StancesNot`, `Targets`, `TargetCreatureType`, `RequiresSpellFocus`, `FacingCasterFlags`, `CasterAuraState`, `TargetAuraState`, `CasterAuraStateNot`, `TargetAuraStateNot`, `CastingTimeIndex`, `RecoveryTime`, `CategoryRecoveryTime`, `InterruptFlags`, `AuraInterruptFlags`, `ChannelInterruptFlags`, `ProcFlags`, `ProcChance`, `ProcCharges`, `MaxLevel`, `BaseLevel`, `SpellLevel`, `DurationIndex`, `PowerType`, `ManaCost`, `ManaCostPerlevel`, `ManaPerSecond`, `ManaPerSecondPerLevel`, `RangeIndex`, `Speed`, `ModalNextSpell`, `StackAmount`, `Totem1`, `Totem2`, `Reagent1`, `Reagent2`, `Reagent3`, `Reagent4`, `Reagent5`, `Reagent6`, `Reagent7`, `Reagent8`, `ReagentCount1`, `ReagentCount2`, `ReagentCount3`, `ReagentCount4`, `ReagentCount5`, `ReagentCount6`, `ReagentCount7`, `ReagentCount8`, `EquippedItemClass`, `EquippedItemSubClassMask`, `EquippedItemInventoryTypeMask`, `Effect1`, `Effect2`, `Effect3`, `EffectDieSides1`, `EffectDieSides2`, `EffectDieSides3`, `EffectRealPointsPerLevel1`, `EffectRealPointsPerLevel2`, `EffectRealPointsPerLevel3`, `EffectBasePoints1`, `EffectBasePoints2`, `EffectBasePoints3`, `EffectMechanic1`, `EffectMechanic2`, `EffectMechanic3`, `EffectImplicitTargetA1`, `EffectImplicitTargetA2`, `EffectImplicitTargetA3`, `EffectImplicitTargetB1`, `EffectImplicitTargetB2`, `EffectImplicitTargetB3`, `EffectRadiusIndex1`, `EffectRadiusIndex2`, `EffectRadiusIndex3`, `EffectApplyAuraName1`, `EffectApplyAuraName2`, `EffectApplyAuraName3`, `EffectAmplitude1`, `EffectAmplitude2`, `EffectAmplitude3`, `EffectMultipleValue1`, `EffectMultipleValue2`, `EffectMultipleValue3`, `EffectChainTarget1`, `EffectChainTarget2`, `EffectChainTarget3`, `EffectItemType1`, `EffectItemType2`, `EffectItemType3`, `EffectMiscValue1`, `EffectMiscValue2`, `EffectMiscValue3`, `EffectMiscValueB1`, `EffectMiscValueB2`, `EffectMiscValueB3`, `EffectTriggerSpell1`, `EffectTriggerSpell2`, `EffectTriggerSpell3`, `EffectPointsPerComboPoint1`, `EffectPointsPerComboPoint2`, `EffectPointsPerComboPoint3`, `SpellVisual`, `SpellIconID`, `ActiveIconID`, `SpellPriority`, `SpellName`, `SpellName2`, `SpellName3`, `SpellName4`, `SpellName5`, `SpellName6`, `SpellName7`, `SpellName8`, `SpellName9`, `SpellName10`, `SpellName11`, `SpellName12`, `SpellName13`, `SpellName14`, `SpellName15`, `SpellName16`, `Rank1`, `Rank2`, `Rank3`, `Rank4`, `Rank5`, `Rank6`, `Rank7`, `Rank8`, `Rank9`, `Rank10`, `Rank11`, `Rank12`, `Rank13`, `Rank14`, `Rank15`, `Rank16`, `ManaCostPercentage`, `StartRecoveryCategory`, `StartRecoveryTime`, `MaxTargetLevel`, `SpellFamilyName`, `SpellFamilyFlags`, `MaxAffectedTargets`, `DmgClass`, `PreventionType`, `StanceBarOrder`, `DmgMultiplier1`, `DmgMultiplier2`, `DmgMultiplier3`, `MinFactionId`, `MinReputation`, `RequiredAuraVision`, `TotemCategory1`, `TotemCategory2`, `AreaId`, `SchoolMask`, `IsServerSide`, `AttributesServerside`) VALUES
-(28216,0,0,0,320,268435456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,23,0,0,10000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,28217,0,0,0,0,0,0,1,0,0,'Summon Zombie Chow','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0),
-(28217,0,0,0,256,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16360,0,0,64,0,0,0,0,0,0,0,0,0,1,0,0,'Summon Zombie Chow','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0),
-(28235,0,0,0,256,268435456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,23,0,0,3000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,28236,0,0,0,0,0,0,1,0,0,'Zombie Chow Search','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0),
-(28236,0,0,0,256,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,77,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,0,0,7,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,'Zombie Chow Search','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0),
-(28238,0,0,0,256,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,'Zombie Chow Search','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0),
-(28239,0,0,0,256,524288,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,1,0,0,'Zombie Chow Search','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0),
-(28404,0,0,0,256,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,0,0,7,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,1,0,0,'Zombie Chow Search','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0),
-(29681,0,0,0,256,268435456,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,21,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,23,0,0,3000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29682,0,0,0,0,0,0,1,0,0,'Call All Zombie Chow','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0),
-(29682,0,0,0,256,268435456,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,0,0,7,0,0,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,'Call All Zombie Chow','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0);
-
 SET @SGUID := 23030; -- ScriptID
 
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID, @SGUID+1);
@@ -1460,36 +1415,10 @@ REPLACE INTO `creature_spell_list` (Id, Position, SpellId, Flags, TargetId, Scri
 REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceRangedAttack) VALUES
 (1593201, "Naxxramas - Gluth", 100, 100),
 (2941701, "Naxxramas - Gluth(25N)", 100, 100);
-
-REPLACE INTO `spell_script_target` VALUES
-(29682, 1, 16360, 0);
-
-REPLACE INTO `spell_scripts` VALUES
-(28235,'spell_zombie_chow_search'),
-(28404,'spell_zombie_chow_search_instakill_aoe'),
-(28374,'spell_decimate'),
-(54426,'spell_decimate'),
-(29682,'spell_call_all_zombie_chow'),
-(28216,'spell_summon_zombie_chow');
-
-UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE Id=32321;
-UPDATE `broadcast_text` SET `ChatTypeID`=2 WHERE Id=12242;
 --Gluth End
 
 -- Razuvious
 SET @SGUID := 23000; -- ScriptID
-
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8855 WHERE id=13075;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8856 WHERE id=13076;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8859 WHERE id=13078;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8861 WHERE id=13080;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8862 WHERE id=13081;
-UPDATE `broadcast_text` SET ChatTypeID=2, SoundEntriesID1=8863 WHERE id=13082;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8858 WHERE id=13077;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8852 WHERE id=13072;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8853 WHERE id=13073;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8854 WHERE id=13074;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8860 WHERE id=13079;
 
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID+0, @SGUID+1);
 REPLACE INTO `dbscripts_on_relay` (id, delay, priority, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, datafloat, x, y, z, o, speed, comments) VALUES
@@ -1507,16 +1436,6 @@ REPLACE INTO `dbscripts_on_relay` (id, delay, priority, command, datalong, datal
 (@SGUID+1, 12000, 2, 1, 333, 0, 0, 16803, 7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Understudy resumes emotes"),
 (@SGUID+1, 12000, 3, 35, 6, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Send AIEvent 6 to Understudy");
 
-DELETE FROM `creature_ai_scripts` WHERE `creature_id`=16803;
-REPLACE INTO `creature_ai_scripts` (id, creature_id, event_type, event_inverse_phase_mask, event_chance, event_flags, event_param1, event_param2, event_param3, event_param4, action1_type, action1_param1, action1_param2, comment) VALUES
-(1680301, 16803, 1, 2, 100, 1, 10000, 30000, 10000, 30000, 53, @SGUID+0, 0, "Try to get Razuvious' Attention every 20s avg"),
-(1680302, 16803, 1, 2, 100, 1, 3000, 6000, 3000, 6000, 5, 36, 0, "Play attack emote every 3-6 seconds"),
-(1680303, 16803, 30, 0, 100, 1, 5, 16803, 0, 0, 22, 1, 0, "Put Understudy in Phase 1 on AIEvent 5"),
-(1680304, 16803, 30, 0, 100, 1, 6, 16061, 0, 0, 22, 0, 0, "Put Understudy in Phase 0 on AIEvent 6");
-
-UPDATE `creature_ai_scripts` SET action2_type=40,action2_param1=0 WHERE id=1680303;
-UPDATE `creature_ai_scripts` SET action2_type=40,action2_param1=1 WHERE id=1680304;
-
 UPDATE `creature_template_addon` SET b2_0_sheath=0 WHERE entry=16061;
 DELETE FROM `creature_template_addon` WHERE Entry=29941;
 DELETE FROM `creature_movement_template` WHERE Entry=16061 AND Point=7;
@@ -1530,9 +1449,6 @@ REPLACE INTO `dbscript_random_templates` (id, type, target_id, chance, comments)
 (@SGUID+2, 0, 13130, 15, "Razuvious shouts at student"), -- Is that the best you can do?
 (@SGUID+2, 0, 13134, 15, "Razuvious shouts at student"), -- I think you signed up for the wrong job, initiate. Kel'Thuzad don't need any flower girls...
 (@SGUID+2, 0, 13135, 15, "Razuvious shouts at student"); -- Is this some kind of joke?
-
-UPDATE `broadcast_text` SET EmoteID1=5 WHERE Id BETWEEN 13129 AND 13136;
-UPDATE `broadcast_text` SET EmoteID1=1 WHERE Id BETWEEN 13137 AND 13140;
 
 SET @SGUID := 23000; -- ScriptID
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID+3);
@@ -1553,25 +1469,9 @@ REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceR
 
 REPLACE INTO `creature_spell_targeting` (Id, Type, Param1, Param2, Param3, Comments) VALUES
 (55550, 1, 0, 0, 0, "Razuvious - Jagged Knife - Target Random Player");
-
-UPDATE `creature_template` SET SpellList=1606101 WHERE entry=16061;
-UPDATE `creature_template` SET SpellList=2835701 WHERE entry=28357;
-
-UPDATE `creature_template` SET ScriptName="boss_razuvious" WHERE entry=16061;
-
-REPLACE INTO `spell_scripts` VALUES (55479, "spell_forced_obedience");
 --Razuvious End
 
 --Loatheb
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32334;
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32805;
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32335;
-
-REPLACE INTO `spell_scripts` VALUES
-(60929,'spell_loatheb_prewarn'),
-(59481,'spell_loatheb_warn'),
-(55593,'spell_loatheb_necrotic_aura');
-
 SET @SGUID := 23015; -- ScriptID
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID+3);
 REPLACE INTO `dbscripts_on_relay` (id, dataint, dataint2, dataint3, comments) VALUES
@@ -1601,49 +1501,15 @@ REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceR
 (1601102, "Naxxramas - Loatheb(P2)", 100, 150),
 (2971801, "Naxxramas - Loatheb(25N)", 100, 150),
 (2971802, "Naxxramas - Loatheb(25N)(P2)", 100, 150);
-
-UPDATE `creature_template` SET SpellList=1601101 WHERE entry=16011;
-UPDATE `creature_template` SET SpellList=2971801 WHERE entry=29718;
 --Loatheb End
 
 --Sapphiron
-REPLACE INTO `spell_template` (`Id`, `SchoolMask`, `Category`, `Dispel`, `Mechanic`, `Attributes`, `AttributesEx`, `AttributesEx2`, `AttributesEx3`, `AttributesEx4`, `AttributesEx5`, `Stances`, `StancesNot`, `Targets`, `TargetCreatureType`, `RequiresSpellFocus`, `CasterAuraState`, `TargetAuraState`, `CasterAuraStateNot`, `TargetAuraStateNot`, `CastingTimeIndex`, `RecoveryTime`, `CategoryRecoveryTime`, `InterruptFlags`, `AuraInterruptFlags`, `ChannelInterruptFlags`, `procFlags`, `procChance`, `procCharges`, `maxLevel`, `baseLevel`, `spellLevel`, `DurationIndex`, `powerType`, `manaCost`, `manaCostPerLevel`, `manaPerSecond`, `manaPerSecondPerLevel`, `rangeIndex`, `speed`, `StackAmount`, `Totem1`, `Totem2`, `Reagent1`, `Reagent2`, `Reagent3`, `Reagent4`, `Reagent5`, `Reagent6`, `Reagent7`, `Reagent8`, `ReagentCount1`, `ReagentCount2`, `ReagentCount3`, `ReagentCount4`, `ReagentCount5`, `ReagentCount6`, `ReagentCount7`, `ReagentCount8`, `EquippedItemClass`, `EquippedItemSubClassMask`, `EquippedItemInventoryTypeMask`, `Effect1`, `Effect2`, `Effect3`, `EffectDieSides1`, `EffectDieSides2`, `EffectDieSides3`, `EffectRealPointsPerLevel1`, `EffectRealPointsPerLevel2`, `EffectRealPointsPerLevel3`, `EffectBasePoints1`, `EffectBasePoints2`, `EffectBasePoints3`, `EffectMechanic1`, `EffectMechanic2`, `EffectMechanic3`, `EffectImplicitTargetA1`, `EffectImplicitTargetA2`, `EffectImplicitTargetA3`, `EffectImplicitTargetB1`, `EffectImplicitTargetB2`, `EffectImplicitTargetB3`, `EffectRadiusIndex1`, `EffectRadiusIndex2`, `EffectRadiusIndex3`, `EffectApplyAuraName1`, `EffectApplyAuraName2`, `EffectApplyAuraName3`, `EffectAmplitude1`, `EffectAmplitude2`, `EffectAmplitude3`, `EffectMultipleValue1`, `EffectMultipleValue2`, `EffectMultipleValue3`, `EffectChainTarget1`, `EffectChainTarget2`, `EffectChainTarget3`, `EffectItemType1`, `EffectItemType2`, `EffectItemType3`, `EffectMiscValue1`, `EffectMiscValue2`, `EffectMiscValue3`, `EffectTriggerSpell1`, `EffectTriggerSpell2`, `EffectTriggerSpell3`, `EffectPointsPerComboPoint1`, `EffectPointsPerComboPoint2`, `EffectPointsPerComboPoint3`, `SpellVisual`, `SpellIconID`, `activeIconID`, `spellPriority`, `SpellName`, `SpellName2`, `SpellName3`, `SpellName4`, `SpellName5`, `SpellName6`, `SpellName7`, `SpellName8`, `ManaCostPercentage`, `StartRecoveryCategory`, `StartRecoveryTime`, `MaxTargetLevel`, `SpellFamilyName`, `SpellFamilyFlags`, `MaxAffectedTargets`, `DmgClass`, `PreventionType`, `DmgMultiplier1`, `DmgMultiplier2`, `DmgMultiplier3`, `TotemCategory1`, `TotemCategory2`, `AreaId`) VALUES
-('31800','16','0','0','0','536871168','268435592','536870916','268435456','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','101','0','0','0','0','205','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','-1','0','0','6','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','39','0','0','0','0','0','0','0','0','0','0','0','0','0','0','127','0','0','0','0','0','0','0','0','0','35','0','0','Icebolt','','','','','','','','0','0','0','0','0','0','0','0','0','1','1','1','0','0','0');
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx, AttributesEx2, AttributesEx3, Targets, CastingTimeIndex, ProcChance, DurationIndex, RangeIndex, EquippedItemClass, Effect1, EffectImplicitTargetA1, EffectMiscValue1, SpellIconID, SpellName, DmgClass, DmgMultiplier1, DmgMultiplier2, DmgMultiplier3, SchoolMask) VALUES
-(28535, 256, 268435592, 4, 268435456, 64, 1, 101, 467, 1, -1, 76, 1, 181247, 35, "Summon Ice Block", 1, 1, 1, 1, 16);
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx2, AttributesEx3, CastingTimeIndex, ProcChance, RangeIndex, EquippedItemClass, Effect1, Effect2, EffectDieSides1, EffectImplicitTargetA1, EffectImplicitTargetA2, EffectImplicitTargetB1, EffectImplicitTargetB2, EffectRadiusIndex1, EffectRadiusIndex2, EffectMiscValue1, SpellIconID, SpellName, DmgMultiplier1, DmgMultiplier2, DmgMultiplier3, SchoolMask) VALUES
-(30132, 696254720, 4, 268435456, 1, 101, 13, -1, 86, 77, 1, 22, 22, 51, 15, 22, 22, 15, 35, "Despawn Ice Block", 1, 1, 1, 16);
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx2, AttributesEx3, CastingTimeIndex, ProcChance, RangeIndex, EquippedItemClass, Effect1, EffectDieSides1, EffectImplicitTargetA1, EffectMiscValue1, SpellIconID, SpellName, DmgMultiplier1, DmgMultiplier2, DmgMultiplier3, SchoolMask, AttributesServerside) VALUES
-(28523, 159383808, 4, 268435456, 1, 101, 13, -1, 86, 1, 40, 15, 35, "Despawn Ice Block", 1, 1, 1, 4, 1);
-
-REPLACE INTO `spell_script_target` VALUES (28523, 0, 181247, 0);
-
-REPLACE INTO `spell_template` (Id, Attributes, ProcChance, DurationIndex, RangeIndex, EquippedItemClass, Effect1, EffectImplicitTargetA1, EffectMiscValue1, EffectMiscValueB1, SpellIconID, SpellName, DmgMultiplier1) VALUES
-(29329, 256, 101, 9, 1, -1, 28, 18, 17025, 64, 1, "Summon Sapphiron's Wing Buffet", 1);
-
-REPLACE INTO `spell_template` (Id, Attributes, AttributesEx, CastingTimeIndex, ProcChance, DurationIndex, RangeIndex, EquippedItemClass, Effect1, EffectImplicitTargetA1, EffectApplyAuraName1, EffectAmplitude1, SpellIconID, SpellName, DmgMultiplier1) VALUES
-(29330, 320, 268435456, 1, 101, 63, 1, -1, 6, 1, 23, 15000, 1, "Sapphiron's Wing Buffet Despawn", 1);
-
-REPLACE INTO `spell_template` (Id, Attributes, CastingTimeIndex, ProcChance, DurationIndex, RangeIndex, EquippedItemClass, Effect1, EffectDieSides1, EffectImplicitTargetA1, EffectRadiusIndex1, EffectMiscValue1, EffectMiscValueB1, SpellIconID, SpellName, DmgMultiplier1, Schoolmask) VALUES
-(28561, 256, 1, 101, 9, 1, -1, 28, 1, 32, 13, 16474, 64, 1, "Summon Blizzard", 1, 1);
-
 REPLACE INTO `creature_template_addon` (entry, auras) VALUES
 (17025, 29327);
 
-UPDATE `creature_template` SET UnitFlags=33554432 WHERE Entry=17025;
-
-REPLACE INTO `spell_scripts` VALUES
-(28560,'spell_sapphiron_blizzard_init'),
-(60539,'spell_sapphiron_achievement_check'),
-(28524,'spell_sapphiron_frost_breath'),
-(28526,'spell_sapphiron_icebolt');
-
 REPLACE INTO `creature_spell_list` (Id, Position, SpellId, Flags, TargetId, ScriptId, Availability, Probability, InitialMin, InitialMax, RepeatMin, RepeatMax, Comments) VALUES
 (1598901, 1, 19983, 0, 1, 0, 100, 0, 5000, 5000, 5000, 10000, "Sapphiron - Cleave"),
-(1598901, 2, 15847, 0, 0, 0, 100, 0, 12000, 12000, 7000, 10000, "Sapphiron - Tail Sweep"),
+(1598901, 2, 55697, 0, 0, 0, 100, 0, 12000, 12000, 7000, 10000, "Sapphiron - Tail Sweep"),
 (1598901, 3, 28542, 2, 0, 0, 100, 0, 11000, 11000, 24000, 24000, "Sapphiron - Life Drain"),
 (1598901, 4, 28560, 2, 0, 0, 100, 0, 15000, 15000, 10000, 30000, "Sapphiron - Blizzard"),
 (1598901, 5, 60539, 2, 0, 0, 100, 0, 1000, 1000, 20000, 20000, "Sapphiron - Achievement Check"),
@@ -1662,25 +1528,9 @@ REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceR
 (2999101, "Naxxramas - Sapphiron(25N)", 100, 150),
 (2999102, "Naxxramas - Sapphiron(25N) - Air Phase", 100, 150),
 (2999103, "Naxxramas - Sapphiron(25N) - NULL list", 0, 0);
-
-UPDATE `creature_template` SET SpellList=1598901 WHERE entry=15989;
-UPDATE `creature_template` SET SpellList=2999101 WHERE entry=29991;
-
-UPDATE `spell_template` SET `AttributesEx`=`AttributesEx`&~2048 WHERE id=28547;
-UPDATE `spell_template` SET `AttributesEx3`=`AttributesEx3`|128 WHERE id=28547;
 --Sapphiron End
 
 --Faerlina
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8799 WHERE id=12852;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8798 WHERE id=12853;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8800 WHERE id=12854;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8801 WHERE id=12855;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8794 WHERE id=12856;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8795 WHERE id=12857;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8796 WHERE id=12858;
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8797 WHERE id=12859;
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=31019;
-
 SET @SGUID := 23010; -- ScriptID
 
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID);
@@ -1703,36 +1553,9 @@ REPLACE INTO `creature_spell_list_entry` (Id, Name, ChanceSupportAction, ChanceR
 REPLACE INTO `creature_spell_targeting` (Id, Type, Param1, Param2, Param3, Comments) VALUES
 (28794, 1, 0, 0, 2, "Faerlina - Rain of Fire - Target Random Player"),
 (54099, 1, 0, 0, 2, "Faerlina(25N) - Rain of Fire - Target Random Player");
-
-UPDATE `creature_template` SET SpellList=1595301 WHERE entry=15953;
-UPDATE `creature_template` SET SpellList=2926801 WHERE entry=29268;
-
-REPLACE INTO `spell_scripts` VALUES (28732, "spell_widows_embrace");
-REPLACE INTO `spell_scripts` VALUES (54097, "spell_widows_embrace");
-
-UPDATE `spell_template` SET Category=1152,CategoryRecoveryTime=30000 WHERE Id IN(28732, 54097);
 --Faerlina End
 
 --Anub'Rekhan
-UPDATE `broadcast_text` SET Text='%s begins to unleash an insect swarm!', ChatTypeID=3 WHERE id=13443;
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id IN (29887, 32796);
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8785 WHERE id=13000; -- Just a little taste Aggro1
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8786 WHERE id=13002; -- There is no way out Aggro2
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8787 WHERE id=13003; -- Yes, Run, Blood faster Aggro 3
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8788 WHERE id=13004; -- Welcome to my parlor Greet
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8789 WHERE id=13005; -- All be over soon Slay
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8790 WHERE id=13006; -- Little Hearts beating Taunt1
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8791 WHERE id=13007; -- Where to Go, what to? Taunt2
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8792 WHERE id=13008; -- Which one shall I eat?Taunt3
-UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8793 WHERE id=13009; -- Closer now, tasty morsTaunt4
-
-REPLACE INTO `spell_template` (`Id`, `Category`, `Dispel`, `Mechanic`, `Attributes`, `AttributesEx`, `AttributesEx2`, `AttributesEx3`, `AttributesEx4`, `AttributesEx5`, `AttributesEx6`, `Stances`, `StancesNot`, `Targets`, `TargetCreatureType`, `RequiresSpellFocus`, `FacingCasterFlags`, `CasterAuraState`, `TargetAuraState`, `CasterAuraStateNot`, `TargetAuraStateNot`, `CastingTimeIndex`, `RecoveryTime`, `CategoryRecoveryTime`, `InterruptFlags`, `AuraInterruptFlags`, `ChannelInterruptFlags`, `ProcFlags`, `ProcChance`, `ProcCharges`, `MaxLevel`, `BaseLevel`, `SpellLevel`, `DurationIndex`, `PowerType`, `ManaCost`, `ManaCostPerlevel`, `ManaPerSecond`, `ManaPerSecondPerLevel`, `RangeIndex`, `Speed`, `ModalNextSpell`, `StackAmount`, `Totem1`, `Totem2`, `Reagent1`, `Reagent2`, `Reagent3`, `Reagent4`, `Reagent5`, `Reagent6`, `Reagent7`, `Reagent8`, `ReagentCount1`, `ReagentCount2`, `ReagentCount3`, `ReagentCount4`, `ReagentCount5`, `ReagentCount6`, `ReagentCount7`, `ReagentCount8`, `EquippedItemClass`, `EquippedItemSubClassMask`, `EquippedItemInventoryTypeMask`, `Effect1`, `Effect2`, `Effect3`, `EffectDieSides1`, `EffectDieSides2`, `EffectDieSides3`, `EffectRealPointsPerLevel1`, `EffectRealPointsPerLevel2`, `EffectRealPointsPerLevel3`, `EffectBasePoints1`, `EffectBasePoints2`, `EffectBasePoints3`, `EffectMechanic1`, `EffectMechanic2`, `EffectMechanic3`, `EffectImplicitTargetA1`, `EffectImplicitTargetA2`, `EffectImplicitTargetA3`, `EffectImplicitTargetB1`, `EffectImplicitTargetB2`, `EffectImplicitTargetB3`, `EffectRadiusIndex1`, `EffectRadiusIndex2`, `EffectRadiusIndex3`, `EffectApplyAuraName1`, `EffectApplyAuraName2`, `EffectApplyAuraName3`, `EffectAmplitude1`, `EffectAmplitude2`, `EffectAmplitude3`, `EffectMultipleValue1`, `EffectMultipleValue2`, `EffectMultipleValue3`, `EffectChainTarget1`, `EffectChainTarget2`, `EffectChainTarget3`, `EffectItemType1`, `EffectItemType2`, `EffectItemType3`, `EffectMiscValue1`, `EffectMiscValue2`, `EffectMiscValue3`, `EffectMiscValueB1`, `EffectMiscValueB2`, `EffectMiscValueB3`, `EffectTriggerSpell1`, `EffectTriggerSpell2`, `EffectTriggerSpell3`, `EffectPointsPerComboPoint1`, `EffectPointsPerComboPoint2`, `EffectPointsPerComboPoint3`, `SpellVisual`, `SpellIconID`, `ActiveIconID`, `SpellPriority`, `SpellName`, `SpellName2`, `SpellName3`, `SpellName4`, `SpellName5`, `SpellName6`, `SpellName7`, `SpellName8`, `SpellName9`, `SpellName10`, `SpellName11`, `SpellName12`, `SpellName13`, `SpellName14`, `SpellName15`, `SpellName16`, `Rank1`, `Rank2`, `Rank3`, `Rank4`, `Rank5`, `Rank6`, `Rank7`, `Rank8`, `Rank9`, `Rank10`, `Rank11`, `Rank12`, `Rank13`, `Rank14`, `Rank15`, `Rank16`, `ManaCostPercentage`, `StartRecoveryCategory`, `StartRecoveryTime`, `MaxTargetLevel`, `SpellFamilyName`, `SpellFamilyFlags`, `MaxAffectedTargets`, `DmgClass`, `PreventionType`, `StanceBarOrder`, `DmgMultiplier1`, `DmgMultiplier2`, `DmgMultiplier3`, `MinFactionId`, `MinReputation`, `RequiredAuraVision`, `TotemCategory1`, `TotemCategory2`, `AreaId`, `SchoolMask`, `IsServerSide`, `AttributesServerside`) VALUES
-(29379,0,0,0,256,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,77,77,0,0,0,0,0,0,0,0,0,0,0,0,0,22,22,0,7,7,0,28,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,'Despawn Crypt Guards','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0),
-(29508,0,0,0,256,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,101,0,0,0,0,9,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16573,0,0,64,0,0,0,0,0,0,0,0,0,1,0,0,'Summon Crypt Guard','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0);
-
-REPLACE INTO `spell_target_position` VALUES
-(29508, 533, 3333.5, -3475.9, 287.1, 3.17);
-
 SET @SGUID := 23020; -- ScriptID
 
 DELETE FROM `dbscripts_on_relay` WHERE id IN (@SGUID);
@@ -1759,17 +1582,99 @@ REPLACE INTO `creature_spell_targeting` (Id, Type, Param1, Param2, Param3, Comme
 
 --Various Fixes
 UPDATE creature SET MovementType=2 WHERE guid IN (5330726, 5330723);
-UPDATE creature_template SET ScriptName="npc_living_poison" WHERE Entry=16027;
-UPDATE creature_template SET ScriptName="npc_stoneskin_gargoyle" WHERE Entry=16168;
+
 REPLACE INTO spell_target_position VALUES (72617, 533, 3498.111572, -5349.504395, 144.967743, 1.402669), (72613, 533, 2989.30172, -3434.382812, 295.461151, 3.13);
-REPLACE INTO npc_trainer_template (entry, spell, reqlevel) VALUES (71, 32182, 70), (71, 2825, 70);
 UPDATE creature_model_info SET combat_reach=3 WHERE modelid=16586;
-UPDATE `creature_ai_scripts` SET event_param1=3000, event_param2=15000, event_param3=21000, event_param4=35000 WHERE id=1614601 and creature_id=16146; --Death Knight (Military Wing)
-UPDATE `creature_ai_scripts` SET action2_type=43 WHERE id=1616307 AND creature_id=16163; --Death Knight Cavalier (Dismount)
 REPLACE INTO `creature_template_addon` (entry, mount, b2_0_sheath) VALUES (16126, 25278, 1); -- Mounted Knight from Gothik
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (32801, 32802);
-
-UPDATE `spell_template` SET `AttributesEx`=`AttributesEx`&~64 WHERE id=29422; -- Kel'Thuzad Channel Effect
-UPDATE `spell_template` SET `AttributesEx`=`AttributesEx`&~64 WHERE id=30122; -- Heigan Channel Effect
-
 --Various Fixes End
+
+--Broadcast Text fixes
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (11694, 7798);
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (13068, 13069, 13070, 13071);
+UPDATE `broadcast_text` SET SoundEntriesID1=8909 WHERE id=13068;
+UPDATE `broadcast_text` SET SoundEntriesID1=8910 WHERE id=13069;
+UPDATE `broadcast_text` SET SoundEntriesID1=8911 WHERE id=13070;
+UPDATE `broadcast_text` SET SoundEntriesID1=8912 WHERE id=13071;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (32801, 32802);
+UPDATE `broadcast_text` SET Text='%s begins to unleash an insect swarm!', ChatTypeID=3 WHERE id=13443;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id IN (29887, 32796);
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8785 WHERE id=13000; -- Just a little taste Aggro1
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8786 WHERE id=13002; -- There is no way out Aggro2
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8787 WHERE id=13003; -- Yes, Run, Blood faster Aggro 3
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8788 WHERE id=13004; -- Welcome to my parlor Greet
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8789 WHERE id=13005; -- All be over soon Slay
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8790 WHERE id=13006; -- Little Hearts beating Taunt1
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8791 WHERE id=13007; -- Where to Go, what to? Taunt2
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8792 WHERE id=13008; -- Which one shall I eat?Taunt3
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8793 WHERE id=13009; -- Closer now, tasty morsTaunt4
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8799 WHERE id=12852;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8798 WHERE id=12853;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8800 WHERE id=12854;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8801 WHERE id=12855;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8794 WHERE id=12856;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8795 WHERE id=12857;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8796 WHERE id=12858;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8797 WHERE id=12859;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=31019;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32334;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32805;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32335;
+UPDATE `broadcast_text` SET EmoteID1=5 WHERE Id BETWEEN 13129 AND 13136;
+UPDATE `broadcast_text` SET EmoteID1=1 WHERE Id BETWEEN 13137 AND 13140;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8855 WHERE id=13075;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8856 WHERE id=13076;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8859 WHERE id=13078;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8861 WHERE id=13080;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8862 WHERE id=13081;
+UPDATE `broadcast_text` SET ChatTypeID=2, SoundEntriesID1=8863 WHERE id=13082;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8858 WHERE id=13077;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8852 WHERE id=13072;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8853 WHERE id=13073;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8854 WHERE id=13074;
+UPDATE `broadcast_text` SET ChatTypeID=1, SoundEntriesID1=8860 WHERE id=13079;
+UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE Id=32321;
+UPDATE `broadcast_text` SET `ChatTypeID`=2 WHERE Id=12242;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32318;
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32319;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8892 WHERE `ID` = 13010;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8893 WHERE `ID` = 13011;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8894 WHERE `ID` = 13012;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8895 WHERE `ID` = 13013;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8802 WHERE `ID` = 13023;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8803 WHERE `ID` = 13024;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8804 WHERE `ID` = 13025;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1, `SoundEntriesID1` = 8805 WHERE `ID` = 13026;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1, `SoundEntriesID1` = 8806 WHERE `ID` = 13027;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1, `SoundEntriesID1` = 8808 WHERE `ID` = 13028;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8807 WHERE `ID` = 13029;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 13030;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 13031;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 13032;
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 13033;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8899 WHERE `ID` = 13034;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8900 WHERE `ID` = 13035;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8901 WHERE `ID` = 13036;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8902 WHERE `ID` = 13037;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14571 WHERE `ID` = 13051;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14572 WHERE `ID` = 13052;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14573 WHERE `ID` = 13053;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14574 WHERE `ID` = 13055;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14575 WHERE `ID` = 13056;
+UPDATE `broadcast_text` SET `Text` = 'Bow to the might of the Scourge!', `SoundEntriesID1` = 14576 WHERE `ID` = 13057;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8864 WHERE `ID` = 13083;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8865 WHERE `ID` = 13084;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8866 WHERE `ID` = 13085;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8867 WHERE `ID` = 13086;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8868 WHERE `ID` = 13087;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8869 WHERE `ID` = 13088;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8870 WHERE `ID` = 13089;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8871 WHERE `ID` = 13090;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8872 WHERE `ID` = 13091;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8877 WHERE `ID` = 13096;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8913 WHERE `ID` = 13097;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8914 WHERE `ID` = 13098;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8915 WHERE `ID` = 13099;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 8916 WHERE `ID` = 13100;
+UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 33087;
+UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 33088;
+UPDATE `broadcast_text` SET `SoundEntriesID1` = 14580 WHERE `ID` = 33116;
