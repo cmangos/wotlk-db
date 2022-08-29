@@ -1700,3 +1700,14 @@ UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'As you command, master!'
 UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 12993; --6
 UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 32306;
 UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 32307;
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8845 WHERE id=13061; -- Glory to the master
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8846 WHERE id=13062; -- Your life is forfeit
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8847 WHERE id=13063; -- Die, trespasser
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8848 WHERE id=13064; -- I will serve the master in death
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8849 WHERE id=13065; -- My task is done
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8850 WHERE id=13066; -- breathe no more
+UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8851 WHERE id=13067; -- rise my soldiers, rise and fight once more
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32974; -- summons forth skeletal warriors
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32331; -- teleports to the balcony
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32977; -- raises more skeletons
+UPDATE `broadcast_text` SET ChatTypeID=3 WHERE id=32976; -- teleports back into battle
