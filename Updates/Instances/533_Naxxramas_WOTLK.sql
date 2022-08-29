@@ -1583,7 +1583,6 @@ REPLACE INTO `creature_spell_targeting` (Id, Type, Param1, Param2, Param3, Comme
 --Various Fixes
 UPDATE creature SET MovementType=2 WHERE guid IN (5330726, 5330723);
 
-REPLACE INTO spell_target_position VALUES (72617, 533, 3498.111572, -5349.504395, 144.967743, 1.402669), (72613, 533, 2989.30172, -3434.382812, 295.461151, 3.13);
 UPDATE creature_model_info SET combat_reach=3 WHERE modelid=16586;
 REPLACE INTO `creature_template_addon` (entry, mount, b2_0_sheath) VALUES (16126, 25278, 1); -- Mounted Knight from Gothik
 --Various Fixes End
