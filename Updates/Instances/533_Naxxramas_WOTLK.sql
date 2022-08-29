@@ -1589,7 +1589,7 @@ REPLACE INTO `creature_template_addon` (entry, mount, b2_0_sheath) VALUES (16126
 
 --Broadcast Text fixes
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (11694, 7798);
-UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id IN (13068, 13069, 13070, 13071);
+UPDATE `broadcast_text` SET ChatTypeID=1 WHERE Id IN (13068, 13069, 13070, 13071);
 UPDATE `broadcast_text` SET SoundEntriesID1=8909 WHERE id=13068;
 UPDATE `broadcast_text` SET SoundEntriesID1=8910 WHERE id=13069;
 UPDATE `broadcast_text` SET SoundEntriesID1=8911 WHERE id=13070;
