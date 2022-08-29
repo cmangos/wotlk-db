@@ -1700,3 +1700,5 @@ UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Your forces are nearly m
 UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'Yes, master. The time of their ultimate demise draws close.... What is this?', `SoundEntriesID1` = 14468 WHERE `ID` = 12991; -- 3
 UPDATE `broadcast_text` SET `ChatTypeID` = 6, `Text` = 'As you command, master!', `SoundEntriesID1` = 14469 WHERE `ID` = 12992; -- 5
 UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `ID` = 12993; --6
+UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 32306;
+UPDATE `broadcast_text` SET `ChatTypeID` = 3 WHERE `ID` = 32307;
