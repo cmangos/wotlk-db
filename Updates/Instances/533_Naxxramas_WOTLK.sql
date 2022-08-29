@@ -1689,8 +1689,6 @@ UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8816 WHERE Id=12998; --
 UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=8817 WHERE Id=13021; -- the dark void | slay
 UPDATE `broadcast_text` SET ChatTypeID=2,SoundEntriesID1=8818 WHERE Id=13022; -- text emote | slay2
 UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9088 WHERE Id=13492; -- your petty | spec 1
-UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9089 WHERE Id=; -- you have spread | spec 2
-UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=9090 WHERE Id=; -- enough!, I grow | spec 3 (missing)
 UPDATE `broadcast_text` SET ChatTypeID=1,SoundEntriesID1=14770 WHERE Id=12994; -- very well (lk resp)
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32803; -- Kel'Thuzad strikes!
 UPDATE `broadcast_text` SET ChatTypeID=3 WHERE Id=32804; -- A Guardian of 
