@@ -84,6 +84,16 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (23127, 9462);
 DELETE FROM `creature_questrelation` WHERE `id` = 20407 AND `quest` = 14111;
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (20407, 14111);
 
+-- https://www.wowhead.com/wotlk/quest=9292/cracked-necrotic-crystal
+-- Missing Questtaker for "Cracked Necrotic Crystal" (Lieutenant Orrin)
+DELETE FROM `creature_involvedrelation` WHERE `id` = 16478 AND `quest` = 9292;
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16478, 9292);
+
+-- https://www.wowhead.com/wotlk/quest=9310/faint-necrotic-crystal
+-- Missing Questtaker for "Faint Necrotic Crystal" (Lieutenant Rukag)
+DELETE FROM `creature_involvedrelation` WHERE `id` = 16494 AND `quest` = 9310;
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16494, 9310);
+
 -- --------------------------------------------------------------------------- --
 
 -- add all missing OfferRewardText-texts for Candy Bucket Quests (Rows matched: 87  Changed: 87  Warnings: 0)
