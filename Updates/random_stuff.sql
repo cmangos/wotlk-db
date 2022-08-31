@@ -79,6 +79,11 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (7315, 1698);
 DELETE FROM `creature_questrelation` WHERE `id` = 23127 AND `quest` = 9462;
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (23127, 9462);
 
+-- https://www.wowhead.com/wotlk/quest=14111/relic-of-the-earthen-ring
+-- 2nd Questgiver for "Relic of the Earthen Ring" (Farseer Umbrua) [Alliance]
+DELETE FROM `creature_questrelation` WHERE `id` = 20407 AND `quest` = 14111;
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (20407, 14111);
+
 -- --------------------------------------------------------------------------- --
 
 -- add all missing OfferRewardText-texts for Candy Bucket Quests (Rows matched: 87  Changed: 87  Warnings: 0)
