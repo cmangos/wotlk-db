@@ -96,6 +96,44 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16494, 9310);
 
 -- --------------------------------------------------------------------------- --
 
+-- https://www.wowhead.com/wotlk/quest=12787/the-undercity
+UPDATE `quest_template` SET `PrevQuestId` = 12752 WHERE `entry` = 12787;
+
+-- https://www.wowhead.com/wotlk/quest=12771/ironforge
+UPDATE `quest_template` SET `PrevQuestId` = 12753 WHERE `entry` = 12771;
+
+-- https://www.wowhead.com/wotlk/quest=12773/darnassus
+UPDATE `quest_template` SET `PrevQuestId` = 12772 WHERE `entry` = 12773;
+
+-- https://www.wowhead.com/wotlk/quest=12774/stormwind
+UPDATE `quest_template` SET `PrevQuestId` = 12775 WHERE `entry` = 12774;
+
+-- https://www.wowhead.com/wotlk/quest=12776/the-exodar
+UPDATE `quest_template` SET `PrevQuestId` = 12777 WHERE `entry` = 12776;
+
+-- no link available
+UPDATE `quest_template` SET `PrevQuestId` = 12784 WHERE `entry` = 12786;
+
+-- https://www.wowhead.com/wotlk/quest=12788/silvermoon
+UPDATE `quest_template` SET `PrevQuestId` = 12782 WHERE `entry` = 12788;
+
+-- no link available
+UPDATE `quest_template` SET `PrevQuestId` = 12808 WHERE `entry` = 12809;
+
+-- https://www.wowhead.com/wotlk/quest=12783/desperate-research
+-- https://www.wowhead.com/wotlk/quest=12785/orgrimmar
+-- Orc only
+UPDATE `quest_template` SET `RequiredRaces` = 2 WHERE `entry` IN (12783, 12785);
+UPDATE `quest_template` SET `PrevQuestId` = 12783 WHERE `entry` = 12785;
+
+-- https://www.wowhead.com/wotlk/quest=12811/desperate-research
+-- https://www.wowhead.com/wotlk/quest=12812/orgrimmar
+-- Troll only
+UPDATE `quest_template` SET `RequiredRaces` = 128 WHERE `entry` IN (12811, 12812);
+UPDATE `quest_template` SET `PrevQuestId` = 12811 WHERE `entry` = 12812;
+
+-- --------------------------------------------------------------------------- --
+
 -- add all missing OfferRewardText-texts for Candy Bucket Quests (Rows matched: 87  Changed: 87  Warnings: 0)
 -- it seems there are many missing spawns of object "Candy Bucket" too
 UPDATE quest_template SET
