@@ -27,7 +27,7 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id
 UPDATE creature_template SET visibilityDistanceType = 3 WHERE entry = 28068;
 
 -- Argent Soldier 28041
-UPDATE creature_template SET faction = 2073 WHERE entry = 28041;
+UPDATE creature_template SET faction = 2073, ExtraFlags = 0x00100000 WHERE entry = 28041;
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 28041);
 DELETE FROM creature_template_addon WHERE entry = 28041;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, auras) VALUES
