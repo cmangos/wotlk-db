@@ -102,7 +102,7 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16494, 9310);
 -- https://www.wowhead.com/wotlk/quest=12787/the-undercity
 UPDATE `quest_template` SET `PrevQuestId` = 12752 WHERE `entry` = 12787;
 
--- https://www.wowhead.com/wotlk/quest=12771/ironforge
+-- https://www.wowhead.com/wotlk/quest=12771/ironforge -- dwarf
 UPDATE `quest_template` SET `PrevQuestId` = 12753 WHERE `entry` = 12771;
 
 -- https://www.wowhead.com/wotlk/quest=12773/darnassus
@@ -114,13 +114,13 @@ UPDATE `quest_template` SET `PrevQuestId` = 12775 WHERE `entry` = 12774;
 -- https://www.wowhead.com/wotlk/quest=12776/the-exodar
 UPDATE `quest_template` SET `PrevQuestId` = 12777 WHERE `entry` = 12776;
 
--- no link available
+-- https://www.wowhead.com/wotlk/quest=12786/thunder-bluff
 UPDATE `quest_template` SET `PrevQuestId` = 12784 WHERE `entry` = 12786;
 
 -- https://www.wowhead.com/wotlk/quest=12788/silvermoon
 UPDATE `quest_template` SET `PrevQuestId` = 12782 WHERE `entry` = 12788;
 
--- no link available
+-- no link available atm (should be https://www.wowhead.com/wotlk/quest=12809/ironforge) -- gnome
 UPDATE `quest_template` SET `PrevQuestId` = 12808 WHERE `entry` = 12809;
 
 -- https://www.wowhead.com/wotlk/quest=12783/desperate-research
