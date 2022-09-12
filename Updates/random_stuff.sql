@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 11036, 16281, 16494, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 11036, 15297, 16281, 16494, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -44,6 +44,9 @@ INSERT INTO `questgiver_greeting` VALUES (7877, 0, ' ', 0, 0);
 
 -- Leonid Barthalomew the Revered
 INSERT INTO `questgiver_greeting` VALUES (11036, 0, 'Through knowledge, may we find salvation.', 1, 0);
+
+-- Arcanist Helion
+INSERT INTO `questgiver_greeting` VALUES (15297, 0, 'Knowledge is power - TRUE power, my young friend.  You''ll be wise to acquire as much of it as you can, and pay proper heed to those who have already done so.', 0, 0);
 
 -- Keeper of the Rolls
 INSERT INTO `questgiver_greeting` VALUES (16281, 0, 'The Argent Dawn will turn away none who are willing to sacrifice for our cause.', 1, 0);
@@ -131,6 +134,41 @@ UPDATE `quest_template` SET `PrevQuestId` = 12783 WHERE `entry` = 12785;
 -- Troll only
 UPDATE `quest_template` SET `RequiredRaces` = 128 WHERE `entry` IN (12811, 12812);
 UPDATE `quest_template` SET `PrevQuestId` = 12811 WHERE `entry` = 12812;
+
+-- Sunstrider Isle Quests are for Blood Elf only
+UPDATE quest_template SET RequiredRaces = 512 WHERE IN
+(8325, -- Reclaiming Sunstrider Isle
+8330, -- Solanian's Belongings
+8336, -- A Fistful of Slivers
+8338, -- Tainted Arcane Sliver
+8345, -- The Shrine of Dath'Remar
+8346, -- Thirst Unending
+-- other/follow-up/pre-quests
+8326, -- Unfortunate Measures
+8327, -- Report to Lanthan Perilon
+8334, -- Aggression
+8335, -- Felendren the Banished
+8347, -- Aiding the Outrunners
+8547, -- Welcome!
+10068, -- Well Watcher Solanian (Mage)
+10069, -- Well Watcher Solanian (Paladin)
+10070, -- Well Watcher Solanian (Hunter)
+10071, -- Well Watcher Solanian (Rogue)
+10072, -- Well Watcher Solanian (Priest)
+10073); -- Well Watcher Solanian (Warlock)
+
+-- Well Watcher Solanian (all classes)
+-- added classes and fix prev quests
+UPDATE quest_template SET RequiredClasses = 128, PrevQuestId = 8328 WHERE entry = 10068; -- mage
+UPDATE quest_template SET RequiredClasses = 2, PrevQuestId = 9676 WHERE entry = 10069; -- paladin
+UPDATE quest_template SET RequiredClasses = 4, PrevQuestId = 9393 WHERE entry = 10070; -- hunter
+UPDATE quest_template SET RequiredClasses = 8 WHERE entry = 10071; -- rogue
+UPDATE quest_template SET RequiredClasses = 16, PrevQuestId = 8564 WHERE entry = 10072; -- priest
+UPDATE quest_template SET RequiredClasses = 256 WHERE entry = 10073; -- warlock
+
+-- https://www.wowhead.com/wotlk/quest=9704/slain-by-the-wretched
+-- Previous Quest not needed to take 9704
+UPDATE quest_template SET PrevQuestId = 0 WHERE entry = 9704;
 
 -- --------------------------------------------------------------------------- --
 
@@ -387,11 +425,32 @@ UPDATE quest_template SET
 OfferRewardText = '<Sanath sneers at you.>$B$BArchmage Xylem awaits your arrival.'
 WHERE entry = 8250;
 
+-- text fix (Report to Lanthan Perilon)
+UPDATE quest_template SET
+OfferRewardText = 'Magistrix Erona told me you''d be along quick enough, $N. The Falthrien Academy to our west - the huge floating building with the ornate spires - is in bad shape. You''re going to be leading the effort to recapture it from one of the Wretched - a blood elf who has forever succumbed to their basest cravings.$b$bI hope you''re ready to work. This is not only going to be a lesson about danger, but also of what happens when you forsake the realities of who you are.'
+WHERE entry = 8327;
+
+-- text fix (Felendren the Banished)
+UPDATE quest_template SET
+OfferRewardText = 'Felendren''s head... you are to be commended, $N.  You''ve succeeded where others, like Felendren, have utterly failed.  Perhaps you are truly ready to be a contributing member of blood elf society.$b$bYour success here means that you are capable of surviving the greater threats that lurk in Eversong... and believe me, there are plenty to face.'
+WHERE entry = 8335;
+
 -- text fix (Windows to the Source)
 UPDATE quest_template SET
 OfferRewardText = 'Well done!  Yes, this should be enough essence to get started on my research.  I have a strong feeling that this tainted essence will be just the thing... the window, as I mentioned.$B$BFollowing the orders of your masters is highly recommended as a young warlock.  As I promised you, here is the reward for obeying instructions and completing them in a competent manner - the knowledge to summon and bind your own imp.$B$BUse it well, $n.',
 RequestItemsText = 'The essences of the wraiths will serve me well as sources of experimentation.  Much like your life as a warlock, it is important to learn from what we find in the world... before twisting it to our will.  With demons as the richest source of power, it will be quite the boon if such a taint is truly present on the isle.$B$BWell... a boon for us warlocks, that is.'
 WHERE entry = 8344;
+
+-- text fix (Thirst Unending)
+UPDATE quest_template SET
+OfferRewardText = 'You''ve done well today, $n.  Your willingness to learn shows that you may very well rise above the unyielding cravings you must endure as a blood elf.$b$bRest not on your laurels, young one, but instead seek to master what you have learned.  Only through diligence will we as a race survive.$b$bTake this - it may be of some use to you.  Go now, and bring glory once more to our people.',
+RequestItemsText = 'It is not an option or a choice... you must quench your magical thirst.  To fail in this is to fail as a blood elf.  Those who thought they could control their needs without tutoring now find themselves as one of the Wretched.$b$bYou do NOT want to end up as an insane addict.  Believe me.'
+WHERE entry = 8346;
+
+-- text fix (Aiding the Outrunners)
+UPDATE quest_template SET
+OfferRewardText = 'Well hello there, $C! I heard that a resourceful young blood elf formerly in the service of Magistrix Erona might be making their way down here to help us Outrunners out. We certainly welcome the help, especially from someone who''s proven to be so competent.$b$bI hope you''re interested in running an errand or two for us.'
+WHERE entry = 8347;
 
 -- text fix (An Imp's Request)
 UPDATE quest_template SET
