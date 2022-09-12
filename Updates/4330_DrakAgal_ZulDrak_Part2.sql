@@ -85,7 +85,7 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, modelid, equipment_id
 (534957,28202,571,1,1,0,0,5479.61,-2889.71,276.501,0,120,120,15,0,0,0,0,1);
 UPDATE creature SET spawntimesecsmin = 120, spawntimesecsmax = 120, spawndist=15, MovementType=1 WHERE id = 28202 AND map = 571;
 
--- Lurking Basilisk 28145 -- check them now !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-- Lurking Basilisk 28145
 -- missing added
 DELETE FROM creature_addon WHERE guid BETWEEN 534958 AND 534972;
 DELETE FROM creature_movement WHERE id BETWEEN 534958 AND 534972;
