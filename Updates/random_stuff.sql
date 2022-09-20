@@ -97,6 +97,44 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16478, 9292);
 DELETE FROM `creature_involvedrelation` WHERE `id` = 16494 AND `quest` = 9310;
 INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16494, 9310);
 
+-- quest assignment fixes (verified on wrath classic & wowhead)
+-- Chillwind Camp
+-- https://www.wowhead.com/wotlk/npc=10840/argent-officer-pureheart
+DELETE FROM creature_questrelation WHERE quest IN (5401, 5402, 5403, 5404);
+DELETE FROM creature_involvedrelation WHERE quest IN (5401, 5402, 5403, 5404);
+INSERT INTO creature_questrelation (id, quest) VALUES (10840, 5401); -- Argent Dawn Commission
+INSERT INTO creature_questrelation (id, quest) VALUES (10840, 5402); -- Minion's Scourgestones
+INSERT INTO creature_questrelation (id, quest) VALUES (10840, 5403); -- Invader's Scourgestones
+INSERT INTO creature_questrelation (id, quest) VALUES (10840, 5404); -- Corruptor's Scourgestones
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10840, 5401);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10840, 5402);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10840, 5403);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10840, 5404);
+
+UPDATE quest_template SET RequiredRaces = 0 WHERE entry IN (5401, 5402, 5403, 5404); -- both factions!
+
+-- The Bulwark
+-- https://www.wowhead.com/wotlk/npc=10839/argent-officer-garush
+DELETE FROM creature_questrelation WHERE quest IN (5405, 5406, 5407, 5408);
+DELETE FROM creature_involvedrelation WHERE quest IN (5405, 5406, 5407, 5408);
+INSERT INTO creature_questrelation (id, quest) VALUES (10839, 5405); -- Argent Dawn Commission
+INSERT INTO creature_questrelation (id, quest) VALUES (10839, 5406); -- Corruptor's Scourgestones
+INSERT INTO creature_questrelation (id, quest) VALUES (10839, 5407); -- Invader's Scourgestones
+INSERT INTO creature_questrelation (id, quest) VALUES (10839, 5408); -- Minion's Scourgestones
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10839, 5405);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10839, 5406);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10839, 5407);
+INSERT INTO creature_involvedrelation (id, quest) VALUES (10839, 5408);
+
+UPDATE quest_template SET RequiredRaces = 0 WHERE entry IN (5405, 5406, 5407, 5408); -- both factions!
+
+-- Light's Hope Chapel
+-- https://www.wowhead.com/wotlk/npc=11039/duke-nicholas-zverenhoff
+DELETE FROM creature_questrelation WHERE quest = 5503;
+DELETE FROM creature_involvedrelation WHERE quest = 5503;
+INSERT INTO creature_questrelation (id, quest) VALUES (11039, 5503); -- Argent Dawn Commission
+INSERT INTO creature_involvedrelation (id, quest) VALUES (11039, 5503);
+
 -- --------------------------------------------------------------------------- --
 
 -- https://www.wowhead.com/wotlk/quest=12787/the-undercity
