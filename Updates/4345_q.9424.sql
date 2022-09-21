@@ -17,5 +17,5 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (9424,23000,3,0,0,0,16834,30,7,0,0,0,0,0,0,0,4.642576,'buddy move'),
 (9424,23500,29,3,1,0,16834,30,7,0,0,0,0,0,0,0,0,'buddy NpcFlags added'),
 (9424,23600,21,0,0,0,16834,30,7,0,0,0,0,0,0,0,0,'buddy unactive'),
-(9424,23601,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'self active');
+(9424,23601,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'self unactive');
 UPDATE quest_template SET CompleteScript = 9424 WHERE entry = 9424;
