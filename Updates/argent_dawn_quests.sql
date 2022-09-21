@@ -10,14 +10,14 @@ UPDATE quest_template SET ExclusiveGroup = 5401 WHERE entry IN (5401, 5405, 5503
 
 -- missing condition
 DELETE FROM conditions WHERE condition_entry = @COND1;
-INSERT INTO conditions (condition_entry, type, value1, value2, value2, value3, value4, flags, comments) VALUES
+INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (@COND1, 8, 5401, 0, 0, 0, 0, 'Quest ID 5401 Rewarded');
 -- (@COND2, 8, 5405, 0, 0, 0, 0, 'Quest ID 5405 Rewarded'), -- already exist
 -- (@COND3, 8, 5503, 0, 0, 0, 0, 'Quest ID 5503 Rewarded'); -- already exist
 
 -- new condition
 DELETE FROM conditions WHERE condition_entry = @COND4;
-INSERT INTO conditions (condition_entry, type, value1, value2, value2, value3, value4, flags, comments) VALUES
+INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (@COND4, -2, @COND1, @COND2, @COND3, 0, 0, '(Quest ID 5401 Rewarded OR Quest ID 5405 Rewarded OR Quest ID 5503 Rewarded)');
 
 -- if 1 of the 3 'Argent Dawn Commission' Quests completed, these 9 Quests will unlock (Scourgestone-Quests)
@@ -25,7 +25,7 @@ UPDATE quest_template SET RequiredCondition = @COND4 WHERE entry IN (5402, 5403,
 
 -- new condition
 DELETE FROM conditions WHERE condition_entry = @COND5;
-INSERT INTO conditions (condition_entry, type, value1, value2, value2, value3, value4, flags, comments) VALUES
+INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (@COND5, -1, @COND4, 167, 0, 0, 0, '(Quest ID 5401 Rewarded OR Quest ID 5405 Rewarded OR Quest ID 5503 Rewarded AND Player Has Less Than 1 of Item ID 12846 in Inventory)');
 
 -- update to new condition id for gossip: I need another Argent Dawn Commission.
