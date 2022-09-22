@@ -14,8 +14,8 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (12584,110,29,3,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'NpcFlags removed'),
 (12584,200,3,0,0,0,0,0,0x04,0,0,0,0,5450.071,-2646.582,305.2187,4.71,'move'),
 (12584,4200,1,16,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
-(12584,4301,53,0,0,0,0,0,0,30007,1,0,0,0,0,0,0,'Set worldstate variable to 1'),
-(12584,4400,53,0,0,0,0,0,0,30008,1,0,0,0,0,0,0,'Set worldstate variable to 1'),
+(12584,4301,53,0,0,0,0,0,0,30008,1,0,0,0,0,0,0,'Set worldstate variable to 1'),
+(12584,4400,53,0,0,0,0,0,0,30009,1,0,0,0,0,0,0,'Set worldstate variable to 1'),
 (12584,5300,0,0,0,0,0,0,0,27746,0,0,0,0,0,0,0,'say'),
 (12584,5301,1,396,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (12584,5302,0,0,0,0,28178,30,0,27760,0,0,0,0,0,0,0,'buddy text'),
@@ -69,8 +69,8 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (12584,99000,0,0,0,0,0,0,0,27774,0,0,0,0,0,0,0,'say'),
 (12584,99001,1,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (12584,104000,1,16,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
-(12584,105000,53,0,0,0,0,0,0,30007,0,0,0,0,0,0,0,'Set worldstate variable to 0'),
-(12584,105001,53,0,0,0,0,0,0,30008,0,0,0,0,0,0,0,'Set worldstate variable to 0'),
+(12584,105000,53,0,0,0,0,0,0,30008,0,0,0,0,0,0,0,'Set worldstate variable to 0'),
+(12584,105001,53,0,0,0,0,0,0,30009,0,0,0,0,0,0,0,'Set worldstate variable to 0'),
 (12584,109000,0,0,0,0,0,0,0,27775,0,0,0,0,0,0,0,'say'),
 (12584,109001,1,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (12584,109002,24,2402,0,0,28178,30,7|0x08,0,0,0,0,0,0,0,0,'buddy mount'),
@@ -121,22 +121,22 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (520976,190551,571,1,5449.906,-2648.544,305.1872,1.117009,0,0,0.5299187,0.8480484,1,1,100,1),
 (520977,190551,571,1,5450.063,-2648.197,305.1895,2.844883,0,0,0.9890156,0.1478114,1,1,100,1),
 (520978,190551,571,1,5450.261,-2648.655,305.1866,0.1396245,0,0,0.06975555,0.9975641,1,1,100,1);
-DELETE FROM `spawn_group` WHERE id IN (30007,30008);
+DELETE FROM `spawn_group` WHERE id IN (30008,30009);
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(30007, 'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 -  spawn with q.12584', 1, 0, 20493, 0x08),
-(30008, 'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 - spawn with q.12584', 0, 0, 20494, 0x08);
-DELETE FROM `spawn_group_spawn` WHERE id IN (30007,30008);
+(30008, 'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 -  spawn with q.12584', 1, 0, 20493, 0x08),
+(30009, 'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 - spawn with q.12584', 0, 0, 20494, 0x08);
+DELETE FROM `spawn_group_spawn` WHERE id IN (30008,30009);
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(30007, 520967, -1),(30007, 520968, -1),(30007, 520969, -1),
-(30007, 520970, -1),(30007, 520971, -1),(30007, 520972, -1),
-(30007, 520973, -1),(30007, 520974, -1),(30007, 520975, -1),
-(30007, 520976, -1),(30007, 520977, -1),(30007, 520978, -1),
-(30008, 522275, -1);
+(30008, 520967, -1),(30008, 520968, -1),(30008, 520969, -1),
+(30008, 520970, -1),(30008, 520971, -1),(30008, 520972, -1),
+(30008, 520973, -1),(30008, 520974, -1),(30008, 520975, -1),
+(30008, 520976, -1),(30008, 520977, -1),(30008, 520978, -1),
+(30009, 522275, -1);
 DELETE FROM conditions WHERE condition_entry IN (20493,20494);
 INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES
-(20493, 42, 30007, 0, 1, 0, 'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 spawn with q.12584'),
-(20494, 42, 30008, 0, 1, 0, 'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 spawn with q.12584');
-DELETE FROM worldstate_name WHERE id IN (30007,30008);
+(20493, 42, 30008, 0, 1, 0, 'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 spawn with q.12584'),
+(20494, 42, 30009, 0, 1, 0, 'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 spawn with q.12584');
+DELETE FROM worldstate_name WHERE id IN (30008,30009);
 INSERT INTO worldstate_name(Id, Name) VALUES
-(30007,'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 spawn with q.12584'),
-(30008,'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 spawn with q.12584');
+(30008,'Zul\'Drak - The Argent Stand - Chunk of Saronite 190551 spawn with q.12584'),
+(30009,'Zul\'Drak - The Argent Stand - ELM General Purpose Bunny (scale x0.25) 28333 spawn with q.12584');
