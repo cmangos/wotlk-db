@@ -1,14 +1,12 @@
 -- Drak'Agal - Zul'Drak
 
--- q.12599 'Creature Comforts'
--- source item should be removed after q. finished
+-- q.12599 'Creature Comforts' & q.12585 'Troll Patrol: Creature Comforts'
 DELETE FROM dbscripts_on_quest_end WHERE id IN (12599);
 INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (12599,1,31,28324,10,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28324'),
 (12599,100,0,0,0,0,0,0,0,27733,0,0,0,0,0,0,0,'Say'),
 (12599,101,20,2,0,0,28324,15,7,0,0,0,0,0,0,0,0,'buddy wp');
-UPDATE quest_template SET CompleteScript = 12599 WHERE entry = 12599;
-
+UPDATE quest_template SET CompleteScript = 12599 WHERE entry IN (12585,12599);
 -- Argent Footman 28117
 UPDATE creature SET spawndist=0, MovementType=0 WHERE guid IN (521149,521151);
 UPDATE creature SET position_x = 5574.021973, position_y = -2978.200195, position_z = 276.583496, spawndist=10, MovementType=1 WHERE guid = 521150;
