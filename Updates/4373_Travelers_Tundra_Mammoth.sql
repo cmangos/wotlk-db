@@ -1,7 +1,7 @@
 -- Traveler's Tundra Mammoth
 -- Hakmud of Argus 32638 & Gnmio 32639 & Drix Blackwrench 32641 & Mojodishu 32642
 -- random texts added
-DELETE FROM `dbscript_random_templates` WHERE `id` BETWEEN 20295 AND ;
+DELETE FROM `dbscript_random_templates` WHERE `id` BETWEEN 20295 AND 20298;
 INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
 (20295,0,33014,0,'Hakmud of Argus 32638 - Random Texts'),
 (20295,0,33015,0,'Hakmud of Argus 32638 - Random Texts'),
