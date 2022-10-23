@@ -136,18 +136,6 @@ INSERT INTO creature_movement (`id`,`point`,`positionx`,`positiony`,`positionz`,
 (535114,21,5491.51,-3427.86,351.153,100,0,0),
 (535114,22,5500.47,-3435.49,350.328,100,0,0),
 (535114,23,5509.95,-3454.3,350.328,100,0,0);
--- 3 leaders should never be spawned by game_event
-DELETE FROM creature_addon WHERE guid IN (522955,522956,522957);
-DELETE FROM creature_movement WHERE Id IN (522955,522956,522957);
-DELETE FROM game_event_creature WHERE guid IN (522955,522956,522957);
-DELETE FROM game_event_creature_data WHERE guid IN (522955,522956,522957);
-DELETE FROM creature_battleground WHERE guid IN (522955,522956,522957);
-DELETE FROM creature_linking WHERE guid IN (522955,522956,522957) 
-OR master_guid IN (522955,522956,522957);
-DELETE FROM creature WHERE guid IN (522955,522956,522957);
--- Removed wrong Events
-DELETE FROM game_event WHERE entry IN (41,42,43);
-DELETE FROM game_event_time WHERE entry IN (41,42,43);
 
 -- Toss Ice Boulder RP
 -- target from AOE spell
