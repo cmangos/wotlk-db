@@ -327,12 +327,6 @@ INSERT INTO `spell_script_target` VALUES
 (30119,0,181678,6);
 
 -- Various Fixes
-REPLACE INTO `scripted_areatrigger` VALUES
-(4156,'at_naxxramas'),
-(4117,'at_naxxramas'),
-(4115,'at_naxxramas'),
-(4119,'at_naxxramas'),
-(4167,'at_naxxramas');
 UPDATE creature_model_info SET combat_reach=3 WHERE modelid=16586;
 
 -- Broadcast Text fixes
