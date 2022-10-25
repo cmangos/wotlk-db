@@ -164,6 +164,8 @@ REPLACE INTO `dbscripts_on_relay` (id, dataint, dataint2, dataint3, comments) VA
 (@SGUID, 13443, 0, 0, 'Anub\'Rekhan - Emote on Locust Swarm'); -- MISSING EMOTE
 REPLACE INTO `dbscripts_on_relay` (id, delay, command, datalong, comments) VALUES
 (@SGUID, 3000, 15, 29508, 'Anub\'Rekhan - Summon Crypt Guard');
+REPLACE INTO `spell_target_position` (id, target_map, target_position_x, target_position_y, target_position_z, target_orientation) VALUES
+(29508, 533, 3333.5, -3475.9, 287.1, 3.17);
 REPLACE INTO `creature_spell_list` (Id, Position, SpellId, Flags, TargetId, ScriptId, Availability, Probability, InitialMin, InitialMax, RepeatMin, RepeatMax, Comments) VALUES
 (1595601, 1, 28783, 2, 28783, 0, 100, 2, 15000, 15000, 15000, 15000, 'Anub\'Rekhan - Impale'),
 (1595601, 2, 28785, 1, 2, @SGUID, 100, 0, 90000, 90000, 100000, 100000, 'Anub\'Rekhan - Locust Swarm'),
