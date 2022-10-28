@@ -11,6 +11,7 @@ INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, datalong2, dat
 (12684,14000,0,0,0,0,0,0,0x04,28831,0,0,0,0,0,0,0,''),
 (12684,16000,0,0,0,0,0,0,0,28830,0,0,0,0,0,0,0,'');
 UPDATE quest_template SET CompleteScript = 12684 WHERE entry IN (12684);
+UPDATE `broadcast_text` SET `ChatTypeID`= 2 WHERE `Id` IN (28831);
 
 -- ELM General Purpose Bunny 23837
 -- missing added
