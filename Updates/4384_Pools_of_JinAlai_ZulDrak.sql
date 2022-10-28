@@ -141,7 +141,6 @@ INSERT INTO creature_movement (`id`,`point`,`positionx`,`positiony`,`positionz`,
 -- target from AOE spell
 DELETE FROM spell_script_target WHERE entry IN(51511);
 INSERT INTO spell_script_target VALUES
-(51511,1,23837,0),
 (51511,1,28504,0),
 (51511,1,28388,0);
 DELETE FROM `creature_spawn_data` WHERE `Guid` IN (522511,522512,522513,522515,522517,522524);

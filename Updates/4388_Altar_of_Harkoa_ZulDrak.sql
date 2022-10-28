@@ -125,6 +125,10 @@ DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 2
 DELETE FROM creature_template_addon WHERE entry = 28401;
 INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES
 (28401,0,0,1,0,0,0,'52485 51666 25900');
+-- individual addon
+DELETE FROM creature_addon WHERE guid IN (522551);
+INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, emote, moveflags, auras) VALUES 
+(522551,0,0,1,0,0,0,'52483 25900');
 -- ELM General Purpose Bunny (scale x0.01) Large 26298
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (513004,513008,513009,513011);
