@@ -9,7 +9,7 @@ DELETE FROM creature_movement_template WHERE Entry = 25425;
 DELETE FROM creature_movement WHERE id IN (509286,509287,509288);
 
 -- Magmoth Shaman 25428
-UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id = 25428;
+UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id IN (509286,509287,509288);
 UPDATE creature_template_addon SET auras = NULL WHERE entry = 25428;
 DELETE FROM creature_spawn_data WHERE guid IN (509250,509251,509252,509253,509254,509255,509256,509257,
 509258,509259,509260,509261,509262,509263,509264,509265,509266,509267,509268,509269,509270,509271,509272,
