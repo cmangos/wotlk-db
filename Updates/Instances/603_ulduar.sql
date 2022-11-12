@@ -1702,7 +1702,6 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+1,0,0,0,0,0,0,'64502'), -- World Trigger 22515
-(@CGUID+2,0,0,0,0,0,0,'64502'), -- World Trigger 22515
 (@CGUID+3,0,0,0,0,0,0,'64502'), -- World Trigger 22515
 (@CGUID+907,0,0,1,0,0,0,NULL),
 (@CGUID+1179,0,0,1,0,0,8192,NULL),
