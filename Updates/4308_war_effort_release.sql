@@ -1702,7 +1702,7 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 -- Faltering Silithid Flayer 15811 - LOOT
 (15811, 60112, 4, 0, -60112, 1, 0, 'NPC LOOT (Green World Drop) - (Item Levels: 13-17) - (NPC Levels: 14)'),
 (15811, 60418, 3, 0, -60418, 1, 0, 'NPC LOOT (White World Drop) - (Item Levels: 13-15) - (NPC Levels: 14)'),
-(15811, 50503, 0.5, 0, -50503, 1, 0, 'LOOT (World Drop) - (RequiredSkillRank: 20-130 (Profession Recipes)) - (NPC Levels ~10-20)'),
+-- (15811, 50503, 0.5, 0, -50503, 1, 0, 'LOOT (World Drop) - (RequiredSkillRank: 20-130 (Profession Recipes)) - (NPC Levels ~10-20)'),
 (15811, 6661, 0.1, 0, 1, 1, 0, 'Recipe: Savory Deviate Delight'),
 (15811, 774, 0.5, 0, 1, 1, 0, 'Malachite'),
 (15811, 818, 0.5, 0, 1, 1, 0, 'Tigerseye'),
