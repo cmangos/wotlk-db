@@ -1,4 +1,4 @@
--- Altar of Questz'lun - Zul'Drak
+-- Altar of Quetz'lun - Zul'Drak
 
 -- Spirit of Quetz'lun 28785
 -- summoned via script
@@ -33,7 +33,7 @@ UPDATE creature SET position_x = 5656.455078, position_y = -4277.182617, positio
 UPDATE creature SET position_x = 5840.522461, position_y = -4416.951172, position_z = 374.110962, spawndist = 7, MovementType = 1 WHERE guid = 522937;
 UPDATE creature SET position_x = 5554.464844, position_y = -4217.584961, position_z = 367.507568, spawndist = 10, MovementType = 1 WHERE guid = 522946;
 UPDATE creature SET position_x = 5716.424, position_y = -4076.297, position_z = 353.2688, spawndist = 0, MovementType = 4 WHERE guid = 522942;
-UPDATE creature SET position_x = 5566.362, position_y = -4218.522, position_z = 367.6009, spawndist = 0, MovementType = 4 WHERE guid = 522932;
+UPDATE creature SET position_x = 5566.362, position_y = -4218.522, position_z = 367.6009, spawndist = 0, MovementType = 0 WHERE guid = 522932;
 -- waypoints
 DELETE FROM creature_movement WHERE id IN (522942,522932); -- moved to formations
 INSERT INTO creature_movement (`id`,`point`,`positionx`,`positiony`,`positionz`,`orientation`,`waittime`,`scriptid`) VALUES
@@ -50,14 +50,14 @@ INSERT INTO creature_movement (`id`,`point`,`positionx`,`positiony`,`positionz`,
 -- Scion of Quetz'lun 28477 & Altar Warden 28784
 DELETE FROM `spawn_group` WHERE id = 30015;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(30015, 'Zul\'Drak - Altar of Questz\'lun: Scion of Quetz\'lun 28477 - Altar Warden 28784 - Patrol', 0, 0, 0, 1);
+(30015, 'Zul\'Drak - Altar of Quetz\'lun: Scion of Quetz\'lun 28477 - Altar Warden 28784 - Patrol', 0, 0, 0, 1);
 DELETE FROM `spawn_group_spawn` WHERE id = 30015;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (30015, 522932, 0), -- Scion of Quetz'lun 28477
 (30015, 523449, 1); -- Altar Warden 28784
 DELETE FROM `spawn_group_formation` WHERE id = 30015;
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-(30015, 1, 7, 0, 30015, 0, 'Zul\'Drak - Altar of Questz\'lun: Scion of Quetz\'lun 28477 - Altar Warden 28784 - Patrol');
+(30015, 1, 7, 0, 30015, 4, 'Zul\'Drak - Altar of Quetz\'lun: Scion of Quetz\'lun 28477 - Altar Warden 28784 - Patrol');
 DELETE FROM `waypoint_path_name` WHERE PathId = 30015;
 INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
 (30015,'Zul\'Drak - Altar of Questz\'lun: Scion of Quetz\'lun 28477 - Altar Warden 28784 - Patrol');
