@@ -54,9 +54,9 @@ INSERT INTO `creature_movement_template` (`entry`, `pathid`, `point`,`positionx`
 (28665,1,39,5724.6978,-4361.0396,386.161,0,0,100),
 (28665,1,40,5731.4478,-4376.2896,386.411,0,0,100),
 (28665,1,41,5722.6978,-4386.7896,386.661,0,0,100),
-(28665,1,42,5708.1953,-4386.4556,385.8015,1,5,100),
-(28665,1,43,5702.7964,-4375.8423,385.8015,0,2866501,100),
-(28665,1,44,5714.0103,-4356.6357,385.89438,1,13,100),
+(28665,1,42,5708.1953,-4386.4556,385.8015,1,0,100), -- yes 1 here
+(28665,1,43,5702.7964,-4375.8423,385.8015,1,2866503,100), -- SMSG_PLAY_OBJECT_SOUND 643, run, big spline, We're spotted! Hang on. We have to get out of here!
+(28665,1,44,5714.0103,-4356.6357,385.89438,0,2866501,100), -- What was that? I sense an intruder. Find and kill them!
 (28665,1,45,5714.5103,-4351.3857,385.64438,0,0,100),
 (28665,1,46,5714.5103,-4342.6357,380.89438,0,0,100),
 (28665,1,47,5714.7603,-4332.3857,375.39438,0,0,100),
@@ -100,10 +100,15 @@ INSERT INTO `creature_movement_template` (`entry`, `pathid`, `point`,`positionx`
 (28665,2,16,5328.556,-3779.1536,371.33997,3000,15,100);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2866501;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(2866501,1,0,0,0,0,28671,30,7,28663,0,0,0,0,0,0,0,'');
+(2866501,1,0,0,0,0,28671,50,7,28663,0,0,0,0,0,0,0,'');
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2866502;
 INSERT INTO dbscripts_on_creature_movement(id,delay,priority,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,datafloat,x,y,z,o,speed,condition_id,comments) VALUES
 (2866502,0,0,20,15,20701,0,0,0,0,0,0,0,0,19.3,5649.4272,-3802.48,364.59714,0,35,0,'Har\'koa\'s Kitten - Jump');
+DELETE FROM dbscripts_on_creature_movement WHERE id = 2866503;
+INSERT INTO dbscripts_on_creature_movement(id, delay, priority, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, datafloat, x, y, z, o, speed, condition_id, comments) VALUES
+(2866503,0,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Set run ON'),
+(2866503,0,0,16,643,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Play Distance Sound'),
+(2866503,0,0,35,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Send AI Event 8 to Self');
 DELETE FROM dbscripts_on_relay WHERE id = 20701;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (20701,0,20,2,2,0,0,0,4,0,0,0,0,0,0,0,0,'');
