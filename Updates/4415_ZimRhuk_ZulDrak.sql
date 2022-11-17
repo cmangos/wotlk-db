@@ -4,7 +4,7 @@
 -- waypoints
 UPDATE creature SET spawndist = 0, MovementType = 4 WHERE guid IN (523075,523077,523082);
 UPDATE creature SET spawndist = 0, MovementType = 2 WHERE guid IN (523080);
-DELETE FROM creature_movement WHERE id IN (523075,523080,523082);
+DELETE FROM creature_movement WHERE id IN (523075,523077,523080,523082);
 INSERT INTO creature_movement (`id`,`point`,`positionx`,`positiony`,`positionz`,`orientation`,`waittime`,`scriptid`) VALUES
 -- 523075
 (523075,1,6197.211,-3736.0955,372.28638,100,0,0),
