@@ -1,4 +1,21 @@
 -- q.12685 'You Reap What You Sow'
+
+DELETE FROM `dbscripts_on_quest_end` WHERE id = 12685;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(12685,2,31,28401,50,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28401'),
+(12685,100,0,0,0,0,28401,50,0,28947,0,0,0,0,0,0,0,'buddy say -> Player');
+UPDATE quest_template SET CompleteScript = 12685 WHERE entry = 12685;
+UPDATE `broadcast_text` SET `ChatTypeID`= 4 WHERE `Id` IN (28947);
+DELETE FROM spell_area WHERE spell IN (52485);
+INSERT INTO spell_area (spell, area, quest_start, quest_start_active, quest_end, condition_id, aura_spell, racemask, gender, autocast) VALUES
+(52485,4322,12628,1,12685,0,0,0,2,1); 
+DELETE FROM spell_area WHERE spell IN (52484);
+INSERT INTO spell_area (spell, area, quest_start, quest_start_active, quest_end, condition_id, aura_spell, racemask, gender, autocast) VALUES
+(52484,4323,0,0,0,20523,0,0,2,1);
+DELETE FROM conditions WHERE condition_entry IN (20523);
+INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES
+(20523,8,12685,0,0,0,'');
+
 DELETE FROM dbscripts_on_event WHERE id IN (18858);
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (18858,0,31,28785,100,0,0,0,0x08,0,0,0,0,0,0,0,0,'search for 28785 - terminate if found'),
@@ -83,3 +100,14 @@ INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalon
 DELETE FROM dbscripts_on_creature_death WHERE id IN (28795);
 INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (28795,0,35,5,100,0,0,0,0,0,0,0,0,0,0,0,0,'send Event A');
+
+-- Har'koa 28401
+DELETE FROM `creature_spawn_data_template` WHERE entry IN (20041);
+INSERT INTO `creature_spawn_data_template` (`Entry`, `RelayId`) VALUES 
+(20041,20676);
+DELETE FROM `creature_spawn_data` WHERE `Guid` IN (522551);
+INSERT INTO `creature_spawn_data` (`Guid`, `Id`) VALUES
+(522551,20041);
+DELETE FROM dbscripts_on_relay WHERE id IN (20676);
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(20676,0,52,9749,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Set Gossip');
