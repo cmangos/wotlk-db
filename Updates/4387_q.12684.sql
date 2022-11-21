@@ -56,6 +56,8 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (30012, 522124, -1),(30013, 514733, -1),
 (30012, 522125, -1),(30013, 514734, -1),
 (30012, 522126, -1),(30013, 514735, -1);
+UPDATE creature SET spawntimesecsmin = 1, spawntimesecsmax = 1 WHERE guid IN (502918,522123,522124,522125,522126);
+UPDATE gameobject SET spawntimesecsmin = 1, spawntimesecsmax = 1 WHERE guid IN (514777,514738,514733,514734,514735);
 DELETE FROM conditions WHERE condition_entry IN (20511,20512);
 INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES
 (20511, 42, 30012, 0, 1, 0, 'Zul\'Drak - Altar of Har\'koa - c.23837 spawn with q.12684'),

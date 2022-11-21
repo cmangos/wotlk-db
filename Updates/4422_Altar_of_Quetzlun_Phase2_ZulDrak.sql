@@ -218,7 +218,7 @@ UPDATE creature SET position_x = 5818.01, position_y = -4117.077, position_z = 3
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` where `id` = 28747);
 DELETE FROM `creature_template_addon` WHERE `entry` = 28747;
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
-(28747,0,0,1,0,431,0,52385);
+(28747,0,0,1,0,431,0,0);
 -- individual addons
 DELETE FROM creature_addon WHERE guid IN (
 523268,523251,523250,523269,523279,523283,523271,523278,523252,523276,523295,523296,523263,523259,523245,523258,523248,523273,523256,523266,523249);
@@ -231,16 +231,4 @@ INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_pvp_state, em
 (523295,0,8,1,0,0,0,NULL),
 (523296,0,8,1,0,0,0,NULL),
 (523248,0,8,1,0,0,0,NULL),
-(523273,0,8,1,0,0,0,NULL),
-(523250,0,0,1,0,0,0,52385),
-(523269,0,0,1,0,0,0,52385),
-(523279,0,0,1,0,0,0,52385),
-(523283,0,0,1,0,0,0,52385),
-(523263,0,0,1,0,0,0,52385),
-(523259,0,0,1,0,0,0,52385),
-(523245,0,0,1,0,0,0,52385),
-(523258,0,0,1,0,0,0,52385),
-(523276,0,0,1,0,0,0,52385),
-(523256,0,0,1,0,0,0,52385),
-(523249,0,0,1,0,0,0,52385),
-(523266,0,0,1,0,0,0,52385);
+(523273,0,8,1,0,0,0,NULL);
