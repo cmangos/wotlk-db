@@ -502,7 +502,7 @@ DELETE FROM dbscripts_on_creature_movement WHERE id IN (2629801,2629802,2629803,
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2629801,0,15,52838,0,0,26298,513007,1|0x10,0,0,0,0,0,0,0,0,'Cast 52838 on buddy 1'),
 (2629802,0,15,52837,0,0,26298,513006,1|0x10,0,0,0,0,0,0,0,0,'Cast 52837 on buddy 2'),
-(2629803,1,31,28952,0,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28952'),
+(2629803,1,31,28952,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28952'),
 (2629803,10,15,52833,0,0,28952,100,1,0,0,0,0,0,0,0,0,'Cast 52833 on buddy 3'),
-(2629804,1,31,28952,0,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28952'),
+(2629804,1,31,28952,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 28952'),
 (2629804,10,15,52834,0,0,28952,100,1,0,0,0,0,0,0,0,0,'Cast 52833 on buddy 3');
