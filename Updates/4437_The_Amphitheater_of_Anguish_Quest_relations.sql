@@ -14,13 +14,12 @@ INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
 UPDATE quest_template SET PrevQuestId = 0, ExclusiveGroup = 0, RequiredCondition = 20528 WHERE entry = 12954;
 
 -- q.12933 'The Amphitheater of Anguish: Magnataur!'
-UPDATE quest_template SET PrevQuestId = 0, ExclusiveGroup = 0, RequiredCondition = 20531 WHERE entry = 12933;
 DELETE FROM conditions WHERE condition_entry BETWEEN 20529 AND 20531;
 INSERT INTO conditions (condition_entry, type, value1, value2) VALUES 
 (20529, 8, 12932, 0),
 (20530, 8, 12954, 0),
 (20531, -2, 20530, 20529);
-UPDATE quest_template SET PrevQuestId = 0, ExclusiveGroup = 0, RequiredCondition = 20531 WHERE entry = 12954;
+UPDATE quest_template SET PrevQuestId = 0, ExclusiveGroup = 0, RequiredCondition = 20531 WHERE entry = 12933;
 
 -- q.12974 'The Champion's Call!'
 -- not available to players if q.12932 or q.12954 'The Ring of Blood: The Final Challenge' taken or completed

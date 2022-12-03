@@ -1,5 +1,4 @@
 -- Summer Scorchling 26401
 -- moved to Midsummer Fire Festival
-DELETE FROM `game_event_creature` WHERE guid = 86250;
-INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
-(86250, 1);
+INSERT IGNORE INTO `game_event_creature` (`guid`, `event`) SELECT `guid`, 1 FROM `creature` WHERE id IN (26401);
+
