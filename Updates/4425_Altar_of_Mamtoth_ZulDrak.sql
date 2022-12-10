@@ -51,7 +51,7 @@ DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` wher
 DELETE FROM `creature_template_addon` WHERE `entry` = 28851;
 INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (28851,0,0,0,0,0,0,32423);
-DELETE FROM npc_spellclick_spells WHERE npc_entry IN(52600);
+DELETE FROM npc_spellclick_spells WHERE npc_entry IN(28851);
 INSERT INTO npc_spellclick_spells(npc_entry, spell_id, cast_flags, quest_start, quest_start_active, quest_end, condition_id) VALUES
 (28851,52600,1,12707,1,12707,0);
 UPDATE creature_template SET SpellList=0 WHERE entry=28851;
