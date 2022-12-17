@@ -266,7 +266,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+227,30298,604,3,1,0,0,1775.17,757.668,164.518,0.645772,3600,3600,0,0,42,0,0,0),
 (@CGUID+228,30298,604,3,1,0,0,1760.99,743.193,164.69,3.14159,3600,3600,0,0,42,0,0,0),
 -- Elder Ohanzee 30537
-(@CGUID+229,30537,604,3,1,0,0,1643.43,964.7,116.027,4.79965,300,300,0,0,12096,8814,0,0);
+(@CGUID+229,30537,604,3,1,0,0,1697.94,752.121,142.765,3.78933,300,300,0,0,12096,8814,0,0); -- In 2010's Lunar festival, this Elder is spawned near the second boss.
 
 -- addons
 DELETE FROM `creature_template_addon` WHERE entry IN (29304,29305,29306,29307,29630,29637,29682,29748,29768,29774,29819,29820,29822,29826,29830,29832,29834,29836,29838,29874,29920,29931,29932,29982,30537);
@@ -444,8 +444,10 @@ INSERT INTO `gameobject_addon` (`guid`, `path_rotation0`, `path_rotation1`, `pat
 -- EVENTS
 -- ======
 
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@CGUID+229,7);
+
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
--- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
 -- ============
