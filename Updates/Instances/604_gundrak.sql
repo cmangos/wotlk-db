@@ -426,7 +426,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 (@OGUID+46,192826,604,3,1,1717.85,839.128,129.468,-2.04204,0,0,-0.852641,0.522496,180,180,0,1),
 (@OGUID+47,192826,604,3,1,1898.78,713.32,135.987,0.680677,0,0,0.333806,0.942642,180,180,0,1),
 (@OGUID+48,192826,604,3,1,1644.11,874.205,140.811,0.122173,0,0,0.0610485,0.998135,180,180,0,1),
-(@OGUID+49,193188,604,3,1,1775.16,743.455,119.073,-1.5708,0,0,-0.707108,0.707106,180,180,0,1), -- Doodad_GunDrak_Trapdoor_01
+(@OGUID+49,193188,604,3,1,1775.16,743.455,119.073,-1.5708,0,0,-0.707108,0.707106,180,180,0,0), -- Doodad_GunDrak_Trapdoor_01 - state = 0 controled by sd2 script
 (@OGUID+50,193208,604,3,1,1947.65,814.002,135.295,-1.5708,0,0,-0.707108,0.707106,180,180,0,1),
 (@OGUID+51,193209,604,3,1,1947.65,672.852,135.295,-1.5708,0,0,-0.707108,0.707106,180,180,0,1),
 (@OGUID+52,193210,604,2,1,1981.83,842.185,136.943,3.14159,0,0,1,0.00000126759,180,180,255,1),
@@ -588,10 +588,16 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (2993201,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Eck the Ferocious - pause WP'),
 (2993201,0,15,55837,1,0,0,0,0,0,0,0,0,0,0,0,0,'Eck the Ferocious - cast Eck Spring');
 
+DELETE FROM dbscripts_on_relay WHERE id = 20719;
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(20719,2,31,29304,300,0,0,0,0x08,0,0,0,0,0,0,0,0,'Part of Invisible Stalker (Float, Uninteractible, LargeAOI) 30298 EAI: check for 29304 - terminate if alive'),
+(20719,12,31,29307,300,0,0,0,0x08,0,0,0,0,0,0,0,0,'Part of Invisible Stalker (Float, Uninteractible, LargeAOI) 30298 EAI: check for 29307 - terminate if alive'),
+(20719,22,31,29305,300,0,0,0,0x08,0,0,0,0,0,0,0,0,'Part of Invisible Stalker (Float, Uninteractible, LargeAOI) 30298 EAI: check for 29305 - terminate if alive'),
+(20719,5006,35,5,200,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Invisible Stalker (Float, Uninteractible, LargeAOI) 30298 EAI: Send Event AI 5');
+
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
