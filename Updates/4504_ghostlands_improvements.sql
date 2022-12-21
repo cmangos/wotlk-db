@@ -1335,6 +1335,7 @@ REPLACE INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 
 DELETE FROM `pool_creature` WHERE `pool_entry` IN (1249,46875,16474);
 DELETE FROM `pool_template` WHERE `entry` IN (1249,46875,16474);
+DELETE FROM `pool_creature_template` WHERE `pool_entry` IN (1249);
 
 DELETE FROM `spawn_group` WHERE `Name` = 'Ghostlands (Deatholme) - Borgoth the Bloodletter (16247)';
 DELETE FROM `spawn_group` WHERE `Name` = 'Ghostlands (Deatholme) - Masophet the Black (16249)';
