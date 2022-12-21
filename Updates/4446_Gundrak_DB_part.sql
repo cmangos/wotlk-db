@@ -12,6 +12,9 @@ UPDATE creature_template SET InhabitType=2 WHERE entry IN(29834);
 -- Frog 13321
 UPDATE creature_template SET InhabitType=3 WHERE entry IN(13321);
 
+-- Slad\'ran Summon Target 29682
+UPDATE creature_template SET InhabitType=4 WHERE entry IN(29682);
+
 -- Drakkari Rhino 29838
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2983601);
 DELETE FROM vehicle_accessory WHERE vehicle_entry = 29838;
