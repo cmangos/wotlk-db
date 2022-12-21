@@ -318,13 +318,13 @@ REPLACE INTO `reference_loot_template_names` (`entry`, `name`) VALUES
 UPDATE `reference_loot_template` SET `condition_id` = 0 WHERE `entry` = 34037 AND `item` IN (16948,16956); -- Gauntlets of Ten Storms & Judgement Gauntlets
 
 -- WotlkDB
-DELETE FROM `reference_loot_template_names` WHERE `id` IN (60136,30004,60212);
+DELETE FROM `reference_loot_template_names` WHERE `entry` IN (60136,30004,60212);
 INSERT INTO `reference_loot_template_names` (`entry`, `name`) VALUES
 ('30004','Gnomeregan - Zone Drop'),
 ('60136','NPC LOOT (Green World Drop) - (Item Levels: 25-29) - (NPC Levels: 26)'),
 ('60212','NPC LOOT (Blue World Drop) - (Item Levels: 24-28) - (NPC Levels: 26)');
 
-DELETE FROM `reference_loot_template` WHERE `id` IN (60136,30004,60212);
+DELETE FROM `reference_loot_template` WHERE `entry` IN (60136,30004,60212);
 INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 ('60136','2072','0','1','1','1','0','Dwarven Magestaff'),
 ('60136','2077','0','1','1','1','0','Magician Staff'),
