@@ -30,11 +30,12 @@ INSERT INTO vehicle_accessory (vehicle_entry, seat, accessory_entry, comment) VA
 (29931,0,29982,'3x Drakkari Raider 29982 on Drakkari Rhino 29931'),
 (29931,1,29982,'3x Drakkari Raider 29982 on Drakkari Rhino 29931'),
 (29931,2,29982,'3x Drakkari Raider 29982 on Drakkari Rhino 29931');
-DELETE FROM `vehicle_seat_addon` WHERE seatentry IN (2178,2179,2180);
+DELETE FROM `vehicle_seat_addon` WHERE seatentry IN (2178,2179,2180,2097);
 INSERT INTO `vehicle_seat_addon` VALUES 
 (2178,0,-3.3,5,0,3.132604,1),
 (2179,0,-5.9,-4.9,0,3.132604,1),
-(2180,0,-7.9,0.02,0,3.132604,1);
+(2180,0,-7.9,0.02,0,3.132604,1),
+(2097,0,12,0,4,0,1);
 
 -- Moorabi 29305 (30530 - Heroic)
 /*
