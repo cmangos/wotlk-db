@@ -181,8 +181,6 @@ REPLACE INTO `creature_spell_targeting` (Id, Type, Param1, Param2, Param3, Comme
 
 -- Heigan
 UPDATE `creature_template` SET UnitFlags=UnitFlags|256|33554432 WHERE entry=17293;
-DELETE FROM creature WHERE guid=9000609;
-INSERT INTO creature VALUES (9000609,17293,533,1,1,0,0,2772.57,-3685.28,273.666,5.5019,25,25,0,0,0,0,0,0);
 INSERT INTO `spell_script_target` VALUES
 (30116,0,181510,6),
 (30116,0,181511,6),
