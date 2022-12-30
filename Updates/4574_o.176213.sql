@@ -1,4 +1,5 @@
 -- All spawns of GO 176213 (Blood of Heroes) in Western and Eastern Plaguelands - redone
+DELETE FROM gameobject WHERE id = 176213;
 DELETE FROM gameobject WHERE guid BETWEEN 57072 AND 57153;
 INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3) VALUES
 -- Western Plaguelands spawns
@@ -86,7 +87,7 @@ INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orien
 (57152, 176213, 0, 1715.691, -4480.841, 67.46283, -0.3665176, 0, 0, -0.1822348, 0.983255),
 (57153, 176213, 0, 2151.0432, -4364.2314, 74.31764, -1.0122894, 0, 0, -0.48480892, 0.8746201);
 -- Uniformise spawn time
-UPDATE gameobject SET spawntimesecsmin=7200, spawntimesecsmax=7200 WHERE id=176213;
+UPDATE gameobject SET spawntimesecsmin = 7200, spawntimesecsmax = 7200, animprogress = 100, state = 1 WHERE id = 176213;
 -- Remove all old pools
 DELETE FROM `pool_template` WHERE `entry` IN (1802,1803);
 DELETE FROM `pool_gameobject` WHERE pool_entry IN (1802,1803);
