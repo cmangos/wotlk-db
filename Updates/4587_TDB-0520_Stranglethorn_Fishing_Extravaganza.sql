@@ -51,6 +51,8 @@ UPDATE `quest_template` SET `RewOrReqMoney` = 11200, `RewMoneyMaxLevel` = 0 WHER
 UPDATE `creature_template` SET `NpcFlags` = 1, `GossipMenuId` = 6770 WHERE `entry` = 15723;
 DELETE FROM `gossip_menu` WHERE `entry` = 6770 AND `text_id` = 8135;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (6770, 8135, 0, 0);
+INSERT INTO `npc_text_broadcast_text` (`Id`, `Prob0`, `Prob1`, `Prob2`, `Prob3`, `Prob4`, `Prob5`, `Prob6`, `Prob7`, `BroadcastTextId0`, `BroadcastTextId1`, `BroadcastTextId2`, `BroadcastTextId3`, `BroadcastTextId4`, `BroadcastTextId5`, `BroadcastTextId6`, `BroadcastTextId7`) VALUES
+('8135','1','1','1','1','0','0','0','0','11460','11461','11462','11463','0','0','0','0');
 
 DELETE FROM `creature` WHERE `id` = 15723; -- -0 / +11
 INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawndist`, `MovementType`) VALUES
@@ -108,8 +110,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (170698, 2554, 0, -14919.7, 90.0839, 0.199882, 4.46804, -0.788011, 0.615662, 60, 180, 100, 1),
 (170699, 2554, 0, -14912.9, 83.4848, 2.1396, 2.60054, 0.96363, 0.267241, 60, 180, 100, 1),
 (170700, 2554, 0, -14938, 351.788, 7.5324, 5.39307, -0.430511, 0.902586, 60, 180, 100, 1);
-DELETE FROM `spawn_group_spawn` WHERE `id` = 19990;
-INSERT INTO `spawn_group_spawn` (`Guid`, `Id`, `SlotId`) SELECT `guid`, 19990, -1 FROM `gameobject` WHERE `id` = 2554;
+DELETE FROM `spawn_group_spawn` WHERE `id` = 19998;
+INSERT INTO `spawn_group_spawn` (`Guid`, `Id`, `SlotId`) SELECT `guid`, 19998, -1 FROM `gameobject` WHERE `id` = 2554;
 
 -- 2086	1804	0	Stranglethorn Vale - Bloodsail Charts (2086)
 -- 2087	1805	0	Stranglethorn Vale - Bloodsail Orders (2087)
