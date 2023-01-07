@@ -1391,6 +1391,48 @@ INSERT INTO spell_script_target(entry,type,targetentry) VALUES
 (29285,3,@CGUID+857),
 (29287,3,@CGUID+858);
 
+-- guid based targeting for gothik encounter
+DELETE FROM spell_script_target WHERE entry IN(28007,28009,28011,27892,27893,27928,27929,27935,27936,27896,27930,27938);
+INSERT INTO spell_script_target VALUES
+('27892', '5', @CGUID+628, '0'),
+('27893', '5', @CGUID+619, '0'),
+('27928', '5', @CGUID+628, '0'),
+('27929', '5', @CGUID+619, '0'),
+('27935', '5', @CGUID+628, '0'),
+('27936', '5', @CGUID+619, '0'),
+
+('27892', '5', @CGUID+623, '0'),
+('27893', '5', @CGUID+629, '0'),
+('27928', '5', @CGUID+623, '0'),
+('27929', '5', @CGUID+629, '0'),
+('27935', '5', @CGUID+623, '0'),
+('27936', '5', @CGUID+629, '0'),
+
+(27896,5,@CGUID+624,0),
+(27896,5,@CGUID+621,0),
+(27896,5,@CGUID+618,0),
+(27896,5,@CGUID+622,0),
+(27896,5,@CGUID+626,0),
+
+(27930,5,@CGUID+624,0),
+(27930,5,@CGUID+621,0),
+(27930,5,@CGUID+618,0),
+(27930,5,@CGUID+622,0),
+(27930,5,@CGUID+626,0),
+
+(27938,5,@CGUID+624,0),
+(27938,5,@CGUID+621,0),
+(27938,5,@CGUID+618,0),
+(27938,5,@CGUID+622,0),
+(27938,5,@CGUID+626,0),
+
+(28007,5,@CGUID+627,0),
+(28007,5,@CGUID+625,0),
+(28007,5,@CGUID+617,0),
+(28009,5,@CGUID+627,0),
+(28009,5,@CGUID+625,0),
+(28011,5,@CGUID+617,0);
+
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
