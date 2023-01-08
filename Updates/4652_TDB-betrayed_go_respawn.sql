@@ -23,7 +23,7 @@ DELETE FROM `creature_loot_template` WHERE `entry` = 8581;
 UPDATE `creature_template` SET `SpeedWalk` = 1, `LootId` = 0, `MinLootGold`='0', `MaxLootGold`='0', `MinLevel`='52', `DamageMultiplier`='1.0' WHERE `entry` = 8608; -- (52-53 class 1 88-119dmg)
 DELETE FROM `creature_loot_template` WHERE `entry` = 8608;
 
-DELETE FROM `pool_template` WHERE `entry` = 1019 AND `description` LIKE '%Hawkhelm%';
+DELETE FROM `pool_template` WHERE `entry` = 1019;
 INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (1019, 1, 'Magister Hawkhelm (6647)');
 DELETE FROM `pool_creature_template` WHERE `id` = 6647;
 INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES (6647, 1019, 0, 'Magister Hawkhelm (6647)');
@@ -37,3 +37,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 DELETE FROM creature_equip_template WHERE entry IN (2536);
 INSERT INTO creature_equip_template (entry, equipentry1, equipentry2, equipentry3) VALUES
 (2536, 1983, 0, 13147);
+DELETE FROM `pool_creature_template` WHERE `id` = 14487;
+INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES 
+(14487, 1117, 0,'Gluggle (14487)');
+DELETE FROM `pool_template` WHERE `entry` = 1017;
+INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES 
+(1117, 1, 'Gluggle (14487)');

@@ -70,3 +70,23 @@ UPDATE `creature_template` SET `VendorTemplateId` = 133 WHERE `entry` IN (
 DELETE FROM `npc_vendor` WHERE `entry` IN (1448,1694,2682,2683,2684,2685,2687,2688,3133,3413,3495,4587,5175,5519,6730,6777,8678,8679,9544,11185,14637)
 AND `item` IN (2880,2901,3466,4357,4361,4363,4364,4371,4382,4389,4399,4400,4404,5956,10647,10648);
 
+-- WotlkDB - missing npc_vendor_template added
+DELETE FROM `npc_vendor_template` WHERE `entry` = 133;
+INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(133,2880,0,0,105,0,0,'Weak Flux'),
+(133,2901,0,0,102,0,0,'Mining Pick'),
+(133,3466,0,0,106,0,0,'Strong Flux'),
+(133,4357,4,10800,114,0,0,'Rough Blasting Powder'),
+(133,4361,2,10800,110,0,0,'Copper Tube'),
+(133,4363,2,10800,111,0,0,'Copper Modulator'),
+(133,4364,4,10800,115,0,0,'Coarse Blasting Powder'),
+(133,4371,2,10800,112,0,0,'Bronze Tube'),
+(133,4382,1,10800,113,0,0,'Bronze Framework'),
+(133,4389,1,10800,116,0,0,'Gyrochronatom'),
+(133,4399,0,0,103,0,0,'Wooden Stock'),
+(133,4400,0,0,104,0,0,'Heavy Stock'),
+(133,4404,3,10800,109,0,0,'Silver Contact'),
+(133,5956,0,0,101,0,0,'Blacksmith Hammer'),
+(133,10647,0,0,108,0,0,'Engineer\s Ink'),
+(133,10648,0,0,107,0,0,'Blank Parchment');
+

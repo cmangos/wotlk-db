@@ -55,8 +55,6 @@ UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = ((6.19 + 13.55 + 13.
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = ((4.43 + 13.86 + 11.5072) / 3)  WHERE `item` = 20767 AND `entry` = 12222; -- Creeping Sludge (11.5072)
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = ((11.53 + 17.30 + 17.949) / 3)  WHERE `item` = 20767 AND `entry` = 14235; -- The Rot (17.949)
 
-DELETE FROM `reference_loot_template` WHERE `entry` = 44001;
-DELETE FROM `reference_loot_template_names` WHERE `entry` = 44001;
 DELETE FROM `item_loot_template` WHERE `entry` = 20767;
 INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 (20767, 8831, 2.1, 1, 1, 1, 0, 'Purple Lotus'),

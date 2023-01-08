@@ -7,6 +7,7 @@
 -- https://web.archive.org/web/20080507112136/http://wow.allakhazam.com/db/item.html?witem=3692
 DELETE FROM `pickpocketing_loot_template` WHERE item = 3692; -- comments say something about this but might be faulty privat server data
 DELETE FROM `creature_loot_template` WHERE `entry` IN (2436,7073,14281) AND `item` = 3692; -- for wotlkmangos, corrupted data
+UPDATE `creature_template` SET LootId = 0 WHERE `entry` = 2436;
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -75 WHERE `item` = 3692; -- -80 & -100 might be even lower, humans have no heads
 
 -- Prevent following creatures from casting lightning shield while another spell is being casted Fix #179

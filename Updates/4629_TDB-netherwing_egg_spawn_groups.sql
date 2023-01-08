@@ -58,7 +58,7 @@ UPDATE `gameobject` SET `spawntimesecsmin` = 2700, `spawntimesecsmax` = 4500 WHE
 -- Bonus:
 UPDATE `creature_template` SET `UnitFlags` = 32768 WHERE `entry` = 23287; -- Murkblood Miner [0] UNIT_FIELD_FLAGS: 536904448 when "dead"
 DELETE FROM `creature_spawn_data_template` WHERE `entry` = 2328701;
-INSERT INTO `creature_spawn_data_template` (`entry`, `UnitFlags`) VALUES (2328701);
+INSERT INTO `creature_spawn_data_template` (`entry`, `UnitFlags`) VALUES (2328701, 536904448);
 REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 2328701 FROM `creature_addon` where `guid` IN (SELECT `guid` from `creature` where `id` = 23287) AND `auras` = '31261';
 
 -- Make Mine Cart Aggro and Die (Despawn) on Aggro and Respawn when Slave (Dragonmaw Foreman) evades

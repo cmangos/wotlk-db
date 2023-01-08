@@ -68,19 +68,19 @@ UPDATE `gameobject` SET `position_x` = 23.7603, `position_y` = -1736.37, `positi
 -- https://github.com/LightsHope/server/issues/1112
 UPDATE `creature_template` SET `VendorTemplateId` = 0, `NpcFlags` = 81 WHERE `entry` = 2834; -- 17 in vanilla
 DELETE FROM `npc_vendor` WHERE `entry`=2834;
-UPDATE `npc_vendor_template` SET `slot` = 7 WHERE `entry` = 442 AND `item` = 787;
-UPDATE `npc_vendor_template` SET `slot` = 8 WHERE `entry` = 442 AND `item` = 4592;
-UPDATE `npc_vendor_template` SET `slot` = 9 WHERE `entry` = 442 AND `item` = 4593;
-UPDATE `npc_vendor_template` SET `slot` = 10 WHERE `entry` = 442 AND `item` = 4594;
+INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(442,787,0,0,7,0,0,'Slitherskin Mackerel'),
+(442,4592,0,0,8,0,0,'Longjaw Mud Snapper'),
+(442,4593,0,0,9,0,0,'Bristle Whisker Catfish'),
+(442,4594,0,0,10,0,0,'Rockscale Cod'),
+(442,8957,0,0,12,0,0,'Spinefin Halibut'),
+(442,21552,0,0,11,0,0,'Striped Yellowtail');
 DELETE FROM `npc_vendor` WHERE `entry` IN (2842,19045,23896) AND `item` = 21552; -- have 442 in tbcmangos
 -- 2842 Wigcik
 -- 19045 Oloraak
 -- 23896 "Dirty" Michael Crowe
-REPLACE INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES (442, 21552, 0, 0, 11, 0, 0, 'Striped Yellowtail');
-UPDATE `npc_vendor_template` SET `slot` = 12 WHERE `entry` = 442 AND `item` = 8957;
+UPDATE `creature_template` SET `VendorTemplateId` = 442 WHERE `entry` IN (2842,19045,23896);
 
--- Striped Yellowtail
-UPDATE `npc_vendor` SET `maxcount` = 0, `incrtime` = 0 WHERE `item` = 21552 AND `comments` = 'Striped Yellowtail'; -- strange
 
 -- Herbalism and Mining - use parent spells, no level req for gathering professions
 -- https://wowwiki-archive.fandom.com/wiki/Herbalism?oldid=1617569
@@ -99,9 +99,9 @@ UPDATE `npc_trainer_template` SET `reqlevel` = 0 WHERE `spell` = 50309; -- Grand
 
 -- Jade does not need pool
 -- https://github.com/LightsHope/server/issues/392
-DELETE FROM `pool_creature_template` WHERE `id` = 1063; -- 1063 1123 0 Jade (1063)
-DELETE FROM `pool_template` WHERE `entry` = 1123; -- 1123 1 Jade (1063)
-DELETE FROM `creature` WHERE `guid` = 98932; -- 134242 in classic/wotlkmangos
+DELETE FROM `pool_creature_template` WHERE `id` = 1063;
+DELETE FROM `pool_template` WHERE `entry` = 1029;
+-- DELETE FROM `creature` WHERE `guid` = 134242;
 
 -- AV mobs faction
 -- https://github.com/LightsHope/server/issues/326
