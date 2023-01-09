@@ -379,7 +379,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+321,33141,603,3,1,0,0,2221.22,-359.47,412.176,3.54302,604800,604800,0,0,12600,0,0,0),
 (@CGUID+322,33141,603,3,1,0,0,2221.59,-273.257,412.26,3.54302,604800,604800,0,0,12600,0,0,0),
 -- Razorscale 33186
-(@CGUID+323,33186,603,3,1,0,0,580.865,-262.942,527.732,4.37237,604800,604800,0,0,3555975,0,0,0),
+(@CGUID+323,33186,603,3,1,0,0,655.0094,-361.2836,519.8187,0.6,604800,604800,0,0,3555975,0,0,3), -- wps
 -- Expedition Commander 33210
 (@CGUID+324,33210,603,3,1,0,0,585.667,-104.448,391.6,1.51844,604800,604800,0,0,390990,0,0,0),
 -- Mechanolift 304-A 33214
@@ -2252,7 +2252,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+160,0,0,1,0,0,0,NULL),
 (@CGUID+161,0,0,1,0,0,0,NULL);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (33701,33579,32906,34119,33235,34064,33956,33957);
+DELETE FROM `creature_movement_template` WHERE entry IN (33701,33579,32906,34119,33235,34064,33956,33957,33186);
 INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- 33701
 (33701,0,1,-771.144,-147.649,430.055,0.069,4000,0),
@@ -2311,7 +2311,22 @@ INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX
 (33957,0,2,1507.89,122.761,427.337,3.2,5000,0),
 (33957,0,3,1491.79,119.824,427.356,3.2,0,0),
 (33957,0,4,1481.9,119.579,423.967,3.16,0,0),
-(33957,0,5,1441.42,121.133,423.641,3.18,1000,3323505);
+(33957,0,5,1441.42,121.133,423.641,3.18,1000,3323505),
+-- 33186
+(33186,0,1,655.0094,-361.2836,519.8187,100,0,0),
+(33186,0,2,655.9925,-361.4667,519.8187,100,0,0),
+(33186,0,3,657.0227,-361.1278,519.5406,100,0,0),
+(33186,0,4,698.9319,-340.9654,520.4857,100,0,0),
+(33186,0,5,713.8673,-290.2219,518.4573,100,0,0),
+(33186,0,6,711.1782,-259.6798,524.6802,100,0,0),
+(33186,0,7,695.5101,-234.6734,529.1528,100,0,0),
+(33186,0,8,666.9619,-220.7599,531.486,100,0,0),
+(33186,0,9,629.2765,-219.7951,528.9301,100,0,0),
+(33186,0,10,597.4018,-233.7745,526.6508,100,0,0),
+(33186,0,11,577.5307,-275.4489,528.1241,100,0,0),
+(33186,0,12,583.1092,-319.5873,527.9302,100,0,0),
+(33186,0,13,611.58,-353.193,526.2653,100,0,0),
+(33186,0,14,655.9925,-361.4667,519.8187,100,0,0);
 
 INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- @CGUID+923
@@ -2798,6 +2813,10 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (3406407,36000,0,0,0,0,0,0,0,34029,0,0,0,0,0,0,0,'yell text'),
 (3406407,36000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Resume movement'),
 (3406407,36000,18,35000,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn self');
+
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+-- Razorscale 33186
+(@CGUID+323, 1);
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
