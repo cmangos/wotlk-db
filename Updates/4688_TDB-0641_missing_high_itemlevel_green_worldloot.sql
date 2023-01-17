@@ -206,8 +206,3 @@ REPLACE INTO `reference_loot_template` (`item`, `entry`, `mincountorref`, `chanc
 REPLACE INTO `reference_loot_template` (`item`, `entry`, `mincountorref`, `chanceorquestchance`, `groupid`, `maxcount`) SELECT `entry`, 60298, 1, 0, 1, 1 FROM `item_template` WHERE `entry` IN (
 10246,10254,10264,10266,10271,10367,10384,12017,12048,14328,14336,14975,14982,15221,15258,15289,15442,15680,15687,15942,15989);
 
--- Cleanup
-UPDATE reference_loot_template SET comments='';
-UPDATE reference_loot_template ct JOIN item_template it ON it.entry = ct.item AND ct.MinCountOrRef > 0 SET ct.comments = CONCAT(ct.comments, "", it.name);
-UPDATE reference_loot_template ct JOIN reference_loot_template_names rltn ON rltn.entry = -ct.MinCountOrRef AND ct.MinCountOrRef < 0 SET ct.comments = CONCAT(ct.comments, "", rltn.name);
-
