@@ -24,7 +24,7 @@ INSERT INTO spell_target_position VALUES
 UPDATE creature_template SET UnitFlags = 64 WHERE entry IN (16028,29576);
 
 -- Obedience Crystal 29912
-UPDATE creature_template SET NpcFlags = 16777216 WHERE entry IN (29912);
+UPDATE creature_template SET NpcFlags = 0 WHERE entry IN (29912);
 DELETE FROM npc_spellclick_spells WHERE npc_entry IN(29912);
 INSERT INTO npc_spellclick_spells(npc_entry, spell_id, cast_flags, quest_start, quest_start_active, quest_end, condition_id) VALUES
 (29912, 55479, 0, 0, 0, 0, 0);
