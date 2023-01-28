@@ -33,5 +33,9 @@ INSERT INTO npc_spellclick_spells(npc_entry, spell_id, cast_flags, quest_start, 
 UPDATE creature_template SET HealthMultiplier = 390, MinLevelHealth = 5438550, MaxLevelHealth = 5438550 WHERE entry IN (15989);
 UPDATE creature_template SET HealthMultiplier = 1215.5, MinLevelHealth = 16950148, MaxLevelHealth = 16950148 WHERE entry IN (29991);
 
+-- Gluth
+UPDATE `creature_template` SET SpellList=1593201 WHERE entry=15932;
+UPDATE `creature_template` SET SpellList=2941701 WHERE entry=29417;
+
 -- texts
 UPDATE `broadcast_text` SET `ChatTypeID` = 2 WHERE `id` IN (10755,12195);
