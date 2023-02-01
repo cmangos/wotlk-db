@@ -101,7 +101,7 @@ UPDATE `npc_trainer_template` SET `reqlevel` = 0 WHERE `spell` = 50309; -- Grand
 -- https://github.com/LightsHope/server/issues/392
 DELETE FROM `pool_creature_template` WHERE `id` = 1063;
 DELETE FROM `pool_template` WHERE `entry` = 1029;
--- DELETE FROM `creature` WHERE `guid` = 134242;
+DELETE FROM `creature` WHERE `guid` = 134242; -- https://github.com/cmangos/wotlk-db/issues/539
 
 -- AV mobs faction
 -- https://github.com/LightsHope/server/issues/326
