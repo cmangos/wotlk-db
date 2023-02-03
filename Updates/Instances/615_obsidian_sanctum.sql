@@ -8,6 +8,7 @@ EndDBScriptData */
 SET @CGUID  := 6150000; -- creatures
 SET @OGUID  := 6150000; -- gameobjects
 SET @SGGUID := 6150000; -- spawn_groups
+SET @WPGUID := 6150000; -- waypoint_path
 
 
 
@@ -189,9 +190,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+160,31103,615,3,1,0,0,3339.15,512.563,99.6245,0.087266,3600,3600,0,0,37800,0,0,0),
 (@CGUID+161,31103,615,3,1,0,0,3353.3,502.86,99.8086,4.24115,3600,3600,0,0,37800,0,0,0),
 -- Tenebron Egg Controller 31138
-(@CGUID+162,31138,615,3,1,0,0,3239.79,675.731,89.5161,1.15192,3600,3600,0,0,12600,0,0,0);
+(@CGUID+162,31138,615,3,1,0,0,3239.79,675.731,89.5161,1.15192,3600,3600,0,0,12600,0,0,0),
 -- Flame Tsunami 30616
-/* -- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented - spawn time may need to be changed
+-- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented - spawn time may need to be changed
 (@CGUID+200,30616,615,3,1,0,0,3211,484,57.083332,0,60,60,0,0,0,0,0,0), 				 -- Master Group 1 - SW Group - 1st - Destination: 3286,484,57.083332
 (@CGUID+201,30616,615,3,1,0,0,3211,492,57.083332,0.05235987901687622,60,60,0,0,0,0,0,0),  -- Master Group 1 - SW Group - 2nd - Destination: 3291.2102,492,59.415375
 (@CGUID+202,30616,615,3,1,0,0,3211,476,57.083332,0.01745329238474369,60,60,0,0,0,0,0,0),  -- Master Group 1 - SW Group - 3rd - Destination: 3286,476,58
@@ -206,8 +207,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+211,30616,615,3,1,0,0,3286,516,57.083332,3.159045934677124023,60,60,0,0,0,0,0,0), -- Master Group 2 - SE Group - 3rd - Destination: 3201.1194,518.969,57.845776
 (@CGUID+212,30616,615,3,1,0,0,3286,556,57.083332,3.141592741012573242,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 1st - Destination: 3211,556,57.083332
 (@CGUID+213,30616,615,3,1,0,0,3286,548,57.083332,3.089232683181762695,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 2nd - Destination: 3211,548,58
-(@CGUID+214,30616,615,3,1,0,0,3286,564,57.083332,3.193952560424804687,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 3rd - Destination: 3211,564,58
-*/
+(@CGUID+214,30616,615,3,1,0,0,3286,564,57.083332,3.193952560424804687,60,60,0,0,0,0,0,0); -- Master Group 2 - NE Group - 3rd - Destination: 3211,564,58
+
 
 
 -- Addons
@@ -403,13 +404,23 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
+DELETE FROM conditions WHERE condition_entry IN(20542,20543) AND type=42;
+INSERT INTO conditions(condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
+('20542', '42', '20004', '0', '1', '0', '0', ''),
+('20543', '42', '20005', '0', '1', '0', '0', '');
+
+DELETE FROM worldstate_name WHERE Id IN(20004,20005);
+INSERT INTO worldstate_name(Id, Name) VALUES
+('20004', 'Obsidian Sanctum - Spawn Flame Wall Left'),
+('20005', 'Obsidian Sanctum - Spawn Flame Wall Right');
+
 -- ============
 -- SPAWN GROUPS
 -- ============
-/* -- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented
+-- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@SGGUID+0, 'The Obsidian Sanctum - Flame Tsunami 30616 x9 - Patrol 001', 0, 0, 0, 3),
-(@SGGUID+1, 'The Obsidian Sanctum - Flame Tsunami 30616 x6 - Patrol 002', 0, 0, 0, 3);
+(@SGGUID+0, 'The Obsidian Sanctum - Flame Tsunami 30616 x9 - Patrol 001', 0, 0, 20542, 3),
+(@SGGUID+1, 'The Obsidian Sanctum - Flame Tsunami 30616 x6 - Patrol 002', 0, 0, 20543, 3);
 
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- @SGGUID+0
@@ -429,7 +440,24 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+1, @CGUID+212, -1),
 (@SGGUID+1, @CGUID+213, -1),
 (@SGGUID+1, @CGUID+214, -1);
-*/
+
+INSERT INTO waypoint_path(PathId, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId, Comment) VALUES
+('6150000', '1', '3286', '484', '57.083332', '100', '0', '0', NULL),
+('6150001', '1', '3291.2102', '492', '59.415375', '100', '0', '0', NULL),
+('6150002', '1', '3286', '476', '58', '100', '0', '0', NULL),
+('6150003', '1', '3285.8972', '528.0748', '57.083332', '100', '0', '0', NULL),
+('6150004', '1', '3286.316', '536.06384', '58', '100', '0', '0', NULL),
+('6150005', '1', '3291.193', '519.78284', '57.90744', '100', '0', '0', NULL),
+('6150006', '1', '3285.7146', '586.5367', '57.083332', '100', '0', '0', NULL),
+('6150007', '1', '3295.1243', '595.3905', '57.083324', '100', '0', '0', NULL),
+('6150008', '1', '3296.5188', '579.4514', '58', '100', '0', '0', NULL),
+('6150009', '1', '3211.0457', '510.61746', '57.083332', '100', '0', '0', NULL),
+('6150010', '1', '3200.5608', '502.97876', '57.720776', '100', '0', '0', NULL),
+('6150011', '1', '3201.1194', '518.969', '57.845776', '100', '0', '0', NULL),
+('6150012', '1', '3211', '556', '57.083332', '100', '0', '0', NULL),
+('6150013', '1', '3211', '548', '58', '100', '0', '0', NULL),
+('6150014', '1', '3211', '564', '58', '100', '0', '0', NULL);
+
 
 -- =========
 -- DBSCRIPTS
