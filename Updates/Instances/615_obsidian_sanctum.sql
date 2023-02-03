@@ -1,13 +1,13 @@
 /* DBScriptData
 DBName: The Obsidian Sanctum
 DBScriptName: instance_obsidian_sanctum.sql
-DB%Complete: 100%
-DBComment: ReQ:
+DB%Complete: 90%
+DBComment: ReQ: BoSS Review
 EndDBScriptData */
 
-SET @CGUID := 6150000; -- creatures
-SET @OGUID := 6150000; -- gameobjects
-SET @PGUID := 52700;   -- pools
+SET @CGUID  := 6150000; -- creatures
+SET @OGUID  := 6150000; -- gameobjects
+SET @SGGUID := 6150000; -- spawn_groups
 
 
 
@@ -190,6 +190,25 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+161,31103,615,3,1,0,0,3353.3,502.86,99.8086,4.24115,3600,3600,0,0,37800,0,0,0),
 -- Tenebron Egg Controller 31138
 (@CGUID+162,31138,615,3,1,0,0,3239.79,675.731,89.5161,1.15192,3600,3600,0,0,12600,0,0,0);
+-- Flame Tsunami 30616
+/* -- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented - spawn time may need to be changed
+(@CGUID+200,30616,615,3,1,0,0,3211,484,57.083332,0,60,60,0,0,0,0,0,0), 				 -- Master Group 1 - SW Group - 1st - Destination: 3286,484,57.083332
+(@CGUID+201,30616,615,3,1,0,0,3211,492,57.083332,0.05235987901687622,60,60,0,0,0,0,0,0),  -- Master Group 1 - SW Group - 2nd - Destination: 3291.2102,492,59.415375
+(@CGUID+202,30616,615,3,1,0,0,3211,476,57.083332,0.01745329238474369,60,60,0,0,0,0,0,0),  -- Master Group 1 - SW Group - 3rd - Destination: 3286,476,58
+(@CGUID+203,30616,615,3,1,0,0,3211,532,57.083332,6.230825424194335937,60,60,0,0,0,0,0,0), -- Master Group 1 - W Group - 1st - Destination: 3285.8972,528.0748,57.083332
+(@CGUID+204,30616,615,3,1,0,0,3211,540,57.083332,0,60,60,0,0,0,0,0,0), 				 -- Master Group 1 - W Group - 2nd - Destination: 3286.316,536.06384,58
+(@CGUID+205,30616,615,3,1,0,0,3211,524,57.083332,6.230825424194335937,60,60,0,0,0,0,0,0), -- Master Group 1 - W Group - 3rd - Destination: 3291.193,519.78284,57.90744
+(@CGUID+206,30616,615,3,1,0,0,3211,580,57.083332,0.087266460061073303,60,60,0,0,0,0,0,0), -- Master Group 1 - NW Group - 1st - Destination: 3285.7146,586.5367,57.083332
+(@CGUID+207,30616,615,3,1,0,0,3211,588,57.083332,0.01745329238474369,60,60,0,0,0,0,0,0),  -- Master Group 1 - NW Group - 2nd - Destination: 3295.1243,595.3905,57.083324
+(@CGUID+208,30616,615,3,1,0,0,3211,572,57.083332,6.248278617858886718,60,60,0,0,0,0,0,0), -- Master Group 1 - NW Group - 3rd - Destination: 3296.5188,579.4514,58
+(@CGUID+209,30616,615,3,1,0,0,3286,508,57.083332,3.106686115264892578,60,60,0,0,0,0,0,0), -- Master Group 2 - SE Group - 1st - Destination: 3211.0457,510.61746,57.083332
+(@CGUID+210,30616,615,3,1,0,0,3286,500,57.083332,3.071779489517211914,60,60,0,0,0,0,0,0), -- Master Group 2 - SE Group - 2nd - Destination: 3200.5608,502.97876,57.720776
+(@CGUID+211,30616,615,3,1,0,0,3286,516,57.083332,3.159045934677124023,60,60,0,0,0,0,0,0), -- Master Group 2 - SE Group - 3rd - Destination: 3201.1194,518.969,57.845776
+(@CGUID+212,30616,615,3,1,0,0,3286,556,57.083332,3.141592741012573242,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 1st - Destination: 3211,556,57.083332
+(@CGUID+213,30616,615,3,1,0,0,3286,548,57.083332,3.089232683181762695,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 2nd - Destination: 3211,548,58
+(@CGUID+214,30616,615,3,1,0,0,3286,564,57.083332,3.193952560424804687,60,60,0,0,0,0,0,0), -- Master Group 2 - NE Group - 3rd - Destination: 3211,564,58
+*/
+
 
 -- Addons
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
@@ -384,17 +403,33 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
+-- ============
+-- SPAWN GROUPS
+-- ============
+/* -- ReQ for Boss Fight - Will be added when new logic for Flame Tsunami summoning event implemented
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@SGGUID+0, 'The Obsidian Sanctum - Flame Tsunami 30616 x9 - Patrol 001', 0, 0, 0, 3),
+(@SGGUID+1, 'The Obsidian Sanctum - Flame Tsunami 30616 x6 - Patrol 002', 0, 0, 0, 3);
 
--- =======
--- POOLING
--- =======
-
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_pool` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+-- @SGGUID+0
+(@SGGUID+0, @CGUID+200, -1),
+(@SGGUID+0, @CGUID+201, -1),
+(@SGGUID+0, @CGUID+202, -1),
+(@SGGUID+0, @CGUID+203, -1),
+(@SGGUID+0, @CGUID+204, -1),
+(@SGGUID+0, @CGUID+205, -1),
+(@SGGUID+0, @CGUID+206, -1),
+(@SGGUID+0, @CGUID+207, -1),
+(@SGGUID+0, @CGUID+208, -1),
+-- @SGGUID+1
+(@SGGUID+1, @CGUID+209, -1),
+(@SGGUID+1, @CGUID+210, -1),
+(@SGGUID+1, @CGUID+211, -1),
+(@SGGUID+1, @CGUID+212, -1),
+(@SGGUID+1, @CGUID+213, -1),
+(@SGGUID+1, @CGUID+214, -1);
+*/
 
 -- =========
 -- DBSCRIPTS
