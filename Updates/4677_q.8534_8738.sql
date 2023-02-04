@@ -32,10 +32,10 @@ INSERT INTO conditions(condition_entry, type, value1, value2, value3, value4, fl
 
 -- q.8739 'Hive'Ashi Scout Report'
 -- Cenarion Scout Jalia 15611
-UPDATE creature_template SET EquipmentTemplateId = 268, GossipMenuId = 6690 WHERE entry = 15611;
+UPDATE creature_template SET EquipmentTemplateId = 268, GossipMenuId = 6691 WHERE entry = 15611;
 DELETE FROM gossip_menu WHERE entry IN (6691);
 INSERT INTO gossip_menu (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
-(6691, 8063, 0, 0);
+(6691, 8064, 0, 0);
 DELETE FROM `gossip_menu_option` WHERE menu_id=6691;
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_broadcast_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `box_broadcast_text`, `condition_id`) VALUES
 (6691, 0, 0, 'I\'m here to retrieve your report.', 11325, 1, 1, -1, 0, 669101, 0, 0, '', 0, 1070);
