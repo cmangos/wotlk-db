@@ -38,5 +38,5 @@ UPDATE `reference_loot_template_names` SET `name` = 'Maraudon (Boss Loot) - Prin
 REPLACE INTO `reference_loot_template` (`item`, `entry`, `mincountorref`, `chanceorquestchance`, `groupid`, `maxcount`)
 SELECT `item`, 35009, -35009, 0, 1, 1 FROM `reference_loot_template` WHERE `entry` = 60180; -- NPC LOOT (Green World Drop) - (Item Levels: 47-52) - (NPC Levels: 48)
 
-UPDATE `creature_loot_template` SET `comments` = 'Maraudon (Boss Loot) - Princess Theradras - Blackstone Ring, Bracers of the Stone Princess, Blade of Eternal Darkness & Green Items' WHERE `entry` = 12201 AND `mincountOrRef` = -35009;'
+UPDATE `creature_loot_template` SET `comments` = 'Maraudon (Boss Loot) - Princess Theradras - Blackstone Ring, Bracers of the Stone Princess, Blade of Eternal Darkness & Green Items' WHERE `entry` = 12201 AND `mincountOrRef` = -35009;
 
