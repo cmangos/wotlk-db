@@ -7,7 +7,7 @@
 ####################################################################################################
 
 # need to be changed on each official DB/CORE release
-FULLDB_FILE_ZIP="WoTLKDB_1_6_14060.sql.gz"
+FULLDB_FILE_ZIP="WoTLKDB_1_7_14065.sql.gz"
 FULLDB_FILE=${FULLDB_FILE_ZIP%.gz}
 NEXT_MILESTONES="0.19 0.20"
 

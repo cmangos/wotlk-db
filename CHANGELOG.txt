@@ -1,4 +1,22 @@
 ===============================================================
+WoTLKDB v1.7 'Drakkaris Dream' for CMaNGOS 14065 for 3.3.5a
+===============================================================
+
+Main changes:
+* Zul'Drak - Northrend - Completed
+	- all quests
+	- all areas spawns/waypoints/events
+* Instances:
+	- Gundrak - Reconstructed
+	- Naxxramas (Wotlk) - Reconstructed
+* Many creatures and objects moved to new 'Group Spawn' system
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+
+===============================================================
 WoTLKDB v1.6 'Holiday Fun' for CMaNGOS 14060 for 3.3.5a
 ===============================================================
 
