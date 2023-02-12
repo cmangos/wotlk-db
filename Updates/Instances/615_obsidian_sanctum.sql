@@ -226,7 +226,7 @@ REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 
-REPLACE INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Vesperon 30449 - waypoints used by script (movementType = 3 should be set) - destination to land: 3269.7078,532.8011,58.56343
 (30449,0,1,3296.785,555.0555,87.29027,100,0,0),
 (30449,0,2,3266.8242,575.95245,89.76242,100,0,0),
@@ -471,22 +471,40 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+1, @CGUID+213, -1),
 (@SGGUID+1, @CGUID+214, -1);
 
-INSERT INTO waypoint_path(PathId, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId, Comment) VALUES
-('6150000', '1', '3286', '484', '57.083332', '100', '0', '0', NULL),
-('6150001', '1', '3291.2102', '492', '59.415375', '100', '0', '0', NULL),
-('6150002', '1', '3286', '476', '58', '100', '0', '0', NULL),
-('6150003', '1', '3285.8972', '528.0748', '57.083332', '100', '0', '0', NULL),
-('6150004', '1', '3286.316', '536.06384', '58', '100', '0', '0', NULL),
-('6150005', '1', '3291.193', '519.78284', '57.90744', '100', '0', '0', NULL),
-('6150006', '1', '3285.7146', '586.5367', '57.083332', '100', '0', '0', NULL),
-('6150007', '1', '3295.1243', '595.3905', '57.083324', '100', '0', '0', NULL),
-('6150008', '1', '3296.5188', '579.4514', '58', '100', '0', '0', NULL),
-('6150009', '1', '3211.0457', '510.61746', '57.083332', '100', '0', '0', NULL),
-('6150010', '1', '3200.5608', '502.97876', '57.720776', '100', '0', '0', NULL),
-('6150011', '1', '3201.1194', '518.969', '57.845776', '100', '0', '0', NULL),
-('6150012', '1', '3211', '556', '57.083332', '100', '0', '0', NULL),
-('6150013', '1', '3211', '548', '58', '100', '0', '0', NULL),
-('6150014', '1', '3211', '564', '58', '100', '0', '0', NULL);
+
+INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
+(6150000, 1, 3286, 484, 57.083332, 100, 0, 0),
+(6150001, 1, 3291.2102, 492, 59.415375, 100, 0, 0),
+(6150002, 1, 3286, 476, 58, 100, 0, 0),
+(6150003, 1, 3285.8972, 528.0748, 57.083332, 100, 0, 0),
+(6150004, 1, 3286.316, 536.06384, 58, 100, 0, 0),
+(6150005, 1, 3291.193, 519.78284, 57.90744, 100, 0, 0),
+(6150006, 1, 3285.7146, 586.5367, 57.083332, 100, 0, 0),
+(6150007, 1, 3295.1243, 595.3905, 57.083324, 100, 0, 0),
+(6150008, 1, 3296.5188, 579.4514, 58, 100, 0, 0),
+(6150009, 1, 3211.0457, 510.61746, 57.083332, 100, 0, 0),
+(6150010, 1, 3200.5608, 502.97876, 57.720776, 100, 0, 0),
+(6150011, 1, 3201.1194, 518.969, 57.845776, 100, 0, 0),
+(6150012, 1, 3211, 556, 57.083332, 100, 0, 0),
+(6150013, 1, 3211, 548, 58, 100, 0, 0),
+(6150014, 1, 3211, 564, 58, 100, 0, 0);
+
+INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+(6150000,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 000'),
+(6150001,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 001'),
+(6150002,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 002'),
+(6150003,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 003'),
+(6150004,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 004'),
+(6150005,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 005'),
+(6150006,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 006'),
+(6150007,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 007'),
+(6150008,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 008'),
+(6150009,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 009'),
+(6150010,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 010'),
+(6150011,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 011'),
+(6150012,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 012'),
+(6150013,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 013'),
+(6150014,'The Obsidian Sanctum - Flame Tsunami 30616 - Patrol 014');
 
 
 -- =========
