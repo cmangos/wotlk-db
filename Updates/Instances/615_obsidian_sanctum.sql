@@ -209,8 +209,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 (@CGUID+213,30616,615,3,1,0,0,3286,548,57.083332,3.089232683181762695,10,10,0,0,0,0,0,0), -- Master Group 2 - NE Group - 2nd - Destination: 3211,548,58
 (@CGUID+214,30616,615,3,1,0,0,3286,564,57.083332,3.193952560424804687,10,10,0,0,0,0,0,0); -- Master Group 2 - NE Group - 3rd - Destination: 3211,564,58
 
-
-
 -- Addons
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
 (28860,0,0,1,0,0,0,NULL),
@@ -227,7 +225,39 @@ REPLACE INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath
 (31138,0,0,1,0,0,0,NULL);
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pvp_state`, `emote`, `moveflags`, `auras`) VALUES
--- REPLACE INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+
+REPLACE INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
+-- Vesperon 30449 - waypoints used by script (movementType = 3 should be set) - destination to land: 3269.7078,532.8011,58.56343
+(30449,0,1,3296.785,555.0555,87.29027,100,0,0),
+(30449,0,2,3266.8242,575.95245,89.76242,100,0,0),
+(30449,0,3,3227.2224,577.1228,89.87349,100,0,0),
+(30449,0,4,3197.2644,553.5248,88.651405,100,0,0),
+(30449,0,5,3195.9875,507.7954,87.45695,100,0,0),
+(30449,0,6,3224.5435,481.11807,84.70684,100,0,0),
+(30449,0,7,3265.2356,481.7216,83.595764,100,0,0),
+(30449,0,8,3299.8765,506.4301,83.87355,100,0,0),
+-- Shadron 30451 - waypoints used by script (movementType = 3 should be set)
+(30451,0,1,3196.095,548.7049,115.83286,100,0,0),
+(30451,0,2,3224.809,573.8922,116.08303,100,0,0),
+(30451,0,3,3270.8267,572.1468,112.77744,100,0,0),
+(30451,0,4,3295.5364,547.12506,109.66705,100,0,0),
+(30451,0,5,3296.5833,503.22397,106.95133,100,0,0),
+(30451,0,6,3254.0688,489.25906,108.92368,100,0,0),
+(30451,0,7,3223.111,488.90338,110.53484,100,0,0),
+(30451,0,8,3197.9263,511.4375,113.22937,100,0,0),
+-- Tenebron 30452 - waypoints used by script (movementType = 3 should be set)
+(30452,0,1,3232.0261,569.16376,97.53158,100,0,0),
+(30452,0,2,3203.6875,548.84595,98.50729,100,0,0),
+(30452,0,3,3206.0713,513.54425,99.3684,100,0,0),
+(30452,0,4,3234.5671,489.96832,99.47933,100,0,0),
+(30452,0,5,3265.446,490.026,98.423836,100,0,0),
+(30452,0,6,3287.5674,503.39835,97.645226,100,0,0),
+(30452,0,7,3288.8157,549.16187,96.70078,100,0,0),
+(30452,0,8,3264.5164,568.97516,95.97868,100,0,0);
+-- Landing Script should be called: (kw - remove this when is added to sd2)
+-- at exact 25sec for Tenebron 30452 (sd2 script has wrong value) + he yells 31999 with sound 14128 - then landind script is launched: destination: 3249.7527,566.9524,59.56308
+-- at exact 70sec for Shadron 30451 (sd2 script has wrong value) + he yells 31991 with sound 14117 - then landind script is launched: destination: 3230.4963,533.00024,59.595776
+-- at exact 110sec for Vesperon 30449 (sd2 script has wrong value) + he yells 32008 with sound 14139 - then landind script is launched: destination: 3269.7078,532.8011,58.56343
 
 INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- @CGUID+5
