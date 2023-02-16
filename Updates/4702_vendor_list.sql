@@ -77,7 +77,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 
 -- Julia Gallina 1301
 -- vendor list corrected
-DELETE FROM `npc_vendor` WHERE entry = 277;
+DELETE FROM `npc_vendor` WHERE entry = 1301;
 INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
 (1301,2593,0,0,2,0,0,'Flask of Port'),
 (1301,2594,0,0,4,0,0,'Flagon of Mead'),
