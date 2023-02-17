@@ -109,3 +109,113 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 (3312,27854,0,0,7,0,0,'Smoked Talbuk Venison'),
 (3312,33454,0,0,8,0,0,'Salted Venison'),
 (3312,35953,0,0,9,0,0,'Mead Basted Caribou');
+
+-- Veldan Lightfoot 896
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 896;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(896,796,0,0,4,0,0,'Rough Leather Boots'),
+(896,797,0,0,6,0,0,'Rough Leather Gloves'),
+(896,798,0,0,3,0,0,'Rough Leather Pants'),
+(896,799,0,0,1,0,0,'Rough Leather Vest'),
+(896,843,0,0,10,0,0,'Tanned Leather Boots'),
+(896,844,0,0,12,0,0,'Tanned Leather Gloves'),
+(896,845,0,0,9,0,0,'Tanned Leather Pants'),
+(896,846,0,0,7,0,0,'Tanned Leather Jerkin'),
+(896,1839,0,0,2,0,0,'Rough Leather Belt'),
+(896,1840,0,0,5,0,0,'Rough Leather Bracers'),
+(896,1843,0,0,8,0,0,'Tanned Leather Belt'),
+(896,1844,0,0,11,0,0,'Tanned Leather Bracers');
+
+-- Quartermaster Hicks 1645
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 1645;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(1645,2520,0,0,1,0,0,'Broadsword'),
+(1645,2521,0,0,2,0,0,'Flamberge'),
+(1645,2522,0,0,3,0,0,'Crescent Axe'),
+(1645,2523,0,0,4,0,0,'Bullova'),
+(1645,2524,0,0,5,0,0,'Truncheon'),
+(1645,2525,0,0,6,0,0,'War Hammer'),
+(1645,2526,0,0,7,0,0,'Main Gauche'),
+(1645,2527,0,0,8,0,0,'Battle Staff');
+
+-- Sergeant De Vries 955
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 955;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(955,159,0,0,6,0,0,'Refreshing Spring Water'),
+(955,1179,0,0,7,0,0,'Ice Cold Milk'),
+(955,1205,0,0,8,0,0,'Melon Juice'),
+(955,1645,0,0,10,0,0,'Moonberry Juice'),
+(955,1708,0,0,9,0,0,'Sweet Nectar'),
+(955,2593,0,0,2,0,0,'Flask of Port'),
+(955,2594,0,0,4,0,0,'Flagon of Mead'),
+(955,2595,0,0,5,0,0,'Jug of Bourbon'),
+(955,2596,0,0,3,0,0,'Skin of Dwarven Stout'),
+(955,2723,0,0,1,0,0,'Bottle of Pinot Noir'),
+(955,8766,0,0,11,0,0,'Morning Glory Dew');
+
+-- Kira Songshine 3937
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 3937;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(3937,159,0,0,7,0,0,'Refreshing Spring Water'),
+(3937,1179,0,0,8,0,0,'Ice Cold Milk'),
+(3937,1205,0,0,9,0,0,'Melon Juice'),
+(3937,1645,0,0,11,0,0,'Moonberry Juice'),
+(3937,1708,0,0,10,0,0,'Sweet Nectar'),
+(3937,4540,0,0,1,0,0,'Tough Hunk of Bread'),
+(3937,4541,0,0,2,0,0,'Freshly Baked Bread'),
+(3937,4542,0,0,3,0,0,'Moist Cornbread'),
+(3937,4544,0,0,4,0,0,'Mulgore Spice Bread'),
+(3937,4601,0,0,5,0,0,'Soft Banana Bread'),
+(3937,8766,0,0,12,0,0,'Morning Glory Dew'),
+(3937,8950,0,0,6,0,0,'Homemade Cherry Pie');
+
+-- Corina Steele 54
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 54;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES 
+(54,2488,0,0,1,0,0,'Gladius'),
+(54,2489,0,0,2,0,0,'Two-handed Sword'),
+(54,2490,0,0,3,0,0,'Tomahawk'),
+(54,2491,0,0,4,0,0,'Large Axe'),
+(54,2492,0,0,5,0,0,'Cudgel'),
+(54,2493,0,0,6,0,0,'Wooden Mallet'),
+(54,2494,0,0,7,0,0,'Stiletto'),
+(54,2495,0,0,8,0,0,'Walking Stick');
+
+-- Kurran Steele 74
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 74;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES 
+(74,792,0,0,4,0,0,'Knitted Sandals'),
+(74,793,0,0,6,0,0,'Knitted Gloves'),
+(74,794,0,0,3,0,0,'Knitted Pants'),
+(74,795,0,0,1,0,0,'Knitted Tunic'),
+(74,796,0,0,10,0,0,'Rough Leather Boots'),
+(74,797,0,0,12,0,0,'Rough Leather Gloves'),
+(74,798,0,0,9,0,0,'Rough Leather Pants'),
+(74,799,0,0,7,0,0,'Rough Leather Vest'),
+(74,1839,0,0,8,0,0,'Rough Leather Belt'),
+(74,1840,0,0,11,0,0,'Rough Leather Bracers'),
+(74,3602,0,0,2,0,0,'Knitted Belt'),
+(74,3603,0,0,5,0,0,'Knitted Bracers');
+
+
+-- ------------------------
+-- Templates
+-- group moved to templates
+DELETE FROM `npc_vendor` WHERE entry IN (1249,2046,3613,5106);
+DELETE FROM `npc_vendor_template` WHERE entry = 1000;
+INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES 
+(1000,1201,0,0,8,0,0,'Dull Heater Shield'),
+(1000,2392,0,0,1,0,0,'Light Mail Armor'),
+(1000,2393,0,0,2,0,0,'Light Mail Belt'),
+(1000,2394,0,0,3,0,0,'Light Mail Leggings'),
+(1000,2395,0,0,4,0,0,'Light Mail Boots'),
+(1000,2396,0,0,5,0,0,'Light Mail Bracers'),
+(1000,2397,0,0,6,0,0,'Light Mail Gloves'),
+(1000,17186,0,0,7,0,0,'Small Targe');
+UPDATE `creature_template` SET `VendorTemplateId` = 1000 WHERE `entry` IN (1249,2046,3613,5106);
