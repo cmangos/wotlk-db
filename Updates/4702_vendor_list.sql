@@ -381,4 +381,4 @@ INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slo
 (1201,4599,0,0,5,0,0,'Cured Ham Steak'),
 (1201,8766,0,0,12,0,0,'Morning Glory Dew'),
 (1201,8952,0,0,6,0,0,'Roasted Quail');
-UPDATE `creature_template` SET `VendorTemplateId` = 1200 WHERE `entry` IN (982,3411,3621,3882,4875,7731,9356,12196);
+UPDATE `creature_template` SET `VendorTemplateId` = 1201 WHERE `entry` IN (982,3411,3621,3882,4875,7731,9356,12196);
