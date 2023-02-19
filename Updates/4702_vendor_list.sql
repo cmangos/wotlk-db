@@ -267,7 +267,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 
 -- Zansoa 5942
 -- vendor list corrected
-DELETE FROM `npc_vendor` WHERE entry = 10369;
+DELETE FROM `npc_vendor` WHERE entry = 5942;
 INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
 (5942,6256,0,0,3,0,0,'Fishing Pole'),
 (5942,6326,0,0,1,0,0,'Recipe: Slitherskin Mackerel'),
