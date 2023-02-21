@@ -427,7 +427,7 @@ INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slo
 (1201,2595,0,0,5,0,0,'Jug of Bourbon'),
 (1201,2596,0,0,3,0,0,'Skin of Dwarven Stout'),
 (1201,2723,0,0,1,0,0,'Bottle of Pinot Noir'),
-(1201,8766,0,0,11,0,0,'Morning Glory Dew'),
+(1201,8766,0,0,11,0,0,'Morning Glory Dew');
 UPDATE `creature_template` SET `VendorTemplateId` = 1201 WHERE `entry` IN (258,955,1328,1697,5112,5140);
 
 -- group moved to templates
