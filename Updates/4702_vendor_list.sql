@@ -278,6 +278,54 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 (5942,6532,0,0,6,0,0,'Bright Baubles'),
 (5942,6533,2,9000,7,0,0,'Aquadynamic Fish Attractor');
 
+-- Tharynn Bouden 66
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 66;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(66,2320,0,0,8,0,0,'Coarse Thread'),
+(66,2324,0,0,14,0,0,'Bleach'),
+(66,2604,0,0,13,0,0,'Red Dye'),
+(66,2678,0,0,6,0,0,'Mild Spices'),
+(66,2880,0,0,9,0,0,'Weak Flux'),
+(66,2901,0,0,2,0,0,'Mining Pick'),
+(66,3371,0,0,10,0,0,'Empty Vial'),
+(66,4289,0,0,11,0,0,'Salt'),
+(66,5956,0,0,3,0,0,'Blacksmith Hammer'),
+(66,6217,0,0,5,0,0,'Copper Rod'),
+(66,6256,0,0,4,0,0,'Fishing Pole'),
+(66,6260,0,0,15,0,0,'Blue Dye'),
+(66,6270,1,9000,0,0,0,'Pattern: Blue Linen Vest'),
+(66,6325,0,0,18,0,0,'Recipe: Brilliant Smallfish'),
+(66,6328,0,0,19,0,0,'Recipe: Longjaw Mud Snapper'),
+(66,6529,0,0,12,0,0,'Shiny Bauble'),
+(66,7005,0,0,1,0,0,'Skinning Knife'),
+(66,10648,0,0,16,0,0,'Common Parchment'),
+(66,30817,0,0,7,0,0,'Simple Flour'),
+(66,39354,0,0,17,0,0,'Light Parchment');
+
+-- Barkeep Dobbins 465
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 465;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(465,159,0,0,2,0,0,'Refreshing Spring Water'),
+(465,414,0,0,14,0,0,'Dalaran Sharp'),
+(465,422,0,0,15,0,0,'Dwarven Mild'),
+(465,1179,0,0,3,0,0,'Ice Cold Milk'),
+(465,1205,0,0,4,0,0,'Melon Juice'),
+(465,1645,0,0,6,0,0,'Moonberry Juice'),
+(465,1707,0,0,16,0,0,'Stormwind Brie'),
+(465,1708,0,0,5,0,0,'Sweet Nectar'),
+(465,1939,0,0,1,0,0,'Skin of Sweet Rum'),
+(465,2070,0,0,13,0,0,'Darnassian Bleu'),
+(465,2593,0,0,9,0,0,'Flask of Port'),
+(465,2594,0,0,11,0,0,'Flagon of Mead'),
+(465,2595,0,0,12,0,0,'Jug of Bourbon'),
+(465,2596,0,0,10,0,0,'Skin of Dwarven Stout'),
+(465,2723,0,0,8,0,0,'Bottle of Pinot Noir'),
+(465,3927,0,0,17,0,0,'Fine Aged Cheddar'),
+(465,8766,0,0,7,0,0,'Morning Glory Dew'),
+(465,8932,0,0,18,0,0,'Alterac Swiss');
+
 
 -- ------------------------
 -- Templates
@@ -366,19 +414,36 @@ INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slo
 UPDATE `creature_template` SET `VendorTemplateId` = 1200 WHERE `entry` IN (2365,3089,3705,3933,3935,4954,5870);
 
 -- group moved to templates
-DELETE FROM `npc_vendor` WHERE entry IN (982,3411,3621,3882,4875,7731,9356,12196);
+DELETE FROM `npc_vendor` WHERE entry IN (258,955,1328,1697,5112,5140);
 DELETE FROM `npc_vendor_template` WHERE entry = 1201;
 INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES 
-(1201,117,0,0,1,0,0,'Tough Jerky'),
-(1201,159,0,0,7,0,0,'Refreshing Spring Water'),
-(1201,1179,0,0,8,0,0,'Ice Cold Milk'),
-(1201,1205,0,0,9,0,0,'Melon Juice'),
-(1201,1645,0,0,11,0,0,'Moonberry Juice'),
-(1201,1708,0,0,10,0,0,'Sweet Nectar'),
-(1201,2287,0,0,2,0,0,'Haunch of Meat'),
-(1201,3770,0,0,3,0,0,'Mutton Chop'),
-(1201,3771,0,0,4,0,0,'Wild Hog Shank'),
-(1201,4599,0,0,5,0,0,'Cured Ham Steak'),
-(1201,8766,0,0,12,0,0,'Morning Glory Dew'),
-(1201,8952,0,0,6,0,0,'Roasted Quail');
-UPDATE `creature_template` SET `VendorTemplateId` = 1201 WHERE `entry` IN (982,3411,3621,3882,4875,7731,9356,12196);
+(1201,159,0,0,6,0,0,'Refreshing Spring Water'),
+(1201,1179,0,0,7,0,0,'Ice Cold Milk'),
+(1201,1205,0,0,8,0,0,'Melon Juice'),
+(1201,1645,0,0,10,0,0,'Moonberry Juice'),
+(1201,1708,0,0,9,0,0,'Sweet Nectar'),
+(1201,2593,0,0,2,0,0,'Flask of Port'),
+(1201,2594,0,0,4,0,0,'Flagon of Mead'),
+(1201,2595,0,0,5,0,0,'Jug of Bourbon'),
+(1201,2596,0,0,3,0,0,'Skin of Dwarven Stout'),
+(1201,2723,0,0,1,0,0,'Bottle of Pinot Noir'),
+(1201,8766,0,0,11,0,0,'Morning Glory Dew'),
+UPDATE `creature_template` SET `VendorTemplateId` = 1201 WHERE `entry` IN (258,955,1328,1697,5112,5140);
+
+-- group moved to templates
+DELETE FROM `npc_vendor` WHERE entry IN (982,3411,3621,3882,4875,7731,9356,12196);
+DELETE FROM `npc_vendor_template` WHERE entry = 1202;
+INSERT INTO `npc_vendor_template` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES 
+(1202,117,0,0,1,0,0,'Tough Jerky'),
+(1202,159,0,0,7,0,0,'Refreshing Spring Water'),
+(1202,1179,0,0,8,0,0,'Ice Cold Milk'),
+(1202,1205,0,0,9,0,0,'Melon Juice'),
+(1202,1645,0,0,11,0,0,'Moonberry Juice'),
+(1202,1708,0,0,10,0,0,'Sweet Nectar'),
+(1202,2287,0,0,2,0,0,'Haunch of Meat'),
+(1202,3770,0,0,3,0,0,'Mutton Chop'),
+(1202,3771,0,0,4,0,0,'Wild Hog Shank'),
+(1202,4599,0,0,5,0,0,'Cured Ham Steak'),
+(1202,8766,0,0,12,0,0,'Morning Glory Dew'),
+(1202,8952,0,0,6,0,0,'Roasted Quail');
+UPDATE `creature_template` SET `VendorTemplateId` = 1202 WHERE `entry` IN (982,3411,3621,3882,4875,7731,9356,12196);
