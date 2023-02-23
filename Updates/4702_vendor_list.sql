@@ -326,10 +326,71 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 (465,8766,0,0,7,0,0,'Morning Glory Dew'),
 (465,8932,0,0,18,0,0,'Alterac Swiss');
 
+-- Kyra Boucher 1275
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 1275;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(1275,5565,0,0,20,0,0,'Infernal Stone'),
+(1275,16583,0,0,21,0,0,'Demonic Figurine'),
+(1275,17020,0,0,10,0,0,'Arcane Powder'),
+(1275,17021,0,0,16,0,0,'Wild Berries'),
+(1275,17026,0,0,17,0,0,'Wild Thornroot'),
+(1275,17028,0,0,13,0,0,'Holy Candle'),
+(1275,17029,0,0,14,0,0,'Sacred Candle'),
+(1275,17030,0,0,11,0,0,'Ankh'),
+(1275,17031,0,0,8,0,0,'Rune of Teleportation'),
+(1275,17032,0,0,9,0,0,'Rune of Portals'),
+(1275,17033,0,0,12,0,0,'Symbol of Divinity'),
+(1275,17034,0,0,1,0,0,'Maple Seed'),
+(1275,17035,0,0,2,0,0,'Stranglethorn Seed'),
+(1275,17036,0,0,3,0,0,'Ashwood Seed'),
+(1275,17037,0,0,4,0,0,'Hornbeam Seed'),
+(1275,17038,0,0,5,0,0,'Ironwood Seed'),
+(1275,21177,0,0,22,0,0,'Symbol of Kings'),
+(1275,22147,0,0,6,0,0,'Flintweed Seed'),
+(1275,22148,0,0,18,0,0,'Wild Quillvine'),
+(1275,37201,0,0,23,0,0,'Corpse Dust'),
+(1275,44605,0,0,19,0,0,'Wild Spineleaf'),
+(1275,44614,0,0,7,0,0,'Starleaf Seed'),
+(1275,44615,0,0,15,0,0,'Devout Candle');
+
+-- Keldric Boucher 1257
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 1257;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(1257,858,3,9000,29,0,0,'Lesser Healing Potion'),
+(1257,3371,0,0,24,0,0,'Empty Vial'),
+(1257,3372,0,0,25,0,0,'Leaded Vial'),
+(1257,5565,0,0,20,0,0,'Infernal Stone'),
+(1257,8925,0,0,26,0,0,'Crystal Vial'),
+(1257,16583,0,0,21,0,0,'Demonic Figurine'),
+(1257,17020,0,0,10,0,0,'Arcane Powder'),
+(1257,17021,0,0,16,0,0,'Wild Berries'),
+(1257,17026,0,0,17,0,0,'Wild Thornroot'),
+(1257,17028,0,0,13,0,0,'Holy Candle'),
+(1257,17029,0,0,14,0,0,'Sacred Candle'),
+(1257,17030,0,0,11,0,0,'Ankh'),
+(1257,17031,0,0,8,0,0,'Rune of Teleportation'),
+(1257,17032,0,0,9,0,0,'Rune of Portals'),
+(1257,17033,0,0,12,0,0,'Symbol of Divinity'),
+(1257,17034,0,0,1,0,0,'Maple Seed'),
+(1257,17035,0,0,2,0,0,'Stranglethorn Seed'),
+(1257,17036,0,0,3,0,0,'Ashwood Seed'),
+(1257,17037,0,0,4,0,0,'Hornbeam Seed'),
+(1257,17038,0,0,5,0,0,'Ironwood Seed'),
+(1257,18256,0,0,27,0,0,'Imbued Vial'),
+(1257,21177,0,0,22,0,0,'Symbol of Kings'),
+(1257,22147,0,0,6,0,0,'Flintweed Seed'),
+(1257,22148,0,0,18,0,0,'Wild Quillvine'),
+(1257,37201,0,0,23,0,0,'Corpse Dust'),
+(1257,40411,0,0,28,0,0,'Enchanted Vial'),
+(1257,44605,0,0,19,0,0,'Wild Spineleaf'),
+(1257,44614,0,0,7,0,0,'Starleaf Seed'),
+(1257,44615,0,0,15,0,0,'Devout Candle');
+
 
 -- ------------------------
 -- Templates
-
 -- Weapons/arrom
 -- group moved to templates
 DELETE FROM `npc_vendor` WHERE entry IN (1249,2046,3613,5106);
