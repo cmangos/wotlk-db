@@ -48,14 +48,13 @@ INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
 (128593,19983),(128594,19983),(128595,19983),(128596,19983),(128597,19983),(128598,19983),
 (128599,19983),(128600,19983),(131748,19983),(131751,19983),(131752,19983),(131778,19983);
 -- Thrallmar Grunt 16580 - RP confirmed
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19982,19981);
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19981);
 INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19982,4),
 (19981,36);
 UPDATE creature SET equipment_id = 0 WHERE guid IN (57541,57539);
 DELETE FROM `creature_spawn_data` WHERE guid IN (57541,57539);
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(57541,19982),
+(57541,19983),
 (57539,19981);
 -- Skyguard Navigator 22982
 DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (9991);
