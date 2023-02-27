@@ -847,7 +847,7 @@ INSERT INTO creature (guid, id, map, spawnMask, modelid, equipment_id, position_
 (@CNGUID+55, 18502, 534, 1, 0, 0, 5332.248, -3738.275, 1604.216, 4.29351, 300, 300, 0, 0, 17058, 0, 0, 0), -- One with idle movement
 (@CNGUID+56, 18502, 534, 1, 0, 0, 5358.65, -3543.397, 1622.676, 0.3363659, 300, 300, 0, 0, 17058, 0, 0, 2),
 -- Archimonde Channel Target
-(@CNGUID+57, 22418, 534, 1, 18783, 0, 5502.288, -3525.471, 1607.909, 2.617994, 604800, 604800, 0, 0, 5000, 0, 0, 0); -- Note that this trigger is not here in a fresh instance. It is most likely spawned together with Archimonde.
+(@CNGUID+57, 22418, 534, 1, 0, 0, 5502.288, -3525.471, 1607.909, 2.617994, 604800, 604800, 0, 0, 5000, 0, 0, 0); -- Note that this trigger is not here in a fresh instance. It is most likely spawned together with Archimonde.
 
 -- ----------------------------------
 -- creature_movement
