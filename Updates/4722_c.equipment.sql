@@ -50,7 +50,7 @@ INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
 -- Thrallmar Grunt 16580 - RP confirmed
 DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19982,19981);
 INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19982,32),
+(19982,4),
 (19981,36);
 UPDATE creature SET equipment_id = 0 WHERE guid IN (57541,57539);
 DELETE FROM `creature_spawn_data` WHERE guid IN (57541,57539);
@@ -158,8 +158,8 @@ INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
 UPDATE creature SET equipment_id = 0 WHERE guid IN (88350,88351,88353,88354,88355,88356,88357,88358,88359,88360);
 DELETE FROM `creature_spawn_data` WHERE guid IN (88350,88351,88353,88354,88355,88356,88357,88358,88359,88360);
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(88350,20052),(88351,20052),(88352,20052),(88353,20052),(88354,20052),
-(88355,20052),(88356,20052),(88357,20052),(88358,20052),(88360,20052);
+(88350,20052),(88351,20052),(88353,20052),(88354,20052),(88355,20052),
+(88356,20052),(88357,20052),(88358,20052),(88359,20052),(88360,20052);
 -- Civilian Recruit 25317 - confirmed
 DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (20048);
 INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
