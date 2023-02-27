@@ -215,9 +215,22 @@ INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
 (@CGUID+40, 17269), (@CGUID+40, 17270), -- Bleeding Hollow Darkcaster, Bleeding Hollow Archer
 (@CGUID+44, 17269), (@CGUID+44, 17270); -- Bleeding Hollow Darkcaster, Bleeding Hollow Archer
 
--- Worker Equipment
-UPDATE `creature` SET `equipment_id` = 52512 WHERE `guid` IN (@CGUID+16,@CGUID+17); -- Bonechewer Hungerer 17259
-UPDATE `creature` SET `equipment_id` = 52513 WHERE `guid` IN (@CGUID+24,@CGUID+25); -- Bonechewer Ravener 17264
+-- Unique Equipment
+-- Bonechewer Hungerer 17259 - 2 have unique equipment
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19972);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19972,52512);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+16,@CGUID+17);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+16,19972),(@CGUID+17,19972);
+-- Bonechewer Ravener 17264 - 2 have unique equipment
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19971);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19971,52513);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+24,@CGUID+25);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+24,19971),(@CGUID+25,19971);
+
 
 -- ===========
 -- GAMEOBJECTS

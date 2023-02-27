@@ -501,8 +501,14 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+180, 0, 545, 3, 39.04907, -237.2698, -22.68699, 5.043978, 7200, 7200, 2, 0, 0, 1), -- creature_spawn_entry
 (@CGUID+181, 0, 545, 3, -17.88705, -184.7918, -21.95631, 1.973065, 7200, 7200, 2, 0, 0, 1); -- creature_spawn_entry
 
--- Using nondefault weapon
-UPDATE `creature` SET `equipment_id` = 17805 WHERE `guid` IN (@CGUID+21,@CGUID+22);
+-- Coilfang Engineer 17721 - 2 have unique equipment
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19977);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19977,17805);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+21,@CGUID+22);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+21,19977),(@CGUID+22,19977);
+
 
 -- ===========
 -- GAMEOBJECTS

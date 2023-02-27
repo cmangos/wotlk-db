@@ -1257,10 +1257,22 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+289, 22820, 548, 1, 451.099, -544.984, -7.46327, 0.174533, 604800, 604800, 0, 0, 0, 0), -- Seer Olum
 (@CGUID+290, 21212, 548, 1, 29.99015, -922.4088, 42.98521, 1.396263, 604800, 604800, 0, 0, 0, 0); -- Lady Vashj
 
--- Greyheart Skulker - 1 dagger and 1 hammer
-UPDATE creature SET equipment_id=2123201 WHERE guid IN (@CGUID+138,@CGUID+135,@CGUID+134,@CGUID+131);
--- Greyheart Nether-Mage/Tidecaller - 1 hammer
-UPDATE creature SET equipment_id=50130 WHERE guid IN (@CGUID+119,@CGUID+95,@CGUID+93,@CGUID+110,@CGUID+108);
+-- Unique Equipment
+-- Greyheart Skulker 21232 - 4 have unique equipment
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19975);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19975,2123201);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+138,@CGUID+135,@CGUID+134,@CGUID+131);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+138,19975),(@CGUID+135,19975),(@CGUID+134,19975),(@CGUID+131,19975);
+-- Greyheart Tidecaller 21229 - 5 have unique equipment
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19974);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19974,50130);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+119,@CGUID+95,@CGUID+93,@CGUID+110,@CGUID+108);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+119,19974),(@CGUID+95,19974),(@CGUID+93,19974),(@CGUID+110,19974),(@CGUID+108,19974);
+
 
 -- ===========
 -- GAMEOBJECTS
