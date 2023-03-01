@@ -62,6 +62,11 @@ INSERT INTO `questgiver_greeting` VALUES (27337, 0, ' ', 0, 0); -- wotlk
 
 -- --------------------------------------------------------------------------- --
 
+-- https://www.wowhead.com/wotlk/quest=176/wanted-hogger
+-- 2nd Questgiver for "Wanted: "Hogger"" (Wanted Poster)
+DELETE FROM `gameobject_questrelation` WHERE `id` = 156561 AND `quest` = 176;
+INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (156561, 176);
+
 -- https://tbc.wowhead.com/quest=467/stonegears-search
 -- 2nd Questgiver for "Stonegear's Search" (Pilot Longbeard)
 DELETE FROM `creature_questrelation` WHERE `id` = 2092 AND `quest` = 467;
