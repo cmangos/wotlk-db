@@ -388,6 +388,28 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `Exte
 (1257,44614,0,0,7,0,0,'Starleaf Seed'),
 (1257,44615,0,0,15,0,0,'Devout Candle');
 
+-- Kathrum Axehand 5509
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 5509;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(5509,2522,0,0,1,0,0,'Crescent Axe'),
+(5509,2523,0,0,3,0,0,'Bullova'),
+(5509,2530,0,0,2,0,0,'Francisca'),
+(5509,2531,0,0,4,0,0,'Great Axe');
+
+-- Catherine Leland 5494
+-- vendor list corrected
+DELETE FROM `npc_vendor` WHERE entry = 5494;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+(5494,6256,0,0,4,0,0,'Fishing Pole'),
+(5494,6325,0,0,1,0,0,'Recipe: Brilliant Smallfish'),
+(5494,6330,0,0,3,0,0,'Recipe: Bristle Whisker Catfish'),
+(5494,6365,1,9000,8,0,0,'Strong Fishing Pole'),
+(5494,6368,0,0,2,0,0,'Recipe: Rainbow Fin Albacore'),
+(5494,6529,0,0,5,0,0,'Shiny Bauble'),
+(5494,6530,0,0,6,0,0,'Nightcrawlers'),
+(5494,6532,0,0,7,0,0,'Bright Baubles'),
+(5494,6533,1,43200,9,0,0,'Aquadynamic Fish Attractor');
 
 -- ------------------------
 -- Templates
