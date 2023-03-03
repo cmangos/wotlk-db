@@ -6,7 +6,7 @@ DELETE FROM conditions WHERE condition_entry IN (522, 560);
 
 SET @COND1 = 522; -- condID reused
 SET @COND2 = 320;
-SET @COND3 = 160;
+SET @COND3 = 168;
 SET @COND4 = 560; -- condID reused
 SET @COND5 = XXX;
 
