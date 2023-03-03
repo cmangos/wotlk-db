@@ -542,8 +542,6 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX
 (24858, 4, 39, 364.2945, 1429.232, 99.35547, 100, 0, 0),
 (24858, 4, 40, 385.5457, 1429.076, 97.52219, 100, 0, 0);
 
-UPDATE creature SET equipment_id=5592 WHERE guid=@CGUID+104; -- Amanishi Guardian (starts holding a spear for gong event RP script)
-
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `emote`, `moveflags`, `auras`) VALUES
 -- (@CGUID+23, 0, 0, 1, 0, 0, '46750'), -- World Trigger (Not Immune PC)
 (@CGUID+66, 0, 1, 1, 0, 0, '18950'), -- Amani'shi Scout
@@ -1415,6 +1413,15 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+519, 24223, 568, 1, 394.94815, 1381.38928, 74.50968, 3.78736, 7200, 7200, 0, 0, 0, 0), -- Eagle Trash Aggro Trigger
 (@CGUID+520, 24223, 568, 1, 429.48010, 1371.66577, 74.41665, 5.46288, 7200, 7200, 0, 0, 0, 0), -- Eagle Trash Aggro Trigger
 (@CGUID+521, 24223, 568, 1, 446.02258, 1354.25329, 85.51732, 5.84685, 7200, 7200, 0, 0, 0, 0); -- Eagle Trash Aggro Trigger
+
+-- Amanishi Guardian (starts holding a spear for gong event RP script)
+DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19970);
+INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
+(19970,132);
+DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+104);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(@CGUID+104,19977);
+
 
 -- ===========
 -- GAMEOBJECTS
