@@ -115,7 +115,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+30, 15, -116.98, -268.887, 11.5461, 0, 0, 0),
 (@CGUID+30, 16, -120.91, -275.611, 8.12349, 0, 0, 0),
 (@CGUID+30, 17, -123.049, -282.012, 6.24447, 4.33602, 20000, 0),
-(@CGUID+33, 1, -9.3977, -207.509, -4.5348, 100, 0, 5),
+(@CGUID+33, 1, -9.3977, -207.509, -4.5348, 100, 1, 5),
 (@CGUID+33, 2, -10.3382, -192.725, -4.5348, 100, 0, 0),
 (@CGUID+33, 3, -27.406, -199.756, -4.5348, 100, 0, 0),
 (@CGUID+33, 4, -19.8416, -210.614, -4.5348, 100, 0, 0),
@@ -992,7 +992,7 @@ INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
 (@PATH_ID+1,'The Underbog - Naga Broken formation - Ghazan trash');
 
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
-(@PATH_ID, '1', '39.8324', '-229.47', '-4.53228', '0', '0', '5', NULL),
+(@PATH_ID, '1', '39.8324', '-229.47', '-4.53228', '0', '1', '5', NULL),
 (@PATH_ID, '2', '46.257', '-241.332', '-4.53228', '0', '0', '0', NULL),
 (@PATH_ID, '3', '57.8113', '-245.067', '-4.52833', '0', '0', '0', NULL),
 (@PATH_ID, '4', '46.2711', '-241.162', '-4.53319', '0', '0', '0', NULL),
