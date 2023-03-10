@@ -328,7 +328,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+150, 10, 140.21, 164.22, 22.4401, 3.68492, 0, 0),
 (@CGUID+150, 11, 125.306, 157.433, 22.4401, 3.68492, 0, 0);
 
-DELETE FROM creature_movement_template WHERE entry IN (20865,20864);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (20865,20864);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 -- Protean Horror
 (20865, 1, 1, 123.2132, 0.05693996, -10.1021, 100, 0, 2086501),
@@ -571,6 +571,27 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+149, 20882, 552, 3, 164.571, 164.083, 22.4412, 5.65782, 7200, 7200, 0, 2), -- Skulking Witch
 (@CGUID+150, 20882, 552, 3, 123.33, 146.789, 22.4412, 0.00192785, 7200, 7200, 0, 2); -- Skulking Witch
 
+-- ===========
+-- GAMEOBJECTS
+-- ===========
+
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
+(@OGUID+1, 182198, 552, 3, 320.304, -21.8057, 22.4412, 1.8675, 0, 0, 0, 0, 86400, 86400), -- Arcane Container
+(@OGUID+2, 183362, 552, 3, 439.832, 32.7644, 48.2747, -3.10335, 0, 0, 0, 0, 180, 180), -- Brazier
+(@OGUID+3, 183363, 552, 3, 455.298, 16.4321, 48.2747, -3.10335, 0, 0, 0, 0, 180, 180), -- Brazier
+(@OGUID+4, 183961, 552, 3, 484.1, -150.403, 61.5632, -0.436333, 0, 0, 0, 0, 180, 180), -- Stasis Pod Alpha
+(@OGUID+5, 183962, 552, 3, 477.488, -174.455, 61.5633, -0.087266, 0, 0, 0, 0, 43200, 43200), -- Stasis Pod Gamma
+(@OGUID+6, 183963, 552, 3, 407.962, -151.243, 61.5632, -2.70526, 0, 0, 0, 0, 180, 180), -- Stasis Pod Beta
+(@OGUID+7, 183964, 552, 3, 414.255, -175.364, 61.5589, -3.05433, 0, 0, 0, 0, 180, 180), -- Stasis Pod Delta
+(@OGUID+8, 183965, 552, 3, 445.835, -208.129, 73.9555, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Stasis Pod Omega
+(@OGUID+9, 184213, 552, 3, -3.77762, 0.178076, -1.55146, 3.14159, 0, 0, 0, 0, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+10, 184214, 552, 3, -3.77762, 0.178076, -1.55146, 3.14159, 0, 0, 0, 0, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+11, 184318, 552, 3, 199.827, 117.488, 23.8766, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Containment Core Security Field Alpha
+(@OGUID+12, 184319, 552, 3, 199.911, 102.009, 23.6937, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Containment Core Security Field Beta
+(@OGUID+13, 184802, 552, 3, 445.786, -169.263, 43.0466, -0.558505, 0, 0, 0, 0, 43200, 43200); -- Warden's Shield
+
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -578,6 +599,17 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING
@@ -685,29 +717,6 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 -- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
 -- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 -- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
-
--- ===========
--- GAMEOBJECTS
--- ===========
-
-INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
-(@OGUID+1, 182198, 552, 3, 320.304, -21.8057, 22.4412, 1.8675, 0, 0, 0, 0, 86400, 86400), -- Arcane Container
-(@OGUID+2, 183362, 552, 3, 439.832, 32.7644, 48.2747, -3.10335, 0, 0, 0, 0, 180, 180), -- Brazier
-(@OGUID+3, 183363, 552, 3, 455.298, 16.4321, 48.2747, -3.10335, 0, 0, 0, 0, 180, 180), -- Brazier
-(@OGUID+4, 183961, 552, 3, 484.1, -150.403, 61.5632, -0.436333, 0, 0, 0, 0, 180, 180), -- Stasis Pod Alpha
-(@OGUID+5, 183962, 552, 3, 477.488, -174.455, 61.5633, -0.087266, 0, 0, 0, 0, 43200, 43200), -- Stasis Pod Gamma
-(@OGUID+6, 183963, 552, 3, 407.962, -151.243, 61.5632, -2.70526, 0, 0, 0, 0, 180, 180), -- Stasis Pod Beta
-(@OGUID+7, 183964, 552, 3, 414.255, -175.364, 61.5589, -3.05433, 0, 0, 0, 0, 180, 180), -- Stasis Pod Delta
-(@OGUID+8, 183965, 552, 3, 445.835, -208.129, 73.9555, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Stasis Pod Omega
-(@OGUID+9, 184213, 552, 3, -3.77762, 0.178076, -1.55146, 3.14159, 0, 0, 0, 0, 0, 0), -- Instance_Portal_Difficulty_0
-(@OGUID+10, 184214, 552, 3, -3.77762, 0.178076, -1.55146, 3.14159, 0, 0, 0, 0, 0, 0), -- Instance_Portal_Difficulty_1
-(@OGUID+11, 184318, 552, 3, 199.827, 117.488, 23.8766, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Containment Core Security Field Alpha
-(@OGUID+12, 184319, 552, 3, 199.911, 102.009, 23.6937, 3.14159, 0, 0, 0, 0, 43200, 43200), -- Containment Core Security Field Beta
-(@OGUID+13, 184802, 552, 3, 445.786, -169.263, 43.0466, -0.558505, 0, 0, 0, 0, 43200, 43200); -- Warden's Shield
-
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+9,0,0,0,0,0,1),
-(@OGUID+10,0,0,0,0,0,1);
 
 -- =========
 -- DBSCRIPTS

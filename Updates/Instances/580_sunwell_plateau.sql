@@ -1533,17 +1533,15 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+28, 188178, 580, 1, 2149.05, 358.351, 67.3815, 1.09083, 0, 0, 0, 0, 7200, 7200), -- Doodad_InstancePortal_PurpleDifficultyIcon01
 (@OGUID+29, 188421, 580, 1, 1705.534, 926.6104, 32.56157, 1.553341, 0, 0, 0.7009087, 0.7132511, 7200, 7200), -- Doodad_Sunwell_BossForceField01
 (@OGUID+30, 188523, 580, 1, 1704.87, 927.791, 40.58109, 1.553341, 0, 0, 0.7009087, 0.7132511, 7200, 7200), -- Doodad_Sunwell_BossCollision01
-(@OGUID+31, 188524, 580, 1, 1705.133, 929.5046, 40.58109, 1.553341, 0, 0, 0.7009087, 0.7132511, 7200, 7200); -- Doodad_Sunwell_BossCollision02
-
+(@OGUID+31, 188524, 580, 1, 1705.133, 929.5046, 40.58109, 1.553341, 0, 0, 0.7009087, 0.7132511, 7200, 7200), -- Doodad_Sunwell_BossCollision02
 -- SCRIPTED gameobject SPAWNS
-INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (@OGUID+33, 187869, 580, 1, 1746.565, 621.9134, 28.05021, 2.984498, 0, 0, 0.9969168, 0.07846643, 7200, 7200), -- Orb of the Blue Flight
 (@OGUID+32, 188114, 580, 1, 1704.303, 582.6811, 28.16483, 1.605702, 0, 0, 0.7193394, 0.6946588, 7200, 7200), -- Orb of the Blue Flight
 (@OGUID+34, 188115, 580, 1, 1651.921, 635.3501, 28.12865, 6.19592, 0, 0, -0.04361916, 0.9990482, 7200, 7200), -- Orb of the Blue Flight
 (@OGUID+35, 188116, 580, 1, 1696.155, 674.9676, 28.05021, 4.81711, 0, 0, -0.6691303, 0.743145, 7200, 7200); -- Orb of the Blue Flight
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(5800025,255,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `state`) VALUES
+(@OGUID+25, 0); -- Sanctum Planetarium
 
 -- ======
 -- EVENTS
@@ -1555,17 +1553,6 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@OGUID+22, 316),  -- Spawn Agamath, The First Gate -> SWP All Gates Closed
 (@OGUID+20, 317),  -- Spawn Rohendor, The Second Gate -> SWP First Gate Open
 (@OGUID+21, 318);  -- Spawn Archonisus, The Third Gate -> SWP Second Gate Open
-
--- =======
--- POOLING
--- =======
-
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 
 -- ============
 -- SPAWN GROUPS
@@ -1584,6 +1571,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`) VALUES
 (5800001, @CGUID+164),
 (5800001, @CGUID+165),
 (5800001, @CGUID+169);
+
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

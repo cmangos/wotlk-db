@@ -345,7 +345,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+429, 12, 432.675568, 981.687439, 0.000064, 100, 0, 0),
 (@CGUID+429, 13, 421.063110, 987.692993, 0.000064, 100, 0, 0);
 
-DELETE FROM `creature_movement_template` WHERE entry IN (24159,24225,23897,23818,24504,24858);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (24159,24225,23897,23818,24504,24858);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 -- Amani Eagle
 (24159, 0, 1, 376.353, 1407.34, 75.5313, 100, 0, 0),
@@ -1414,14 +1414,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+520, 24223, 568, 1, 429.48010, 1371.66577, 74.41665, 5.46288, 7200, 7200, 0, 0), -- Eagle Trash Aggro Trigger
 (@CGUID+521, 24223, 568, 1, 446.02258, 1354.25329, 85.51732, 5.84685, 7200, 7200, 0, 0); -- Eagle Trash Aggro Trigger
 
--- Amanishi Guardian (starts holding a spear for gong event RP script)
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19970);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19970,132);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+104);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+104,19977);
-
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (2359701, 2359701);
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 2359701 FROM `creature` WHERE `guid` IN (@CGUID+104); -- Amanishi Guardian (starts holding a spear for gong event RP script)
 
 -- ===========
 -- GAMEOBJECTS
@@ -1524,13 +1518,13 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+94, 186338, 568, 1, 417.833, 1499.60, 81.6331, 2.28637, 0, 0, 0.909960, 0.414694, 180, 180), -- Zul'Aman Dummy Cage
 (@OGUID+95, 191460, 568, 1, 245.824, 1018.73, 3.5506, -2.9234, 0, 0, -0.994055, 0.108872, 180, 180); -- Bonfire
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+39,255,0,0,0,0,1),
-(@OGUID+40,255,0,0,0,0,1),
-(@OGUID+41,255,0,0,0,0,1),
-(@OGUID+42,255,0,0,0,0,1),
-(@OGUID+43,255,0,0,0,0,1),
-(@OGUID+44,255,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `state`) VALUES
+(@OGUID+39, 0), -- Zul'Aman Dummy Cage - Open
+(@OGUID+40, 0), -- Zul'Aman Dummy Cage - Open
+(@OGUID+41, 0), -- Zul'Aman Dummy Cage - Open
+(@OGUID+42, 0), -- Zul'Aman Dummy Cage - Open
+(@OGUID+43, 0), -- Zul'Aman Dummy Cage - Open
+(@OGUID+44, 0); -- Zul'Aman Dummy Cage - Open
 
 -- ======
 -- EVENTS
@@ -1539,17 +1533,6 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
-
--- =======
--- POOLING
--- =======
-
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 
 -- ============
 -- SPAWN GROUPS
@@ -1562,6 +1545,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`) VALUES
 (5680001, @CGUID+333);
+
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS
@@ -1587,7 +1574,10 @@ INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`
 (186430, 0, 0, 0, 0, 0, 23897, 10, 0, 23208, 0, 0, 0, 0, 0, 0, 0, 'Zungam - Say Text 1'),
 (186430, 2000, 20, 2, 0, 0, 23897, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Zungam - Set Waypoint Movement');
 
--- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+DELETE FROM `dbscripts_on_relay` WHERE `id` IN (2359701);
+INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(2359701, 0, 42, 0, 0, 0, 0, 0, 0, 13631, 0, 0, 0, 0, 0, 0, 0, 'Amani\'shi Guardian - EquipSet 2');
+
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

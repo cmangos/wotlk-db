@@ -894,9 +894,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+102, 180632, 469, -7554.89, -1039.86, 449.213, 2.96704, 0, 0, 0.996194, 0.0871655, 180, 180), -- Alchemy Lab
 (@OGUID+103, 180667, 469, -7526.57, -924.776, 458.826, 0.558504, 0, 0, 0.275637, 0.961262, 180, 180); -- Draconic for Dummies
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+8,0,-1,0,0,0,1),
-(@OGUID+39,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+8, 0, -1),
+(@OGUID+39, 0, -1);
 
 -- ======
 -- EVENTS
@@ -906,16 +906,16 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

@@ -3538,6 +3538,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+24, 186261, 564, 1, 747.372, 243.995, 354.224, 0.816941, 0, 0, 0, 0, 180, 180), -- Doodad_BT_Illidan_Door_Right01
 (@OGUID+25, 186262, 564, 1, 748.172, 365.617, 354.224, 2.31417, 0, 0, 0, 0, 180, 180); -- Doodad_BT_Illidan_Door_Left01
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -3545,6 +3547,17 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

@@ -284,6 +284,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+12, 0, 34, 151.6896514892578125, -65.130950927734375, -34.856231689453125, -1.18682324886322021, 0, 0, -0.55919265747070312, 0.829037725925445556, 86400, 86400), -- Large Iron Bound Chest, Large Solid Chest
 (@OGUID+13, 0, 34, 90.59210205078125, -145.882415771484375, -33.9395675659179687, 1.448622107505798339, 0, 0, 0.662619590759277343, 0.748956084251403808, 86400, 86400); -- Large Iron Bound Chest, Large Solid Chest
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -291,6 +293,17 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

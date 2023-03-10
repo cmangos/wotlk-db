@@ -501,14 +501,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+180, 0, 545, 3, 39.04907, -237.2698, -22.68699, 5.043978, 7200, 7200, 2, 1), -- creature_spawn_entry
 (@CGUID+181, 0, 545, 3, -17.88705, -184.7918, -21.95631, 1.973065, 7200, 7200, 2, 1); -- creature_spawn_entry
 
--- Coilfang Engineer 17721 - 2 have unique equipment
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19977);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19977,17805);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+21,@CGUID+22);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+21,19977),(@CGUID+22,19977);
-
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (1772101, 1772101);
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 1772101 FROM `creature` WHERE `guid` IN (@CGUID+21,@CGUID+22);
 
 -- ===========
 -- GAMEOBJECTS
@@ -566,11 +560,11 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+55, 181278, 545, 3, -238.2517, -133.8857, -65.16281, 0.1745321, 0, 0, 0.08715534, 0.9961947, 86400, 86400), -- Ancient Lichen
 (@OGUID+56, 181278, 545, 3, -15.03267, -312.0513, -62.49138, 4.502952, 0, 0, -0.7771454, 0.6293211, 86400, 86400); -- Ancient Lichen
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(5450035,0,-1,0,0,0,1),
-(5450036,0,-1,0,0,0,1),
-(5450037,0,0,0,0,0,1),
-(5450038,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+35, 0, -1), -- Main Chambers Access Panel
+(@OGUID+36, 0, -1), -- Main Chambers Access Panel
+(@OGUID+37, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+38, 0, 0); -- Instance_Portal_Difficulty_1
 
 INSERT INTO gameobject_spawn_entry (guid, entry) VALUES
 (@OGUID+39, 184940), (@OGUID+39, 184941), -- Bound Adamantite Chest, Solid Adamantite Chest
@@ -588,6 +582,17 @@ INSERT INTO gameobject_spawn_entry (guid, entry) VALUES
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING
@@ -684,7 +689,10 @@ INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`
 (184126, 12000, 20, 2, 0, 0, 17800, @CGUID+177, 23, 0, 0, 0, 0, 0, 0, 0, 0, 'Coilfang Myrmidon 17800 - Change MovementType to 2 on 2000020038'),
 (184126, 12000, 20, 2, 0, 0, 17800, @CGUID+176, 23, 0, 0, 0, 0, 0, 0, 0, 0, 'Coilfang Myrmidon 17800 - Change MovementType to 2 on 2000020038');
 
--- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+DELETE FROM `dbscripts_on_relay` WHERE `id` IN (1772101);
+INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(1772101, 0, 42, 0, 0, 0, 0, 0, 0, 2023, 0, 0, 0, 0, 0, 0, 0, 'Coilfang Engineer - EquipSet 2');
+
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

@@ -888,15 +888,26 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+59, 178194, 409, 765.562, -995.398, -197.221, 2.19912, 0, 0, 0, 1, 604800, 604800), -- Lava Crack
 (@OGUID+60, 179703, 409, 756.897, -1180.7, -118.596, 2.91469, 0, 0, 0, 1, -604800, -604800); -- Cache of the Firelord
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
 
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
-
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
-
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

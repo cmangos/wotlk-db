@@ -3,9 +3,6 @@ DBName: Onyxia's Lair
 DBScriptName: instance_onyxias_lair
 DB%Complete: 75
 DBComment:
-Investigate Onyxian Warder 12129 Pathing
-Gameobject Entry 176510 triggering s.17646?
-12758 did not appear in sniff, but optionally used in core
 EndDBScriptData */
 
 SET @CGUID := 2490000; -- creatures
@@ -77,9 +74,10 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+3, 12129, 249, -62.9558, -98.3516, -38.731, 3.19534, 7200, 7200, 0, 2), -- Onyxian Warder
 (@CGUID+4, 12129, 249, -154.478, -210.884, -66.4414, 2.70244, 7200, 7200, 0, 2), -- Onyxian Warder
 (@CGUID+5, 12129, 249, -200.1429, -212.3809, -68.62948, 0.8552113, 7200, 7200, 0, 0), -- Onyxian Warder
-(@CGUID+6, 12758, 249, -27.0481, -219.097, -89.2858, 4.76475, 180, 180, 0, 0), -- Onyxia Trigger
+(@CGUID+6, 12758, 249, -27.0481, -219.097, -89.2858, 4.76475, 180, 180, 0, 0); -- Onyxia Trigger
 
 -- WOTLK+
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+7, 12129, 249, -170.8512, -195.6766, -66.56838, 0.8512571, 7200, 7200, 5, 1), -- Onyxian Warder
 (@CGUID+8, 12129, 249, 49.8206, -114.607, -24.3112, 1.24193, 7200, 7200, 5, 1), -- Onyxian Warder
 (@CGUID+9, 12129, 249, -90.718, -106.234, -38.1972, 0.603836, 7200, 7200, 5, 1); -- Onyxian Warder
@@ -336,39 +334,34 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+244, 178045, 249, -54.6915, -229.819, -85.889, -1.5708, 0, 0, 1, 0, 180, 180), -- Doodad_OnyziasLairLavaTrapMirror35
 (@OGUID+245, 178046, 249, -48.0902, -234.856, -86.2826, 0.610865, 0, 0, 1, 0, 180, 180), -- Doodad_OnyziasLairLavaTrapMirror36
 (@OGUID+246, 178047, 249, -55.075, -241.777, -85.3179, 1.0472, 0, 0, 1, 0, 180, 180), -- Doodad_OnyziasLairLavaTrapMirror37
-(@OGUID+247, 178048, 249, -63.8632, -232.924, -85.1124, -1.91986, 0, 0, 1, 0, 180, 180), -- Doodad_OnyziasLairLavaTrapMirror38
+(@OGUID+247, 178048, 249, -63.8632, -232.924, -85.1124, -1.91986, 0, 0, 1, 0, 180, 180); -- Doodad_OnyziasLairLavaTrapMirror38
 
 -- WOTLK+
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (@OGUID+248, 200294, 249, 31.0443, -48.1652, -0.733419, 1.5708, 0, 0, 0.707107, 0.707107, 180, 180), -- Doodad_InstancePortal_Green_10Man01
 (@OGUID+249, 200295, 249, 30.9999, -48.1652, -0.73342, -1.5708, 0, 0, -0.707107, 0.707107, 180, 180); -- Doodad_InstancePortal_Green_25Man01
 UPDATE `gameobject` SET `spawnmask` = 3 WHERE `map` = 249;
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 
 -- ======
 -- EVENTS
 -- ======
 
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
-
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
-
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
-
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
-
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
-
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
-
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
-
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

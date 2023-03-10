@@ -408,7 +408,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+125,43,45.13658,-379.5733,72.99741,100,0,0),
 (@CGUID+125,44,107.8272,-362.0116,57.31628,100,0,0);
 
-DELETE FROM creature_movement_template WHERE entry IN (18105,17882,17826);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (18105,17882,17826);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 -- Ghaz'an (18105)
 -- water path
@@ -592,46 +592,6 @@ INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
 (@CGUID+106, 17729), (@CGUID+106, 17730), (@CGUID+106, 17771), -- Murkblood Spearman, Murkblood Healer, Murkblood Oracle
 (@CGUID+107, 17728), (@CGUID+107, 17729), (@CGUID+107, 17771), -- Murkblood Tribesman, Murkblood Spearman, Murkblood Oracle
 (@CGUID+113, 17724), (@CGUID+113, 17725), (@CGUID+113, 17871); -- Underbat, Underbog Lurker, Underbog Shambler
-
-INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(@GROUP_ID, 'UB - Ray formation - Hungarfen trash', 0, 0, 0, 1),
-(@GROUP_ID+1, 'UB - Naga Broken formation - Ghazan trash', 0, 0, 0, 1);
-
-INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(@GROUP_ID,@CGUID+13,0),
-(@GROUP_ID,@CGUID+16,1),
-(@GROUP_ID,@CGUID+19,2),
-(@GROUP_ID+1,@CGUID+97,0),
-(@GROUP_ID+1,@CGUID+61,1),
-(@GROUP_ID+1,@CGUID+62,2),
-(@GROUP_ID+1,@CGUID+70,3);
-
-INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-(@GROUP_ID,4,3,0,@PATH_ID,2,'UB - Ray formation - Triangle'),
-(@GROUP_ID+1,0,3,0,@PATH_ID+1,2,'UB - Naga Broken formation - Ghazan trash');
-
-INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
-(@PATH_ID, '1', '39.8324', '-229.47', '-4.53228', '0', '1', '5', NULL),
-(@PATH_ID, '2', '46.257', '-241.332', '-4.53228', '0', '0', '0', NULL),
-(@PATH_ID, '3', '57.8113', '-245.067', '-4.52833', '0', '0', '0', NULL),
-(@PATH_ID, '4', '46.2711', '-241.162', '-4.53319', '0', '0', '0', NULL),
-(@PATH_ID, '5', '39.8119', '-229.012', '-4.53319', '0', '0', '0', NULL),
-(@PATH_ID, '6', '33.0846', '-220.049', '-4.53319', '0', '0', '0', NULL),
-(@PATH_ID, '7', '31.4191', '-201.583', '-4.36945', '0', '0', '0', NULL),
-(@PATH_ID, '8', '33.423', '-220.337', '-4.53293', '0', '0', '0', NULL),
-
-(@PATH_ID+1, '1', '211.702', '-380.781', '48.1706', '0', '0', '0', NULL),
-(@PATH_ID+1, '2', '219.298', '-378.574', '48.1772', '0', '0', '0', NULL),
-(@PATH_ID+1, '3', '228.64', '-376.503', '48.1903', '0', '0', '0', NULL),
-(@PATH_ID+1, '4', '240.787', '-374.489', '48.2244', '0', '0', '0', NULL),
-(@PATH_ID+1, '5', '228.163', '-376.683', '48.1922', '0', '0', '0', NULL),
-(@PATH_ID+1, '6', '219.533', '-378.656', '48.1803', '0', '0', '0', NULL),
-(@PATH_ID+1, '7', '211.634', '-381.018', '48.1742', '0', '0', '0', NULL),
-(@PATH_ID+1, '8', '201.99', '-379.466', '48.1103', '0', '0', '0', NULL);
-
-INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
-(@PATH_ID,'UB - Ray formation - Triangle'),
-(@PATH_ID+1,'UB - Naga Broken formation - Ghazan trash');
 
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+1, 17723, 546, 3, 10.63608, -206.855, -4.449889, 4.590884, 7200, 7200, 3, 1), -- Bog Giant
@@ -993,9 +953,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+121, 184936, 546, 2, 270.4417, -177.5935, 29.54572, 2.809975, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
 (@OGUID+122, 184937, 546, 2, 270.4417, -177.5935, 29.54572, 2.809975, 0, 0, 0, 0, 86400, 86400); -- Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+23,0,0,0,0,0,1),
-(@OGUID+24,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+23, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+24, 0, 0); -- Instance_Portal_Difficulty_0
 
 -- ======
 -- EVENTS
@@ -1004,6 +964,51 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(@GROUP_ID, 'The Underbog - Ray formation - Hungarfen trash', 0, 0, 0, 1),
+(@GROUP_ID+1, 'The Underbog - Naga Broken formation - Ghazan trash', 0, 0, 0, 1);
+
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(@GROUP_ID,@CGUID+13,0),
+(@GROUP_ID,@CGUID+16,1),
+(@GROUP_ID,@CGUID+19,2),
+(@GROUP_ID+1,@CGUID+97,0),
+(@GROUP_ID+1,@CGUID+61,1),
+(@GROUP_ID+1,@CGUID+62,2),
+(@GROUP_ID+1,@CGUID+70,3);
+
+INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+(@GROUP_ID,4,3,0,@PATH_ID,2,'The Underbog - Ray formation - Triangle'),
+(@GROUP_ID+1,0,3,0,@PATH_ID+1,2,'The Underbog - Naga Broken formation - Ghazan trash');
+
+INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+(@PATH_ID,'The Underbog - Ray formation - Triangle'),
+(@PATH_ID+1,'The Underbog - Naga Broken formation - Ghazan trash');
+
+INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
+(@PATH_ID, '1', '39.8324', '-229.47', '-4.53228', '0', '0', '5', NULL),
+(@PATH_ID, '2', '46.257', '-241.332', '-4.53228', '0', '0', '0', NULL),
+(@PATH_ID, '3', '57.8113', '-245.067', '-4.52833', '0', '0', '0', NULL),
+(@PATH_ID, '4', '46.2711', '-241.162', '-4.53319', '0', '0', '0', NULL),
+(@PATH_ID, '5', '39.8119', '-229.012', '-4.53319', '0', '0', '0', NULL),
+(@PATH_ID, '6', '33.0846', '-220.049', '-4.53319', '0', '0', '0', NULL),
+(@PATH_ID, '7', '31.4191', '-201.583', '-4.36945', '0', '0', '0', NULL),
+(@PATH_ID, '8', '33.423', '-220.337', '-4.53293', '0', '0', '0', NULL),
+
+(@PATH_ID+1, '1', '211.702', '-380.781', '48.1706', '0', '0', '0', NULL),
+(@PATH_ID+1, '2', '219.298', '-378.574', '48.1772', '0', '0', '0', NULL),
+(@PATH_ID+1, '3', '228.64', '-376.503', '48.1903', '0', '0', '0', NULL),
+(@PATH_ID+1, '4', '240.787', '-374.489', '48.2244', '0', '0', '0', NULL),
+(@PATH_ID+1, '5', '228.163', '-376.683', '48.1922', '0', '0', '0', NULL),
+(@PATH_ID+1, '6', '219.533', '-378.656', '48.1803', '0', '0', '0', NULL),
+(@PATH_ID+1, '7', '211.634', '-381.018', '48.1742', '0', '0', '0', NULL),
+(@PATH_ID+1, '8', '201.99', '-379.466', '48.1103', '0', '0', '0', NULL);
 
 -- =======
 -- POOLING

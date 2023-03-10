@@ -878,11 +878,11 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+82, 37099, 109, -290.904022216796875, 90.18634796142578125, -170.10723876953125, 2.67034769058227539, 0, 0, 0.972369194030761718, 0.233448356389999389, 3600, 4800), -- Atal'ai Tablet
 (@OGUID+83, 37099, 109, -279.370513916015625, 85.9246826171875, -88.5831222534179687, -1.83259487152099609, 0, 0, -0.79335308074951171, 0.608761727809906005, 3600, 4800); -- Atal'ai Tablet
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+5,0,-1,0,0,0,1),
-(@OGUID+12,0,-1,0,0,0,1),
-(@OGUID+13,0,-1,0,0,0,1),
-(@OGUID+37,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+5, 0, -1),
+(@OGUID+12, 0, -1),
+(@OGUID+13, 0, -1),
+(@OGUID+37, 0, -1);
 
 -- ======
 -- EVENTS

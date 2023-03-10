@@ -100,24 +100,24 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+5, 18836, 565, 1, 144.731, 199.921, -9.97698, 3.47321, 7200, 7200, 0, 0), -- Blindeye the Seer
 (@CGUID+6, 19044, 565, 1, 239.919, 359.057, -4.65222, 3.01282, 604800, 604800, 0, 0), -- Gruul the Dragonkiller
 -- Patrol 1
-(@CGUID+7, 0, 565, 1, 67.1291, 99.4851, -5.41845, 1.4318, 3600, 3600, 0, 2), -- see creature_spawn_entry
+(@CGUID+7, 0, 565, 1, 67.1291, 99.4851, -5.41845, 1.4318, 3600, 3600, 0, 2), -- creature_spawn_entry
 -- Group 1
-(@CGUID+8, 0, 565, 1, 65.635, 130.703, -6.20328, 6.14971, 3600, 3600, 0, 0), -- see creature_spawn_entry
-(@CGUID+9, 0, 565, 1, 76.6184, 129.076, -7.02181, 3.0576, 3600, 3600, 0, 0), -- see creature_spawn_entry
+(@CGUID+8, 0, 565, 1, 65.635, 130.703, -6.20328, 6.14971, 3600, 3600, 0, 0), -- creature_spawn_entry
+(@CGUID+9, 0, 565, 1, 76.6184, 129.076, -7.02181, 3.0576, 3600, 3600, 0, 0), -- creature_spawn_entry
 -- Patrol 2
-(@CGUID+10, 0, 565, 1, 102.559, 288.509, 1.11309, 4.65193, 3600, 3600, 0, 2), -- see creature_spawn_entry
+(@CGUID+10, 0, 565, 1, 102.559, 288.509, 1.11309, 4.65193, 3600, 3600, 0, 2), -- creature_spawn_entry
 -- Group 2
-(@CGUID+11, 0, 565, 1, 95.9796, 283.051, 2.23278, 0.017294, 3600, 3600, 0, 0), -- see creature_spawn_entry
-(@CGUID+12, 0, 565, 1, 109.359, 281.634, 1.95785, 2.94604, 3600, 3600, 0, 0), -- see creature_spawn_entry
+(@CGUID+11, 0, 565, 1, 95.9796, 283.051, 2.23278, 0.017294, 3600, 3600, 0, 0), -- creature_spawn_entry
+(@CGUID+12, 0, 565, 1, 109.359, 281.634, 1.95785, 2.94604, 3600, 3600, 0, 0), -- creature_spawn_entry
 -- Group 3
-(@CGUID+13, 0, 565, 1, 101.226, 326.936, 1.57027, 1.28414, 3600, 3600, 0, 0), -- see creature_spawn_entry
-(@CGUID+14, 0, 565, 1, 102.668, 335.433, 2.02522, 4.51134, 3600, 3600, 0, 0), -- see creature_spawn_entry
+(@CGUID+13, 0, 565, 1, 101.226, 326.936, 1.57027, 1.28414, 3600, 3600, 0, 0), -- creature_spawn_entry
+(@CGUID+14, 0, 565, 1, 102.668, 335.433, 2.02522, 4.51134, 3600, 3600, 0, 0), -- creature_spawn_entry
 -- Patrol 3
-(@CGUID+15, 0, 565, 1, 121.425, 353.774, 5.57, 3.99279, 3600, 3600, 0, 2), -- see creature_spawn_entry
+(@CGUID+15, 0, 565, 1, 121.425, 353.774, 5.57, 3.99279, 3600, 3600, 0, 2), -- creature_spawn_entry
 -- Group 4
-(@CGUID+16, 0, 565, 1, 177.683, 371.957, 0.435013, 3.14632, 3600, 3600, 0, 0), -- see creature_spawn_entry
-(@CGUID+17, 0, 565, 1, 175.194, 365.85, 0.046197, 2.95075, 3600, 3600, 0, 0), -- see creature_spawn_entry
-(@CGUID+18, 0, 565, 1, 177.139, 358.69, -1.00116, 2.79996, 3600, 3600, 0, 0); -- see creature_spawn_entry
+(@CGUID+16, 0, 565, 1, 177.683, 371.957, 0.435013, 3.14632, 3600, 3600, 0, 0), -- creature_spawn_entry
+(@CGUID+17, 0, 565, 1, 175.194, 365.85, 0.046197, 2.95075, 3600, 3600, 0, 0), -- creature_spawn_entry
+(@CGUID+18, 0, 565, 1, 177.139, 358.69, -1.00116, 2.79996, 3600, 3600, 0, 0); -- creature_spawn_entry
 
 -- ===========
 -- GAMEOBJECTS
@@ -127,6 +127,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+1, 183817, 565, 1, 99.0729, 249.704, 18.3478, 3.14159, 0, 0, -1, 0, 180, 180), -- Doodad_Portcullis_Gronn01
 (@OGUID+2, 184662, 565, 1, 166.897, 368.226, 16.9209, 4.71239, 0, 0, -0.707107, 0.707107, 180, 180); -- Doodad_Portcullis_Gronn02
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -135,16 +137,16 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

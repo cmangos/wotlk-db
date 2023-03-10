@@ -667,7 +667,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 -- ===========
 
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
--- 1 - 7
+-- 1-7
 (@OGUID+8, 175167, 289, 174.378, 77.9398, 104.802, -3.12414, 0, 0, 0.999962, -0.008727, 7200, 7200), -- Viewing Room Door
 (@OGUID+9, 175564, 289, 325.122, 93.6436, 101.637, -3.12414, 0, 0, 0.999962, -0.008727, 7200, 7200), -- Brazier of the Herald
 (@OGUID+10, 175570, 289, 288.435, 92.9581, 109.974, -3.12414, 0, 0, 0.999962, -0.008727, 7200, 7200), -- Gate
@@ -735,12 +735,13 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+72, 181096, 289, -3.82, 141.88, 83.9, 0, 0, 0, 0, 0, 180, 180), -- Brazier of Invocation Spell Focus 20 yd
 (@OGUID+73, 179746, 289, 139.496, 174.816, 95.5388, 3.60657, 0, 0, 0.973096, -0.2304, 300, 300); -- The Great Ossuary
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+20,255,0,0,0,0,1),
-(@OGUID+70,0,-1,0,0,0,1),
-(@OGUID+71,0,-1,0,0,0,1),
-(@OGUID+72,0,-1,0,0,0,1),
-(@OGUID+73,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `state`) VALUES
+(@OGUID+20, 0);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+70, 0, -1),
+(@OGUID+71, 0, -1),
+(@OGUID+72, 0, -1),
+(@OGUID+73, 0, -1);
 
 -- ======
 -- EVENTS
@@ -755,16 +756,16 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@OGUID+67, 1), -- Midsummer Bonfire (Midsummer Fire Festival)
 (@OGUID+68, 1); -- Flame of the Scholomance (Midsummer Fire Festival)
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

@@ -689,11 +689,11 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+211, 186328, 189, 1775.78, 1346.66, 18.0012, -1.55334, 0, 0, 0.700909, -0.71325, 180, 180), -- Skull 01
 (@OGUID+212, 186328, 189, 1777.65, 1347.4, 18.1198, 0.017453, 0, 0, 0.008727, 0.999962, 180, 180); -- Skull 01
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+200,0,-1,0,0,0,1),
-(@OGUID+207,41,-1,0,0,0,1),
-(@OGUID+208,0,-1,0,0,0,1),
-(@OGUID+209,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+200, 0, -1), -- Pumpkin Shrine
+(@OGUID+207, 41, -1), -- Headless Horseman Candle
+(@OGUID+208, 0, -1), -- Loosely Turned Soil
+(@OGUID+209, 0, -1); -- Headless Horseman Pumpkin Table
 
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) SELECT `guid`, 1624 FROM `gameobject` WHERE `guid` BETWEEN @OGUID+151 AND @OGUID+162; -- Kingsblood
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) SELECT `guid`, 1628 FROM `gameobject` WHERE `guid` BETWEEN @OGUID+151 AND @OGUID+162; -- Grave Moss
@@ -738,6 +738,17 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@OGUID+210, 12), -- Skull 01 (Hallow's End)
 (@OGUID+211, 12), -- Skull 01 (Hallow's End)
 (@OGUID+212, 12); -- Skull 01 (Hallow's End)
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

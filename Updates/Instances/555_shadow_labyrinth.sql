@@ -437,7 +437,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+266, 6, -60.185101, -97.755898, -1.128300, 100, 0, 0),
 (@CGUID+266, 7, -129.5516, -134.2706, 4.218479, 100, 0, 0);
 
-DELETE FROM creature_movement_template WHERE entry IN (18731);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (18731);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 -- Ambassador Hellmaw
 (18731, 0, 1, -156.6754, 4.982729, 8.156394, 4.677482, 2000, 1873101),
@@ -1163,9 +1163,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+103, 181569, 555, 3, -234.0617, -97.60569, 15.50827, 0.7504908, 0, 0, 0.3665009, 0.9304177, 86400, 86400), -- Adamantite Deposit
 (@OGUID+104, 181557, 555, 3, -461.4516, -168.9303, 21.16686, 3.612838, 0, 0, -0.9723692, 0.2334484, 86400, 86400); -- Khorium Vein
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+47,0,0,0,0,0,1),
-(@OGUID+48,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+47, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+48, 0, 0); -- Instance_Portal_Difficulty_0
 
 -- ======
 -- EVENTS
@@ -1176,6 +1176,17 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

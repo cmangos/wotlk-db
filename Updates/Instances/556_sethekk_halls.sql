@@ -383,7 +383,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+144, 19, -83.9472, 285.452, 63.0513, 0, 0, 0),
 (@CGUID+144, 20, -93.4871, 275.608, 26.8408, 0, 0, 0);
 
-DELETE FROM creature_movement_template WHERE entry IN (18956);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (18956);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 (18956, 0, 1, -160.813, 157.043, 0.094095, 1.0821, 2000, 1895601),
 (18956, 0, 2, -155.998, 160.411, 0.0106601, 0.343763, 0, 0),
@@ -824,10 +824,10 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+94, 184941, 556, 2, -72.64229, 81.60601, 0.007203, 1.954769, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
 (@OGUID+95, 181569, 556, 3, -221.7319, 151.3826, 1.69546, 1.570796, 0, 0, 0.7071066, 0.7071069, 86400, 86400); -- Rich Adamantite Deposit
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(5560013,0,-1,0,0,0,1),
-(5560015,0,0,0,0,0,1),
-(5560016,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+13, 0, -1), -- Sethekk Cage
+(@OGUID+15, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+16, 0, 0); -- Instance_Portal_Difficulty_0
 
 -- ======
 -- EVENTS
@@ -836,6 +836,17 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

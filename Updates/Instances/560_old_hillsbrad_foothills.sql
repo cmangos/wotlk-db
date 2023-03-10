@@ -1125,7 +1125,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+614, 9, 2620.766, 592.524, 56.46237, 0, 0, 0),
 (@CGUID+614, 10, 2637.223, 612.3849, 55.86766, 0, 0, 0);
 
-DELETE FROM creature_movement_template WHERE entry IN (17848,18092,18093,18094,18649,18664,18764,18765,28132,18672,18655,18656,20350,20360);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (17848,18092,18093,18094,18649,18664,18764,18765,28132,18672,18655,18656,20350,20360);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 -- Lieutenant Drake
 -- Normal
@@ -2863,9 +2863,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+305, 184308, 560, 0, 1816.698, 1031.316, 11.84751, 0.01745246, 0, 0, 0.00872612, 0.9999619, -7200, -7200), -- Mograine's Stronbox
 (@OGUID+306, 184332, 560, 0, 1819.035, 1023.37, 19.71265, 4.729844, 0, 0, -0.7009087, 0.7132511, -7200, -7200); -- Tome of Scrying
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+79,0,0,0,0,0,1),
-(@OGUID+80,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+79, 0, 0), -- Doodad_InstancePortal_PurpleDifficulty01
+(@OGUID+80, 0, 0); -- Doodad_InstancePortal_PurpleDifficultyIcon01
 
 -- ======
 -- EVENTS
@@ -2874,6 +2874,17 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

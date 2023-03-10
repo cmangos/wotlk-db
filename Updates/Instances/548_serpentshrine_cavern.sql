@@ -1257,22 +1257,12 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+289, 22820, 548, 1, 451.099, -544.984, -7.46327, 0.174533, 604800, 604800, 0, 0), -- Seer Olum
 (@CGUID+290, 21212, 548, 1, 29.99015, -922.4088, 42.98521, 1.396263, 604800, 604800, 0, 0); -- Lady Vashj
 
--- Unique Equipment
--- Greyheart Skulker 21232 - 4 have unique equipment
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19975);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19975,2123201);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+138,@CGUID+135,@CGUID+134,@CGUID+131);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+138,19975),(@CGUID+135,19975),(@CGUID+134,19975),(@CGUID+131,19975);
--- Greyheart Tidecaller 21229 - 5 have unique equipment
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19974);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19974,50130);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+119,@CGUID+95,@CGUID+93,@CGUID+110,@CGUID+108);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+119,19974),(@CGUID+95,19974),(@CGUID+93,19974),(@CGUID+110,19974),(@CGUID+108,19974);
-
+-- Greyheart Nether-Mage/Tidecaller - 1 hammer
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (2122901, 2122901);
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 2122901 FROM `creature` WHERE `guid` IN (@CGUID+93,@CGUID+95,@CGUID+108,@CGUID+110,@CGUID+119);
+-- Greyheart Skulker - 1 dagger and 1 hammer
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (2123201, 2123201);
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 2123201 FROM `creature` WHERE `guid` IN (@CGUID+131,@CGUID+134,@CGUID+135,@CGUID+138);
 
 -- ===========
 -- GAMEOBJECTS
@@ -1315,17 +1305,17 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+34, 185118, 548, 1, 123.258, -432.357, -1.197, -1.484, 0, 0, 0, 0, 300, 300), -- Serpentshrine Console
 (@OGUID+35, 185474, 548, 1, 451.099, -544.984, -7.5466, 5.05431, 0, 0, 0.576499, -0.817098, 25, 25); -- Cage
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+25,0,-1,0,0,0,1),
-(@OGUID+26,0,-1,0,0,0,1),
-(@OGUID+27,0,-1,0,0,0,1),
-(@OGUID+28,0,-1,0,0,0,1),
-(@OGUID+29,0,-1,0,0,0,1),
-(@OGUID+30,0,-1,0,0,0,1),
-(@OGUID+31,0,-1,0,0,0,1),
-(@OGUID+32,0,-1,0,0,0,1),
-(@OGUID+33,0,-1,0,0,0,1),
-(@OGUID+34,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+25, 0, -1), -- Strange Pool
+(@OGUID+26, 0, -1), -- Shield Generator
+(@OGUID+27, 0, -1), -- Shield Generator
+(@OGUID+28, 0, -1), -- Shield Generator
+(@OGUID+29, 0, -1), -- Shield Generator
+(@OGUID+30, 0, -1), -- Serpentshrine Console
+(@OGUID+31, 0, -1), -- Serpentshrine Console
+(@OGUID+32, 0, -1), -- Serpentshrine Console
+(@OGUID+33, 0, -1), -- Serpentshrine Console
+(@OGUID+34, 0, -1); -- Serpentshrine Console
 
 -- ======
 -- EVENTS
@@ -1335,16 +1325,16 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS
@@ -1379,7 +1369,7 @@ INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`,
 (21214, 2000, 3, 0, 0, 0, 22820, 100, 3, 0, 0, 0, 0, 457.031, -543.231, -7.54802, 0.39321, 'Move Seer Olum out of cage'),
 (21214, 3000, 0, 0, 0, 0, 22820, 100, 3, 20460, 0, 0, 0, 0, 0, 0, 0, 'Force Seer Olum to say text');
 
-DELETE FROM dbscripts_on_relay WHERE id BETWEEN 10105 AND 10112;
+DELETE FROM `dbscripts_on_relay` WHERE `id` BETWEEN 10105 AND 10112;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (10105,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,'Honor Guard - pause waypoints'),
 (10105,0,3,0,0,0,0,0,0,0,0,0,-57.3285,-371.109,1.58651,0,'Honor Guard - move to center (platform 1)'),
@@ -1446,6 +1436,11 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalon
 (10112,16000,0,10102,0,0,0,0,0,0,0,0,0,0,0,0,'Honor Guard - say random (template)'),
 (10112,18000,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Honor Guard - unpause waypoints'),
 (10112,18000,32,0,0,21301,10,0,0,0,0,0,0,0,0,0,'Shatterer - unpause waypoints');
+
+DELETE FROM `dbscripts_on_relay` WHERE `id` IN (2122901,2123201);
+INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(2122901, 0, 42, 0, 0, 0, 0, 0, 0, 2028, 0, 0, 0, 0, 0, 0, 0, '21229/21230 - EquipSet 2'),
+(2123201, 0, 42, 0, 0, 0, 0, 0, 0, 2028, 31805, 0, 0, 0, 0, 0, 0, '21232 - EquipSet 2');
 
 DELETE FROM `dbscript_random_templates` WHERE `id` IN (10101,10102,10105,10106,10107,10108,10109,10110,10111,10112);
 INSERT INTO dbscript_random_templates (id, type, target_id, chance) VALUES

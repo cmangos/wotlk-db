@@ -322,14 +322,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+28, 184936, 554, 3, 143.472, 179.921, 25.5636, 1.36442, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
 (@OGUID+29, 184937, 554, 3, 143.472, 179.921, 25.5636, 1.36442, 0, 0, 0, 0, 86400, 86400); -- Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+1,0,-1,0,0,0,1),
-(@OGUID+2,0,0,0,0,0,1),
-(@OGUID+3,0,0,0,0,0,1),
-(@OGUID+4,0,0,0,0,0,1),
-(@OGUID+5,0,0,0,0,0,1),
-(@OGUID+6,0,-1,0,0,0,1),
-(@OGUID+9,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+1, 0, -1), -- Doodad_FactoryElevator01
+(@OGUID+2, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+3, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+4, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+5, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+6, 0, -1), -- Mo'arg 2 Door
+(@OGUID+9, 0, -1); -- Mo'arg 1 Door
 
 -- ======
 -- EVENTS
@@ -341,6 +341,17 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 (@CGUID+22, 0, 22804, 0, 0, 0, 2); -- Nethermancer Sepethrea (Feast of Winter Veil - Main Event)
 
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

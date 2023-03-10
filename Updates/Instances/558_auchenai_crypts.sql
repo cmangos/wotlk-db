@@ -496,7 +496,7 @@ INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
 (@CGUID+30, 18493), (@CGUID+30, 18495), -- Auchenai Soulpriest, Auchenai Vindicator
 (@CGUID+35, 18495), (@CGUID+35, 18497), -- Auchenai Vindicator, Auchenai Monk
 (@CGUID+36, 18493), (@CGUID+36, 18495), (@CGUID+36, 18497), -- Auchenai Soulpriest, Auchenai Vindicator, Auchenai Monk
-(@CGUID+39, 18493), (@CGUID+39, 18495), -- (@CGUID+39, 18497), -- Auchenai Soulpriest, Auchenai Vindicator, Auchenai Monk								// commented due to x3 Monk combo
+(@CGUID+39, 18493), (@CGUID+39, 18495), -- (@CGUID+39, 18497), -- Auchenai Soulpriest, Auchenai Vindicator, Auchenai Monk								// commented due to x3 Monk combo needs spawn group!
 (@CGUID+41, 18493), (@CGUID+41, 18495), -- Auchenai Soulpriest, Auchenai Vindicator
 (@CGUID+56, 18556), (@CGUID+56, 18557), (@CGUID+56, 18558), (@CGUID+56, 18559), -- Phasing Soldier, Phasing Cleric, Phasing Sorcerer, Phasing Stalker
 (@CGUID+57, 18556), (@CGUID+57, 18557), -- Phasing Soldier, Phasing Cleric
@@ -763,9 +763,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+51, 184936, 558, 3, 145.96, 41.68, 4.26, 4.70, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
 (@OGUID+52, 184937, 558, 3, 145.96, 41.68, 4.26, 4.70, 0, 0, 0, 0, 86400, 86400); -- Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+9,0,0,0,0,0,1),
-(@OGUID+10,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+9, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+10, 0, 0); -- Instance_Portal_Difficulty_0
 
 -- ======
 -- EVENTS
@@ -776,6 +776,17 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

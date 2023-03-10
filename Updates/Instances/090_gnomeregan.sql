@@ -1264,14 +1264,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+292, 142344, 90, -585.42926025390625, 401.096710205078125, -230.600555419921875, 1.972219824790954589, 0, 0, 0.83388519287109375, 0.55193793773651123, 86400, 86400), -- Artificial Extrapolator
 (@OGUID+293, 142344, 90, -750.604, 633.824, -314.793, -2.25148, 0, 0, 0.902585, -0.430511, 86400, 86400); -- Artificial Extrapolator
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+14,0,-1,0,0,0,1),
-(@OGUID+15,0,-1,0,0,0,1),
-(@OGUID+16,0,-1,0,0,0,1),
-(@OGUID+90,0,-1,0,0,0,1),
-(@OGUID+91,0,-1,0,0,0,1),
-(@OGUID+92,0,-1,0,0,0,1),
-(@OGUID+93,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+14, 0, -1),
+(@OGUID+15, 0, -1),
+(@OGUID+16, 0, -1),
+(@OGUID+90, 0, -1),
+(@OGUID+91, 0, -1),
+(@OGUID+92, 0, -1),
+(@OGUID+93, 0, -1);
 
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) VALUES
 (@OGUID+1, 3659), (@OGUID+1, 3695), -- Barrel of Melon Juice, Food Crate
@@ -1290,6 +1290,17 @@ INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) VALUES
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

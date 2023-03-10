@@ -691,6 +691,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) SELECT `guid`, 126049 FROM `gameobject` WHERE `guid` BETWEEN @OGUID+167 AND @OGUID+174; -- Magenta Cap Clusters
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) SELECT `guid`, 128293 FROM `gameobject` WHERE `guid` BETWEEN @OGUID+167 AND @OGUID+174; -- Magenta Cap Clusters
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -775,9 +777,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+1, @CGUID+324, '0'); -- Annora
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-
 -- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
-
 -- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 
 -- =========

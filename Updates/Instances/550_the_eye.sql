@@ -497,7 +497,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+173, 13, 617.546, 111.25, 45.619, 5.70748, 0, 0),
 (@CGUID+173, 14, 623.417, 107.439, 46.4887, 5.70748, 0, 0);
 
-DELETE FROM creature_movement_template WHERE entry IN (19514);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (19514);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 (19514, 0, 1, 370.328, -32.5953, 44.0863, 100, 0, 0),
 (19514, 0, 2, 383.009, -0.892289, 43.9995, 100, 0, 0),
@@ -990,13 +990,13 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+8, 184596, 550, 1, 744.0446, -44.63448, 46.66097, 3.141593, 0, 0, -1, 0, 300, 300), -- Doodad_Kael_Explode_FX_Right01
 (@OGUID+9, 184597, 550, 1, 744.0448, 42.35362, 46.661, 3.141593, 0, 0, -1, 0, 300, 300); -- Doodad_Kael_Explode_FX_Left01
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+2,255,0,0,0,0,1),
-(@OGUID+3,255,0,0,0,0,1),
-(@OGUID+4,255,0,0,0,0,1),
-(@OGUID+5,255,0,0,0,0,1),
-(@OGUID+6,255,0,0,0,0,1),
-(@OGUID+7,255,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `state`) VALUES
+(@OGUID+2, 0), -- Doodad_TK_Arcane_Door_Horiz04
+(@OGUID+3, 0), -- Doodad_TK_Arcane_Door_Horiz03
+(@OGUID+4, 0), -- Doodad_TK_Arcane_Door_Vert03
+(@OGUID+5, 0), -- Doodad_TK_Raid_Door03
+(@OGUID+6, 0), -- Doodad_TK_Arcane_Door_Vert04
+(@OGUID+7, 0); -- Doodad_TK_Raid_Door04
 
 -- ======
 -- EVENTS
@@ -1006,16 +1006,16 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

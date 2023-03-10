@@ -215,22 +215,11 @@ INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
 (@CGUID+40, 17269), (@CGUID+40, 17270), -- Bleeding Hollow Darkcaster, Bleeding Hollow Archer
 (@CGUID+44, 17269), (@CGUID+44, 17270); -- Bleeding Hollow Darkcaster, Bleeding Hollow Archer
 
--- Unique Equipment
--- Bonechewer Hungerer 17259 - 2 have unique equipment
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19972);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19972,52512);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+16,@CGUID+17);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+16,19972),(@CGUID+17,19972);
--- Bonechewer Ravener 17264 - 2 have unique equipment
-DELETE FROM `creature_spawn_data_template` WHERE `entry` IN (19971);
-INSERT INTO `creature_spawn_data_template` (`entry`, `EquipmentId`) VALUES
-(19971,52513);
-DELETE FROM `creature_spawn_data` WHERE guid IN (@CGUID+24,@CGUID+25);
-INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+24,19971),(@CGUID+25,19971);
-
+-- Worker Equipment
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (1725901, 1725901); -- Bonechewer Hungerer
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 1725901 FROM `creature` WHERE `guid` IN (@CGUID+16,@CGUID+17);
+REPLACE INTO `creature_spawn_data_template` (`entry`, `RelayId`) VALUES (1726401, 1726401); -- Bonechewer Ravener
+REPLACE INTO `creature_spawn_data` (`guid`, `id`) SELECT `guid`, 1726401 FROM `creature` WHERE `guid` IN (@CGUID+24,@CGUID+25);
 
 -- ===========
 -- GAMEOBJECTS
@@ -251,9 +240,9 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+12, 0, 543, 1, -1297.5025634765625, 1582.3319091796875, 91.78211212158203125, 0.907570183277130126, 0, 0, 0.438370704650878906, 0.898794233798980712, 86400, 86400), -- Solid Fel Iron Chest, Bound Fel Iron Chest
 (@OGUID+13, 0, 543, 2, -1297.5025634765625, 1582.3319091796875, 91.78211212158203125, 0.907570183277130126, 0, 0, 0.438370704650878906, 0.898794233798980712, 86400, 86400); -- Bound Adamantite Chest, Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+1,0,0,0,0,0,1),
-(@OGUID+2,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+1, 0, 0), -- Doodad_InstancePortal_PurpleDifficulty01
+(@OGUID+2, 0, 0); -- Doodad_InstancePortal_PurpleDifficultyIcon01
 
 -- ======
 -- EVENTS
@@ -490,7 +479,12 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
--- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+
+DELETE FROM `dbscripts_on_relay` WHERE `id` IN (1725901,1726401);
+INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(1725901, 0, 42, 0, 0, 0, 0, 0, 0, 2028, 11589, 0, 0, 0, 0, 0, 0, '17259 - EquipSet 2'),
+(1726401, 0, 42, 0, 0, 0, 0, 0, 0, 2028, 22215, 0, 0, 0, 0, 0, 0, '17264 - EquipSet 2');
+
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES

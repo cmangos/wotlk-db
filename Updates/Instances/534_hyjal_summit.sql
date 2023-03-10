@@ -47,7 +47,7 @@ REPLACE INTO creature_template_addon (entry, mount, stand_state, sheath_state, e
 -- -------------------------------------------
 -- Creature Spawns
 -- -------------------------------------------
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Tydormu
 (@CEGUID+1, 23381, 534, 1, 4209.16, -4167.73, 870.597, 1.72777, 120, 120, 0, 2),
 -- Indormi
@@ -87,7 +87,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`,`delay`,`command`,`datalong`,
 -- Creature Spawns
 -- -------------------------------------------
 -- Shadowy Necromancer
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CSGUID+1,17899,534,1,5059.646,-1498.705,1339.723,2.443461,180,180,0,0),
 (@CSGUID+2,17899,534,1,5065.653,-1489.542,1339.872,2.687807,180,180,0,0),
 (@CSGUID+3,17899,534,1,5133.389,-1507.289,1343.748,0.5934119,180,180,0,0),
@@ -96,7 +96,7 @@ INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position
 (@CSGUID+6,17899,534,1,5085.502,-1378.091,1352.692,1.745329,180,180,0,0);
 
 -- Abomination
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CSGUID+7,17898,534,1,4982.554,-1480.297,1334.175,4.956735,180,180,0,0),
 (@CSGUID+8,17898,534,1,4991.231,-1499.123,1328.669,2.199115,180,180,0,0),
 (@CSGUID+9,17898,534,1,4949.747,-1495.203,1329.991,5.113815,180,180,0,0),
@@ -107,7 +107,7 @@ INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position
 (@CSGUID+14,17898,534,1,5151.006,-1363.474,1362.312,4.433136,180,180,0,0);
 
 -- Ghoul
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Patrol 1
 (@CSGUID+15,17895,534,1,5040.115,-1467.419,1334.116,2.156081,180,180,0,2),
 (@CSGUID+16,17895,534,1,5040.881,-1471.807,1334.044,2.01692,180,180,0,0),
@@ -217,7 +217,7 @@ INSERT INTO `creature_movement` (`id`,`point`,`PositionX`,`PositionY`,`PositionZ
 -- -------------------------------------------
 -- Creature Spawns
 -- -------------------------------------------
-INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Lady Jaina Proudmoore
 (@CAGUID+1, 17772, 534, 1, 5084.07, -1789.03, 1322.65, 3.24631, 604800, 604800, 0, 0),
 -- Alliance Footman
@@ -446,7 +446,7 @@ INSERT INTO creature_linking (guid, master_guid, flag) VALUES
 -- -------------------------------------------
 -- Creature Spawns
 -- -------------------------------------------
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Thrall
 (@CHGUID+1, 17852, 534, 1, 5450.54, -2723.97, 1485.59, 6.00393, 604800, 604800, 0, 0),
 -- Horde Grunt
@@ -778,7 +778,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 -- -------------------------------------------
 -- Creature Spawns
 -- -------------------------------------------
-INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Druid of the Talon
 (@CNGUID+1, 3794, 534, 1, 5183.21, -3376.29, 1639.24, 6.19592, 300, 300, 0, 0),
 (@CNGUID+2, 3794, 534, 1, 5183.81, -3391.38, 1636.23, 0.366519, 300, 300, 0, 0),
@@ -1398,12 +1398,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+182, 185557, 534, 1, 5278.08, -1903.97, 1359.63, 4.08407, 0, 0, -0.891007, 0.453991, -1, -1), -- Ancient Gem Vein
 (@OGUID+183, 185557, 534, 1, 5185.62, -1989.44, 1379.88, 0.750491, 0, 0, 0.366501, 0.930418, -1, -1), -- Ancient Gem Vein
 (@OGUID+184, 185557, 534, 1, 5076.07, -2087.2, 1374.94, 4.92183, 0, 0, -0.62932, 0.777146, -1, -1), -- Ancient Gem Vein
-(@OGUID+185, 185557, 534, 1, 5418.22, -3308.36, 1631.8, 2.059488, 0, 0, 0.8571672, 0.5150382, -1, -1),  -- Ancient Gem Vein
-(@OGUID+186, 185557, 534, 1, 5261.62, -3331.56, 1668.7, 3.281239, 0, 0, -0.9975634, 0.06976615, -1, -1),  -- Ancient Gem Vein
+(@OGUID+185, 185557, 534, 1, 5418.22, -3308.36, 1631.8, 2.059488, 0, 0, 0.8571672, 0.5150382, -1, -1), -- Ancient Gem Vein
+(@OGUID+186, 185557, 534, 1, 5261.62, -3331.56, 1668.7, 3.281239, 0, 0, -0.9975634, 0.06976615, -1, -1), -- Ancient Gem Vein
 (@OGUID+187, 185557, 534, 1, 5144.12, -3503.599, 1621.182, 5.619962, 0, 0, -0.3255672, 0.9455189, -1, -1), -- Ancient Gem Vein
 (@OGUID+188, 185557, 534, 1, 5045.232, -2370.546, 1431.178, 3.194002, 0, 0, -0.9996567, 0.02620165, -1, -1), -- Ancient Gem Vein
 (@OGUID+189, 185557, 534, 1, 5051.442, -2225.56, 1396.373, 4.956738, 0, 0, -0.6156607, 0.7880114, -1, -1), -- Ancient Gem Vein
 (@OGUID+190, 188214, 534, 1, 5467.08, -2657.22, 1482.16, 3.64774, -0.0136089, 0.0170479, -0.967961, 0.25015, 180, 180); -- Bonfire
+
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 
 -- ******************************************************************************************************************************************************************** --
 -- Alliance Wave Pathing
@@ -1412,7 +1414,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 -- TODO:
 -- * Add special paths for certain Ghouls in the Invasion event
 -- ******************************************************************************************************************************************************************** --
-DELETE FROM creature_movement_template WHERE entry IN(17899,17898,17895,17905,17897,17906,17907,17908,17916,17767,17808,17888,17842);
+DELETE FROM `creature_movement_template` WHERE `entry` IN(17899,17898,17895,17905,17897,17906,17907,17908,17916,17767,17808,17888,17842);
 -- Ghouls
 INSERT INTO `creature_movement_template` (`entry`,`pathID`,`point`,`PositionX`,`PositionY`,`PositionZ`,`waittime`,`ScriptId`,`orientation`) VALUES
 (17895,1,1,4895.428,-1590.809,1332.106,0,0,100),
@@ -4438,5 +4440,16 @@ INSERT INTO `creature_movement_template` (`entry`,`pathID`,`point`,`PositionX`,`
 (17898,15,8,5269.483,-3372.737,1650.542,0,0,100),
 (17898,15,9,5245.462,-3365.261,1647.703,0,0,100),
 (17898,15,10,5230.952,-3377.044,1644.762,1000,1790603,100);
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 

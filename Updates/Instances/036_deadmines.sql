@@ -1083,6 +1083,8 @@ INSERT INTO gameobject_spawn_entry (guid, entry) VALUES
 (@OGUID+84, 3662), (@OGUID+84, 3705), -- Food Crate, Barrel of Milk
 (@OGUID+85, 3662), (@OGUID+85, 3705); -- Food Crate, Barrel of Milk
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -1145,6 +1147,8 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGUID + 03, 'The Deadmines - Tin Vein | Silver Vein (1) Ore 001', 1, 1, 0, 0),
 (@SGUID + 04, 'The Deadmines - Tin Vein | Silver Vein (1) Ore 002', 1, 1, 0, 0);
 
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGUID + 00, @OGUID + 110, -1), -- Copper Vein
 (@SGUID + 00, @OGUID + 111, -1), -- Copper Vein
@@ -1183,6 +1187,10 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 
 (@SGUID + 04, 1732, 0, 0, 0), -- Tin Vein
 (@SGUID + 04, 1733, 0, 0, 5); -- Silver Vein
+
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

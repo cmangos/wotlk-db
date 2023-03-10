@@ -347,10 +347,13 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+10, 175305, 389, 2.43144, 65.4367, -9.98579, 3.14159, 0, 0, 1, 0, 3600, 3600), -- Doodad_MediumBrazierPurple10
 (@OGUID+11, 175307, 389, 62.3991, 61.4202, -9.25621, 3.14159, 0, 0, 1, 0, 3600, 3600), -- Doodad_OrcSign_ShadowdeepReagents
 (@OGUID+12, 175308, 389, 5.65531, 68.3387, -9.77679, -0.610865, 0, 0, -0.300706, 0.953717, 3600, 3600), -- Doodad_OrcSign_DarkEarth
-(@OGUID+13, 175310, 389, 13.7698, 100.689, -1.96314, -2.54818, 0, 0, 0.956305, -0.292372, 3600, 3600), -- Doodad_MediumBrazierPurple13
+(@OGUID+13, 175310, 389, 13.7698, 100.689, -1.96314, -2.54818, 0, 0, 0.956305, -0.292372, 3600, 3600); -- Doodad_MediumBrazierPurple13
 
 -- TBC+ only (Paladin quest - The Path of the Adept 9692)
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (@OGUID+100, 182024, 389, -370.133, 162.519, -21.1299, -1.29154, 0, 0, 0, 0, 3600, 3600); -- Blood Filled Orb
+
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 
 -- ======
 -- EVENTS
@@ -360,16 +363,16 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =========
 -- DBSCRIPTS

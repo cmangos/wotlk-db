@@ -539,10 +539,10 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+76, 181569, 557, 3, -390.3648681640625, -85.07049560546875, 2.39504408836364746, 4.660029888153076171, 0, 0, -0.72537422180175781, 0.688354730606079101, 86400, 86400), -- Rich Adamantite Deposit
 (@OGUID+77, 181556, 557, 3, -329.14605712890625, -69.7390060424804687, 0.956256985664367675, 3.316144466400146484, 0, 0, -0.99619388580322265, 0.087165042757987976, 86400, 86400); -- Adamantite Deposit
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+11,0,0,0,0,0,1),
-(@OGUID+12,0,0,0,0,0,1),
-(@OGUID+17,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+11, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+12, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+17, 0, -1); -- Mana-Tombs Stasis Chamber
 
 -- ======
 -- EVENTS
@@ -551,6 +551,17 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING
@@ -599,7 +610,6 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (@PGUID+45, 1, 'Mana-Tombs (Heroic) - Bound / Solid Adamantite Chest #5');
 
 -- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
-
 -- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
 
 INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES

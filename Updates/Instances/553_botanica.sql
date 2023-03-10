@@ -700,11 +700,11 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+18, 184940, 553, 3, 154.0024, 377.8789, -5.386404, 1.902409, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
 (@OGUID+19, 184941, 553, 3, 154.0024, 377.8789, -5.386404, 1.902409, 0, 0, 0, 0, 86400, 86400); -- Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+1,0,0,0,0,0,1),
-(@OGUID+2,0,0,0,0,0,1),
-(@OGUID+3,0,0,0,0,0,1),
-(@OGUID+4,0,0,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+1, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+2, 0, 0), -- Instance_Portal_Difficulty_1
+(@OGUID+3, 0, 0), -- Instance_Portal_Difficulty_0
+(@OGUID+4, 0, 0); -- Instance_Portal_Difficulty_1
 
 -- ======
 -- EVENTS
@@ -715,6 +715,17 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

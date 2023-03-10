@@ -531,6 +531,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+100, 1628, 129, 2459.579101562500, 673.03179931640625, 63.72379684448242187, 0.349065244197845458, 0, 0, 0.173647880554199218, 0.984807789325714111, 86400, 86400), -- Grave Moss
 (@OGUID+101, 1628, 129, 2464.407714843750, 674.25347900390625, 63.87917709350585937, 0.855210542678833007, 0, 0, 0.414692878723144531, 0.909961462020874023, 86400, 86400); -- Grave Moss
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -593,7 +595,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+8, @OGUID+101, '-1');
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
 -- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 
 -- =======

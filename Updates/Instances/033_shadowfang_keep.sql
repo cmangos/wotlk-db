@@ -454,7 +454,7 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+307, 1, -199.56051, 2203.20263, 79.764137, 5.95967, 5000, 3688501),
 (@CGUID+307, 2, -218.01600, 2216.69000, 79.845400, 1.98968, 5000, 3688501);
 
-DELETE FROM `creature_movement_template` WHERE `entry` IN (4627,36272,36565);
+DELETE FROM `creature_movement_template` WHERE `entry` IN (4627);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 (4627,0,1,-159.547,2178.11,128.944,100,0,0), -- Arugal Voidwalker - top of stairs
 (4627,0,2,-171.113,2182.69,129.255,100,0,0),
@@ -478,8 +478,11 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX
 (4627,0,20,-185.396,2178.35,126.413,100,0,0),
 (4627,0,21,-177.613,2175.59,128.161,100,0,0),
 (4627,0,22,-171.113,2182.69,129.255,100,0,0),
-(4627,0,23,-159.547,2178.11,128.944,100,0,0),
--- Wotlk only
+(4627,0,23,-159.547,2178.11,128.944,100,0,0);
+
+-- WOTLK+ only
+DELETE FROM `creature_movement_template` WHERE `entry` IN (36272,36565);
+INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
 (36272,0,1,-196.24826,2197.2239,79.76562,100,1000,3627201),
 (36565,0,1,-221.41145,2206.8247,79.76253,100,1000,3627201);
 
@@ -678,13 +681,15 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+142, 4444, 33, -217.991, 2150.77, 81.1327, 2.79253, 7200, 7200, 0, 0), -- Deathstalker Vincent
 (@CGUID+143, 5058, 33, -149.213, 2163.18, 155.762, 0.10472, 7200, 7200, 0, 0), -- Wolfguard Worg
 (@CGUID+144, 10000, 33, -219.345, 2154.02, 81.2098, 5.58505, 43200, 43200, 0, 0), -- Arugal
-(@CGUID+145, 14682, 33, -225.131, 2302.95, 94.7599, 6.02139, 604800, 604800, 0, 0), -- Sever
+(@CGUID+145, 14682, 33, -225.131, 2302.95, 94.7599, 6.02139, 604800, 604800, 0, 0); -- Sever
 
 -- TBC+
 -- Landen Stilwell - q.9692 The Path of the Adept
-(@CGUID+200, 17822, 33, -239.492, 2132.84, 81.2629, 2.87979, 7200, 7200, 0, 0),
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
+(@CGUID+200, 17822, 33, -239.492, 2132.84, 81.2629, 2.87979, 7200, 7200, 0, 0);
 
 -- WOTLK+ only
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+300, 36212, 33, -240.156, 2160.68, 90.5662, 0, 180, 180, 0, 0), -- [DND] Crazed Apothecary Generator
 (@CGUID+301, 36272, 33, -205.196, 2214.55, 79.8469, 2.40855, 43200, 43200, 0, 0), -- Apothecary Frye
 (@CGUID+302, 36296, 33, -208.09, 2217.39, 79.8469, 4.81711, 43200, 43200, 0, 0), -- Apothecary Hummel
@@ -789,12 +794,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+47, 0, 33, -106.541, 2164.01, 101.52, 3.03687, 0, 0, 0.99863, 0.052336, 86400, 86400), -- Large Iron Bound Chest, Large Solid Chest
 (@OGUID+48, 91138, 33, -218.463592529296875, 2237.203857421875, 80.79766845703125, -2.18166136741638183, 0, 0, 0.887010812759399414, -0.46174865961074829, 300, 300), -- Jordan's Hammer
 (@OGUID+49, 101811, 33, -245.598464965820312, 2132.318115234375, 82.80517578125, 4.712388992309570312, -0.13189232349395751, -0.69469738006591796, -0.13189232349395751, 0.694697380065917968, 5400, 5400), -- Lever
-(@OGUID+50, 101812, 33, -236.251129150390625, 2164.044677734375, 91.15622711181640625, 1.570796370506286621, 0.584487318992614746, 0.397963404655456542, 0.584487020969390869, -0.39796313643455505, 5400, 5400), -- Lever
+(@OGUID+50, 101812, 33, -236.251129150390625, 2164.044677734375, 91.15622711181640625, 1.570796370506286621, 0.584487318992614746, 0.397963404655456542, 0.584487020969390869, -0.39796313643455505, 5400, 5400); -- Lever
 
 -- TBC+
-(@OGUID+51, 182011, 33, -207.395, 2245.31, 79.7689, -1.90241, 0, 0, 0.814116, -0.580703, 300, 300), -- Crate of Ingots
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
+(@OGUID+51, 182011, 33, -207.395, 2245.31, 79.7689, -1.90241, 0, 0, 0.814116, -0.580703, 300, 300); -- Crate of Ingots
 
 -- WOTLK+
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (@OGUID+300, 181018, 33, -275.078, 2302.97, 82.4822, -0.453785, 0, 0, -0.224951, 0.97437, 180, 180),
 (@OGUID+301, 181018, 33, -140.861, 2160.24, 131.955, 1.8675, 0, 0, 0.803856, 0.594824, 180, 180),
 (@OGUID+302, 181018, 33, -278.743, 2293.67, 82.4162, -0.383971, 0, 0, -0.190808, 0.981627, 180, 180),
@@ -862,6 +869,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+364, 201906, 33, -200.524, 2164.54, 80.6773, 0.174532, 0, 0, 0.0871553, 0.996195, 180, 180),
 (@OGUID+365, 201906, 33, -201.818, 2165.14, 80.6793, 1.37881, 0, 0, 0.636078, 0.771625, 180, 180),
 (@OGUID+366, 202105, 33, -227.738, 2168.46, 79.7658, -2.23402, 0, 0, -0.898794, 0.438372, 180, 180);
+
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 
 -- ======
 -- EVENTS
@@ -1011,6 +1020,17 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 (@CGUID+342, 8);
 
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

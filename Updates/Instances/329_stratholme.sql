@@ -508,9 +508,10 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 (@CGUID+341, 0, 0, 1, 0, 1024, NULL), -- Ash'ari Crystal
 (@CGUID+400, 0, 0, 1, 0, 0, '12544'), -- Crimson Sorcerer
 (@CGUID+416, 0, 0, 1, 0, 0, '8990 28559'), -- Crimson Gallant
-(@CGUID+436, 0, 0, 1, 0, 0, '17467'), -- Baron Rivendare
+(@CGUID+436, 0, 0, 1, 0, 0, '17467'); -- Baron Rivendare
 
 -- TBC+ (Paladin quest)
+INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 (@CGUID+600, 0, 0, 1, 0, 0, NULL); -- [PH] Invis Paladin Quest Credit
 
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
@@ -1059,9 +1060,10 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+480, 0, 329, 3512.144287109375, -3071.102294921875, 135.08038330078125, 0.78539818525314331, 7200, 7200, 0, 0), -- creature_spawn_entry
 
 (@CGUID+598, 14684, 329, 3733.27, -3480.11, 131.04, 3.05433, 604800, 604800, 0, 0), -- Balzaphon
-(@CGUID+599, 15607, 329, 3708.25, -3453.13, 130.554, 5.86195, 300, 300, 0, 0), -- Elder Farwhisper
+(@CGUID+599, 15607, 329, 3708.25, -3453.13, 130.554, 5.86195, 300, 300, 0, 0); -- Elder Farwhisper
 
 -- TBC+ (Paladin quest)
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+600, 17915, 329, 3664.08, -3602.07, 137.043, 3.735, 15, 15, 0, 0); -- [PH] Invis Paladin Quest Credit
 
 INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
@@ -1572,9 +1574,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+662, 181348, 329, 3685.87, -3163.12, 126.721, 3.79137, 0, 0, 0, 0, 180, 180), -- Flame of Stratholme
 -- 663
 (@OGUID+664, 181048, 329, 3423.47, -3055.73, 136.581, 0, 0, 0, 0, 0, 180, 180), -- Jarien and Sothos Brazier Spell Focus
-(@OGUID+665, 181096, 329, 3423.47, -3055.73, 136.581, 0, 0, 0, 0, 0, 180, 180), -- Brazier of Invocation Spell Focus 20 yd
+(@OGUID+665, 181096, 329, 3423.47, -3055.73, 136.581, 0, 0, 0, 0, 0, 180, 180); -- Brazier of Invocation Spell Focus 20 yd
+
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+664, 0, -1),
+(@OGUID+665, 0, -1);
 
 -- TBC+ (Paladin quest)
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (@OGUID+800, 182068, 329, 3688.13, -3643.51, 141.964, -2.80998, 0, 0, 0, 0, 180, 180),
 (@OGUID+801, 182071, 329, 3687.4, -3644.84, 140.638, 0.00278044, 0, 0, 0, 0, -1200, -1200),
 (@OGUID+802, 182071, 329, 3683.72, -3648.49, 140.638, 5.38276, 0, 0, 0, 0, -1200, -1200),
@@ -1594,26 +1601,24 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+816, 182072, 329, 3680.86, -3644.45, 150.394, 0.65147, 0, 0, 0, 0, -900, -900),
 (@OGUID+817, 182072, 329, 3676.3, -3637.77, 150.766, 2.21834, 0, 0, 0, 0, -900, -900);
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+664,0,-1,0,0,0,1),
-(@OGUID+665,0,-1,0,0,0,1),
-(@OGUID+801,0,-1,0,0,0,1),
-(@OGUID+802,0,-1,0,0,0,1),
-(@OGUID+803,0,-1,0,0,0,1),
-(@OGUID+804,0,-1,0,0,0,1),
-(@OGUID+805,0,-1,0,0,0,1),
-(@OGUID+806,0,-1,0,0,0,1),
-(@OGUID+807,0,-1,0,0,0,1),
-(@OGUID+808,0,-1,0,0,0,1),
-(@OGUID+809,0,-1,0,0,0,1),
-(@OGUID+810,0,-1,0,0,0,1),
-(@OGUID+811,0,-1,0,0,0,1),
-(@OGUID+812,0,-1,0,0,0,1),
-(@OGUID+813,0,-1,0,0,0,1),
-(@OGUID+814,0,-1,0,0,0,1),
-(@OGUID+815,0,-1,0,0,0,1),
-(@OGUID+816,0,-1,0,0,0,1),
-(@OGUID+817,0,-1,0,0,0,1);
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+801, 0, -1),
+(@OGUID+802, 0, -1),
+(@OGUID+803, 0, -1),
+(@OGUID+804, 0, -1),
+(@OGUID+805, 0, -1),
+(@OGUID+806, 0, -1),
+(@OGUID+807, 0, -1),
+(@OGUID+808, 0, -1),
+(@OGUID+809, 0, -1),
+(@OGUID+810, 0, -1),
+(@OGUID+811, 0, -1),
+(@OGUID+812, 0, -1),
+(@OGUID+813, 0, -1),
+(@OGUID+814, 0, -1),
+(@OGUID+815, 0, -1),
+(@OGUID+816, 0, -1),
+(@OGUID+817, 0, -1);
 
 INSERT INTO gameobject_spawn_entry (guid, entry) VALUES
 (@OGUID+62, 153464), (@OGUID+62, 153469), -- Large Solid Chest, Large Mithril Bound Chest
@@ -1639,6 +1644,17 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@OGUID+661, 1), -- Midsummer Bonfire (Midsummer Fire Festival)
 (@OGUID+662, 1); -- Flame of Stratholme (Midsummer Fire Festival)
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+-- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+-- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING

@@ -1261,6 +1261,8 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 (@OGUID+100, 75293, 43, -313.264, -235.066, -62.8271, 1.02974, 0, 0, 0.492423, 0.870356, 86400, 86400), -- Large Battered Chest
 (@OGUID+101, 75293, 43, 1.16489, -44.9435, -65.5114, 1.18682, 0, 0, 0.559193, 0.829038, 86400, 86400); -- Large Battered Chest
 
+-- INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+
 -- ======
 -- EVENTS
 -- ======
@@ -1358,6 +1360,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 
+DELETE FROM `waypoint_path_name` WHERE `PathId` IN (3678);
+INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+(3678, 'Wailing Caverns - Disciple of Naralex - Escort path'); -- npc_disciple_of_naralexAI
+
 DELETE FROM `waypoint_path` WHERE `PathId` IN (3678);
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 (3678, 1, -134.96526, 125.40187, -78.09446, 2.98006, 13000, 367801, 'Wailing Caverns - Disciple of Naralex'),
@@ -1439,10 +1445,6 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `Posit
 (3678, 77, 75.112, 206.494, -84.8, 100, 0, 0, 'Wailing Caverns - Disciple of Naralex'),
 (3678, 78, 27.174, 201.064, -72.31, 100, 0, 0, 'Wailing Caverns - Disciple of Naralex'),
 (3678, 79, -41.114, 204.149, -78.94, 100, 0, 0, 'Wailing Caverns - Disciple of Naralex');
-
-DELETE FROM `waypoint_path_name` WHERE `PathId` IN (3678);
-INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
-(3678, 'Wailing Caverns - Disciple of Naralex - Escort path'); -- npc_disciple_of_naralexAI
 
 -- =========
 -- DBSCRIPTS

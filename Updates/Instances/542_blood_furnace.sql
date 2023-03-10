@@ -558,15 +558,14 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+32, 0, 542, 1, 328.702056884765625, -197.719131469726562, -25.508880615234375, 2.98449873924255371, 0, 0, 0.996916770935058593, 0.078466430306434631, 86400, 86400), -- Bound Fel Iron Chest, Solid Fel Iron Chest
 (@OGUID+33, 0, 542, 2, 328.702056884765625, -197.719131469726562, -25.508880615234375, 2.98449873924255371, 0, 0, 0.996916770935058593, 0.078466430306434631, 86400, 86400); -- Bound Adamantite Chest, Solid Adamantite Chest
 
-INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
-(@OGUID+20,255,0,0,0,0,1),
-(@OGUID+21,255,0,0,0,0,1),
-(@OGUID+22,255,0,0,0,0,1),
-(@OGUID+23,255,0,0,0,0,1),
-(@OGUID+24,255,0,0,0,0,1),
-(@OGUID+25,255,0,0,0,0,1),
-(@OGUID+26,255,0,0,0,0,1);
-
+INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
+(@OGUID+20, 255, 0), -- Doodad_Hellfire_DW_LargeFloor_Crack02onoff
+(@OGUID+21, 255, 0), -- Doodad_Hellfire_DW_LargeFloor_Crack03
+(@OGUID+22, 255, 0), -- Doodad_Hellfire_DW_LargeFloor_Crack04onoff
+(@OGUID+23, 255, 0), -- Doodad_Hellfire_DW_SmallFloor_Crack03onoff
+(@OGUID+24, 255, 0), -- Doodad_Hellfire_DW_SmallFloor_Crack04onoff
+(@OGUID+25, 255, 0), -- Doodad_Hellfire_DW_SmallFloor_Crack05onoff
+(@OGUID+26, 255, 0); -- Doodad_Hellfire_DW_SmallFloor_Crack06onoff
 
 INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) VALUES
 (@OGUID+30, 184932), (@OGUID+30, 184933), -- Bound Fel Iron Chest, Solid Fel Iron Chest
@@ -581,6 +580,27 @@ INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) VALUES
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 -- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+
+-- ============
+-- SPAWN GROUPS
+-- ============
+
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(5420001, 'Blood Furnace - Group 1', 0, 0, 0, 3);
+
+INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+(5420001, 17371, 1, 1, 0),
+(5420001, 17395, 1, 1, 0),
+(5420001, 17414, 1, 1, 0);
+
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`) VALUES
+(5420001, @CGUID+35),
+(5420001, @CGUID+44),
+(5420001, @CGUID+86);
+
+-- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+-- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+-- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
 
 -- =======
 -- POOLING
@@ -610,23 +630,6 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (@OGUID+33, @PGUID+90, 0, 'Blood Furnace - Bound Adamantite Chest, Solid Adamantite Chest (184936,184937)');
 
 -- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
-
--- ============
--- SPAWN GROUPS
--- ============
-
-INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(5420001, 'Blood Furnace - Group 1', 0, 0, 0, 3);
-
-INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
-(5420001, 17371, 1, 1, 0),
-(5420001, 17395, 1, 1, 0),
-(5420001, 17414, 1, 1, 0);
-
-INSERT INTO `spawn_group_spawn` (`Id`, `Guid`) VALUES
-(5420001, @CGUID+35),
-(5420001, @CGUID+44),
-(5420001, @CGUID+86);
 
 -- =========
 -- DBSCRIPTS
