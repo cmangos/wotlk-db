@@ -3201,7 +3201,7 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 (@OGUID+283, 255, 0),
 (@OGUID+289, 255, 1), -- Chessboard
 (@OGUID+291, 0, -1), -- Master's Terrace Focus
-(@OGUID+292, 0, -1); -- Master's Terrace Focus
+(@OGUID+292, 0, -1), -- Master's Terrace Focus
 (@OGUID+329, 255, 0),
 (@OGUID+338, 255, 0);
 

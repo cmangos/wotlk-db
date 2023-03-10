@@ -301,8 +301,7 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 (@OGUID+17,0,-1,0,0,0,1),
 (@OGUID+18,0,-1,0,0,0,1),
 (@OGUID+19,0,-1,0,0,0,1),
-(@OGUID+20,0,-1,0,0,0,1),
-(@OGUID+21,0,-1,0,0,0,1);
+(@OGUID+20,0,-1,0,0,0,1);
 
 -- ======
 -- EVENTS
