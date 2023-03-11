@@ -193,7 +193,7 @@ UPDATE creature_template SET MovementType = 2 WHERE entry IN (27656,31561);
 DELETE FROM `creature_movement_template` WHERE entry = 27656;
 INSERT INTO `creature_movement_template` (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `WaitTime`, `ScriptId`, `Orientation`) VALUES
 -- Ley-Guardian Eregos
-(27656,0,1,1064.03,1047.203,648.9442,0,5,100),
+(27656,0,1,1064.03,1047.203,648.9442,1,5,100),
 (27656,0,2,1080.695,1016.914,651.9733,0,0,100),
 (27656,0,3,1112.462,1010.671,651.945,0,0,100),
 (27656,0,4,1138.34,1025.522,649.167,0,0,100),
