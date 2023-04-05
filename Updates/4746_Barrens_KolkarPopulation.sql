@@ -1334,7 +1334,7 @@ INSERT INTO creature (guid, id, map, spawnmask, phasemask, position_x, position_
 -- moved to spawn_groups
 DELETE FROM `spawn_group` WHERE id = 19954;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(19954, 'Barrens - Brokespear 5838 - Rare', 0, 1, 0, 0);
+(19954, 'Barrens - Stonearm 5837 - Rare', 0, 1, 0, 0);
 DELETE FROM `spawn_group_spawn` WHERE id = 19954;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (19954, 20635, -1),
