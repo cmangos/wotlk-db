@@ -95,7 +95,6 @@ INSERT INTO creature_spawn_data (guid, Id) VALUES
 UPDATE creature_movement SET WaitTime = 0, ScriptId = 0 WHERE Id IN (518769);
 
 -- Wyrmrest Defender 27629
--- need to fix mounted anim somehow !!!!!!
 UPDATE creature_template SET UnitFlags = 0 WHERE entry = 27629;
 DELETE FROM creature_spawn_data_template WHERE entry = 20057;
 INSERT INTO creature_spawn_data_template (`Entry`, `UnitFlags`,`SpawnFlags`, `RelayId`) VALUES 
@@ -104,3 +103,13 @@ DELETE FROM creature_spawn_data WHERE guid BETWEEN 519281 AND 519290;
 INSERT INTO creature_spawn_data (guid, Id) VALUES
 (519281,20057),(519282,20057),(519283,20057),(519284,20057),(519285,20057),
 (519286,20057),(519287,20057),(519288,20057),(519289,20057),(519290,20057);
+
+-- Vhel'kur 21801
+UPDATE creature SET MovementType = 3 WHERE id = 21801;
+DELETE FROM creature_spawn_data WHERE guid IN (76114);
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+(76114,20056);
+UPDATE creature_movement_template SET WaitTime = 0, ScriptId = 0 WHERE entry IN (21801);
+DELETE FROM dbscripts_on_creature_movement WHERE id = 2180101;
+
+
