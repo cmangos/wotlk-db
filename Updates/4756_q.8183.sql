@@ -30,7 +30,7 @@ INSERT INTO creature_movement_template (`Entry`, `PathId`, `Point`, `PositionX`,
 (14875,1,10,-11838.089,1289.7418,1.5805411,100,0,0),
 (14875,1,11,-11829.768,1264.8495,1.6261787,100,0,0),
 (14875,1,12,-11818.517,1249.3657,2.5915108,100,0,0),
-(14875,1,13,-11812.336,1260.9138,6.0150294,4.27605,100,1487502);
+(14875,1,13,-11812.336,1260.9138,6.0150294,4.27605,300,1487502);
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1487501,1487502);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1487501,1000,15,24214,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'cast 24214'), -- 22:30:47.326
@@ -40,9 +40,10 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (1487501,7501,1,22,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'), -- 22:30:53.777
 (1487501,7510,0,0,0,0,0,0,0x04,10474,0,0,0,0,0,0,0,'Yell'),
 (1487501,11000,28,8,0,0,0,0,0x04,8,0,0,0,0,0,0,0,'KNELL STATE'), -- 22:30:57.017
-(1487502,1,29,3,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'NPCFlags Add'),
-(1487502,2,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'UnActive'),
-(1487502,3,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Idle');
+(1487502,100,3,0,0,0,0,0,0x04,0,0,0,0,0,0,0,4.27605,'orientation'),
+(1487502,101,29,3,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'NPCFlags Add'),
+(1487502,110,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'UnActive'),
+(1487502,120,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Idle');
 DELETE FROM spell_target_position WHERE Id IN(24214);
 INSERT INTO spell_target_position VALUES
 (24214,0,-11819,1343,10.5,0);
@@ -76,7 +77,20 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (9995,22000,15,24215,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24215 - q.8183'), -- missing spell
 (9995,25000,15,24204,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24204 - q.8183'),
 (9995,25001,16,7059,2,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - Play Sound - q.8183'),
-(9994,1,13,0,0,0,180391,500,1|0x400,0,0,0,0,0,0,0,0,'Pat\'s Hellfire Guy 15073 - Play Sound - q.8183');
+(9994,1,13,0,0,0,180391,170712,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,2,13,0,0,0,180391,170713,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,3,13,0,0,0,180391,170714,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,4,13,0,0,0,180391,170715,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,5,13,0,0,0,180391,170716,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,6,13,0,0,0,180391,170717,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,7,13,0,0,0,180391,170718,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,8,13,0,0,0,180391,170719,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,9,13,0,0,0,180391,170720,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,10,13,0,0,0,180391,170721,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,11,13,0,0,0,180391,170722,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,12,13,0,0,0,180391,170723,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,13,13,0,0,0,180391,170724,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(9994,14,13,0,0,0,180391,170725,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183');
 -- Worldstate
 DELETE FROM `spawn_group` WHERE id = 19951;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
