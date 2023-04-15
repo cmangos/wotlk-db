@@ -66,31 +66,31 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- Servant of the Hand 15080
 DELETE FROM creature_spawn_data_template WHERE entry IN (9999,9998);
 INSERT INTO creature_spawn_data_template (`Entry`, `NpcFlags`, `RelayId`) VALUES 
-(9999,0,9996),
-(9998,0,9995);
-DELETE FROM dbscripts_on_relay WHERE id IN (9996,9995,9994);
+(9999,0,28),
+(9998,0,29);
+DELETE FROM dbscripts_on_relay WHERE id IN (28,29,30);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(9996,10,15,17321,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Servant of the Hand 15080 - Spawn Effect - q.8183'),
-(9996,17000,15,24217,0,0,0,0,0,0,0,0,0,0,0,0,0,'Servant of the Hand 15080 - Cast 24217 - q.8183'), -- 22:30:55.707
-(9995,7000,15,24202,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24202 - q.8183'),
-(9995,7001,15,24203,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24203 - q.8183'),
-(9995,22000,15,24215,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24215 - q.8183'), -- missing spell
-(9995,25000,15,24204,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24204 - q.8183'),
-(9995,25001,16,7059,2,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - Play Sound - q.8183'),
-(9994,1,13,0,0,0,180391,170712,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,2,13,0,0,0,180391,170713,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,3,13,0,0,0,180391,170714,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,4,13,0,0,0,180391,170715,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,5,13,0,0,0,180391,170716,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,6,13,0,0,0,180391,170717,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,7,13,0,0,0,180391,170718,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,8,13,0,0,0,180391,170719,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,9,13,0,0,0,180391,170720,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,10,13,0,0,0,180391,170721,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,11,13,0,0,0,180391,170722,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,12,13,0,0,0,180391,170723,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,13,13,0,0,0,180391,170724,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
-(9994,14,13,0,0,0,180391,170725,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183');
+(28,10,15,17321,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Servant of the Hand 15080 - Spawn Effect - q.8183'),
+(28,17000,15,24217,0,0,0,0,0,0,0,0,0,0,0,0,0,'Servant of the Hand 15080 - Cast 24217 - q.8183'), -- 22:30:55.707
+(29,7000,15,24202,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24202 - q.8183'),
+(29,7001,15,24203,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24203 - q.8183'),
+(29,22000,15,24215,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24215 - q.8183'), -- missing spell
+(29,25000,15,24204,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - cast 24204 - q.8183'),
+(29,25001,16,7059,2,0,0,0,0x04,0,0,0,0,0,0,0,0,'Heart of Hakkar 15069 - Play Sound - q.8183'),
+(30,1,13,0,0,0,180391,170712,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,2,13,0,0,0,180391,170713,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,3,13,0,0,0,180391,170714,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,4,13,0,0,0,180391,170715,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,5,13,0,0,0,180391,170716,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,6,13,0,0,0,180391,170717,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,7,13,0,0,0,180391,170718,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,8,13,0,0,0,180391,170719,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,9,13,0,0,0,180391,170720,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,10,13,0,0,0,180391,170721,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,11,13,0,0,0,180391,170722,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,12,13,0,0,0,180391,170723,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,13,13,0,0,0,180391,170724,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183'),
+(30,14,13,0,0,0,180391,170725,1|0x10|0x400,0,0,0,0,0,0,0,0,'Part of Pat\'s Hellfire Guy 15073 EAI - Activate Trap - q.8183');
 -- Worldstate
 DELETE FROM `spawn_group` WHERE id = 19951;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
