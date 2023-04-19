@@ -142,7 +142,7 @@ INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orien
 (18451,37,-9367.09,-3056.33,156.779,100,0,0),
 (18451,38,-9373.9,-3051.92,156.779,100,0,0),
 (18451,39,-9386.08,-3054.35,156.779,100,0,0);
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (406401);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (406401,48501); -- 48501 - not needed anymore
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (406401,1000,20,1,2,50000,0,0,12,0,0,0,0,0,0,0,0,'Change Movement To 1 - Random (55secs TEMP) (around current location)');
 -- some sharing spawn positions 18439
