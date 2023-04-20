@@ -112,4 +112,22 @@ INSERT INTO creature_spawn_data (guid, Id) VALUES
 UPDATE creature_movement_template SET WaitTime = 0, ScriptId = 0 WHERE entry IN (21801);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2180101;
 
+-- Insidion 23281
+DELETE FROM creature_spawn_data WHERE guid IN (160764);
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+(160764,20056);
 
+-- Furywing 23261
+DELETE FROM creature_spawn_data WHERE guid IN (160763);
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+(160763,20056);
+
+-- Rivendark 23061
+DELETE FROM creature_spawn_data WHERE guid IN (160762);
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+(160762,20056);
+
+-- Obsidia 23282
+DELETE FROM creature_spawn_data WHERE guid IN (160762);
+INSERT INTO creature_spawn_data (guid, Id) VALUES
+(160761,20056);
