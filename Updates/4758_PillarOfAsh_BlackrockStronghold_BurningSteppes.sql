@@ -73,8 +73,8 @@ INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orien
 -- Blackrock Sorcerer 7026
 UPDATE creature SET position_x = -7705.481, position_y = -1538.0471, position_z = 132.57187, spawndist = 0, MovementType = 4 WHERE guid = 5511; -- linear
 UPDATE creature SET position_x = -7711.2725, position_y = -1416.5027, position_z = 140.79724, spawndist = 0, MovementType = 4 WHERE guid = 5525; -- linear
-UPDATE creature SET id = 7026, position_x = -7670.8896, position_y = -1435.7633, position_z = 140.7522, spawndist = 0, MovementType = 4 WHERE guid = 5581; -- linear (duplicate slayer used)
-DELETE FROM creature_movement WHERE Id IN (5511,5525,5581);
+UPDATE creature SET id = 7026, position_x = -7670.8896, position_y = -1435.7633, position_z = 140.7522, spawndist = 0, MovementType = 4 WHERE guid = 5558; -- linear (duplicate slayer used)
+DELETE FROM creature_movement WHERE Id IN (5511,5525,5558);
 INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orientation, waittime, scriptid) VALUES
 -- 5511 - had custom wps - corrected
 (5511,1,-7705.481,-1538.0471,132.57187,100,2000,0),
