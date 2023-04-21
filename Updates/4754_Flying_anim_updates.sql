@@ -128,6 +128,6 @@ INSERT INTO creature_spawn_data (guid, Id) VALUES
 (160762,20056);
 
 -- Obsidia 23282
-DELETE FROM creature_spawn_data WHERE guid IN (160762);
+DELETE FROM creature_spawn_data WHERE guid IN (160761);
 INSERT INTO creature_spawn_data (guid, Id) VALUES
 (160761,20056);
