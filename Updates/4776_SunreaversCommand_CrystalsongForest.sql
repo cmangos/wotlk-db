@@ -1,5 +1,6 @@
 -- Sunreaver's Command - Crystalsong Forest
 -- Sunreaver Hawkrider 30265
+UPDATE creature_template_addon SET mount = 28889 WHERE entry = 30265; -- mount updated in 3.1
 -- Group 1
 UPDATE creature SET position_x = 5615.299, position_y = -711.0152, position_z = 206.286, spawndist = 0, MovementType = 0 WHERE guid IN (527653,527648);
 DELETE FROM `spawn_group` WHERE id = 33503;
