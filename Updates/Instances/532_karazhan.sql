@@ -3305,7 +3305,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 
 -- WoTLK ONLY
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
-(@OGUID+339, 194092, 532, 1, -11126.9, -1874.45, 91.4726,-0.226892,0,0,-0.113203,0.993572,180,180); -- Blackened Urn
+(@OGUID+1001, 194092, 532, 1, -11126.9, -1874.45, 91.4726,-0.226892,0,0,-0.113203,0.993572,180,180); -- Blackened Urn
 
 INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 (@OGUID+277, 255, 0),
