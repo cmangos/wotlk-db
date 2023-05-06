@@ -455,12 +455,12 @@ INSERT INTO creature_movement_template (`Entry`, `Point`, `PositionX`, `Position
 (34717,1,-13.670166,-12.401855,-16.0979,4.590215682983398437,120000,0),
 (34717,2,-14.315262,-3.41333,-15.885895,1.8502306,120000,0);
 -- Bluffwatcher 3084 - on Zephyr only
-DELETE FROM creature_spawn_data_template WHERE entry IN (20056);
+DELETE FROM creature_spawn_data_template WHERE entry IN (20058);
 INSERT INTO creature_spawn_data_template (Entry, NpcFlags, Faction, EquipmentId) VALUES 
-(20056,0,83,538);
+(20058,0,83,538);
 DELETE FROM `creature_spawn_data` WHERE `Guid` IN (6470004,6470005);
 INSERT INTO `creature_spawn_data` (`Guid`, `Id`) VALUES
-(6470004,20056),(6470005,20056);
+(6470004,20058),(6470005,20058);
 DELETE FROM creature_addon WHERE guid IN (6470004,6470005);
 INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES 
 (6470004,0,0,2,0,0,0,NULL),
