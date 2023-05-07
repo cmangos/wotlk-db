@@ -3910,28 +3910,28 @@ INSERT INTO creature_spawn_data (guid, Id) VALUES
 (@CGUID+274, 1),
 (@CGUID+285, 1),
 (@CGUID+291, 1),
-(@CGUID+326, 20033), -- Set Phase 1
-(@CGUID+318, 20033), -- Set Phase 1
-(@CGUID+323, 20033), -- Set Phase 1
-(@CGUID+314, 20033), -- Set Phase 1
-(@CGUID+634, 20033), -- Set Phase 1
-(@CGUID+642, 20034), -- Set Phase 2
-(@CGUID+643, 20033), -- Set Phase 1
-(@CGUID+644, 20034), -- Set Phase 2
-(@CGUID+651, 20034), -- Set Phase 2
-(@CGUID+652, 20034), -- Set Phase 2
-(@CGUID+657, 20034), -- Set Phase 2
-(@CGUID+661, 20033), -- Set Phase 1
-(@CGUID+663, 20034), -- Set Phase 2
-(@CGUID+666, 20033), -- Set Phase 1
-(@CGUID+682, 20033), -- Set Phase 1
-(@CGUID+690, 20033), -- Set Phase 1
-(@CGUID+691, 20033), -- Set Phase 1
-(@CGUID+692, 20033), -- Set Phase 1
-(@CGUID+721, 20033), -- Set Phase 1
-(@CGUID+722, 20033), -- Set Phase 1
-(@CGUID+724, 20033), -- Set Phase 1
-(@CGUID+725, 20033), -- Set Phase 1
+(@CGUID+326, 80), -- Set Phase 1
+(@CGUID+318, 80), -- Set Phase 1
+(@CGUID+323, 80), -- Set Phase 1
+(@CGUID+314, 80), -- Set Phase 1
+(@CGUID+634, 80), -- Set Phase 1
+(@CGUID+642, 81), -- Set Phase 2
+(@CGUID+643, 80), -- Set Phase 1
+(@CGUID+644, 81), -- Set Phase 2
+(@CGUID+651, 81), -- Set Phase 2
+(@CGUID+652, 81), -- Set Phase 2
+(@CGUID+657, 81), -- Set Phase 2
+(@CGUID+661, 80), -- Set Phase 1
+(@CGUID+663, 81), -- Set Phase 2
+(@CGUID+666, 80), -- Set Phase 1
+(@CGUID+682, 80), -- Set Phase 1
+(@CGUID+690, 80), -- Set Phase 1
+(@CGUID+691, 80), -- Set Phase 1
+(@CGUID+692, 80), -- Set Phase 1
+(@CGUID+721, 80), -- Set Phase 1
+(@CGUID+722, 80), -- Set Phase 1
+(@CGUID+724, 80), -- Set Phase 1
+(@CGUID+725, 80), -- Set Phase 1
 (@CGUID+1088, 1),
 (@CGUID+1098, 1),
 (@CGUID+1108, 1);

@@ -299,13 +299,13 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_
 
 DELETE FROM `creature_spawn_data` WHERE `guid` IN (@CGUID+144,@CGUID+148,@CGUID+158,@CGUID+161,@CGUID+162,@CGUID+165,@CGUID+168);
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(@CGUID+144, 20033),
-(@CGUID+148, 20033),
-(@CGUID+158, 20033),
-(@CGUID+161, 20033),
-(@CGUID+162, 20033),
-(@CGUID+165, 20034),
-(@CGUID+168, 20035);
+(@CGUID+144, 80),
+(@CGUID+148, 80),
+(@CGUID+158, 80),
+(@CGUID+161, 80),
+(@CGUID+162, 80),
+(@CGUID+165, 81),
+(@CGUID+168, 82);
 
 -- INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `pvp_flags`, `emote`, `moveflags`, `auras`) VALUES
 
