@@ -33,8 +33,6 @@ INSERT INTO creature_spawn_data_template (Entry, NpcFlags, UnitFlags, Faction, M
 -- move already existing ones to new generic
 UPDATE creature_spawn_data SET id = 10 WHERE guid IN (520247,520255,520256,520258,520259,520260,520272,534812,534821,534822,534823,534824,534831,534832,534833,534844,534845,534846); -- was 20032
 UPDATE creature_spawn_data SET id = 11 WHERE guid IN (24664,24665); -- was 4
-UPDATE creature_spawn_data SET id = 20 WHERE guid IN (24664,24665); -- was 20031
-UPDATE creature_spawn_data SET id = 50 WHERE guid IN (67872); -- was 5
 UPDATE creature_spawn_data SET id = 60 WHERE guid IN (513157); -- was 20003
 UPDATE creature_spawn_data SET id = 80 WHERE guid IN (3271,4624,5282,5365,5513,5515,5518,5519,5522,5523,5527,5528,5533,5536,69484,69490,509010,509011,509014,
 509286,509287,509288,513011,521150,522511,522512,522513,522515,522517,522524,522717,522718,522723,522725,522735,522778,522858,522863,523827,523829,523830,
@@ -49,6 +47,7 @@ UPDATE creature_spawn_data SET id = 82 WHERE guid IN (500650,513004,521151); -- 
 UPDATE creature_spawn_data SET id = 83 WHERE guid IN (521148); -- was 20036
 UPDATE creature_spawn_data SET id = 19979 WHERE guid IN (52330,52331); -- came from duplicate 19978
 -- not needed anymore
+DELETE FROM creature_spawn_data WHERE guid IN (67872); -- vendor arena 3 season removed in WoTLK 
 DELETE FROM creature_spawn_data_template WHERE entry IN (4,5,20032,20031,20003,20033,20034,20035,20036,19978);
 
 -- Names
