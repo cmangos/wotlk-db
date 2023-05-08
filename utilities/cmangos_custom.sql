@@ -207,6 +207,10 @@ UPDATE `creature_template` SET `name` = 'Redeemed Spirit of Earth' WHERE `entry`
 -- WoTLK section
 -- ============================================================
 
+-- -------------------------------
+-- Gameobject custom changes
+-- -------------------------------
+
 -- The Eye of Eternity
 -- The Focusing Iris 193958 193960 & Exit Portal 193908 - must despawn
 UPDATE gameobject_template SET data5 = 1 WHERE entry IN (193958,193960,193908);
@@ -217,3 +221,30 @@ UPDATE gameobject_template SET data1 = 2 WHERE entry IN (188539);
 
 -- Wolfsbane Root 189313 - must despawn
 UPDATE gameobject_template SET data5 = 1 WHERE entry IN (189313);
+
+-- -------------------------------
+-- Item custom changes
+-- -------------------------------
+
+-- ITEM_MOD_SPELL_HEALING_DONE 41 / ITEM_MOD_SPELL_DAMAGE_DONE 42 -> ITEM_MOD_SPELL_POWER 45
+UPDATE `item_template` SET `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 45 WHERE `entry` = 34967; -- 41, 4, 42 (+4 healing, +5spelldmg -> 5spellpower)
+
+-- -----------------------------
+-- Broadcast Text custom changes
+-- -----------------------------
+
+-- -------------------------------
+-- Creature custom changes
+-- -------------------------------
+
+-- -------------------------------
+-- Quest custom changes
+-- -------------------------------
+
+-- -------------------------------
+-- Spell custom changes
+-- -------------------------------
+
+-- spell 44333 Haste has travel speed.
+UPDATE `spell_template` SET `Speed` = '0' WHERE `Id` = 44333;
+
