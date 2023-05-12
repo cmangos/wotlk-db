@@ -9,3 +9,6 @@ UPDATE `item_template` SET `AllowableClass` = 32767 WHERE `entry` = 17412;
 -- Item (Entry: 34967) has deprecated stat_type4 (41) -> converted to 45
 -- Item (Entry: 34967) has deprecated stat_type5 (42) -> converted to 45
 
+-- Table 'milling_loot_template' entry 44299 (item entry (herb)) not exist but used as loot id in DB.
+UPDATE `item_template` SET `Flags` = `Flags`&~536870912 WHERE `entry` = 44299; -- https://www.wowhead.com/wotlk/item=44299/crinkly-grass
+
