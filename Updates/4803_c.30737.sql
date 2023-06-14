@@ -1,7 +1,7 @@
 -- Nesingwary Game Warden 30737
 -- Group 1
-UPDATE creature SET position_x = 5598.858, position_y = 5814.943, position_z = -69.56468, spawndist = 0, MovementType = 0 WHERE id = 528421;
-UPDATE creature SET position_x = 5598.858, position_y = 5814.943, position_z = -69.56468, spawndist = 0, MovementType = 0 WHERE id = 528422;
+UPDATE creature SET position_x = 5598.858, position_y = 5814.943, position_z = -69.56468, spawndist = 0, MovementType = 0 WHERE guid = 528421;
+UPDATE creature SET position_x = 5598.858, position_y = 5814.943, position_z = -69.56468, spawndist = 0, MovementType = 0 WHERE guid = 528422;
 DELETE FROM `spawn_group` WHERE id = 32501;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (32501, 'Sholazar Basin - Nesingwary Game Warden 30737 x2 - Patrol - 1', 0, 0, 0, 0x01);
@@ -29,8 +29,8 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`Positi
 (32501,10,5606.056,5786.5225,-71.911415,100,0,0),
 (32501,11,5594.6675,5777.825,-71.92863,100,400,0);
 -- Group 2
-UPDATE creature SET position_x = 5572.568, position_y = 5732.9395, position_z = -75.675, spawndist = 0, MovementType = 0 WHERE id = 528415;
-UPDATE creature SET position_x = 5572.568, position_y = 5732.9395, position_z = -75.675, spawndist = 0, MovementType = 0 WHERE id = 528416;
+UPDATE creature SET position_x = 5572.568, position_y = 5732.9395, position_z = -75.675, spawndist = 0, MovementType = 0 WHERE guid = 528415;
+UPDATE creature SET position_x = 5572.568, position_y = 5732.9395, position_z = -75.675, spawndist = 0, MovementType = 0 WHERE guid = 528416;
 DELETE FROM `spawn_group` WHERE id = 32502;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
 (32502, 'Sholazar Basin - Nesingwary Game Warden 30737 x2 - Patrol - 2', 0, 0, 0, 0x01);
