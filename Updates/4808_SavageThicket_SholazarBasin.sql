@@ -105,7 +105,7 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (20747,600,15,52793,0,0,28408,40,1,0,0,0,0,0,0,0,0,'Part of Primordial Drake 28378 EAI: cast 28408 on buddy'),
 (20747,1200,15,52793,0,0,28408,40,1,0,0,0,0,0,0,0,0,'Part of Primordial Drake 28378 EAI: cast 28408 on buddy'),
 (20747,1500,15,52793,0,0,28408,40,1,0,0,0,0,0,0,0,0,'Part of Primordial Drake 28378 EAI: cast 28408 on buddy'),
-(20747,2000,20,1,5,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Primordial Drake 28378 EAI: idle');
+(20747,2000,20,1,5,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Primordial Drake 28378 EAI: random movement');
 DELETE FROM spell_script_target WHERE entry IN (52791,52793);
 INSERT INTO spell_script_target (entry, `type`, targetEntry, inverseEffectMask) VALUES
 (52791, 1, 28408, 0),
