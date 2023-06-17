@@ -1,46 +1,48 @@
-Wotlk-DB for CMaNGOS-WOTLK
-========================================
-A content database for [CMaNGOS-WOTLK][10], and *World of Warcraft Client Patch
-3.3.5a* - It is compatible only with client 3.3.5a (build 12340)
+Wotlk-DB for CMaNGOS/mangos-wotlk
+=====================================
+A content database for [mangos-wotlk][10], and *World of Warcraft Client Patch
+3.3.5a* - [_Defending the Ruby Sanctum_][50]. It is compatible only with client 3.3.5a (build 12340).
 
-**Wotlk-DB** is released under the GPLv3+.
-The file (`LICENSE.md`) **must** be a part of any re-distributable packages made from this software.  
-No licenses should be removed from this software if you are making re-distributable copies.
-
-**GPLv3+** - GPL version 3 or any later version
+**Wotlk-DB** is released under the GPL v3. The file (`LICENSE.md`)
+**must** be a part of any redistributable packages made from this software. No
+licenses should be removed from this software if you are making redistributable
+copies.
 
 **Wotlk-DB** contains copyrighted materials that are not part of the GPL v3.
 Informations about copyrighted materials are located in the file (`COPYRIGHT.md`).
 
 World of Warcraft content and materials are trademarks and copyrights of Blizzard or its licensors. All rights reserved.
-**Wotlk-DB** is part of CMaNGOS project and is not affiliated with Blizzard or its licensors.
+**Wotlk-DB** is part of [CMaNGOS Project][13] and is not affiliated with Blizzard or its licensors.
 
 Compatibility
 -------------
-The *Wotlk-DB* database is compatible with [CMaNGOS-WOTLK][10] core only.
+The *Wotlk-DB* database is compatible with [mangos-wotlk][10] core only.
 
 Getting started
 ---------------
 The basic principle behind this database repository is to have a single SQL file
-holding every table in the database. When something is changed into the database
-the modification is done by adding small SQL update files placed into the `updates` directory.
-Every time a user (that would be you or Wotlk-DB Developers) wishes to change something into the database, he/she
+holding every table in the database. When something is changed in the database
+the modification is done by adding SQL update files into the `updates` directory.
+Every time a user (that would be you) wishes to change something into the database, he/she
 have to create and add the right SQL file. This helps tracking what changes are made, when and where.
 
 Installation
 ------------
-**Wotlk-DB** is the main content database for: `wotlkmangos` where the world is defined
-with creatures, items, objects, quests, etc.
+If you used the default values when installing your [mangos-wotlk][10] core, simply run from a bash compatible shell
+(like Bash Git for Windows) the following command `./InstallFullDB.sh`.
 
-It must be applied after creating the `wotlkmangos` database from your CMaNGOS core distribution [CMaNGOS-WOTLK][10] from [CMaNGOS Project][11].
+It will create a single file `InstallFullDB.config`.
 
-If you used the default values when installing your mangos core, simply run into a bash compatible shell (like Bash Git for Windows) the following command  `./InstallFullDB.sh`.
+If you have modified the default values for connecting to the database, in order to use
+this database repository, you will have to open `InstallFullDB.config`,
+and edit in the desired database, username and password according to how you have
+configured your MySQL server. Default values for mangos core are `username:mangos`,
+`password:mangos`, `database:mangos`. For security reasons, it is strongly advised to
+use a different username and password.
 
-It will create a single file  InstallFullDB.config .
-
-If you have modified the default values for connecting to the database, in order to use this database repository, you will have to open `InstallFullDB.config`, and edit in the desired database, username and password according to how you have configured your MySQL server. Default values for mangos core are `username:mangos`, `password:mangos`, `database:mangos`. For security reasons, it is strongly adviced to use different username and password.
-
-Once you have the desired database user and rights configured in MySQL, you may run again the `./InstallFullDB.sh` command to load the individual data tables into your database, populate them and apply all updates since the last milestone.
+Once you have the desired database user and permissions configured in MySQL, you may
+again run the `./InstallFullDB.sh` command to load the individual data tables into your
+database, populate them and apply all updates since the last milestone.
 
 There are also options that you can enable/disable in `InstallFullDB.config` to add SQL files related to bots, development updates or custom changes.
 
@@ -60,19 +62,13 @@ Whenever possible, provide sources about the issue to help developers to get a b
 Note that the more complete your contribution is (i.e. close to a pull request), the quicker it will become part of the database.
 But as this is a community project, the developers will always try to help you move through the various stages of contributing!
 
-And if something goes wrong?
-----------------------------
-To submit an issue for anything related to wow-world (creatures, objects, movement, events etc), please use: [Issue Tracker:][1].
-
-To submit an issue for Core mechanicks (spells, Boss scripts, etc), Please use: [Issue Tracker:][2].
-
-
-[1]: https://github.com/cmangos/wotlk-db/issues/ "Issue Tracker"
-[2]: https://github.com/cmangos/issues/issues/ "Issue Tracker"
-[10]: https://github.com/cmangos/mangos-wotlk "CMaNGOS-WOTLK"
-[11]: http://cmangos.net/ "CMaNGOS Project"
+[10]: https://github.com/cmangos/mangos-wotlk "mangos wotlk"
+[12]: https://github.com/cmangos/wotlk-db/ "content database"
+[13]: https://cmangos.net/ "CMaNGOS Project"
 [14]: https://github.com/cmangos/issues/wiki/Installation-Instructions "CMaNGOS installation instructions"
 [15]: https://github.com/cmangos/issues/issues/ "CMaNGOS issue tracker"
 [16]: https://github.com/cmangos/issues/wiki/mangosdb_struct
 [17]: https://help.github.com/articles/fork-a-repo/
 [18]: https://help.github.com/articles/creating-a-pull-request/
+
+[50]: https://wowpedia.fandom.com/wiki/Patch_3.3.5 "WoW 3.3.5 - Defending the Ruby Sanctum"
