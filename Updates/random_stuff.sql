@@ -1,7 +1,7 @@
 
 -- more stuff
 
-DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 3936, 4048, 4080, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 7907, 11036, 15297, 16281, 16494, 27337);
+DELETE FROM `questgiver_greeting` WHERE `Entry` in (1217, 1284, 1377, 2151, 3657, 3936, 4048, 4080, 4088, 5393, 5637, 5694, 5892, 5906, 6019, 7877, 7907, 11036, 15297, 16281, 16494, 27337);
 
 -- Glorin Steelbrow
 INSERT INTO `questgiver_greeting` VALUES (1217, 0, 'Harumph!  As if I don''t have enough to do out here in the muck, without all these distractions!', 0, 0);
@@ -12,6 +12,12 @@ INSERT INTO `questgiver_greeting` VALUES (1284, 0, 'My blessings go to you, $c, 
 -- Pilot Stonegear
 INSERT INTO `questgiver_greeting` VALUES (1377, 0, 'Driving a Steam Tank isn''t for everyone.  It takes an iron grip and nerves of steel...lucky I have both!  How about you?  How''s your mettle?  Want to prove it to me?', 0, 0);
 
+-- Moon Priestess Amara
+INSERT INTO `questgiver_greeting` VALUES (2151, 0, 'Hail, $C.  The roads of our fair forest are not entirely without peril.  Tread cautiously.', 0, 0);
+
+-- Sentinel Elissa Starbreeze
+INSERT INTO `questgiver_greeting` VALUES (3657, 0, 'I must keep vigilant watch, $n. Auberdine is surrounded by enemies, new and old. Watch your step when you leave this town for I cannot protect you outside of it. That is why I need help with tasks that would take me outside.', 0, 0);
+
 -- Shandris Feathermoon
 INSERT INTO `questgiver_greeting` VALUES (3936, 0, 'In the name of Elune, the Sentinels keep vigilant watch over all our lands, from the cobbled streets of Darnassus to the edge of Ashenvale Forest.', 2, 0);
 
@@ -20,6 +26,9 @@ INSERT INTO `questgiver_greeting` VALUES (4048, 0, 'You look as though you have 
 
 -- Kaela Shadowspear
 INSERT INTO `questgiver_greeting` VALUES (4080, 0, 'Gaxim is so focused on trying to convince the night elves that his methods are superior that I had no choice but to focus his energies on something--so I unleashed him on the Venture Co.$B$BI remain focused on helping the Charred Vale to the northwest.', 0, 0);
+
+-- Elanaria
+INSERT INTO `questgiver_greeting` VALUES (4088, 0, 'A warrior''s path is one of determination, $gbrother:sister;.  It may begin with strength of arms, but it endures through force of will.', 1, 0);
 
 -- Quartermaster Lungertz
 INSERT INTO `questgiver_greeting` VALUES (5393, 0, 'Nethergarde keep always needs more supplies - supplies to help our mages in their research, and supplies to keep our defenders in top fighting shape.', 1, 0);
@@ -104,6 +113,14 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16478, 9292);
 -- Missing Questtaker for "Faint Necrotic Crystal" (Lieutenant Rukag)
 DELETE FROM `creature_involvedrelation` WHERE `id` = 16494 AND `quest` = 9310;
 INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (16494, 9310);
+
+-- https://www.wowhead.com/wotlk/quest=1684/elanaria
+-- 2nd Questgiver for "Elanaria" (Moon Priestess Amara)
+DELETE FROM `creature_questrelation` WHERE `id` = 2151 AND `quest` = 1684;
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (2151, 1684);
+-- 3rd Questgiver for "Elanaria" (Sentinel Elissa Starbreeze)
+DELETE FROM `creature_questrelation` WHERE `id` = 3657 AND `quest` = 1684;
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (3657, 1684);
 
 -- --------------------------------------------------------------------------- --
 
