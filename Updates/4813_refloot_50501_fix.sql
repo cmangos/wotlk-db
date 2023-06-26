@@ -1313,3 +1313,70 @@ REPLACE INTO `item_loot_template` (entry, item, ChanceOrQuestChance, groupid, mi
 DELETE FROM `reference_loot_template` WHERE `entry` = 10006;
 DELETE FROM `reference_loot_template_names` WHERE `entry` = 10006;
 
+-- dberrors
+-- Table 'creature_loot_template' entry 18478 isn't creature entry and not referenced from loot, and then useless.
+-- Table 'creature_loot_template' entry 20047 isn't creature entry and not referenced from loot, and then useless.
+-- Table 'creature_loot_template' entry 21525 isn't creature entry and not referenced from loot, and then useless.
+-- Table 'creature_loot_template' entry 21526 isn't creature entry and not referenced from loot, and then useless.
+UPDATE `creature_template` SET `lootid` = `entry` WHERE `entry` IN (
+18478, -- Avatar of the Martyred	0
+20047, -- Crimson Hand Battle Mage	20032
+21525, -- Gatewatcher Gyro-Kill (1)	19218
+21526 -- Gatewatcher Iron-Hand (1)	19710
+);
+
+-- just adding not fixing anything as it makes no sense to fix stuff in missing backports. e.g i.32897, netherweave cloth or grey,green,blue,epic world loot items, scrolls chances
+-- cond 6012 is identical, but seemingly also missing on some npcs. (25428 and lots missing)
+DELETE FROM `creature_loot_template` WHERE `entry` IN (18478,20047,21525,21526);
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+(18478, 21877, 90, 0, 1, 1, 0, 'Netherweave Cloth'),
+(18478, 50501, 0.14, 0, -50501, 1, 0, 'NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!'),
+(20047, 30183, 2.911, 1, 1, 1, 0, 'Nether Vortex'),
+(20047, 33117, 0.5, 0, 1, 1, 6012, 'Jack-o\'-Lantern'),
+(20047, 36099, 2.756, 1, -36099, 1, 0, 'Tempest Keep: The Eye - Trash loot - Items'),
+(20047, 36100, 1.882, 1, -36100, 1, 0, 'T5 - Recipes'),
+(20047, 49001, 0.1, 0, -49001, 1, 0, 'Darkmoon Cards (Blessings, Storms, Furies, Lunacy 5-8) - Heroic Dungeon and Raids'),
+(20047, 50501, 0.2, 0, -50501, 1, 0, 'NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!'),
+(21525, 30436, 100, 0, 1, 1, 0, 'Jagged Blue Crystal'),
+(21525, 33117, 0.5, 0, 1, 1, 6012, 'Jack-o\'-Lantern'),
+(21525, 50501, 0.2, 0, -50501, 1, 0, 'NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!'),
+(21526, 30437, 100, 0, 1, 1, 0, 'Jagged Red Crystal'),
+(21526, 33117, 0.5, 0, 1, 1, 6012, 'Jack-o\'-Lantern'),
+(21526, 50501, 0.2, 0, -50501, 1, 0, 'NPC LOOT - Profession (-Design,-Formula,-Pattern,-Plans,-Recipe,-Schematic)(Non-BoP) - NPC Level 64+ Non-Elite/Level 58+ Elite - TBC NPC ONLY!');
+
+-- Table 'reference_loot_template' entry 36100 (reference id) not exist but used as loot id in DB.
+-- Table 'reference_loot_template' entry 36099 (reference id) not exist but used as loot id in DB.
+
+-- 201 - Has Skill ID 197, Minimum Skill Value 1 -> 4
+-- 199 - Has Skill ID 165, Minimum Skill Value 1 -> 3
+-- 198 - Has Skill ID 164, Minimum Skill Value 1 -> 10
+DELETE FROM `reference_loot_template_names` WHERE `entry` IN (36099,36100); -- nonexistant
+INSERT INTO `reference_loot_template_names` (`entry`, `name`) VALUES
+(36099, 'Tempest Keep: The Eye - Trash loot - Items'),
+(36100, 'T5 - Recipes');
+
+DELETE FROM `reference_loot_template` WHERE `entry` IN (36099,36100); -- nonexistant
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
+(36099, 30020, 0, 1, 1, 1, 0, 'Fire-Cord of the Magus'),
+(36099, 30024, 0, 1, 1, 1, 0, 'Mantle of the Elven Kings'),
+(36099, 30026, 0, 1, 1, 1, 0, 'Bands of the Celestial Archer'),
+(36099, 30028, 0, 1, 1, 1, 0, 'Seventh Ring of the Tirisfalen'),
+(36099, 30029, 0, 1, 1, 1, 0, 'Bark-Gloves of Ancient Wisdom'),
+(36099, 30030, 0, 1, 1, 1, 0, 'Girdle of Fallen Stars'),
+(36100, 30280, 0, 1, 1, 1, 4, 'Pattern: Belt of Blasting'),
+(36100, 30281, 0, 1, 1, 1, 4, 'Pattern: Belt of the Long Road'),
+(36100, 30282, 0, 1, 1, 1, 0, 'Pattern: Boots of Blasting'),
+(36100, 30283, 0, 1, 1, 1, 0, 'Pattern: Boots of the Long Road'),
+(36100, 30301, 0, 1, 1, 1, 3, 'Pattern: Belt of Natural Power'),
+(36100, 30302, 0, 1, 1, 1, 3, 'Pattern: Belt of Deep Shadow'),
+(36100, 30303, 0, 1, 1, 1, 3, 'Pattern: Belt of the Black Eagle'),
+(36100, 30304, 0, 1, 1, 1, 3, 'Pattern: Monsoon Belt'),
+(36100, 30305, 0, 1, 1, 1, 0, 'Pattern: Boots of Natural Grace'),
+(36100, 30306, 0, 1, 1, 1, 0, 'Pattern: Boots of Utter Darkness'),
+(36100, 30307, 0, 1, 1, 1, 0, 'Pattern: Boots of the Crimson Hawk'),
+(36100, 30308, 0, 1, 1, 1, 0, 'Pattern: Hurricane Boots'),
+(36100, 30321, 0, 1, 1, 1, 10, 'Plans: Belt of the Guardian'),
+(36100, 30322, 0, 1, 1, 1, 10, 'Plans: Red Belt of Battle'),
+(36100, 30323, 0, 1, 1, 1, 0, 'Plans: Boots of the Protector'),
+(36100, 30324, 0, 1, 1, 1, 0, 'Plans: Red Havoc Boots');
+
