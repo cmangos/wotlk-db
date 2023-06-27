@@ -95,8 +95,8 @@ INSERT INTO `creature` (`guid`, `id`, `position_x`, `position_y`, `position_z`, 
 
 -- Spawn Data to get different Faction for Plaque Spreaders
 DELETE FROM `creature_spawn_data_template` WHERE `Entry` = '60401';
-INSERT INTO `creature_spawn_data_template` (`Entry`, `Faction`) VALUES 
-('60401', '43'); -- creature_entry * 100 + 1
+INSERT INTO `creature_spawn_data_template` (`Entry`, `Faction`, `Name`) VALUES 
+('60401', '43', 'Plaque Spreader (604) - Faction'); -- creature_entry * 100 + 1
 
 DELETE FROM `creature_spawn_data` WHERE `Guid` IN (5237, 5238, 5239);
 INSERT INTO `creature_spawn_data` (`Guid`, `Id`) VALUES 
