@@ -20,49 +20,41 @@ DELETE FROM `gameobject_questrelation` WHERE `id` = 194032 AND `quest` = 13440;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194032 AND `quest` = 13440;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194032, 13440);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194032, 13440);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194032;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194035 AND `quest` = 13442;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194035 AND `quest` = 13442;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194035, 13442);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194035, 13442);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194035;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194036 AND `quest` = 13443;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194036 AND `quest` = 13443;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194036, 13443);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194036, 13443);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194036;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194038 AND `quest` = 13444;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194038 AND `quest` = 13444;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194038, 13444);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194038, 13444);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194038;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194040 AND `quest` = 13445;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194040 AND `quest` = 13445;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194040, 13445);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194040, 13445);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194040;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194044 AND `quest` = 13446;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194044 AND `quest` = 13446;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194044, 13446);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194044, 13446);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194044;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194045 AND `quest` = 13447;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194045 AND `quest` = 13447;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194045, 13447);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194045, 13447);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194045;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194049 AND `quest` = 13449;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194049 AND `quest` = 13449;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194049, 13449);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194049, 13449);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194049;
 
 
 -- Horde Bonfire [quest assignment fixes]
@@ -78,49 +70,41 @@ DELETE FROM `gameobject_questrelation` WHERE `id` = 194033 AND `quest` = 13441;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194033 AND `quest` = 13441;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194033, 13441);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194033, 13441);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194033;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194034 AND `quest` = 13450;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194034 AND `quest` = 13450;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194034, 13450);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194034, 13450);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194034;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194037 AND `quest` = 13451;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194037 AND `quest` = 13451;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194037, 13451);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194037, 13451);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194037;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194039 AND `quest` = 13453;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194039 AND `quest` = 13453;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194039, 13453);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194039, 13453);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194039;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194042 AND `quest` = 13454;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194042 AND `quest` = 13454;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194042, 13454);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194042, 13454);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194042;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194043 AND `quest` = 13455;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194043 AND `quest` = 13455;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194043, 13455);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194043, 13455);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194043;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194046 AND `quest` = 13457;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194046 AND `quest` = 13457;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194046, 13457);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194046, 13457);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194046;
 
 DELETE FROM `gameobject_questrelation` WHERE `id` = 194048 AND `quest` = 13458;
 DELETE FROM `gameobject_involvedrelation` WHERE `id` = 194048 AND `quest` = 13458;
 INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (194048, 13458);
 INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (194048, 13458);
-UPDATE `gameobject_template` SET `ScriptName` = 'go_midsummer_bonfire' WHERE `entry` = 194048;
 
 -- ------------------------------------------------------------------ --
 
