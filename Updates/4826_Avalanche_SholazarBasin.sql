@@ -361,7 +361,7 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`Positi
 (32504,16,6006.9414,3763.371,28.410013,100,100,2821801);
 DELETE FROM dbscripts_on_creature_movement WHERE id = 2821801;
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(2821801,1,35,6,100,0,0,0,0,0,0,0,0,0,0,0,0,'Hive\'Regal Hunter-Killer - send Event AI 6');
+(2821801,1,35,6,100,0,0,0,0,0,0,0,0,0,0,0,0,'Snowblind Ghoul - send Event AI 6');
 DELETE FROM creature_spawn_data_template WHERE `Entry` IN (20059);
 INSERT INTO creature_spawn_data_template (Entry,SpawnFlags,RelayId,Name) VALUES
 (20059,1,30500,'- SPAWN FLAG RUN, Relayid 30500');

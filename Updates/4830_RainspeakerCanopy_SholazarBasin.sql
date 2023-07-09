@@ -9,9 +9,9 @@ INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, e
 
 -- Rainspeaker Oracle 28025
 DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM creature_template_addon WHERE entry IN (29124);
+DELETE FROM creature_template_addon WHERE entry IN (28025);
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
-(29124,0,0,1,0,0,0,'50503');
+(28025,0,0,1,0,0,0,'50503');
 -- individual addon
 DELETE FROM creature_addon WHERE guid IN (520182);
 INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
