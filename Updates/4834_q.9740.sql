@@ -3,13 +3,13 @@
 -- object
 -- Sunhawk Portal Controller 184850
 UPDATE gameobject SET position_x = -2095.8616, position_y = -10684.027, position_z = 65.50377, orientation = 4.6076717, rotation0 = 0, rotation1 = 0, rotation2 = -0.74314404, rotation3 = 0.66913146 WHERE guid = 12168;
-UPDATE gameobject SET position_x = -2108.2053, position_y = -10702.747, position_z = 65.12371, orientation = 2.1991146, rotation0 = 0, rotation1 = 0, rotation2 = 0.89100647, rotation3 = 0.45399064 WHERE guid = 12163;
+UPDATE gameobject SET position_x = -2108.2053, position_y = -10702.747, position_z = 65.12371, orientation = 2.1991146, rotation0 = 0, rotation1 = 0, rotation2 = 0.89100647, rotation3 = 0.45399064 WHERE guid = 12173;
 UPDATE gameobject SET position_x = -2124.9773, position_y = -10723.369, position_z = 66.95319, orientation = 0.5934101, rotation0 = 0, rotation1 = 0, rotation2 = 0.2923708, rotation3 = 0.956305 WHERE guid = 12164;
 UPDATE gameobject SET position_x = -2145.9783, position_y = -10739.215, position_z = 73.35752, orientation = 1.7627825, rotation0 = 0, rotation1 = 0, rotation2 = 0.77162457, rotation3 = 0.63607824 WHERE guid = 12166;
 UPDATE gameobject SET spawntimesecsmin = 240, spawntimesecsmax = 240 WHERE id = 184850;
 -- moveed to TBC range
 UPDATE gameobject SET guid = 5309998 WHERE guid = 12168;
-UPDATE gameobject SET guid = 5309997 WHERE guid = 12163;
+UPDATE gameobject SET guid = 5309997 WHERE guid = 12173;
 UPDATE gameobject SET guid = 5309996 WHERE guid = 12164;
 UPDATE gameobject SET guid = 5309995 WHERE guid = 12166;
 
