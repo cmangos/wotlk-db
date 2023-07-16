@@ -57,8 +57,11 @@ INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
 (32516,'Sholazar Basin - Shattertusk Bull 28380 & Shattertusk Mammoth 28379 x2 & Shattertusk Calf x2 - Patrol 2');
 DELETE FROM `waypoint_path` WHERE PathId = 32516;
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
--- Missing path (only small part of data availabe)
-(32516,1,6302.45,4574.37,-76.2014,100,0,0),
-(32516,2,6274.3,4537.29,-80.209,100,0,0),
-(32516,3,6262.66,4494.806,-78.45145,100,0,0),
+(32516,1,6377.0005,4668.733,-77.948524,100,0,0),
+(32516,2,6354.7197,4627.414,-75.42304,100,0,0),
+(32516,3,6336.7603,4605.7065,-72.79536,100,0,0),
+(32516,4,6308.3716,4583.8306,-74.53675,100,0,0),
+(32516,5,6286.9385,4549.521,-81.24271,100,0,0),
+(32516,6,6272.121,4528.0522,-78.81762,100,0,0),
+(32516,7,6262.66,4494.806,-78.45145,100,0,0),
 (32516,4,6253.721,4447.479,-73.67493,100,0,0);

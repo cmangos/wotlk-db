@@ -37,6 +37,7 @@ UPDATE creature SET guid = 5309977 WHERE guid = 23682;
 -- old Scripts removed
 UPDATE creature SET MovementType = 0, spawndist = 0 WHERE guid IN (63582,63583,63584,63585);
 DELETE FROM creature_movement WHERE id IN (63582,63583,63584,63585);
+DELETE FROM creature_addon WHERE guid IN (63582,63583,63584,63585);
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 1788601 AND 1788604;
 DELETE FROM dbscripts_on_go_use WHERE id IN (12164,12166,12168,12173);
 -- object script
