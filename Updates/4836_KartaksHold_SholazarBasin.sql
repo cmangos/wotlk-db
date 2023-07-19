@@ -367,7 +367,9 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 DELETE FROM dbscripts_on_creature_death WHERE id IN (28078,28079);
 INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (28078,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive'),
-(28079,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
+(28078,2,18,10000,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'despawn'),
+(28079,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive'),
+(28079,2,18,10000,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'despawn');
 
 DELETE FROM `creature_movement_template` WHERE entry IN (28078,28079);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
