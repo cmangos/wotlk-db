@@ -161,7 +161,7 @@ UPDATE `quest_template` SET `RequiredRaces` = 128 WHERE `entry` IN (12811, 12812
 UPDATE `quest_template` SET `PrevQuestId` = 12811 WHERE `entry` = 12812;
 
 -- Sunstrider Isle Quests are for Blood Elf only
-UPDATE quest_template SET RequiredRaces = 512 WHERE IN
+UPDATE quest_template SET RequiredRaces = 512 WHERE `entry` IN
 (8325, -- Reclaiming Sunstrider Isle
 8330, -- Solanian's Belongings
 8336, -- A Fistful of Slivers
