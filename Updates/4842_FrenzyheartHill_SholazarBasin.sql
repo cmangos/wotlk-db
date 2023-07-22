@@ -72,9 +72,9 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`Positi
 (32536,45,5261.3823,4501.2417,-84.8851  ,100,0,0),
 (32536,46,5263.9507,4498.567,-84.049675,3.24629,3000,10),
 (32536,47,5263.9507,4498.567,-84.049675,3.24629,1000,2821801);
-DELETE FROM `creature_spawn_data` WHERE guid IN (32536,520306,520307);
+DELETE FROM `creature_spawn_data` WHERE guid IN (520321,520306,520307);
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
-(32536,80),(520306,80),(520307,80);
+(520321,80),(520306,80),(520307,80);
 DELETE FROM dbscripts_on_creature_death WHERE id IN (28077);
 INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (28077,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
