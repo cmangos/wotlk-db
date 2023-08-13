@@ -79,3 +79,7 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (6307, 3612, 0, 1, 1, 1, 0, 'Plans: Green Iron Gauntlets'),
 (6307, 4297, 0, 1, 1, 1, 0, 'Pattern: Barbaric Gloves');
 
+
+-- Table `dbscripts_on_creature_movement` contain unused script, id 1043.
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 1043;
+
