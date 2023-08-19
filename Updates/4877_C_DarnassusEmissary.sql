@@ -1,0 +1,211 @@
+-- Darnassus Emissary - Updated
+-- Darnassus Emissary Patrol
+DELETE FROM creature_addon WHERE guid IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM creature_movement WHERE id IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM game_event_creature WHERE guid IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM game_event_creature_data WHERE guid IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM creature_battleground WHERE guid IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM creature_linking WHERE guid IN (114163,86595,116892,111020,111021,110576,110574);
+DELETE FROM creature where guid IN (114163,86595,116892,111020,111021,110576,110574);
+-- Make them sync with TDB
+UPDATE creature SET guid = 190496, id = 15103 WHERE guid = 111833;
+UPDATE creature SET guid = 190497, id = 15103 WHERE guid = 111832;
+DELETE FROM game_event_creature WHERE guid IN (111833,111832);
+DELETE FROM game_event_creature_data WHERE guid IN (190496,190497);
+INSERT INTO game_event_creature_data (guid, event, `entry_id`) VALUES
+-- https://www.wowhead.com/tbc/npc=15103/stormpike-emissary
+(190496,18, 15103),
+(190497,18, 15103),
+-- https://www.wowhead.com/tbc/npc=15102/silverwing-emissary
+(190496,19, 15102),
+(190497,19, 15102),
+-- https://www.wowhead.com/tbc/npc=14991/league-of-arathor-emissary
+(190496,20, 14991),
+(190497,20, 14991),
+-- https://www.wowhead.com/tbc/npc=22013/eye-of-the-storm-emissary
+(190496,21, 22013),
+(190497,21, 22013),
+-- https://www.wowhead.com/wotlk/npc=30566/strand-of-the-ancients-emissary
+(190496,25, 30566),
+(190497,25, 30566),
+-- https://www.wowhead.com/wotlk/npc=34950/isle-of-conquest-emissary
+(190496,38, 30566),
+(190497,38, 30566);
+-- Spawn Groups
+UPDATE creature SET position_x = 9952.47, position_y = 2089.45, position_z = 1327.72, spawndist = 0, MovementType = 0 WHERE guid IN (190496,190497);
+DELETE FROM `spawn_group` WHERE id = 19943;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(19943, 'Darnassus - Battleground Emissary x2 - Patrol', 0, 0, 20549, 0x02 | 0x08);
+DELETE FROM `spawn_group_spawn` WHERE id = 19943;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(19943, 190496, 0),
+(19943, 190497, 1);
+DELETE FROM `spawn_group_formation` WHERE id = 19943;
+INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+(19943, 1, 2, 0, 19943, 4, 'Darnassus - Battleground Emissary x2 - Patrol'); -- linear
+DELETE FROM `waypoint_path` WHERE PathId = 19943;
+INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
+(19943,1,9952.47,2089.45,1327.72,100,0,0),
+(19943,2,9953.24,2253.22,1335.29,100,0,0),
+(19943,3,9952.86,2275.41,1341.4,100,0,0),
+(19943,4,9952.4,2292.36,1341.39,100,0,0),
+(19943,5,9952.35,2302.62,1336.55,100,0,0),
+(19943,6,9951.28,2318.49,1336.55,100,0,0),
+(19943,7,9951,2337.6,1331.27,100,0,0),
+(19943,8,9950.29,2405.21,1328.23,100,0,0),
+(19943,9,9949.97,2433.77,1324.68,100,0,0),
+(19943,10,9949.52,2453.58,1321.11,100,0,0),
+(19943,11,9949.02,2475.83,1316.12,100,0,0),
+(19943,12,9948.86,2482.9,1316.22,100,0,0),
+(19943,13,9960.6,2494.16,1316.46,100,0,0),
+(19943,14,9969.22,2510.8,1317.6,100,0,0),
+(19943,15,9986.03,2519.99,1316.36,100,0,0),
+(19943,16,9975.02,2539.73,1316.31,100,0,0),
+(19943,17,9948.79,2554.92,1316.32,100,0,0),
+(19943,18,9947.11,2572.04,1318.3,100,0,0),
+(19943,19,9946.96,2605.64,1316.19,100,0,0),
+(19943,20,9946.63,2585.83,1316.12,100,0,0),
+(19943,21,9946.43,2573.54,1318.31,100,0,0),
+(19943,22,9946.2,2560.24,1315.77,100,0,0),
+(19943,23,9945.8,2555.99,1316.28,100,0,0),
+(19943,24,9931.09,2551.67,1317.36,100,0,0),
+(19943,25,9915.98,2541.26,1316.83,100,0,0),
+(19943,26,9906.96,2530.01,1316.19,100,0,0),
+(19943,27,9899.4,2529.93,1315.17,100,0,0),
+(19943,28,9887.01,2529.8,1318.71,100,0,0),
+(19943,29,9849.84,2529.4,1321.25,100,0,0),
+(19943,30,9776.92,2527.83,1318.95,100,0,0),
+(19943,31,9724.57,2526.01,1335.68,100,0,0),
+(19943,32,9709.61,2525.32,1335.69,100,0,0);
+DELETE FROM `waypoint_path_name` WHERE PathId = 19943;
+INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+(19943,'Darnassus - Battleground Emissary x2 - Patrol');
+-- Using same mothod we can reduce spawn numbers for all static spawns
+-- we can remove all same xyz spawns now
+DELETE FROM creature_addon WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM creature_movement WHERE Id IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM game_event_creature WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM game_event_creature_data WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM creature_battleground WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM creature_linking WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725)
+ OR master_guid IN (111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+DELETE FROM creature WHERE guid IN 
+(111835,111842,116894,116895,111019,110937,138719,138726,138495,116910,112240,112235,138763,138762,116908,116907,110935,110827,138728,138721,
+111829,111830,110751,110772,110523,110525,138718,138725);
+-- Make them sync with TDB
+UPDATE creature SET guid = 190128 WHERE guid = 138768;
+UPDATE creature SET guid = 190129 WHERE guid = 138769;
+UPDATE creature SET guid = 190264 WHERE guid = 114089;
+UPDATE creature SET guid = 190265 WHERE guid = 114075;
+UPDATE creature SET guid = 190160 WHERE guid = 114070;
+UPDATE creature SET guid = 190161 WHERE guid = 114068;
+UPDATE creature SET guid = 190112 WHERE guid = 138720;
+UPDATE creature SET guid = 190113, id = 15103 WHERE guid = 138727;
+UPDATE creature SET guid = 190120, id = 15103 WHERE guid = 111831;
+UPDATE creature SET guid = 190121, id = 15103 WHERE guid = 112234;
+DELETE FROM game_event_creature WHERE guid IN (138768,138769,114089,114075,114070,114068,138720,138727,111831,112234);
+DELETE FROM game_event_creature_data WHERE guid IN (190128,190129,190264,190265,190160,190161,190112,190113,190120,190121);
+INSERT INTO game_event_creature_data (guid, event, `entry_id`) VALUES
+-- https://www.wowhead.com/tbc/npc=15103/stormpike-emissary
+(190128,18, 15103),
+(190129,18, 15103),
+(190264,18, 15103),
+(190265,18, 15103),
+(190160,18, 15103),
+(190161,18, 15103),
+(190112,18, 15103),
+(190113,18, 15103),
+-- https://www.wowhead.com/tbc/npc=15102/silverwing-emissary
+(190128,19, 15102),
+(190129,19, 15102),
+(190160,19, 15102),
+(190161,19, 15102),
+(190112,19, 15102),
+(190113,19, 15102),
+(190120,19, 15102),
+(190121,19, 15102),
+-- https://www.wowhead.com/tbc/npc=14991/league-of-arathor-emissary
+(190128,20, 14991),
+(190129,20, 14991),
+(190160,20, 14991),
+(190161,20, 14991),
+(190112,20, 14991),
+(190113,20, 14991),
+(190120,20, 14991),
+(190121,20, 14991),
+-- https://www.wowhead.com/tbc/npc=22013/eye-of-the-storm-emissary
+(190128,21, 22013),
+(190129,21, 22013),
+(190264,21, 22013),
+(190265,21, 22013),
+(190160,21, 22013),
+(190161,21, 22013),
+(190112,21, 22013),
+(190113,21, 22013),
+-- Wotlk ONLY
+-- https://www.wowhead.com/wotlk/npc=30566/strand-of-the-ancients-emissary
+(190128,25, 30566),
+(190129,25, 30566),
+(190160,25, 30566),
+(190161,25, 30566),
+(190112,25, 30566),
+(190113,25, 30566),
+(190120,25, 30566),
+(190121,25, 30566),
+-- https://www.wowhead.com/wotlk/npc=34950/isle-of-conquest-emissary
+(190128,38, 34950),
+(190129,38, 34950),
+(190160,38, 34950),
+(190161,38, 34950),
+(190112,38, 34950),
+(190113,38, 34950),
+(190120,38, 34950),
+(190121,38, 34950);
+-- Spawn Groups
+DELETE FROM `spawn_group` WHERE id = 19942;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(19942, 'Darnassus - Battleground Emissary x2 - Static 1', 0, 0, 20549, 0x02 | 0x08); -- TBC will have WorldState = 19998
+DELETE FROM `spawn_group_spawn` WHERE id = 19942;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(19942,190128, -1),
+(19942,190129, -1),
+(19942,190160, -1),
+(19942,190161, -1),
+(19942,190112, -1),
+(19942,190113, -1);
+
+-- Theyre 2 groups that not standing together - we need to create separate conditions for them
+/*
+guid = 190264 - 18  21
+guid = 190265 - 18  21
+guid = 190120 - 19 20 25 38
+guid = 190121 - 19 20 25 38
+*/
+DELETE FROM conditions WHERE condition_entry IN (6100,6101);
+INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, value4, flags, comments) VALUES
+(6100, -2, 6018, 6021, 0, 0, 0, 'Event 18 & 21 - Battleground Emissary Event Active'),
+(6101, -2, 6019, 6020, 6025, 6038, 0, 'Event 19 & 21 & 25 & 38 - Battleground Emissary Event Active');
+-- Spawn Groups
+DELETE FROM `spawn_group` WHERE id IN (19940,19941);
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(19940, 'Darnassus - Battleground Emissary x2 - Static 2', 0, 0, 6100, 0x02 | 0x08),
+(19941, 'Darnassus - Battleground Emissary x2 - Static 3', 0, 0, 6101, 0x02 | 0x08);
+DELETE FROM `spawn_group_spawn` WHERE id IN (19940,19941);
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(19940,190264, -1),
+(19940,190265, -1),
+(19941,190120, -1),
+(19941,190121, -1);
