@@ -22,6 +22,7 @@ DELETE FROM game_event_creature_data WHERE guid IN (79687,120788,120789);
 DELETE FROM creature_battleground WHERE guid IN (79687,120788,120789);
 DELETE FROM creature_linking WHERE guid IN (79687,120788,120789)
  OR master_guid IN (79687,120788,120789);
+UPDATE creature SET spawndist = 1, MovementType = 1 WHERE guid = 120692; -- guard at post in Trade District
  
 -- Nikova Raskol 1721
 UPDATE creature_template SET MovementType = 2 WHERE entry = 1721;
