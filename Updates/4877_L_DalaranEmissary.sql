@@ -65,12 +65,12 @@ INSERT INTO game_event_creature_data (guid, event, `entry_id`) VALUES
 (500567,38, 30566),
 (500568,38, 30566);
 -- Spawn Groups
-DELETE FROM `spawn_group` WHERE id = 19928;
+DELETE FROM `spawn_group` WHERE id = 33701;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(19928, 'Dalaran - Battleground Emissary x2 - Static 1', 0, 0, 20549, 0x02 | 0x08);
-DELETE FROM `spawn_group_spawn` WHERE id = 19928;
+(33701, 'Dalaran - Battleground Emissary x2 - Static 1', 0, 0, 20549, 0x02 | 0x08);
+DELETE FROM `spawn_group_spawn` WHERE id = 33701;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(19928,500571, -1),
-(19928,500572, -1),
-(19928,500567, -1),
-(19928,500568, -1);
+(33701,500571, -1),
+(33701,500572, -1),
+(33701,500567, -1),
+(33701,500568, -1);
