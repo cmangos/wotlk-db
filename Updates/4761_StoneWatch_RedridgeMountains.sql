@@ -1,13 +1,13 @@
 -- StoneWatch - Redridge Mountains (TBC & WoTLK ONLY)
 -- not exisitng in wotlk sniffs
-DELETE FROM creature_addon WHERE guid IN (20714,31836,25447,18448,20703,20705,18445,18384,18385);
-DELETE FROM creature_movement WHERE Id IN (20714,31836,25447,18448,20703,20705,18384,18385);
-DELETE FROM game_event_creature WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385);
-DELETE FROM game_event_creature_data WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385);
-DELETE FROM creature_battleground WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385);
-DELETE FROM creature_linking WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385)
- OR master_guid IN (20714,31836,25447,18448,20703,20705,18384,18385);
-DELETE FROM creature WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385);
+DELETE FROM creature_addon WHERE guid IN (20714,31836,25447,18448,20703,20705,18445,18384,18385,18440);
+DELETE FROM creature_movement WHERE Id IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
+DELETE FROM game_event_creature WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
+DELETE FROM game_event_creature_data WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
+DELETE FROM creature_battleground WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
+DELETE FROM creature_linking WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440)
+ OR master_guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
+DELETE FROM creature WHERE guid IN (20714,31836,25447,18448,20703,20705,18384,18385,18440);
 UPDATE creature SET position_x = -9531.608398, position_y = -2865.379883, position_z = 89.468842, spawndist = 10, MovementType = 1 WHERE guid = 17972;
 UPDATE creature SET position_x = -9517.804, position_y = -2896.7886, position_z = 99.49772, spawndist = 0, MovementType = 2 WHERE guid = 31823;
 UPDATE creature SET position_x = -9438.189, position_y = -3026.6204, position_z = 136.77034, orientation = 0.925, spawndist = 0, MovementType = 2 WHERE guid = 31829;
@@ -146,10 +146,9 @@ DELETE FROM dbscripts_on_creature_movement WHERE id IN (406401,48501); -- 48501 
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (406401,1000,20,1,2,50000,0,0,12,0,0,0,0,0,0,0,0,'Change Movement To 1 - Random (55secs TEMP) (around current location)');
 -- some sharing spawn positions 18439
-DELETE FROM creature_spawn_entry WHERE guid IN (20714,18448); -- removed
-DELETE FROM creature_spawn_entry WHERE guid IN (17972,18440,18394,18453);
+DELETE FROM creature_spawn_entry WHERE guid IN (20714,18448,18440); -- removed
+DELETE FROM creature_spawn_entry WHERE guid IN (17972,18394,18453);
 INSERT INTO creature_spawn_entry (guid,entry) VALUES
 (17972,437),(17972,485), -- Blackrock Renegade 437 & Blackrock Outrunner 485
-(18440,436),(18440,4065), -- Blackrock Shadowcaster 436 & Blackrock Sentry 4065
 (18394,436),(18394,4065), -- Blackrock Shadowcaster 436 & Blackrock Sentry 4065
 (18453,436),(18453,4462); -- Blackrock Shadowcaster 436 & Blackrock Hunter 4462
