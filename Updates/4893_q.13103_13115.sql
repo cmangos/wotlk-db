@@ -55,3 +55,19 @@ DELETE FROM `spawn_group_spawn` WHERE id = 33707;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (33707, 504561, -1),(33707, 504562, -1),(33707, 512602, -1),
 (33707, 512604, -1),(33707, 512605, -1),(33707, 512606, -1);
+
+-- o.192825 'Aged Dalaran Limburger'
+-- missing added
+DELETE FROM game_event_gameobject WHERE guid IN (502886,511787);
+DELETE FROM gameobject_battleground WHERE guid IN (502886,511787);
+DELETE FROM gameobject WHERE guid IN (502886,511787);
+INSERT INTO gameobject (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
+(502886,192825,571,1,5886.419,612.6855,651.1896,0.3490652,0,0,0.1736479,0.9848078,180,180),
+(511787,192825,571,1,5875.031,611.911,651.1508,-0.9948372,0,0,-0.4771585,0.8788173,180,180);
+UPDATE gameobject SET spawntimesecsmin = 180, spawntimesecsmax = 180 WHERE id IN (192825);
+DELETE FROM `spawn_group` WHERE id = 33708;
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
+(33708, 'Dalaran - Aged Dalaran Limburger 192825', 1, 2, 0, 0);
+DELETE FROM `spawn_group_spawn` WHERE id = 33708;
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(33708, 504606, -1),(33708, 504607, -1),(33708, 512624, -1),(33708, 502886, -1),(33708, 511787, -1);
