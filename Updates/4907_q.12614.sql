@@ -19,7 +19,7 @@ INSERT INTO vehicle_accessory (vehicle_entry, seat, accessory_entry, comment) VA
 (28468,1,28451,'Hemet Nesingwary on Stampy');
 -- Hemet Nesingwary 28451
 UPDATE creature_template SET Faction = 113, EquipmentTemplateid = 799 WHERE Entry = 28451;
-DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 28857);
+DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 28451);
 DELETE FROM creature_template_addon WHERE entry IN (28451);
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
 (28451,0,0,2,0,0,0,NULL);

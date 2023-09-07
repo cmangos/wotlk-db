@@ -9,7 +9,7 @@ UPDATE gameobject SET id = 0, spawntimesecsmin = 30, spawntimesecsmax = 30 WHERE
 -- Spawn Group
 DELETE FROM `spawn_group` WHERE id = 32540;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(32540, 'Sholazar Basin - Raised Mud o.190778/190779', 1, 10, 0, 0);
+(32540, 'Sholazar Basin - Raised Mud o.190778/190779', 1, 0, 0, 0);
 DELETE FROM spawn_group_entry WHERE id = 32540;
 INSERT INTO spawn_group_entry (Id, Entry, MinCount, MaxCount, Chance) VALUES
 (32540,190778,0,0,20),
