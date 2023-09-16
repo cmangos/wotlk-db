@@ -142,7 +142,7 @@ DELETE FROM creature_battleground WHERE guid IN (520402,520404,520406,520407,520
 DELETE FROM creature_linking WHERE guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426) 
 OR master_guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426);
 DELETE FROM creature WHERE guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426);
-INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, spawntimesecsmin, spawntimesecsmax, orientation, spawndist, MovementType) VALUES
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation,spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (520402,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
 (520404,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
 (520406,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
@@ -935,4 +935,5 @@ DELETE FROM `spawn_group_spawn` WHERE id = 32571;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (32571, 520544, -1),
 (32571, 520428, -1),
-(32571, 520429, -1);
+(32571, 520429, -1),
+(32571, 520430, -1);
