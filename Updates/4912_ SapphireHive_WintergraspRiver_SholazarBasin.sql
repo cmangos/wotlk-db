@@ -11,7 +11,7 @@ DELETE FROM creature_linking WHERE guid IN (520781,520752,520785,520284)
 OR master_guid IN (520781,520752,520785,520284);
 DELETE FROM creature WHERE guid IN (520781,520752,520785,520284);
 -- missing added (removed guids reused)
-INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, spawntimesecsmin, spawntimesecsmax, orientation, spawndist, MovementType) VALUES
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (520781,28098,571,1,1,5127.53,4142.92,-78.135,1.55332,300,300,0,0),
 (520752,28098,571,1,1,5112.7,4139.2,-75.3655,3.92522,300,300,0,0),
 (520785,28098,571,1,1,5123.48,4123.94,-72.5937,6.23036,300,300,0,0), -- 520785 was free
@@ -75,7 +75,7 @@ DELETE FROM creature_battleground WHERE guid IN (520377,520380,520381,520382,520
 DELETE FROM creature_linking WHERE guid IN (520377,520380,520381,520382,520387,520390,520391) 
 OR master_guid IN (520377,520380,520381,520382,520387,520390,520391);
 DELETE FROM creature WHERE guid IN (520377,520380,520381,520382,520387,520390,520391);
-INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, spawntimesecsmin, spawntimesecsmax, orientation, spawndist, MovementType) VALUES
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (520377,28086,571,1,1,5102.547,4173.971,-74.29176,5.305801,300,300,0,0),
 (520380,28086,571,1,1,5016.297,4076.915,-19.04415,0.2954216,300,300,0,0),
 (520381,28086,571,1,1,5053.03,4141.298,-54.37347,3.700098,300,300,0,0),
@@ -142,7 +142,7 @@ DELETE FROM creature_battleground WHERE guid IN (520402,520404,520406,520407,520
 DELETE FROM creature_linking WHERE guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426) 
 OR master_guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426);
 DELETE FROM creature WHERE guid IN (520402,520404,520406,520407,520408,520409,520410,520411,520414,520417,520418,520419,520420,520424,520425,520426);
-INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation,spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (520402,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
 (520404,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
 (520406,28085,571,1,1,5002.637,4325.293,-48.9155,0,300,300,0,0),
@@ -923,7 +923,7 @@ DELETE FROM creature_battleground WHERE guid IN (520428,520429,520430);
 DELETE FROM creature_linking WHERE guid IN (520428,520429,520430) 
 OR master_guid IN (520428,520429,520430);
 DELETE FROM creature WHERE guid IN (520428,520429,520430);
-INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, spawntimesecsmin, spawntimesecsmax, orientation, spawndist, MovementType) VALUES
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (520428,28083,571,1,1,4775.083,4684.838,-68.16202,0.8925187,300,300,0,0),
 (520429,28083,571,1,1,4856.273,4394.056,-61.92804,0.5759587,300,300,0,0),
 (520430,28083,571,1,1,4820.1,4760.937,-75.98487,3.298672,300,300,0,0);
