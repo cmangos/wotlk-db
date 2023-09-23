@@ -211,7 +211,7 @@ INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
 (9748, 13366, 0, 0);
 DELETE FROM npc_text_broadcast_text WHERE Id IN(13366);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,Prob1,Prob2,Prob3,BroadcastTextId0,BroadcastTextId1,BroadcastTextId2,BroadcastTextId3) VALUES
-(13366,1,28912,1,28913,1,28914,1,28915);
+(13366,1,1,1,1,28912,28913,28914,28915);
 DELETE FROM npc_text WHERE id=13366; 
 DELETE FROM dbscript_random_templates WHERE `id` BETWEEN 20321 AND 20324;
 INSERT INTO dbscript_random_templates (id, `type`, target_id, chance, comments) VALUES
