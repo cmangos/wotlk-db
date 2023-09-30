@@ -9,4 +9,6 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 UPDATE `broadcast_text` SET `ChatTypeID`= 5 WHERE `Id` IN (28536);
 DELETE FROM spell_script_target WHERE entry IN (51395);
 INSERT INTO spell_script_target VALUES
-(51395, 1, 28538, 0);
+(51395, 1, 28538, 0),
+(51395, 1, 28108, 0),
+(51395, 1, 28170, 0);
