@@ -1,0 +1,33 @@
+-- Removed creatures
+DELETE FROM creature_addon WHERE guid IN 
+(
+3911,
+3932,
+3940,
+3941,
+3942,
+20970,
+20971,
+20972,
+21753,
+21754,
+21755,
+21756,
+21757,
+21758,
+21759,
+21760,
+21761,
+21762,
+21763,
+21764,
+21765,
+21766,
+21767,
+21768,
+21769,
+21770,
+21771):
+
+-- Pool Template Id (1041) is empty.
+DELETE FROM pool_template WHERE entry = 1041;
