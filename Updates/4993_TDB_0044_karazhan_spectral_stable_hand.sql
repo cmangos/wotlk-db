@@ -66,6 +66,28 @@ CREATE TABLE IF NOT EXISTS unit_condition (
 PRIMARY KEY(`Id`)
 );
 
+CREATE TABLE IF NOT EXISTS combat_condition (
+`Id` INT(11) NOT NULL,
+`WorldStateExpressionID` INT(11) NOT NULL DEFAULT '0',
+`SelfConditionID` INT(11) NOT NULL DEFAULT '0',
+`TargetConditionID` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionLogic` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionLogic` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionID_0` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionID_1` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionOp_0` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionOp_1` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionCount_0` INT(11) NOT NULL DEFAULT '0',
+`FriendConditionCount_1` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionID_0` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionID_1` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionOp_0` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionOp_1` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionCount_0` INT(11) NOT NULL DEFAULT '0',
+`EnemyConditionCount_1` INT(11) NOT NULL DEFAULT '0',
+PRIMARY KEY(`Id`)
+);
+
 -- Unit Condition for Spectral Stable Hand
 DELETE FROM `unit_condition` WHERE `Id` IN (-5320001, -5320002);
 INSERT INTO `unit_condition` (Id,Variable_0,Op_0,Value_0,Variable_1,Op_1,Value_1) VALUES
