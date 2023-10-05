@@ -293,7 +293,7 @@ UPDATE `creature_template` SET `ExperienceMultiplier` = 2 WHERE `entry` IN (
 );
 
 -- Overseer Tidewrath (18107,20182) - completeness
-UPDATE `creature_template` SET `HeroicEntry` = 20182, `MechanicImmuneMask` = 579026803, `SpeedWalk` = 1 WHERE `entry` = 18107;
+UPDATE `creature_template` SET `MechanicImmuneMask` = 579026803, `SpeedWalk` = 1 WHERE `entry` = 18107;
 UPDATE `creature_template` SET `Faction` = 1693, `MinLevel` = 72, `MaxLevel` = 72, `MechanicImmuneMask` = 579026803, `SpeedWalk` = 1, `DamageMultiplier` = 8.8, `StaticFlags1` = 2147483648 WHERE `entry` = 20182;
 
 -- End of migration.
