@@ -27,7 +27,7 @@ DELETE FROM creature_addon WHERE guid IN
 21768,
 21769,
 21770,
-21771):
+21771);
 
 -- Pool Template Id (1041) is empty.
 DELETE FROM pool_template WHERE entry = 1041;
