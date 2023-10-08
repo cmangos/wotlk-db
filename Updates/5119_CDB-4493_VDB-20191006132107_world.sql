@@ -588,56 +588,56 @@ UPDATE `creature_template` SET `MinLevel`='45', `MaxLevel`='45' WHERE `entry`='2
 UPDATE `creature_template` SET `MaxLevel`='30' WHERE `entry`='3180'; -- Dark Iron Entrepreneur
 UPDATE `creature_template` SET `MinLevel`='21', `MaxLevel`='21' WHERE `entry`='4528'; -- Stone Rumbler (summoned?)
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='10404'; -- [UNUSED] Fetid Wight
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22626 WHERE `entry`='10985'; -- Ice Giant
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22626 WHERE `entry`='10985'; -- Ice Giant
 UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61' WHERE `entry` = 22626;
-UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `HeroicEntry` = 22728 WHERE `entry`='10989'; -- Blizzard Elemental
+UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `DifficultyEntry1` = 22728 WHERE `entry`='10989'; -- Blizzard Elemental
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='68' WHERE `entry`='22728';
-UPDATE `creature_template` SET `MinLevel`='52', `MaxLevel`='53', `HeroicEntry` = 22781 WHERE `entry`='11606'; -- Whitewhisker Tunnel Rat
-UPDATE `creature_template` SET `MinLevel`='62', `MaxLevel`='63', `UnitClass` = 2 WHERE `entry`='22781'; -- Creature (Entry: 11606, class 2) has different `unit_class` in heroic mode (Entry: 22781, class 1).
-UPDATE `creature_template` SET `MinLevel`='62', `MaxLevel`='62', `HeroicEntry` = 22642 WHERE `entry`='11676'; -- Fjordune the Greater
+UPDATE `creature_template` SET `MinLevel`='52', `MaxLevel`='53', `DifficultyEntry1` = 22781 WHERE `entry`='11606'; -- Whitewhisker Tunnel Rat
+UPDATE `creature_template` SET `MinLevel`='62', `MaxLevel`='63' WHERE `entry`='22781';
+UPDATE `creature_template` SET `MinLevel`='62', `MaxLevel`='62', `DifficultyEntry1` = 22642 WHERE `entry`='11676'; -- Fjordune the Greater
 UPDATE `creature_template` SET `MinLevel`='72', `MaxLevel`='72' WHERE `entry`='22642';
 UPDATE `creature_template` SET `MinLevel`='64', `MaxLevel`='65' WHERE `entry`='22743'; -- Irondeep Guard
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='68' WHERE `entry`='22680'; -- Gaelden Hammersmith
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22553 WHERE `entry`='13281'; -- Furis
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22553 WHERE `entry`='13281'; -- Furis
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22553';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22632 WHERE `entry`='13496'; -- Risen Ancient
-UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71', `UnitClass` = 1 WHERE `entry`='22632'; -- Creature (Entry: 13496, class 1) has different `unit_class` in heroic mode (Entry: 22632, class 2).
-UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `HeroicEntry` = 22675 WHERE `entry`='13516'; -- Frostwolf Outrunner
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22632 WHERE `entry`='13496'; -- Risen Ancient
+UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22632';
+UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `DifficultyEntry1` = 22675 WHERE `entry`='13516'; -- Frostwolf Outrunner
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='68' WHERE `entry`='22675';
-UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `HeroicEntry` = 22692 WHERE `entry`='13520'; -- Stormpike Ranger
+UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='58', `DifficultyEntry1` = 22692 WHERE `entry`='13520'; -- Stormpike Ranger
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='68' WHERE `entry`='22692';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22611 WHERE `entry`='13523'; -- Champion Ranger
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22611 WHERE `entry`='13523'; -- Champion Ranger
 UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22611';
-UPDATE `creature_template` SET `MaxLevel`='59', `HeroicEntry` = 22759 WHERE `entry`='13777'; -- Sergeant Durgen Stormpike
+UPDATE `creature_template` SET `MaxLevel`='59', `DifficultyEntry1` = 22759 WHERE `entry`='13777'; -- Sergeant Durgen Stormpike
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='69' WHERE `entry`='22759';
-UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='59', `HeroicEntry` = 22795 WHERE `entry`='13957'; -- Winterax Warrior
+UPDATE `creature_template` SET `MinLevel`='58', `MaxLevel`='59', `DifficultyEntry1` = 22795 WHERE `entry`='13957'; -- Winterax Warrior
 UPDATE `creature_template` SET `MinLevel`='68', `MaxLevel`='69' WHERE `entry`='22795';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22625 WHERE `entry`='13977'; -- Gash'nak the Cannibal
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22625 WHERE `entry`='13977'; -- Gash'nak the Cannibal
 UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22625';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22637 WHERE `entry`='14016'; -- Ushalac the Gloomdweller
-UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71', `UnitClass` = 2 WHERE `entry`='22637'; -- Creature (Entry: 14016, class 2) has different `unit_class` in heroic mode (Entry: 22637, class 1).
-UPDATE `creature_template` SET `MinLevel`='59', `MaxLevel`='60', `HeroicEntry` = 22797 WHERE `entry`='14017'; -- Withered Troll
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22637 WHERE `entry`='14016'; -- Ushalac the Gloomdweller
+UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22637';
+UPDATE `creature_template` SET `MinLevel`='59', `MaxLevel`='60', `DifficultyEntry1` = 22797 WHERE `entry`='14017'; -- Withered Troll
 UPDATE `creature_template` SET `MinLevel`='69', `MaxLevel`='70' WHERE `entry`='22797';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22631 WHERE `entry`='14018'; -- Rezrelek
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22631 WHERE `entry`='14018'; -- Rezrelek
 UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22631';
-UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `HeroicEntry` = 22636 WHERE `entry`='14019'; -- Tatterhide
+UPDATE `creature_template` SET `MinLevel`='61', `MaxLevel`='61', `DifficultyEntry1` = 22636 WHERE `entry`='14019'; -- Tatterhide
 UPDATE `creature_template` SET `MinLevel`='71', `MaxLevel`='71' WHERE `entry`='22636';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22599 WHERE `entry`='14021'; -- Winterax Sentry
-UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70', `UnitClass` = 2 WHERE `entry`='22599'; -- Creature (Entry: 14021, class 2) has different `unit_class` in heroic mode (Entry: 22599, class 1).
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22581 WHERE `entry`='14026'; -- Trigger Guse
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22599 WHERE `entry`='14021'; -- Winterax Sentry
+UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22599';
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22581 WHERE `entry`='14026'; -- Trigger Guse
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22581';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22584 WHERE `entry`='14027'; -- Trigger Mulverick
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22584 WHERE `entry`='14027'; -- Trigger Mulverick
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22584';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22583 WHERE `entry`='14028'; -- Trigger Jeztor
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22583 WHERE `entry`='14028'; -- Trigger Jeztor
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22583';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22582 WHERE `entry`='14029'; -- Trigger Ichman
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22582 WHERE `entry`='14029'; -- Trigger Ichman
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22582';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22585 WHERE `entry`='14030'; -- Trigger Slidore
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22585 WHERE `entry`='14030'; -- Trigger Slidore
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22585';
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22586 WHERE `entry`='14031'; -- Trigger Vipore
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22586 WHERE `entry`='14031'; -- Trigger Vipore
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22586';
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='14688'; -- Master Sandoval
-UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `HeroicEntry` = 22557 WHERE `entry`='14848'; -- Herald
+UPDATE `creature_template` SET `MinLevel`='60', `MaxLevel`='60', `DifficultyEntry1` = 22557 WHERE `entry`='14848'; -- Herald
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='22557';
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='14885'; -- [PH] Jon LeCraft
 UPDATE `creature_template` SET `MinLevel`='70', `MaxLevel`='70' WHERE `entry`='15123'; -- [PH] Kris Zierhut
