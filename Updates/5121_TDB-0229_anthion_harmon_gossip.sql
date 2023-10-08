@@ -11,5 +11,6 @@ DELETE FROM gossip_menu WHERE entry IN(7082);
 INSERT INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
 (7082, 8334, 0, 0),
 (7082, 8346, 0, 8000); -- if quest 8946 completed
+DELETE FROM npc_text WHERE id=8334;
 
 
