@@ -176,6 +176,9 @@ INSERT INTO creature_spell_list(Id, Position, SpellId, Flags, TargetId, ScriptId
 (2899901,1,52870,0,0,0,100,0,0,0,0,0,'Haiphoon, the Great Tempest - Windshear'),
 (2899901,2,52864,0,0,0,100,0,0,0,0,0,'Haiphoon, the Great Tempest - Devour Water'),
 (2899901,5,52869,0,0,0,100,0,0,0,0,0,'Haiphoon, the Great Tempest - Evocation');
+UPDATE creature_template SET SpellList=2899900 WHERE entry IN(28999);
+UPDATE creature_template SET SpellList=2899901 WHERE entry IN(28985);
+DELETE FROM creature_template_spells WHERE entry IN(28999); -- delete old legacy entry
 
 -- q.12705 'Will of the Titans'
 -- item must drop from 1st killed
