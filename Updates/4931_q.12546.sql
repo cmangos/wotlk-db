@@ -2,6 +2,7 @@
 -- The Etymidian 28222
 UPDATE creature_template SET SpeedWalk = 1.5, LootId = 0, SpellList=0, EquipmentTemplateId = 2540 WHERE Entry = 28222;
 DELETE FROM creature_loot_template WHERE entry IN (28222);
+DELETE FROM creature_template_spells WHERE entry = 28222;
 DELETE FROM creature_spell_list_entry WHERE Id IN (2822200);
 INSERT INTO creature_spell_list_entry(Id, Name, ChanceSupportAction, ChanceRangedAttack) VALUES
 (2822200, 'Sholazar Basin - The Etymidian 28222 - Vehicle spells',0,0);
