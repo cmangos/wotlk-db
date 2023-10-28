@@ -184,12 +184,12 @@ DELETE FROM dbscripts_on_relay WHERE id IN (21002,21003);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Orgrimmar
 (21002,1,31,25079,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25079 - terminate if not found'),
-(21002,10,31,25077,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
-(21002,20,31,25070,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
-(21002,30,21,1,0,0,25079,100,0x04,0,0,0,0,0,0,0,0,'25079 - Active'),
-(21002,31,21,1,0,0,25077,100,0x04,0,0,0,0,0,0,0,0,'25077 - Active'),
-(21002,32,21,1,0,0,25070,100,0x04,0,0,0,0,0,0,0,0,'25070 - Active'),
-(21002,33,20,2,1,0,25079,100,0x04,0,0,0,0,0,0,0,0,'25079 - Path 1'),
+(21002,300,31,25077,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
+(21002,400,31,25070,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
+(21002,600,21,1,0,0,25079,100,0x04,0,0,0,0,0,0,0,0,'25079 - Active'),
+(21002,810,21,1,0,0,25077,100,0x04,0,0,0,0,0,0,0,0,'25077 - Active'),
+(21002,820,21,1,0,0,25070,100,0x04,0,0,0,0,0,0,0,0,'25070 - Active'),
+(21002,830,20,2,1,0,25079,100,0x04,0,0,0,0,0,0,0,0,'25079 - Path 1'),
 (21002,55000,20,2,2,0,25079,100,0x04,0,0,0,0,0,0,0,0,'25079 - Path 2'),
 (21002,59000,20,2,0,0,25077,100,0x04,0,0,0,0,0,0,0,0,'25077 - waypoints'),
 (21002,61000,1,396,0,0,25077,100,0x04,0,0,0,0,0,0,0,0,'25079 - emote'), -- 16:13:31.511
@@ -413,13 +413,13 @@ DELETE FROM dbscripts_on_relay WHERE id IN (21006,21007);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Vengance Landing
 (21006,1,31,31715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31715 - terminate if not found'),
-(21006,10,21,1,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - Active'),
-(21006,11,20,2,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - waypoints'),
+(21006,500,21,1,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - Active'),
+(21006,510,20,2,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - waypoints'),
 (21006,60100,21,0,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - UnActive'),
 -- arrived at  Trisfal Glages
 (21007,1,31,31715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31715 - terminate if not found'),
-(21007,10,21,1,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - Active'),
-(21007,11,20,2,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - waypoints'),
+(21007,500,21,1,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - Active'),
+(21007,510,20,2,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - waypoints'),
 (21007,60100,21,0,0,0,31715,100,0x04,0,0,0,0,0,0,0,0,'31715 - UnActive');
 
 -- Transport: The Mighty Wind - Updates
