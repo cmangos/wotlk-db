@@ -1,3 +1,8 @@
 -- Remote-Controlled Golem 2520
 -- immune to poinson, taunt
-UPDATE creature_template SET ExtraFlags = ExtraFlags|0x01000000, MechanicImmuneMask = MechanicImmuneMask|256 WHERE entry = 2520;
+-- https://github.com/cmangos/issues/wiki/creature_immunities
+REPLACE INTO `creature_immunities` (`entry`, `setid`, `type`, `value`) VALUES
+(2520, 0, 0, 114), -- SPELL_EFFECT_ATTACK_ME
+(2520, 0, 1, 11), -- SPELL_AURA_MOD_TAUNT
+(2520, 0, 4, 4); -- DISPEL_POISON
+
