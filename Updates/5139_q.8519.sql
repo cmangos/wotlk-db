@@ -9,7 +9,7 @@ UPDATE creature_template SET Faction = 35, UnitFlags = 256 WHERE entry = 15380;
 -- Anachronos the Ancient 15381
 UPDATE creature_template SET Faction = 35, UnitFlags = 256, SpeedWalk = (2.5 / 2.5), SpeedRun = (8 / 7) WHERE entry = 15381;
 -- Fandral Staghelm 15382
-UPDATE creature_template SET Faction = 35, UnitFlags = 210 WHERE entry = 15382;
+UPDATE creature_template SET Faction = 35, UnitFlags = 320 WHERE entry = 15382;
 -- Qiraji Wasp 15414
 UPDATE creature_template SET Faction = 310, UnitFlags = 256, RegenerateStats = 0, DamageMultiplier = 3.5 WHERE entry = 15414;
 -- Qiraji Drone 15421
