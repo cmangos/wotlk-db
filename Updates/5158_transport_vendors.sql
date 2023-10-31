@@ -91,3 +91,30 @@ INSERT INTO npc_vendor_template (entry, item, maxcount, incrtime, slot, Extended
 (10001,8950,0,0,19,0,0,'Homemade Cherry Pie'),
 (10001,30817,0,0,20,0,0,'Simple Flour'),
 (10001,2678,0,0,21,0,0,'Mild Spices');
+
+-- Snack-O-Matic IV 24934
+UPDATE npc_vendor SET Slot = 0 WHERE entry IN (24934) AND item = 159; -- Refreshing Spring Water
+UPDATE npc_vendor SET Slot = 1 WHERE entry IN (24934) AND item = 1179; -- Ice Cold Milk
+UPDATE npc_vendor SET Slot = 2 WHERE entry IN (24934) AND item = 1205; -- Melon Juice
+UPDATE npc_vendor SET Slot = 3 WHERE entry IN (24934) AND item = 1708; -- Sweet Nectar
+UPDATE npc_vendor SET Slot = 4 WHERE entry IN (24934) AND item = 1645; -- Moonberry Juice
+UPDATE npc_vendor SET Slot = 5 WHERE entry IN (24934) AND item = 8766; -- Morning Glory Dew
+UPDATE npc_vendor SET Slot = 6 WHERE entry IN (24934) AND item = 7228; -- Tigule and Foror's Strawberry Ice Cream
+UPDATE npc_vendor SET Slot = 7 WHERE entry IN (24934) AND item = 2070; -- Darnassian Bleu
+UPDATE npc_vendor SET Slot = 8 WHERE entry IN (24934) AND item = 414; -- Dalaran Sharp
+UPDATE npc_vendor SET Slot = 9 WHERE entry IN (24934) AND item = 422; -- Dwarven Mild
+UPDATE npc_vendor SET Slot = 10 WHERE entry IN (24934) AND item = 1707; -- Stormwind Brie
+UPDATE npc_vendor SET Slot = 11 WHERE entry IN (24934) AND item = 3927; -- Fine Aged Cheddar
+UPDATE npc_vendor SET Slot = 12 WHERE entry IN (24934) AND item = 8932; -- Alterac Swiss
+UPDATE npc_vendor SET Slot = 13 WHERE entry IN (24934) AND item = 4540; -- Tough Hunk of Bread
+UPDATE npc_vendor SET Slot = 14 WHERE entry IN (24934) AND item = 4541; -- Freshly Baked Bread
+UPDATE npc_vendor SET Slot = 15 WHERE entry IN (24934) AND item = 4542; -- Moist Cornbread
+UPDATE npc_vendor SET Slot = 16 WHERE entry IN (24934) AND item = 4544; -- Mulgore Spice Bread
+UPDATE npc_vendor SET Slot = 17 WHERE entry IN (24934) AND item = 4601; -- Soft Banana Bread
+UPDATE npc_vendor SET Slot = 18 WHERE entry IN (24934) AND item = 8950; -- Homemade Cherry Pie
+UPDATE npc_vendor SET Slot = 19 WHERE entry IN (24934) AND item = 4536; -- Shiny Red Apple
+UPDATE npc_vendor SET Slot = 20 WHERE entry IN (24934) AND item = 4537; -- Tel'Abim Banana
+UPDATE npc_vendor SET Slot = 21 WHERE entry IN (24934) AND item = 4538; -- Snapvine Watermelon
+UPDATE npc_vendor SET Slot = 22 WHERE entry IN (24934) AND item = 4539; -- Goldenbark Apple
+UPDATE npc_vendor SET Slot = 23 WHERE entry IN (24934) AND item = 4602; -- Moon Harvest Pumpkin
+UPDATE npc_vendor SET Slot = 24 WHERE entry IN (24934) AND item = 8953; -- Deep Fried Plantains
