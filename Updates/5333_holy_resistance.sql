@@ -128,5 +128,5 @@ UPDATE `creature_template` SET `ResistanceHoly` = 0 WHERE `entry` IN (
 19668); -- Shadowfiend (350)
 
 UPDATE `creature_template` SET `ResistanceHoly` = 60 WHERE `entry` = 12916; -- Unkillable Test Dummy 60 Low Magic Resistances
-UPDATE `creature_template` SET `ResistanceHoly` = 60 WHERE `entry` = 12917; -- Unkillable Test Dummy 60 High Magic Resistances
+UPDATE `creature_template` SET `ResistanceHoly` = 255 WHERE `entry` = 12917; -- Unkillable Test Dummy 60 High Magic Resistances
 
