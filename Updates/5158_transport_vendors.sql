@@ -6,10 +6,11 @@
 -- Vend-O-Tron D-Luxe 24935
 -- Merchant Fallel Stargazer 24995
 -- Engineer Brightbuckle 25010
+-- Merchant Felagunne 25019
 -- Merchant Frostwalker 25051
 -- Engineer Torquespindle 25082
-DELETE FROM npc_vendor WHERE entry IN (24843,24935,24995,25010,25051,25082);
-UPDATE creature_template SET VendorTemplateId = 10000 WHERE entry IN (24843,24935,24995,25010,25051,25082);
+DELETE FROM npc_vendor WHERE entry IN (24843,24935,24995,25010,25019,25051,25082);
+UPDATE creature_template SET VendorTemplateId = 10000 WHERE entry IN (24843,24935,24995,25010,25019,25051,25082);
 DELETE FROM npc_vendor_template WHERE entry IN (10000); -- ids are unknown
 INSERT INTO npc_vendor_template (entry, item, maxcount, incrtime, slot, ExtendedCost, condition_id, comments) VALUES
 (10000,7005,0,0,0,0,0,'Skinning Knife'),
