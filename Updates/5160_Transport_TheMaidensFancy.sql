@@ -43,16 +43,16 @@ UPDATE creature SET position_x = -11.879251, position_y = 6.683722, position_z =
 UPDATE creature_template SET movementtype = 2 WHERE Entry = 25097;
 DELETE FROM creature_movement_template WHERE Entry = 25097;
 INSERT INTO creature_movement_template (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
-(25097,0,1  ,-11.879251,6.683722,6.1819563,100,20000,1028), -- 01:56:05.662
-(25097,0,2  ,-11.879251,6.683722,6.1819563,100,4000,2509701),
-(25097,0,3  ,-10.366627,6.602725,6.141445,100,0,0),
-(25097,0,4  ,-8.866627,6.602725,6.141445,100,0,0),
-(25097,0,5  ,-7.116627,6.602725,6.141445,100,0,0),
-(25097,0,6  ,1.6333728,4.602725,6.141445,100,0,0),
-(25097,0,7  ,3.1333728,4.352725,6.141445,100,0,0),
-(25097,0,8  ,4.133373,4.102725,6.141445,100,0,0),
-(25097,0,9  ,4.633373,3.3527253,6.141445,100,0,0),
-(25097,0,10 ,6.133373,0.85272527,6.141445,100,0,0),
+(25097,0,1 ,-11.879251,6.683722,6.1819563,100,20000,1028), -- 01:56:05.662
+(25097,0,2 ,-11.879251,6.683722,6.1819563,100,4000,2509701),
+(25097,0,3 ,-10.366627,6.602725,6.141445,100,0,0),
+(25097,0,4 ,-8.866627,6.602725,6.141445,100,0,0),
+(25097,0,5 ,-7.116627,6.602725,6.141445,100,0,0),
+(25097,0,6 ,1.6333728,4.602725,6.141445,100,0,0),
+(25097,0,7 ,3.1333728,4.352725,6.141445,100,0,0),
+(25097,0,8 ,4.133373,4.102725,6.141445,100,0,0),
+(25097,0,9 ,4.633373,3.3527253,6.141445,100,0,0),
+(25097,0,10,6.133373,0.85272527,6.141445,100,0,0),
 (25097,0,11,6.145996,0.5217285,6.100934,100,0,0), -- 01:56:07.692
 (25097,0,12,6.246032,-0.47875953,6.349739,100,0,0),
 (25097,0,13,6.746032,-6.47876,6.349739,100,0,0),
@@ -91,9 +91,9 @@ UPDATE creature SET movementtype = 2, spawndist = 0 WHERE id = 25094;
 UPDATE creature_template SET movementtype = 2 WHERE Entry = 25094;
 DELETE FROM creature_movement_template WHERE Entry = 25094;
 INSERT INTO creature_movement_template (`Entry`, `PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
-(25094,0,1,34.1192,0.04272461,18.286228,100,25000,0),
+(25094,0,1,34.1192,0.04272461,18.286228,3.132,25000,0),
 (25094,0,2,37.848145,0.007080078,18.62088,100,35000,2509401), -- 01:56:10.913
-(25094,0,3,34.1192,0.04272461,18.286228,100,60000,0); -- 01:56:48.129
+(25094,0,3,34.1192,0.04272461,18.286228,3.132,60000,0); -- 01:56:48.129
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2509401);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2509401,4000,28,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'UNIT_STAND_STATE_SIT'), -- 01:56:14.151 
@@ -192,6 +192,7 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 (16397,2,31,25078,100,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - search for 25078'),
 (16397,500,20,2,1,0,25078,100,0x04,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Krick Wrenchnozzle 25078 - Path 1'),
 (16397,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked');
+UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25078,25097);
 
 -- objects
 -- they did not exist during 3.x.x
