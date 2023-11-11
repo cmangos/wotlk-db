@@ -6,21 +6,33 @@
 DELETE FROM dbscripts_on_relay WHERE id IN (21000,21001);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Trisfal Glages
+(21000,20001,31,25105,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25105 - terminate if not found'),
+(21000,20100,31,25106,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25106 - terminate if not found'),
+(21000,20200,31,25107,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25107 - terminate if not found'),
+(21000,20300,31,25101,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25101 - terminate if not found'),
+(21000,20400,31,25100,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25100 - terminate if not found'),
+(21000,20500,31,25104,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25104 - terminate if not found'),
 (21000,20700,20,2,0,0,25101,200,7,0,0,0,0,0,0,0,0,'25101 - waypoints'),
 (21000,20701,20,2,0,0,25104,200,7,0,0,0,0,0,0,0,0,'25104 - waypoints'),
 (21000,20702,20,2,0,0,25100,200,7,0,0,0,0,0,0,0,0,'25100 - waypoints'),
 (21000,21000,45,0,20307,0,25105,200,7,0,0,0,0,0,0,0,0,'25079 - Random Script'),
 (21000,21001,28,0,0,0,25106,200,7,0,0,0,0,0,0,0,0,'25106 - STATE_STAND'),
-(21000,81000,0,0,0,0,25100,100,7,24275,24276,24277,0,0,0,0,0,'25107 - Random Say'),
+(21000,81000,0,0,0,0,25100,200,7,24275,24276,24277,0,0,0,0,0,'25107 - Random Say'),
 (21000,82000,28,3,0,0,25107,200,7,0,0,0,0,0,0,0,0,'25107 - STATE_SLEEP'),
 (21000,82001,28,1,0,0,25106,200,7,0,0,0,0,0,0,0,0,'25107 - STATE_SIT'),
 -- arrived at Grom'Gol
+(21001,1,31,25105,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25105 - terminate if not found'),
+(21001,100,31,25106,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25106 - terminate if not found'),
+(21001,200,31,25107,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25107 - terminate if not found'),
+(21001,300,31,25101,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25101 - terminate if not found'),
+(21001,400,31,25100,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25100 - terminate if not found'),
+(21001,500,31,25104,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25104 - terminate if not found'),
 (21001,700,20,2,0,0,25101,200,7,0,0,0,0,0,0,0,0,'25101 - waypoints'),
 (21001,701,20,2,0,0,25104,200,7,0,0,0,0,0,0,0,0,'25104 - waypoints'),
 (21001,702,20,2,0,0,25100,200,7,0,0,0,0,0,0,0,0,'25100 - waypoints'),
 (21001,800,45,0,20307,0,25105,100,7,0,0,0,0,0,0,0,0,'25079 - Random Script'),
 (21001,801,28,0,0,0,25106,100,7,0,0,0,0,0,0,0,0,'25106 - STATE_STAND'),
-(21001,61000,0,0,0,0,25100,100,7,24275,24276,24277,0,0,0,0,0,'25107 - Random Say'),
+(21001,61000,0,0,0,0,25100,200,7,24275,24276,24277,0,0,0,0,0,'25107 - Random Say'),
 (21001,62000,28,3,0,0,25107,100,7,0,0,0,0,0,0,0,0,'25107 - STATE_SLEEP'),
 (21001,62001,28,1,0,0,25106,200,7,0,0,0,0,0,0,0,0,'25107 - STATE_SIT'),
 (21001,65000,0,0,0,0,3150,32037,7|0x10,22073,22074,0,0,0,0,0,0,'3150 - Random Say');
@@ -197,6 +209,9 @@ INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pv
 DELETE FROM dbscripts_on_relay WHERE id IN (21002,21003);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Orgrimmar
+(21002,1,31,25079,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25079 - terminate if not found'),
+(21002,300,31,25077,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
+(21002,400,31,25070,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
 (21002,830,20,2,1,0,25079,100,7,0,0,0,0,0,0,0,0,'25079 - Path 1'),
 (21002,55000,20,2,2,0,25079,100,7,0,0,0,0,0,0,0,0,'25079 - Path 2'),
 (21002,59000,20,2,0,0,25077,100,7,0,0,0,0,0,0,0,0,'25077 - waypoints'),
@@ -206,6 +221,9 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (21002,64100,0,0,0,0,25070,100,7,24242,0,0,0,0,0,0,0,'25070 - Say'), -- 16:13:35.538
 (21002,68100,0,20306,0,0,25070,100,7,0,0,0,0,0,0,0,0,'25070 - Random Say'), -- 16:13:39.997
 -- arrived Trisfal Glages
+(21003,1,31,25079,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25079 - terminate if not found'),
+(21003,10,31,25077,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
+(21003,20,31,25070,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25077 - terminate if not found'),
 (21003,44,20,2,1,0,25079,100,7,0,0,0,0,0,0,0,0,'25079 - Path 1'),
 (21003,55000,20,2,2,0,25079,100,7,0,0,0,0,0,0,0,0,'25079 - Path 2'),
 (21003,59000,20,2,0,0,25077,100,7,0,0,0,0,0,0,0,0,'25077 - waypoints'),
@@ -234,6 +252,10 @@ UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25079,
 DELETE FROM dbscripts_on_relay WHERE id IN (21004,21005);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Orgrimmar
+(21004,15001,31,25080,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25080 - terminate if not found'),
+(21004,15020,31,25081,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25081 - terminate if not found'),
+(21004,15030,31,24931,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24931 - terminate if not found'),
+(21004,15040,31,24927,200,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24927 - terminate if not found'),
 (21004,16000,28,0,0,0,25080,200,7,0,0,0,0,0,0,0,0,'25080 - STATE_STAND'),
 (21004,16001,28,0,0,0,25081,200,7,0,0,0,0,0,0,0,0,'25081 - STATE_STAND'),
 (21004,16002,20,2,0,0,24931,200,7,0,0,0,0,0,0,0,0,'24931 - waypoints'),
@@ -241,6 +263,10 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (21004,77000,28,1,0,0,25080,200,7,0,0,0,0,0,0,0,0,'25080 - STATE_SIT'),
 (21004,77001,28,1,0,0,25081,200,7,0,0,0,0,0,0,0,0,'25081 - STATE_SIT'),
 -- arrived at Grom'Gol
+(21005,1,31,25080,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25080 - terminate if not found'),
+(21005,20,31,25081,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25081 - terminate if not found'),
+(21005,30,31,24931,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24931 - terminate if not found'),
+(21005,40,31,24927,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24927 - terminate if not found'),
 (21005,1000,28,0,0,0,25080,100,7,0,0,0,0,0,0,0,0,'25080 - STATE_STAND'),
 (21005,1001,28,0,0,0,25081,100,7,0,0,0,0,0,0,0,0,'25081 - STATE_STAND'),
 (21005,1002,20,2,0,0,24931,100,7,0,0,0,0,0,0,0,0,'24931 - waypoints'),
@@ -389,8 +415,10 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 DELETE FROM dbscripts_on_relay WHERE id IN (21006,21007);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Vengance Landing
+(21006,1,31,31715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31715 - terminate if not found'),
 (21006,510,20,2,0,0,31715,100,7,0,0,0,0,0,0,0,0,'31715 - waypoints'),
--- arrived at  Trisfal Glages
+-- arrived at Trisfal Glages
+(21007,1,31,31715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31715 - terminate if not found'),
 (21007,510,20,2,0,0,31715,100,7,0,0,0,0,0,0,0,0,'31715 - waypoints');
 
 -- Transport: The Mighty Wind - Updates
@@ -406,9 +434,11 @@ INSERT INTO creature_movement_template (`Entry`, `Point`, `PositionX`, `Position
 DELETE FROM dbscripts_on_relay WHERE id IN (21008,21009);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Orgrimmar
-(21008,11,20,2,0,0,31727,100,7,0,0,0,0,0,0,0,0,'31727 - waypoints'),
+(21008,1,31,31727,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31727 - terminate if not found'),
+(21008,100,20,2,0,0,31727,100,7,0,0,0,0,0,0,0,0,'31727 - waypoints'),
 -- arrived at Borean Tundra
-(21009,11,20,2,0,0,31727,100,7,0,0,0,0,0,0,0,0,'31727 - waypoints');
+(21009,1,31,31727,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 31727 - terminate if not found'),
+(21009,100,20,2,0,0,31727,100,7,0,0,0,0,0,0,0,0,'31727 - waypoints');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (31715,31727);
 
 -- Transport: <The Zephyr> - Updates
@@ -435,10 +465,12 @@ INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, e
 DELETE FROM dbscripts_on_relay WHERE id IN (21010,21011);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 -- arrived at Orgrimmar
-(21010,11,0,0,0,0,34715,100,7,35030,0,0,0,0,0,0,0,'34715 - Say'),
+(21010,1,31,34715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 34715 - terminate if not found'),
+(21010,100,0,0,0,0,34715,100,7,35030,0,0,0,0,0,0,0,'34715 - Say'),
 (21010,60000,0,0,0,0,34715,100,7,35031,0,0,0,0,0,0,0,'34715 - Say'),
 -- arrived at Thunder Bluff
-(21011,11,0,0,0,0,34715,100,7,35032,0,0,0,0,0,0,0,'34715 - Say'),
+(21011,1,31,34715,100,0,0,0,0,0,0,0,0,0,0,0,0,'search for 34715 - terminate if not found'),
+(21011,100,0,0,0,0,34715,100,7,35032,0,0,0,0,0,0,0,'34715 - Say'),
 (21011,60000,0,0,0,0,34715,100,7,35033,0,0,0,0,0,0,0,'34715 - Say');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (34715,34717);
 UPDATE `broadcast_text` SET `ChatTypeID`= 1 WHERE `Id` IN (29545,35041,35039);

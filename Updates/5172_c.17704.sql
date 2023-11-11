@@ -11,7 +11,8 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_
 (5309976,17704,530,1,1,-1867.2617,-11874.725,32.16485,0,300,300,0,0);
 DELETE FROM creature_linking WHERE master_guid IN (63451);
 UPDATE creature SET position_x = -1867.2617, position_y = -11874.725, position_z = 32.16485, spawndist = 0, movementType = 0 WHERE guid IN (63451,63452,63453,63454);
-DELETE FROM creature_movement WHERE id IN (43322);
+DELETE FROM creature_movement WHERE id IN (63451);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (1770401,1770402);
 -- move them to TBC range
 UPDATE creature SET guid = 5309972 WHERE guid = 63451;
 UPDATE creature SET guid = 5309973 WHERE guid = 63452;
