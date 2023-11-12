@@ -168,7 +168,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2510002,7000,1,397,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'), -- 18:09:14.815
 (2510003,1,54,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'set SHEATH_STATE_MELEE'), -- 18:09:27.755
 (2510003,10,20,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'idle');
-UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25105,25106,25107,25101,25100,25104);
+UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25105,25106,25107,25101,25100,25104,25102);
 
 -- Transport: The Thundercaller - Updates
 -- Orgrimmar <--> Trisfal Glages
@@ -376,7 +376,7 @@ DELETE FROM dbscripts_on_creature_movement WHERE id IN (2492901);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2492901,2000,28,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'STATE_SIT'),
 (2492901,27000,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'STATE_STAND');
-UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25080,25081,24931,24927);
+UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25102,25080,25081,24931,24927,24929);
 
 -- Transport: The Cloudkisser - Updates
 -- Trisfal Glages <--> Vengance Landing
