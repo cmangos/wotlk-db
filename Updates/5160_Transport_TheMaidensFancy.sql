@@ -35,7 +35,7 @@ INSERT INTO creature_movement_template (`Entry`, `PathId`, `Point`, `PositionX`,
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2509301);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2509301,900,31,25095,40,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25093'),
-(2509301,1000,36,0,0,25095,25095,50,1,0,0,0,0,0,0,0,0,'face buddy'), -- 01:55:41.781
+(2509301,1000,36,0,0,25095,60,50,1,0,0,0,0,0,0,0,0,'face buddy'), -- 01:55:41.781
 (2509301,3000,1,273,0,0,0,0,0x04,6,1,0,0,0,0,0,0,'random emote'); -- 01:55:43.397
 
 -- Crewman Hammertink 25097
@@ -190,7 +190,7 @@ INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalon
 (16398,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
 (16397,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16397,2,31,25078,100,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - search for 25078'),
-(16397,500,20,2,1,0,25078,100,0x04,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Krick Wrenchnozzle 25078 - Path 1'),
+(16397,500,20,2,1,0,25078,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Krick Wrenchnozzle 25078 - Path 1'),
 (16397,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25095,25093,25078,25097,25094,25089);
 
