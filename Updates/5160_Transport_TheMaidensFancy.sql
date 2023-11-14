@@ -35,7 +35,7 @@ INSERT INTO creature_movement_template (`Entry`, `PathId`, `Point`, `PositionX`,
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2509301);
 INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (2509301,900,31,25095,40,0,0,0,0,0,0,0,0,0,0,0,0,'search for 25093'),
-(2509301,1000,36,0,0,25095,60,50,1,0,0,0,0,0,0,0,0,'face buddy'), -- 01:55:41.781
+(2509301,1000,36,0,0,0,25095,50,1,0,0,0,0,0,0,0,0,'face buddy'), -- 01:55:41.781
 (2509301,3000,1,273,0,0,0,0,0x04,6,1,0,0,0,0,0,0,'random emote'); -- 01:55:43.397
 
 -- Crewman Hammertink 25097
