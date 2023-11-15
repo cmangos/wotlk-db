@@ -142,14 +142,14 @@ DELETE FROM dbscripts_on_event WHERE id IN (16401,16402);
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (16401,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16401,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16401,2,20,2,1,0,25050,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Galind Windsword 25050 - Path 1'),
-(16401,3,20,2,1,0,25055,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Frostnight 25055 - Path 1'),
-(16401,4,20,2,1,0,25054,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Keenstar 25054 - Path 1'),
+(16401,2,20,2,1,0,25050,5860002,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Galind Windsword 25050 - Path 1'),
+(16401,3,20,2,1,0,25055,5860007,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Frostnight 25055 - Path 1'),
+(16401,4,20,2,1,0,25054,5860006,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Keenstar 25054 - Path 1'),
 (16402,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16402,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16402,2,20,2,2,0,25050,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Galind Windsword 25050 - Path 2'),
-(16402,3,20,2,2,0,25055,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Frostnight 25055 - Path 2'),
-(16402,4,20,2,2,0,25054,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Keenstar 25054 - Path 2');
+(16402,2,20,2,2,0,25050,5860002,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Galind Windsword 25050 - Path 2'),
+(16402,3,20,2,2,0,25055,5860007,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Frostnight 25055 - Path 2'),
+(16402,4,20,2,2,0,25054,5860006,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Keenstar 25054 - Path 2');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25050,25053,25054,25055,25056);
 
 -- The Moonspray
@@ -351,14 +351,14 @@ DELETE FROM dbscripts_on_event WHERE id IN (16401,16402);
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (16395,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16395,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16395,2,20,2,1,0,24996,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Bladewhisper 24996 - Path 1'),
-(16395,3,20,2,1,0,24997,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Swiftstar 24997 - Path 1'),
-(16395,4,20,2,1,0,25007,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Evenmist 25007 - Path 1'),
+(16395,2,20,2,1,0,24996,5820001,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Bladewhisper 24996 - Path 1'),
+(16395,3,20,2,1,0,24997,5820003,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Swiftstar 24997 - Path 1'),
+(16395,4,20,2,1,0,25007,5820004,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Evenmist 25007 - Path 1'),
 (16396,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16396,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16396,2,20,2,2,0,24996,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Bladewhisper 24996 - Path 2'),
-(16396,3,20,2,2,0,24997,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Swiftstar 24997 - Path 2'),
-(16396,4,20,2,2,0,25007,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Evenmist 25007 - Path 2');
+(16396,2,20,2,2,0,24996,5820001,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Bladewhisper 24996 - Path 2'),
+(16396,3,20,2,2,0,24997,5820003,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Swiftstar 24997 - Path 2'),
+(16396,4,20,2,2,0,25007,5820004,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Evenmist 25007 - Path 2');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (24996,24997);
 
 -- The Lady Mehley
@@ -651,7 +651,8 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2483502,1100,0,0,0,0,0,0,0x04,23943,0,0,0,0,0,0,0,''),
 (2483503,2000,1,22,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (2483503,2200,0,0,0,0,0,0,0x04,23944,0,0,0,0,0,0,0,''),
-(2483503,5000,20,2,0,0,24833,70,7,0,0,0,0,0,0,0,0,'budy wps');
+(2483503,4700,31,24833,80,0,0,0,0,0,0,0,0,0,0,0,0,'search for 24833'),
+(2483503,5000,20,2,0,0,24833,5840000,7|0x10,0,0,0,0,0,0,0,0,'buddy wps');
 -- Navigator Mehran 24837
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id IN (24837));
 DELETE FROM creature_template_addon WHERE entry IN (24837);
@@ -793,10 +794,10 @@ DELETE FROM dbscripts_on_event WHERE id IN (10301,10302);
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (10301,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (10301,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(10301,2000,20,2,1,0,24839,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Sailor Wicks 24839 - Path 1'),
+(10301,2000,20,2,1,0,24839,5840006,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Sailor Wicks 24839 - Path 1'),
 (10302,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (10302,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(10302,2000,20,2,2,0,24839,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Sailor Wicks 24839 - Path 2');
+(10302,2000,20,2,2,0,24839,5840006,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Sailor Wicks 24839 - Path 2');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (24841,24842,24836,24840,24839,24838,24835,24837,24833);
 
 -- Feathermoon Ferry
@@ -968,14 +969,14 @@ DELETE FROM dbscripts_on_event WHERE id IN (16399,16400);
 INSERT INTO dbscripts_on_event (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (16399,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16399,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16399,2000,20,2,1,0,25021,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Moonblade 25021 - Path 1'),
-(16399,2001,20,2,1,0,25024,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Softsong 25024 - Path 1'),
-(16399,2002,20,2,1,0,25025,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Idrilae 25025 - Path 1'),
-(16399,2003,20,2,1,0,25022,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Stillwake 25022 - Path 1'),
+(16399,2000,20,2,1,0,25021,5870004,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Moonblade 25021 - Path 1'),
+(16399,2001,20,2,1,0,25024,5870007,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Softsong 25024 - Path 1'),
+(16399,2002,20,2,1,0,25025,5870008,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Idrilae 25025 - Path 1'),
+(16399,2003,20,2,1,0,25022,5870005,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Stillwake 25022 - Path 1'),
 (16400,1,16,5495,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - BoatDockingWarning'),
 (16400,1000,16,5154,16,0,0,0,0,0,0,0,0,0,0,0,0,'Transports (Ships) - Play - ShipDocked'),
-(16400,2000,20,2,2,0,25021,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Moonblade 25021 - Path 2'),
-(16400,2001,20,2,2,0,25024,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Softsong 25024 - Path 2'),
-(16400,2002,20,2,2,0,25025,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Idrilae 25025 - Path 2'),
-(16400,2003,20,2,2,0,25022,100,7,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Everwatch 25023 - Path 2');
+(16400,2000,20,2,2,0,25021,5870004,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Moonblade 25021 - Path 2'),
+(16400,2001,20,2,2,0,25024,5870007,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Softsong 25024 - Path 2'),
+(16400,2002,20,2,2,0,25025,5870008,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Captain Idrilae 25025 - Path 2'),
+(16400,2003,20,2,2,0,25022,5870005,7|0x10,0,0,0,0,0,0,0,0,'Transports (Ships) - Mariner Everwatch 25023 - Path 2');
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (25021,25022,25024,25025);
