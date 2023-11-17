@@ -1,4 +1,21 @@
 ===============================================================
+WoTLKDB v1.8 'Nesingwary's Hunt' for CMaNGOS 14080 for 3.3.5a
+===============================================================
+
+Main changes:
+* Sholazar Basin - Northrend - Completed
+* Crystalsong - Northrend - Completed
+	- all quests
+	- all areas spawns/waypoints/events
+* All Transports - Fully Scripted
+* Many creatures and objects moved to 'Group Spawn' system
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+
+===============================================================
 WoTLKDB v1.7 'Drakkaris Dream' for CMaNGOS 14065 for 3.3.5a
 ===============================================================
 
