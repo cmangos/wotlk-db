@@ -1,6 +1,6 @@
 -- Oglethorpe Obnoticus 7406
 UPDATE gossip_menu SET condition_id = 3834 WHERE entry = 1467 AND text_id = 2136;
-DELETE FROM npc_text_broadcast_text WHERE Id IN(2135,9686);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(2135,2136);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (2135,1,4554),
 (2136,1,4555);
