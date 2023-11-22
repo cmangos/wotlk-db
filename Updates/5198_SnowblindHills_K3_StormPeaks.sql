@@ -204,7 +204,7 @@ INSERT INTO creature_movement_template (`Entry`, `Point`, `PositionX`, `Position
 
 DELETE FROM dbscripts_on_spell WHERE id IN (55465);
 INSERT INTO dbscripts_on_spell (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(55465,1,31,0,20,0,33001,20,0x800,0,0,0,0,0,0,0,0,'search for string id = 33001 - terminate if not found'), -- fix this - otherwise he fires script every 8secs (req. core fix)
+(55465,1,31,0,20,0,33001,20,0x800,0,0,0,0,0,0,0,0,'search for string id = 33001 - terminate if not found'),
 (55465,100,32,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'pause waypoints'),
 (55465,1000,1,428,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'emote'),
 (55465,4000,1,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'reset emote'),
