@@ -2,6 +2,7 @@
 
 -- Murloc Flesheater 422
 DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 422);
+DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature_spawn_entry WHERE entry = 422);
 DELETE FROM creature_template_addon WHERE entry IN (422);
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
 (422,0,0,1,0,0,0,3394);
