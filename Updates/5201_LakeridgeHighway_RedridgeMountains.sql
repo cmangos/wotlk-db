@@ -30,8 +30,8 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (19920, 'Redridge Mountains - Redridge Mongrel & Redridge Poacher - Patrol 1', 0, 0, 0, 1);
 DELETE FROM `spawn_group_spawn` WHERE id = 19920;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(19920, 15218, 1),
-(19920, 15219, 2);
+(19920, 15218, 0),
+(19920, 15219, 1);
 DELETE FROM `spawn_group_formation` WHERE id = 19920;
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (19920, 1, 3, 0, 19920, 2, 'Redridge Mountains - Redridge Mongrel & Redridge Poacher - Patrol 1');
@@ -54,8 +54,8 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (19919, 'Redridge Mountains - Redridge Mongrel & Redridge Poacher - Patrol 2', 0, 0, 0, 1);
 DELETE FROM `spawn_group_spawn` WHERE id = 19919;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(19919, 16227, 1),
-(19919, 16224, 2);
+(19919, 16227, 0),
+(19919, 16224, 1);
 DELETE FROM `spawn_group_formation` WHERE id = 19919;
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (19919, 1, 3, 0, 19919, 4, 'Redridge Mountains - Redridge Mongrel & Redridge Poacher - Patrol 2'); -- linear
