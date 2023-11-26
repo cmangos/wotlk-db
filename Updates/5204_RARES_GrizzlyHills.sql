@@ -8,7 +8,7 @@ DELETE FROM creature_battleground WHERE guid IN (535521,535522);
 DELETE FROM creature_linking WHERE guid IN (535521,535522);
 DELETE FROM creature where guid IN (535521,535522);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
-(535521,32438,571,1,1,-9638.779,-2525.4167,59.08689,3.814,28800,28800,0,4), -- linear
+(535521,32438,571,1,1,4046.7712,-4625.1973,169.63557,4.161,28800,28800,0,4), -- linear
 (535522,32438,571,1,1,4291.8184,-4311.9165,182.47275,0.802,28800,28800,0,4); -- linear
 UPDATE creature SET position_x = 4480.4683, position_y = -4524.4497, position_z = 113.77871, movementtype = 4, spawndist = 0 WHERE guid = 532488; -- linear
 DELETE FROM creature_movement WHERE id IN (532488,535521,535522);
@@ -139,7 +139,7 @@ DELETE FROM creature_battleground WHERE guid IN (535523);
 DELETE FROM creature_linking WHERE guid IN (535523);
 DELETE FROM creature where guid IN (535523);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
-(535523,32422,571,1,1,-9638.779,-2303.328,41.390446,3.814,28800,28800,0,4); -- linear
+(535523,32422,571,1,1,3751.7332,-1906.4866,203.31546,5.877,28800,28800,0,4); -- linear
 UPDATE creature SET position_x = 2932.636, position_y = -4524.4497, position_z = 113.77871, movementtype = 4, spawndist = 0 WHERE guid = 532462; -- linear
 UPDATE creature SET position_x = 3412.899, position_y = -2403.7913, position_z = 124.14179, movementtype = 4, spawndist = 0 WHERE guid = 532461; -- linear
 DELETE FROM creature_movement WHERE id IN (532461,535523,532462);
