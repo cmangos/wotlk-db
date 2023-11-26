@@ -62,9 +62,9 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Perobas the Bloodthirster 32377
 DELETE FROM pool_creature_template WHERE id = 32377;
 DELETE FROM pool_template WHERE entry = 1081;
-DELETE FROM `spawn_group` WHERE id = 31501;
+DELETE FROM `spawn_group` WHERE id = 31502;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(31502, 'Perobas the Bloodthirster 32377 - RARE', 0, 1, 0, 0);
+(31502, 'Howling Fjord - Perobas the Bloodthirster 32377 - RARE', 0, 1, 0, 0);
 DELETE FROM `spawn_group_spawn` WHERE id = 31502;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (31502, 532423, -1),
