@@ -13,7 +13,7 @@ UPDATE creature SET position_x = -9308.947, position_y = -2800.1182, position_z 
 UPDATE creature SET spawndist = 0, MovementType = 4 WHERE guid IN (8775); -- linear
 UPDATE creature SET spawndist = 2, MovementType = 1 WHERE guid IN (8770,8772,8777,8782,8783);
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid IN (10098,10099);
-DELETE FROM creature_movement WHERE Id IN (6178,187,6181);
+DELETE FROM creature_movement WHERE Id IN (6178,6187,6181,8775);
 INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orientation, waittime, scriptid) VALUES
 -- Murloc Scout/Murloc Tidecaller guid.6187 - part of c_s_e
 (6187,1 ,-9345.686,-2837.1636,60.977146,0.3142,40000,0),
