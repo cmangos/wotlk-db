@@ -138,12 +138,12 @@ UPDATE npc_vendor SET Slot = 26 WHERE entry IN (14624) AND item = 4599; -- Cured
 UPDATE npc_vendor SET Slot = 27 WHERE entry IN (14624) AND item = 8952; -- Roasted Quail
 UPDATE npc_vendor SET Slot = 28 WHERE entry IN (14624) AND item = 1179; -- Ice Cold Milk
 UPDATE npc_vendor SET Slot = 29 WHERE entry IN (14624) AND item = 8766; -- Morning Glory Dew
-UPDATE npc_vendor SET Slot = 32 WHERE entry IN (19012) AND item = 2880; -- Weak Flux
-UPDATE npc_vendor SET Slot = 30 WHERE entry IN (19012) AND item = 2901; -- Mining Pick
-UPDATE npc_vendor SET Slot = 33 WHERE entry IN (19012) AND item = 3466; -- Strong Flux
-UPDATE npc_vendor SET Slot = 35 WHERE entry IN (19012) AND item = 3857; -- Coal
-UPDATE npc_vendor SET Slot = 31 WHERE entry IN (19012) AND item = 5956; -- Blacksmith Hammer
-UPDATE npc_vendor SET Slot = 34 WHERE entry IN (19012) AND item = 18567; -- Elemental Flux
+UPDATE npc_vendor SET Slot = 32 WHERE entry IN (14624) AND item = 2880; -- Weak Flux
+UPDATE npc_vendor SET Slot = 30 WHERE entry IN (14624) AND item = 2901; -- Mining Pick
+UPDATE npc_vendor SET Slot = 33 WHERE entry IN (14624) AND item = 3466; -- Strong Flux
+UPDATE npc_vendor SET Slot = 35 WHERE entry IN (14624) AND item = 3857; -- Coal
+UPDATE npc_vendor SET Slot = 31 WHERE entry IN (14624) AND item = 5956; -- Blacksmith Hammer
+UPDATE npc_vendor SET Slot = 34 WHERE entry IN (14624) AND item = 18567; -- Elemental Flux
 
 -- Vargus 15176
 UPDATE npc_vendor SET Slot = 2 WHERE entry IN (15176) AND item = 2880; -- Weak Flux
