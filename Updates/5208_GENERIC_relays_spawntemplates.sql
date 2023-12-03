@@ -8,7 +8,7 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (30607,1,20,2,7 ,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 7'),
 (30608,1,20,2,8 ,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 8'),
 (30609,1,20,2,9 ,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 9'),
-(30010,1,20,2,10,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 10'),
+(30610,1,20,2,10,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 10'),
 (30597,1,20,2,11,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 11'), -- 30611 used by smth else
 (30612,1,20,2,12,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 12'),
 (30613,1,20,2,13,0,0,0,4,0,0,0,0,0,0,0,0,'GENERIC - SET waypoints - Path 13'),
