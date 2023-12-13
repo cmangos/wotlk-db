@@ -1,12 +1,12 @@
 -- Scalding Drake 7045
 -- missing spawn added
-DELETE FROM creature_addon WHERE guid IN (376);
-DELETE FROM creature_movement WHERE id IN (376);
-DELETE FROM game_event_creature WHERE guid IN (376);
-DELETE FROM game_event_creature_data WHERE guid IN (376);
-DELETE FROM creature_battleground WHERE guid IN (376);
-DELETE FROM creature_linking WHERE guid IN (376);
-DELETE FROM creature where guid IN (376);
+DELETE FROM creature_addon WHERE guid IN (379);
+DELETE FROM creature_movement WHERE id IN (379);
+DELETE FROM game_event_creature WHERE guid IN (379);
+DELETE FROM game_event_creature_data WHERE guid IN (379);
+DELETE FROM creature_battleground WHERE guid IN (379);
+DELETE FROM creature_linking WHERE guid IN (379);
+DELETE FROM creature where guid IN (379);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (379,7045,0,1,1,-8089.5835,-1292.2653,136.32478,0,300,300,0,4); -- linear
 DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 7045);
