@@ -15,11 +15,11 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_
 UPDATE creature SET position_x = -7156.9297, position_y = -1407.4802, position_z = 241.69312, spawndist = 0, MovementType = 4 WHERE guid = 5915; -- linear
 UPDATE creature SET position_x = -6608.683, position_y = -1302.3628, position_z = 264.2246, spawndist = 0, MovementType = 4 WHERE guid = 6789; -- linear
 UPDATE creature SET position_x = -6803.047, position_y = -929.44867, position_z = 244.46275, spawndist = 0, MovementType = 4 WHERE guid = 6217; -- linear
-UPDATE creature SET position_x = -7239.14, position_y = -1611.32, position_z = 275.365, spawndist = 0, MovementType = 4 WHERE guid = 5855; -- linear
+UPDATE creature SET position_x = -7239.14, position_y = -1611.32, position_z = 275.365, spawndist = 0, MovementType = 4 WHERE guid = 6221; -- linear
 UPDATE creature SET position_x = -6764.760, position_y = -1612.605, position_z = 189.481430, spawndist = 7, MovementType = 1 WHERE guid = 5735;
 UPDATE creature SET position_x = -6848.160156, position_y = -1391.460693, position_z = 168.004318, spawndist = 7, MovementType = 1 WHERE guid = 5784;
 -- waypoints
-DELETE FROM creature_movement WHERE Id IN (5915,6789,6217,5855);
+DELETE FROM creature_movement WHERE Id IN (5915,6789,6217,6221);
 INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orientation, waittime, scriptid) VALUES
 -- 5915 -- moved duplicate from other area
 (5915,1 ,-7156.9297,-1407.4802,241.69312,100,1000,0),
@@ -65,14 +65,14 @@ INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orien
 (6217,11,-6691.5283,-1114.1122,241.30095,100,0,0),
 (6217,12,-6693.612,-1155.108,241.40778  ,100,0,0),
 (6217,13,-6707.4507,-1181.0604,240.40224,100,1000,0),
--- 5855
-(5855,1,-7239.14,-1611.32,275.365,100,1000,0),
-(5855,2,-7243.642,-1601.5929,275.50455,100,0,0),
-(5855,3,-7253.635,-1589.4459,277.59613,100,0,0),
-(5855,4,-7252.4,-1580.02,272.98,100,0,0),
-(5855,5,-7248.22,-1566.14,268.842,100,0,0),
-(5855,6,-7247.203,-1551.0731,276.60074,100,0,0),
-(5855,7,-7240.83,-1532.57,274.116,100,1000,0);
+-- 6221
+(6221,1,-7239.14,-1611.32,275.365,100,1000,0),
+(6221,2,-7243.642,-1601.5929,275.50455,100,0,0),
+(6221,3,-7253.635,-1589.4459,277.59613,100,0,0),
+(6221,4,-7252.4,-1580.02,272.98,100,0,0),
+(6221,5,-7248.22,-1566.14,268.842,100,0,0),
+(6221,6,-7247.203,-1551.0731,276.60074,100,0,0),
+(6221,7,-7240.83,-1532.57,274.116,100,1000,0);
 -- shared spawns
 -- Magma Elemental 5855 / Blazing Elemental 5850 / Inferno Elemental 5852
 DELETE FROM creature_spawn_entry WHERE guid IN (727,5735,5833,5626);
