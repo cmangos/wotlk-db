@@ -75,12 +75,13 @@ INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orien
 (5855,7,-7240.83,-1532.57,274.116,100,1000,0);
 -- shared spawns
 -- Magma Elemental 5855 / Blazing Elemental 5850 / Inferno Elemental 5852
-DELETE FROM creature_spawn_entry WHERE guid IN (727,5735,5833);
+DELETE FROM creature_spawn_entry WHERE guid IN (727,5735,5833,5626);
 INSERT INTO creature_spawn_entry (guid,entry) VALUES
 (727,5855),(727,5852),
 (5735,5855),(5735,5850),
 (5833,5855),(5833,5850),
 (5626,5855),(5626,5852);
+UPDATE creature SET id = 0 WHERE guid IN (727,5735,5833,5626);
 
 -- Heavy War Golem 5854
 DELETE FROM creature_addon WHERE guid IN (615);
