@@ -41,9 +41,6 @@ UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry=2834;
 -- Brikk Keencraft 2836
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry=2836;
 
--- Jutak 2843
-UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry=2843;
-
 -- Jaxin Chong 2837
 UPDATE creature_template SET GossipMenuId=4127, CreatureTypeFlags = 134217728 WHERE entry=2837;
 DELETE FROM gossip_menu WHERE entry=4127;
@@ -56,6 +53,12 @@ DELETE FROM npc_text_broadcast_text WHERE Id IN(5074);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (5074,1,7738);
 DELETE FROM npc_text WHERE id=5074;
+
+-- Jutak 2843
+UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 2843;
+
+-- Urda 2851
+UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 2851;
 
 -- Grisha 3305
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 3305;
