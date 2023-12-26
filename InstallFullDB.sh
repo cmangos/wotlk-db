@@ -1612,20 +1612,26 @@ function apply_full_content_db()
 function create_db_user_and_set_privileges()
 {
   local sqlcreate=()
+
   if [[ "$1" = true ]]; then
     clear
+  fi
 
-    if [[ "$STATUS_USER_SUCCESS" = true ]]; then
-      local user_lowCase=$(echo "$MYSQL_USERNAME" | tr '[:upper:]' '[:lower:]')
-      if [ "$user_lowCase" == "root" ]; then
-        echo "Error: 'root' is not supported as an username. Please choose a safer one."
-        false
-        return
-      fi
-      echo "Warning: User already exists; only privileges for required database will be added!"
-    else
-      sqlcreate+=("$SQL_CREATE_DATABASE_USER")
+  if [[ "$STATUS_USER_SUCCESS" = true ]]; then
+    local user_lowCase=$(echo "$MYSQL_USERNAME" | tr '[:upper:]' '[:lower:]')
+    if [ "$user_lowCase" == "root" ]; then
+      echo "Error: 'root' is not supported as an username. Please choose a safer one."
+      false
+      return
     fi
+    if [[ "$1" = true ]]; then
+      echo "Warning: User already exists; only privileges for required database will be added!"
+    fi
+  else
+    sqlcreate+=("$SQL_CREATE_DATABASE_USER")
+  fi
+
+  if [[ "$1" = true ]]; then
     if [[ ! -z $DB_CHARDB_VERSION ]] || [[ ! -z $DB_REALMDB_VERSION ]] || [[ ! -z $DB_WORLDDB_VERSION ]] || [[ ! -z $DB_LOGSDB_VERSION ]]; then
       echo "Warning: At least one database contains some data that you are about to reset to default!"
     fi
@@ -1767,7 +1773,7 @@ function create_and_fill_char_db()
     fi
   fi
 
-  if [ "${STATUS_CHAR_DB_FOUND}" -eq true ] AND [ ! -z $DB_CHARDB_VERSION ]; then
+  if [ "${STATUS_CHAR_DB_FOUND}" = true ] && [ ! -z $DB_CHARDB_VERSION ]; then
     backup_create "CHAR"
   fi
 
@@ -1793,7 +1799,7 @@ function create_and_fill_realm_db()
     fi
   fi
 
-  if [ "${STATUS_REALM_DB_FOUND}" -eq true ] AND [ ! -z $DB_REALMDB_VERSION ]; then
+  if [ "${STATUS_REALM_DB_FOUND}" = true ] && [ ! -z $DB_REALMDB_VERSION ]; then
     backup_create "REALM"
   fi
 
