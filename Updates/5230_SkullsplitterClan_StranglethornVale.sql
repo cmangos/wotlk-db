@@ -562,19 +562,19 @@ UPDATE creature SET position_x = -12979.166, position_y = -820.834, position_z =
 UPDATE creature SET spawndist = 1, MovementType = 1 WHERE guid IN (1245,1135,1643,1105,835,831); -- confirmed in sniff
 UPDATE creature SET spawndist = 3, MovementType = 1 WHERE guid IN (1641,840,1642); -- confirmed in sniff
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid IN (1136,765);
-UPDATE creature SET position_x = -13000.798, position_y = -837.26324, position_z = 70.496025, orientation = 3.0892, spawndist = 0, MovementType = 2 WHERE guid = 930;
+UPDATE creature SET position_x = -13000.798, position_y = -837.26324, position_z = 70.496025, orientation = 3.0892, spawndist = 0, MovementType = 2 WHERE guid = 830;
 UPDATE creature SET position_x = -13046.342, position_y = -822.08704, position_z = 70.77794, orientation = 2.92, spawndist = 0, MovementType = 2 WHERE guid = 1645;
 -- waypoints
-DELETE FROM creature_movement WHERE Id IN (930,1645);
+DELETE FROM creature_movement WHERE Id IN (830,1645);
 INSERT INTO creature_movement (id, point, positionx, positiony, positionz, orientation, waittime, scriptid) VALUES
--- 930
-(930,1,-13000.798,-837.26324,70.496025,3.0892,25000,0),
-(930,2,-13007.608,-831.7537,70.39927,100,0,0),
-(930,3,-13011.531,-828.30536,70.44224,100,0,0),
-(930,4,-13016.208,-828.5282,70.93052,100,10000,0),
-(930,5,-13010.066,-828.21875,70.45249,100,0,0),
-(930,6,-13006.452,-831.1278,70.32407,100,0,0),
-(930,7,-13000.798,-837.26324,70.496025,100,0,0),
+-- 830
+(830,1,-13000.798,-837.26324,70.496025,3.0892,25000,0),
+(830,2,-13007.608,-831.7537,70.39927,100,0,0),
+(830,3,-13011.531,-828.30536,70.44224,100,0,0),
+(830,4,-13016.208,-828.5282,70.93052,100,10000,0),
+(830,5,-13010.066,-828.21875,70.45249,100,0,0),
+(830,6,-13006.452,-831.1278,70.32407,100,0,0),
+(830,7,-13000.798,-837.26324,70.496025,100,0,0),
 -- 1645
 (1645,1,-13046.342,-822.08704,70.77794,100,30000,0),
 (1645,2,-13036.986,-825.18207,70.90343,100,0,0),
