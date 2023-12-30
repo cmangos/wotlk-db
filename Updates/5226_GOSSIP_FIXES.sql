@@ -82,6 +82,19 @@ INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (1606,1,3945);
 DELETE FROM npc_text WHERE id=1606;
 
+-- Magar 3363
+UPDATE creature_template SET CreatureTypeFlags = 134217728, GossipMenuId=4347 WHERE entry IN (3363);
+DELETE FROM gossip_menu WHERE entry IN (4347);
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES
+(4347, 5530, 0, 0);
+DELETE FROM gossip_menu_option WHERE menu_id IN (4347);
+INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
+(4347,0,3,'Train me.',3266,5,16,0,0,0,0,0,NULL,0,0);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(5530);
+INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
+(5530,1,8147);
+DELETE FROM npc_text WHERE id IN (5530);
+
 -- Karolek 3365
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 3365;
 
