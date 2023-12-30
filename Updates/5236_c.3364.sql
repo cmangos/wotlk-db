@@ -18,7 +18,7 @@ UPDATE npc_vendor SET Slot = 13 WHERE entry IN (3364) AND item = 2325; -- Black 
 UPDATE npc_vendor SET Slot = 14 WHERE entry IN (3364) AND item = 4342; -- Purple Dye
 UPDATE npc_vendor SET Slot = 15 WHERE entry IN (3364) AND item = 10290; -- Pink Dye
 UPDATE npc_vendor SET Slot = 16 WHERE entry IN (3364) AND item = 5772; -- Pattern: Red Woolen Bag
-UPDATE npc_vendor SET Slot = 17 WHERE entry IN (3364) AND item = 6270 -- Pattern: Blue Linen Vest
-UPDATE npc_vendor SET Slot = 18 WHERE entry IN (3364) AND item = 6274 -- Pattern: Blue Overalls
-UPDATE npc_vendor SET Slot = 19 WHERE entry IN (3364) AND item = 10314 -- Pattern: Lavender Mageweave Shirt
-UPDATE npc_vendor SET Slot = 20 WHERE entry IN (3364) AND item = 10317 -- Pattern: Pink Mageweave Shirt
+UPDATE npc_vendor SET Slot = 17 WHERE entry IN (3364) AND item = 6270; -- Pattern: Blue Linen Vest
+UPDATE npc_vendor SET Slot = 18 WHERE entry IN (3364) AND item = 6274; -- Pattern: Blue Overalls
+UPDATE npc_vendor SET Slot = 19 WHERE entry IN (3364) AND item = 10314; -- Pattern: Lavender Mageweave Shirt
+UPDATE npc_vendor SET Slot = 20 WHERE entry IN (3364) AND item = 10317; -- Pattern: Pink Mageweave Shirt
