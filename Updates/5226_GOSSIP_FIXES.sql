@@ -2,6 +2,9 @@
 -- fixed missing gossips menus etc...
 -- fix for display single gossips CreatureTypeFlags = 134217728 - WOTLK ONLY 
 
+-- Unger Statforth 1460
+UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 1460;
+
 -- Adele Fielder 1632
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 1632;
 
@@ -59,6 +62,19 @@ UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 2843;
 
 -- Urda 2851
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 2851;
+
+-- Harold Riggs 3179
+UPDATE creature_template SET GossipMenuId=5665, CreatureTypeFlags = 134217728 WHERE entry=3179;
+DELETE FROM gossip_menu WHERE entry=5665;
+INSERT INTO gossip_menu (entry,text_id) VALUES
+(5665,6961);
+DELETE FROM gossip_menu_option WHERE menu_id IN (5665);
+INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
+(5665,0,3,'Train me.',3266,5,16,0,0,0,0,0,NULL,0,0);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(6961);
+INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
+(6961,1,9557);
+DELETE FROM npc_text WHERE id=6961;
 
 -- Grisha 3305
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 3305;
