@@ -121,27 +121,27 @@ UPDATE npc_vendor_template SET Slot = 46 WHERE entry IN (10000) AND item = 16583
 UPDATE npc_vendor_template SET Slot = 47 WHERE entry IN (10000) AND item = 21177; -- Symbol of Kings
 UPDATE npc_vendor_template SET Slot = 48 WHERE entry IN (10000) AND item = 37201; -- Corpse Dust
 
-UPDATE npc_vendor_template SET Slot = 1  WHERE entry IN (10000) AND item = 4600; -- Cherry Grog
-UPDATE npc_vendor_template SET Slot = 2  WHERE entry IN (10000) AND item = 159; -- Refreshing Spring Water
-UPDATE npc_vendor_template SET Slot = 3  WHERE entry IN (10000) AND item = 1179; -- Ice Cold Milk
-UPDATE npc_vendor_template SET Slot = 4  WHERE entry IN (10000) AND item = 1205; -- Melon Juice
-UPDATE npc_vendor_template SET Slot = 5  WHERE entry IN (10000) AND item = 1708; -- Sweet Nectar
-UPDATE npc_vendor_template SET Slot = 6  WHERE entry IN (10000) AND item = 1645; -- Moonberry Juice
-UPDATE npc_vendor_template SET Slot = 7  WHERE entry IN (10000) AND item = 8766; -- Morning Glory Dew
-UPDATE npc_vendor_template SET Slot = 8  WHERE entry IN (10000) AND item = 787; -- Slitherskin Mackerel
-UPDATE npc_vendor_template SET Slot = 9  WHERE entry IN (10000) AND item = 4592; -- Longjaw Mud Snapper
-UPDATE npc_vendor_template SET Slot = 10 WHERE entry IN (10000) AND item = 4593; -- Bristle Whisker Catfish
-UPDATE npc_vendor_template SET Slot = 11 WHERE entry IN (10000) AND item = 4594; -- Rockscale Cod
-UPDATE npc_vendor_template SET Slot = 12 WHERE entry IN (10000) AND item = 21552; -- Striped Yellowtail
-UPDATE npc_vendor_template SET Slot = 13 WHERE entry IN (10000) AND item = 8957; -- Spinefin Halibut
-UPDATE npc_vendor_template SET Slot = 14 WHERE entry IN (10000) AND item = 4540; -- Tough Hunk of Bread
-UPDATE npc_vendor_template SET Slot = 15 WHERE entry IN (10000) AND item = 4541; -- Freshly Baked Bread
-UPDATE npc_vendor_template SET Slot = 16 WHERE entry IN (10000) AND item = 4542; -- Moist Cornbread
-UPDATE npc_vendor_template SET Slot = 17 WHERE entry IN (10000) AND item = 4544; -- Mulgore Spice Bread
-UPDATE npc_vendor_template SET Slot = 18 WHERE entry IN (10000) AND item = 4601; -- Soft Banana Bread
-UPDATE npc_vendor_template SET Slot = 19 WHERE entry IN (10000) AND item = 8950; -- Homemade Cherry Pie
-UPDATE npc_vendor_template SET Slot = 20 WHERE entry IN (10000) AND item = 30817; -- Simple Flour
-UPDATE npc_vendor_template SET Slot = 21 WHERE entry IN (10000) AND item = 2678; -- Mild Spices
+UPDATE npc_vendor_template SET Slot = 1  WHERE entry IN (10001) AND item = 4600; -- Cherry Grog
+UPDATE npc_vendor_template SET Slot = 2  WHERE entry IN (10001) AND item = 159; -- Refreshing Spring Water
+UPDATE npc_vendor_template SET Slot = 3  WHERE entry IN (10001) AND item = 1179; -- Ice Cold Milk
+UPDATE npc_vendor_template SET Slot = 4  WHERE entry IN (10001) AND item = 1205; -- Melon Juice
+UPDATE npc_vendor_template SET Slot = 5  WHERE entry IN (10001) AND item = 1708; -- Sweet Nectar
+UPDATE npc_vendor_template SET Slot = 6  WHERE entry IN (10001) AND item = 1645; -- Moonberry Juice
+UPDATE npc_vendor_template SET Slot = 7  WHERE entry IN (10001) AND item = 8766; -- Morning Glory Dew
+UPDATE npc_vendor_template SET Slot = 8  WHERE entry IN (10001) AND item = 787; -- Slitherskin Mackerel
+UPDATE npc_vendor_template SET Slot = 9  WHERE entry IN (10001) AND item = 4592; -- Longjaw Mud Snapper
+UPDATE npc_vendor_template SET Slot = 10 WHERE entry IN (10001) AND item = 4593; -- Bristle Whisker Catfish
+UPDATE npc_vendor_template SET Slot = 11 WHERE entry IN (10001) AND item = 4594; -- Rockscale Cod
+UPDATE npc_vendor_template SET Slot = 12 WHERE entry IN (10001) AND item = 21552; -- Striped Yellowtail
+UPDATE npc_vendor_template SET Slot = 13 WHERE entry IN (10001) AND item = 8957; -- Spinefin Halibut
+UPDATE npc_vendor_template SET Slot = 14 WHERE entry IN (10001) AND item = 4540; -- Tough Hunk of Bread
+UPDATE npc_vendor_template SET Slot = 15 WHERE entry IN (10001) AND item = 4541; -- Freshly Baked Bread
+UPDATE npc_vendor_template SET Slot = 16 WHERE entry IN (10001) AND item = 4542; -- Moist Cornbread
+UPDATE npc_vendor_template SET Slot = 17 WHERE entry IN (10001) AND item = 4544; -- Mulgore Spice Bread
+UPDATE npc_vendor_template SET Slot = 18 WHERE entry IN (10001) AND item = 4601; -- Soft Banana Bread
+UPDATE npc_vendor_template SET Slot = 19 WHERE entry IN (10001) AND item = 8950; -- Homemade Cherry Pie
+UPDATE npc_vendor_template SET Slot = 20 WHERE entry IN (10001) AND item = 30817; -- Simple Flour
+UPDATE npc_vendor_template SET Slot = 21 WHERE entry IN (10001) AND item = 2678; -- Mild Spices
 
 -- Snack-O-Matic IV 24934
 UPDATE npc_vendor SET Slot = 1 WHERE entry IN (24934) AND item = 159; -- Refreshing Spring Water
