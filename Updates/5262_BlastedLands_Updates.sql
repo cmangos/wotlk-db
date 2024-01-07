@@ -163,8 +163,8 @@ UPDATE creature SET position_x = -11759.515625, position_y = -3019.687988, posit
 UPDATE creature SET position_x = -11750.381836, position_y = -2905.866455, position_z = 5.561323 WHERE guid = 3843;
 
 -- Servant of Grol 7669
-UPDATE creature SET spawndist = 1, MovementType = 1 WHERE id = 2671; -- confirmed
-UPDATE creature SET position_x = -11540.997, position_y = -2896.7283, position_z = 10.740564, spawndist = 0, MovementType = 4 WHERE id = 3102;
+UPDATE creature SET spawndist = 1, MovementType = 1 WHERE guid = 2671; -- confirmed
+UPDATE creature SET position_x = -11540.997, position_y = -2896.7283, position_z = 10.740564, spawndist = 0, MovementType = 4 WHERE guid = 3102;
 DELETE FROM creature_movement WHERE id IN (3102);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 (3102,1,-11540.997,-2896.7283,10.740564,100,0,0),
@@ -243,9 +243,9 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`Positi
 (19907,20,-12197.875,-2730.1118,10.567487,100,1000,0);
 
 -- Nethergarde Cleric 6000
-UPDATE creature SET position_x = -10893.877, position_y = -3254.511, position_z = 67.38293, spawndist = 0, MovementType = 4 WHERE id = 3690; -- linear
-UPDATE creature SET position_x = -10970.400, position_y = -3362.6899, position_z = 65.6759, spawndist = 0, MovementType = 4 WHERE id = 3690; -- linear
-UPDATE creature SET position_x = -11540.997, position_y = -2896.7283, position_z = 10.740564, spawndist = 0, MovementType = 4 WHERE id = 3690; -- linear
+UPDATE creature SET position_x = -10893.877, position_y = -3254.511, position_z = 67.38293, spawndist = 0, MovementType = 4 WHERE guid = 2976; -- linear
+UPDATE creature SET position_x = -10970.400, position_y = -3362.6899, position_z = 65.6759, spawndist = 0, MovementType = 4 WHERE guid = 3666; -- linear
+UPDATE creature SET position_x = -11540.997, position_y = -2896.7283, position_z = 10.740564, spawndist = 0, MovementType = 4 WHERE guid = 3690; -- linear
 DELETE FROM creature_movement WHERE id IN (2976,3666,3690);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 -- 2976
@@ -277,14 +277,14 @@ INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orien
 (3690,7,-11043.081,-3293.3396,53.24697 ,100,1000,0);
 
 -- Nethergarde Engineer 5997
-UPDATE creature SET position_x = -10907.106, position_y = -3179.639, position_z = 49.09751, spawndist = 0, MovementType = 4 WHERE id = 3863; -- linear
-UPDATE creature SET position_x = -10766.128, position_y = -3124.3157, position_z = 36.469063, spawndist = 0, MovementType = 4 WHERE id = 3878; -- linear
-UPDATE creature SET position_x = -10708.568, position_y = -3294.3884, position_z = -7.9201093, spawndist = 0, MovementType = 4 WHERE id = 3775; -- linear
-UPDATE creature SET position_x = -10685.372, position_y = -3524.7156, position_z = -31.3056, spawndist = 0, MovementType = 4 WHERE id = 3774; -- linear
-UPDATE creature SET position_x = -10659.11, position_y = -3595.9583, position_z = -7.4565773, spawndist = 0, MovementType = 4 WHERE id = 2831; -- linear
-UPDATE creature SET position_x = -10809.995, position_y = -3580.722, position_z = -11.798237, spawndist = 0, MovementType = 4 WHERE id = 3781; -- linear
-UPDATE creature SET position_x = -10534.50, position_y = -3295, position_z = 2.344393, spawndist = 0, MovementType = 4 WHERE id = 3786; -- linear
-UPDATE creature SET position_x = -10597.946, position_y = -3300.626, position_z = 4.4919586, spawndist = 0, MovementType = 4 WHERE id = 3713; -- linear
+UPDATE creature SET position_x = -10907.106, position_y = -3179.639, position_z = 49.09751, spawndist = 0, MovementType = 4 WHERE guid = 3863; -- linear
+UPDATE creature SET position_x = -10766.128, position_y = -3124.3157, position_z = 36.469063, spawndist = 0, MovementType = 4 WHERE guid = 3878; -- linear
+UPDATE creature SET position_x = -10708.568, position_y = -3294.3884, position_z = -7.9201093, spawndist = 0, MovementType = 4 WHERE guid = 3775; -- linear
+UPDATE creature SET position_x = -10685.372, position_y = -3524.7156, position_z = -31.3056, spawndist = 0, MovementType = 4 WHERE guid = 3774; -- linear
+UPDATE creature SET position_x = -10659.11, position_y = -3595.9583, position_z = -7.4565773, spawndist = 0, MovementType = 4 WHERE guid = 2831; -- linear
+UPDATE creature SET position_x = -10809.995, position_y = -3580.722, position_z = -11.798237, spawndist = 0, MovementType = 4 WHERE guid = 3781; -- linear
+UPDATE creature SET position_x = -10534.50, position_y = -3295, position_z = 2.344393, spawndist = 0, MovementType = 4 WHERE guid = 3786; -- linear
+UPDATE creature SET position_x = -10597.946, position_y = -3300.626, position_z = 4.4919586, spawndist = 0, MovementType = 4 WHERE guid = 3713; -- linear
 DELETE FROM creature_movement WHERE id IN (3863,3878,3775,3774,2831,3781,3786,3713);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 -- 3863 - corrected
