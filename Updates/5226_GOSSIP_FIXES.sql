@@ -2,6 +2,19 @@
 -- fixed missing gossips menus etc...
 -- fix for display single gossips CreatureTypeFlags = 134217728 - WOTLK ONLY 
 
+-- Rogvar 1386
+UPDATE creature_template SET GossipMenuId=4134, CreatureTypeFlags = 134217728 WHERE entry=1386;
+DELETE FROM gossip_menu WHERE entry=4134;
+INSERT INTO gossip_menu (entry,text_id) VALUES
+(4134,5108);
+DELETE FROM gossip_menu_option WHERE menu_id IN (4134);
+INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
+(4134,0,3,'Train me.',3266,5,16,0,0,0,0,0,NULL,0,0);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(5108);
+INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
+(5108,1,7774);
+DELETE FROM npc_text WHERE id=5108;
+
 -- Unger Statforth 1460
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 1460;
 
@@ -137,6 +150,9 @@ DELETE FROM npc_text_broadcast_text WHERE Id IN(5129);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (5129,1,7813);
 DELETE FROM npc_text WHERE id=5129;
+
+-- Breyk 6026
+UPDATE creature_template SET GossipMenuId=6944, CreatureTypeFlags = 134217728 WHERE entry=6026;
 
 -- Roxxik 11017
 UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 11017;
