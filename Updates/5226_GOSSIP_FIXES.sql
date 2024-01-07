@@ -155,6 +155,12 @@ INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (7778,1,10753);
 DELETE FROM npc_text WHERE id=7778;
 
+-- Krugosh 18747
+UPDATE creature_template SET GossipMenuId = 7690, CreatureTypeFlags = 134217728 WHERE entry = 18747;
+
+-- Moorutu 18755
+UPDATE creature_template SET CreatureTypeFlags = 134217728 WHERE entry = 18755;
+
 -- Baxter 18988 
 UPDATE creature_template SET NpcFlags = 209, CreatureTypeFlags = 134217728 WHERE entry = 18988;
 DELETE FROM gossip_menu_option WHERE menu_id = 7818;
