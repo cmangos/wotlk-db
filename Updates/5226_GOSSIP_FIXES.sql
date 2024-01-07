@@ -154,3 +154,22 @@ DELETE FROM npc_text_broadcast_text WHERE Id IN(7778);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (7778,1,10753);
 DELETE FROM npc_text WHERE id=7778;
+
+-- Baxter 18988 
+UPDATE creature_template SET NpcFlags = 209, CreatureTypeFlags = 134217728 WHERE entry = 18988;
+DELETE FROM gossip_menu_option WHERE menu_id = 7818;
+INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
+(7818,0,1,'Let me browse your goods.',0,3,128,0,0,0,0,0,'',0,0),
+(7818,1,3,'I would like to train.',0,5,16,0,0,0,0,0,'',0,0);
+DELETE FROM `npc_vendor` WHERE entry = 18988;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `slot`, `ExtendedCost`, `condition_id`, `comments`) VALUES
+-- TDB
+/*
+(18988,27736,0,0,1,0,0,'Master Cookbook'),
+(18988,159,0,0,2,0,0,'Refreshing Spring Water'),
+(18988,2678,0,0,3,0,0,'Mild Spices'),
+(18988,30817,0,0,4,0,0,'Simple Flour');
+*/
+-- Wotlk
+(18988,159,0,0,1,0,0,'Refreshing Spring Water'),
+(18988,30817,0,0,2,0,0,'Simple Flour');
