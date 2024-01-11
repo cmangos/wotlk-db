@@ -260,10 +260,11 @@ DELETE FROM gossip_menu WHERE entry=1341;
 INSERT INTO gossip_menu (entry,text_id,condition_id) VALUES
 (1341,1995,0),
 (1341,1973,843); -- Player RaceMask: 512 (BE only)
-DELETE FROM npc_text_broadcast_text WHERE Id IN(5535);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(1973,1995);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
+(1995,1,4470),
 (1973,1,4455);
-DELETE FROM npc_text WHERE id IN (1973);
+DELETE FROM npc_text WHERE id IN (1973,1995);
 
 -- object
 -- Solid Chest 4149
