@@ -7,8 +7,7 @@ EndDBScriptData */
 
 SET @CGUID := 6030000; -- creatures
 SET @OGUID := 6030000; -- gameobjects
-SET @PGUID := 53500;   -- pools
-
+SET @SGGUID := 6030000; -- spawn groups
 
 
 -- =========
@@ -2746,16 +2745,44 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
--- =======
--- POOLING
--- =======
+-- ============
+-- SPAWN GROUPS
+-- ============
 
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_pool` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `WorldStateExpression`, `Flags`, `StringId`) VALUES
+(@SGGUID+0, 'Ulduar - Ignis Encounter - Ignis and Iron Constructs', 0, 0, 31501, 0, 2, 0);
+
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`) VALUES
+(@SGGUID+0, @CGUID+270),
+(@SGGUID+0, @CGUID+271),
+(@SGGUID+0, @CGUID+272),
+(@SGGUID+0, @CGUID+273),
+(@SGGUID+0, @CGUID+274),
+(@SGGUID+0, @CGUID+275),
+(@SGGUID+0, @CGUID+276),
+(@SGGUID+0, @CGUID+277),
+(@SGGUID+0, @CGUID+278),
+(@SGGUID+0, @CGUID+279),
+(@SGGUID+0, @CGUID+280),
+(@SGGUID+0, @CGUID+281),
+(@SGGUID+0, @CGUID+282),
+(@SGGUID+0, @CGUID+283),
+(@SGGUID+0, @CGUID+284),
+(@SGGUID+0, @CGUID+285),
+(@SGGUID+0, @CGUID+286),
+(@SGGUID+0, @CGUID+287),
+(@SGGUID+0, @CGUID+288),
+(@SGGUID+0, @CGUID+289),
+(@SGGUID+0, @CGUID+269);
+
+DELETE FROM `worldstate_name` WHERE `Id` IN (31500, 31501);
+INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES
+(31501, 'Ulduar - Respawn Ignis together with adds');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (31500, 31501);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES
+(31501, 42, 4834, 1, 0, 0, 0, 'Worldstate: Ignis not Dead');
+
 
 -- =========
 -- DBSCRIPTS
@@ -2830,6 +2857,13 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 INSERT INTO creature_spawn_data (guid, Id) VALUES
 -- Razorscale 33186
 (@CGUID+323, 1);
+
+INSERT INTO `dbscripts_on_relay` (`id`, `command`, `dataint`, `comments`) VALUES
+(29100, 0, 34308, 'Ignis - Say Flame Jets'),
+(29100, 0, 33465, 'Ignis - Emote Flame Jets'),
+(29101, 0, 34310, 'Ignis - Say Slagpot'),
+(29103, 0, 34307, 'Ignis - Say Constructs'),
+(29105, 0, 33871, 'Ignis - Say Berserk');
 
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
