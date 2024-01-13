@@ -449,3 +449,19 @@ INSERT INTO creature_spawn_entry (guid,entry) VALUES
 (2403,588),(2403,701),(2403,595),(2433,588),(2433,701),(2433,595),(2484,588),(2484,701),(2484,595),
 (2487,588),(2487,701),(2487,595),(2498,588),(2498,701),(2498,595),(2501,588),(2501,701),(2501,595),
 (2508,588),(2508,701),(2508,595),(2509,588),(2509,701),(2509,595),(2514,588),(2514,701),(2514,595);
+
+-- randomization of groups
+INSERT INTO worldstate_name VALUES
+(330001,'Custom - STV - Group 01'),
+(330002,'Custom - STV - Group 02');
+INSERT INTO conditions(condition_entry, type, value1, value2, value3) VALUES
+(9900,42,330001,1,0),
+(9901,42,330001,1,1),
+(9902,42,330002,1,0),
+(9903,42,330002,1,1);
+
+UPDATE spawn_group SET WorldState=9900 WHERE Id IN(19905);
+UPDATE spawn_group SET WorldState=9901 WHERE Id IN(19906);
+UPDATE spawn_group SET WorldState=9902 WHERE Id IN(19903);
+UPDATE spawn_group SET WorldState=9903 WHERE Id IN(19900);
+
