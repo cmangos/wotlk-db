@@ -5,7 +5,7 @@
 UPDATE locales_creature SET subname_loc8 = '\"Железный орел\"' WHERE entry = 24929;
 
 -- item (item) part
--- https://www.wowhead.com/wotlk/ru/npc=entry
+-- https://www.wowhead.com/wotlk/ru/item=entry
 
 UPDATE locales_item SET description_loc8 = 'Вся кромка лезвия испещрена зазубринами.' WHERE entry = 45947;
 UPDATE locales_item SET description_loc8 = 'Путь защитника' WHERE entry = 21196;
