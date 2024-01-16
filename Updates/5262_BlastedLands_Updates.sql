@@ -245,7 +245,7 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`,`Positi
 -- Nethergarde Cleric 6000
 UPDATE creature SET position_x = -10893.877, position_y = -3254.511, position_z = 67.38293, spawndist = 0, MovementType = 4 WHERE guid = 2976; -- linear
 UPDATE creature SET position_x = -10970.400, position_y = -3362.6899, position_z = 65.6759, spawndist = 0, MovementType = 4 WHERE guid = 3666; -- linear
-UPDATE creature SET position_x = -11540.997, position_y = -2896.7283, position_z = 10.740564, spawndist = 0, MovementType = 4 WHERE guid = 3690; -- linear
+UPDATE creature SET position_x = -11108.942, position_y = -3356.9956, position_z = 55.209175, spawndist = 0, MovementType = 4 WHERE guid = 3690; -- linear
 DELETE FROM creature_movement WHERE id IN (2976,3666,3690);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 -- 2976
