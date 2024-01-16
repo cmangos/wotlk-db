@@ -154,7 +154,7 @@ DELETE FROM creature_linking WHERE guid IN (90014);
 DELETE FROM creature where guid IN (90014);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (90014,596,0,1,1,-11229.19,1476.942,19.18395,4.328416,115200,172800,2,1);
-UPDATE creature SET position_x = -11277.14, position_y = 1512.821, position_z = 37.32769, spawndist = 2, movementtype = 1 WHERE guid IN (89573,90014);
+UPDATE creature SET position_x = -11277.14, position_y = 1512.821, position_z = 37.32769, spawndist = 2, movementtype = 1 WHERE guid IN (89573);
 DELETE FROM creature_movement WHERE id IN (89573,90014);
 -- moved to spawn groups
 DELETE FROM `spawn_group` WHERE id = 19898;
