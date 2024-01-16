@@ -149,14 +149,14 @@ INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orien
 -- Stagalbog Cave
 -- Marsh murlocks
 -- duplicates
-DELETE FROM creature_addon WHERE guid IN (2688,42597);
-DELETE FROM creature_movement WHERE Id IN (2688,42597);
-DELETE FROM game_event_creature WHERE guid IN (2688,42597);
-DELETE FROM game_event_creature_data WHERE guid IN (2688,42597);
-DELETE FROM creature_battleground WHERE guid IN (2688,42597);
-DELETE FROM creature_linking WHERE guid IN (2688,42597)
- OR master_guid IN (2688,42597);
-DELETE FROM creature WHERE guid IN (2688,42597);
+DELETE FROM creature_addon WHERE guid IN (2688,43597);
+DELETE FROM creature_movement WHERE Id IN (2688,43597);
+DELETE FROM game_event_creature WHERE guid IN (2688,43597);
+DELETE FROM game_event_creature_data WHERE guid IN (2688,43597);
+DELETE FROM creature_battleground WHERE guid IN (2688,43597);
+DELETE FROM creature_linking WHERE guid IN (2688,43597)
+ OR master_guid IN (2688,43597);
+DELETE FROM creature WHERE guid IN (2688,43597);
 UPDATE creature SET position_x = -10793.736328, position_y = -3741.452881, position_z = 25.449162, spawndist = 3, MovementType = 1 WHERE guid = 43602;
 UPDATE creature SET position_x = -10843.285156, position_y = -3738.066406, position_z = 23.610739, spawndist = 3, MovementType = 1 WHERE guid = 43599;
 UPDATE creature SET position_x = -10887.460938, position_y = -3738.090332, position_z = 22.355803, spawndist = 3, MovementType = 1 WHERE guid = 43443;
@@ -206,7 +206,7 @@ INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orien
 -- Swamp Talker 950
 -- has randomized spawn point
 -- missing added
-DELETE FROM creature_addon WHERE guid IN (42597); -- removed guid reused
+DELETE FROM creature_addon WHERE guid IN (42597); -- new guid
 DELETE FROM creature_movement WHERE id IN (42597);
 DELETE FROM game_event_creature WHERE guid IN (42597);
 DELETE FROM game_event_creature_data WHERE guid IN (42597);
@@ -216,20 +216,20 @@ DELETE FROM creature where guid IN (42597);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (42597,950,0,1,1,-10900.865,-3623.7715,15.969727,0,300,300,3,1);
 UPDATE creature SET spawndist = 3, MovementType = 1 WHERE guid = 43596;
-DELETE FROM `spawn_group` WHERE id = 19906;
+DELETE FROM `spawn_group` WHERE id = 19898;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(19906, 'Swamp of Sorrows - Swamp Talker 950', 0, 1, 0, 0); -- 1 spawn max
-DELETE FROM `spawn_group_spawn` WHERE id = 19906;
+(19898, 'Swamp of Sorrows - Swamp Talker 950', 0, 1, 0, 0); -- 1 spawn max
+DELETE FROM `spawn_group_spawn` WHERE id = 19898;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
-(19906, 42597,-1),
-(19906, 43596,-1);
+(19898, 42597,-1),
+(19898, 43596,-1);
 
 -- Stonard Explorer 862
 UPDATE creature SET position_x = -10099.414062, position_y = -3408.704834, position_z = 22.169235, spawndist = 40, MovementType = 1 WHERE guid = 38858; -- confirmed
 
 -- Draenei Exile 11198
 -- custom made path corrected
-UPDATE creature SET position_x = -10951.789, position_y = -3703.1372, position_z = 26.94473, spawndist = 0, MovementType = 2 WHERE guid = 34159;
+UPDATE creature SET position_x = -10119.581, position_y = -2789.5852, position_z = 28.12961, spawndist = 0, MovementType = 2 WHERE guid = 34159;
 DELETE FROM creature_movement WHERE id IN (34159);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 (34159,1 ,-10119.581,-2789.5852,28.12961,3.9968,30000,0),
