@@ -90,6 +90,11 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2473804,2,22,79,3,0,24740,33070,7|0x10,0,0,0,0,0,0,0,0,'buddy - faction'),
 (2473805,1,22,80,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'faction'),
 (2473805,2,22,1076,0,0,24740,33070,7|0x10,0,0,0,0,0,0,0,0,'buddy - faction');
+-- unload if killed
+DELETE FROM dbscripts_on_creature_death WHERE id IN (24738,24740);
+INSERT INTO dbscripts_on_creature_death (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(24738,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive'),
+(24740,1,21,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
 
 -- Benjari Edune 24739
 UPDATE creature_template SET EquipmentTemplateId = 188, MovementType = 0 WHERE Entry = 24739; -- equip 1 - 5305
