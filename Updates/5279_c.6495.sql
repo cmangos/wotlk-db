@@ -36,3 +36,10 @@ INSERT INTO creature_movement_template (Entry, Point, PositionX, PositionY, Posi
 (6495,16,-6186.81,-3940.9854,-58.625053  ,100,0,0),
 (6495,17,-6185.051,-3928.509,-58.656975  ,100,0,0),
 (6495,18,-6183.9663,-3917.9463,-58.781975,100,0,0);
+-- vendor list corrected
+UPDATE npc_vendor SET Slot = 1 WHERE entry IN (6495) AND item = 159; -- Refreshing Spring Water
+UPDATE npc_vendor SET Slot = 2 WHERE entry IN (6495) AND item = 1179; -- Ice Cold Milk
+UPDATE npc_vendor SET Slot = 3 WHERE entry IN (6495) AND item = 1205; -- Melon Juice
+UPDATE npc_vendor SET Slot = 4 WHERE entry IN (6495) AND item = 1708; -- Sweet Nectar
+UPDATE npc_vendor SET Slot = 5 WHERE entry IN (6495) AND item = 1645; -- Moonberry Juice
+UPDATE npc_vendor SET Slot = 6 WHERE entry IN (6495) AND item = 8766; -- Morning Glory Dew
