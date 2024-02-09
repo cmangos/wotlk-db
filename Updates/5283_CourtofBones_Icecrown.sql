@@ -166,7 +166,7 @@ DELETE FROM creature where guid IN (535559,535560);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (535559,31754,571,1,1,6419.19,2516.13,482.817,0.221548,300,300,10,1),
 (535560,31754,571,1,1,6452.25,2444.25,464.509,2.1813,300,300,10,1);
-UPDATE creature SET position_x = 6041.1895, position_y = 2389.3042, position_z = 514.2952, orientation = 1.96, spawndist = 0, MovementType = 4 WHERE guid = 530913;
+UPDATE creature SET position_x = 6162.7993, position_y = 2574.4844, position_z = 570.2201, orientation = 1.96, spawndist = 0, MovementType = 4 WHERE guid = 530913;
 UPDATE creature SET position_x = 6256.3833, position_y = 2617.3342, position_z = 570.20764, orientation = 1.99, spawndist = 0, MovementType = 4 WHERE guid = 530915;
 UPDATE creature SET position_x = 6358.278809, position_y = 2487.655518, position_z = 485.022308, spawndist = 10, MovementType = 1 WHERE guid = 530912;
 UPDATE creature SET position_x = 6390.546387, position_y = 2454.693848, position_z = 476.245575, spawndist = 10, MovementType = 1 WHERE guid = 530910;

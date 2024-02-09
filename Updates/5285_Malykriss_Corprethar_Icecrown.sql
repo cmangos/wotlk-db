@@ -1,6 +1,9 @@
 -- Malykriss: The Vile Hold - Icecrown
 -- Corp'rethar: The Horror Gate - Icecrown
 
+-- Saronite Shaper 31322
+UPDATE creature_template SET StaticFlags1 = 2147483648 WHERE entry = 31322;
+
 -- Umbral Brute 30922
 UPDATE creature SET position_x = 6472.7524, position_y = 1823.8618, position_z = 524.51904, orientation = 1.157, spawndist = 0, MovementType = 4 WHERE guid IN (529087,530308); -- linear
 UPDATE creature SET position_x = 6341.303, position_y = 1774.9261, position_z = 525.23376, orientation = 3.19, spawndist = 0, MovementType = 4 WHERE guid = 529088; -- linear
