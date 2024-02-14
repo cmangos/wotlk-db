@@ -9,6 +9,13 @@ UPDATE `quest_template` SET `RequestItemsText` = 'Did you teach ''em a lesson?' 
 -- for 'Uncommon Scents' quests
 UPDATE `quest_template` SET `OfferRewardText` = 'Hey. You got some time on your hands? I could use someone like you.' WHERE `entry` IN (24804, 24805);
 
+-- for 'A Cloudlet of Classy Cologne' quest
+UPDATE `quest_template` SET `OfferRewardText` = 'Nice work, $n! People will be buying Crown colognes by the crate-load now that they''ve had a chance to try them.$b$bHere''s a little something for helping us out.' WHERE `entry` = 24635;
+
+-- for 'A Perfect Puff of Perfume' quest
+UPDATE `quest_template` SET `OfferRewardText` = 'Great work, $n! People will come running to buy Crown perfumes now that they''ve had a chance to sample their wonders.$b$bHere''s a little something for helping us out.' WHERE `entry` = 24629;
+UPDATE `quest_template` SET `RequestItemsText` = 'That perfume isn''t going to give itself out, you know.$b$bGet spraying!' WHERE `entry` = 24629;
+
 -- Horde (text fixes or missing texts added)
 UPDATE `quest_template` SET `OfferRewardText` = 'Hey, thanks, kid. Give it over, let''s take a look.$b$b<He takes the device from you and fiddles with it.>$b$bOh, that ain''t good.' WHERE `entry` = 24536;
 
