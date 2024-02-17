@@ -55,7 +55,7 @@ UPDATE `gameobject_template` SET `flags`=2 WHERE `entry`=184304;
 UPDATE `creature_template` SET `InteractionPauseTimer`=0 WHERE `Entry`=20378;
 
 -- Captain Edward Hanes, Captain Sanders
-UPDATE `creature_template` SET `SpeedWalk`=1, `EquipmentTemplateId`=1229 WHERE `Entry` IN (20400,20351); -- UNIT_VIRTUAL_ITEM_SLOT_ID: 2704
+UPDATE `creature_template` SET `SpeedWalk`=1, `EquipmentTemplateId`=68 WHERE `Entry` IN (20400,20351); -- UNIT_VIRTUAL_ITEM_SLOT_ID: 2704
 UPDATE broadcast_text SET EmoteID1=1 WHERE Id IN (18064,18065,18066,18070,18074,18077,18078,18079,18081,18082,18083);
 UPDATE broadcast_text SET EmoteID1=5 WHERE Id IN (18067,18072,18073);
 UPDATE broadcast_text SET EmoteID1=273 WHERE Id=18068;
@@ -66,4 +66,5 @@ UPDATE broadcast_text SET ChatTypeID=2 WHERE Id IN (18076,18080);
 -- Caretaker Smithers
 UPDATE broadcast_text SET ChatTypeID=2 WHERE Id IN (17997,17998,17999,18011);
 UPDATE broadcast_text SET EmoteID1=1 WHERE Id IN (18009,18012);
-UPDATE `creature_equip_template` SET `equipentry1`=1485, `SpeedWalk`=1 WHERE `entry`=20363; -- original: 1117 (fishing rod?)
+-- UPDATE `creature_equip_template` SET `equipentry1`=1485 WHERE `entry`=20363; -- original: 1117 (fishing rod?)
+UPDATE `creature_template` SET `SpeedWalk`=1 WHERE `Entry`=20363;
