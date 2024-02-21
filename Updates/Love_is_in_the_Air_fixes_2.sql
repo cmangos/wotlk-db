@@ -127,8 +127,11 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position
 (@CGUID+46, 38035, 0, 1, 1, -406.282989501953125, 163.5868072509765625, 75.5319976806640625, 0, 1, 1, 0, 0), -- Hillsbrad Foothills
 (@CGUID+47, 38035, 0, 1, 1, -9454.0869140625, 522.810791015625, 55.90142440795898437, 0, 1, 1, 0, 0), -- Elwynn Forest
 (@CGUID+48, 38035, 1, 1, 1, -3370.935791015625, -4168.5537109375, 17.8669586181640625, 0, 1, 1, 0, 0), -- Dustwallow Marsh
-(@CGUID+49, 38035, 530, 1, 1, -1808.5399169921875, 4844.61279296875, 1.952302336692810058, 0, 1, 1, 0, 0); -- Terokkar Forest
+(@CGUID+49, 38035, 530, 1, 1, -1808.5399169921875, 4844.61279296875, 1.952302336692810058, 0, 1, 1, 0, 0), -- Terokkar Forest
 -- (@CGUID+0, 38035, 1, 1, 1, 6764.822265625, -4905.1337890625, 774.3394775390625, 0, 1, 1, 0, 0); -- Winterspring
+-- Shattrath
+(@CGUID+50, 40438, 530, 1, 1, -1985.236083984375, 5377.0634765625, -12.3448219299316406, 0.209439516067504882, 120, 120, 0, 0), -- Steamwheedle Shyster
+(@CGUID+51, 40438, 530, 1, 1, -1742.8541259765625, 5483.06103515625, -12.3448238372802734, 3.40339207649230957, 120, 120, 0, 0);
 
 -- ------------------------------------------------------------- --
 
@@ -241,3 +244,41 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 UPDATE creature_template SET ExtraFlags = ExtraFlags|4096 WHERE entry IN (36817, 36812, 37964, 37966, 37981, 37980);
 
 -- -------------------------------------------------- --
+
+-- https://www.wowhead.com/wotlk/item=50130
+-- Snagglebolt's Khorium Bomb can now destroy a Chemical Wagon
+-- something with the distance should be tweaked...
+-- if you throw the bomb from max distance you will get only the error message 'Invalid target' and your bomb is gone, if you are closer and everything works
+DELETE FROM spell_script_target WHERE entry IN (71024, 71599);
+INSERT INTO spell_script_target (`entry`, `type`, `targetEntry`) VALUES
+(71024, 0, 201716),
+(71599, 1, 38035);
+
+-- -------------------------------------------------- --
+
+-- https://www.wowhead.com/wotlk/spell=71520/heavily-perfumed-pulse
+-- https://www.wowhead.com/wotlk/spell=71507/heavily-perfumed
+
+-- GUESSWORK !!! I have absolutely no idea whether this is correct or not! But it works.
+-- Caster is 'Love Guard Perfume Bunny'
+DELETE FROM `creature_ai_scripts` WHERE (`creature_id`=38288);
+INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param3`) VALUES
+(3828801, 38288, 29, 1, 1000, 1000, 360000, 360000, 11, 71520, 0);
+UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE `entry` = 38288;
+
+-- spell needs a range limitation ??
+-- Spell will effect only Guards (maybe random?) in Stormwind and Orgrimmer [List still needs to be expanded]
+DELETE FROM `spell_script_target` WHERE (`entry`=71520);
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
+(71520, 1, 68),
+(71520, 1, 1423),
+(71520, 1, 1756),
+(71520, 1, 1976),
+(71520, 1, 3296),
+(71520, 1, 31416),
+(71520, 1, 12480),
+(71520, 1, 12481);
+
+-- -------------------------------------------------- --
+
+
