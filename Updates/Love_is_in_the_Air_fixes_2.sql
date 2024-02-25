@@ -1,6 +1,9 @@
 
 
 SET @OGUID := YYYYYYY;
+SET @CGUID := XXXXXXX;
+SET @C_GUID := ZZZZZZZ; -- for Crown XYZ mobs + their creature_addon
+
 
 DELETE FROM `gameobject` WHERE `guid` BETWEEN @OGUID+0 AND @OGUID+53;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
@@ -67,9 +70,6 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 (@OGUID+53, 201716, 571, 1, 1, 5638.02001953125, 107.015998840332, 154.996002197266, 0, 0, 0, 0, 1, 120, 120);
 
 -- ------------------------------------------------------------- --
-
-SET @CGUID := XXXXXXX;
-SET @C_GUID := ZZZZZZZ; -- for Crown XYZ mobs + their creature_addon
 
 DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+53;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
@@ -362,22 +362,22 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `p
 (@C_GUID+84, 0, 0, 2, 0, 0, 0, '71856'),
 (@C_GUID+85, 0, 0, 2, 0, 0, 0, '71856');
 
--- (@CGUID+86, 0, 8, 1, 0, 0, 0, '71856'), -- Crown Sprinkler
--- (@CGUID+87, 0, 8, 1, 0, 0, 0, '71856'),
--- (@CGUID+88, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+89, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+90, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+91, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+92, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+93, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+94, 0, 8, 1, 0, 0, 0, '71856'),
--- (@CGUID+95, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+96, 0, 0, 2, 0, 69, 0, '71856'),
--- (@CGUID+97, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+98, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+99, 0, 0, 2, 0, 69, 0, '71856'),
--- (@CGUID+100, 0, 0, 2, 0, 0, 0, '71856'),
--- (@CGUID+101, 0, 0, 2, 0, 0, 0, '71856');
+-- (@C_GUID+86, 0, 8, 1, 0, 0, 0, '71856'), -- Crown Sprinkler
+-- (@C_GUID+87, 0, 8, 1, 0, 0, 0, '71856'),
+-- (@C_GUID+88, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+89, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+90, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+91, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+92, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+93, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+94, 0, 8, 1, 0, 0, 0, '71856'),
+-- (@C_GUID+95, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+96, 0, 0, 2, 0, 69, 0, '71856'),
+-- (@C_GUID+97, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+98, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+99, 0, 0, 2, 0, 69, 0, '71856'),
+-- (@C_GUID+100, 0, 0, 2, 0, 0, 0, '71856'),
+-- (@C_GUID+101, 0, 0, 2, 0, 0, 0, '71856');
 
 DELETE FROM `creature_movement` WHERE `Id`=@C_GUID+42;
 INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES 
@@ -526,4 +526,13 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
 
 -- -------------------------------------------------- --
 
+-- assign all spawns to event 8 (Love is in the air)
+DELETE FROM `game_event_gameobject` WHERE `event` = 8 AND `guid` BETWEEN @OGUID+0 AND @OGUID+53;
+DELETE FROM `game_event_creature` WHERE `event` = 8 AND `guid` BETWEEN @CGUID+0 AND @CGUID+53;
+DELETE FROM `game_event_creature` WHERE `event` = 8 AND `guid` BETWEEN @C_GUID+0 AND @C_GUID+85;
 
+INSERT INTO `game_event_gameobject` SELECT `guid`, 8 FROM `gameobject` WHERE `guid` BETWEEN @OGUID+0 AND @OGUID+53;
+INSERT INTO `game_event_creature` SELECT `guid`, 8 FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+53;
+INSERT INTO `game_event_creature` SELECT `guid`, 8 FROM `creature` WHERE `guid` BETWEEN @C_GUID+0 AND @C_GUID+85;
+
+-- -------------------------------------------------- --
