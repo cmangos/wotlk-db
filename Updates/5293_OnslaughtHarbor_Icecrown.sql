@@ -1066,7 +1066,7 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 UPDATE creature SET position_x = 7479.3003, position_y = 4816.151, position_z = 7.1697974, spawndist = 0, MovementType = 0 WHERE guid IN (525657,525658);
 DELETE FROM `spawn_group` WHERE id IN (34061);
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
-(34061,'Icecrown - Onslaught Harbor - Onslaught Darkweaver 29614 x2 - Patrol 1', 0, 0, 0, 0);
+(34061,'Icecrown - Onslaught Harbor - Onslaught Darkweaver 29614 x2 - Patrol 1', 0, 0, 0, 0x10); -- mirrored
 DELETE FROM `spawn_group_spawn` WHERE id IN (34061);
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (34061, 525657, 0),
