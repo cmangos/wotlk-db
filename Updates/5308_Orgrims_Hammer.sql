@@ -37,7 +37,7 @@ INSERT INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
 DELETE FROM npc_text_broadcast_text WHERE Id IN (13932);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (13932,1,31947);
-DELETE FROM npc_text WHERE id=31947;
+DELETE FROM npc_text WHERE id=13932;
 DELETE FROM creature_movement_template WHERE Entry = 31261;
 INSERT INTO creature_movement_template (`Entry`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 (31261,1 ,-39.319824,-16.675415,15.749695,100,0,0),
@@ -70,7 +70,7 @@ INSERT INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
 DELETE FROM npc_text_broadcast_text WHERE Id IN (14115);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (14115,1,32696);
-DELETE FROM npc_text WHERE id=32696;
+DELETE FROM npc_text WHERE id=14115;
 DELETE FROM creature_movement_template WHERE Entry = 32301;
 INSERT INTO creature_movement_template (`Entry`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 (32301,1 ,8.038086,-16.039062,34.703186,100,1000,0),
