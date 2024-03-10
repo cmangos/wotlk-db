@@ -283,7 +283,7 @@ INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_
 (500620,31731,571,1,1,7878.154,911.8492,453.2145,6.1256,300,300,0,0),
 (528257,31731,571,1,1,7900.165,920.00024,453.83994,4.15388,300,300,0,0),
 (500604,31731,571,1,1,7615.057,913.64044,480.33026,1.9024,300,300,0,0);
-DELETE FROM dbscripts_on_relay WHERE id IN (20853,20853);
+DELETE FROM dbscripts_on_relay WHERE id IN (20853,20854);
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (20853,1,28,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Wyrm Reanimator 31731 EAI: Stand'),
 (20853,2,31,27047,30,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Wyrm Reanimator 31731 EAI: search for 27047'),
