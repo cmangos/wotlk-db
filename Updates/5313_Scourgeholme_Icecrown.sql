@@ -79,3 +79,4 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (20346,0,31138,0,'Part of Captured Crusader 30407 EAI - Random Say LOS 4'),
 (20346,0,31140,0,'Part of Captured Crusader 30407 EAI - Random Say LOS 5'),
 (20346,0,31141,0,'Part of Captured Crusader 30407 EAI - Random Say LOS 6');
+UPDATE broadcast_text SET ChatTypeID=1 WHERE Id IN (31135,31136,31137,31138,31140,31141);
