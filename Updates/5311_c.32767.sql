@@ -1,4 +1,5 @@
 -- Frostbrood Sentry 32767
+UPDATE creature_template SET StaticFlags1 = 2147483648 WHERE entry = 32767;
 UPDATE creature SET position_x = 7306.0723, position_y = 1043.9573, position_z = 466.83, spawndist = 0, MovementType = 3 WHERE guid = 532939;
 UPDATE creature SET position_x = 7231.3604, position_y = 1127.3977, position_z = 457.01227, spawndist = 0, MovementType = 3 WHERE guid = 532940;
 UPDATE creature SET position_x = 7310.401, position_y = 1338.8491, position_z = 469.01004, spawndist = 0, MovementType = 3 WHERE guid = 532941;
