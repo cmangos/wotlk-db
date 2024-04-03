@@ -1,0 +1,446 @@
+-- Ymirheim - Icecrown
+
+-- duplicates
+DELETE FROM creature_addon WHERE guid IN (530021,530764,530767,530901,531549);
+DELETE FROM creature_movement WHERE Id IN (530021,530764,530767,530901,531549);
+DELETE FROM game_event_creature WHERE guid IN (530021,530764,530767,530901,531549);
+DELETE FROM game_event_creature_data WHERE guid IN (530021,530764,530767,530901,531549);
+DELETE FROM creature_battleground WHERE guid IN (530021,530764,530767,530901,531549);
+DELETE FROM creature_linking WHERE guid IN (530021,530764,530767,530901,531549) 
+ OR master_guid IN (530021,530764,530767,530901,531549);
+DELETE FROM creature WHERE guid IN (530021,530764,530767,530901,531549);
+
+-- Ymirheim Defender 31746
+DELETE FROM creature_addon WHERE guid = 535720;
+DELETE FROM creature_movement WHERE id = 535720;
+DELETE FROM game_event_creature WHERE guid = 535720;
+DELETE FROM game_event_creature_data WHERE guid = 535720;
+DELETE FROM creature_battleground WHERE guid = 535720;
+DELETE FROM creature_linking WHERE guid = 535720;
+DELETE FROM creature where guid = 535720;
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+(535720,31746,571,1,1,7453.1753,1848.9548,403.53226,5.393067,300,300,0,0);
+DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 31746);
+DELETE FROM creature_template_addon WHERE entry IN (31746);
+INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
+(31746,0,8,1,0,0,0,NULL);
+UPDATE creature SET position_x = 7390.85, position_y = 1826.5658, position_z = 434.83615, orientation = 0.75049 WHERE guid = 530898;
+
+-- Ymirheim Chosen Warrior 31258
+DELETE FROM creature_addon WHERE guid BETWEEN 535721 AND 535725;
+DELETE FROM creature_movement WHERE id BETWEEN 535721 AND 535725;
+DELETE FROM game_event_creature WHERE guid BETWEEN 535721 AND 535725;
+DELETE FROM game_event_creature_data WHERE guid BETWEEN 535721 AND 535725;
+DELETE FROM creature_battleground WHERE guid BETWEEN 535721 AND 535725;
+DELETE FROM creature_linking WHERE guid BETWEEN 535721 AND 535725;
+DELETE FROM creature where guid BETWEEN 535721 AND 535725;
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+(535721,31258,571,1,1,7211.312,1803.1055,527.74304,4.6600289,300,300,0,0),
+(535722,31258,571,1,1,7185.582,1861.2357,532.2807,3.2114057,300,300,0,0),
+(535723,31258,571,1,1,7219.2954,1893.2031,567.2726,4.921828,300,300,0,0),
+(535724,31258,571,1,1,7196.079,2003.346,575.2511,0.12217,300,300,0,0),
+(535725,31258,571,1,1,7248.9272,1974.747,570.17535,2.84488,300,300,0,0);
+-- individual addon
+DELETE FROM creature_addon WHERE guid IN (529955,529975,535722,535724,535725,529961,529983,529970);
+INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
+(529955,0,0,1,0,333,0,NULL),
+(529975,0,0,1,0,426,0,NULL),
+(535722,0,1,1,0,0,0,NULL),
+(535724,0,1,1,0,0,0,NULL),
+(535725,0,0,1,0,459,0,NULL),
+(529961,0,1,1,0,0,0,NULL),
+(529983,0,0,1,0,459,0,NULL),
+(529970,0,0,1,0,459,0,NULL);
+UPDATE creature SET position_x = 7147.2173, position_y = 1701.252, position_z = 477.19983, orientation = 3.054326 WHERE guid = 529985;
+UPDATE creature SET position_x = 7122.3696, position_y = 1693.2943, position_z = 478.6498, orientation = 1.6580628 WHERE guid = 529975;
+UPDATE creature SET position_x = 7178.284, position_y = 1939.1823, position_z = 558.93304, orientation = 5.49778 WHERE guid = 529959;
+UPDATE creature SET position_x =  6815.934, position_y = 1826.1919, position_z = 4.852, orientation = 5.49778, spawndist = 0, MovementType = 0 WHERE guid = 529970;
+DELETE FROM `creature_spawn_data` WHERE guid IN (
+529957,529958,529985,529975,529977,529973,535722,535723,529959,535724,535725,529981,529978,529986,529954,529960,529966,529982,
+529961,529964,529962,529971,529969,529970,529967);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(529957,80),(529958,80),(529985,80),(535723,80),(529986,80),(529966,80),(529982,80),(529964,80),(529971,80),(529969,80),
+(529975,81),(529977,81),(529973,81),(535722,81),(529959,81),(535724,81),(535725,81),(529981,81),(529978,81),(529954,81),(529960,81),
+(529961,81),(529962,81),(529970,81),(529967,81);
+-- waypoints
+UPDATE creature SET position_x = 7151.504, position_y = 1895.1099, position_z = 540.3555, spawndist = 0, MovementType = 4 WHERE guid = 529989; -- linear
+UPDATE creature SET position_x = 7022.09, position_y = 1733.13, position_z = 557.0999, orientation = 1.337, spawndist = 0, MovementType = 2 WHERE guid = 529974;
+UPDATE creature SET position_x = 6888.87, position_y = 1746.16, position_z = 573.24634, orientation = 5.567600, spawndist = 0, MovementType = 2 WHERE guid = 529951;
+UPDATE creature SET position_x = 7172.35, position_y = 1933.67, position_z = 596.895, orientation = 5.32325, spawndist = 0, MovementType = 2 WHERE guid = 529984;
+UPDATE creature SET position_x = 7241.5347, position_y = 1991.1255, position_z = 570.9724, spawndist = 0, MovementType = 2 WHERE guid = 530080;
+UPDATE creature SET position_x = 7219.8315, position_y = 2044.0957, position_z = 574.4632, spawndist = 0, MovementType = 2 WHERE guid = 529953;
+UPDATE creature SET position_x = 7104.6, position_y = 2074.58, position_z = 660.6447, orientation = 0.785398, spawndist = 0, MovementType = 2 WHERE guid = 529965;
+UPDATE creature SET position_x = 6838.81, position_y = 1806.17, position_z = 619.5018, orientation = 3.508, spawndist = 0, MovementType = 2 WHERE guid = 529976;
+DELETE FROM creature_movement WHERE id IN (529989,529974,529951,529984,530080,529953,529965,529976);
+INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
+-- 529989
+(529989,1 ,7151.504,1895.1099,540.3555,100,100,0),
+(529989,2 ,7143.925,1887.5942,536.5417,100,0,0),
+(529989,3 ,7147.069,1870.7954,530.6093,100,0,0),
+(529989,4 ,7145.0586,1858.0612,525.2661,100,0,0),
+(529989,5 ,7139.792,1848.791,520.1311,100,0,0),
+(529989,6 ,7139.619,1834.3427,512.85834,100,0,0),
+(529989,7 ,7143.301,1812.2108,503.18118,100,0,0),
+(529989,8 ,7148.765,1802.4266,499.1282,100,0,0),
+(529989,9 ,7157.3286,1780.734,491.46048,100,0,0),
+(529989,10,7154.934,1746.8298,483.34937,100,100,0),
+-- 529974
+(529974,1,7022.09,1733.13,557.0999,100,30000,3125801),
+(529974,2,7019.9995,1711.7848,566.86896,100,100,3125802),
+(529974,3,6995.914,1687.3715,556.6126100,100,100,3125803),
+(529974,4,6949.56,1679.73,558.0818,100,30000,3125801),
+(529974,5,6977.133,1687.4043,558.2224100,100,100,3125804),
+(529974,6,7012.807,1703.9775,555.56836100,100,100,3125805),
+-- 529951
+(529951,1 ,6888.87,1746.16,573.24634,5.567600,30000,3125801),
+(529951,2 ,6912.325,1744.4812,573.3383,100,100,3125806),
+(529951,3 ,6941.3525,1746.2991,567.21436,100,100,3125807),
+(529951,4 ,6969.29,1777.95,558.5186,100,100,3125808),
+(529951,5 ,7018.82,1804.33,548.3318,100,0,0),
+(529951,6 ,7018.82,1804.33,548.3318,5.58505,30000,3125801),
+(529951,7 ,6995.87,1787.24,548.3318,100,100,3125809),
+(529951,8 ,6952.925,1759.7959,554.99835,100,100,3125810),
+(529951,9 ,6931.8477,1736.3274,566.4868,100,100,3125811),
+(529951,10,6888.87,1746.16,573.24634,100,0,0),
+-- 529984
+(529984,1 ,7172.35,1933.67,596.895,5.32325,30000,3125801),
+(529984,2 ,7185.4126,1948.4373,596.0126,100,100,3125812),
+(529984,3 ,7178.366,1975.9031,600.8994,100,100,3125813),
+(529984,4 ,7159.449,1955.835,615.53564,100,100,3125814),
+(529984,5 ,7156.702,1993.0605,624.9207,100,100,3125815),
+(529984,6 ,7177.7407,2021.8369,630.12067,100,100,3125816),
+(529984,7 ,7196.444,2057.5564,604.21655,100,100,3125817),
+(529984,8 ,7180.1685,2064.4917,598.13055,1.117,30000,3125801),
+(529984,9 ,7181.7,2062.8945,596.98096,100,100,3125818),
+(529984,10,7177.2607,2035.2319,617.7181,100,100,3125819),
+(529984,11,7179.247,1999.5535,631.3788,100,100,3125820),
+(529984,12,7157.244,1975.9932,626.391,100,100,3125821),
+(529984,13,7173.098,1956.3156,608.13293,100,100,3125822),
+(529984,14,7183.958,1966.6414,595.59424,100,100,3125823),
+-- 530080
+(530080,1,7241.5347,1991.1255,570.9724,100,0,0),
+(530080,2,7230.994,1988.4952,571.0012,100,0,0),
+(530080,3,7222.625,1995.8698,571.4431,100,0,0),
+(530080,4,7219.192,2013.4944,574.4632,100,0,0),
+(530080,5,7219.8057,2026.9791,574.34894,100,0,0),
+(530080,6,7235.6626,2026.7466,574.4067,100,0,0),
+(530080,7,7239.6235,2011.375,573.3194,100,0,0),
+-- 529953
+(529953,1,7219.8315,2044.0957,574.4632,100,100,0),
+(529953,2,7215.1274,2054.603,574.4632,100,0,0),
+(529953,3,7208.1294,2065.044,574.5882,100,0,0),
+(529953,4,7191.1367,2087.6064,579.84125,100,0,0),
+(529953,5,7187.144,2101.7256,582.9255,100,0,0),
+(529953,6,7212.475,2116.7278,571.878,100,100,0),
+-- 529965
+(529965,1,7104.6,2074.58,660.6447,0.785398,30000,3125801),
+(529965,2,7089.76,2084.6,659.0974,100,100,3125824),
+(529965,3,7050.956,2112.7935,672.05206,100,100,3125825),
+(529965,4,7037.7017,2124.627,685.0131,100,100,3125826),
+(529965,5,7035,2134.07,681.696,6.178465,30000,3125801),
+(529965,6,7035,2134.07,681.696,100,100,3125827),
+(529965,7,7042.8,2132.92,654.818,100,100,3125828),
+(529965,8,7038.73,2135.33,686.778,100,100,3125829),
+(529965,9,7065.54,2111.5493,673.4889,100,100,3125830),
+-- 529976
+(529976,1,6838.81,1806.17,619.5018,3.508,30000,3125801),
+(529976,2,6824.8477,1830.1106,619.5551,100,100,3125831),
+(529976,3,6779.2144,1848.4248,622.8169,100,100,3125832),
+(529976,4,6755.84,1818.47,637.62933,100,100,3125833),
+(529976,5,6761.84,1774.9,615.8127,100,0,0),
+(529976,6,6761.84,1774.9,615.8127,5.969,30000,3125801),
+(529976,7,6763.46,1787.66,613.0955,100,100,3125834),
+(529976,8,6771.13,1839.0221,634.511,100,100,3125835),
+(529976,9,6801.69,1832.78,624.1335,100,100,3125836);
+DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN 3125801 AND 3125830;
+INSERT INTO dbscripts_on_creature_movement (id,delay,priority,command,datalong,datalong2,datalong3,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,datafloat,x,y,z,o,speed,condition_id,comments) VALUES
+(3125801,1000,0,25,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
+(3125801,6000,0,1,15,0,0,0,0,0x04,0,0,0,0,0,0,0,0,0,0,0,'emote'),
+(3125801,10000,0,1,15,0,0,0,0,0x04,0,0,0,0,0,0,0,0,0,0,0,'emote'),
+(3125802,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7006.409,1697.4396,555.138,100,19,0,'jump'),
+(3125803,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6977.4185,1687.3033,558.0872,100,19,0,'jump'),
+(3125804,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6999.7056,1691.0786,555.863,100,19,0,'jump'),
+(3125805,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7018.4087,1709.3766,567.2737,100,19,0,'jump'),
+(3125806,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6931.281,1736.8022,565.9303,100,19,0,'jump'),
+(3125807,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6952.925,1759.7959,554.99835,100,19,0,'jump'),
+(3125808,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6999.95,1789.77,548.152,100,19,0,'jump'),
+(3125809,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6965.49,1773.91,555.754,100,19,0,'jump'),
+(3125810,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6941.3525,1746.2991,567.21436,100,19,0,'jump'),
+(3125811,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6910.6885,1744.7437,573.2752,100,19,0,'jump'),
+(3125812,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7184.475,1967.2045,595.6301,100,19,0,'jump'),
+(3125813,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7169.7573,1955.6016,609.16864,100,19,0,'jump'),
+(3125814,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7157.6416,1974.0684,625.90265,100,19,0,'jump'),
+(3125815,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7178.262,2007.0527,628.9388,100,19,0,'jump'),
+(3125816,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7176.219,2047.6211,618.30255,100,19,0,'jump'),
+(3125817,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7180.1685,2064.4917,598.13055,100,19,0,'jump'),
+(3125818,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7195.732,2056.2976,604.33136,100,19,0,'jump'),
+(3125819,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7177.7896,2017.6663,629.1048,100,19,0,'jump'),
+(3125820,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7159.705,1988.9408,626.6528,100,19,0,'jump'),
+(3125821,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7163.2837,1952.0455,614.6292,100,19,0,'jump'),
+(3125822,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7177.9126,1975.5856,600.6367,100,19,0,'jump'),
+(3125823,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7184.0034,1948.697,595.55176,100,19,0,'jump'),
+(3125824,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7064.21,2104.96,665.091,100,19,0,'jump'),
+(3125825,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7037.7017,2124.627,685.0131,100,19,0,'jump'),
+(3125826,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7035,2134.07,681.696,100,19,0,'jump'),
+(3125827,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7042.8,2132.92,654.818,100,19,0,'jump'),
+(3125828,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7038.73,2135.33,686.778,100,19,0,'jump'),
+(3125829,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7060.758,2117.9998,664.87085,100,19,0,'jump'),
+(3125830,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,7089.8228,2086.0989,659.107,100,19,0,'jump'),
+(3125831,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6803.385,1843.5513,614.60846,100,19,0,'jump'),
+(3125832,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6769.044,1836.2985,634.0253,100,19,0,'jump'),
+(3125833,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6763.91,1786.49,613.108,100,19,0,'jump'),
+(3125834,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6770.21,1816.09,624.639,100,19,0,'jump'),
+(3125835,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6779.55,1847.4542,622.38293,100,19,0,'jump'),
+(3125836,0,0,20,15,0,0,0,0,0x04,0,0,0,0,5,6825.09,1830.48,619.509,100,19,0,'jump');
+DELETE FROM `creature_spawn_entry` WHERE `guid` IN (529989,530080,529953);
+INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
+(529989,31258),(529989,31262),(529989,31267),
+(530080,31258),(530080,31262),(530080,31267),
+(529953,31258),(529953,31262),(529953,31267);
+UPDATE creature SET id = 0 WHERE guid IN (529989,530080,529953);
+-- Carrion Hunter 31263
+-- part of vehicle
+DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM creature_movement WHERE id IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM game_event_creature WHERE guid IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM game_event_creature_data WHERE guid IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM creature_battleground WHERE guid IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM creature_linking WHERE guid IN (SELECT guid FROM creature WHERE id = 31263);
+DELETE FROM creature where id = 31263;
+
+-- Blight Falconer 31262
+UPDATE creature SET position_x = 7047.2803, position_y = 1766.625, position_z = 502.70215, spawndist = 0, MovementType = 4 WHERE guid = 530091; -- linear
+UPDATE creature SET position_x = 7003.2773, position_y = 1750.6425, position_z = 507.043, spawndist = 0, MovementType = 4 WHERE guid = 529980; -- linear
+UPDATE creature SET position_x = 6866.359, position_y = 1698.7498, position_z = 536.05316, spawndist = 0, MovementType = 4 WHERE guid = 529968; -- linear
+DELETE FROM creature_movement WHERE id IN (530091,529980,529968);
+INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
+-- 530091
+(530091,1,7047.2803,1766.625,502.70215,100,100,0),
+(530091,2,7060.09,1764.4287,500.92883,100,0,0),
+(530091,3,7071.003,1754.5406,499.4152,100,0,0),
+(530091,4,7081.808,1753.601,497.44693,100,0,0),
+(530091,5,7103.1943,1740.6647,493.26712,100,0,0),
+(530091,6,7128.859,1734.2197,485.87784,100,100,0),
+-- 529980
+(529980,1,7003.2773,1750.6425,507.043,100,100,0),
+(529980,2,7025.307,1781.1068,506.8491,100,0,0),
+(529980,3,7037.51,1806.641,513.0819,100,0,0),
+(529980,4,7043.85,1834.6144,524.1295,100,100,0),
+-- 529968
+(529968,1,6866.359,1698.7498,536.05316,100,100,0),
+(529968,2,6837.224,1704.8698,544.0345,100,0,0),
+(529968,3,6821.5596,1717.848,550.5164,100,0,0),
+(529968,4,6807.8667,1734.9795,559.1268,100,100,0);
+DELETE FROM `creature_spawn_entry` WHERE `guid` IN (530091,529980,529968);
+INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
+(530091,31258),(530091,31262),(530091,31267),
+(529980,31258),(529980,31262),(529980,31267),
+(529968,31258),(529968,31262),(529968,31267);
+UPDATE creature SET id = 0 WHERE guid IN (530091,529980,529968);
+
+-- Ymirjar Element Shaper 31267
+DELETE FROM creature_addon WHERE guid BETWEEN 535726 AND 535729;
+DELETE FROM creature_movement WHERE id BETWEEN 535726 AND 535729;
+DELETE FROM game_event_creature WHERE guid BETWEEN 535726 AND 535729;
+DELETE FROM game_event_creature_data WHERE guid BETWEEN 535726 AND 535729;
+DELETE FROM creature_battleground WHERE guid BETWEEN 535726 AND 535729;
+DELETE FROM creature_linking WHERE guid BETWEEN 535726 AND 535729;
+DELETE FROM creature where guid BETWEEN 535726 AND 535729;
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+(535726,31267,571,1,1,7141.118,1700.5927,477.70325,0.38397,300,300,0,0),
+(535727,31267,571,1,1,7045.785,1849.1567,528.31726,0,300,300,0,4), -- linear
+(535728,31267,571,1,1,7220.53,1889.0251,567.7691,1.91986,300,300,0,0),
+(535729,31267,571,1,1,7178.045,1975.962,574.133,2.75762,300,300,0,0);
+-- individual addon
+DELETE FROM creature_addon WHERE guid IN (535729);
+INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
+(535729,0,8,1,0,0,0,NULL);
+DELETE FROM `creature_spawn_data` WHERE guid IN (535726,530074,535728,530075,530083,530077,530081,530079);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(535726,80),(530074,80),(535728,80),(530075,80),(530083,80),(530077,80),(530081,80),(530079,80);
+UPDATE creature SET position_x = 6991.4834, position_y = 1740.0171, position_z = 508.69196, spawndist = 0, MovementType = 4 WHERE guid = 529997; -- linear
+UPDATE creature SET position_x = 7217.0786, position_y = 1960.2709, position_z = 569.62726, spawndist = 0, MovementType = 4 WHERE guid = 529988; -- linear
+UPDATE creature SET position_x = 7113.876, position_y = 2087.6562, position_z = 622.66095, spawndist = 0, MovementType = 4 WHERE guid = 530073; -- linear
+UPDATE creature SET position_x = 6812.693, position_y = 1813.647, position_z = 577.9669, spawndist = 0, MovementType = 4 WHERE guid = 530082; -- linear
+DELETE FROM creature_movement WHERE id IN (535727,529997,529988,530073,530082);
+INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
+-- 535727
+(535727,1,7045.785,1849.1567,528.31726,100,100,0),
+(535727,2,7067.423,1854.4559,530.1707,100,0,0),
+(535727,3,7100.7344,1856.4946,530.82166,100,0,0),
+(535727,4,7115.506,1872.3077,531.78735,100,100,0),
+-- 529997
+(529997,1,6991.4834,1740.0171,508.69196,100,100,0),
+(529997,2,6969.791,1717.9607,513.8356,100,0,0),
+(529997,3,6945.4956,1703.207,519.30054,100,0,0),
+(529997,4,6935.207,1710.6375,520.0713,100,0,0),
+(529997,5,6908.7544,1712.6509,526.22253,100,100,0),
+-- 529988
+(529988,1,7217.0786,1960.2709,569.62726,100,100,0),
+(529988,2,7209.409,1934.4456,561.8709,100,0,0),
+(529988,3,7207.181,1920.1061,558.58984,100,0,0),
+(529988,4,7192.89,1920.9723,555.02057,100,0,0),
+(529988,5,7163.324,1900.4062,544.8466,100,100,0),
+-- 530073
+(530073,1,7113.876,2087.6562,622.66095,100,100,0),
+(530073,2,7098.3623,2109.1238,622.8752,100,0,0),
+(530073,3,7108.3965,2141.007,617.7882,100,0,0),
+(530073,4,7171.504,2109.6367,589.07074,100,0,0),
+(530073,5,7147.1,2133.311,603.25165,100,0,0),
+(530073,6,7136.2666,2136.977,607.58105,100,0,0),
+(530073,7,7126.5054,2136.802,610.8723,100,100,0),
+-- 530082
+(530082,1,6812.693,1813.647,577.9669,100,100,0),
+(530082,2,6801.6567,1798.1864,573.93616,100,0,0),
+(530082,3,6797.6377,1775.8481,569.8017,100,0,0),
+(530082,4,6802.1245,1748.7091,564.4217,100,100,0);
+DELETE FROM `creature_spawn_entry` WHERE `guid` IN (535727,529997,529988,530073,530082);
+INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
+(535727,31258),(535727,31262),(535727,31267),
+(529997,31258),(529997,31262),(529997,31267),
+(529988,31258),(529988,31262),(529988,31267),
+(530073,31258),(530073,31262),(530073,31267),
+(530082,31258),(530082,31262),(530082,31267);
+UPDATE creature SET id = 0 WHERE guid IN (535727,529997,529988,530073,530082);
+
+-- Savage Proto-Drake 31265
+
+DELETE FROM creature_addon WHERE guid = 535730;
+DELETE FROM creature_movement WHERE id = 535730;
+DELETE FROM game_event_creature WHERE guid = 535730;
+DELETE FROM game_event_creature_data WHERE guid = 535730;
+DELETE FROM creature_battleground WHERE guid = 535730;
+DELETE FROM creature_linking WHERE guid = 535730;
+DELETE FROM creature where guid = 535730;
+INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
+(535730,31265,571,1,1,7264.74,1995.36,570.931,2.7750735,300,300,0,0); -- should have wps
+UPDATE creature SET position_x = 7084.77, position_y = 1821.09, position_z = 528.399, orientation = 1.623156, spawndist = 0, MovementType = 0 WHERE guid = 530065;
+DELETE FROM `creature_spawn_data` WHERE guid IN (530065);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(530065,20066);
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (3126501,3126502,3126503);
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(3126501,1,25,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'RUN ON'),
+(3126501,2,39,1,0,0,0,0,0x04|0x08,0,0,0,0,0,0,0,0,'Fly Anim ON'),
+(3126501,100,20,3,1,0,0,0,0x04,0,0,0,0,0,0,0,0,'set - path 1'),
+(3126502,100,39,0,0,0,0,0,0x04|0x08,0,0,0,0,0,0,0,0,'Fly Anim OFF'),
+(3126503,101,20,3,2,0,0,0,0x04,0,0,0,0,0,0,0,0,'set - path 2');
+DELETE FROM `creature_movement_template` WHERE entry IN (31265);
+INSERT INTO `creature_movement_template` (`entry`,`pathId`,`point`,`positionx`,`positiony`,`positionz`,`orientation`,`waittime`,`scriptid`) VALUES
+-- Path 1
+(31265,1,3 ,7073.61,1776.4666,561.8111,100,0,0),
+(31265,1,4 ,7071.3813,1704.3844,559.3945,100,0,0),
+(31265,1,5 ,7158.686,1701.5857,555.1446,100,0,0),
+(31265,1,6 ,7176.7407,1764.0662,551.53345,100,0,0),
+(31265,1,7 ,7122.987,1794.4844,558.47784,100,0,0),
+(31265,1,8 ,7073.61,1776.4666,561.8111,100,0,0),
+(31265,1,9 ,7071.3813,1704.3844,559.3945,100,0,0),
+(31265,1,10,7158.686,1701.5857,555.1446,100,0,0),
+(31265,1,11,7176.7407,1764.0662,551.53345,100,0,0),
+(31265,1,12,7122.987,1794.4844,558.47784,100,0,0),
+(31265,1,13,7073.61,1776.4666,561.8111,100,0,0),
+(31265,1,14,7071.3813,1704.3844,559.3945,100,0,0),
+(31265,1,15,7158.686,1701.5857,555.1446,100,0,0),
+(31265,1,16,7176.7407,1764.0662,551.53345,100,0,0),
+(31265,1,17,7122.987,1794.4844,558.47784,100,0,0),
+(31265,1,18,7084.77,1821.09,528.399,100,120000,3126503),
+-- Path 2
+(31265,2,1,7084.77,1821.09,528.399,1.623156,120000,3126502),
+(31265,2,2,7084.77,1821.09,528.399,1.623156,60000,0),
+(31265,2,3,7084.77,1821.09,528.399,1.623156,100,3126501);
+
+-- Val'kyr Taskmistress 31396
+UPDATE creature SET position_x = 7020.6772, position_y = 1861.0903, position_z = 535.6821, orientation = 5.14872, spawndist = 0, MovementType = 0 WHERE guid = 530431;
+UPDATE creature SET position_x = 7040.9854, position_y = 1872.599, position_z = 534.0808, orientation = 5.41052, spawndist = 0, MovementType = 0 WHERE guid = 530422;
+UPDATE creature SET position_x = 6994.5244, position_y = 1938.7916, position_z = 532.38403, orientation = 5.3058, spawndist = 0, MovementType = 0 WHERE guid = 530429;
+UPDATE creature SET position_x = 6970.1743, position_y = 1964.4392, position_z = 527.855, orientation = 2.373647, spawndist = 0, MovementType = 0 WHERE guid = 530425;
+UPDATE creature SET position_x = 6980.5537, position_y = 2018.4861, position_z = 524.75916, orientation = 6.1959185, spawndist = 0, MovementType = 0 WHERE guid = 530426;
+UPDATE creature SET position_x = 6994.713, position_y = 1903.0747, position_z = 537.89734, spawndist = 0, MovementType = 4 WHERE guid = 530424; -- linear
+UPDATE creature SET position_x = 7022.284, position_y = 1924.7145, position_z = 531.7959, spawndist = 0, MovementType = 4 WHERE guid = 530427; -- linear
+UPDATE creature SET position_x = 6918.86, position_y = 1980.607, position_z = 527.40735, spawndist = 0, MovementType = 4 WHERE guid = 530430; -- linear
+UPDATE creature SET position_x = 6995.019, position_y = 1960.0345, position_z = 530.5243, spawndist = 0, MovementType = 4 WHERE guid = 530428; -- linear
+UPDATE creature SET position_x = 6986.044, position_y = 2000.7134, position_z = 526.88696, spawndist = 0, MovementType = 4 WHERE guid = 530432; -- linear
+UPDATE creature SET position_x = 6920.8647, position_y = 2006.9219, position_z = 525.61633, spawndist = 0, MovementType = 4 WHERE guid = 530423; -- linear
+DELETE FROM `creature_spawn_data` WHERE guid IN (530431,530422,530424,530426,530427,530429,530430,530425,530428,530432,530423);
+INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES 
+(530431,20069),(530422,20069),(530424,20069),
+(530426,20069),(530427,20069),(530429,20069),
+(530430,20069),(530425,20069),(530428,20069),
+(530432,20069),(530423,20069);
+DELETE FROM creature_spawn_data_template WHERE entry = 20069;
+INSERT INTO creature_spawn_data_template (`Entry`, `SpawnFlags`, `RelayId`,`Name`) VALUES 
+(20069,2,30601,'- SPAWN FLAG HOVER, Relayid 30601');
+DELETE FROM creature_movement WHERE id IN (530424,530427,530430,530428,530432,530423);
+INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
+-- 530424
+(530424,1,6994.713,1903.0747,537.89734,100,100,0),
+(530424,2,6979.79,1908.6901,538.65826,100,0,0),
+(530424,3,6964.599,1927.2709,532.18616,100,0,0),
+(530424,4,6966.4185,1943.7615,530.45996,100,100,0),
+-- 530427
+(530427,1,7022.284,1924.7145,531.7959,100,100,0),
+(530427,2,7024.5757,1933.6248,531.6077,100,0,0),
+(530427,3,7032.7563,1942.5443,531.877,100,100,0),
+-- 530430
+(530430,1,6918.86,1980.607,527.40735,100,100,0),
+(530430,2,6926.643,1971.367,527.0581,100,0,0),
+(530430,3,6931.691,1955.199,530.0687,100,0,0),
+(530430,4,6941.347,1947.5304,532.27466,100,0,0),
+(530430,5,6948.0664,1951.7366,531.6084,100,100,0),
+-- 530428
+(530428,1,6995.019,1960.0345,530.5243,100,100,0),
+(530428,2,6984.978,1977.4996,528.0282,100,0,0),
+(530428,3,6963.188,1983.622,525.4197,100,100,0),
+-- 530432
+(530432,1,6986.044,2000.7134,526.88696,100,100,0),
+(530432,2,6997.3696,2022.1979,527.79095,100,0,0),
+(530432,3,6995.3516,2036.2053,527.2558,100,0,0),
+(530432,4,6975.7466,2045.5184,523.8254,100,100,0),
+-- 530423
+(530423,1,6920.8647,2006.9219,525.61633,100,100,0),
+(530423,2,6921.7754,2029.2975,522.9391,100,0,0),
+(530423,3,6932.4194,2008.7302,524.65424,100,0,0),
+(530423,4,6931.0513,2031.9,523.8691,100,0,0),
+(530423,5,6950.7056,2047.108,524.1579,100,100,0);
+DELETE FROM dbscripts_on_relay WHERE id IN (20873);
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(20873,1,31,31397,20,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: search for 31397'),
+(20873,100,32,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: Pause waypoints'),
+(20873,200,37,0,0,5,31397,20,1,0,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: move towards buddy'),
+(20873,7000,15,59047,0,0,31397,20,1,0,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: cast 59047'),
+(20873,11000,3,0,0,0,0,0,0x04,1,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: move home'),
+(20873,12000,32,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Val\'kyr Taskmistress 31396 EAI: UnPause waypoints');
+
+-- Saronite Mine Slave 31397
+DELETE FROM dbscript_random_templates WHERE id = 20351;
+INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
+(20351,0,32506,0,'Saronite Mine Slave 31397 - Random Say on SpellHit 1'),
+(20351,0,32507,0,'Saronite Mine Slave 31397 - Random Say on SpellHit 2'),
+(20351,0,32508,0,'Saronite Mine Slave 31397 - Random Say on SpellHit 3'),
+(20351,0,32509,0,'Saronite Mine Slave 31397 - Random Say on SpellHit 4'),
+(20351,0,32510,0,'Saronite Mine Slave 31397 - Random Say on SpellHit 5');
+
+-- Darkspeaker R'khem 31892
+DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 31892);
+DELETE FROM creature_template_addon WHERE entry IN (31892);
+INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
+(31892,0,0,1,0,0,0,25900);
+-- target for spells
+DELETE FROM spell_script_target WHERE entry IN(5432,59951,59952);
+INSERT INTO spell_script_target VALUES
+(5432,1,31892,0),
+(59951,1,31892,0),
+(59952,1,31892,0);
+
+-- Foreman Thaldrin 31399
+DELETE FROM dbscript_random_templates WHERE id = 20352;
+INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
+(20352,0,32090,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 1'),
+(20352,0,32091,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 2'),
+(20352,0,32092,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 3'),
+(20352,0,32094,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 4'),
+(20352,0,32516,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 5'),
+(20352,0,32517,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 6'),
+(20352,0,32518,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 7'),
+(20352,0,32519,0,'Foreman Thaldrin 31399 - Random Say on OOC Timer 8');
+UPDATE `broadcast_text` SET `ChatTypeID` = 1 WHERE `id` IN (32090,32091,32092,32094,32516,32517,32518,32519);
