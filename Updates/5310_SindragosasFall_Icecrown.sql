@@ -127,7 +127,7 @@ UPDATE creature SET spawndist = 10, MovementType = 1 WHERE id = 31718;
 
 -- Cultist Corrupter 31738
 DELETE FROM creature_addon WHERE guid IN (528258,528261,528259);
-DELETE FROM creature_movement WHERE id IN (5528258,528261,528259);
+DELETE FROM creature_movement WHERE id IN (528258,528261,528259);
 DELETE FROM game_event_creature WHERE guid IN (528258,528261,528259);
 DELETE FROM game_event_creature_data WHERE guid IN (528258,528261,528259);
 DELETE FROM creature_battleground WHERE guid IN (528258,528261,528259);
