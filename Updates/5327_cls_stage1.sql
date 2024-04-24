@@ -255,5 +255,37 @@ UPDATE creature_template_classlevelstats SET Strength=70, Agility=29, Stamina=59
 UPDATE creature_template_classlevelstats SET Strength=72, Agility=22, Stamina=143, Intellect=59, Spirit=63 WHERE Level=39 AND Class=2;
 UPDATE creature_template_classlevelstats SET Strength=63, Agility=28, Stamina=53, Intellect=156, Spirit=110 WHERE Level=36 AND Class=8;
 
+UPDATE creature_template_classlevelstats SET Strength=86, Agility=24, Stamina=160, Intellect=65, Spirit=69 WHERE Level=43 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=96, Agility=25, Stamina=169, Intellect=67, Spirit=72 WHERE Level=45 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=98, Agility=26, Stamina=173, Intellect=68, Spirit=73 WHERE Level=46 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=91, Agility=30, Stamina=65, Intellect=204, Spirit=141 WHERE Level=45 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=88, Agility=30, Stamina=63, Intellect=199, Spirit=138 WHERE Level=44 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=81, Agility=23, Stamina=156, Intellect=63, Spirit=67 WHERE Level=42 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=76, Agility=23, Stamina=152, Intellect=62, Spirit=66 WHERE Level=41 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=77, Agility=29, Stamina=61, Intellect=190, Spirit=131 WHERE Level=42 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=81, Agility=29, Stamina=62, Intellect=194, Spirit=134 WHERE Level=43 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=100, Agility=26, Stamina=177, Intellect=70, Spirit=75 WHERE Level=47 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=102, Agility=27, Stamina=181, Intellect=72, Spirit=76 WHERE Level=48 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=99, Agility=31, Stamina=70, Intellect=223, Spirit=155 WHERE Level=49 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=101, Agility=32, Stamina=72, Intellect=228, Spirit=158 WHERE Level=50 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=104, Agility=27, Stamina=186, Intellect=73, Spirit=78 WHERE Level=49 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=103, Agility=32, Stamina=73, Intellect=232, Spirit=161 WHERE Level=51 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=105, Agility=32, Stamina=74, Intellect=237, Spirit=165 WHERE Level=52 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=122, Agility=32, Stamina=221, Intellect=84, Spirit=90 WHERE Level=57 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=120, Agility=31, Stamina=216, Intellect=83, Spirit=89 WHERE Level=56 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=117, Agility=31, Stamina=212, Intellect=82, Spirit=88 WHERE Level=55 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=115, Agility=30, Stamina=207, Intellect=80, Spirit=85 WHERE Level=54 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=111, Agility=29, Stamina=199, Intellect=77, Spirit=82 WHERE Level=52 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=113, Agility=30, Stamina=203, Intellect=79, Spirit=84 WHERE Level=53 AND Class=2;
+UPDATE creature_template_classlevelstats SET Strength=107, Agility=33, Stamina=75, Intellect=241, Spirit=168 WHERE Level=53 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=109, Agility=33, Stamina=77, Intellect=247, Spirit=172 WHERE Level=54 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=116, Agility=34, Stamina=81, Intellect=271, Spirit=185 WHERE Level=57 AND Class=8;
+
+UPDATE creature_template_classlevelstats SET Strength=46, Agility=25, Stamina=39, Intellect=97, Spirit=73 WHERE Level=24 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=56, Agility=26, Stamina=47, Intellect=134, Spirit=95 WHERE Level=31 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=47, Agility=25, Stamina=40, Intellect=101, Spirit=75 WHERE Level=25 AND Class=8;
+UPDATE creature_template_classlevelstats SET Strength=20, Agility=20, Stamina=20, Intellect=25, Spirit=23 WHERE Level=1 AND Class=8;
+
+
 
 
