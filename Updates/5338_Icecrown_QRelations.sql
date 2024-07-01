@@ -14,18 +14,19 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20648,8,13225,0,0,0,0,'');
 
 -- q.13258 'Opportunity' - H
--- Opens after one of them 2 completed q.13224 or q.12898
+-- Opens after one of them 2 completed q.13224 or q.12899
 UPDATE quest_template SET RequiredCondition = 20650 WHERE entry IN (13258);
 DELETE FROM conditions WHERE condition_entry BETWEEN 20649 AND 20650;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
-(20649,8,12898,0,0,0,0,''),
+(20649,8,12899,0,0,0,0,''),
 (20650,-2,20649,20647,0,0,0,'');
 -- q.13386 'Exploiting an Opening' - A
 -- Opens after one of them 2 completed q.13225 or q.12898
 UPDATE quest_template SET RequiredCondition = 20651 WHERE entry IN (13386);
-DELETE FROM conditions WHERE condition_entry = 20651;
+DELETE FROM conditions WHERE condition_entry IN (20506,20651);
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
-(20651,-2,20649,20648,0,0,0,'');
+(20506,-2,12898,0,0,0,0,'');
+(20651,-2,20648,20506,0,0,0,'');
 
 -- q.13264 'That's Abominable!' - H
 -- req. q.13237 finished first.
