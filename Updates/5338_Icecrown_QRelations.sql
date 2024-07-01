@@ -25,7 +25,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 UPDATE quest_template SET RequiredCondition = 20651 WHERE entry IN (13386);
 DELETE FROM conditions WHERE condition_entry IN (20506,20651);
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
-(20506,-2,12898,0,0,0,0,'');
+(20506,-2,12898,0,0,0,0,''),
 (20651,-2,20648,20506,0,0,0,'');
 
 -- q.13264 'That's Abominable!' - H
