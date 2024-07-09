@@ -240,12 +240,19 @@ INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pv
 (30674,0,0,0,0,0,0,'29266');
 
 -- The Ebon Watcher 30596
-UPDATE creature_template SET MinLevel = 83, MaxLevel = 83, UnitClass = 1, Expansion = 2, HealthMultiplier = 800, PowerMultiplier = 800, Faction = 2051, UnitFlags = 32832, EquipmentTemplateId = 365 WHERE entry = 30596;
+UPDATE creature_template SET GossipMenuId = 9999, NpcFlags = 3, MinLevel = 83, MaxLevel = 83, UnitClass = 1, Expansion = 2, HealthMultiplier = 800, PowerMultiplier = 800, Faction = 2051, UnitFlags = 32832, EquipmentTemplateId = 365 WHERE entry = 30596;
 UPDATE creature SET position_x = 6377.4395, position_y = 237.92188, position_z = 396.12918, orientation = 4.83456, spawndist = 0, MovementType = 0 WHERE id = 30596;
 DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 30596);
 DELETE FROM creature_template_addon WHERE entry IN (30596);
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
 (30596,0,0,0,0,0,0,'42459');
+DELETE FROM gossip_menu WHERE entry IN(9999);
+INSERT INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
+(9999,13857,0,0);
+DELETE FROM npc_text_broadcast_text WHERE Id IN(13857);
+INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
+(13857,1,31438);
+DELETE FROM npc_text WHERE id IN (13857);
 
 -- Crusade Architect Silas 30686
 UPDATE creature_template SET MinLevel = 80, MaxLevel = 80, UnitClass = 2, Expansion = 2, HealthMultiplier = 7, PowerMultiplier = 8, Faction = 2070, UnitFlags = 32768 WHERE entry = 30686;
