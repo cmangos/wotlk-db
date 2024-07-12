@@ -18,7 +18,7 @@ DELETE FROM conditions WHERE condition_entry BETWEEN 20700 AND 20702;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (20700,8,13122,0,0,0,0,''),
 (20701,8,13118,0,0,0,0,''),
-(20702,-1,20698,20697,0,0,0,'');
+(20702,-1,20701,20700,0,0,0,'');
 
 -- q.13139 'Into The Frozen Heart Of Northrend'
 -- opens after completed: q.13125, q.13130, q.13110, q.13135
