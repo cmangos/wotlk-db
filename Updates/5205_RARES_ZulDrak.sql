@@ -1,18 +1,18 @@
 -- Zul'drak Sentinel 32447
 -- missing spawn added
-DELETE FROM creature_addon WHERE guid IN (535524,535525,535526);
-DELETE FROM creature_movement WHERE id IN (535524,535525,535526);
-DELETE FROM game_event_creature WHERE guid IN (535524,535525,535526);
-DELETE FROM game_event_creature_data WHERE guid IN (535524,535525,535526);
-DELETE FROM creature_battleground WHERE guid IN (535524,535525,535526);
-DELETE FROM creature_linking WHERE guid IN (535524,535525,535526);
-DELETE FROM creature where guid IN (535524,535525,535526);
+DELETE FROM creature_addon WHERE guid IN (535524,535525,535526,536076);
+DELETE FROM creature_movement WHERE id IN (535524,535525,535526,536076);
+DELETE FROM game_event_creature WHERE guid IN (535524,535525,535526,536076);
+DELETE FROM game_event_creature_data WHERE guid IN (535524,535525,535526,536076);
+DELETE FROM creature_battleground WHERE guid IN (535524,535525,535526,536076);
+DELETE FROM creature_linking WHERE guid IN (535524,535525,535526,536076);
+DELETE FROM creature where guid IN (535524,535525,535526,536076);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (535524,32447,571,1,1,5415.606,-2839.2556,276.58307,2.113,1800,1800,0,4), -- linear (30min resp timer)
 (535525,32447,571,1,1,5289.55,-2043.2262,246.03973,0.103,1800,1800,0,4), -- linear (30min resp timer)
-(535526,32447,571,1,1,5934.842,-2618.4814,292.3852,6.272,1800,1800,0,4); -- linear (30min resp timer)
--- 535527 - one more spawn missing
-DELETE FROM creature_movement WHERE id IN (535524,535525,535526);
+(535526,32447,571,1,1,5934.842,-2618.4814,292.3852,6.272,1800,1800,0,4), -- linear (30min resp timer)
+(536076,32447,571,1,1,5346.5767,-2697.718,292.3042,0,1800,1800,0,4); -- linear (30min resp timer)
+DELETE FROM creature_movement WHERE id IN (535524,535525,535526,536076);
 INSERT INTO creature_movement (`id`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- 535524
 (535524,1 ,5415.606,-2839.2556,276.58307,100,1000,0),
@@ -78,7 +78,31 @@ INSERT INTO creature_movement (`id`, `Point`, `PositionX`, `PositionY`, `Positio
 (535526,11,5618.583,-2617.64,292.41852   ,100,0,0),
 (535526,12,5597.5103,-2617.5542,292.41852,100,0,0),
 (535526,13,5580.0913,-2617.9905,292.41852,100,0,0),
-(535526,14,5566.358,-2617.765,292.41852,100,1000,0);
+(535526,14,5566.358,-2617.765,292.41852,100,1000,0),
+-- 536076
+(536076,1 ,5346.5767,-2697.718,292.3042,100,1000,0),
+(536076,2 ,5319.115,-2722.3545,292.41852 ,100,0,0),
+(536076,3 ,5288.5415,-2750.7166,292.41852,100,0,0),
+(536076,4 ,5261.3647,-2775.6008,292.41852,100,0,0),
+(536076,5 ,5241.652,-2793.4312,292.41852 ,100,0,0),
+(536076,6 ,5215.3813,-2817.6245,292.41852,100,0,0),
+(536076,7 ,5192.094,-2841.0894,292.41852 ,100,0,0),
+(536076,8 ,5177.526,-2857.6833,292.41852 ,100,0,0),
+(536076,9 ,5165.316,-2874.694,292.41852  ,100,0,0),
+(536076,10,5148.066,-2895.1067,292.41852 ,100,0,0),
+(536076,11,5125.9707,-2894.2805,292.41852,100,0,0),
+(536076,12,5108.524,-2909.3098,292.41852 ,100,0,0),
+(536076,13,5087.6626,-2932.4592,292.41852,100,0,0),
+(536076,14,5076.7144,-2943.3242,292.41852,100,0,0),
+(536076,15,5056.7856,-2960.4575,293.52484,100,0,0),
+(536076,16,5031.028,-2986.904,292.2415   ,100,0,0),
+(536076,17,5011.606,-3001.6116,292.41852 ,100,0,0),
+(536076,18,4990.574,-3023.0303,292.41852 ,100,0,0),
+(536076,19,4969.888,-3045.337,292.41852  ,100,0,0),
+(536076,20,4944.728,-3066.5774,292.41852 ,100,0,0),
+(536076,21,4919.4097,-3091.0835,292.41852,100,0,0),
+(536076,22,4887.1865,-3122.8503,292.41852,100,0,0),
+(536076,23,4855.8623,-3157.0073,292.41852,100,1000,0);
 -- Spawn Groups
 DELETE FROM `spawn_group` WHERE id = 30027;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
@@ -87,7 +111,8 @@ DELETE FROM `spawn_group_spawn` WHERE id = 30027;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (30027, 535524, -1),
 (30027, 535525, -1),
-(30027, 535526, -1);
+(30027, 535526, -1),
+(30027, 536076, -1);
 
 -- Griegen 32471
 -- missing spawn added
@@ -101,7 +126,7 @@ DELETE FROM creature where guid IN (535528,535529,535530);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
 (535528,32471,571,1,1,5311.4097,-1678.9457,232.74478,5.54826,28800,28800,30,1),
 (535529,32471,571,1,1,5828.5093,-1912.6215,234.78413,2.9407,28800,28800,30,1);
--- 535530 - 35 available (more missing)
+-- (more missing)
 -- Spawn Groups
 DELETE FROM `spawn_group` WHERE id = 30028;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
