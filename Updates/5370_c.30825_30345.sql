@@ -1,5 +1,5 @@
 -- Chief Engineer Copperclaw 30825
--- missing gosspi added
+-- missing gossip added
 UPDATE creature_template SET GossipMenuId = 10174, CreatureTypeFlags = 134217728 WHERE entry = 30825;
 DELETE FROM `gossip_menu` WHERE `entry` IN (10174);
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
