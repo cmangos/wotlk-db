@@ -144,7 +144,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 -- req. q.13329 finished first.
 UPDATE quest_template SET RequiredCondition = 20668 WHERE entry IN (13328);
 -- q.13339 'Shatter the Shards' - A
--- req. q.13329 finished first.
+-- req. q.13335 finished first.
 UPDATE quest_template SET RequiredCondition = 20669 WHERE entry IN (13339);
 
 -- q.13329 'Before the Gate of Horror' - H
@@ -155,9 +155,9 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20670,8,13307,0,0,0,0,''),
 (20671,8,13312,0,0,0,0,''),
 (20672,-1,20671,20670,0,0,0,'');
--- q.13329 'Before the Gate of Horror' - A
+-- q.13335 'Before the Gate of Horror' - A
 -- Opens after q.13334 & q.13337 completed
-UPDATE quest_template SET RequiredCondition = 20675 WHERE entry IN (13329);
+UPDATE quest_template SET RequiredCondition = 20675 WHERE entry IN (13335);
 DELETE FROM conditions WHERE condition_entry BETWEEN 20673 AND 20675;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (20673,8,13334,0,0,0,0,''),
