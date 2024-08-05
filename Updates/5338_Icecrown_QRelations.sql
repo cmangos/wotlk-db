@@ -113,19 +113,19 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20663,8,13332,0,0,0,0,'');
 
 -- q.13312 'The Ironwall Rampart' - H
--- Opens after one of them 2 completed q.13306 or q.13367
+-- Opens after completed q.13306 & q.13367
 UPDATE quest_template SET RequiredCondition = 20665 WHERE entry IN (13312);
 DELETE FROM conditions WHERE condition_entry BETWEEN 20664 AND 20665;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (20664,8,13367,0,0,0,0,''),
-(20665,-2,20664,20662,0,0,0,'');
+(20665,-1,20664,20662,0,0,0,'');
 -- q.13337 'The Ironwall Rampart' - A
--- Opens after one of them 2 completed q.13332 or q.13346
+-- Opens after completed q.13332 q.13346
 UPDATE quest_template SET RequiredCondition = 20667 WHERE entry IN (13337);
 DELETE FROM conditions WHERE condition_entry BETWEEN 20666 AND 20667;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
 (20666,8,13346,0,0,0,0,''),
-(20667,-2,20666,20663,0,0,0,'');
+(20667,-1,20666,20663,0,0,0,'');
 
 -- q.13316 'The Guardians of Corp'rethar' - H
 -- req. q.13329 finished first.
