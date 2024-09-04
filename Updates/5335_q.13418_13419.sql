@@ -1,7 +1,7 @@
 -- q.13418 'Preparations for War' - A
 -- q.13419 'Preparations for War' - H
 UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 1002601 WHERE menu_id = 10026;
-UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 1002501 WHERE menu_id = 10025;
+UPDATE gossip_menu_option SET action_menu_id = -1, action_script_id = 1002501, condition_id = 20195 WHERE menu_id = 10025;
 DELETE FROM dbscripts_on_gossip WHERE id IN (10025,1002501,1002601);
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1002601,0,15,58352,0,0,0,0,0,0,0,0,0,0,0,0,0,'cast 58352 on Player'),
@@ -18,6 +18,9 @@ INSERT INTO `spell_area` (`spell`, `area`, `quest_start`, `quest_start_active`, 
 ('57673','4506','0','0','13070','0','0','0','2','1'),
 ('57673','4580','0','0','13070','0','0','0','2','1'),
 ('57673','4593','0','0','13070','0','0','0','2','1');
+DELETE FROM conditions WHERE condition_entry IN (20195);
+INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
+(20195,9,13418,0,0,0,0,'');
 
 -- Frost Drake 30609
 UPDATE creature_template SET InhabitType = 4, SpeedWalk = (32 / 2.5), SpeedRun = (32 / 7) WHERE entry = 30609;
