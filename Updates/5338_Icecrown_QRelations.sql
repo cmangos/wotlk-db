@@ -191,10 +191,10 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20678,8,13315,0,0,0,0,'');
 -- q.13323 'Drag and Drop' - A -- Daily
 -- req. q.13318 finished first.
-UPDATE quest_template SET RequiredCondition = 20678 WHERE entry IN (13323);
-DELETE FROM conditions WHERE condition_entry = 20678;
+UPDATE quest_template SET RequiredCondition = 20317 WHERE entry IN (13323);
+DELETE FROM conditions WHERE condition_entry = 20317;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
-(20678,8,13318,0,0,0,0,'');
+(20317,8,13318,0,0,0,0,'');
 
 -- q.13354 'Chain of Command' - H
 -- req. q.13351 finished first.
@@ -221,7 +221,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (20679,8,13358,0,0,0,0,'');
 -- q.13342 'Not a Bug' - A
 -- req. q.13318 finished first.
-UPDATE quest_template SET RequiredCondition = 20678 WHERE entry IN (13342);
+UPDATE quest_template SET RequiredCondition = 20317 WHERE entry IN (13342);
 -- q.13344 'Not a Bug' - A -- Daily
 -- req. q.13342 finished first.
 UPDATE quest_template SET RequiredCondition = 20680 WHERE entry IN (13344);
@@ -233,7 +233,7 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 UPDATE quest_template SET RequiredCondition = 20677 WHERE entry IN (13366);
 -- q.13345 'Need More Info' - A
 -- req. q.13318 finished first.
-UPDATE quest_template SET RequiredCondition = 20678 WHERE entry IN (13345);
+UPDATE quest_template SET RequiredCondition = 20317 WHERE entry IN (13345);
 
 -- q.13367 'No Rest For The Wicked' - H
 -- req. q.13366 finished first.
