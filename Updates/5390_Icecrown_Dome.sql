@@ -160,7 +160,7 @@ UPDATE creature_template SET Expansion = 2 WHERE entry IN (32526);
 DELETE FROM creature_template_addon WHERE entry = 32526;
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, auras) VALUES
 (32526,0,0,1,0,0,59660);
-UPDATE gameobject SET phaseMask = 5 WHERE guid IN (530741,530742);
+UPDATE creature SET phaseMask = 5 WHERE guid IN (530741,530742);
 -- OBJECTS
 -- missing objects added
 DELETE FROM game_event_gameobject WHERE guid BETWEEN 521057 AND 521122;
@@ -325,4 +325,3 @@ INSERT INTO spell_script_target VALUES
 (59704, 1, 30755, 0),(59704, 1, 32430, 0),(59704, 1, 32529, 0),(59704, 1, 31839, 0),(59704, 1, 32528, 0), -- H
 (59704, 1, 32444, 0),(59704, 1, 30352, 0),(59704, 1, 32524, 0),(59704, 1, 32523, 0),(59704, 1, 31648, 0), -- A
 (59704, 1, 32525, 0),(59704, 1, 32274, 0),(59704, 1, 32526, 0),(59704, 1, 31817, 0),(59704, 1, 32298, 0);
-UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid IN (530743);
