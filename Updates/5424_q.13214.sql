@@ -1,4 +1,4 @@
---- q.13214 'Battle at Valhalas: Fallen Heroes'
+-- q.13214 'Battle at Valhalas: Fallen Heroes'
 DELETE FROM dbscripts_on_quest_start WHERE id IN (13214);
 INSERT INTO dbscripts_on_quest_start (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (13214,1,29,3,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'npcFlags Removed'),
