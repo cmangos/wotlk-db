@@ -8,7 +8,7 @@ DELETE FROM conditions WHERE condition_entry BETWEEN 20753 AND 20755;
 INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, flags) VALUES 
 (20753,8,12896,0,0,0,1),
 (20754,8,12897,0,0,0,1),
-(20755,-1,20754,20753,0,0,0);
+(20755,-2,20754,20753,0,0,0);
 
 -- Vile 30216
 UPDATE creature SET position_x = 8415.534, position_y = 2712.3645, position_z = 655.1002, movementtype = 4, spawndist = 0 WHERE id = 30216;
