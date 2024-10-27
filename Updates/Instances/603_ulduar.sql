@@ -2865,6 +2865,10 @@ INSERT INTO `dbscripts_on_relay` (`id`, `command`, `dataint`, `comments`) VALUES
 (29103, 0, 34307, 'Ignis - Say Constructs'),
 (29105, 0, 33871, 'Ignis - Say Berserk');
 
+INSERT INTO `dbscripts_on_relay` (`id`, `command`, `dataint`, `datalong`, `datalong2`, `comments`) VALUES
+(29281, 0, 33313, 0, 0, 'Hodir - Emote Frozen Blows'),
+(29281, 16, 0, 15556, 0, 'Hodir - Play Sound Frozen Blows');
+
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
