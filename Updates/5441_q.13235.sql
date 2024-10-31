@@ -87,4 +87,3 @@ INSERT INTO spell_script_target (`entry`, `type`, `targetEntry`, `inverseEffectM
 (58949, 1, 30698, 0);
 -- Morbidus 30698
 UPDATE creature_template SET Faction = 2102, UnitFlags = 832, MinLevel = 80, MaxLevel = 80, Expansion = 2, VehicleTemplateId = 271 WHERE Entry = 30698;
-DELETE FROM dbscripts_on_relay WHERE id IN (21090,21091);
