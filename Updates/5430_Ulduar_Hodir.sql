@@ -21,6 +21,16 @@ DELETE FROM `string_id` WHERE `Name`='ULDUAR_HODIR_FIRES';
 INSERT INTO `string_id` VALUES
 (6030702,'ULDUAR_HODIR_FIRES');
 
+-- Hodir
+UPDATE `creature_template` SET `SpellList`=3284500 WHERE `entry`=32845; -- Hodir (10)
+UPDATE `creature_template` SET `SpellList`=3284600 WHERE `entry`=32846; -- Hodir (25)
+-- Snowpacked Icicle Target
+UPDATE `creature_template` SET `StaticFlags1`=`StaticFlags1`|0x00000100|0x02000000 WHERE `entry`=33174;
+-- Hodir's Helper NPCs
+UPDATE `creature_template` SET `StringId1`=6030701 WHERE `entry` IN (32941, 33333, 32950, 33332, 32946, 33331, 32948, 33330, 32901, 33325, 32900, 33328, 32893, 33327, 32897, 33326, 33342);
+-- Toasty Fire
+UPDATE `creature_template` SET `StringId2`=6030702 WHERE `entry`=33342;
+
 UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE `Id`=33314;
 UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE `Id`=33313;
 UPDATE `broadcast_text` SET `ChatTypeID`=1,`SoundEntriesID1`=15552 WHERE `Id`=34336;
