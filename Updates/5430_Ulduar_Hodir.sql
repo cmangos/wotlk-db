@@ -21,22 +21,6 @@ DELETE FROM `string_id` WHERE `Name`='ULDUAR_HODIR_FIRES';
 INSERT INTO `string_id` VALUES
 (6030702,'ULDUAR_HODIR_FIRES');
 
-UPDATE `creature_template` SET `SpellList`=3284500 WHERE `entry`=32845; -- Hodir (10)
-UPDATE `creature_template` SET `SpellList`=3284600 WHERE `entry`=32846; -- Hodir (25)
--- Snowpacked Icicle Target
-UPDATE `creature_template` SET `StaticFlags1`=`StaticFlags1`|0x00000100|0x02000000 WHERE `entry`=33174;
-UPDATE `creature_template` SET `ScriptName`='' WHERE `entry`=33174;
-UPDATE `creature_template` SET `AIName`='', `ScriptName`='npc_snowpack_target' WHERE `Entry`=33174;
-UPDATE `creature_template` SET `AIName`='EventAI', `ScriptName` = '' WHERE `Entry` = 33169; -- Icicle
--- Hodir's Helper NPCs
-UPDATE `creature_template` SET `StringId1`=6030701 WHERE `entry` IN (32941, 33333, 32950, 33332, 32946, 33331, 32948, 33330, 32901, 33325, 32900, 33328, 32893, 33327, 32897, 33326, 33342);
--- Toasty Fire
-UPDATE `creature_template` SET `StringId2`=6030702 WHERE `entry`=33342;
-
-DELETE FROM `creature_ai_scripts` WHERE `creature_id` IN (33174, 33169);
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `event_param6`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
-(3316901, 33169, 29, 0, 100, 1024, 3500, 3500, 0, 0, 0, 0, 11, 62453, 15, 0, 11, 62236, 15, 2, 0, 0, 0, 0, 'Time = 4 seconds - Self: Cast Icicle (62453) on none, Self: Cast Icicle (62236) on none with flags TRIGGERED, ');
-
 UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE `Id`=33314;
 UPDATE `broadcast_text` SET `ChatTypeID`=3 WHERE `Id`=33313;
 UPDATE `broadcast_text` SET `ChatTypeID`=1,`SoundEntriesID1`=15552 WHERE `Id`=34336;
