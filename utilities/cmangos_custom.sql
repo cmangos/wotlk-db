@@ -168,6 +168,9 @@ UPDATE gameobject_template SET displayId = 0 WHERE entry = 184958;
 -- Before: update creature_template set UnitFlags = '2304' where entry = 17578;
 UPDATE creature_template SET UnitFlags = UnitFlags|640 WHERE entry = 17578;
 
+-- mmap issues
+UPDATE creature_template SET ExtraFlags = ExtraFlags|16384 WHERE `entry` IN (19608,21554); -- Frayer Wildling (Botanica)
+
 -- -------------------------------
 
 UPDATE `creature_template` SET `name` = 'Redeemed Spirit of Earth' WHERE `entry` = 21739; -- Redeemed Spriit of Earth
