@@ -11,7 +11,6 @@ INSERT INTO spell_area (spell, area, quest_start, quest_start_active, quest_end,
 (58139,4530,0,0,0,20783,0,0,2,1),
 (58139,4531,0,0,0,20783,0,0,2,1),
 (58139,4588,0,0,0,20783,0,0,2,1);
--- przerobic bo nie działa na conditions
 DELETE FROM conditions WHERE condition_entry = 20783;
 INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES
 (20783,8,13144,0,0,0,'');
