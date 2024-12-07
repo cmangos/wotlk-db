@@ -210,9 +210,9 @@ UPDATE `gameobject_template` SET `faction` = 1735 WHERE `entry` = 187390; -- Gui
 
 
 -- missing objects (2 deleted guids reused)
-DELETE FROM `gameobject` WHERE `guid` IN (23477, 23478);
+DELETE FROM `gameobject` WHERE `guid` IN (23477, 23478, 26174);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (23477, 195142, 530, 1, 1, 9984.0263671875, -7108.4306640625, 47.70493698120117187, 0, 0, 0, 0, 1, 180, 180),
-(23478, 175746, 530, 1, 1, 9557.1669921875, -7210.3427734375, 27.150146484375, 4.607671737670898437, 0, 0, -0.74314403533935546, 0.669131457805633544, 120, 120);
-
+(23478, 175746, 530, 1, 1, 9557.1669921875, -7210.3427734375, 27.150146484375, 4.607671737670898437, 0, 0, -0.74314403533935546, 0.669131457805633544, 120, 120),
+(26174, 185471, 530, 1, 1, 9552.08, -7180.93, 14.0837, 4.7473, 0, 0, -0.694657, 0.719341, 180, 180);
 
