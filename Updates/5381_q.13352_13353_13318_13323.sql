@@ -14,7 +14,7 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (20946,10001,0,20362,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Dark Subjugator 32236 EAI: random Say'),
 (20947,1,15,46598,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: cast 46598'),
 (20948,1,37,0,0,0,23837,100,1,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: move towards target'),
-(20948,5000,37,0,0,0,23837,34107,1|0x100,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: move towards target'),
+(20948,5000,37,0,0,0,34107,100,1|0x100,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: move towards - spawn group'),
 (20948,12000,15,50630,0,0,0,0,0,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: Cast 50630'),
 (20948,14000,18,0,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Part of Aldur\'thar Sentry 32292 EAI: despawn');
 DELETE FROM dbscript_random_templates WHERE `id` IN (20361,20362);

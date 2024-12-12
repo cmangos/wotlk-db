@@ -18,7 +18,7 @@ UPDATE `gameobject` SET `position_x` = 9983.4521484375, `position_y` = -7113.627
 UPDATE `gameobject` SET `position_x` = 9959.6279296875, `position_y` = -7193.21484375, `position_z` = 30.85211563110351562, `orientation` = 4.684430599212646484, `rotation0` = -0.0062570571899414, `rotation1` = -0.008209228515625, `rotation2` = -0.7168731689453125, `rotation3` = 0.697127223014831542 WHERE `guid` = 23432;
 UPDATE `gameobject` SET `position_x` = 9862.7626953125, `position_y` = -7110.00341796875, `position_z` = 30.85211563110351562, `orientation` = 3.408238887786865234, `rotation0` = -0.00991678237915039, `rotation1` = -0.00286674499511718, `rotation2` = -0.99107074737548828, `rotation3` = 0.132936760783195495 WHERE `guid` = 23434;
 UPDATE `gameobject` SET `position_x` = 9927.8984375, `position_y` = -7188.94775390625, `position_z` = 30.85211563110351562, `orientation` = 4.359447479248046875, `rotation0` = -0.00750350952148437, `rotation1` = -0.00708961486816406, `rotation2` = -0.82020950317382812, `rotation3` = 0.571970105171203613 WHERE `guid` = 23431;
-UPDATE `gameobject` SET `position_x` = 9872.0693359375, `position_y` = -7140.64111328125, `position_z` = 30.85211563110351562, `orientation` = 3.619313001632690429, `rotation2` = -0.00955963134765625, `rotation3` = -0.00389480590820312 WHERE `guid` = 23433;
+UPDATE `gameobject` SET `position_x` = 9872.068, `position_y` = -7140.639, `position_z` = 30.852123, `orientation` = -2.6638725, `rotation0` = -0.009559631, `rotation1` = -0.003894806, `rotation2` = -0.97155285, `rotation3` = 0.23659772 WHERE `guid` = 23433;
 UPDATE `gameobject` SET `position_y` = -7226.41162109375, `position_z` = 30.73390007019042968, `orientation` = 1.867502212524414062, `rotation2` = 0.803856849670410156, `rotation3` = 0.594822824001312255 WHERE `guid` = 22857;
 UPDATE `gameobject` SET `position_x` = 9955.2626953125, `position_z` = 43.29912567138671875, `orientation` = 2.128911495208740234, `rotation2` = 0.874525070190429687, `rotation3` = 0.484980285167694091 WHERE `guid` = 23489;
 UPDATE `gameobject` SET `position_x` = 9963.830078125, `position_y` = -7241.43701171875, `position_z` = 33.77791976928710937, `orientation` = 3.333590030670166015, `rotation2` = -0.99539566040039062, `rotation3` = 0.095851235091686248 WHERE `guid` = 63173;
@@ -210,9 +210,9 @@ UPDATE `gameobject_template` SET `faction` = 1735 WHERE `entry` = 187390; -- Gui
 
 
 -- missing objects (2 deleted guids reused)
-DELETE FROM `gameobject` WHERE `guid` IN (23477, 23478);
+DELETE FROM `gameobject` WHERE `guid` IN (23477, 23478, 26174);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecsmin`, `spawntimesecsmax`) VALUES
 (23477, 195142, 530, 1, 1, 9984.0263671875, -7108.4306640625, 47.70493698120117187, 0, 0, 0, 0, 1, 180, 180),
-(23478, 175746, 530, 1, 1, 9557.1669921875, -7210.3427734375, 27.150146484375, 4.607671737670898437, 0, 0, -0.74314403533935546, 0.669131457805633544, 120, 120);
-
+(23478, 175746, 530, 1, 1, 9557.1669921875, -7210.3427734375, 27.150146484375, 4.607671737670898437, 0, 0, -0.74314403533935546, 0.669131457805633544, 120, 120),
+(26174, 185471, 530, 1, 1, 9552.08, -7180.93, 14.0837, 4.7473, 0, 0, -0.694657, 0.719341, 180, 180);
 
