@@ -331,7 +331,7 @@ INSERT INTO creature_addon (guid,mount,stand_state,sheath_state,pvp_flags,emote,
 UPDATE creature SET position_x = 8313.91, position_y = 2802.6318, position_z = 655.19403, orientation = 3.49065, spawndist = 0, MovementType = 4 WHERE guid = 526157; -- linear
 UPDATE creature SET position_x = 8335.015, position_y = 2815.4355, position_z = 655.21747, orientation = 1.91986, spawndist = 0, MovementType = 4 WHERE guid = 526156; -- linear
 UPDATE creature SET position_x = 8353.955, position_y = 2806.3413, position_z = 655.21747, orientation = 3.759214, spawndist = 0, MovementType = 2 WHERE guid = 526155;
-UPDATE creature SET position_x = 8379.28, position_y = 778.249, position_z = 655.1795, orientation = 0.471238, spawndist = 0, MovementType = 2 WHERE guid = 526154;
+UPDATE creature SET position_x = 8379.28, position_y = 2778.249, position_z = 655.1795, orientation = 0.471238, spawndist = 0, MovementType = 2 WHERE guid = 526154;
 DELETE FROM creature_movement WHERE id IN (526157,526156,526155,526158,525702,526154,525712,525715,525718,525720);
 INSERT INTO creature_movement (id, Point, PositionX, PositionY, PositionZ, Orientation, WaitTime, ScriptId) VALUES
 -- 526157
