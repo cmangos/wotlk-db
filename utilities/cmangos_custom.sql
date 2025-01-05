@@ -223,3 +223,7 @@ UPDATE `item_template` SET `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 4
 -- Spell custom changes
 -- -------------------------------
 
+-- The Prodigal Leader - should have no cast delay
+UPDATE `spell_template` SET `CastingTimeIndex`='1' WHERE (`Id`='58911');
+
+
