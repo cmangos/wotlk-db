@@ -7,13 +7,13 @@ INSERT INTO spell_area (spell, area, quest_start, quest_start_active, quest_end,
 
 -- Death Knight Adept 31318
 -- they're summoned
-DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM creature_movement WHERE id IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM game_event_creature WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM game_event_creature_data WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM creature_battleground WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM creature_linking WHERE guid IN(SELECT guid FROM creature WHERE id = 28025);
-DELETE FROM creature WHERE id = 28025;
+DELETE FROM creature_addon WHERE guid IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM creature_movement WHERE id IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM game_event_creature WHERE guid IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM game_event_creature_data WHERE guid IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM creature_battleground WHERE guid IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM creature_linking WHERE guid IN(SELECT guid FROM creature WHERE id = 31318);
+DELETE FROM creature WHERE id = 31318;
 -- Orbaz Bloodbane 31283
 UPDATE creature SET PhaseMask = 4, position_x = 5826.424, position_y = 2029.9341, position_z = 503.99295, orientation = 5.95157, spawndist = 0, MovementType = 0 WHERE id = 31283;
 -- Ebon Blade Reaper 31316
