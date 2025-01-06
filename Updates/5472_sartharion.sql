@@ -23,8 +23,8 @@ DELETE FROM `creature_spell_list` WHERE `Id` IN (3045200, 3153400);
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Flags`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `Comments`) VALUES
 (3045200, 0, 57579, 5000, 5000, 15000, 20000, 0, 100, 0, 100, 0, 'Tenebron 10 - Shadow Fissure'),
 (3045200, 1, 57570, 20000, 20000, 20000, 25000, 0, 0, 0, 100, 0, 'Tenebron 10 - Shadow Breath'),
-(3131100, 0, 57579, 5000, 5000, 15000, 20000, 0, 100, 0, 100, 0, 'Tenebron 25 - Shadow Fissure'),
-(3131100, 1, 57570, 20000, 20000, 20000, 25000, 0, 0, 0, 100, 0, 'Tenebron 25 - Shadow Breath');
+(3153400, 0, 57579, 5000, 5000, 15000, 20000, 0, 100, 0, 100, 0, 'Tenebron 25 - Shadow Fissure'),
+(3153400, 1, 57570, 20000, 20000, 20000, 25000, 0, 0, 0, 100, 0, 'Tenebron 25 - Shadow Breath');
 
 DELETE FROM `creature_spell_list_entry` WHERE `Id` IN (3045200, 3153400);
 INSERT INTO `creature_spell_list_entry` VALUES
