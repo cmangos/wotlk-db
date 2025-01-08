@@ -35,7 +35,7 @@ UPDATE `broadcast_text` SET `ChatTypeID`= 1 WHERE `Id` IN (31134,31173);
 DELETE FROM dbscripts_on_relay WHERE id BETWEEN 21028 AND 21032;
 INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (21028,1,0,0,0,0,0,0,0x04,31120,0,0,0,0,0,0,0,'say'),
-(21028,2,49,768,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unitFlags'),
+(21028,2,48,768,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unitFlags'),
 -- 1st wave - 00:36:26.684
 (21029,1,10,30471,300000,0,0,0,0x08,0,0,0,0,7991.7285,3336.5872,632.47876,0.29,'summon 30471'),
 (21029,2,10,30471,300000,0,0,0,0x08,0,0,0,0,8001.9775,3322.2395,632.47876,0.64877,'summon 30471'),
