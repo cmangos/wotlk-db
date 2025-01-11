@@ -344,6 +344,11 @@ INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`
 (2885901,1000,15,56046,0,0,30118,50,0x01,0,0,0,0,0,0,0,0,'Malygos - cast Portal Beam'),
 (2885901,11000,47,3,0,0,0,0,0,0,0,0,0,0,0,0,0,'Malygos - interrupt casting');
 
+DELETE FROM string_id WHERE Id = 6160001;
+INSERT INTO string_id(Id, Name) VALUES
+(6160001,'GO_FOCUSING_IRIS');
+UPDATE gameobject_template SET StringId=6160001 WHERE entry IN(193958,193960);
+
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
