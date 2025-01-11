@@ -7,5 +7,5 @@ INSERT INTO creature_loot_template (entry,item,ChanceOrQuestChance,groupid,minco
 DELETE FROM conditions WHERE condition_entry BETWEEN 20323 AND 20322;
 INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES
 (20323,23,49676,1,0,1,''),
-(20324,8,24442,1,0,1,''),
+(20324,8,24442,0,0,1,''),
 (20325,-1,20324,20323,0,0,'');
