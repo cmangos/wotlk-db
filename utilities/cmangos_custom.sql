@@ -225,5 +225,5 @@ UPDATE `item_template` SET `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 4
 
 -- The Prodigal Leader - should have no cast delay
 UPDATE `spell_template` SET `CastingTimeIndex`='1' WHERE (`Id`='58911');
-
-
+-- Rope Beam - no idea why target are swaped. sniff shows that spell hits target instead of source (original: EffectImplicitTargetA1 = 1, EffectImplicitTargetB1 = 25)
+UPDATE spell_template SET EffectImplicitTargetA1 = 25, EffectImplicitTargetB1 = 1 WHERE id IN (66206,63413);
