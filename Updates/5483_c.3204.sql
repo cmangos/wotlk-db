@@ -9,3 +9,5 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (19894, 6456, -1),
 (19894, 6499, -1),
 (19894, 7202, -1);
+-- clean up
+DELETE FROM game_event_creature WHERE guid = 6499;
