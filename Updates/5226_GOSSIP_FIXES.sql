@@ -36,15 +36,15 @@ UPDATE creature_template SET NpcFlags = 147, CreatureTypeFlags = 134217728, Trai
 DELETE FROM gossip_menu WHERE entry=2685;
 INSERT INTO gossip_menu (entry,text_id,condition_id) VALUES
 (2685,3357,0), -- default
-(2685,3358,3833); -- q.4781 taken or completed
+(2685,3358,3837); -- q.4781 taken or completed
 DELETE FROM gossip_menu_option WHERE menu_id = 2685 AND id = 2;
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
 (2685,2,3,'I am interested in tailor training.',2586,5,16,0,0,0,0,0,NULL,0,0);
-DELETE FROM conditions WHERE condition_entry IN (3831,3832,3833);
+DELETE FROM conditions WHERE condition_entry BETWEEN 3835 AND 3837;
 INSERT INTO conditions(condition_entry, type, value1, value2, value3, value4, flags, comments) VALUES
-(3831,9,4781,0,0,0,0,''),
-(3832,8,4781,0,0,0,0,''),
-(3833,-2,3829,3828,0,0,0,'');
+(3835,9,4781,0,0,0,0,''),
+(3836,8,4781,0,0,0,0,''),
+(3837,-2,3836,3835,0,0,0,'');
 DELETE FROM npc_text_broadcast_text WHERE Id IN(3357,3358);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 (3357,1,5627),
