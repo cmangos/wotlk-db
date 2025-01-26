@@ -255,8 +255,8 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+13, @GGUID+89, -1),
 (@SGGUID+13, @GGUID+90, -1);
 
-DELETE FROM gameobject WHERE id = 1731 and map =530 and position_x BETWEEN -2812 AND -970 AND position_y BETWEEN -12651 AND -10370; -- copper
-DELETE FROM gameobject WHERE id = 1732 and map =530 and position_x BETWEEN -2812 AND -970 AND position_y BETWEEN -12651 AND -10370; -- tin
+DELETE FROM gameobject WHERE id = 1731 AND map =530 AND position_x BETWEEN -2812 AND -970 AND position_y BETWEEN -12651 AND -10370; -- copper
+DELETE FROM gameobject WHERE id = 1732 AND map =530 AND position_x BETWEEN -2812 AND -970 AND position_y BETWEEN -12651 AND -10370; -- tin
 -- bloodmyst
 SET @GGUID := 5305200;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
@@ -529,8 +529,8 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+30, @GGUID+32, -1);
 
 -- Ghostlands
-DELETE FROM gameobject WHERE id = 1732 and map =530 and position_x BETWEEN 6250 AND 8130 AND position_y BETWEEN -8032 AND -5700; -- tin
-DELETE FROM gameobject WHERE id = 1731 and map =530 and position_x BETWEEN 6250 AND 8130 AND position_y BETWEEN -8032 AND -5700; -- copper
+DELETE FROM gameobject WHERE id = 1732 AND map =530 AND position_x BETWEEN 6250 AND 8130 AND position_y BETWEEN -8032 AND -5700; -- tin
+DELETE FROM gameobject WHERE id = 1731 AND map =530 AND position_x BETWEEN 6250 AND 8130 AND position_y BETWEEN -8032 AND -5700; -- copper
 SET @GGUID := 5305400;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+1, '1732', '530', '1', 6531.1650390625, -7405.35400390625, 69.88683319091796875, 6.021387100219726562, 0, 0, -0.13052558898925781, 0.991444945335388183, '600', '600'),
@@ -628,7 +628,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+31, 'Ghostlands - Tin Vein - Deatholme', 1, 1, 0, 0),
 (@SGGUID+32, 'Ghostlands - Tin Vein - Scar and Zul', 1, 2, 0, 0),
 (@SGGUID+33, 'Ghostlands - Tin Vein - ZebTela', 1, 1, 0, 0);
-
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+31 AND @SGGUID+33;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Deatholme
 (@SGGUID+31, @GGUID+3, -1),
@@ -665,7 +665,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+39, 'Ghostlands - Copper Vein - Andaroth', 1, 2, 0, 0),
 (@SGGUID+40, 'Ghostlands - Copper Vein - Windrunner Spire', 1, 2, 0, 0),
 (@SGGUID+41, 'Ghostlands - Copper Vein - The Dead Scar', 1, 2, 0, 0);
-
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+34 AND @SGGUID+41;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Deatholme
 (@SGGUID+34, @GGUID+22, -1),
@@ -744,7 +744,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 
 -- Eversong Woods
 -- Between the ghostlands and eversong query it deletes all of them, has to be in this order with ghostlands so ghostlands query doesnt delete eversong
-DELETE FROM gameobject where id = 1731 and map =530 and position_x BETWEEN 8130 AND 9749 AND position_y BETWEEN -8050 AND -5700; -- copper
+DELETE FROM gameobject where id = 1731 AND map =530 AND position_x BETWEEN 8130 AND 9749 AND position_y BETWEEN -8050 AND -5700; -- copper
 SET @GGUID := 5305500;
 INSERT INTO gameobject(guid, id, map, spawnMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecsmin, spawntimesecsmax) VALUES
 (@GGUID+1, '1731', '530', '1', 8391.1357421875, -6303.73681640625, 128.4292755126953125, 1.500982880592346191, 0, 0, 0.681998252868652343, 0.731353819370269775, '600', '600'),
@@ -886,7 +886,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+56, 'Eversong Woods - Copper Vein - North Sanctum', 1, 2, 0, 0),
 (@SGGUID+57, 'Eversong Woods - Copper Vein - South of North Sanctum', 1, 2, 0, 0),
 (@SGGUID+58, 'Eversong Woods - Copper Vein - North of Fairbreeze Village', 1, 2, 0, 0);
-
+DELETE FROM spawn_group_spawn WHERE Id BETWEEN @SGGUID+42 AND @SGGUID+58;
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- Duskwither Spire
 (@SGGUID+42, @GGUID+34, -1),
@@ -1038,6 +1038,7 @@ DELETE FROM pool_gameobject WHERE guid IN(101358,101359,101361,101362,101364,101
 DELETE FROM pool_gameobject WHERE guid IN(101376,101377,101379,101380,101382,101383,101385,101386,101388,101389,111262,111263);
 DELETE FROM pool_gameobject WHERE guid IN(111264,111265,5300605,5300606,5300608,5300609,5300611,5300612,5300614,5300615,5300617,5300618,5300620,5300621);
 DELETE FROM pool_gameobject WHERE guid IN(75000,75001,75003,75004,75006,75007,75009,75010,75012,75013,75015,75016);
+
 DELETE FROM pool_gameobject a WHERE guid NOT IN(SELECT guid FROM gameobject b WHERE a.guid=b.guid) AND guid BETWEEN 75018 AND 75118;
 DELETE FROM pool_gameobject a WHERE guid NOT IN(SELECT guid FROM gameobject b WHERE a.guid=b.guid) AND guid BETWEEN 5301069 AND 5301151;
 DELETE FROM pool_gameobject a WHERE guid NOT IN(SELECT guid FROM gameobject b WHERE a.guid=b.guid) AND guid BETWEEN 5301507 AND 5301531;

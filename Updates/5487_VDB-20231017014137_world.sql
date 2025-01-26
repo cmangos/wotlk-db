@@ -2,18 +2,18 @@
 -- https://github.com/vmangos/core/commit/6ed13a039d154423aa0f8fa27124ac8aace0e816
 -- going through the mountainside at his last waypoint currently, the other spawn seems custom made up.
 
--- Pathing for Rippa Entry: 14490 (49058,98912)
+-- Pathing for Rippa Entry: 14490 (49058,134221)
 SET @NPC := 49058;
 SET @ENTRY := 14490;
 UPDATE `creature_template` SET `ExtraFlags` = `ExtraFlags`|1048576, `SpeedWalk` = 1, `SkinningLootId` = 0 WHERE `entry` = 14490;
 REPLACE INTO `creature_spawn_data` (`guid`, `id`) VALUES (49058, 1);
 
 DELETE FROM `pool_creature_template` WHERE `id` = 14490; -- 1119	0	Rippa (14490)
-DELETE FROM `pool_template` WHERE `entry` = 1119; -- 1	Rippa (14490)
+DELETE FROM `pool_template` WHERE `entry` = 1023; -- 1	Rippa (14490)
 
 DELETE FROM `creature` WHERE `id` = 14490 AND `guid` != 49058;
 UPDATE `creature` SET `position_x`=-13599.317,`position_y`=482.80338,`position_z`=-33.83112, `MovementType` = 4 WHERE `guid`=@NPC;
-DELETE FROM `creature_movement` WHERE `id` IN (@NPC,98912);
+DELETE FROM `creature_movement` WHERE `id` IN (@NPC,134221);
 DELETE FROM `creature_movement_template` WHERE `entry` = @ENTRY;
 INSERT INTO `creature_movement_template` (`Entry`,`Point`,`PositionX`,`PositionY`,`PositionZ`,`Orientation`,`WaitTime`,`ScriptId`) VALUES
 (@ENTRY,1,-13599.317,482.80338,-33.83112,100,0,0),
