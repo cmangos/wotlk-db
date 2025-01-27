@@ -26,7 +26,7 @@ INSERT INTO `creature_movement_template` (`entry`,`point`,`positionx`,`positiony
 -- .go xyz 4026.523 -555.293 342.505
 
 UPDATE `creature_template` SET `SpeedWalk` = 1, `ResistanceArcane` = 0 WHERE `entry` = 14340;
-INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES (14340, 11674, -50, 0, 1, 1, 0, 'Jadefire Felbind');
+-- INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES (14340, 11674, -50, 0, 1, 1, 0, 'Jadefire Felbind');
 DELETE FROM `creature_loot_template` WHERE `entry` = 14340 AND `item` IN (8838,8846,13466); -- Sungrass,Gromsblood,Plaguebloom
 
 -- End of migration.
