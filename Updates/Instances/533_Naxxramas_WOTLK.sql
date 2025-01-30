@@ -2090,7 +2090,7 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 (@OGUID+11,0,-1,0,0,0,1),
 (@OGUID+12,0,-1,0,0,0,1),
 (@OGUID+13,0,-1,0,0,0,1),
-(@OGUID+14,0,-1,0,0,0,1),
+(@OGUID+14,0,1,0,0,0,1),
 (@OGUID+15,0,1,0,0,0,1),
 (@OGUID+16,0,1,0,0,0,1),
 (@OGUID+17,0,-1,0,0,0,1),
