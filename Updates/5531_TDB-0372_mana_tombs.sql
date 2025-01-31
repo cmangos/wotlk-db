@@ -10,7 +10,6 @@ INSERT INTO creature_spawn_data (Guid, Id) VALUES
 (84507,1967301);
 DELETE FROM creature_template_addon WHERE entry=19673; -- not every spawn uses emote 233
 DELETE FROM creature_addon WHERE guid IN (SELECT guid FROM creature WHERE id=19673);
-DELETE FROM creature WHERE guid=84498; -- extra spawn, there should only be 3 in total
 INSERT INTO creature_addon (guid, mount, stand_state, sheath_state, emote, moveflags, auras) VALUES
 (84504, 0, 0, 1, 233, 0, NULL),
 (84497, 0, 0, 1, 0, 0, NULL),
@@ -22,9 +21,9 @@ INSERT INTO dbscripts_on_relay (id, delay, priority, command, datalong, datalong
 (10216, 10000, 0, 45, 10216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Consortium Engineer - Start Relay Script'); -- creates loop intentionally
 -- add missing Consortium Spell Marker
 UPDATE creature_template SET InhabitType=4 WHERE Entry=19677; -- always flying
-DELETE FROM creature WHERE guid=84498; -- reuse freed guid from above
+DELETE FROM creature WHERE guid=5309971;
 INSERT INTO creature (guid, id, map, spawnMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
-(84498, 19677, 530, 1, -3101.862, 4931.368, -87.810165, 2.30383467674255371, 300, 300, 0, 0);
+(5309971, 19677, 530, 1, -3101.862, 4931.368, -87.810165, 2.30383467674255371, 300, 300, 0, 0);
 
 -- add emotes for texts used by Nexus-Prince Haramad 19674
 UPDATE broadcast_text SET EmoteID1=1, EmoteID2=15, EmoteDelay2=3000 WHERE Id IN (17224,17225,17226);
