@@ -31,10 +31,10 @@ DELETE FROM `creature_loot_template` WHERE `item` = 14048;
 -- https://web.archive.org/web/20080422034942/http://wow.allakhazam.com/db/mob.html?wmob=1783
 DELETE FROM `creature_loot_template` WHERE `entry` = 1783; -- 22 down from 111
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
-(1783, 12840, 50, 0, 1, 1, 24, 'Minion\'s Scourgestone'),
+(1783, 12840, 50, 0, 1, 1, 94, 'Minion\'s Scourgestone'),
 (1783, 14619, -80, 0, 1, 1, 0, 'Skeletal Fragments'),
 (1783, 22526, 33.1501, 0, 1, 1, 0, 'Bone Fragments'),
-(1783, 13357, 50, 0, 1, 1, 23, 'Osseous Agitator'),
+(1783, 13357, 50, 0, 1, 1, 96, 'Osseous Agitator'),
 (1783, 14047, 23.5637, 0, 1, 2, 0, 'Runecloth'),
 (1783, 7972, 4.5115, 0, 1, 1, 0, 'Ichor of Undeath'),
 (1783, 8948, 4.7643, 0, 1, 1, 0, 'Dried King Bolete'),
