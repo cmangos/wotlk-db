@@ -1,3 +1,13 @@
+-- redone
+DELETE FROM creature WHERE guid IN (114143,111501);
+DELETE FROM creature_addon WHERE guid IN (114143,111501);
+DELETE FROM creature_movement WHERE Id IN (114143,111501);
+DELETE FROM game_event_creature WHERE guid IN (114143,111501);
+DELETE FROM game_event_creature_data WHERE guid IN (114143,111501);
+DELETE FROM creature_battleground WHERE guid IN (114143,111501);
+DELETE FROM creature_linking WHERE guid IN (114143,111501)
+ OR master_guid IN (114143,111501);
+
 DELETE FROM creature WHERE guid IN(200071,200070);
 -- DELETE FROM creature_movement WHERE id IN(200071,200070);
 
