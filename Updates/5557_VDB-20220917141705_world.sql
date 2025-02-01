@@ -231,7 +231,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2562, 0, 0, 'Gubber, I don\'t know how to fish.', 5529, 1, 1, -1, 0, 256200, 0, 0, NULL, 0, 553),
 (2562, 1, 1, 'Gubber, I don\'t have a fishing pole.', 5530, 3, 128, 0, 0, 256201, 0, 0, NULL, 0, 558); -- npc_option_npcflag 4 classic
 
-DELETE FROM `conditions` WHERE `condition_entry` IN ();
+DELETE FROM `conditions` WHERE `condition_entry` IN (553,556,557,558);
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES
 -- (810, 7, 356, 1, 0, 0, 0, 'Has Skill ID 356, Minimum Skill Value 1'), -- already exists in classic (404) /wotlk (135)
 (553, 7, 356, 1, 0, 0, 1, 'NOT (Has Skill ID 356, Minimum Skill Value 1)'), -- TDB - 811
