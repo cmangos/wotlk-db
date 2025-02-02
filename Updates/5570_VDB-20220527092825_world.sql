@@ -3553,26 +3553,26 @@ UPDATE `creature_template` SET `MinLootGold`='500000', `MaxLootGold`='750000' WH
 UPDATE `creature_template` SET `MinLootGold`='957', `MaxLootGold`='1288' WHERE `entry`='1410'; -- Firewing Bloodwarder (957MinG) (1288MaxG)
 UPDATE `creature_template` SET `MinLootGold`='952', `MaxLootGold`='1177' WHERE `entry`='5355'; -- Firewing Defender (952MinG) (1177MaxG)
 UPDATE `creature_template` SET `MinLootGold`='3732', `MaxLootGold`='8000' WHERE `entry`='11980'; -- Zuluhed the Whacked (3732MinG) (4878MaxG) https://www.youtube.com/watch?v=aIMbG3Fk1uU https://www.youtube.com/watch?v=n9vrwhbiLcU
-UPDATE `creature_template` SET `HeroicEntry` = 22550, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13378; -- Frostwolf Shredder Unit
+UPDATE `creature_template` SET `DifficultyEntry1` = 22550, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13378; -- Frostwolf Shredder Unit
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22550;
-UPDATE `creature_template` SET `HeroicEntry` = 22576, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13416; -- Stormpike Shredder Unit
+UPDATE `creature_template` SET `DifficultyEntry1` = 22576, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13416; -- Stormpike Shredder Unit
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22576;
-UPDATE `creature_template` SET `HeroicEntry` = 22621, `MinLevel` = 61, `MaxLevel` = 61 WHERE `entry` = 13446; -- Field Marshal Teravaine
+UPDATE `creature_template` SET `DifficultyEntry1` = 22621, `MinLevel` = 61, `MaxLevel` = 61 WHERE `entry` = 13446; -- Field Marshal Teravaine
 UPDATE `creature_template` SET `MinLevel` = 71, `MaxLevel` = 71 WHERE `entry` = 22621;
-UPDATE `creature_template` SET `HeroicEntry` = 22525, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13161; -- Aerie Gryphon
+UPDATE `creature_template` SET `DifficultyEntry1` = 22525, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13161; -- Aerie Gryphon
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22525;
-UPDATE `creature_template` SET `HeroicEntry` = 22594, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13178; -- War Rider
+UPDATE `creature_template` SET `DifficultyEntry1` = 22594, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 13178; -- War Rider
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22594;
-UPDATE `creature_template` SET `HeroicEntry` = 22556, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14943; -- Guse's War Rider
+UPDATE `creature_template` SET `DifficultyEntry1` = 22556, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14943; -- Guse's War Rider
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22556;
-UPDATE `creature_template` SET `HeroicEntry` = 22564, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14944; -- Jeztor's War Rider
+UPDATE `creature_template` SET `DifficultyEntry1` = 22564, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14944; -- Jeztor's War Rider
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22564;
-UPDATE `creature_template` SET `HeroicEntry` = 22566, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14945; -- Mulverick's War Rider
+UPDATE `creature_template` SET `DifficultyEntry1` = 22566, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14945; -- Mulverick's War Rider
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22566;
-UPDATE `creature_template` SET `HeroicEntry` = 22570, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14946; -- Slidore's Gryphon
+UPDATE `creature_template` SET `DifficultyEntry1` = 22570, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14946; -- Slidore's Gryphon
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22570;
-UPDATE `creature_template` SET `HeroicEntry` = 22563, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14947; -- Ichman's Gryphon
+UPDATE `creature_template` SET `DifficultyEntry1` = 22563, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14947; -- Ichman's Gryphon
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22563;
-UPDATE `creature_template` SET `HeroicEntry` = 22593, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14948; -- Vipore's Gryphon
+UPDATE `creature_template` SET `DifficultyEntry1` = 22593, `MinLevel` = 60, `MaxLevel` = 60 WHERE `entry` = 14948; -- Vipore's Gryphon
 UPDATE `creature_template` SET `MinLevel` = 70, `MaxLevel` = 70 WHERE `entry` = 22593;
 
