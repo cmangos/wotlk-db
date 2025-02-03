@@ -129,5 +129,5 @@ INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalon
 (19983,1,12,42109,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stillspine Captive - Close Bristlelimb Cage'),
 (19984,1,12,42108,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stillspine Captive - Close Bristlelimb Cage');
 
-DELETE FROM creature_spawn_data_template WHERE entry BETWEEN 19984 AND 19999;
+-- DELETE FROM creature_spawn_data_template WHERE entry BETWEEN 19984 AND 19999;
 DELETE FROM creature_spawn_data WHERE guid BETWEEN 90994 AND 91008;
