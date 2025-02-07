@@ -1,5 +1,8 @@
 -- backport fixes
 
+-- not req anymore
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (1726401);
+
 -- fix ahunes chain for midsummer 
 -- q.11955 `Ahune, the Frost Lord`
 UPDATE quest_template SET PrevQuestId = 12012 WHERE entry = 11955;
