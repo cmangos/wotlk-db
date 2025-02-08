@@ -1395,7 +1395,7 @@ INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
 UPDATE creature_template SET GossipMenuId=7287 WHERE entry IN(16528);
 
 INSERT INTO gossip_menu(entry, text_id, script_id, condition_id) VALUES
-(7171,8445,0,302); -- belf only
+(7171,8445,0,844); -- belf only
 
 SET @MOVID=5303977;
 UPDATE creature SET position_x=7477.5596,position_y=-6774.3965,position_z=77.34592,MovementType=4 WHERE guid = @MOVID;
