@@ -1333,8 +1333,8 @@ UPDATE `gameobject_template` SET /*`flags`='4',*/ `data1`='-1' WHERE `entry`='18
 UPDATE `gameobject_template` SET `data10`='1' WHERE `entry`='181356'; -- Sapphiron Birth
 -- 'gameobject_loot_template' entry 18036 (gameobject lootid) not exist but used as loot id in DB.
 -- 'gameobject_loot_template' entry 181366 isn't gameobject lootid and not referenced from loot, and then useless.
-UPDATE `gameobject_template` SET `data1`='18036', `data12`='1' WHERE `entry`='181366'; -- Four Horsemen Chest
-DELETE FROM `gameobject_loot_template` WHERE `entry` IN (181366,18036);
+-- UPDATE `gameobject_template` SET `data1`='18036', `data12`='1' WHERE `entry`='181366'; -- Four Horsemen Chest
+/*DELETE FROM `gameobject_loot_template` WHERE `entry` IN (181366,18036);
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 (18036, 12002, 100, 0, -12002, 2, 0, 'Naxxramas (Boss Loot) - Four Horsemen Chest (181366) - Tokens (T3 Tokens)'),
 (18036, 22691, 0, 2, 1, 1, 0, 'Corrupted Ashbringer'),
@@ -1344,6 +1344,7 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (18036, 23025, 0, 2, 1, 1, 0, 'Seal of the Damned'),
 (18036, 23027, 0, 2, 1, 1, 0, 'Warmth of Forgiveness'),
 (18036, 23071, 0, 2, 1, 1, 0, 'Leggings of Apocalypse');
+*/
 UPDATE `gameobject_template` SET `size`='3', `data4`='0' WHERE `entry`='181444'; -- Kel'Thuzad Trigger
 UPDATE `gameobject_template` SET `data3`='0' WHERE `entry`='181510'; -- Plague Fissure
 UPDATE `gameobject_template` SET `data3`='0' WHERE `entry`='181511'; -- Plague Fissure
@@ -1584,7 +1585,7 @@ UPDATE `gameobject_template` SET `faction`='94'/*, `flags`='16'*/ WHERE `entry`=
 UPDATE `gameobject_template` SET /*`flags`='4',*/ `data3`='0' WHERE `entry`='187882'; -- Ice Stone
 -- 'gameobject_loot_template' entry 187892 isn't gameobject lootid and not referenced from loot, and then useless.
 -- 'gameobject_loot_template' entry 23324 (gameobject lootid) not exist but used as loot id in DB.
-UPDATE `gameobject_template` SET `data0`='43', `data1`='23324', `data10`='0', `data11`='0', `data12`='0', `data13`='0', `data15`='0' WHERE `entry`='187892'; -- Ice Chest
+/*UPDATE `gameobject_template` SET `data0`='43', `data1`='23324', `data10`='0', `data11`='0', `data12`='0', `data13`='0', `data15`='0' WHERE `entry`='187892'; -- Ice Chest
 DELETE FROM `gameobject_loot_template` WHERE `entry` IN (187892,23324);
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 (23324, 35723, 100, 0, 1, 1, 0, 'Shards of Ahune'),
@@ -1597,10 +1598,11 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (23324, 35496, 0, 1, 1, 1, 0, 'Icebound Cloak'),
 (23324, 35495, 0, 1, 1, 1, 0, 'The Frost Lord\'s War Cloak'),
 (23324, 35494, 0, 1, 1, 1, 0, 'Shroud of Winter\'s Chill');
+*/
 UPDATE `gameobject_template` SET `data6`='1' WHERE `entry`='188075'; -- Doodad_Sunwell_Fire_Barrier_ext01
 -- 'gameobject_loot_template' entry 188124 isn't gameobject lootid and not referenced from loot, and then useless.
 -- 'gameobject_loot_template' entry 23325 (gameobject lootid) not exist but used as loot id in DB.
-UPDATE `gameobject_template` SET `data1`='23325', `data10`='0', `data11`='0', `data12`='0', `data13`='0', `data15`='0' WHERE `entry`='188124'; -- Ice Chest
+/*UPDATE `gameobject_template` SET `data1`='23325', `data10`='0', `data11`='0', `data12`='0', `data13`='0', `data15`='0' WHERE `entry`='188124'; -- Ice Chest
 DELETE FROM `gameobject_loot_template` WHERE `entry` IN (188124,23325);
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
 (23325, 29434, 100, 0, 1, 1, 0, 'Badge of Justice'),
@@ -1616,6 +1618,7 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (23325, 35509, 0, 1, 1, 1, 0, 'Amulet of Glacial Tranquility');
 UPDATE `gameobject_template` SET `data0`='90040' WHERE `entry`='188126'; -- Guild Vault
 UPDATE `gameobject_template` SET `data0`='90040' WHERE `entry`='188127'; -- Guild Vault
+*/
 UPDATE `gameobject_template` SET `faction`='114'/*, `flags`='0'*/ WHERE `entry`='188508'; -- Dark Iron Mole Machine (Minion Summoner)
 UPDATE `gameobject_template` SET `faction`='3149'/*, `flags`='32'*/ WHERE `entry`='328417'; -- Alliance Flag
 UPDATE `gameobject_template` SET `faction`='3151'/*, `flags`='32'*/ WHERE `entry`='328419'; -- Horde Flag

@@ -111,43 +111,30 @@ INSERT INTO `creature_spawn_data_template` (`Entry`, `EquipmentId`, `Name`) VALU
 (2020302,29,'Nether Technician (20203) - EquipmentId'),
 (2020303,68,'Nether Technician (20203) - EquipmentId');
 
--- Table 'gameobject_loot_template' entry 25192 isn't gameobject lootid and not referenced from loot, and then useless.
-DELETE FROM `gameobject_loot_template` WHERE `Entry` IN (25192); -- old system
-
--- Table 'reference_loot_template' entry 12002 (reference id) not exist but used as loot id in DB.
--- Critical error found in 'gameobject_loot_template' for gameobject lootid 18036!
-DELETE FROM `reference_loot_template` WHERE `entry` IN (12002);
-INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
-(12002,22349,0,1,1,1,0,'Desecrated Breastplate'),
-(12002,22350,0,1,1,1,0,'Desecrated Tunic'),
-(12002,22351,0,1,1,1,0,'Desecrated Robe');
-DELETE FROM `reference_loot_template_names` WHERE `entry` IN (12002);
-INSERT INTO `reference_loot_template_names` (`entry`, `name`) VALUES
-(12002,'Naxxramas (Boss Loot) - Four Horsemen Chest (181366) - Tokens (T3 Tokens)');
-
 -- Gameobject (GUID: 187532) not created: Entry 0 does not exist in `gameobject_template`. Map: 530  (X: 2778.571533 Y: 5029.859863 Z: 271.135925) ang: -1.151917
 -- not linked to anything
-DELETE FROM gameobject WHERE guid IN (187246,187532);
+DELETE FROM gameobject WHERE guid IN (187532);
+-- Gameobject (GUID: 184467) not created: Entry 0 does not exist in `gameobject_template`. Map: 530  (X: -1355.498901 Y: 5926.947754 Z: 8.967783) ang: 5.096362
+DELETE FROM gameobject WHERE guid IN (184467); -- TDB backport
+INSERT INTO gameobject VALUES (184467,0,530,1,1,-1355.49890136718750000000,5926.94775390625000000000,8.96778297424316406200,5.09636211395263671800,0,0,-0.55919265747070312000,0.82903772592544555600,600,600);
 
--- Table 'reference_loot_template' entry 40403 isn't reference id and not referenced from loot, and then useless.
--- Table 'reference_loot_template' entry 40404 isn't reference id and not referenced from loot, and then useless.
--- Table 'reference_loot_template' entry 40405 isn't reference id and not referenced from loot, and then useless.
-DELETE FROM `reference_loot_template` WHERE `entry` IN (40404,40405);
-DELETE FROM `reference_loot_template_names` WHERE `entry` IN (40404,40405);
--- return to wotlk era
-DELETE FROM `gameobject_loot_template` WHERE `entry` IN (23324);
-INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`, `comments`) VALUES
-('23324','34955','1','0','1','1','0','Scorched Stone'), -- around 2010 this was bugged ..later fixed (Cata prob). We want it working fine
-('23324','35498','20','0','1','1','0','Formula: Enchant Weapon - Deathfrost'),
-('23324','35557','57','0','2','2','0','Huge Snowball'),
-('23324','35720','2','0','6','6','0','Lord of Frost\'s Private Label'),
-('23324','35723','100','0','1','1','0','Shards of Ahune'),
-('23324','40403','100','1','-40403','1','0','reference - Slave Pens - Ahune BOSS Loot v3.3.5a'),
-('23324','54806','4','0','1','1','0','Frostscythe of Lord Ahune');
-
--- missing spells
--- LoadCreatureSpellLists: Invalid creature_spell_list 429101 spell 8131 does not exist. Skipping.
--- Table `spell_script_target`: spellId 11819 listed for TargetEntry 7849 does not exist.
+/*
 -- Table 'reference_loot_template' entry 31020 isn't reference id and not referenced from loot, and then useless.
--- Table 'reference_loot_template' entry 31021 isn't reference id and not referenced from loot, and then useless.
+DELETE FROM `reference_loot_template` WHERE `entry` IN (31020,31021); -- replaced by 45015
+DELETE FROM `reference_loot_template_names` WHERE `entry` IN (31020,31021);
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 25192;
+INSERT INTO `gameobject_loot_template` (entry,item,ChanceOrQuestChance,groupid,mincountOrRef,maxcount,condition_id,comments`) VALUES 
+(25192,1,100,0,-45015,1,0,'');
+(25192,47241,100,0,1,1,0,'Emblem of Triumph');
+*/
 
+-- Event 2315202 Action 1 references invalid dbscript_on_relay id 10136
+-- Event 2315204 Action 2 references invalid dbscript_on_relay id 10134
+DELETE FROM dbscripts_on_relay WHERE id IN (10136,10134);
+INSERT INTO dbscripts_on_relay (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(10136,0,31,22990,300,0,0,0,8,0,0,0,0,0,0,0,0,'Stop if Akama present'),
+(10136,1000,10,22990,600000,0,0,0,8,1,0,0,-1,-3571.42,686.893,-5.496,4.7,'Summon Akama'),
+(10136,1000,10,22989,600000,0,0,0,8,1,0,0,-1,-3556.43,686.477,-6.884,4,'Summon Maiev'),
+(10136,1000,35,5,0,0,18528,300,7,0,0,0,0,0,0,0,0,'Summon Deathsworn via SD2'),
+(10134,0,35,0,0,0,18528,300,1,0,0,0,0,0,0,0,0,'Send death event to xiri');
+           
