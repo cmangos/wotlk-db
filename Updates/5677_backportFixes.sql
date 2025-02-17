@@ -111,22 +111,9 @@ INSERT INTO `creature_spawn_data_template` (`Entry`, `EquipmentId`, `Name`) VALU
 (2020302,29,'Nether Technician (20203) - EquipmentId'),
 (2020303,68,'Nether Technician (20203) - EquipmentId');
 
--- Gameobject (GUID: 187532) not created: Entry 0 does not exist in `gameobject_template`. Map: 530  (X: 2778.571533 Y: 5029.859863 Z: 271.135925) ang: -1.151917
--- not linked to anything
-DELETE FROM gameobject WHERE guid IN (187532);
--- Gameobject (GUID: 184467) not created: Entry 0 does not exist in `gameobject_template`. Map: 530  (X: -1355.498901 Y: 5926.947754 Z: 8.967783) ang: 5.096362
+-- missing object added
 DELETE FROM gameobject WHERE guid IN (184467); -- TDB backport
 INSERT INTO gameobject VALUES (184467,0,530,1,1,-1355.49890136718750000000,5926.94775390625000000000,8.96778297424316406200,5.09636211395263671800,0,0,-0.55919265747070312000,0.82903772592544555600,600,600);
-
-/*
--- Table 'reference_loot_template' entry 31020 isn't reference id and not referenced from loot, and then useless.
-DELETE FROM `reference_loot_template` WHERE `entry` IN (31020,31021); -- replaced by 45015
-DELETE FROM `reference_loot_template_names` WHERE `entry` IN (31020,31021);
-DELETE FROM `gameobject_loot_template` WHERE `entry` = 25192;
-INSERT INTO `gameobject_loot_template` (entry,item,ChanceOrQuestChance,groupid,mincountOrRef,maxcount,condition_id,comments`) VALUES 
-(25192,1,100,0,-45015,1,0,'');
-(25192,47241,100,0,1,1,0,'Emblem of Triumph');
-*/
 
 -- Event 2315202 Action 1 references invalid dbscript_on_relay id 10136
 -- Event 2315204 Action 2 references invalid dbscript_on_relay id 10134
