@@ -258,7 +258,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+238, 3300, 547, 3, -93.79716, -688.0134, 34.53195, 4.112295, 900, 900, 2, 1), -- Adder
 (@CGUID+239, 13321, 547, 3, -174.8439, -720.9562, 37.89231, 3.282116, 900, 900, 2, 1), -- Frog
 (@CGUID+240, 2110, 547, 3, 44.73293, -384.43765, 3.0355592, 0.9511, 900, 900, 2, 1), -- Black Rat
-(@CGUID+241, 13321, 547, 3, -91.8257, -156.66465, -2.648026, 2.597963, 900, 900, 2, 1); -- Frog
+(@CGUID+241, 13321, 547, 3, -91.8257, -156.66465, -2.648026, 2.597963, 900, 900, 2, 1), -- Frog
+-- WoTLK+
+(@CGUID+300, 40446, 547, 3, -76.99172,-157.0805,-2.106389,5.637414, 7200, 7200, 0, 0); -- Skar'this the Summoner
 
 -- INSERT INTO `creature_spawn_entry` (`guid`, `entry`) VALUES
 
@@ -470,7 +472,9 @@ REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath
 (25952, 0, 0, 1, 0, 0, '46314'), -- Slippery Floor Bunny
 (25971, 0, 0, 1, 0, 0, NULL), -- Shaman Bonfire Bunny 000
 (25972, 0, 0, 1, 0, 0, NULL), -- Shaman Bonfire Bunny 001
-(25973, 0, 0, 1, 0, 0, NULL); -- Shaman Bonfire Bunny 002
+(25973, 0, 0, 1, 0, 0, NULL), -- Shaman Bonfire Bunny 002
+-- WoTLK+
+(40446, 0, 0, 1, 0, 0, '75427'); -- Skar'this the Summoner
 
 -- ===========
 -- GAMEOBJECTS
@@ -600,48 +604,9 @@ INSERT INTO `gameobject_spawn_entry` (`guid`, `entry`) VALUES
 -- EVENTS
 -- ======
 
-INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
-(@CGUID+23, 1), -- [PH] Spank Target Bunny
-(@CGUID+137, 1), -- Earthen Ring Totem
-(@CGUID+138, 1), -- Earthen Ring Totem
-(@CGUID+211, 1), -- Luma Skymother (Midsummer Fire Festival)
-(@CGUID+212, 1), -- Numa Cloudsister (Midsummer Fire Festival)
-(@CGUID+213, 1), -- [PH] Ahune Summon Loc Bunny (Midsummer Fire Festival)
-(@CGUID+214, 1), -- [PH] Ahune Loot Loc Bunny (Midsummer Fire Festival)
-(@CGUID+215, 1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
-(@CGUID+216, 1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
-(@CGUID+217, 1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
-(@CGUID+218, 1), -- Slippery Floor Bunny (Midsummer Fire Festival)
-(@CGUID+219, 1), -- Slippery Floor Bunny (Midsummer Fire Festival)
-(@CGUID+220, 1), -- Shaman Bonfire Bunny 000 (Midsummer Fire Festival)
-(@CGUID+221, 1), -- Shaman Bonfire Bunny 001 (Midsummer Fire Festival)
-(@CGUID+222, 1), -- Shaman Bonfire Bunny 002 (Midsummer Fire Festival)
-(@CGUID+223, 1), -- Wisp Dest Bunny (Midsummer Fire Festival)
-(@CGUID+224, 1); -- Wisp Source Bunny (Midsummer Fire Festival)
-
+-- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
-
-INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
-(@OGUID+20, 1), -- Ice Stone (Midsummer Fire Festival)
-(@OGUID+21, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+22, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+23, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+24, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+25, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+26, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+27, 1), -- Ice Block (Midsummer Fire Festival)
-(@OGUID+28, 1), -- Ice Stone Mount (Midsummer Fire Festival)
-(@OGUID+29, 1), -- Ice Stone Mount (Midsummer Fire Festival)
-(@OGUID+30, 1), -- Ice Stone Mount (Midsummer Fire Festival)
-(@OGUID+31, 1), -- Ice Stone Mount (Midsummer Fire Festival)
-(@OGUID+32, 1), -- Ahune Bonfire (Midsummer Fire Festival)
-(@OGUID+33, 1), -- Ahune Bonfire (Midsummer Fire Festival)
-(@OGUID+34, 1), -- Ice Block, Big (Midsummer Fire Festival)
-(@OGUID+35, 1), -- Ice Block, Big (Midsummer Fire Festival)
-(@OGUID+36, 1), -- Ice Block, Big (Midsummer Fire Festival)
-(@OGUID+37, 1), -- Ice Block, Big (Midsummer Fire Festival)
-(@OGUID+38, 1), -- Ice Block, Big (Midsummer Fire Festival)
-(@OGUID+39, 1); -- Ice Block, Big (Midsummer Fire Festival)
+-- INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
 -- ============
 -- SPAWN GROUPS
@@ -649,24 +614,23 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
 -- creatures
--- new
-(@SGGUID+1, 'Slave Pens - Group 001 - Greater Bogstrok (2) | Bogstrok - Patrol 001', 0, 3, 0, 1, 0),
-(@SGGUID+2, 'Slave Pens - Group 002 - Greater Bogstrok (2) | Bogstrok - Patrol 002', 0, 3, 0, 1, 0),
-(@SGGUID+3, 'Slave Pens - Group 003 - Wastewalker Worker (3)', 0, 0, 0, 1, @STRINGID+1),
-(@SGGUID+4, 'Slave Pens - Group 004 - Wastewalker Worker | Wastewalker Slave', 0, 0, 0, 1, @STRINGID+2), -- 1 static Wastewalker Worker, 2 spawn-group_entry
-(@SGGUID+5, 'Slave Pens - Group 005 - Coilfang Champion (2) - Patrol 003', 0, 0, 0, 1, 0),
-(@SGGUID+6, 'Slave Pens - Group 006 - Wastewalker Worker | Wastewalker Slave', 0, 0, 0, 0, 0), 
-(@SGGUID+7, 'Slave Pens - Group 007 - Coilfang Champion | Coilfang Ray | Coilfang Observer | Coilfang Scale-Healery', 0, 0, 0, 1, 0),
-(@SGGUID+8, 'Slave Pens - Group 008 - Coilfang Champion | Coilfang Enchantress - Patrol 005', 0, 0, 0, 1, 0),
-(@SGGUID+9, 'Slave Pens - Group 009 - Wastewalker Worker | Wastewalker Slave (2)', 0, 0, 0, 1, @STRINGID+3), 
-(@SGGUID+10, 'Slave Pens - Group 010 - Greater Bogstrok (3) | Bogstrok (3)', 0, 0, 0, 1, 0),
-(@SGGUID+11, 'Slave Pens - Group 011 - Greater Bogstrok (3) | Bogstrok (3)', 0, 0, 0, 1, 0),
-(@SGGUID+12, 'Slave Pens - Group 012 - Greater Bogstrok (2) | Bogstrok (2)', 0, 0, 0, 1, 0),
-(@SGGUID+13, 'Slave Pens - Group 013 - Coilfang Champion | Coilfang Enchantress | Soothsayer - Patrol 006', 0, 0, 0, 1, 0),
-(@SGGUID+14, 'Slave Pens - Group 014 - Wastewalker Worker | Wastewalker Slave', 0, 0, 0, 1, @STRINGID+4),
-(@SGGUID+15, 'Slave Pens - Group 015 - Wastewalker Worker | Wastewalker Slave', 0, 0, 0, 1, @STRINGID+5),
-(@SGGUID+16, 'Slave Pens - Group 016 - Wastewalker Worker | Wastewalker Slave', 0, 0, 0, 1, @STRINGID+6),
-(@SGGUID+17, 'Slave Pens - Group 017 - Coilfang Defender (2)', 0, 0, 0, 1, 0),
+(@SGGUID+1, 'Slave Pens - Group 001 - Greater Bogstrok (2) | Bogstrok - Patrol 001', 0, 3, 20312, 1, 0),
+(@SGGUID+2, 'Slave Pens - Group 002 - Greater Bogstrok (2) | Bogstrok - Patrol 002', 0, 3, 20312, 1, 0),
+(@SGGUID+3, 'Slave Pens - Group 003 - Wastewalker Worker (3)', 0, 0, 20312, 1, @STRINGID+1),
+(@SGGUID+4, 'Slave Pens - Group 004 - Wastewalker Worker | Wastewalker Slave', 0, 0, 20312, 1, @STRINGID+2), -- 1 static Wastewalker Worker, 2 spawn-group_entry
+(@SGGUID+5, 'Slave Pens - Group 005 - Coilfang Champion (2) - Patrol 003', 0, 0, 20312, 1, 0),
+(@SGGUID+6, 'Slave Pens - Group 006 - Wastewalker Worker | Wastewalker Slave', 0, 0, 20312, 0, 0), 
+(@SGGUID+7, 'Slave Pens - Group 007 - Coilfang Champion | Coilfang Ray | Coilfang Observer | Coilfang Scale-Healery', 0, 0, 20312, 1, 0),
+(@SGGUID+8, 'Slave Pens - Group 008 - Coilfang Champion | Coilfang Enchantress - Patrol 005', 0, 0, 20312, 1, 0),
+(@SGGUID+9, 'Slave Pens - Group 009 - Wastewalker Worker | Wastewalker Slave (2)', 0, 0, 20312, 1, @STRINGID+3), 
+(@SGGUID+10, 'Slave Pens - Group 010 - Greater Bogstrok (3) | Bogstrok (3)', 0, 0, 20312, 1, 0),
+(@SGGUID+11, 'Slave Pens - Group 011 - Greater Bogstrok (3) | Bogstrok (3)', 0, 0, 20312, 1, 0),
+(@SGGUID+12, 'Slave Pens - Group 012 - Greater Bogstrok (2) | Bogstrok (2)', 0, 0, 20312, 1, 0),
+(@SGGUID+13, 'Slave Pens - Group 013 - Coilfang Champion | Coilfang Enchantress | Soothsayer - Patrol 006', 0, 0, 20312, 1, 0),
+(@SGGUID+14, 'Slave Pens - Group 014 - Wastewalker Worker | Wastewalker Slave', 0, 0, 20312, 1, @STRINGID+4),
+(@SGGUID+15, 'Slave Pens - Group 015 - Wastewalker Worker | Wastewalker Slave', 0, 0, 20312, 1, @STRINGID+5),
+(@SGGUID+16, 'Slave Pens - Group 016 - Wastewalker Worker | Wastewalker Slave', 0, 0, 20312, 1, @STRINGID+6),
+(@SGGUID+17, 'Slave Pens - Group 017 - Coilfang Defender (2)', 0, 0, 20312, 1, 0),
 (@SGGUID+18, 'Slave Pens - Group 018 - Coilfang Technician (2) | Coilfang Collaborator (2)', 0, 0, 0, 1, 0),
 (@SGGUID+19, 'Slave Pens - Group 019 - Coilfang Technician (2) - Patrol 007', 0, 0, 0, 1, 0),
 (@SGGUID+20, 'Slave Pens - Group 020 - Coilfang Technician (1) | Coilfang Collaborator (2)', 0, 0, 0, 1, 0),
@@ -701,12 +665,18 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+44, 'Slave Pens - Group 044 - Coilfang Champion | Coilfang Enchantress | Coilfang Soothsayer - Patrol 020', 0, 0, @SGGUID+44, 1, @STRINGID+7),
 
 -- Objects
-(@SGGUID+50, 'Slave Pens - Bound Fel Iron Chest/Solid Fel Iron Chest - Normal mode', 1, 1, 0, 0, 0),
-(@SGGUID+51, 'Slave Pens - Bound Adamantite Chest/Solid Adamantite Chest - Heroic mode', 1, 1, 0, 0, 0),
-(@SGGUID+52, 'Slave Pens - Adamantite Deposit 181556/Rich Adamantite Deposit 181569', 1, 4, 0, 0, 0),
-(@SGGUID+53, 'Slave Pens - Slave Pens - Anchient Lichen 181278', 1, 4, 0, 0, 0),
-(@SGGUID+54, 'Slave Pens - Slave Pens - Felweed 181270', 1, 3, 0, 0, 0),
-(@SGGUID+55, 'Slave Pens - Slave Pens - Ragveil (181275) / Flame Cap (181276)', 1, 2, 0, 0, 0);
+(@SGGUID+50, 'Slave Pens - Bound Fel Iron Chest/Solid Fel Iron Chest - Normal mode', 1, 1, 20312, 0, 0),
+(@SGGUID+51, 'Slave Pens - Bound Adamantite Chest/Solid Adamantite Chest - Heroic mode', 1, 1, 20312, 0, 0),
+(@SGGUID+52, 'Slave Pens - Adamantite Deposit 181556/Rich Adamantite Deposit 181569', 1, 4, 20312, 0, 0),
+(@SGGUID+53, 'Slave Pens - Slave Pens - Anchient Lichen 181278', 1, 4, 20312, 0, 0),
+(@SGGUID+54, 'Slave Pens - Slave Pens - Felweed 181270', 1, 3, 20312, 0, 0),
+(@SGGUID+55, 'Slave Pens - Slave Pens - Ragveil (181275) / Flame Cap (181276)', 1, 2, 20312, 0, 0),
+
+-- WoTLK+
+(@SGGUID+150, 'Slave Pens - Ahune Event - creatures spawn with Event', 0, 0, 20311, 0, 0),
+(@SGGUID+151, 'Slave Pens - Ahune Event - creatures spawn without Event ', 0, 0, 20312, 0, 0),
+(@SGGUID+152, 'Slave Pens - Ahune Event - objects spawn with Event', 1, 0, 20311, 0, 0),
+(@SGGUID+153, 'Slave Pens - Ahune Event - objects spawn without Event ', 1, 0, 20312, 0, 0);
 
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
@@ -963,7 +933,79 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+55, @OGUID+46, -1), -- Ragveil/Flame Cap
 (@SGGUID+55, @OGUID+47, -1), -- Ragveil/Flame Cap
 (@SGGUID+55, @OGUID+48, -1), -- Ragveil/Flame Cap
-(@SGGUID+55, @OGUID+49, -1); -- Ragveil/Flame Cap
+(@SGGUID+55, @OGUID+49, -1), -- Ragveil/Flame Cap
+
+-- WoTLK+ groups
+-- creatures
+(@SGGUID+150, @CGUID+23, -1), -- [PH] Spank Target Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+137, -1), -- Earthen Ring Totem (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+138, -1), -- Earthen Ring Totem (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+211, -1), -- Luma Skymother (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+212, -1), -- Numa Cloudsister (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+213, -1), -- [PH] Ahune Summon Loc Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+214, -1), -- [PH] Ahune Loot Loc Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+215, -1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+216, -1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+217, -1), -- Earthen Ring Flamecaller (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+218, -1), -- Slippery Floor Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+219, -1), -- Slippery Floor Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+220, -1), -- Shaman Bonfire Bunny 000 (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+221, -1), -- Shaman Bonfire Bunny 001 (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+222, -1), -- Shaman Bonfire Bunny 002 (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+223, -1), -- Wisp Dest Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+224, -1), -- Wisp Source Bunny (Midsummer Fire Festival)
+(@SGGUID+150, @CGUID+300, -1), -- Skar'this the Summoner
+
+(@SGGUID+151, @CGUID+80, -1), -- Coilfang Slavehandler
+(@SGGUID+151, @CGUID+81, -1), -- Coilfang Slavehandler
+(@SGGUID+151, @CGUID+82, -1), -- Coilfang Slavehandler
+(@SGGUID+151, @CGUID+83, -1), -- Coilfang Slavehandler 
+(@SGGUID+151, @CGUID+84, -1), -- Coilfang Slavehandler
+(@SGGUID+151, @CGUID+85, -1), -- Coilfang Slavehandler
+(@SGGUID+151, @CGUID+151, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+152, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+153, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+154, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+155, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+156, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+157, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+158, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+179, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+180, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+181, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+182, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+183, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+184, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+185, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+186, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+187, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+188, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+189, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+190, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+191, -1), -- Wastewalker Captive
+(@SGGUID+151, @CGUID+192, -1), -- Wastewalker Captive
+
+-- objects
+(@SGGUID+152, @OGUID+20, -1), -- Ice Stone (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+21, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+22, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+23, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+24, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+25, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+26, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+27, -1), -- Ice Block (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+28, -1), -- Ice Stone Mount (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+29, -1), -- Ice Stone Mount (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+30, -1), -- Ice Stone Mount (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+31, -1), -- Ice Stone Mount (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+32, -1), -- Ahune Bonfire (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+33, -1), -- Ahune Bonfire (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+34, -1), -- Ice Block, Big (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+35, -1), -- Ice Block, Big (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+36, -1), -- Ice Block, Big (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+37, -1), -- Ice Block, Big (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+38, -1), -- Ice Block, Big (Midsummer Fire Festival)
+(@SGGUID+152, @OGUID+39, -1); -- Ice Block, Big (Midsummer Fire Festival)
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+1, 1, 4, 0, @SGGUID+1, 4, 'Slave Pens - Group 001 - Greater Bogstrok (2) | Bogstrok - Patrol 001'),
