@@ -296,7 +296,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (10426, 14465, 0, 0);
 DELETE FROM npc_text_broadcast_text WHERE Id IN(14465);
 INSERT INTO npc_text_broadcast_text(Id,Prob0,BroadcastTextId0) VALUES
-(14465,1,34122);
+(14465,1,34139);
 DELETE FROM npc_text WHERE id IN (14465);
 DELETE FROM gossip_menu_option WHERE menu_id IN (10426);
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
