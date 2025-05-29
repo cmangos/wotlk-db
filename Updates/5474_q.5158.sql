@@ -30,7 +30,7 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (590103,3,21,1,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'unactive');
 
 -- Manifestation of Water 11256
-UPDATE creature_template SET Faction = 35, UnitClass = 1, UnitFlags = 832 WHERE Entry IN (11256);
+UPDATE creature_template SET Faction = 35, UnitClass = 2, UnitFlags = 832 WHERE Entry IN (11256);
 
 -- Water Manifestation Effect 106528
 UPDATE gameobject SET spawntimesecsmin = -10, spawntimesecsmax = -10 WHERE guid = 50658;
