@@ -7,7 +7,7 @@ DELETE FROM gameobject_addon WHERE guid IN(SELECT guid FROM gameobject WHERE id 
 -- Creature
 -- Doctor Kohler 35113
 UPDATE creature_template SET MovementType = 4 WHERE Entry = 35113;
-UPDATE creature SET position_x = -8109.8843, position_y = -1417.6727, position_z = 133.4059, spawndist = 0, MovementType = 4 WHERE id = 35113;
+UPDATE creature SET position_x = 8478.161, position_y = 1563.7257, position_z = 670.1203, spawndist = 0, MovementType = 4 WHERE id = 35113;
 DELETE FROM creature_movement WHERE Id IN (534210);
 DELETE FROM `creature_movement_template` WHERE `entry` = 35113;
 INSERT INTO `creature_movement_template` (`entry`, `point`, `positionx`, `positiony`, `positionz`, `orientation`, `waittime`, `scriptid`) VALUES
