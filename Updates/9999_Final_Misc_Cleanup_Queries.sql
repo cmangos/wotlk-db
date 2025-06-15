@@ -88,7 +88,8 @@ UPDATE conditions SET comments=CONCAT('Player Has Learned Spell: ',value1) WHERE
 UPDATE conditions SET comments=CONCAT('NOT Player Has Learned Spell: ',value1) WHERE type=17 AND value2=1 AND comments IS NULL; -- CONDITION_SPELL
 UPDATE conditions SET comments=CONCAT('ScriptDev: InstanceConditionID Value: ',value1) WHERE type=18 AND comments IS NULL; -- CONDITION_INSTANCE_SCRIPT
 UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Available') WHERE type=19 AND comments IS NULL; -- CONDITION_QUESTAVAILABLE
--- CONDITION_ACHIEVEMENT
+UPDATE conditions SET comments=CONCAT('Achievement ',value1,' Earned') WHERE type=20 AND value2=0 AND comments IS NULL; -- CONDITION_ACHIEVEMENT_EARNED
+UPDATE conditions SET comments=CONCAT('Achievement ',value1,' NOT Earned') WHERE type=20 AND value2 !=0 AND comments IS NULL; -- CONDITION_QUEST_NOT_EARNED
 -- CONDITION_ACHIEVEMENT_REALM
 UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' NOT Taken AND NOT Rewarded') WHERE type=22 AND comments IS NULL; -- CONDITION_QUEST_NONE
 UPDATE conditions SET comments=CONCAT('Player Has ',value2,' or more of Item ID ',value1,' in Inventory/Bank') WHERE type=23 AND flags=0 AND comments IS NULL; -- CONDITION_ITEM_WITH_BANK
