@@ -192,6 +192,9 @@ UPDATE `spell_template` SET `StackAmount`='1' WHERE (`Id`='29521');
 -- WoTLK section
 -- ============================================================
 
+-- Shield Level 1 2 3 - spam preventing fix
+UPDATE spell_template SET EffectTriggerSpell1 = 63104 WHERE id IN (63130,63131,63132);
+
 -- -------------------------------
 -- Gameobject custom changes
 -- -------------------------------
