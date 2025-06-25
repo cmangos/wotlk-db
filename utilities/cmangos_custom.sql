@@ -187,6 +187,8 @@ UPDATE `creature_template` SET `name` = 'Redeemed Spirit of Earth' WHERE `entry`
 
 -- Dance Vibe spell should not stack
 UPDATE `spell_template` SET `StackAmount`='1' WHERE (`Id`='29521');
+-- Incapacitate Maloric - available only from behind target
+UPDATE spell_template SET Attributes = Attributes|0x04000000 WHERE id = 63124;
 
 -- ============================================================
 -- WoTLK section
