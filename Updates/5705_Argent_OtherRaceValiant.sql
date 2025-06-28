@@ -293,7 +293,7 @@ INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, value4,
 (21076,-2,21075,21074,0,0,0,''),
 -- Silvermoon
 (21077,-1,20970,20386,843,0,0,''), -- BElf native
-(21078,-1,20970,20387,817,0,0,''), -- other horde races
+(21078,-1,20970,20387,820,0,0,''), -- other horde races
 (21079,-2,21078,21077,0,0,0,''),
 -- Forsaken
 (21080,-1,20971,20398,839,0,0,''), -- Undead native
