@@ -24,6 +24,8 @@ UPDATE creature_template SET Detection = 100, Pursuit = 300000, DamageMultiplier
 DELETE FROM gossip_menu_option WHERE menu_id IN (10473);
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_broadcast_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, action_script_id, box_coded, box_money, box_text, box_broadcast_text, condition_id) VALUES
 (10473,0,0,'I am ready to fight!',33430,1,1,-1,0,1047301,0,0,NULL,0,20894);
+-- remove old wrong scripts
+DELETE FROM dbscripts_on_gossip WHERE id IN (10464,10465,10466,10467,10468,10469,10470,10472);
 DELETE FROM conditions WHERE condition_entry = 20890; -- clear all old conditions
 DELETE FROM conditions WHERE condition_entry BETWEEN 20893 AND 20921; -- clear all old conditions
 INSERT INTO conditions (condition_entry, `type`, value1, value2, value3, flags, comments) VALUES

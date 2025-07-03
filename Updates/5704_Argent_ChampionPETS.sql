@@ -1,6 +1,6 @@
 -- Champion PETS
 -- Argent Gruntling 33239
-UPDATE creature_template SET UnitClass = 1, UnitFlags = 776, NpcFlags = 1, CreatureTypeFlags = 0, StaticFlags4 = StaticFlags4|8|524288, GossipMenuId = 10358 WHERE Entry = 33239;
+UPDATE creature_template SET UnitClass = 1, UnitFlags = 776, NpcFlags = 1+128, CreatureTypeFlags = 0, StaticFlags4 = StaticFlags4|8|524288, GossipMenuId = 10358 WHERE Entry = 33239;
 DELETE FROM creature_template_addon WHERE entry = 33239;
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
 (33239,0,0,1,0,0,0,67039);
@@ -48,7 +48,7 @@ INSERT INTO spell_script_target (`entry`, `type`, `targetEntry`, `inverseEffectM
 (63438, 1, 33239, 0),
 (63445, 1, 33239, 0);
 -- Argent Squire 33238
-UPDATE creature_template SET UnitClass = 1, UnitFlags = 776, NpcFlags = 1, CreatureTypeFlags = 0, StaticFlags4 = StaticFlags4|8|524288, GossipMenuId = 10318 WHERE Entry = 33238;
+UPDATE creature_template SET UnitClass = 1, UnitFlags = 776, NpcFlags = 1+128, CreatureTypeFlags = 0, StaticFlags4 = StaticFlags4|8|524288, GossipMenuId = 10318 WHERE Entry = 33238;
 DELETE FROM creature_template_addon WHERE entry = 33238;
 INSERT INTO creature_template_addon (entry, mount, stand_state, sheath_state, pvp_flags, emote, moveflags, auras) VALUES
 (33238,0,0,1,0,0,0,67039);
@@ -71,7 +71,7 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_br
 -- 395 - Champion of Gnomeregan
 -- 437 - Champion of Ironforge
 -- 438 - Champion of Stormwind
-DELETE FROM dbscripts_on_gossip WHERE id BETWEEN 1031801 AND 1031805;
+DELETE FROM dbscripts_on_gossip WHERE id BETWEEN 1031801 AND 1031807;
 INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (1031801,0,15,62728,0,0,0,0,0,0,0,0,0,0,0,0,0,'cast 62728'), -- Stormwind
 (1031802,0,15,63450,0,0,0,0,0,0,0,0,0,0,0,0,0,'cast 63450'), -- Exodar
