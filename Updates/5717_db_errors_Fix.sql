@@ -46,3 +46,13 @@ INSERT INTO conditions (condition_entry, type, value1, value2, value3, value4, f
 (6506, 42, 6506, 1, 1, 0, 0,'Quest ID 330 - Plague Spreader Spawn');
 UPDATE creature SET spawntimesecsmin = 10, spawntimesecsmax = 10 WHERE guid IN (5237, 5238, 5239);
 
+-- DB-SCRIPTS: Process table `dbscripts_on_creature_movement` id 2499801, command 20 has buddy 3681 not found in range 25 of searcher Creature (Entry: 24998 Counter: 9001424) DBGuid: 5820000 (data-flags 7), skipping.
+-- DB-SCRIPTS: Process table `dbscripts_on_creature_movement` id 2502301, command 20 has buddy 3681 not found in range 25 of searcher Creature (Entry: 25023 Counter: 9001471) DBGuid: 5870006 (data-flags 7), skipping.
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (2499801,2499802,2502301,2502302);
+INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, datalong3, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
+(2499801,4000,20,2,0,0,3681,5820007,7|0x10,0,0,0,0,0,0,0,0,''),
+(2499802,4000,20,2,0,0,3681,5820006,7|0x10,0,0,0,0,0,0,0,0,''),
+(2502301,4000,20,2,0,0,3681,5870000,7|0x10,0,0,0,0,0,0,0,0,''),
+(2502302,4000,20,2,0,0,3681,5870001,7|0x10,0,0,0,0,0,0,0,0,'');
+UPDATE creature_movement_template SET ScriptId = 2502302 WHERE Entry = 25023 AND Point = 31;
+UPDATE creature_movement_template SET ScriptId = 2499802 WHERE Entry = 24998 AND Point = 44;
