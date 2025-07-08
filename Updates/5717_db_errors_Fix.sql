@@ -56,3 +56,11 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (2502302,4000,20,2,0,0,3681,5870001,7|0x10,0,0,0,0,0,0,0,0,'');
 UPDATE creature_movement_template SET ScriptId = 2502302 WHERE Entry = 25023 AND Point = 31;
 UPDATE creature_movement_template SET ScriptId = 2499802 WHERE Entry = 24998 AND Point = 44;
+
+-- DB-SCRIPTS: WARNING: Process table `dbscripts_on_relay` id 20155, command 15 has no OTHER buddy 23691 found - maybe you need to update the script?
+-- DB-SCRIPTS: Process table `dbscripts_on_relay` id 20155, command 15 call for non-unit, skipping.
+-- Shoveltusk Stag 23691
+-- not req anymore (reconstructed via EAI)
+DELETE FROM dbscripts_on_relay WHERE id = 20155;
+
+
