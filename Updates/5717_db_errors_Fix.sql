@@ -63,4 +63,5 @@ UPDATE creature_movement_template SET ScriptId = 2499802 WHERE Entry = 24998 AND
 -- not req anymore (reconstructed via EAI)
 DELETE FROM dbscripts_on_relay WHERE id = 20155;
 
-
+-- DB-SCRIPTS: Process table `dbscripts_on_relay` id 20518, command 26 source can not attack (Attacker: Creature (Entry: 31094 Counter: 130477) DBGuid: 130477, Target: Creature (Entry: 31099 Counter: 130542) DBGuid: 130542)
+-- fixed in EAI
