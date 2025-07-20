@@ -4870,7 +4870,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 -- Gossip Menu isnt available after Player completed Quest Ar'kelos the Guardian (ID: 10176)
 DELETE FROM gossip_menu_option WHERE menu_id = 7981;
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_broadcast_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `box_broadcast_text`, `condition_id`) VALUES 
-(7981, 0, 0, 'I\'ve lost Archmage Vargoth\'s Staff. Can you replace it?', 18546, 1, 1, 0, 0, 7981, 0, 0, NULL, 0, @SGGUID+12);
+(7981, 0, 0, 'I\'ve lost Archmage Vargoth\'s Staff. Can you replace it?', 18546, 1, 1, 0, 0, 798101, 0, 0, NULL, 0, @SGGUID+12);
 
 -- Ravandwyr Gossip Conditions
 -- Before Accepting The Archmage's Staff quest he will show npc_text 16867
