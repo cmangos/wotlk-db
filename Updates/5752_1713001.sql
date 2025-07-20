@@ -6,5 +6,6 @@ INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalo
 (1713001,1,20,1,7,8000,0,0,0x04|0x08,0,0,0,0,0,0,0,0,'Talbuk Stag - Set Random Movement (temp 8sek)'),
 (1713001,1,22,14,0,0,0,0,0x04,0,0,0,0,0,0,0,0,'Talbuk Stag - Set Faction to 14'),
 (1713001,10000,26,0,0,0,18180,65,1,0,0,0,0,0,0,0,0,'Talbuk Stag - Start Attack on Hemet Nesingwary'),
-(1713001,12000,26,0,0,0,18200,65,0,0,0,0,0,0,0,0,0,'Shado \Fitz\ Farstrider - Start Attack on Talbuk Stag'),
-(1713001,12000,26,0,0,0,18180,65,0,0,0,0,0,0,0,0,0,'Hemet Nesingwary - Start Attack on Talbuk Stag');
+(1713001,11000,26,0,0,0,18200,70,0,0,0,0,0,0,0,0,0,'Shado \Fitz\ Farstrider - Start Attack on Talbuk Stag'),
+(1713001,11000,26,0,0,0,18180,70,0,0,0,0,0,0,0,0,0,'Hemet Nesingwary - Start Attack on Talbuk Stag');
+
