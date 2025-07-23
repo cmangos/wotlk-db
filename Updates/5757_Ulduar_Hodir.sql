@@ -27,7 +27,7 @@ INSERT INTO `creature_spell_list_entry` VALUES
 (3333200, 'Ulduar - Hodir Shaman', 100, 100),
 (3333300, 'Ulduar - Hodir Druid',  100, 100);
 
-DELETE FROM `creature_spell_list` WHERE `Id` IN (3333000. 3333100. 3333200, 3333300);
+DELETE FROM `creature_spell_list` WHERE `Id` IN (3333000, 3333100, 3333200, 3333300);
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Flags`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `Comments`) VALUES
 (3333000, 0, 61923, 4000,  5000,  2000,  3000,  0, 0, 0, 100, 1, 'Hodir Priest - Smite'),
 (3333000, 1, 62809, 1000,  2000,  5000,  10000, 0, 2, 0, 100, 1, 'Hodir Priest - Great Heal'),
