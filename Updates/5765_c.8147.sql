@@ -1,6 +1,6 @@
 -- Camp Mojache Brave 8147
 -- correct poss for 1
-UPDATE creature SET position_x = -4389.599609, position_y = 254.227142, position_z = 26.274950, spawndist = 5, MovementType = 1 WHERE guid = 51412;
+UPDATE creature SET position_x = -4389.599609, position_y = 254.227142, position_z = 26.274950, spawndist = 5, MovementType = 1 WHERE guid = 51407;
 -- 1 with waypoints there
 -- correct path (had compl custom made)
 UPDATE creature SET position_x = -4365.682, position_y = 123.31185, position_z = 30.399422, spawndist = 0, MovementType = 2 WHERE guid = 51412;
