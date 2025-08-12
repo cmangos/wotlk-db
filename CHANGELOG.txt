@@ -1,4 +1,17 @@
 ===============================================================
+WoTLKDB v1.9 'Icecrown' for CMaNGOS 14092 for 3.3.5a
+===============================================================
+
+Main changes:
+* Icecrown - Northrend - Completed
+	- all quests
+	- all areas spawns/waypoints/events
+* Lots updates backported from CDB
+* Lots updates backported from TBCDB
+* Lots updates for ACID Scrips 
+* Lots of Quests / spawns / gossips / Events / Waypoints were added in random Zones
+
+===============================================================
 WoTLKDB v1.8 'Nesingwary's Hunt' for CMaNGOS 14080 for 3.3.5a
 ===============================================================
 
