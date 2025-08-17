@@ -36,7 +36,7 @@ UPDATE creature_movement SET WaitTime = 100, ScriptId = 1 WHERE Id = 23437 AND P
 DELETE FROM creature_movement WHERE Id = 23437 AND Point = 13; -- duplicate
 
 -- 23436 - should continue facing path instead of reset it, also missing point added in Path1
-DELETE FROM creature_movement WHERE Id = 23437 AND Point = 9; -- duplicate
+DELETE FROM creature_movement WHERE Id = 23436 AND Point = 9; -- duplicate
 UPDATE creature_movement SET Orientation = 2.35, WaitTime = 10000, ScriptId = 1991803 WHERE Id = 23436 AND Point = 8;
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1991803);
 INSERT INTO dbscripts_on_creature_movement (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
