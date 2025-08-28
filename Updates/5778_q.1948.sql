@@ -8,4 +8,4 @@ INSERT INTO dbscripts_on_go_template_use (id, delay, command, datalong, datalong
 (103661,0,9,15219,600,0,0,0,0,0,0,0,0,0,0,0,0,'respawn object');
 -- Spell: 9055 'Create Witherbark Totem Bundle'
 -- summon position corrected
-UPDATE spell_target_position SET target_position_z = 61.5 WHERE id = 9055;
+UPDATE spell_target_position SET target_position_x = -1350.83, target_position_y = -2740.16, target_position_z = 61.5, orientation = 6.1817 WHERE id = 9055;
