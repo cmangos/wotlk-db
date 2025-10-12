@@ -242,3 +242,5 @@ UPDATE `item_template` SET `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 4
 UPDATE `spell_template` SET `CastingTimeIndex`='1' WHERE (`Id`='58911');
 -- Rope Beam - no idea why target are swaped. sniff shows that spell hits target instead of source (original: EffectImplicitTargetA1 = 1, EffectImplicitTargetB1 = 25)
 UPDATE spell_template SET EffectImplicitTargetA1 = 25, EffectImplicitTargetB1 = 1 WHERE id IN (66206,63413);
+-- Detonation 54355 - Effect 1 - shouldnt summon guardian (confirmed)
+UPDATE spell_template SET EffectMiscValueB2 = 64 WHERE id IN (54355);
