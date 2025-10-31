@@ -3,7 +3,7 @@ name: Build Release
 on:
   schedule:
     # every day at 6am
-    - cron:  '0 6 * * *'
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 env:
@@ -29,6 +29,7 @@ jobs:
           $projectNames = "${{github.repository}}".Split("/")[1]
           $expansion="${projectNames}".Split("-")[0]
           echo "LAST_BACKUP_ADR=https://github.com/cmangos/${expansion}-db/releases/download/latest/${expansion}-all-backups.tar.gz" >> $env:GITHUB_ENV
+          echo "BOTS_REPO=cmangos/playerbots" >> $env:GITHUB_ENV
           echo "CORE_REPO=cmangos/mangos-${expansion}" >> $env:GITHUB_ENV
           echo "CORE_FOLDER=${{github.workspace}}\mangos-${expansion}" >> $env:GITHUB_ENV
           echo "DB_FOLDER=${{github.workspace}}\${expansion}-db" >> $env:GITHUB_ENV
@@ -52,6 +53,16 @@ jobs:
         with:
           repository: ${{env.CORE_REPO}}
           path: ${{env.CORE_FOLDER}}
+
+      - name: Create modules folder
+        run: |
+          mkdir -p ${{env.CORE_FOLDER}}/src/modules
+
+      - name: Checkout PlayerBots
+        uses: actions/checkout@v2
+        with:
+          repository: ${{env.BOTS_REPO}}
+          path: ${{env.CORE_FOLDER}}/src/modules/PlayerBots
 
       - name: Cache MySQL Official .zip
         uses: actions/cache@v4
@@ -259,7 +270,7 @@ jobs:
             - **Exported SQL:** [Download SQL File](${{github.server_url}}/${{ github.repository }}/releases/download/latest/${{env.EXPANSION_NAME}}-all-db.zip)
             - **Exported World SQL:** [Download SQL File](${{github.server_url}}/${{ github.repository }}/releases/download/latest/${{env.EXPANSION_NAME}}-world-db.zip)
             - **[Preconfigured MySQL Server (Windows x64 Release)](${{github.server_url}}/${{ github.repository }}/releases/download/latest/${{env.EXPANSION_NAME}}-db-mysql-server.zip)**
-            
+
             You may apply the exported and world SQL files directly to their respective databases. The `root` MySQL user password is `cmangos` - **do not forget** to change that! If you find any bugs or issues please report them [here](https://github.com/cmangos/issues/issues/new/choose).
           footer: Created by the CMaNGOS Team!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
