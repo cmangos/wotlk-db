@@ -17,7 +17,8 @@ DELETE FROM creature_battleground WHERE guid IN (525045);
 DELETE FROM creature_linking WHERE guid IN (525045)
 OR master_guid IN (525045);
 DELETE FROM creature WHERE guid IN (525045);
-UPDATE creature_template SET StaticFlags1 = 0x80000000 WHERE Entry IN (29458,29460);
+UPDATE creature_template SET StaticFlags1 = 0x80000000 WHERE Entry IN (29460);
+UPDATE creature_template SET StaticFlags1 = 256, StaticFlags2 = 2099200 WHERE Entry IN (29458);
 UPDATE creature_template_addon SET auras = 54558 WHERE entry = 29458;
 UPDATE creature SET spawntimesecsmin = 30, spawntimesecsmax = 45 WHERE id = 29460;
 DELETE FROM vehicle_accessory WHERE vehicle_entry IN (29460);
@@ -560,6 +561,7 @@ INSERT INTO creature_movement (`id`, `Point`, `PositionX`, `PositionY`, `Positio
 (525364,22,7097.303,-2011.0898,769.1819,100,0,0),
 (525364,23,7060.2603,-1978.9076,768.83636,100,0,0);
 -- Updates
+UPDATE creature_template SET StaticFlags1 = 0, StaticFlags2 = 2099200 WHERE entry IN (29498);
 UPDATE creature_template SET StaticFlags1 = 2147483648, ExtraFlags=ExtraFlags|1048576|2048, Detection = 5, CallForHelp = 0 WHERE entry IN (29500);
 UPDATE creature_template SET ExtraFlags=ExtraFlags|1048576|2048, Detection = 5, CallForHelp = 0 WHERE entry IN (29351,29358,29460);
 UPDATE creature SET spawntimesecsmin = 45, spawntimesecsmax = 90 WHERE id IN (29351,29358,29460,29500);
