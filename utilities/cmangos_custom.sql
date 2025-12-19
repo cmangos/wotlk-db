@@ -244,3 +244,10 @@ UPDATE `spell_template` SET `CastingTimeIndex`='1' WHERE (`Id`='58911');
 UPDATE spell_template SET EffectImplicitTargetA1 = 25, EffectImplicitTargetB1 = 1 WHERE id IN (66206,63413);
 -- Detonation 54355 - Effect 1 - shouldnt summon guardian (confirmed)
 UPDATE spell_template SET EffectMiscValueB2 = 64 WHERE id IN (54355);
+
+
+-- -------------------------------
+-- CORE - remove after added in core
+-- -------------------------------
+-- spell FIX (unique - no stack)
+UPDATE spell_template SET AttributesEx=AttributesEx|0x00000800 WHERE Id IN(15971); -- Demoralizing Roar
