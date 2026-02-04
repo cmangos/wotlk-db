@@ -197,9 +197,6 @@ UPDATE spell_template SET Attributes = Attributes|0x04000000 WHERE id = 63124;
 -- WoTLK section
 -- ============================================================
 
--- Shield Level 1 2 3 - spam preventing fix
-UPDATE spell_template SET EffectTriggerSpell1 = 63104 WHERE id IN (63130,63131,63132);
-
 -- -------------------------------
 -- Gameobject custom changes
 -- -------------------------------
@@ -238,13 +235,17 @@ UPDATE `item_template` SET `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 4
 -- Spell custom changes
 -- -------------------------------
 
+-- s.14108 Venomhide Poison
+-- was 4 (poison) - and source has immunity to it - so it prevents itself with applying aura - had to remove it.
+UPDATE spell_template SET Dispel = 0 WHERE id = 14108;
 -- The Prodigal Leader - should have no cast delay
 UPDATE `spell_template` SET `CastingTimeIndex`='1' WHERE (`Id`='58911');
 -- Rope Beam - no idea why target are swaped. sniff shows that spell hits target instead of source (original: EffectImplicitTargetA1 = 1, EffectImplicitTargetB1 = 25)
 UPDATE spell_template SET EffectImplicitTargetA1 = 25, EffectImplicitTargetB1 = 1 WHERE id IN (66206,63413);
 -- Detonation 54355 - Effect 1 - shouldnt summon guardian (confirmed)
 UPDATE spell_template SET EffectMiscValueB2 = 64 WHERE id IN (54355);
-
+-- Shield Level 1 2 3 - spam preventing fix
+UPDATE spell_template SET EffectTriggerSpell1 = 63104 WHERE id IN (63130,63131,63132);
 
 -- -------------------------------
 -- CORE - remove after added in core
