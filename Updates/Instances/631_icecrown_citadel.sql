@@ -1644,6 +1644,12 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
 -- ===========================================================
 -- Transport: Orgrim’s Hammer (Icecrown Citadel Raid) - map:673
 
+-- Gunship armory gold rewards by raid difficulty
+UPDATE `gameobject_template` SET `mingold`=800000, `maxgold`=900000 WHERE `entry`=201873;
+UPDATE `gameobject_template` SET `mingold`=2000000, `maxgold`=2250000 WHERE `entry`=201874;
+UPDATE `gameobject_template` SET `mingold`=1000000, `maxgold`=1200000 WHERE `entry`=201872;
+UPDATE `gameobject_template` SET `mingold`=2000000, `maxgold`=2250000 WHERE `entry`=201875;
+
 INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0`, `path_rotation1`, `path_rotation2`, `path_rotation3`) VALUES
 (6310062,0,-1,0,0,0,1),
 (6310063,0,-1,0,0,0,1),
@@ -1679,8 +1685,10 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 -- DBSCRIPTS
 -- =========
 
-DELETE FROM spell_script_target WHERE entry IN (70781,70856,70857,70858,70859,70860,70861);
+DELETE FROM spell_script_target WHERE entry IN (70374,70383,70781,70856,70857,70858,70859,70860,70861);
 INSERT INTO spell_script_target (entry, type, targetEntry, inverseEffectMask) VALUES
+(70374,1,37540,0),
+(70383,1,37215,0),
 (70781,4,@OGUID+87,0),
 (70856,4,@OGUID+90,0),
 (70857,4,@OGUID+88,0),
