@@ -1956,3 +1956,16 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
+
+-- Professor Putricide Tear Gas targets. The periodic spell keeps the
+-- encounter creatures frozen until the AOE cancel releases them.
+DELETE FROM `spell_script_target` WHERE `entry` IN (71615,71618);
+INSERT INTO `spell_script_target` (`entry`,`type`,`targetEntry`,`inverseEffectMask`) VALUES
+(71615,1,37562,0),
+(71615,1,37672,0),
+(71615,1,37690,0),
+(71615,1,37697,0),
+(71618,1,37562,0),
+(71618,1,37672,0),
+(71618,1,38285,0),
+(71618,1,37697,0);
