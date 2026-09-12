@@ -27134,7 +27134,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2356405','23564','8','0','100','0','43381','-1','0','0','0','0','11','43384','6','0','1','23081','0','0','0','0','0','0','Plagued Dragonflayer Tribesman - Cast Spray Credit and Say on Spellhit'),
 ('2356406','23564','8','0','100','0','42166','-1','0','0','0','0','11','42167','0','16','0','0','0','0','0','0','0','0','Plagued Dragonflayer Tribesman - Cast Plagued Blood Explosion on Spellhit'),
 -- Mindless Abomination 23575
-('2357501','23575','11','0','100','0','0','0','0','0','0','0','11','43393','11','0','0','0','0','0','0','0','0','0','Mindless Abomination - Cast Ping Master on Spawn'),
+('2357501','23575','29','0','100','0','100','100','0','0','0','0','11','43393','11','1','22','1','0','0','0','0','0','0','Mindless Abomination - Cast Ping Master and set Phase 1 on Timer'),
+('2357502','23575','27','1','100','1','42168','1','1000','1000','0','0','41','0','0','0','0','0','0','0','0','0','0','0','Mindless Abomination - Despawn on Missing Buff'),
 -- Longtusk Fisherman 23638
 -- Unstable Mur'ghoul 23643
 ('2364301','23643','2','0','100','1024','10','0','0','0','0','0','11','49948','1','0','1','27262','0','0','0','0','0','0','Unstable Mur''ghoul- Cast Unstable Explosion and Say at 10% HP'),
