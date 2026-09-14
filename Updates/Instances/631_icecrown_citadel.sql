@@ -18,9 +18,11 @@ https://www.youtube.com/watch?v=vhRVOYO4Vwk
 https://www.youtube.com/watch?v=I2tOUKVEYsE
 EndDBScriptData */
 
-SET @CGUID := 6310000; -- creatures
-SET @OGUID := 6310000; -- gameobjects
-SET @PGUID := 54100;   -- pools
+SET @CGUID     := 6310000; -- creatures
+SET @OGUID     := 6310000; -- gameobjects
+SET @SGGUID    := 6310000; -- spawn_groups
+SET @STRINGID  := 6310000;
+SET @SPAWNDATA := 6310000;
 
 -- Transport: The Skybreaker (Icecrown Citadel Raid) - map:672
 SET @CAGUID := 6720000; -- creatures
@@ -627,7 +629,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position
 (@CGUID+485,37744,631,15,1,4201.849,2750.526,353.0013,0.01745329,604800,604800,0,0),
 (@CGUID+486,37744,631,15,1,4224.835,2735.236,355.2881,3.141593,604800,604800,0,0),
 (@CGUID+487,37744,631,15,1,4225.138,2788.188,353.0327,3.141593,604800,604800,0,0),
--- NEXT FREE - @CGUID+488
+--
+(@CGUID+489,0,631,0,1,-361.154358,2305.821289,244.771713,2.704335,604800,604800,0,0),
+(@CGUID+490,0,631,0,1,-375.538879,2120.774658,242.256775,3.714352,604800,604800,0,0),
 
 -- ===========================================================
 -- Transport: The Skybreaker (Icecrown Citadel Raid) - map:672
@@ -1333,14 +1337,26 @@ INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `Posit
 (@CHGUID+18,5,-52.22717,-14.92194,34.75607,0,0,0),
 (@CHGUID+18,6,-40.72717,-18.92194,34.50607,0,0,0);
 
+INSERT INTO `string_id` (`Id`, `Name`) VALUES
+(@STRINGID+1, 'ICC_LIGHTS_HAMMER_DAMNED'),
+(@STRINGID+2, 'ICC_SPIRE_FROSTWYRM'),
+(@STRINGID+3, 'ICC_PLAGUEWORKS_PIPE_FLESHREAPER');
+
+DELETE FROM `creature_spawn_data_template` WHERE `Entry` = @SPAWNDATA+1;
+INSERT INTO `creature_spawn_data_template` (`Entry`,`SpawnFlags`,`StringId`,`Name`) VALUES
+(@SPAWNDATA+1,0,@STRINGID+1, 'ICC - Light''s Hammer - The Damned'),
+(3703801,1,@STRINGID+3,'Icecrown Citadel - pipe Vengeful Fleshreaper');
+
 -- Set run on spawn
 DELETE FROM creature_spawn_data WHERE guid IN(@CGUID+94,@CGUID+179,@CGUID+187,@CGUID+188,@CGUID+205,@CGUID+206,@CGUID+261,@CGUID+262,@CGUID+263,@CGUID+264,
 @CGUID+265,@CGUID+266,@CGUID+267);
 INSERT INTO creature_spawn_data(Guid,Id) VALUES
+(@CGUID+92, @SPAWNDATA+1),
+(@CGUID+93, @SPAWNDATA+1),
 (@CGUID+94, 1),
 (@CGUID+179, 1),
-(@CGUID+187, 1),
-(@CGUID+188, 1),
+(@CGUID+187,3703801),
+(@CGUID+188,3703801),
 (@CGUID+205, 1),
 (@CGUID+206, 1),
 (@CGUID+261, 1),
@@ -1507,7 +1523,12 @@ INSERT INTO creature_conditional_spawn (guid, EntryAlliance, EntryHorde, Comment
 -- Alliance - No Spawn / Skybreaker Dreadblade 37004
 (@CGUID+415,0,37004,'ICC - Alliance - No Spawn / Skybreaker Dreadblade 37004'),
 -- Alliance - No Spawn / Skybreaker Luminary 37016
-(@CGUID+416,0,37016,'ICC - Alliance - No Spawn / Skybreaker Luminary 37016');
+(@CGUID+416,0,37016,'ICC - Alliance - No Spawn / Skybreaker Luminary 37016'),
+
+-- The two event Frostwyrms use the flight-start positions formerly held in
+-- core. Only the record matching the instance faction is instantiated.
+(@CGUID+489,37230,0, 'ICC - Alliance Spire Frostwyrm event'),
+(@CGUID+490,0,37230, 'ICC - Horde Spire Frostwyrm event');
 
 
 -- ===========
@@ -1642,19 +1663,16 @@ INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`, `path_rotation0
 -- INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 -- INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
 
+-- ============
+-- SPAWN GROUPS
+-- ============
 
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `WorldStateExpression`, `Flags`, `StringId`) VALUES
+(@SGGUID+1, 'ICC - Spire Frostwyrm', 0, 2, 0, 0, 0, @STRINGID + 2);
 
--- =======
--- POOLING
--- =======
-
--- INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_pool` (`entry`, `max_limit`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
-
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
+(@SGGUID + 1, @CGUID + 489, -1),
+(@SGGUID + 1, @CGUID + 490, -1);
 
 
 -- =========
