@@ -43273,8 +43273,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('3766602','37666','0','0','100','1055','7000','12000','12000','16000','0','0','11','70432','5','0','0','0','0','0','0','0','0','0','Darkfallen Tactician - Cast Blood Sap'),
 ('3766603','37666','9','0','100','1055','10','30','16000','24000','0','0','11','70431','0','0','0','0','0','0','0','0','0','0','Darkfallen Tactician - Cast Shadowstep'),
 -- Mutated Abomination 37672
-('3767201','37672','11','0','100','0','0','0','0','0','0','0','11','70385','0','2','11','70405','0','2','0','0','0','0','Mutated Abomination - Cast Abomination Vehicle Power Drain and Mutated Transformation on Spawn'),
-('3767202','37672','8','0','100','30','46598','-1','0','0','0','0','11','72402','0','0','0','0','0','0','0','0','0','0','Mutated Abomination - Cast Mutated Transformation Mirror Name on Ride Vehicle Hardcoded Spell Hit'),
+-- Handled by the Professor Putricide core script and creature spell lists.
 -- Crusader Grimton 37688
 ('3768801','37688','1','0','100','1','5000','5000','10000','10000','0','0','45','11','20','0','0','0','0','0','0','0','0','0','Crusader Grimton - Send AI EVENT F on OOC Timer'),
 -- Frost Freeze Trap 37744
