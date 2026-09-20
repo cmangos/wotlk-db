@@ -1,17 +1,5 @@
 -- Icecrown Citadel Gunship Battle templates, spell lists and rewards.
 
--- Zafod's client-known spell lacks the server-side create-item data.
-INSERT INTO `spell_template`
-    (`Id`, `Attributes`, `AttributesEx2`, `ProcChance`, `Effect1`,
-     `EffectImplicitTargetA1`, `EffectItemType1`, `SpellName`, `SchoolMask`)
-VALUES
-    (70055, 384, 4, 101, 24, 25, 49278, 'Create Rocket Pack', 1)
-ON DUPLICATE KEY UPDATE
-    `ProcChance` = VALUES(`ProcChance`),
-    `Effect1` = VALUES(`Effect1`),
-    `EffectImplicitTargetA1` = VALUES(`EffectImplicitTargetA1`),
-    `EffectItemType1` = VALUES(`EffectItemType1`);
-
 -- Restrict each cannon to players of its owning faction.
 INSERT IGNORE INTO `conditions`
     (`condition_entry`,`type`,`value1`,`value2`,`value3`,`value4`,`flags`,`comments`)
@@ -29,10 +17,20 @@ VALUES
     (36838,70510,0,0,0,1,22),
     (36839,70510,0,0,0,1,21);
 
--- Cannon heat is encounter-controlled; generic power regeneration races it.
+-- 3.3.5 cannon spawn: rooted; heat is supplied by spells, not regeneration.
+-- CreatureStaticFlags::SESSILE (0x100), NO_AUTOMATIC_REGEN (0x400).
 UPDATE `creature_template`
-SET `RegenerateStats` = `RegenerateStats` & ~4
+SET `RegenerateStats` = `RegenerateStats` & ~12,
+    `StaticFlags1` = `StaticFlags1` | 1280,
+    `StaticFlags2` = `StaticFlags2` | 1024
 WHERE `Entry` IN (36838,36839);
+
+UPDATE creature_template difficulty
+JOIN creature_template base ON difficulty.Entry IN (base.DifficultyEntry1,base.DifficultyEntry2,base.DifficultyEntry3)
+SET difficulty.RegenerateStats = difficulty.RegenerateStats & ~12,
+    difficulty.StaticFlags1 = difficulty.StaticFlags1 | 1280,
+    difficulty.StaticFlags2 = difficulty.StaticFlags2 | 1024
+WHERE base.Entry IN (36838,36839);
 
 -- Keep routine combat rotations data-driven. Transport-aware target selection,
 -- boarding, artillery, and Below Zero remain encounter-script responsibilities.
@@ -40,6 +38,11 @@ UPDATE `creature_template` SET `SpellList` = 3694801 WHERE `Entry` = 36948;
 UPDATE `creature_template` SET `SpellList` = 3693901 WHERE `Entry` = 36939;
 UPDATE `creature_template` SET `SpellList` = 3696101 WHERE `Entry` = 36961;
 UPDATE `creature_template` SET `SpellList` = 3696001 WHERE `Entry` = 36960;
+
+UPDATE creature_template difficulty
+JOIN creature_template base ON difficulty.Entry IN (base.DifficultyEntry1,base.DifficultyEntry2,base.DifficultyEntry3)
+SET difficulty.SpellList = base.SpellList
+WHERE base.Entry IN (36948,36939,36961,36960);
 
 DELETE FROM `creature_spell_list_entry`
 WHERE `Id` IN (3694801,3693901,3696101,3696001);
@@ -50,17 +53,24 @@ INSERT INTO `creature_spell_list_entry`
 (3696101,'ICC - Gunship - Skybreaker Sergeant',0,0),
 (3696001,'ICC - Gunship - Kor''kron Sergeant',0,0);
 
+-- Unit condition 741 selects the current target; 0x80 excludes melee range.
+DELETE FROM creature_spell_targeting WHERE Id = 3693901;
+INSERT INTO creature_spell_targeting (Id,Type,Param1,Param2,Param3,UnitCondition,Comments)
+VALUES (3693901,1,1,0,128,741,'Gunship captain - current target outside melee range');
+
 DELETE FROM `creature_spell_list`
 WHERE `Id` IN (3694801,3693901,3696101,3696001);
 INSERT INTO `creature_spell_list`
 (`Id`,`Position`,`SpellId`,`Flags`,`CombatCondition`,`TargetId`,`ScriptId`,
  `Availability`,`Probability`,`InitialMin`,`InitialMax`,`RepeatMin`,`RepeatMax`,`Comments`) VALUES
-(3694801,0,15284,0,-1,0,0,100,1,2000,10000,2000,10000,'Muradin Bronzebeard - Cleave'),
-(3693901,0,15284,0,-1,0,0,100,1,2000,10000,2000,10000,'High Overlord Saurfang - Cleave'),
-(3696101,0,69652,0,-1,0,0,100,1,13000,18000,25000,30000,'Skybreaker Sergeant - Bladestorm'),
-(3696101,1,69651,0,-1,0,0,100,1,8000,10000,9000,13000,'Skybreaker Sergeant - Wounding Strike'),
-(3696001,0,69652,0,-1,0,0,100,1,13000,18000,25000,30000,'Kor''kron Sergeant - Bladestorm'),
-(3696001,1,69651,0,-1,0,0,100,1,8000,10000,9000,13000,'Kor''kron Sergeant - Wounding Strike');
+(3694801,1,69634,0,-1,3693901,0,100,1,3000,6000,3000,6000,'Muradin Bronzebeard - Rending Throw'),
+(3693901,1,69634,0,-1,3693901,0,100,1,3000,6000,3000,6000,'High Overlord Saurfang - Rending Throw'),
+(3694801,0,15284,0,-1,1,0,100,1,2000,10000,2000,10000,'Muradin Bronzebeard - Cleave'),
+(3693901,0,15284,0,-1,1,0,100,1,2000,10000,2000,10000,'High Overlord Saurfang - Cleave'),
+(3696101,0,69652,0,-1,2,0,100,1,13000,18000,25000,30000,'Skybreaker Sergeant - Bladestorm'),
+(3696101,1,69651,0,-1,1,0,100,1,8000,10000,9000,13000,'Skybreaker Sergeant - Wounding Strike'),
+(3696001,0,69652,0,-1,2,0,100,1,13000,18000,25000,30000,'Kor''kron Sergeant - Bladestorm'),
+(3696001,1,69651,0,-1,1,0,100,1,8000,10000,9000,13000,'Kor''kron Sergeant - Wounding Strike');
 
 -- Runtime fields belong to the world database rather than scriptdev2.sql.
 UPDATE `creature_template`
