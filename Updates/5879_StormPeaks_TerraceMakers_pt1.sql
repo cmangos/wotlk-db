@@ -51,8 +51,8 @@ DELETE FROM creature_linking WHERE guid IN (527912,527913)
 OR master_guid IN (527912,527913);
 DELETE FROM creature WHERE guid IN (527912,527913);
 INSERT INTO creature (guid, id, map, spawnMask, phaseMask, position_x, position_y, position_z, orientation, spawntimesecsmin, spawntimesecsmax, spawndist, MovementType) VALUES
-(527912,29746,571,1,1,8100.8413,-899.3507,961.3588,0,300,300,0,0),
-(527913,29746,571,1,1,8136.489,-806.11285,963.00226,0,300,300,0,0);
+(527912,29752,571,1,1,8100.8413,-899.3507,961.3588,0,300,300,0,0),
+(527913,29752,571,1,1,8136.489,-806.11285,963.00226,0,300,300,0,0);
 UPDATE creature SET spawndist = 0, MovementType = 0 WHERE id = 29752;
 UPDATE creature_template SET InhabitType = 4, MovementType = 0 WHERE entry = 29752;
 
