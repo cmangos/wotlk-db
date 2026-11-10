@@ -32591,6 +32591,11 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2975501','29755','0','0','100','1025','3000','5000','5000','7000','0','0','11','61554','1','0','0','0','0','0','0','0','0','0','Stormpeak Hatchling - Cast Wing Smash'),
 -- Hyeyoung Parka 29762
 ('2976201','29762','4','0','100','0','0','0','0','0','0','0','12','9297','1','30000','12','9297','1','30000','1','4561','0','0','Hyeyoung Parka - Summon Enraged Wyverns and Yell on Aggro'),
+-- Archivist Mechaton 29775
+('2977501','29775','11','0','100','0','0','0','0','0','0','0','53','21273','0','0','0','0','0','0','0','0','0','0','Archivist Mechaton - START_RELAY_SCRIPT on Spawn'),
+('2977502','29775','30','0','100','0','5','29775','0','0','0','0','59','11','0','0','11','55224','11','0','0','0','0','0','Archivist Mechaton - Face summoner & cast Archivist\'s Scan on Receive AI Event 5'),
+('2977503','29775','30','0','100','0','6','29775','0','0','0','0','59','11','0','0','0','0','0','0','0','0','0','0','Archivist Mechaton - Attack summoner on Receive AI Event 6'),
+('2977504','29775','6','0','100','0','0','0','0','0','0','0','41','20000','0','0','0','0','0','0','0','0','0','0','Archivist Mechaton - Despawn on Death'),
 -- Frostfeather Screecher 29792
 ('2979201','29792','0','0','100','1025','2000','4000','4000','7000','0','0','11','57815','0','0','0','0','0','0','0','0','0','0','Frostfeather Screecher - Cast Piercing Screech'),
 -- Frostfeather Witch 29793
