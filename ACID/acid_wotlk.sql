@@ -32364,6 +32364,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2937602','29376','9','0','100','1025','0','40','7000','9000','0','0','11','57580','4','0','0','0','0','0','0','0','0','0','Stormforged Artificer - Cast Lightning Infusion'),
 ('2937603','29376','30','0','100','0','5','29376','0','0','0','0','22','1','0','0','0','0','0','0','0','0','0','0','Stormforged Artificer - Set Phase 1 on Receive AI Event Custom A'),
 ('2937604','29376','1','1','100','1','100','6000','20000','30000','0','0','11','54464','0','0','0','0','0','0','0','0','0','0','Stormforged Artificer - Cast Shockwave in OOC (Phase 1)'),
+-- Stormforged Raider 29377
+('2937701','29377','11','0','100','0','0','0','0','0','0','0','53','21274','0','0','0','0','0','0','0','0','0','0','Stormforged Raider - START_RELAY_SCRIPT on Spawn'),
 -- Stormforged War Golem 29380
 ('2938001','29380','0','0','100','1025','3000','6000','15000','19000','0','0','11','56352','1','0','0','0','0','0','0','0','0','0','Stormforged War Golem - Cast Storm Punch'),
 -- Stormforged Reaver 29382
@@ -32441,6 +32443,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Improved Land Mine 29475
 ('2947501','29475','11','0','100','0','0','0','0','0','0','0','61','1','0','0','0','0','0','0','0','0','0','0','Improved Land Mine - Set IMMOBILIZED_STATE on Spawn'),
 ('2947502','29475','4','0','100','0','0','0','0','0','0','0','11','54537','0','0','41','1000','0','0','0','0','0','0','Improved Land Mine - Cast Detonation and despawn on Aggro'),
+-- Earthen Defender 29477
+('2947701','29477','4','0','25','0','0','0','0','0','0','0','54','0','0','20394','0','0','0','0','0','0','0','0','Earthen Defender - (25% chance) Random Say on Aggro'),
 -- K3 Perimeter Turret 29483
 ('2948301','-525302','1','0','100','33','100','3000','45000','65000','0','0','53','20809','0','0','53','20810','0','0','53','20811','0','0','K3 Perimeter Turret (Guid EAI) - randomized START_RELAY_SCRIPT on OOC Timer'),
 -- Brunnhildar Warmaiden 29498
