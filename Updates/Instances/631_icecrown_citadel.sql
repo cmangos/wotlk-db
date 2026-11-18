@@ -1340,16 +1340,21 @@ INSERT INTO `creature_movement` (`Id`, `Point`, `PositionX`, `PositionY`, `Posit
 INSERT INTO `string_id` (`Id`, `Name`) VALUES
 (@STRINGID+1, 'ICC_LIGHTS_HAMMER_DAMNED'),
 (@STRINGID+2, 'ICC_SPIRE_FROSTWYRM'),
-(@STRINGID+3, 'ICC_PLAGUEWORKS_PIPE_FLESHREAPER');
+(@STRINGID+3, 'ICC_PLAGUEWORKS_PIPE_FLESHREAPER'),
+(@STRINGID+4, 'ICC_ROTFACE_OOZE_FLOOD_UPPER'),
+(@STRINGID+5, 'ICC_ROTFACE_OOZE_FLOOD_LOWER');
 
-DELETE FROM `creature_spawn_data_template` WHERE `Entry` = @SPAWNDATA+1;
+DELETE FROM `creature_spawn_data_template` WHERE `Entry` IN (@SPAWNDATA+1,@SPAWNDATA+2,@SPAWNDATA+3);
 INSERT INTO `creature_spawn_data_template` (`Entry`,`SpawnFlags`,`StringId`,`Name`) VALUES
 (@SPAWNDATA+1,0,@STRINGID+1, 'ICC - Light''s Hammer - The Damned'),
-(3703801,1,@STRINGID+3,'Icecrown Citadel - pipe Vengeful Fleshreaper');
+(3703801,1,@STRINGID+3,'Icecrown Citadel - pipe Vengeful Fleshreaper'),
+(@SPAWNDATA+2,0,@STRINGID+4,'ICC - Rotface - Ooze Flood upper stalker'),
+(@SPAWNDATA+3,0,@STRINGID+5,'ICC - Rotface - Ooze Flood lower stalker');
 
 -- Set run on spawn
 DELETE FROM creature_spawn_data WHERE guid IN(@CGUID+94,@CGUID+179,@CGUID+187,@CGUID+188,@CGUID+205,@CGUID+206,@CGUID+261,@CGUID+262,@CGUID+263,@CGUID+264,
-@CGUID+265,@CGUID+266,@CGUID+267);
+@CGUID+265,@CGUID+266,@CGUID+267,@CGUID+122,@CGUID+123,@CGUID+126,@CGUID+128,@CGUID+129,@CGUID+130,@CGUID+131,@CGUID+132,
+@CGUID+133,@CGUID+134,@CGUID+135,@CGUID+137,@CGUID+138,@CGUID+139,@CGUID+140,@CGUID+141,@CGUID+145,@CGUID+146,@CGUID+147,@CGUID+148);
 INSERT INTO creature_spawn_data(Guid,Id) VALUES
 (@CGUID+92, @SPAWNDATA+1),
 (@CGUID+93, @SPAWNDATA+1),
@@ -1365,7 +1370,27 @@ INSERT INTO creature_spawn_data(Guid,Id) VALUES
 (@CGUID+264, 1),
 (@CGUID+265, 1),
 (@CGUID+266, 1),
-(@CGUID+267, 1);
+(@CGUID+267, 1),
+(@CGUID+122,@SPAWNDATA+3),
+(@CGUID+123,@SPAWNDATA+2),
+(@CGUID+126,@SPAWNDATA+2),
+(@CGUID+128,@SPAWNDATA+3),
+(@CGUID+129,@SPAWNDATA+3),
+(@CGUID+130,@SPAWNDATA+2),
+(@CGUID+131,@SPAWNDATA+3),
+(@CGUID+132,@SPAWNDATA+3),
+(@CGUID+133,@SPAWNDATA+2),
+(@CGUID+134,@SPAWNDATA+3),
+(@CGUID+135,@SPAWNDATA+3),
+(@CGUID+137,@SPAWNDATA+3),
+(@CGUID+138,@SPAWNDATA+2),
+(@CGUID+139,@SPAWNDATA+3),
+(@CGUID+140,@SPAWNDATA+2),
+(@CGUID+141,@SPAWNDATA+3),
+(@CGUID+145,@SPAWNDATA+3),
+(@CGUID+146,@SPAWNDATA+3),
+(@CGUID+147,@SPAWNDATA+2),
+(@CGUID+148,@SPAWNDATA+2);
 
 DELETE FROM `creature_linking_template` WHERE entry IN (37595,37663,37664,37972,37973,38008,37890,37949,38135,38136,38009,38010,38222);
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
@@ -1956,3 +1981,18 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 -- INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscript_random_templates` (`id`, `type`, `target_id`, `chance`, `comments`) VALUES
+
+-- Professor Putricide Tear Gas targets. The periodic spell keeps encounter
+-- creatures frozen until its area cancel releases them.
+DELETE FROM `spell_script_target` WHERE `entry` IN (71615,71618,69782,69783);
+INSERT INTO `spell_script_target` (`entry`,`type`,`targetEntry`,`inverseEffectMask`) VALUES
+(71615,1,37562,0),
+(71615,1,37672,0),
+(71615,1,37690,0),
+(71615,1,37697,0),
+(71618,1,37562,0),
+(71618,1,37672,0),
+(71618,1,38285,0),
+(71618,1,37697,0),
+(69782,5,@STRINGID+4,0),
+(69783,5,@STRINGID+5,0);

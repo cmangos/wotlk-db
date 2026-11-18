@@ -212,6 +212,10 @@ UPDATE gameobject_template SET data1 = 2 WHERE entry IN (188539);
 -- Wolfsbane Root 189313 - must despawn
 UPDATE gameobject_template SET data5 = 1 WHERE entry IN (189313);
 
+-- Nimboya's Pike 142697
+-- blizzlike bug - (in tbc its * 65536 : in wotlk it should be * 1000)
+UPDATE gameobject_template SET data2=999000 WHERE entry=142697;
+
 -- -------------------------------
 -- Item custom changes
 -- -------------------------------
