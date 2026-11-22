@@ -32379,6 +32379,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2938001','29380','0','0','100','1025','3000','6000','15000','19000','0','0','11','56352','1','0','0','0','0','0','0','0','0','0','Stormforged War Golem - Cast Storm Punch'),
 -- Stormforged Reaver 29382
 ('2938201','29382','9','0','100','1025','0','10','7000','15000','0','0','11','55825','0','0','0','0','0','0','0','0','0','0','Stormforged Reaver - Cast Thunderstorm'),
+-- Captive Mechagnome 29384
+('2938401','29384','8','0','100','0','55875','-1','0','0','0','0','53','21276','7','0','41','8000','0','0','0','0','0','0','Captive Mechagnome - START_RELAY_SCRIPT and despawn on Spell Hit'),
 -- Snowdrift Jormungar 29390
 ('2939001','29390','9','0','100','1025','0','30','14000','17000','0','0','11','50293','1','0','0','0','0','0','0','0','0','0','Snowdrift Jormungar - Cast Corrosive Poison'),
 -- Land Mine Bunny 29397
